@@ -1,0 +1,127 @@
+<html>
+<head>
+<meta http-equiv="cache-control" content="no-cache" />
+
+</head>
+<body>
+<div class="toolbar-h1">
+<br />
+
+</div>
+<span class="small-text">( <a href="../index.html">Return to API Overview</a> )</span>
+<div class="rounded-box">
+<h2><a name="top">Available methods</a></h2>
+<ul class="apidoc">
+
+<li><a href="#login"/>login</a></li>
+<li><a href="#login"/>login</a></li>
+<li><a href="#logout"/>logout</a></li>
+</ul>
+</div>
+<h2>Description</h2>
+This namespace provides methods to authenticate with the system's 
+ management server.
+<p>
+</p>
+<p><strong>Namespace</strong>:
+auth
+</p>
+<hr />
+
+<h3> <a name="login" href="#top">Method: login</a></h3>
+Description:<br />
+Login using a username and password. Returns the session key
+ used by most other API methods.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+    string username
+ </li>
+<li>
+
+    string password
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+    string sessionKey
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="login" href="#top">Method: login</a></h3>
+Description:<br />
+Login using a username and password. Returns the session key
+ used by other methods.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+    string username
+ </li>
+<li>
+
+    string password
+ </li>
+<li>
+
+    int duration - Length of session.
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+    string sessionKey
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="logout" href="#top">Method: logout</a></h3>
+Description:<br />
+Logout the user with the given session key.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+    string sessionKey
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+    int - 1 on success, exception thrown otherwise.
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+</body>
+Generated on 8/6/2009
+</html>

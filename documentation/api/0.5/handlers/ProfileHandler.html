@@ -1,0 +1,916 @@
+<html>
+<head>
+<meta http-equiv="cache-control" content="no-cache" />
+
+</head>
+<body>
+<div class="toolbar-h1">
+<br />
+
+</div>
+<span class="small-text">( <a href="../index.html">Return to API Overview</a> )</span>
+<div class="rounded-box">
+<h2><a name="top">Available methods</a></h2>
+<ul class="apidoc">
+
+<li><a href="#addIpRange"/>addIpRange</a></li>
+<li><a href="#addScript"/>addScript</a></li>
+<li><a href="#compareActivationKeys"/>compareActivationKeys</a></li>
+<li><a href="#compareAdvancedOptions"/>compareAdvancedOptions</a></li>
+<li><a href="#comparePackages"/>comparePackages</a></li>
+<li><a href="#downloadKickstart"/>downloadKickstart</a></li>
+<li><a href="#getAdvancedOptions"/>getAdvancedOptions</a></li>
+<li><a href="#getChildChannels"/>getChildChannels</a></li>
+<li><a href="#getCustomOptions"/>getCustomOptions</a></li>
+<li><a href="#getKickstartTree"/>getKickstartTree</a></li>
+<li><a href="#listIpRanges"/>listIpRanges</a></li>
+<li><a href="#listScripts"/>listScripts</a></li>
+<li><a href="#removeIpRange"/>removeIpRange</a></li>
+<li><a href="#removeScript"/>removeScript</a></li>
+<li><a href="#setAdvancedOptions"/>setAdvancedOptions</a></li>
+<li><a href="#setChildChannels"/>setChildChannels</a></li>
+<li><a href="#setCustomOptions"/>setCustomOptions</a></li>
+<li><a href="#setKickstartTree"/>setKickstartTree</a></li>
+</ul>
+</div>
+<h2>Description</h2>
+Provides methods to access and modify many aspects of 
+ a kickstart profile.
+<p>
+</p>
+<p><strong>Namespace</strong>:
+kickstart.profile
+</p>
+<hr />
+
+<h3> <a name="addIpRange" href="#top">Method: addIpRange</a></h3>
+Description:<br />
+Add an ip range to a kickstart profile.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string label - The label of the
+ kickstart
+ </li>
+<li>
+
+    string min - The ip address making up the
+ minimum of the range (i.e. 192.168.0.1)
+ </li>
+<li>
+
+    string max - The ip address making up the
+ maximum of the range (i.e. 192.168.0.254)
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+    int - 1 on success, exception thrown otherwise.
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="addScript" href="#top">Method: addScript</a></h3>
+Description:<br />
+Add a pre/post script to a kickstart profile.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string ksLabel - The kickstart label to
+ add the script to.
+ </li>
+<li>
+
+    string contents - The full script to
+ add.
+ </li>
+<li>
+
+    string interpreter - The path to the
+ interpreter to use (i.e. /bin/bash). An empty string will use the
+ kickstart default interpreter.
+ </li>
+<li>
+
+    string type - The type of script (either
+ 'pre' or 'post').
+ </li>
+<li>
+
+    boolean chroot - Whether to run the script
+ in the chrooted install location (recommended) or not.
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+int id - the id of the added script 
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="compareActivationKeys" href="#top">Method: compareActivationKeys</a></h3>
+Description:<br />
+Returns a list for each kickstart profile; each list will contain
+             activation keys not present on the other profile.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+    string sessionKey
+ </li>
+<li>
+
+    string kickstartLabel1
+ </li>
+<li>
+
+    string kickstartLabel2
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+	     struct - Comparison Info
+	<ul>
+          <li> array "kickstartLabel1" - Actual label of the first kickstart
+                 profile is the key into the struct </li>
+          array:
+  <ul>
+   <li>
+              
+
+	     struct - activation key
+	<ul>
+     	<li> string "key"</li>
+     	<li> string "description"</li>
+     	<li> int "usage_limit"</li>
+     	<li> string "base_channel_label"</li>
+         <li>array "child_channel_labels"
+        <ul>
+            <li>string childChannelLabel</li>
+        </ul>
+    </li>
+         <li>array "entitlements"
+        <ul>
+            <li>string entitlementLabel</li>
+        </ul>
+    </li>
+         <li>array "server_group_ids"
+        <ul>
+            <li>string serverGroupId</li>
+        </ul>
+    </li>
+         <li>array "package_names"
+        <ul>
+            <li>string packageName</li>
+        </ul>
+    </li>
+         <li>array "packages"
+        <ul>
+            <li>
+       	     struct - package
+	<ul>
+             <li> name "string" - packageName </li>
+             <li> arch "string" - archLabel - optional </li>
+       	</ul>
+                </li>
+        </ul>
+    </li>
+     	<li> boolean "universal_default"</li>
+   	</ul>
+ 
+          </li></ul>
+          <li> array "kickstartLabel2" - Actual label of the second kickstart
+                 profile is the key into the struct </li>
+          array:
+  <ul>
+   <li>
+              
+
+	     struct - activation key
+	<ul>
+     	<li> string "key"</li>
+     	<li> string "description"</li>
+     	<li> int "usage_limit"</li>
+     	<li> string "base_channel_label"</li>
+         <li>array "child_channel_labels"
+        <ul>
+            <li>string childChannelLabel</li>
+        </ul>
+    </li>
+         <li>array "entitlements"
+        <ul>
+            <li>string entitlementLabel</li>
+        </ul>
+    </li>
+         <li>array "server_group_ids"
+        <ul>
+            <li>string serverGroupId</li>
+        </ul>
+    </li>
+         <li>array "package_names"
+        <ul>
+            <li>string packageName</li>
+        </ul>
+    </li>
+         <li>array "packages"
+        <ul>
+            <li>
+       	     struct - package
+	<ul>
+             <li> name "string" - packageName </li>
+             <li> arch "string" - archLabel - optional </li>
+       	</ul>
+                </li>
+        </ul>
+    </li>
+     	<li> boolean "universal_default"</li>
+   	</ul>
+ 
+          </li></ul>
+  	</ul>
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="compareAdvancedOptions" href="#top">Method: compareAdvancedOptions</a></h3>
+Description:<br />
+Returns a list for each kickstart profile; each list will contain the
+             properties that differ between the profiles and their values for that
+             specific profile .
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+    string sessionKey
+ </li>
+<li>
+
+    string kickstartLabel1
+ </li>
+<li>
+
+    string kickstartLabel2
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+	     struct - Comparison Info
+	<ul>
+          <li> array "kickstartLabel1" - Actual label of the first kickstart
+                 profile is the key into the struct </li>
+          array:
+  <ul>
+   <li>
+              
+
+	     struct - value
+	<ul>
+          	<li> string "name"</li>
+          	<li> string "value"</li>
+          	<li> boolean "enabled"</li>
+      	</ul>
+               
+          </li></ul>
+          <li> array "kickstartLabel2" - Actual label of the second kickstart
+                 profile is the key into the struct </li>
+          array:
+  <ul>
+   <li>
+              
+
+	     struct - value
+	<ul>
+          	<li> string "name"</li>
+          	<li> string "value"</li>
+          	<li> boolean "enabled"</li>
+      	</ul>
+ 
+          </li></ul>
+  	</ul>
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="comparePackages" href="#top">Method: comparePackages</a></h3>
+Description:<br />
+Returns a list for each kickstart profile; each list will contain
+             package names not present on the other profile.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+    string sessionKey
+ </li>
+<li>
+
+    string kickstartLabel1
+ </li>
+<li>
+
+    string kickstartLabel2
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+	     struct - Comparison Info
+	<ul>
+          <li> array "kickstartLabel1" - Actual label of the first kickstart
+                 profile is the key into the struct </li>
+          array:
+  <ul>
+   <li>
+              	<li> string "package name"</li>
+          </li></ul>
+          <li> array "kickstartLabel2" - Actual label of the second kickstart
+                 profile is the key into the struct </li>
+          array:
+  <ul>
+   <li>
+              	<li> string "package name"</li>
+          </li></ul>
+  	</ul>
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="downloadKickstart" href="#top">Method: downloadKickstart</a></h3>
+Description:<br />
+Download the full contents of a kickstart file.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string ksLabel - The label of the
+ kickstart to download.
+ </li>
+<li>
+
+    string host - The host to use when
+ referring to the satellite itself (Usually this should be the FQDN of the
+ satellite, but could be the ip address or shortname of it as well.
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+string - The contents of the kickstart file. Note: if
+ an activation key is not associated with the kickstart file, registration
+ will not occur in the satellite generated %post section. If one is
+ associated, it will be used for registration. 
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="getAdvancedOptions" href="#top">Method: getAdvancedOptions</a></h3>
+Description:<br />
+Get advanced options for a kickstart profile.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string ksLabel - Label of kickstart
+ profile to be changed.
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+array:
+  <ul>
+   <li>
+ 
+
+	     struct - option
+	<ul>
+          	<li> string "name"</li>
+          	<li> string "arguments"</li>
+      	</ul>
+ 
+ </li></ul>
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="getChildChannels" href="#top">Method: getChildChannels</a></h3>
+Description:<br />
+Get the child channels for a kickstart profile.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string kslabel - Label of kickstart
+ profile.
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+array:
+<ul>
+    <li>string - channelLabel</li>
+</ul>
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="getCustomOptions" href="#top">Method: getCustomOptions</a></h3>
+Description:<br />
+Get custom options for a kickstart profile.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string ksLabel
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+array:
+  <ul>
+   <li>
+ 
+
+	     struct - option
+	<ul>
+          	<li> int "id"</li>
+          	<li> string "arguments"</li>
+      	</ul>
+ 
+ </li></ul>
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="getKickstartTree" href="#top">Method: getKickstartTree</a></h3>
+Description:<br />
+Get the kickstart tree for a kickstart profile.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string kslabel - Label of kickstart
+ profile to be changed.
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+    <li> string "kstreeLabel" - Label of the kickstart tree. </li>
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="listIpRanges" href="#top">Method: listIpRanges</a></h3>
+Description:<br />
+List all ip ranges for a kickstart profile.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string label - The label of the
+ kickstart
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+array:
+  <ul>
+   <li>
+ 
+
+	     struct - Kickstart Ip Range
+	<ul>
+         <li> string "ksLabel" - The kickstart label associated with the ip range </li>
+         <li> string "max" - The max ip of the range </li>
+         <li> string "min" - The min ip of the range </li>
+   	</ul>
+  </li></ul>
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="listScripts" href="#top">Method: listScripts</a></h3>
+Description:<br />
+List the pre and post scripts for a kickstart profile.
+ profile
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string ksLabel - The label of the
+ kickstart
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+array:
+  <ul>
+   <li>
+ 
+
+	     struct - kickstart script
+	<ul>
+          	<li> int "id"</li>
+          	<li> string "contents"</li>
+              <li> string "script_type" - Which type of script ('pre' or 'post'). </li>
+              <li> string "interpreter" - The scripting language interpreter to use 
+                      for this script.  An empty string indicates the default kickstart 
+                      shell. </li>
+              <li> boolean "chroot" - True if the script will be executed within the 
+                  chroot environment. </li>
+     	</ul>
+  </li></ul>
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="removeIpRange" href="#top">Method: removeIpRange</a></h3>
+Description:<br />
+Remove an ip range from a kickstart profile.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string ksLabel - The kickstart label of
+ the ip range you want to remove
+ </li>
+<li>
+
+    string ip_address - An Ip Address that
+ falls within the range that you are wanting to remove. The min or max of
+ the range will work.
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+int - 1 on successful removal, 0 if range wasn't found
+ for the specified kickstart, exception otherwise. 
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="removeScript" href="#top">Method: removeScript</a></h3>
+Description:<br />
+Remove a script from a kickstart profile.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string ksLabel - The kickstart from which
+ to remove the script from.
+ </li>
+<li>
+
+    int scriptId - The id of the script to
+ remove.
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+    int - 1 on success, exception thrown otherwise.
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="setAdvancedOptions" href="#top">Method: setAdvancedOptions</a></h3>
+Description:<br />
+Set advanced options for a kickstart profile.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string ksLabel
+ </li>
+<li>
+
+array:
+  <ul>
+   <li>
+      	     struct - advanced options
+	<ul>
+              <li> string "name" - Name of the advanced option.
+              Valid Option names: autostep, interactive, install, upgrade, text, 
+              network, cdrom, harddrive, nfs, url, lang, langsupport keyboard, 
+              mouse, device, deviceprobe, zerombr, clearpart, bootloader, 
+              timezone, auth, rootpw, selinux, reboot, firewall, xconfig, skipx, 
+              key, ignoredisk, autopart, cmdline, firstboot, graphical, iscsi, 
+              iscsiname, logging, monitor, multipath, poweroff, halt, service,
+              shutdown, user, vnc, zfcp </li>
+              <li> string "arguments" - Arguments of the option </li>
+      	</ul>
+   </li></ul>
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+    int - 1 on success, exception thrown otherwise.
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="setChildChannels" href="#top">Method: setChildChannels</a></h3>
+Description:<br />
+Set the child channels for a kickstart profile.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string kslabel - Label of kickstart
+ profile to be changed.
+ </li>
+<li>
+
+    string[] channelLabels - List of labels of child channels
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+    int - 1 on success, exception thrown otherwise.
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="setCustomOptions" href="#top">Method: setCustomOptions</a></h3>
+Description:<br />
+Set custom options for a kickstart profile.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string ksLabel
+ </li>
+<li>
+
+    string[] options
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+    int - 1 on success, exception thrown otherwise.
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="setKickstartTree" href="#top">Method: setKickstartTree</a></h3>
+Description:<br />
+Set the kickstart tree for a kickstart profile.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string kslabel - Label of kickstart
+ profile to be changed.
+ </li>
+<li>
+
+    string kstreeLabel - Label of new
+ kickstart tree.
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+    int - 1 on success, exception thrown otherwise.
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+</body>
+Generated on 5/12/2009
+</html>

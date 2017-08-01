@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>backend.satellite_tools.satCerts</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="backend-module.html">Package&nbsp;backend</a> ::
+        <a href="backend.satellite_tools-module.html">Package&nbsp;satellite_tools</a> ::
+        Module&nbsp;satCerts
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="backend.satellite_tools.satCerts-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="backend.satellite_tools.satCerts-module.html">Module backend.satellite_tools.satCerts</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-comment"># Cert-related functions</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-comment">#   - RHN certificate</tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-comment">#   - SSL CA certificate</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-comment"># Copyright (c) 2008--2016 Red Hat, Inc.</tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt class="py-comment"># This software is licensed to you under the GNU General Public License,</tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"><tt class="py-comment"># version 2 (GPLv2). There is NO WARRANTY for this software, express or</tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"><tt class="py-comment"># implied, including the implied warranties of MERCHANTABILITY or FITNESS</tt> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line"><tt class="py-comment"># FOR A PARTICULAR PURPOSE. You should have received a copy of GPLv2</tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line"><tt class="py-comment"># along with this software; if not, see</tt> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line"><tt class="py-comment"># http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt.</tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"><tt class="py-comment"># Red Hat trademarks are not licensed under GPLv2. No permission is</tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line"><tt class="py-comment"># granted to use or replicate Red Hat trademarks that are incorporated</tt> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line"><tt class="py-comment"># in this software or its documentation.</tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line"> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line"><tt class="py-comment"># language imports</tt> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">sys</tt> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line"> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line"><tt class="py-comment"># other rhn imports</tt> </tt>
+<a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">spacewalk</tt><tt class="py-op">.</tt><tt id="link-0" class="py-name" targets="Module backend.cdn_tools.common=backend.cdn_tools.common-module.html,Package backend.common=backend.common-module.html,Module rhnkickstart.common=rhnkickstart.common-module.html"><a title="backend.cdn_tools.common
+backend.common
+rhnkickstart.common" class="py-name" href="#" onclick="return doclink('link-0', 'common', 'link-0');">common</a></tt><tt class="py-op">.</tt><tt id="link-1" class="py-name" targets="Module backend.common.usix=backend.common.usix-module.html"><a title="backend.common.usix" class="py-name" href="#" onclick="return doclink('link-1', 'usix', 'link-1');">usix</a></tt> <tt class="py-keyword">import</tt> <tt id="link-2" class="py-name" targets="Function backend.common.usix.raise_with_tb()=backend.common.usix-module.html#raise_with_tb,Function rhn.tb.raise_with_tb()=rhn.tb-module.html#raise_with_tb"><a title="backend.common.usix.raise_with_tb
+rhn.tb.raise_with_tb" class="py-name" href="#" onclick="return doclink('link-2', 'raise_with_tb', 'link-2');">raise_with_tb</a></tt> </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">spacewalk</tt><tt class="py-op">.</tt><tt id="link-3" class="py-name" targets="Package backend.server=backend.server-module.html,Method up2date_client.rpcServer.ServerList.server()=up2date_client.rpcServer.ServerList-class.html#server"><a title="backend.server
+up2date_client.rpcServer.ServerList.server" class="py-name" href="#" onclick="return doclink('link-3', 'server', 'link-3');">server</a></tt> <tt class="py-keyword">import</tt> <tt id="link-4" class="py-name" targets="Package backend.server.rhnSQL=backend.server.rhnSQL-module.html"><a title="backend.server.rhnSQL" class="py-name" href="#" onclick="return doclink('link-4', 'rhnSQL', 'link-4');">rhnSQL</a></tt> </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">spacewalk</tt><tt class="py-op">.</tt><tt id="link-5" class="py-name"><a title="backend.cdn_tools.common
+backend.common
+rhnkickstart.common" class="py-name" href="#" onclick="return doclink('link-5', 'common', 'link-0');">common</a></tt><tt class="py-op">.</tt><tt id="link-6" class="py-name" targets="Module backend.common.rhnTB=backend.common.rhnTB-module.html"><a title="backend.common.rhnTB" class="py-name" href="#" onclick="return doclink('link-6', 'rhnTB', 'link-6');">rhnTB</a></tt> <tt class="py-keyword">import</tt> <tt id="link-7" class="py-name" targets="Function backend.common.rhnTB.fetchTraceback()=backend.common.rhnTB-module.html#fetchTraceback"><a title="backend.common.rhnTB.fetchTraceback" class="py-name" href="#" onclick="return doclink('link-7', 'fetchTraceback', 'link-7');">fetchTraceback</a></tt> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line"> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line"><tt class="py-comment"># bare-except and broad-except</tt> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line"><tt class="py-comment"># pylint: disable=W0702,W0703</tt> </tt>
+<a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line"> </tt>
+<a name="get_all_orgs"></a><div id="get_all_orgs-def"><a name="L31"></a><tt class="py-lineno"> 31</tt> <a class="py-toggle" href="#" id="get_all_orgs-toggle" onclick="return toggle('get_all_orgs');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="backend.satellite_tools.satCerts-module.html#get_all_orgs">get_all_orgs</a><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="get_all_orgs-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="get_all_orgs-expanded"><a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line">    <tt class="py-docstring">""" Fetch org_id. Create first org_id if needed.</tt> </tt>
+<a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line"><tt class="py-docstring">        owner only needed if no org_id present</tt> </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line"><tt class="py-docstring">        NOTE: this is duplicated elsewhere (backend.py)</tt> </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line"><tt class="py-docstring">              but I need the error differientiation of (1) too many orgs</tt> </tt>
+<a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line"><tt class="py-docstring">              and (2) no orgs. backend.py does not differientiate.</tt> </tt>
+<a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line"> </tt>
+<a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line">    <tt class="py-comment"># Get the org id</tt> </tt>
+<a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line">    <tt class="py-name">h</tt> <tt class="py-op">=</tt> <tt id="link-8" class="py-name"><a title="backend.server.rhnSQL" class="py-name" href="#" onclick="return doclink('link-8', 'rhnSQL', 'link-4');">rhnSQL</a></tt><tt class="py-op">.</tt><tt id="link-9" class="py-name" targets="Method backend.server.rhnSQL.driver_cx_Oracle.Database.prepare()=backend.server.rhnSQL.driver_cx_Oracle.Database-class.html#prepare,Method backend.server.rhnSQL.driver_postgresql.Database.prepare()=backend.server.rhnSQL.driver_postgresql.Database-class.html#prepare,Function backend.server.rhnSQL.prepare()=backend.server.rhnSQL-module.html#prepare,Method backend.server.rhnSQL.sql_base.Cursor.prepare()=backend.server.rhnSQL.sql_base.Cursor-class.html#prepare,Method backend.server.rhnSQL.sql_base.Database.prepare()=backend.server.rhnSQL.sql_base.Database-class.html#prepare"><a title="backend.server.rhnSQL.driver_cx_Oracle.Database.prepare
+backend.server.rhnSQL.driver_postgresql.Database.prepare
+backend.server.rhnSQL.prepare
+backend.server.rhnSQL.sql_base.Cursor.prepare
+backend.server.rhnSQL.sql_base.Database.prepare" class="py-name" href="#" onclick="return doclink('link-9', 'prepare', 'link-9');">prepare</a></tt><tt class="py-op">(</tt><tt id="link-10" class="py-name" targets="Variable backend.satellite_tools.satCerts._queryLookupOrgId=backend.satellite_tools.satCerts-module.html#_queryLookupOrgId"><a title="backend.satellite_tools.satCerts._queryLookupOrgId" class="py-name" href="#" onclick="return doclink('link-10', '_queryLookupOrgId', 'link-10');">_queryLookupOrgId</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line">    <tt class="py-name">h</tt><tt class="py-op">.</tt><tt id="link-11" class="py-name" targets="Method backend.server.rhnSQL.driver_cx_Oracle.Database.execute()=backend.server.rhnSQL.driver_cx_Oracle.Database-class.html#execute,Method backend.server.rhnSQL.driver_postgresql.Database.execute()=backend.server.rhnSQL.driver_postgresql.Database-class.html#execute,Function backend.server.rhnSQL.execute()=backend.server.rhnSQL-module.html#execute,Method backend.server.rhnSQL.sql_base.Cursor.execute()=backend.server.rhnSQL.sql_base.Cursor-class.html#execute,Function spacewalkkoan.spacewalkkoan.execute()=spacewalkkoan.spacewalkkoan-module.html#execute,Method virtualization.notification.Plan.execute()=virtualization.notification.Plan-class.html#execute"><a title="backend.server.rhnSQL.driver_cx_Oracle.Database.execute
+backend.server.rhnSQL.driver_postgresql.Database.execute
+backend.server.rhnSQL.execute
+backend.server.rhnSQL.sql_base.Cursor.execute
+spacewalkkoan.spacewalkkoan.execute
+virtualization.notification.Plan.execute" class="py-name" href="#" onclick="return doclink('link-11', 'execute', 'link-11');">execute</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line">    <tt class="py-name">rows</tt> <tt class="py-op">=</tt> <tt class="py-name">h</tt><tt class="py-op">.</tt><tt id="link-12" class="py-name" targets="Function backend.server.rhnSQL.fetchall_dict()=backend.server.rhnSQL-module.html#fetchall_dict,Method backend.server.rhnSQL.sql_base.Cursor.fetchall_dict()=backend.server.rhnSQL.sql_base.Cursor-class.html#fetchall_dict"><a title="backend.server.rhnSQL.fetchall_dict
+backend.server.rhnSQL.sql_base.Cursor.fetchall_dict" class="py-name" href="#" onclick="return doclink('link-12', 'fetchall_dict', 'link-12');">fetchall_dict</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">rows</tt> <tt class="py-keyword">or</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+</div><a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line"> </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line"> </tt>
+<a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line"><tt id="link-13" class="py-name"><a title="backend.satellite_tools.satCerts._queryLookupOrgId" class="py-name" href="#" onclick="return doclink('link-13', '_queryLookupOrgId', 'link-10');">_queryLookupOrgId</a></tt> <tt class="py-op">=</tt> <tt id="link-14" class="py-name"><a title="backend.server.rhnSQL" class="py-name" href="#" onclick="return doclink('link-14', 'rhnSQL', 'link-4');">rhnSQL</a></tt><tt class="py-op">.</tt><tt id="link-15" class="py-name" targets="Class backend.server.rhnSQL.sql_base.Statement=backend.server.rhnSQL.sql_base.Statement-class.html"><a title="backend.server.rhnSQL.sql_base.Statement" class="py-name" href="#" onclick="return doclink('link-15', 'Statement', 'link-15');">Statement</a></tt><tt class="py-op">(</tt><tt class="py-string">"""</tt> </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line"><tt class="py-string">    SELECT id</tt> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line"><tt class="py-string">      FROM web_customer</tt> </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line"><tt class="py-string">"""</tt><tt class="py-op">)</tt> </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line"> </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line"><tt class="py-comment"># SSL CA certificate section</tt> </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line"> </tt>
+<a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line"> </tt>
+<a name="CaCertInsertionError"></a><div id="CaCertInsertionError-def"><a name="L56"></a><tt class="py-lineno"> 56</tt> <a class="py-toggle" href="#" id="CaCertInsertionError-toggle" onclick="return toggle('CaCertInsertionError');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="backend.satellite_tools.satCerts.CaCertInsertionError-class.html">CaCertInsertionError</a><tt class="py-op">(</tt><tt class="py-base-class">Exception</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="CaCertInsertionError-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="CaCertInsertionError-expanded"><a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line">    <tt class="py-keyword">pass</tt> </tt>
+</div><a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line"> </tt>
+<a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line"> </tt>
+<a name="lookup_cert"></a><div id="lookup_cert-def"><a name="L60"></a><tt class="py-lineno"> 60</tt> <a class="py-toggle" href="#" id="lookup_cert-toggle" onclick="return toggle('lookup_cert');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="backend.satellite_tools.satCerts-module.html#lookup_cert">lookup_cert</a><tt class="py-op">(</tt><tt class="py-param">description</tt><tt class="py-op">,</tt> <tt class="py-param">org_id</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="lookup_cert-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="lookup_cert-expanded"><a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-name">org_id</tt><tt class="py-op">:</tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line">        <tt class="py-name">h</tt> <tt class="py-op">=</tt> <tt id="link-16" class="py-name"><a title="backend.server.rhnSQL" class="py-name" href="#" onclick="return doclink('link-16', 'rhnSQL', 'link-4');">rhnSQL</a></tt><tt class="py-op">.</tt><tt id="link-17" class="py-name"><a title="backend.server.rhnSQL.driver_cx_Oracle.Database.prepare
+backend.server.rhnSQL.driver_postgresql.Database.prepare
+backend.server.rhnSQL.prepare
+backend.server.rhnSQL.sql_base.Cursor.prepare
+backend.server.rhnSQL.sql_base.Database.prepare" class="py-name" href="#" onclick="return doclink('link-17', 'prepare', 'link-9');">prepare</a></tt><tt class="py-op">(</tt><tt id="link-18" class="py-name" targets="Variable backend.satellite_tools.satCerts._querySelectCryptoCertInfo=backend.satellite_tools.satCerts-module.html#_querySelectCryptoCertInfo"><a title="backend.satellite_tools.satCerts._querySelectCryptoCertInfo" class="py-name" href="#" onclick="return doclink('link-18', '_querySelectCryptoCertInfo', 'link-18');">_querySelectCryptoCertInfo</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line">        <tt class="py-name">h</tt><tt class="py-op">.</tt><tt id="link-19" class="py-name"><a title="backend.server.rhnSQL.driver_cx_Oracle.Database.execute
+backend.server.rhnSQL.driver_postgresql.Database.execute
+backend.server.rhnSQL.execute
+backend.server.rhnSQL.sql_base.Cursor.execute
+spacewalkkoan.spacewalkkoan.execute
+virtualization.notification.Plan.execute" class="py-name" href="#" onclick="return doclink('link-19', 'execute', 'link-11');">execute</a></tt><tt class="py-op">(</tt><tt id="link-20" class="py-name" targets="Method backend.server.config_common.templated_document.ServerTemplatedDocument.description()=backend.server.config_common.templated_document.ServerTemplatedDocument-class.html#description"><a title="backend.server.config_common.templated_document.ServerTemplatedDocument.description" class="py-name" href="#" onclick="return doclink('link-20', 'description', 'link-20');">description</a></tt><tt class="py-op">=</tt><tt id="link-21" class="py-name"><a title="backend.server.config_common.templated_document.ServerTemplatedDocument.description" class="py-name" href="#" onclick="return doclink('link-21', 'description', 'link-20');">description</a></tt><tt class="py-op">,</tt> <tt class="py-name">org_id</tt><tt class="py-op">=</tt><tt class="py-name">org_id</tt><tt class="py-op">)</tt> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line">    <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line">        <tt class="py-name">h</tt> <tt class="py-op">=</tt> <tt id="link-22" class="py-name"><a title="backend.server.rhnSQL" class="py-name" href="#" onclick="return doclink('link-22', 'rhnSQL', 'link-4');">rhnSQL</a></tt><tt class="py-op">.</tt><tt id="link-23" class="py-name"><a title="backend.server.rhnSQL.driver_cx_Oracle.Database.prepare
+backend.server.rhnSQL.driver_postgresql.Database.prepare
+backend.server.rhnSQL.prepare
+backend.server.rhnSQL.sql_base.Cursor.prepare
+backend.server.rhnSQL.sql_base.Database.prepare" class="py-name" href="#" onclick="return doclink('link-23', 'prepare', 'link-9');">prepare</a></tt><tt class="py-op">(</tt><tt id="link-24" class="py-name" targets="Variable backend.satellite_tools.satCerts._querySelectCryptoCertInfoNullOrg=backend.satellite_tools.satCerts-module.html#_querySelectCryptoCertInfoNullOrg"><a title="backend.satellite_tools.satCerts._querySelectCryptoCertInfoNullOrg" class="py-name" href="#" onclick="return doclink('link-24', '_querySelectCryptoCertInfoNullOrg', 'link-24');">_querySelectCryptoCertInfoNullOrg</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line">        <tt class="py-name">h</tt><tt class="py-op">.</tt><tt id="link-25" class="py-name"><a title="backend.server.rhnSQL.driver_cx_Oracle.Database.execute
+backend.server.rhnSQL.driver_postgresql.Database.execute
+backend.server.rhnSQL.execute
+backend.server.rhnSQL.sql_base.Cursor.execute
+spacewalkkoan.spacewalkkoan.execute
+virtualization.notification.Plan.execute" class="py-name" href="#" onclick="return doclink('link-25', 'execute', 'link-11');">execute</a></tt><tt class="py-op">(</tt><tt id="link-26" class="py-name"><a title="backend.server.config_common.templated_document.ServerTemplatedDocument.description" class="py-name" href="#" onclick="return doclink('link-26', 'description', 'link-20');">description</a></tt><tt class="py-op">=</tt><tt id="link-27" class="py-name"><a title="backend.server.config_common.templated_document.ServerTemplatedDocument.description" class="py-name" href="#" onclick="return doclink('link-27', 'description', 'link-20');">description</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line"> </tt>
+<a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line">    <tt class="py-name">row</tt> <tt class="py-op">=</tt> <tt class="py-name">h</tt><tt class="py-op">.</tt><tt id="link-28" class="py-name" targets="Method backend.satellite_tools.disk_dumper.dumper.CachedQueryIterator.fetchone_dict()=backend.satellite_tools.disk_dumper.dumper.CachedQueryIterator-class.html#fetchone_dict,Method backend.satellite_tools.disk_dumper.dumper.QueryIterator.fetchone_dict()=backend.satellite_tools.disk_dumper.dumper.QueryIterator-class.html#fetchone_dict,Method backend.satellite_tools.exporter.exportLib.ArrayIterator.fetchone_dict()=backend.satellite_tools.exporter.exportLib.ArrayIterator-class.html#fetchone_dict,Function backend.server.rhnSQL.fetchone_dict()=backend.server.rhnSQL-module.html#fetchone_dict,Method backend.server.rhnSQL.sql_base.Cursor.fetchone_dict()=backend.server.rhnSQL.sql_base.Cursor-class.html#fetchone_dict"><a title="backend.satellite_tools.disk_dumper.dumper.CachedQueryIterator.fetchone_dict
+backend.satellite_tools.disk_dumper.dumper.QueryIterator.fetchone_dict
+backend.satellite_tools.exporter.exportLib.ArrayIterator.fetchone_dict
+backend.server.rhnSQL.fetchone_dict
+backend.server.rhnSQL.sql_base.Cursor.fetchone_dict" class="py-name" href="#" onclick="return doclink('link-28', 'fetchone_dict', 'link-28');">fetchone_dict</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">row</tt> </tt>
+</div><a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line"> </tt>
+<a name="_checkCertMatch_rhnCryptoKey"></a><div id="_checkCertMatch_rhnCryptoKey-def"><a name="L71"></a><tt class="py-lineno"> 71</tt> <a class="py-toggle" href="#" id="_checkCertMatch_rhnCryptoKey-toggle" onclick="return toggle('_checkCertMatch_rhnCryptoKey');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="backend.satellite_tools.satCerts-module.html#_checkCertMatch_rhnCryptoKey">_checkCertMatch_rhnCryptoKey</a><tt class="py-op">(</tt><tt class="py-param">cert</tt><tt class="py-op">,</tt> <tt class="py-param">description</tt><tt class="py-op">,</tt> <tt class="py-param">org_id</tt><tt class="py-op">,</tt> <tt class="py-param">deleteRowYN</tt><tt class="py-op">=</tt><tt class="py-number">0</tt><tt class="py-op">,</tt> </tt>
+<a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line">                                 <tt class="py-param">verbosity</tt><tt class="py-op">=</tt><tt class="py-number">0</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="_checkCertMatch_rhnCryptoKey-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="_checkCertMatch_rhnCryptoKey-expanded"><a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line">    <tt class="py-docstring">""" is there an CA SSL certificate already in the database?</tt> </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line"><tt class="py-docstring">        If yes:</tt> </tt>
+<a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line"><tt class="py-docstring">            return ID:</tt> </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line"><tt class="py-docstring">              -1, then no cert in DB</tt> </tt>
+<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line"><tt class="py-docstring">              None if they are identical (i.e., nothing to do)</tt> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line"><tt class="py-docstring">              0...N if cert is in database</tt> </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line"><tt class="py-docstring">        if found, optionally deletes the row and returns -1</tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line"><tt class="py-docstring">        Used ONLY by: store_rhnCryptoKey(...)</tt> </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line"> </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line">    <tt class="py-name">row</tt> <tt class="py-op">=</tt> <tt id="link-29" class="py-name" targets="Function backend.satellite_tools.satCerts.lookup_cert()=backend.satellite_tools.satCerts-module.html#lookup_cert"><a title="backend.satellite_tools.satCerts.lookup_cert" class="py-name" href="#" onclick="return doclink('link-29', 'lookup_cert', 'link-29');">lookup_cert</a></tt><tt class="py-op">(</tt><tt id="link-30" class="py-name"><a title="backend.server.config_common.templated_document.ServerTemplatedDocument.description" class="py-name" href="#" onclick="return doclink('link-30', 'description', 'link-20');">description</a></tt><tt class="py-op">,</tt> <tt class="py-name">org_id</tt><tt class="py-op">)</tt> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line">    <tt class="py-name">rhn_cryptokey_id</tt> <tt class="py-op">=</tt> <tt class="py-op">-</tt><tt class="py-number">1</tt> </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-name">row</tt><tt class="py-op">:</tt> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt id="link-31" class="py-name" targets="Module backend.server.handlers.sat.cert=backend.server.handlers.sat.cert-module.html"><a title="backend.server.handlers.sat.cert" class="py-name" href="#" onclick="return doclink('link-31', 'cert', 'link-31');">cert</a></tt> <tt class="py-op">==</tt> <tt id="link-32" class="py-name"><a title="backend.server.rhnSQL" class="py-name" href="#" onclick="return doclink('link-32', 'rhnSQL', 'link-4');">rhnSQL</a></tt><tt class="py-op">.</tt><tt id="link-33" class="py-name" targets="Function backend.server.rhnSQL.read_lob()=backend.server.rhnSQL-module.html#read_lob"><a title="backend.server.rhnSQL.read_lob" class="py-name" href="#" onclick="return doclink('link-33', 'read_lob', 'link-33');">read_lob</a></tt><tt class="py-op">(</tt><tt class="py-name">row</tt><tt class="py-op">[</tt><tt class="py-string">'key'</tt><tt class="py-op">]</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line">            <tt class="py-comment"># match found, nothing to do</tt> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">verbosity</tt><tt class="py-op">:</tt> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line">                <tt class="py-keyword">print</tt><tt class="py-op">(</tt><tt class="py-string">"Nothing to do: certificate to be pushed matches certificate in database."</tt><tt class="py-op">)</tt> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line">        <tt class="py-comment"># there can only be one (bugzilla: 120297)</tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line">        <tt class="py-name">rhn_cryptokey_id</tt> <tt class="py-op">=</tt> <tt id="link-34" class="py-name" targets="Class int=int-class.html"><a title="int" class="py-name" href="#" onclick="return doclink('link-34', 'int', 'link-34');">int</a></tt><tt class="py-op">(</tt><tt class="py-name">row</tt><tt class="py-op">[</tt><tt class="py-string">'id'</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line">        <tt class="py-comment"># print 'found existing certificate - id:', rhn_cryptokey_id</tt> </tt>
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line">        <tt class="py-comment"># NUKE IT!</tt> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">deleteRowYN</tt><tt class="py-op">:</tt> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line">            <tt class="py-comment"># print 'found a cert, nuking it! id:', rhn_cryptokey_id</tt> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line">            <tt class="py-name">h</tt> <tt class="py-op">=</tt> <tt id="link-35" class="py-name"><a title="backend.server.rhnSQL" class="py-name" href="#" onclick="return doclink('link-35', 'rhnSQL', 'link-4');">rhnSQL</a></tt><tt class="py-op">.</tt><tt id="link-36" class="py-name"><a title="backend.server.rhnSQL.driver_cx_Oracle.Database.prepare
+backend.server.rhnSQL.driver_postgresql.Database.prepare
+backend.server.rhnSQL.prepare
+backend.server.rhnSQL.sql_base.Cursor.prepare
+backend.server.rhnSQL.sql_base.Database.prepare" class="py-name" href="#" onclick="return doclink('link-36', 'prepare', 'link-9');">prepare</a></tt><tt class="py-op">(</tt><tt class="py-string">'delete from rhnCryptoKey where id=:rhn_cryptokey_id'</tt><tt class="py-op">)</tt> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line">            <tt class="py-name">h</tt><tt class="py-op">.</tt><tt id="link-37" class="py-name"><a title="backend.server.rhnSQL.driver_cx_Oracle.Database.execute
+backend.server.rhnSQL.driver_postgresql.Database.execute
+backend.server.rhnSQL.execute
+backend.server.rhnSQL.sql_base.Cursor.execute
+spacewalkkoan.spacewalkkoan.execute
+virtualization.notification.Plan.execute" class="py-name" href="#" onclick="return doclink('link-37', 'execute', 'link-11');">execute</a></tt><tt class="py-op">(</tt><tt class="py-name">rhn_cryptokey_id</tt><tt class="py-op">=</tt><tt class="py-name">rhn_cryptokey_id</tt><tt class="py-op">)</tt> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line">            <tt class="py-comment"># rhnSQL.commit()</tt> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line">            <tt class="py-name">rhn_cryptokey_id</tt> <tt class="py-op">=</tt> <tt class="py-op">-</tt><tt class="py-number">1</tt> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">rhn_cryptokey_id</tt> </tt>
+</div><a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line"> </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line"> </tt>
+<a name="_insertPrep_rhnCryptoKey"></a><div id="_insertPrep_rhnCryptoKey-def"><a name="L105"></a><tt class="py-lineno">105</tt> <a class="py-toggle" href="#" id="_insertPrep_rhnCryptoKey-toggle" onclick="return toggle('_insertPrep_rhnCryptoKey');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="backend.satellite_tools.satCerts-module.html#_insertPrep_rhnCryptoKey">_insertPrep_rhnCryptoKey</a><tt class="py-op">(</tt><tt class="py-param">rhn_cryptokey_id</tt><tt class="py-op">,</tt> <tt class="py-param">description</tt><tt class="py-op">,</tt> <tt class="py-param">org_id</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="_insertPrep_rhnCryptoKey-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="_insertPrep_rhnCryptoKey-expanded"><a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line">    <tt class="py-docstring">""" inserts a row given that a cert is not already in the database</tt> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line"><tt class="py-docstring">        lob rewrite occurs later during update.</tt> </tt>
+<a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line"><tt class="py-docstring">        Used ONLY by: store_rhnCryptoKey(...)</tt> </tt>
+<a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line"> </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line">    <tt class="py-comment"># NOTE: due to a uniqueness constraint on description</tt> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line">    <tt class="py-comment">#       we can't increment and reinsert a row, so we only</tt> </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line">    <tt class="py-comment">#       do so if the row does not exist.</tt> </tt>
+<a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line">    <tt class="py-comment">#       bugzilla: 120297 - and no I don't like it.</tt> </tt>
+<a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line">    <tt class="py-name">rhn_cryptokey_id_seq</tt> <tt class="py-op">=</tt> <tt id="link-38" class="py-name"><a title="backend.server.rhnSQL" class="py-name" href="#" onclick="return doclink('link-38', 'rhnSQL', 'link-4');">rhnSQL</a></tt><tt class="py-op">.</tt><tt id="link-39" class="py-name" targets="Function backend.server.rhnSQL.Sequence()=backend.server.rhnSQL-module.html#Sequence,Class backend.server.rhnSQL.sql_sequence.Sequence=backend.server.rhnSQL.sql_sequence.Sequence-class.html"><a title="backend.server.rhnSQL.Sequence
+backend.server.rhnSQL.sql_sequence.Sequence" class="py-name" href="#" onclick="return doclink('link-39', 'Sequence', 'link-39');">Sequence</a></tt><tt class="py-op">(</tt><tt class="py-string">'rhn_cryptokey_id_seq'</tt><tt class="py-op">)</tt> </tt>
+<a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line">    <tt class="py-name">rhn_cryptokey_id</tt> <tt class="py-op">=</tt> <tt class="py-name">rhn_cryptokey_id_seq</tt><tt class="py-op">.</tt><tt id="link-40" class="py-name" targets="Method backend.common.rhn_rpm.MatchIterator.next()=backend.common.rhn_rpm.MatchIterator-class.html#next,Method backend.server.rhnSQL.sql_sequence.Sequence.next()=backend.server.rhnSQL.sql_sequence.Sequence-class.html#next,Method up2date_client.rpcServer.ServerList.next()=up2date_client.rpcServer.ServerList-class.html#next"><a title="backend.common.rhn_rpm.MatchIterator.next
+backend.server.rhnSQL.sql_sequence.Sequence.next
+up2date_client.rpcServer.ServerList.next" class="py-name" href="#" onclick="return doclink('link-40', 'next', 'link-40');">next</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line">    <tt class="py-comment"># print 'no cert found, new one with id:', rhn_cryptokey_id</tt> </tt>
+<a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line">    <tt class="py-name">h</tt> <tt class="py-op">=</tt> <tt id="link-41" class="py-name"><a title="backend.server.rhnSQL" class="py-name" href="#" onclick="return doclink('link-41', 'rhnSQL', 'link-4');">rhnSQL</a></tt><tt class="py-op">.</tt><tt id="link-42" class="py-name"><a title="backend.server.rhnSQL.driver_cx_Oracle.Database.prepare
+backend.server.rhnSQL.driver_postgresql.Database.prepare
+backend.server.rhnSQL.prepare
+backend.server.rhnSQL.sql_base.Cursor.prepare
+backend.server.rhnSQL.sql_base.Database.prepare" class="py-name" href="#" onclick="return doclink('link-42', 'prepare', 'link-9');">prepare</a></tt><tt class="py-op">(</tt><tt id="link-43" class="py-name" targets="Variable backend.satellite_tools.satCerts._queryInsertCryptoCertInfo=backend.satellite_tools.satCerts-module.html#_queryInsertCryptoCertInfo"><a title="backend.satellite_tools.satCerts._queryInsertCryptoCertInfo" class="py-name" href="#" onclick="return doclink('link-43', '_queryInsertCryptoCertInfo', 'link-43');">_queryInsertCryptoCertInfo</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line">    <tt class="py-comment"># ...insert</tt> </tt>
+<a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line">    <tt class="py-name">h</tt><tt class="py-op">.</tt><tt id="link-44" class="py-name"><a title="backend.server.rhnSQL.driver_cx_Oracle.Database.execute
+backend.server.rhnSQL.driver_postgresql.Database.execute
+backend.server.rhnSQL.execute
+backend.server.rhnSQL.sql_base.Cursor.execute
+spacewalkkoan.spacewalkkoan.execute
+virtualization.notification.Plan.execute" class="py-name" href="#" onclick="return doclink('link-44', 'execute', 'link-11');">execute</a></tt><tt class="py-op">(</tt><tt class="py-name">rhn_cryptokey_id</tt><tt class="py-op">=</tt><tt class="py-name">rhn_cryptokey_id</tt><tt class="py-op">,</tt> </tt>
+<a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line">              <tt id="link-45" class="py-name"><a title="backend.server.config_common.templated_document.ServerTemplatedDocument.description" class="py-name" href="#" onclick="return doclink('link-45', 'description', 'link-20');">description</a></tt><tt class="py-op">=</tt><tt id="link-46" class="py-name"><a title="backend.server.config_common.templated_document.ServerTemplatedDocument.description" class="py-name" href="#" onclick="return doclink('link-46', 'description', 'link-20');">description</a></tt><tt class="py-op">,</tt> <tt class="py-name">org_id</tt><tt class="py-op">=</tt><tt class="py-name">org_id</tt><tt class="py-op">)</tt> </tt>
+<a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">rhn_cryptokey_id</tt> </tt>
+</div><a name="L123"></a><tt class="py-lineno">123</tt>  <tt class="py-line"> </tt>
+<a name="L124"></a><tt class="py-lineno">124</tt>  <tt class="py-line"> </tt>
+<a name="_lobUpdate_rhnCryptoKey"></a><div id="_lobUpdate_rhnCryptoKey-def"><a name="L125"></a><tt class="py-lineno">125</tt> <a class="py-toggle" href="#" id="_lobUpdate_rhnCryptoKey-toggle" onclick="return toggle('_lobUpdate_rhnCryptoKey');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="backend.satellite_tools.satCerts-module.html#_lobUpdate_rhnCryptoKey">_lobUpdate_rhnCryptoKey</a><tt class="py-op">(</tt><tt class="py-param">rhn_cryptokey_id</tt><tt class="py-op">,</tt> <tt class="py-param">cert</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="_lobUpdate_rhnCryptoKey-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="_lobUpdate_rhnCryptoKey-expanded"><a name="L126"></a><tt class="py-lineno">126</tt>  <tt class="py-line">    <tt class="py-docstring">""" writes/updates the cert as a lob """</tt> </tt>
+<a name="L127"></a><tt class="py-lineno">127</tt>  <tt class="py-line"> </tt>
+<a name="L128"></a><tt class="py-lineno">128</tt>  <tt class="py-line">    <tt class="py-comment"># Use our update blob wrapper to accomodate differences between Oracle</tt> </tt>
+<a name="L129"></a><tt class="py-lineno">129</tt>  <tt class="py-line">    <tt class="py-comment"># and PostgreSQL:</tt> </tt>
+<a name="L130"></a><tt class="py-lineno">130</tt>  <tt class="py-line">    <tt class="py-name">h</tt> <tt class="py-op">=</tt> <tt id="link-47" class="py-name"><a title="backend.server.rhnSQL" class="py-name" href="#" onclick="return doclink('link-47', 'rhnSQL', 'link-4');">rhnSQL</a></tt><tt class="py-op">.</tt><tt id="link-48" class="py-name" targets="Function backend.server.rhnSQL.cursor()=backend.server.rhnSQL-module.html#cursor,Method backend.server.rhnSQL.driver_cx_Oracle.Database.cursor()=backend.server.rhnSQL.driver_cx_Oracle.Database-class.html#cursor,Method backend.server.rhnSQL.driver_postgresql.Database.cursor()=backend.server.rhnSQL.driver_postgresql.Database-class.html#cursor,Method backend.server.rhnSQL.sql_base.Database.cursor()=backend.server.rhnSQL.sql_base.Database-class.html#cursor"><a title="backend.server.rhnSQL.cursor
+backend.server.rhnSQL.driver_cx_Oracle.Database.cursor
+backend.server.rhnSQL.driver_postgresql.Database.cursor
+backend.server.rhnSQL.sql_base.Database.cursor" class="py-name" href="#" onclick="return doclink('link-48', 'cursor', 'link-48');">cursor</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L131"></a><tt class="py-lineno">131</tt>  <tt class="py-line">    <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L132"></a><tt class="py-lineno">132</tt>  <tt class="py-line">        <tt class="py-name">h</tt><tt class="py-op">.</tt><tt id="link-49" class="py-name" targets="Method backend.server.rhnSQL.driver_cx_Oracle.Cursor.update_blob()=backend.server.rhnSQL.driver_cx_Oracle.Cursor-class.html#update_blob,Method backend.server.rhnSQL.driver_postgresql.Cursor.update_blob()=backend.server.rhnSQL.driver_postgresql.Cursor-class.html#update_blob,Method backend.server.rhnSQL.sql_base.Cursor.update_blob()=backend.server.rhnSQL.sql_base.Cursor-class.html#update_blob"><a title="backend.server.rhnSQL.driver_cx_Oracle.Cursor.update_blob
+backend.server.rhnSQL.driver_postgresql.Cursor.update_blob
+backend.server.rhnSQL.sql_base.Cursor.update_blob" class="py-name" href="#" onclick="return doclink('link-49', 'update_blob', 'link-49');">update_blob</a></tt><tt class="py-op">(</tt><tt class="py-string">"rhnCryptoKey"</tt><tt class="py-op">,</tt> <tt class="py-string">"key"</tt><tt class="py-op">,</tt> <tt class="py-string">"WHERE id = :rhn_cryptokey_id"</tt><tt class="py-op">,</tt> </tt>
+<a name="L133"></a><tt class="py-lineno">133</tt>  <tt class="py-line">                      <tt id="link-50" class="py-name"><a title="backend.server.handlers.sat.cert" class="py-name" href="#" onclick="return doclink('link-50', 'cert', 'link-31');">cert</a></tt><tt class="py-op">,</tt> <tt class="py-name">rhn_cryptokey_id</tt><tt class="py-op">=</tt><tt class="py-name">rhn_cryptokey_id</tt><tt class="py-op">)</tt> </tt>
+<a name="L134"></a><tt class="py-lineno">134</tt>  <tt class="py-line">    <tt class="py-keyword">except</tt><tt class="py-op">:</tt> </tt>
+<a name="L135"></a><tt class="py-lineno">135</tt>  <tt class="py-line">        <tt class="py-comment"># didn't go in!</tt> </tt>
+<a name="L136"></a><tt class="py-lineno">136</tt>  <tt class="py-line">        <tt id="link-51" class="py-name"><a title="backend.common.usix.raise_with_tb
+rhn.tb.raise_with_tb" class="py-name" href="#" onclick="return doclink('link-51', 'raise_with_tb', 'link-2');">raise_with_tb</a></tt><tt class="py-op">(</tt><tt id="link-52" class="py-name" targets="Class backend.satellite_tools.rhn_satellite_activate.CaCertInsertionError=backend.satellite_tools.rhn_satellite_activate.CaCertInsertionError-class.html,Class backend.satellite_tools.satCerts.CaCertInsertionError=backend.satellite_tools.satCerts.CaCertInsertionError-class.html"><a title="backend.satellite_tools.rhn_satellite_activate.CaCertInsertionError
+backend.satellite_tools.satCerts.CaCertInsertionError" class="py-name" href="#" onclick="return doclink('link-52', 'CaCertInsertionError', 'link-52');">CaCertInsertionError</a></tt><tt class="py-op">(</tt><tt class="py-string">"ERROR: CA certificate failed to be "</tt> </tt>
+<a name="L137"></a><tt class="py-lineno">137</tt>  <tt class="py-line">                                           <tt class="py-string">"inserted into the database"</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">exc_info</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">[</tt><tt class="py-number">2</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L138"></a><tt class="py-lineno">138</tt>  <tt class="py-line"> </tt>
+<a name="L139"></a><tt class="py-lineno">139</tt>  <tt class="py-line"> </tt>
+<a name="store_CaCert"></a><div id="store_CaCert-def"><a name="L140"></a><tt class="py-lineno">140</tt> <a class="py-toggle" href="#" id="store_CaCert-toggle" onclick="return toggle('store_CaCert');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="backend.satellite_tools.satCerts-module.html#store_CaCert">store_CaCert</a><tt class="py-op">(</tt><tt class="py-param">description</tt><tt class="py-op">,</tt> <tt class="py-param">caCert</tt><tt class="py-op">,</tt> <tt class="py-param">verbosity</tt><tt class="py-op">=</tt><tt class="py-number">0</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="store_CaCert-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="store_CaCert-expanded"><a name="L141"></a><tt class="py-lineno">141</tt>  <tt class="py-line">    <tt class="py-name">org_ids</tt> <tt class="py-op">=</tt> <tt id="link-53" class="py-name" targets="Function backend.satellite_tools.satCerts.get_all_orgs()=backend.satellite_tools.satCerts-module.html#get_all_orgs"><a title="backend.satellite_tools.satCerts.get_all_orgs" class="py-name" href="#" onclick="return doclink('link-53', 'get_all_orgs', 'link-53');">get_all_orgs</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L142"></a><tt class="py-lineno">142</tt>  <tt class="py-line">    <tt class="py-name">org_ids</tt><tt class="py-op">.</tt><tt id="link-54" class="py-name" targets="Method backend.server.importlib.importLib.Collection.append()=backend.server.importlib.importLib.Collection-class.html#append"><a title="backend.server.importlib.importLib.Collection.append" class="py-name" href="#" onclick="return doclink('link-54', 'append', 'link-54');">append</a></tt><tt class="py-op">(</tt><tt class="py-op">{</tt><tt class="py-string">'id'</tt><tt class="py-op">:</tt> <tt class="py-name">None</tt><tt class="py-op">}</tt><tt class="py-op">)</tt> </tt>
+<a name="L143"></a><tt class="py-lineno">143</tt>  <tt class="py-line">    <tt class="py-name">f</tt> <tt class="py-op">=</tt> <tt class="py-name">open</tt><tt class="py-op">(</tt><tt class="py-name">caCert</tt><tt class="py-op">,</tt> <tt class="py-string">'rb'</tt><tt class="py-op">)</tt> </tt>
+<a name="L144"></a><tt class="py-lineno">144</tt>  <tt class="py-line">    <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L145"></a><tt class="py-lineno">145</tt>  <tt class="py-line">        <tt id="link-55" class="py-name"><a title="backend.server.handlers.sat.cert" class="py-name" href="#" onclick="return doclink('link-55', 'cert', 'link-31');">cert</a></tt> <tt class="py-op">=</tt> <tt class="py-name">f</tt><tt class="py-op">.</tt><tt id="link-56" class="py-name" targets="Method backend.wsgi.wsgiRequest.WsgiRequest.read()=backend.wsgi.wsgiRequest.WsgiRequest-class.html#read,Method rhn.SSL.SSLSocket.read()=rhn.SSL.SSLSocket-class.html#read,Method rhn.nonblocking.NonBlockingFile.read()=rhn.nonblocking.NonBlockingFile-class.html#read,Method rhn.transports.File.read()=rhn.transports.File-class.html#read,Method rhn.transports.Input.read()=rhn.transports.Input-class.html#read,Method rhnkickstart.lilo.LiloConfigFile.read()=rhnkickstart.lilo.LiloConfigFile-class.html#read,Method rhnpush.archive.ArchiveParser.read()=rhnpush.archive.ArchiveParser-class.html#read,Method src.jabber_lib.JabberClient.read()=src.jabber_lib.JabberClient-class.html#read"><a title="backend.wsgi.wsgiRequest.WsgiRequest.read
+rhn.SSL.SSLSocket.read
+rhn.nonblocking.NonBlockingFile.read
+rhn.transports.File.read
+rhn.transports.Input.read
+rhnkickstart.lilo.LiloConfigFile.read
+rhnpush.archive.ArchiveParser.read
+src.jabber_lib.JabberClient.read" class="py-name" href="#" onclick="return doclink('link-56', 'read', 'link-56');">read</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-57" class="py-name" targets="Method backend.server.config_common.base_templated_document.TemplatedDocument.strip()=backend.server.config_common.base_templated_document.TemplatedDocument-class.html#strip"><a title="backend.server.config_common.base_templated_document.TemplatedDocument.strip" class="py-name" href="#" onclick="return doclink('link-57', 'strip', 'link-57');">strip</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L146"></a><tt class="py-lineno">146</tt>  <tt class="py-line">    <tt class="py-keyword">finally</tt><tt class="py-op">:</tt> </tt>
+<a name="L147"></a><tt class="py-lineno">147</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">f</tt> <tt class="py-keyword">is</tt> <tt class="py-keyword">not</tt> <tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L148"></a><tt class="py-lineno">148</tt>  <tt class="py-line">            <tt class="py-name">f</tt><tt class="py-op">.</tt><tt id="link-58" class="py-name" targets="Method backend.common.rhnCache.ClosingZipFile.close()=backend.common.rhnCache.ClosingZipFile-class.html#close,Method backend.common.rhnCache.LockedFile.close()=backend.common.rhnCache.LockedFile-class.html#close,Method backend.satellite_exporter.handlers.non_auth_dumper.NonAuthenticatedDumper.close()=backend.satellite_exporter.handlers.non_auth_dumper.NonAuthenticatedDumper-class.html#close,Method backend.satellite_tools.connection.CompressedStream.close()=backend.satellite_tools.connection.CompressedStream-class.html#close,Method backend.satellite_tools.disk_dumper.dumper.CachedQueryIterator.close()=backend.satellite_tools.disk_dumper.dumper.CachedQueryIterator-class.html#close,Method backend.satellite_tools.disk_dumper.dumper.XML_Dumper.close()=backend.satellite_tools.disk_dumper.dumper.XML_Dumper-class.html#close,Method backend.satellite_tools.disk_dumper.iss.Dumper.close()=backend.satellite_tools.disk_dumper.iss.Dumper-class.html#close,Method backend.satellite_tools.disk_dumper.string_buffer.StringBuffer.close()=backend.satellite_tools.disk_dumper.string_buffer.StringBuffer-class.html#close,Method backend.satellite_tools.satsync.StreamProducer.close()=backend.satellite_tools.satsync.StreamProducer-class.html#close,Method backend.satellite_tools.sync_handlers.ContainerHandler.close()=backend.satellite_tools.sync_handlers.ContainerHandler-class.html#close,Method backend.satellite_tools.xmlSource.BaseDispatchHandler.close()=backend.satellite_tools.xmlSource.BaseDispatchHandler-class.html#close,Method backend.server.rhnSQL.driver_cx_Oracle.Database.close()=backend.server.rhnSQL.driver_cx_Oracle.Database-class.html#close,Method backend.server.rhnSQL.driver_postgresql.Cursor.close()=backend.server.rhnSQL.driver_postgresql.Cursor-class.html#close,Method backend.server.rhnSQL.sql_base.Database.close()=backend.server.rhnSQL.sql_base.Database-class.html#close,Method proxy.responseContext.ResponseContext.close()=proxy.responseContext.ResponseContext-class.html#close,Method rhn.SSL.SSLSocket.close()=rhn.SSL.SSLSocket-class.html#close,Method rhn.rpclib.Server.close()=rhn.rpclib.Server-class.html#close,Method rhn.transports.BaseOutput.close()=rhn.transports.BaseOutput-class.html#close,Method up2date_client.rhnregGui.NetworkConfigDialog.close()=up2date_client.rhnregGui.NetworkConfigDialog-class.html#close"><a title="backend.common.rhnCache.ClosingZipFile.close
+backend.common.rhnCache.LockedFile.close
+backend.satellite_exporter.handlers.non_auth_dumper.NonAuthenticatedDumper.close
+backend.satellite_tools.connection.CompressedStream.close
+backend.satellite_tools.disk_dumper.dumper.CachedQueryIterator.close
+backend.satellite_tools.disk_dumper.dumper.XML_Dumper.close
+backend.satellite_tools.disk_dumper.iss.Dumper.close
+backend.satellite_tools.disk_dumper.string_buffer.StringBuffer.close
+backend.satellite_tools.satsync.StreamProducer.close
+backend.satellite_tools.sync_handlers.ContainerHandler.close
+backend.satellite_tools.xmlSource.BaseDispatchHandler.close
+backend.server.rhnSQL.driver_cx_Oracle.Database.close
+backend.server.rhnSQL.driver_postgresql.Cursor.close
+backend.server.rhnSQL.sql_base.Database.close
+proxy.responseContext.ResponseContext.close
+rhn.SSL.SSLSocket.close
+rhn.rpclib.Server.close
+rhn.transports.BaseOutput.close
+up2date_client.rhnregGui.NetworkConfigDialog.close" class="py-name" href="#" onclick="return doclink('link-58', 'close', 'link-58');">close</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L149"></a><tt class="py-lineno">149</tt>  <tt class="py-line">    <tt class="py-keyword">for</tt> <tt class="py-name">org_id</tt> <tt class="py-keyword">in</tt> <tt class="py-name">org_ids</tt><tt class="py-op">:</tt> </tt>
+<a name="L150"></a><tt class="py-lineno">150</tt>  <tt class="py-line">        <tt class="py-name">org_id</tt> <tt class="py-op">=</tt> <tt class="py-name">org_id</tt><tt class="py-op">[</tt><tt class="py-string">'id'</tt><tt class="py-op">]</tt> </tt>
+<a name="L151"></a><tt class="py-lineno">151</tt>  <tt class="py-line">        <tt id="link-59" class="py-name" targets="Function backend.satellite_tools.satCerts.store_rhnCryptoKey()=backend.satellite_tools.satCerts-module.html#store_rhnCryptoKey"><a title="backend.satellite_tools.satCerts.store_rhnCryptoKey" class="py-name" href="#" onclick="return doclink('link-59', 'store_rhnCryptoKey', 'link-59');">store_rhnCryptoKey</a></tt><tt class="py-op">(</tt><tt id="link-60" class="py-name"><a title="backend.server.config_common.templated_document.ServerTemplatedDocument.description" class="py-name" href="#" onclick="return doclink('link-60', 'description', 'link-20');">description</a></tt><tt class="py-op">,</tt> <tt id="link-61" class="py-name"><a title="backend.server.handlers.sat.cert" class="py-name" href="#" onclick="return doclink('link-61', 'cert', 'link-31');">cert</a></tt><tt class="py-op">,</tt> <tt class="py-name">org_id</tt><tt class="py-op">,</tt> <tt class="py-name">verbosity</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L152"></a><tt class="py-lineno">152</tt>  <tt class="py-line"> </tt>
+<a name="store_rhnCryptoKey"></a><div id="store_rhnCryptoKey-def"><a name="L153"></a><tt class="py-lineno">153</tt> <a class="py-toggle" href="#" id="store_rhnCryptoKey-toggle" onclick="return toggle('store_rhnCryptoKey');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="backend.satellite_tools.satCerts-module.html#store_rhnCryptoKey">store_rhnCryptoKey</a><tt class="py-op">(</tt><tt class="py-param">description</tt><tt class="py-op">,</tt> <tt class="py-param">cert</tt><tt class="py-op">,</tt> <tt class="py-param">org_id</tt><tt class="py-op">,</tt> <tt class="py-param">verbosity</tt><tt class="py-op">=</tt><tt class="py-number">0</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="store_rhnCryptoKey-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="store_rhnCryptoKey-expanded"><a name="L154"></a><tt class="py-lineno">154</tt>  <tt class="py-line">    <tt class="py-docstring">""" stores cert in rhnCryptoKey</tt> </tt>
+<a name="L155"></a><tt class="py-lineno">155</tt>  <tt class="py-line"><tt class="py-docstring">        uses:</tt> </tt>
+<a name="L156"></a><tt class="py-lineno">156</tt>  <tt class="py-line"><tt class="py-docstring">            _checkCertMatch_rhnCryptoKey</tt> </tt>
+<a name="L157"></a><tt class="py-lineno">157</tt>  <tt class="py-line"><tt class="py-docstring">            _delete_rhnCryptoKey - not currently used</tt> </tt>
+<a name="L158"></a><tt class="py-lineno">158</tt>  <tt class="py-line"><tt class="py-docstring">            _insertPrep_rhnCryptoKey</tt> </tt>
+<a name="L159"></a><tt class="py-lineno">159</tt>  <tt class="py-line"><tt class="py-docstring">            _lobUpdate_rhnCryptoKey</tt> </tt>
+<a name="L160"></a><tt class="py-lineno">160</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L161"></a><tt class="py-lineno">161</tt>  <tt class="py-line">    <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L162"></a><tt class="py-lineno">162</tt>  <tt class="py-line">        <tt class="py-comment"># look for a cert match in the database</tt> </tt>
+<a name="L163"></a><tt class="py-lineno">163</tt>  <tt class="py-line">        <tt class="py-name">rhn_cryptokey_id</tt> <tt class="py-op">=</tt> <tt id="link-62" class="py-name" targets="Function backend.satellite_tools.satCerts._checkCertMatch_rhnCryptoKey()=backend.satellite_tools.satCerts-module.html#_checkCertMatch_rhnCryptoKey"><a title="backend.satellite_tools.satCerts._checkCertMatch_rhnCryptoKey" class="py-name" href="#" onclick="return doclink('link-62', '_checkCertMatch_rhnCryptoKey', 'link-62');">_checkCertMatch_rhnCryptoKey</a></tt><tt class="py-op">(</tt><tt id="link-63" class="py-name"><a title="backend.server.handlers.sat.cert" class="py-name" href="#" onclick="return doclink('link-63', 'cert', 'link-31');">cert</a></tt><tt class="py-op">,</tt> <tt id="link-64" class="py-name"><a title="backend.server.config_common.templated_document.ServerTemplatedDocument.description" class="py-name" href="#" onclick="return doclink('link-64', 'description', 'link-20');">description</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L164"></a><tt class="py-lineno">164</tt>  <tt class="py-line">                                                        <tt class="py-name">org_id</tt><tt class="py-op">,</tt> <tt class="py-name">deleteRowYN</tt><tt class="py-op">=</tt><tt class="py-number">1</tt><tt class="py-op">,</tt> </tt>
+<a name="L165"></a><tt class="py-lineno">165</tt>  <tt class="py-line">                                                        <tt class="py-name">verbosity</tt><tt class="py-op">=</tt><tt class="py-name">verbosity</tt><tt class="py-op">)</tt> </tt>
+<a name="L166"></a><tt class="py-lineno">166</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">rhn_cryptokey_id</tt> <tt class="py-keyword">is</tt> <tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L167"></a><tt class="py-lineno">167</tt>  <tt class="py-line">            <tt class="py-comment"># nothing to do - cert matches</tt> </tt>
+<a name="L168"></a><tt class="py-lineno">168</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> </tt>
+<a name="L169"></a><tt class="py-lineno">169</tt>  <tt class="py-line">        <tt class="py-comment"># insert into the database</tt> </tt>
+<a name="L170"></a><tt class="py-lineno">170</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">rhn_cryptokey_id</tt> <tt class="py-op">==</tt> <tt class="py-op">-</tt><tt class="py-number">1</tt><tt class="py-op">:</tt> </tt>
+<a name="L171"></a><tt class="py-lineno">171</tt>  <tt class="py-line">            <tt class="py-name">rhn_cryptokey_id</tt> <tt class="py-op">=</tt> <tt id="link-65" class="py-name" targets="Function backend.satellite_tools.satCerts._insertPrep_rhnCryptoKey()=backend.satellite_tools.satCerts-module.html#_insertPrep_rhnCryptoKey"><a title="backend.satellite_tools.satCerts._insertPrep_rhnCryptoKey" class="py-name" href="#" onclick="return doclink('link-65', '_insertPrep_rhnCryptoKey', 'link-65');">_insertPrep_rhnCryptoKey</a></tt><tt class="py-op">(</tt><tt class="py-name">rhn_cryptokey_id</tt><tt class="py-op">,</tt> </tt>
+<a name="L172"></a><tt class="py-lineno">172</tt>  <tt class="py-line">                                                        <tt id="link-66" class="py-name"><a title="backend.server.config_common.templated_document.ServerTemplatedDocument.description" class="py-name" href="#" onclick="return doclink('link-66', 'description', 'link-20');">description</a></tt><tt class="py-op">,</tt> <tt class="py-name">org_id</tt><tt class="py-op">)</tt> </tt>
+<a name="L173"></a><tt class="py-lineno">173</tt>  <tt class="py-line">        <tt class="py-comment"># write/update</tt> </tt>
+<a name="L174"></a><tt class="py-lineno">174</tt>  <tt class="py-line">        <tt id="link-67" class="py-name" targets="Function backend.satellite_tools.satCerts._lobUpdate_rhnCryptoKey()=backend.satellite_tools.satCerts-module.html#_lobUpdate_rhnCryptoKey"><a title="backend.satellite_tools.satCerts._lobUpdate_rhnCryptoKey" class="py-name" href="#" onclick="return doclink('link-67', '_lobUpdate_rhnCryptoKey', 'link-67');">_lobUpdate_rhnCryptoKey</a></tt><tt class="py-op">(</tt><tt class="py-name">rhn_cryptokey_id</tt><tt class="py-op">,</tt> <tt id="link-68" class="py-name"><a title="backend.server.handlers.sat.cert" class="py-name" href="#" onclick="return doclink('link-68', 'cert', 'link-31');">cert</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L175"></a><tt class="py-lineno">175</tt>  <tt class="py-line">        <tt id="link-69" class="py-name"><a title="backend.server.rhnSQL" class="py-name" href="#" onclick="return doclink('link-69', 'rhnSQL', 'link-4');">rhnSQL</a></tt><tt class="py-op">.</tt><tt id="link-70" class="py-name" targets="Method backend.server.importlib.backend.Backend.commit()=backend.server.importlib.backend.Backend-class.html#commit,Function backend.server.rhnSQL.commit()=backend.server.rhnSQL-module.html#commit,Method backend.server.rhnSQL.driver_cx_Oracle.Database.commit()=backend.server.rhnSQL.driver_cx_Oracle.Database-class.html#commit,Method backend.server.rhnSQL.driver_postgresql.Database.commit()=backend.server.rhnSQL.driver_postgresql.Database-class.html#commit,Method backend.server.rhnSQL.sql_base.Database.commit()=backend.server.rhnSQL.sql_base.Database-class.html#commit,Method backend.server.rhnSQL.sql_table.Table.commit()=backend.server.rhnSQL.sql_table.Table-class.html#commit"><a title="backend.server.importlib.backend.Backend.commit
+backend.server.rhnSQL.commit
+backend.server.rhnSQL.driver_cx_Oracle.Database.commit
+backend.server.rhnSQL.driver_postgresql.Database.commit
+backend.server.rhnSQL.sql_base.Database.commit
+backend.server.rhnSQL.sql_table.Table.commit" class="py-name" href="#" onclick="return doclink('link-70', 'commit', 'link-70');">commit</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L176"></a><tt class="py-lineno">176</tt>  <tt class="py-line">    <tt class="py-keyword">except</tt> <tt id="link-71" class="py-name"><a title="backend.server.rhnSQL" class="py-name" href="#" onclick="return doclink('link-71', 'rhnSQL', 'link-4');">rhnSQL</a></tt><tt class="py-op">.</tt><tt id="link-72" class="py-name" targets="Module backend.server.rhnSQL.sql_base=backend.server.rhnSQL.sql_base-module.html"><a title="backend.server.rhnSQL.sql_base" class="py-name" href="#" onclick="return doclink('link-72', 'sql_base', 'link-72');">sql_base</a></tt><tt class="py-op">.</tt><tt id="link-73" class="py-name" targets="Class backend.server.rhnSQL.sql_base.SQLError=backend.server.rhnSQL.sql_base.SQLError-class.html"><a title="backend.server.rhnSQL.sql_base.SQLError" class="py-name" href="#" onclick="return doclink('link-73', 'SQLError', 'link-73');">SQLError</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L177"></a><tt class="py-lineno">177</tt>  <tt class="py-line">        <tt id="link-74" class="py-name"><a title="backend.common.usix.raise_with_tb
+rhn.tb.raise_with_tb" class="py-name" href="#" onclick="return doclink('link-74', 'raise_with_tb', 'link-2');">raise_with_tb</a></tt><tt class="py-op">(</tt><tt id="link-75" class="py-name"><a title="backend.satellite_tools.rhn_satellite_activate.CaCertInsertionError
+backend.satellite_tools.satCerts.CaCertInsertionError" class="py-name" href="#" onclick="return doclink('link-75', 'CaCertInsertionError', 'link-52');">CaCertInsertionError</a></tt><tt class="py-op">(</tt> </tt>
+<a name="L178"></a><tt class="py-lineno">178</tt>  <tt class="py-line">            <tt class="py-string">"...the traceback: %s"</tt> <tt class="py-op">%</tt> <tt id="link-76" class="py-name"><a title="backend.common.rhnTB.fetchTraceback" class="py-name" href="#" onclick="return doclink('link-76', 'fetchTraceback', 'link-7');">fetchTraceback</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">exc_info</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">[</tt><tt class="py-number">2</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L179"></a><tt class="py-lineno">179</tt>  <tt class="py-line"> </tt>
+<a name="L180"></a><tt class="py-lineno">180</tt>  <tt class="py-line"> </tt>
+<a name="delete_rhnCryptoKey_null_org"></a><div id="delete_rhnCryptoKey_null_org-def"><a name="L181"></a><tt class="py-lineno">181</tt> <a class="py-toggle" href="#" id="delete_rhnCryptoKey_null_org-toggle" onclick="return toggle('delete_rhnCryptoKey_null_org');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="backend.satellite_tools.satCerts-module.html#delete_rhnCryptoKey_null_org">delete_rhnCryptoKey_null_org</a><tt class="py-op">(</tt><tt class="py-param">description_prefix</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="delete_rhnCryptoKey_null_org-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="delete_rhnCryptoKey_null_org-expanded"><a name="L182"></a><tt class="py-lineno">182</tt>  <tt class="py-line">    <tt class="py-name">h</tt> <tt class="py-op">=</tt> <tt id="link-77" class="py-name"><a title="backend.server.rhnSQL" class="py-name" href="#" onclick="return doclink('link-77', 'rhnSQL', 'link-4');">rhnSQL</a></tt><tt class="py-op">.</tt><tt id="link-78" class="py-name"><a title="backend.server.rhnSQL.driver_cx_Oracle.Database.prepare
+backend.server.rhnSQL.driver_postgresql.Database.prepare
+backend.server.rhnSQL.prepare
+backend.server.rhnSQL.sql_base.Cursor.prepare
+backend.server.rhnSQL.sql_base.Database.prepare" class="py-name" href="#" onclick="return doclink('link-78', 'prepare', 'link-9');">prepare</a></tt><tt class="py-op">(</tt><tt id="link-79" class="py-name" targets="Variable backend.satellite_tools.satCerts._queryDeleteCryptoCertInfoNullOrg=backend.satellite_tools.satCerts-module.html#_queryDeleteCryptoCertInfoNullOrg"><a title="backend.satellite_tools.satCerts._queryDeleteCryptoCertInfoNullOrg" class="py-name" href="#" onclick="return doclink('link-79', '_queryDeleteCryptoCertInfoNullOrg', 'link-79');">_queryDeleteCryptoCertInfoNullOrg</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L183"></a><tt class="py-lineno">183</tt>  <tt class="py-line">    <tt class="py-name">h</tt><tt class="py-op">.</tt><tt id="link-80" class="py-name"><a title="backend.server.rhnSQL.driver_cx_Oracle.Database.execute
+backend.server.rhnSQL.driver_postgresql.Database.execute
+backend.server.rhnSQL.execute
+backend.server.rhnSQL.sql_base.Cursor.execute
+spacewalkkoan.spacewalkkoan.execute
+virtualization.notification.Plan.execute" class="py-name" href="#" onclick="return doclink('link-80', 'execute', 'link-11');">execute</a></tt><tt class="py-op">(</tt><tt class="py-name">description_prefix</tt><tt class="py-op">=</tt><tt class="py-name">description_prefix</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L184"></a><tt class="py-lineno">184</tt>  <tt class="py-line"> </tt>
+<a name="L185"></a><tt class="py-lineno">185</tt>  <tt class="py-line"> </tt>
+<a name="L186"></a><tt class="py-lineno">186</tt>  <tt class="py-line"><tt id="link-81" class="py-name"><a title="backend.satellite_tools.satCerts._queryDeleteCryptoCertInfoNullOrg" class="py-name" href="#" onclick="return doclink('link-81', '_queryDeleteCryptoCertInfoNullOrg', 'link-79');">_queryDeleteCryptoCertInfoNullOrg</a></tt> <tt class="py-op">=</tt> <tt id="link-82" class="py-name"><a title="backend.server.rhnSQL" class="py-name" href="#" onclick="return doclink('link-82', 'rhnSQL', 'link-4');">rhnSQL</a></tt><tt class="py-op">.</tt><tt id="link-83" class="py-name"><a title="backend.server.rhnSQL.sql_base.Statement" class="py-name" href="#" onclick="return doclink('link-83', 'Statement', 'link-15');">Statement</a></tt><tt class="py-op">(</tt><tt class="py-string">"""</tt> </tt>
+<a name="L187"></a><tt class="py-lineno">187</tt>  <tt class="py-line"><tt class="py-string">    DELETE FROM rhnCryptoKey ck</tt> </tt>
+<a name="L188"></a><tt class="py-lineno">188</tt>  <tt class="py-line"><tt class="py-string">    WHERE ck.description LIKE :description_prefix || '%%'</tt> </tt>
+<a name="L189"></a><tt class="py-lineno">189</tt>  <tt class="py-line"><tt class="py-string">      AND ck.crypto_key_type_id = (SELECT id FROM rhnCryptoKeyType WHERE label = 'SSL')</tt> </tt>
+<a name="L190"></a><tt class="py-lineno">190</tt>  <tt class="py-line"><tt class="py-string">      AND ck.org_id is NULL</tt> </tt>
+<a name="L191"></a><tt class="py-lineno">191</tt>  <tt class="py-line"><tt class="py-string">"""</tt><tt class="py-op">)</tt> </tt>
+<a name="L192"></a><tt class="py-lineno">192</tt>  <tt class="py-line"> </tt>
+<a name="L193"></a><tt class="py-lineno">193</tt>  <tt class="py-line"><tt id="link-84" class="py-name"><a title="backend.satellite_tools.satCerts._querySelectCryptoCertInfo" class="py-name" href="#" onclick="return doclink('link-84', '_querySelectCryptoCertInfo', 'link-18');">_querySelectCryptoCertInfo</a></tt> <tt class="py-op">=</tt> <tt id="link-85" class="py-name"><a title="backend.server.rhnSQL" class="py-name" href="#" onclick="return doclink('link-85', 'rhnSQL', 'link-4');">rhnSQL</a></tt><tt class="py-op">.</tt><tt id="link-86" class="py-name"><a title="backend.server.rhnSQL.sql_base.Statement" class="py-name" href="#" onclick="return doclink('link-86', 'Statement', 'link-15');">Statement</a></tt><tt class="py-op">(</tt><tt class="py-string">"""</tt> </tt>
+<a name="L194"></a><tt class="py-lineno">194</tt>  <tt class="py-line"><tt class="py-string">    SELECT ck.id, ck.description, ckt.label as type_label, ck.key</tt> </tt>
+<a name="L195"></a><tt class="py-lineno">195</tt>  <tt class="py-line"><tt class="py-string">      FROM rhnCryptoKeyType ckt,</tt> </tt>
+<a name="L196"></a><tt class="py-lineno">196</tt>  <tt class="py-line"><tt class="py-string">           rhnCryptoKey ck</tt> </tt>
+<a name="L197"></a><tt class="py-lineno">197</tt>  <tt class="py-line"><tt class="py-string">     WHERE ckt.label = 'SSL'</tt> </tt>
+<a name="L198"></a><tt class="py-lineno">198</tt>  <tt class="py-line"><tt class="py-string">       AND ckt.id = ck.crypto_key_type_id</tt> </tt>
+<a name="L199"></a><tt class="py-lineno">199</tt>  <tt class="py-line"><tt class="py-string">       AND ck.description = :description</tt> </tt>
+<a name="L200"></a><tt class="py-lineno">200</tt>  <tt class="py-line"><tt class="py-string">       AND ck.org_id = :org_id</tt> </tt>
+<a name="L201"></a><tt class="py-lineno">201</tt>  <tt class="py-line"><tt class="py-string">"""</tt><tt class="py-op">)</tt> </tt>
+<a name="L202"></a><tt class="py-lineno">202</tt>  <tt class="py-line"> </tt>
+<a name="L203"></a><tt class="py-lineno">203</tt>  <tt class="py-line"><tt id="link-87" class="py-name"><a title="backend.satellite_tools.satCerts._querySelectCryptoCertInfoNullOrg" class="py-name" href="#" onclick="return doclink('link-87', '_querySelectCryptoCertInfoNullOrg', 'link-24');">_querySelectCryptoCertInfoNullOrg</a></tt> <tt class="py-op">=</tt> <tt id="link-88" class="py-name"><a title="backend.server.rhnSQL" class="py-name" href="#" onclick="return doclink('link-88', 'rhnSQL', 'link-4');">rhnSQL</a></tt><tt class="py-op">.</tt><tt id="link-89" class="py-name"><a title="backend.server.rhnSQL.sql_base.Statement" class="py-name" href="#" onclick="return doclink('link-89', 'Statement', 'link-15');">Statement</a></tt><tt class="py-op">(</tt><tt class="py-string">"""</tt> </tt>
+<a name="L204"></a><tt class="py-lineno">204</tt>  <tt class="py-line"><tt class="py-string">    SELECT ck.id, ck.description, ckt.label as type_label, ck.key</tt> </tt>
+<a name="L205"></a><tt class="py-lineno">205</tt>  <tt class="py-line"><tt class="py-string">      FROM rhnCryptoKeyType ckt,</tt> </tt>
+<a name="L206"></a><tt class="py-lineno">206</tt>  <tt class="py-line"><tt class="py-string">           rhnCryptoKey ck</tt> </tt>
+<a name="L207"></a><tt class="py-lineno">207</tt>  <tt class="py-line"><tt class="py-string">     WHERE ckt.label = 'SSL'</tt> </tt>
+<a name="L208"></a><tt class="py-lineno">208</tt>  <tt class="py-line"><tt class="py-string">       AND ckt.id = ck.crypto_key_type_id</tt> </tt>
+<a name="L209"></a><tt class="py-lineno">209</tt>  <tt class="py-line"><tt class="py-string">       AND ck.description = :description</tt> </tt>
+<a name="L210"></a><tt class="py-lineno">210</tt>  <tt class="py-line"><tt class="py-string">       AND ck.org_id is NULL</tt> </tt>
+<a name="L211"></a><tt class="py-lineno">211</tt>  <tt class="py-line"><tt class="py-string">"""</tt><tt class="py-op">)</tt> </tt>
+<a name="L212"></a><tt class="py-lineno">212</tt>  <tt class="py-line"> </tt>
+<a name="L213"></a><tt class="py-lineno">213</tt>  <tt class="py-line"><tt id="link-90" class="py-name"><a title="backend.satellite_tools.satCerts._queryInsertCryptoCertInfo" class="py-name" href="#" onclick="return doclink('link-90', '_queryInsertCryptoCertInfo', 'link-43');">_queryInsertCryptoCertInfo</a></tt> <tt class="py-op">=</tt> <tt id="link-91" class="py-name"><a title="backend.server.rhnSQL" class="py-name" href="#" onclick="return doclink('link-91', 'rhnSQL', 'link-4');">rhnSQL</a></tt><tt class="py-op">.</tt><tt id="link-92" class="py-name"><a title="backend.server.rhnSQL.sql_base.Statement" class="py-name" href="#" onclick="return doclink('link-92', 'Statement', 'link-15');">Statement</a></tt><tt class="py-op">(</tt><tt class="py-string">"""</tt> </tt>
+<a name="L214"></a><tt class="py-lineno">214</tt>  <tt class="py-line"><tt class="py-string">    INSERT into rhnCryptoKey</tt> </tt>
+<a name="L215"></a><tt class="py-lineno">215</tt>  <tt class="py-line"><tt class="py-string">           (id, org_id, description, crypto_key_type_id, key)</tt> </tt>
+<a name="L216"></a><tt class="py-lineno">216</tt>  <tt class="py-line"><tt class="py-string">    SELECT :rhn_cryptokey_id, :org_id, :description, ckt.id, empty_blob()</tt> </tt>
+<a name="L217"></a><tt class="py-lineno">217</tt>  <tt class="py-line"><tt class="py-string">      FROM rhnCryptoKeyType ckt</tt> </tt>
+<a name="L218"></a><tt class="py-lineno">218</tt>  <tt class="py-line"><tt class="py-string">     WHERE ckt.label = 'SSL'</tt> </tt>
+<a name="L219"></a><tt class="py-lineno">219</tt>  <tt class="py-line"><tt class="py-string">"""</tt><tt class="py-op">)</tt> </tt>
+<a name="L220"></a><tt class="py-lineno">220</tt>  <tt class="py-line"> </tt>
+<a name="_test_store_rhnCryptoKey"></a><div id="_test_store_rhnCryptoKey-def"><a name="L221"></a><tt class="py-lineno">221</tt> <a class="py-toggle" href="#" id="_test_store_rhnCryptoKey-toggle" onclick="return toggle('_test_store_rhnCryptoKey');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="backend.satellite_tools.satCerts-module.html#_test_store_rhnCryptoKey">_test_store_rhnCryptoKey</a><tt class="py-op">(</tt><tt class="py-param">caCert</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="_test_store_rhnCryptoKey-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="_test_store_rhnCryptoKey-expanded"><a name="L222"></a><tt class="py-lineno">222</tt>  <tt class="py-line">    <tt id="link-93" class="py-name"><a title="backend.server.config_common.templated_document.ServerTemplatedDocument.description" class="py-name" href="#" onclick="return doclink('link-93', 'description', 'link-20');">description</a></tt> <tt class="py-op">=</tt> <tt class="py-string">'RHN-ORG-TRUSTED-SSL-CERT'</tt> </tt>
+<a name="L223"></a><tt class="py-lineno">223</tt>  <tt class="py-line">    <tt id="link-94" class="py-name" targets="Function backend.satellite_tools.satCerts.store_CaCert()=backend.satellite_tools.satCerts-module.html#store_CaCert"><a title="backend.satellite_tools.satCerts.store_CaCert" class="py-name" href="#" onclick="return doclink('link-94', 'store_CaCert', 'link-94');">store_CaCert</a></tt><tt class="py-op">(</tt><tt id="link-95" class="py-name"><a title="backend.server.config_common.templated_document.ServerTemplatedDocument.description" class="py-name" href="#" onclick="return doclink('link-95', 'description', 'link-20');">description</a></tt><tt class="py-op">,</tt> <tt class="py-name">caCert</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L224"></a><tt class="py-lineno">224</tt>  <tt class="py-line"> </tt>
+<a name="L225"></a><tt class="py-lineno">225</tt>  <tt class="py-line"><tt class="py-keyword">if</tt> <tt class="py-name">__name__</tt> <tt class="py-op">==</tt> <tt class="py-string">'__main__'</tt><tt class="py-op">:</tt> </tt>
+<a name="L226"></a><tt class="py-lineno">226</tt>  <tt class="py-line">    <tt id="link-96" class="py-name"><a title="backend.server.rhnSQL" class="py-name" href="#" onclick="return doclink('link-96', 'rhnSQL', 'link-4');">rhnSQL</a></tt><tt class="py-op">.</tt><tt id="link-97" class="py-name" targets="Function backend.server.rhnSQL.initDB()=backend.server.rhnSQL-module.html#initDB"><a title="backend.server.rhnSQL.initDB" class="py-name" href="#" onclick="return doclink('link-97', 'initDB', 'link-97');">initDB</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L227"></a><tt class="py-lineno">227</tt>  <tt class="py-line"> </tt>
+<a name="L228"></a><tt class="py-lineno">228</tt>  <tt class="py-line">    <tt id="link-98" class="py-name" targets="Function backend.satellite_tools.satCerts._test_store_rhnCryptoKey()=backend.satellite_tools.satCerts-module.html#_test_store_rhnCryptoKey"><a title="backend.satellite_tools.satCerts._test_store_rhnCryptoKey" class="py-name" href="#" onclick="return doclink('link-98', '_test_store_rhnCryptoKey', 'link-98');">_test_store_rhnCryptoKey</a></tt><tt class="py-op">(</tt><tt class="py-string">'ca.crt'</tt><tt class="py-op">)</tt> </tt>
+<a name="L229"></a><tt class="py-lineno">229</tt>  <tt class="py-line"> </tt>
+<a name="L230"></a><tt class="py-lineno">230</tt>  <tt class="py-line">    <tt class="py-comment"># NOTE!!! This has be seg-faulting on exit, specifically upon closeDB()</tt> </tt>
+<a name="L231"></a><tt class="py-lineno">231</tt>  <tt class="py-line">    <tt class="py-comment">#         Bugzilla: 127324</tt> </tt>
+<a name="L232"></a><tt class="py-lineno">232</tt>  <tt class="py-line"> </tt>
+<a name="L233"></a><tt class="py-lineno">233</tt>  <tt class="py-line">    <tt class="py-keyword">print</tt><tt class="py-op">(</tt><tt class="py-string">"end of __main__"</tt><tt class="py-op">)</tt> </tt>
+<a name="L234"></a><tt class="py-lineno">234</tt>  <tt class="py-line">    <tt id="link-99" class="py-name"><a title="backend.server.rhnSQL" class="py-name" href="#" onclick="return doclink('link-99', 'rhnSQL', 'link-4');">rhnSQL</a></tt><tt class="py-op">.</tt><tt id="link-100" class="py-name" targets="Function backend.server.rhnSQL.closeDB()=backend.server.rhnSQL-module.html#closeDB"><a title="backend.server.rhnSQL.closeDB" class="py-name" href="#" onclick="return doclink('link-100', 'closeDB', 'link-100');">closeDB</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L235"></a><tt class="py-lineno">235</tt>  <tt class="py-line">    <tt class="py-keyword">print</tt><tt class="py-op">(</tt><tt class="py-string">"we have closed the database"</tt><tt class="py-op">)</tt> </tt>
+<a name="L236"></a><tt class="py-lineno">236</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Fri Nov 25 11:30:39 2016
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

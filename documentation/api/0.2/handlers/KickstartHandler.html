@@ -1,0 +1,883 @@
+<html>
+<head>
+<meta http-equiv="cache-control" content="no-cache" />
+
+</head>
+<body>
+<div class="toolbar-h1">
+<br />
+
+</div>
+<span class="small-text">( <a href="../index.html">Return to API Overview</a> )</span>
+<div class="rounded-box">
+<h2><a name="top">Available methods</a></h2>
+<ul class="apidoc">
+
+<li><a href="#addIpRange"/>addIpRange</a></li>
+<li><a href="#addScript"/>addScript</a></li>
+<li><a href="#createProfile"/>createProfile</a></li>
+<li><a href="#createProfileWithCustomUrl"/>createProfileWithCustomUrl</a></li>
+<li><a href="#downloadKickstart"/>downloadKickstart</a></li>
+<li><a href="#findKickstartForIp"/>findKickstartForIp</a></li>
+<li><a href="#getPartitioningScheme"/>getPartitioningScheme</a></li>
+<li><a href="#importFile"/>importFile</a></li>
+<li><a href="#importFile"/>importFile</a></li>
+<li><a href="#listAllIpRanges"/>listAllIpRanges</a></li>
+<li><a href="#listIpRanges"/>listIpRanges</a></li>
+<li><a href="#listKickstartableChannels"/>listKickstartableChannels</a></li>
+<li><a href="#listKickstartableTrees"/>listKickstartableTrees</a></li>
+<li><a href="#listKickstarts"/>listKickstarts</a></li>
+<li><a href="#listScripts"/>listScripts</a></li>
+<li><a href="#removeIpRange"/>removeIpRange</a></li>
+<li><a href="#removeScript"/>removeScript</a></li>
+<li><a href="#setChildChannels"/>setChildChannels</a></li>
+<li><a href="#setKickstartTree"/>setKickstartTree</a></li>
+<li><a href="#setPartitioningScheme"/>setPartitioningScheme</a></li>
+</ul>
+</div>
+<h2>Description</h2>
+Provides methods to create kickstart files
+<p>
+</p>
+<p><strong>Namespace</strong>:
+kickstart
+</p>
+<hr />
+
+<h3> <a name="addIpRange" href="#top">Method: addIpRange</a></h3>
+Description:<br />
+List all Ip Ranges for an associated kickstart
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string label - The label of the
+ kickstart
+ </li>
+<li>
+
+    string min - The ip address making up the
+ minimum of the range (i.e. 192.168.0.1)
+ </li>
+<li>
+
+    string max - The ip address making up the
+ maximum of the range (i.e. 192.168.0.254)
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+    int - 1 on success, exception thrown otherwise.
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="addScript" href="#top">Method: addScript</a></h3>
+Description:<br />
+Adds a pre/post script to the given kickstart profile.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+    string ksLabel - The kickstart label to
+ add the script to.
+ </li>
+<li>
+
+    string contents - The full script to
+ add.
+ </li>
+<li>
+
+    string interpreter - The path to the
+ interpreter to use (i.e. /bin/bash). An empty string will use the
+ kickstart default interpreter.
+ </li>
+<li>
+
+    string type - The type of script (either
+ 'pre' or 'post').
+ </li>
+<li>
+
+    boolean chroot - Whether to run the script
+ in the chrooted install location (recommended) or not.
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+int id - the id of the added script 
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="createProfile" href="#top">Method: createProfile</a></h3>
+Description:<br />
+Import a kickstart profile into RHN.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string profileLabel - Label for the new
+ kickstart profile.
+ </li>
+<li>
+
+    string virtualizationType - para_host,
+ para_guest, or none.
+ </li>
+<li>
+
+    string kickstartableTreeLabel - Label of a
+ kickstartable tree to associate the new profile with.
+ </li>
+<li>
+
+    string kickstartHost - Kickstart hostname
+ (of a satellite or proxy) used to construct the default download URL for
+ the new kickstart profile.
+ </li>
+<li>
+
+    string rootPassword - Root password.
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+    int - 1 on success, exception thrown otherwise.
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="createProfileWithCustomUrl" href="#top">Method: createProfileWithCustomUrl</a></h3>
+Description:<br />
+Import a kickstart profile into RHN.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string profileLabel - Label for the new
+ kickstart profile.
+ </li>
+<li>
+
+    string virtualizationType - para_host,
+ para_guest, or none.
+ </li>
+<li>
+
+    string kickstartableTreeLabel - Label of a
+ kickstartable tree to associate the new profile with.
+ </li>
+<li>
+
+    boolean downloadUrl - Download URL, or
+ 'default' to use the kickstart tree's default URL.
+ </li>
+<li>
+
+    string rootPassword - Root password.
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+    int - 1 on success, exception thrown otherwise.
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="downloadKickstart" href="#top">Method: downloadKickstart</a></h3>
+Description:<br />
+Download the full contents of a kickstart file.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+    string ksLabel - The label of the
+ kickstart to download.
+ </li>
+<li>
+
+    string host - The host to use when
+ referring to the satellite itself (Usually this should be the FQDN of the
+ satellite, but could be the ip address or shortname of it as well.
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+string - The contents of the kickstart file. Note: if
+ an activation key is not associated with the kickstart file, registration
+ will not occur in the satellite generated %post section. If one is
+ associated, it will be used for registration. 
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="findKickstartForIp" href="#top">Method: findKickstartForIp</a></h3>
+Description:<br />
+Find an associated kickstart for a given ip address.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string ipAddress - The ip address to
+ search for (i.e. 192.168.0.1)
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+string - label of the kickstart. Empty string ("") if
+ not found. 
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="getPartitioningScheme" href="#top">Method: getPartitioningScheme</a></h3>
+Description:<br />
+Get a kickstart profile's partitioning scheme.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string ksLabel - The label of a kickstart
+ profile.
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+string[] - A list of partitioning commands used to
+ setup the partitions, logical volumes and volume groups." 
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="importFile" href="#top">Method: importFile</a></h3>
+Description:<br />
+Import a kickstart profile into RHN.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string profileLabel - Label for the new
+ kickstart profile.
+ </li>
+<li>
+
+    string virtualizationType - para_host,
+ para_guest, or none.
+ </li>
+<li>
+
+    string kickstartableTreeLabel - Label of a
+ kickstartable tree to associate the new profile with.
+ </li>
+<li>
+
+    string kickstartFileContents - Contents of
+ the kickstart file to import.
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+    int - 1 on success, exception thrown otherwise.
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="importFile" href="#top">Method: importFile</a></h3>
+Description:<br />
+Import a kickstart profile into RHN.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string profileLabel - Label for the new
+ kickstart profile.
+ </li>
+<li>
+
+    string virtualizationType - para_host,
+ para_guest, or none.
+ </li>
+<li>
+
+    string kickstartableTreeLabel - Label of a
+ kickstartable tree to associate the new profile with.
+ </li>
+<li>
+
+    string kickstartHost - Kickstart hostname
+ (of a satellite or proxy) used to construct the default download URL for
+ the new kickstart profile. Using this option signifies that this default
+ URL will be used instead of any url/nfs/cdrom/harddrive commands in the
+ kickstart file itself.
+ </li>
+<li>
+
+    string kickstartFileContents - Contents of
+ the kickstart file to import.
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+    int - 1 on success, exception thrown otherwise.
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="listAllIpRanges" href="#top">Method: listAllIpRanges</a></h3>
+Description:<br />
+List all Ip Ranges and their associated kickstarts available
+ in the user's org.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+array:
+  <ul>
+   <li>
+ 
+
+	     struct - Kickstart Ip Range
+	<ul>
+         <li> string "ksLabel" - The kickstart label associated with the ip range </li>
+         <li> string "max" - The max ip of the range </li>
+         <li> string "min" - The min ip of the range </li>
+   	</ul>
+  </li></ul>
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="listIpRanges" href="#top">Method: listIpRanges</a></h3>
+Description:<br />
+List all Ip Ranges for an associated kickstart
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string label - The label of the
+ kickstart
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+array:
+  <ul>
+   <li>
+ $KickstartIpRangeSerialzier </li></ul>
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="listKickstartableChannels" href="#top">Method: listKickstartableChannels</a></h3>
+Description:<br />
+List kickstartable channels for the logged in user.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+array:
+  <ul>
+   <li>
+ 
+
+	     struct - channel
+	<ul>
+      	<li> int "id"</li>
+      	<li> string "name"</li>
+      	<li> string "label"</li>
+      	<li> string "arch_name"</li>
+      	<li> string "summary"</li>
+      	<li> string "description"</li>
+      	<li> string "gpg_key_url"</li>
+      	<li> string "gpg_key_id"</li>
+      	<li> string "gpg_key_fp"</li>
+      	<li> string "end_of_life"</li>
+      	<li> string "parent_channel_label"</li>
+  	</ul>
+  </li></ul>
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="listKickstartableTrees" href="#top">Method: listKickstartableTrees</a></h3>
+Description:<br />
+List the available kickstartable trees for the given channel.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+    string sessionKey
+ </li>
+<li>
+
+    string channelLabel - Label of channel to
+ search.
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+array:
+  <ul>
+   <li>
+ 
+
+	     struct - kickstartable tree
+	<ul>
+   	<li> int "id"</li>
+   	<li> string "label"</li>
+   	<li> string "base_path"</li>
+   	<li> int "channel_id"</li>
+   	<li> string "boot_image"</li>
+ 	</ul>
+  </li></ul>
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="listKickstarts" href="#top">Method: listKickstarts</a></h3>
+Description:<br />
+Provides a list of kickstart profiles visible to the user's
+ org
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+array:
+  <ul>
+   <li>
+ 
+
+	     struct - kickstart
+	<ul>
+          	<li> string "label"</li>
+          	<li> string "name"</li>
+          	<li> string "boot_image"</li>
+          	<li> boolean "org_default"</li>
+   	</ul>
+  </li></ul>
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="listScripts" href="#top">Method: listScripts</a></h3>
+Description:<br />
+lists the pre and post script associated with a kickstart
+ profile
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+ 
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+array:
+  <ul>
+   <li>
+ 
+
+	     struct - kickstart script
+	<ul>
+          	<li> int "id"</li>
+          	<li> string "contents"</li>
+              <li> string "script_type" - Which type of script ('pre' or 'post'). </li>
+              <li> string "interpreter" - The scripting language interpreter to use 
+                      for this script.  An empty string indicates the default kickstart 
+                      shell. </li>
+              <li> boolean "chroot" - True if the script will be executed within the 
+                  chroot environment. </li>
+     	</ul>
+  </li></ul>
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="removeIpRange" href="#top">Method: removeIpRange</a></h3>
+Description:<br />
+Remove an ip range from a specified kickstart
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string ksLabel - The kickstart label of
+ the ip range you want to remove
+ </li>
+<li>
+
+    string ip_address - An Ip Address that
+ falls within the range that you are wanting to remove. The min or max of
+ the range will work.
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+int - 1 on successful removal, 0 if range wasn't found
+ for the specified kickstart, exception otherwise. 
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="removeScript" href="#top">Method: removeScript</a></h3>
+Description:<br />
+Removes the specified script from the specified kickstart
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    <li> string "ksLabel" - The kickstart from which
+ to remove the script from. </li>
+ </li>
+<li>
+
+    <li> int "scriptId" - The id of the script to
+ remove. </li>
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+    int - 1 on success, exception thrown otherwise.
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="setChildChannels" href="#top">Method: setChildChannels</a></h3>
+Description:<br />
+Update child channels for an existing kickstart profile.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string kslabel - Label of kickstart
+ profile to be changed.
+ </li>
+<li>
+
+    string[] channelLabels - List of labels of child channels
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+    int - 1 on success, exception thrown otherwise.
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="setKickstartTree" href="#top">Method: setKickstartTree</a></h3>
+Description:<br />
+Change kickstart tree of an existing kickstart profile.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string kslabel - Label of kickstart
+ profile to be changed.
+ </li>
+<li>
+
+    string kstreeLabel - Label of new
+ kickstart tree.
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+    int - 1 on success, exception thrown otherwise.
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="setPartitioningScheme" href="#top">Method: setPartitioningScheme</a></h3>
+Description:<br />
+Set a kickstart profile's partitioning scheme.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string ksLabel - The label of the
+ kickstart profile to update.
+ </li>
+<li>
+
+    string[] scheme - The partitioning scheme
+ is a list of partitioning command strings used to setup the partitions,
+ volume groups and logical volumes.
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+    int - 1 on success, exception thrown otherwise.
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+</body>
+Generated on 9/15/2008
+</html>

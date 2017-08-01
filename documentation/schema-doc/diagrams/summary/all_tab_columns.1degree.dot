@@ -1,0 +1,36 @@
+// dot 2.26.0 on Linux 2.6.32-504.el6.x86_64
+// SchemaSpy rev 590
+digraph "all_tab_columns" {
+  graph [
+    rankdir="RL"
+    bgcolor="#f7f7f7"
+    nodesep="0.18"
+    ranksep="0.46"
+    fontname="Helvetica"
+    fontsize="11"
+  ];
+  node [
+    fontname="Helvetica"
+    fontsize="11"
+    shape="plaintext"
+  ];
+  edge [
+    arrowsize="0.8"
+  ];
+  "all_tab_columns" [
+    label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">all_tab_columns</TD></TR>
+      <TR><TD PORT="table_name" COLSPAN="3" ALIGN="LEFT">table_name</TD></TR>
+      <TR><TD PORT="column_name" COLSPAN="3" ALIGN="LEFT">column_name</TD></TR>
+      <TR><TD PORT="column_id" COLSPAN="3" ALIGN="LEFT">column_id</TD></TR>
+      <TR><TD PORT="data_type" COLSPAN="3" ALIGN="LEFT">data_type</TD></TR>
+      <TR><TD PORT="data_precision" COLSPAN="3" ALIGN="LEFT">data_precision</TD></TR>
+      <TR><TD PORT="data_length" COLSPAN="3" ALIGN="LEFT">data_length</TD></TR>
+      <TR><TD PORT="nullable" COLSPAN="3" ALIGN="LEFT">nullable</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">view</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+    </TABLE>>
+    URL="tables/all_tab_columns.html"
+    tooltip="all_tab_columns"
+  ];
+}

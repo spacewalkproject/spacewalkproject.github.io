@@ -1,0 +1,32 @@
+// dot 2.26.0 on Linux 2.6.32-504.el6.x86_64
+// SchemaSpy rev 590
+digraph "qrtz_scheduler_state" {
+  graph [
+    rankdir="RL"
+    bgcolor="#f7f7f7"
+    nodesep="0.18"
+    ranksep="0.46"
+    fontname="Helvetica"
+    fontsize="11"
+  ];
+  node [
+    fontname="Helvetica"
+    fontsize="11"
+    shape="plaintext"
+  ];
+  edge [
+    arrowsize="0.8"
+  ];
+  "qrtz_scheduler_state" [
+    label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">qrtz_scheduler_state</TD></TR>
+      <TR><TD PORT="instance_name" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">instance_name</TD></TR>
+      <TR><TD PORT="last_checkin_time" COLSPAN="3" ALIGN="LEFT">last_checkin_time</TD></TR>
+      <TR><TD PORT="checkin_interval" COLSPAN="3" ALIGN="LEFT">checkin_interval</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+    </TABLE>>
+    URL="tables/qrtz_scheduler_state.html"
+    tooltip="qrtz_scheduler_state"
+  ];
+}

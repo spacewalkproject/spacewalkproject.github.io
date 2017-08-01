@@ -1,0 +1,922 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>image</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        Module&nbsp;image
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="image-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="image-module.html">Module image</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-comment">#!/usr/bin/env python</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">base64</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line">    <tt class="py-comment">#  python 2</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line">    <tt class="py-keyword">import</tt> <tt class="py-name">ConfigParser</tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-keyword">except</tt> <tt class="py-name">ImportError</tt><tt class="py-op">:</tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line">    <tt class="py-comment">#  python3</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line">    <tt class="py-keyword">import</tt> <tt class="py-name">configparser</tt> <tt class="py-keyword">as</tt> <tt class="py-name">ConfigParser</tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">hashlib</tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">itertools</tt> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">os</tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">pycurl</tt> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">re</tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">sys</tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">shutil</tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line"> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line"><tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt id="link-0" class="py-name" targets="Method backend.server.importlib.importLib.Collection.append()=backend.server.importlib.importLib.Collection-class.html#append"><a title="backend.server.importlib.importLib.Collection.append" class="py-name" href="#" onclick="return doclink('link-0', 'append', 'link-0');">append</a></tt><tt class="py-op">(</tt><tt class="py-string">"/usr/share/rhn/"</tt><tt class="py-op">)</tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt id="link-1" class="py-name" targets="Package virtualization=virtualization-module.html"><a title="virtualization" class="py-name" href="#" onclick="return doclink('link-1', 'virtualization', 'link-1');">virtualization</a></tt><tt class="py-op">.</tt><tt id="link-2" class="py-name" targets="Variable script-rhn_profile_sync_py.support=script-rhn_profile_sync_py-module.html#support,Variable up2date_client.rhnreg.support=up2date_client.rhnreg-module.html#support,Module virtualization.support=virtualization.support-module.html"><a title="script-rhn_profile_sync_py.support
+up2date_client.rhnreg.support
+virtualization.support" class="py-name" href="#" onclick="return doclink('link-2', 'support', 'link-2');">support</a></tt> <tt class="py-keyword">as</tt> <tt class="py-name">virt_support</tt> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-3" class="py-name"><a title="virtualization" class="py-name" href="#" onclick="return doclink('link-3', 'virtualization', 'link-1');">virtualization</a></tt><tt class="py-op">.</tt><tt id="link-4" class="py-name" targets="Module virtualization.util=virtualization.util-module.html"><a title="virtualization.util" class="py-name" href="#" onclick="return doclink('link-4', 'util', 'link-4');">util</a></tt> <tt class="py-keyword">import</tt> <tt id="link-5" class="py-name" targets="Function virtualization.util.generate_uuid()=virtualization.util-module.html#generate_uuid"><a title="virtualization.util.generate_uuid" class="py-name" href="#" onclick="return doclink('link-5', 'generate_uuid', 'link-5');">generate_uuid</a></tt> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-6" class="py-name"><a title="virtualization" class="py-name" href="#" onclick="return doclink('link-6', 'virtualization', 'link-1');">virtualization</a></tt><tt class="py-op">.</tt><tt id="link-7" class="py-name" targets="Module virtualization.errors=virtualization.errors-module.html"><a title="virtualization.errors" class="py-name" href="#" onclick="return doclink('link-7', 'errors', 'link-7');">errors</a></tt> <tt class="py-keyword">import</tt> <tt id="link-8" class="py-name" targets="Class virtualization.errors.VirtualizationException=virtualization.errors.VirtualizationException-class.html"><a title="virtualization.errors.VirtualizationException" class="py-name" href="#" onclick="return doclink('link-8', 'VirtualizationException', 'link-8');">VirtualizationException</a></tt> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-9" class="py-name" targets="Package up2date_client=up2date_client-module.html"><a title="up2date_client" class="py-name" href="#" onclick="return doclink('link-9', 'up2date_client', 'link-9');">up2date_client</a></tt> <tt class="py-keyword">import</tt> <tt id="link-10" class="py-name" targets="Module up2date_client.up2dateLog=up2date_client.up2dateLog-module.html"><a title="up2date_client.up2dateLog" class="py-name" href="#" onclick="return doclink('link-10', 'up2dateLog', 'link-10');">up2dateLog</a></tt> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line"> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line"><tt id="link-11" class="py-name" targets="Variable actions.reboot.log=actions.reboot-module.html#log,Function backend.satellite_tools.syncLib.log()=backend.satellite_tools.syncLib-module.html#log,Variable image.log=image-module.html#log,Variable rhn_check.log=rhn_check-module.html#log,Variable up2date_client.hardware.log=up2date_client.hardware-module.html#log,Variable up2date_client.rhnreg.log=up2date_client.rhnreg-module.html#log,Variable up2date_client.rhnregGui.log=up2date_client.rhnregGui-module.html#log,Variable up2date_client.tui.log=up2date_client.tui-module.html#log,Variable up2date_client.up2dateLog.log=up2date_client.up2dateLog-module.html#log,Variable virtualization.notification.log=virtualization.notification-module.html#log"><a title="actions.reboot.log
+backend.satellite_tools.syncLib.log
+image.log
+rhn_check.log
+up2date_client.hardware.log
+up2date_client.rhnreg.log
+up2date_client.rhnregGui.log
+up2date_client.tui.log
+up2date_client.up2dateLog.log
+virtualization.notification.log" class="py-name" href="#" onclick="return doclink('link-11', 'log', 'link-11');">log</a></tt> <tt class="py-op">=</tt> <tt id="link-12" class="py-name"><a title="up2date_client.up2dateLog" class="py-name" href="#" onclick="return doclink('link-12', 'up2dateLog', 'link-10');">up2dateLog</a></tt><tt class="py-op">.</tt><tt id="link-13" class="py-name" targets="Function up2date_client.up2dateLog.initLog()=up2date_client.up2dateLog-module.html#initLog"><a title="up2date_client.up2dateLog.initLog" class="py-name" href="#" onclick="return doclink('link-13', 'initLog', 'link-13');">initLog</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line"> </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line"><tt id="link-14" class="py-name" targets="Function backend.server.action.rollback.config()=backend.server.action.rollback-module.html#config,Function backend.server.action_extra_data.rollback.config()=backend.server.action_extra_data.rollback-module.html#config,Package backend.server.handlers.config=backend.server.handlers.config-module.html,Module backend.wsgi.config=backend.wsgi.config-module.html,Variable image.config=image-module.html#config,Module rhnkickstart.config=rhnkickstart.config-module.html,Module up2date_client.config=up2date_client.config-module.html"><a title="backend.server.action.rollback.config
+backend.server.action_extra_data.rollback.config
+backend.server.handlers.config
+backend.wsgi.config
+image.config
+rhnkickstart.config
+up2date_client.config" class="py-name" href="#" onclick="return doclink('link-14', 'config', 'link-14');">config</a></tt> <tt class="py-op">=</tt> <tt class="py-name">ConfigParser</tt><tt class="py-op">.</tt><tt class="py-name">ConfigParser</tt><tt class="py-op">(</tt><tt class="py-op">{</tt> </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line">    <tt class="py-string">"IMAGE_BASE_PATH"</tt>      <tt class="py-op">:</tt> <tt class="py-string">"/var/lib/libvirt/images/"</tt><tt class="py-op">,</tt> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line">    <tt class="py-string">"IMAGE_CFG_TEMPLATE"</tt>   <tt class="py-op">:</tt> <tt class="py-string">"/etc/sysconfig/rhn/studio-kvm-template.xml"</tt><tt class="py-op">,</tt> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line">    <tt class="py-string">"PRE_SCRIPT"</tt>           <tt class="py-op">:</tt> <tt class="py-string">""</tt><tt class="py-op">,</tt> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line"><tt class="py-op">}</tt><tt class="py-op">)</tt> </tt>
+<a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line"><tt id="link-15" class="py-name"><a title="backend.server.action.rollback.config
+backend.server.action_extra_data.rollback.config
+backend.server.handlers.config
+backend.wsgi.config
+image.config
+rhnkickstart.config
+up2date_client.config" class="py-name" href="#" onclick="return doclink('link-15', 'config', 'link-14');">config</a></tt><tt class="py-op">.</tt><tt id="link-16" class="py-name" targets="Method backend.wsgi.wsgiRequest.WsgiRequest.read()=backend.wsgi.wsgiRequest.WsgiRequest-class.html#read,Method rhn.SSL.SSLSocket.read()=rhn.SSL.SSLSocket-class.html#read,Method rhn.nonblocking.NonBlockingFile.read()=rhn.nonblocking.NonBlockingFile-class.html#read,Method rhn.transports.File.read()=rhn.transports.File-class.html#read,Method rhn.transports.Input.read()=rhn.transports.Input-class.html#read,Method rhnkickstart.lilo.LiloConfigFile.read()=rhnkickstart.lilo.LiloConfigFile-class.html#read,Method rhnpush.archive.ArchiveParser.read()=rhnpush.archive.ArchiveParser-class.html#read,Method src.jabber_lib.JabberClient.read()=src.jabber_lib.JabberClient-class.html#read"><a title="backend.wsgi.wsgiRequest.WsgiRequest.read
+rhn.SSL.SSLSocket.read
+rhn.nonblocking.NonBlockingFile.read
+rhn.transports.File.read
+rhn.transports.Input.read
+rhnkickstart.lilo.LiloConfigFile.read
+rhnpush.archive.ArchiveParser.read
+src.jabber_lib.JabberClient.read" class="py-name" href="#" onclick="return doclink('link-16', 'read', 'link-16');">read</a></tt><tt class="py-op">(</tt><tt class="py-string">'/etc/sysconfig/rhn/image.cfg'</tt><tt class="py-op">)</tt> </tt>
+<a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line"><tt id="link-17" class="py-name" targets="Variable image.IMAGE_BASE_PATH=image-module.html#IMAGE_BASE_PATH"><a title="image.IMAGE_BASE_PATH" class="py-name" href="#" onclick="return doclink('link-17', 'IMAGE_BASE_PATH', 'link-17');">IMAGE_BASE_PATH</a></tt>    <tt class="py-op">=</tt> <tt id="link-18" class="py-name"><a title="backend.server.action.rollback.config
+backend.server.action_extra_data.rollback.config
+backend.server.handlers.config
+backend.wsgi.config
+image.config
+rhnkickstart.config
+up2date_client.config" class="py-name" href="#" onclick="return doclink('link-18', 'config', 'link-14');">config</a></tt><tt class="py-op">.</tt><tt id="link-19" class="py-name" targets="Function actions.up2date_config.get()=actions.up2date_config-module.html#get,Method backend.common.rhnCache.Cache.get()=backend.common.rhnCache.Cache-class.html#get,Method backend.common.rhnCache.CompressedCache.get()=backend.common.rhnCache.CompressedCache-class.html#get,Method backend.common.rhnCache.NullCache.get()=backend.common.rhnCache.NullCache-class.html#get,Method backend.common.rhnCache.ObjectCache.get()=backend.common.rhnCache.ObjectCache-class.html#get,Function backend.common.rhnCache.get()=backend.common.rhnCache-module.html#get,Method backend.common.rhnConfig.RHNOptions.get()=backend.common.rhnConfig.RHNOptions-class.html#get,Function backend.common.rhnFlags.get()=backend.common.rhnFlags-module.html#get,Function backend.server.action_extra_data.up2date_config.get()=backend.server.action_extra_data.up2date_config-module.html#get,Method backend.server.handlers.xmlrpc.queue.Queue.get()=backend.server.handlers.xmlrpc.queue.Queue-class.html#get,Method backend.server.handlers.xmlrpc.up2date.Servers.get()=backend.server.handlers.xmlrpc.up2date.Servers-class.html#get,Method backend.server.rhnSQL.sql_row.Row.get()=backend.server.rhnSQL.sql_row.Row-class.html#get,Method backend.server.rhnSQL.sql_table.Table.get()=backend.server.rhnSQL.sql_table.Table-class.html#get,Function backend.server.rhnServer.get()=backend.server.rhnServer-module.html#get,Function config_common.local_config.get()=config_common.local_config-module.html#get,Function src.osad_config.get()=src.osad_config-module.html#get"><a title="actions.up2date_config.get
+backend.common.rhnCache.Cache.get
+backend.common.rhnCache.CompressedCache.get
+backend.common.rhnCache.NullCache.get
+backend.common.rhnCache.ObjectCache.get
+backend.common.rhnCache.get
+backend.common.rhnConfig.RHNOptions.get
+backend.common.rhnFlags.get
+backend.server.action_extra_data.up2date_config.get
+backend.server.handlers.xmlrpc.queue.Queue.get
+backend.server.handlers.xmlrpc.up2date.Servers.get
+backend.server.rhnSQL.sql_row.Row.get
+backend.server.rhnSQL.sql_table.Table.get
+backend.server.rhnServer.get
+config_common.local_config.get
+src.osad_config.get" class="py-name" href="#" onclick="return doclink('link-19', 'get', 'link-19');">get</a></tt><tt class="py-op">(</tt><tt class="py-string">"global"</tt><tt class="py-op">,</tt> <tt class="py-string">"IMAGE_BASE_PATH"</tt><tt class="py-op">)</tt> </tt>
+<a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line"><tt id="link-20" class="py-name" targets="Variable image.IMAGE_CFG_TEMPLATE=image-module.html#IMAGE_CFG_TEMPLATE"><a title="image.IMAGE_CFG_TEMPLATE" class="py-name" href="#" onclick="return doclink('link-20', 'IMAGE_CFG_TEMPLATE', 'link-20');">IMAGE_CFG_TEMPLATE</a></tt> <tt class="py-op">=</tt> <tt id="link-21" class="py-name"><a title="backend.server.action.rollback.config
+backend.server.action_extra_data.rollback.config
+backend.server.handlers.config
+backend.wsgi.config
+image.config
+rhnkickstart.config
+up2date_client.config" class="py-name" href="#" onclick="return doclink('link-21', 'config', 'link-14');">config</a></tt><tt class="py-op">.</tt><tt id="link-22" class="py-name"><a title="actions.up2date_config.get
+backend.common.rhnCache.Cache.get
+backend.common.rhnCache.CompressedCache.get
+backend.common.rhnCache.NullCache.get
+backend.common.rhnCache.ObjectCache.get
+backend.common.rhnCache.get
+backend.common.rhnConfig.RHNOptions.get
+backend.common.rhnFlags.get
+backend.server.action_extra_data.up2date_config.get
+backend.server.handlers.xmlrpc.queue.Queue.get
+backend.server.handlers.xmlrpc.up2date.Servers.get
+backend.server.rhnSQL.sql_row.Row.get
+backend.server.rhnSQL.sql_table.Table.get
+backend.server.rhnServer.get
+config_common.local_config.get
+src.osad_config.get" class="py-name" href="#" onclick="return doclink('link-22', 'get', 'link-19');">get</a></tt><tt class="py-op">(</tt><tt class="py-string">"global"</tt><tt class="py-op">,</tt> <tt class="py-string">"IMAGE_CFG_TEMPLATE"</tt><tt class="py-op">)</tt> </tt>
+<a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line"><tt id="link-23" class="py-name" targets="Variable image.PRE_SCRIPT=image-module.html#PRE_SCRIPT"><a title="image.PRE_SCRIPT" class="py-name" href="#" onclick="return doclink('link-23', 'PRE_SCRIPT', 'link-23');">PRE_SCRIPT</a></tt>         <tt class="py-op">=</tt> <tt id="link-24" class="py-name"><a title="backend.server.action.rollback.config
+backend.server.action_extra_data.rollback.config
+backend.server.handlers.config
+backend.wsgi.config
+image.config
+rhnkickstart.config
+up2date_client.config" class="py-name" href="#" onclick="return doclink('link-24', 'config', 'link-14');">config</a></tt><tt class="py-op">.</tt><tt id="link-25" class="py-name"><a title="actions.up2date_config.get
+backend.common.rhnCache.Cache.get
+backend.common.rhnCache.CompressedCache.get
+backend.common.rhnCache.NullCache.get
+backend.common.rhnCache.ObjectCache.get
+backend.common.rhnCache.get
+backend.common.rhnConfig.RHNOptions.get
+backend.common.rhnFlags.get
+backend.server.action_extra_data.up2date_config.get
+backend.server.handlers.xmlrpc.queue.Queue.get
+backend.server.handlers.xmlrpc.up2date.Servers.get
+backend.server.rhnSQL.sql_row.Row.get
+backend.server.rhnSQL.sql_table.Table.get
+backend.server.rhnServer.get
+config_common.local_config.get
+src.osad_config.get" class="py-name" href="#" onclick="return doclink('link-25', 'get', 'link-19');">get</a></tt><tt class="py-op">(</tt><tt class="py-string">"global"</tt><tt class="py-op">,</tt> <tt class="py-string">"PRE_SCRIPT"</tt><tt class="py-op">)</tt> </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line"> </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line"><tt class="py-comment"># mark this module as acceptable</tt> </tt>
+<a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line"><tt id="link-26" class="py-name" targets="Variable actions.configfiles.__rhnexport__=actions.configfiles-module.html#__rhnexport__,Variable actions.hardware.__rhnexport__=actions.hardware-module.html#__rhnexport__,Variable actions.reboot.__rhnexport__=actions.reboot-module.html#__rhnexport__,Variable actions.rhnsd.__rhnexport__=actions.rhnsd-module.html#__rhnexport__,Variable actions.script.__rhnexport__=actions.script-module.html#__rhnexport__,Variable actions.systemid.__rhnexport__=actions.systemid-module.html#__rhnexport__,Variable actions.up2date_config.__rhnexport__=actions.up2date_config-module.html#__rhnexport__,Variable backend.server.action.activation.__rhnexport__=backend.server.action.activation-module.html#__rhnexport__,Variable backend.server.action.clientcert.__rhnexport__=backend.server.action.clientcert-module.html#__rhnexport__,Variable backend.server.action.configfiles.__rhnexport__=backend.server.action.configfiles-module.html#__rhnexport__,Variable backend.server.action.errata.__rhnexport__=backend.server.action.errata-module.html#__rhnexport__,Variable backend.server.action.hardware.__rhnexport__=backend.server.action.hardware-module.html#__rhnexport__,Variable backend.server.action.image.__rhnexport__=backend.server.action.image-module.html#__rhnexport__,Variable backend.server.action.kickstart.__rhnexport__=backend.server.action.kickstart-module.html#__rhnexport__,Variable backend.server.action.kickstart_guest.__rhnexport__=backend.server.action.kickstart_guest-module.html#__rhnexport__,Variable backend.server.action.kickstart_host.__rhnexport__=backend.server.action.kickstart_host-module.html#__rhnexport__,Variable backend.server.action.packages.__rhnexport__=backend.server.action.packages-module.html#__rhnexport__,Variable backend.server.action.reboot.__rhnexport__=backend.server.action.reboot-module.html#__rhnexport__,Variable backend.server.action.rhn_applet.__rhnexport__=backend.server.action.rhn_applet-module.html#__rhnexport__,Variable backend.server.action.rhnsd.__rhnexport__=backend.server.action.rhnsd-module.html#__rhnexport__,Variable backend.server.action.rollback.__rhnexport__=backend.server.action.rollback-module.html#__rhnexport__,Variable backend.server.action.scap.__rhnexport__=backend.server.action.scap-module.html#__rhnexport__,Variable backend.server.action.script.__rhnexport__=backend.server.action.script-module.html#__rhnexport__,Variable backend.server.action.virt.__rhnexport__=backend.server.action.virt-module.html#__rhnexport__,Variable backend.server.action_extra_data.clientcert.__rhnexport__=backend.server.action_extra_data.clientcert-module.html#__rhnexport__,Variable backend.server.action_extra_data.configfiles.__rhnexport__=backend.server.action_extra_data.configfiles-module.html#__rhnexport__,Variable backend.server.action_extra_data.errata.__rhnexport__=backend.server.action_extra_data.errata-module.html#__rhnexport__,Variable backend.server.action_extra_data.hardware.__rhnexport__=backend.server.action_extra_data.hardware-module.html#__rhnexport__,Variable backend.server.action_extra_data.image.__rhnexport__=backend.server.action_extra_data.image-module.html#__rhnexport__,Variable backend.server.action_extra_data.kickstart.__rhnexport__=backend.server.action_extra_data.kickstart-module.html#__rhnexport__,Variable backend.server.action_extra_data.kickstart_guest.__rhnexport__=backend.server.action_extra_data.kickstart_guest-module.html#__rhnexport__,Variable backend.server.action_extra_data.kickstart_host.__rhnexport__=backend.server.action_extra_data.kickstart_host-module.html#__rhnexport__,Variable backend.server.action_extra_data.packages.__rhnexport__=backend.server.action_extra_data.packages-module.html#__rhnexport__,Variable backend.server.action_extra_data.reboot.__rhnexport__=backend.server.action_extra_data.reboot-module.html#__rhnexport__,Variable backend.server.action_extra_data.rhn_applet.__rhnexport__=backend.server.action_extra_data.rhn_applet-module.html#__rhnexport__,Variable backend.server.action_extra_data.rhnsd.__rhnexport__=backend.server.action_extra_data.rhnsd-module.html#__rhnexport__,Variable backend.server.action_extra_data.rollback.__rhnexport__=backend.server.action_extra_data.rollback-module.html#__rhnexport__,Variable backend.server.action_extra_data.scap.__rhnexport__=backend.server.action_extra_data.scap-module.html#__rhnexport__,Variable backend.server.action_extra_data.script.__rhnexport__=backend.server.action_extra_data.script-module.html#__rhnexport__,Variable backend.server.action_extra_data.up2date_config.__rhnexport__=backend.server.action_extra_data.up2date_config-module.html#__rhnexport__,Variable backend.server.action_extra_data.virt.__rhnexport__=backend.server.action_extra_data.virt-module.html#__rhnexport__,Variable clientcert.__rhnexport__=clientcert-module.html#__rhnexport__,Variable image.__rhnexport__=image-module.html#__rhnexport__,Variable kickstart.__rhnexport__=kickstart-module.html#__rhnexport__,Variable kickstart_guest.__rhnexport__=kickstart_guest-module.html#__rhnexport__,Variable rhn_applet.__rhnexport__=rhn_applet-module.html#__rhnexport__,Variable virt.__rhnexport__=virt-module.html#__rhnexport__"><a title="actions.configfiles.__rhnexport__
+actions.hardware.__rhnexport__
+actions.reboot.__rhnexport__
+actions.rhnsd.__rhnexport__
+actions.script.__rhnexport__
+actions.systemid.__rhnexport__
+actions.up2date_config.__rhnexport__
+backend.server.action.activation.__rhnexport__
+backend.server.action.clientcert.__rhnexport__
+backend.server.action.configfiles.__rhnexport__
+backend.server.action.errata.__rhnexport__
+backend.server.action.hardware.__rhnexport__
+backend.server.action.image.__rhnexport__
+backend.server.action.kickstart.__rhnexport__
+backend.server.action.kickstart_guest.__rhnexport__
+backend.server.action.kickstart_host.__rhnexport__
+backend.server.action.packages.__rhnexport__
+backend.server.action.reboot.__rhnexport__
+backend.server.action.rhn_applet.__rhnexport__
+backend.server.action.rhnsd.__rhnexport__
+backend.server.action.rollback.__rhnexport__
+backend.server.action.scap.__rhnexport__
+backend.server.action.script.__rhnexport__
+backend.server.action.virt.__rhnexport__
+backend.server.action_extra_data.clientcert.__rhnexport__
+backend.server.action_extra_data.configfiles.__rhnexport__
+backend.server.action_extra_data.errata.__rhnexport__
+backend.server.action_extra_data.hardware.__rhnexport__
+backend.server.action_extra_data.image.__rhnexport__
+backend.server.action_extra_data.kickstart.__rhnexport__
+backend.server.action_extra_data.kickstart_guest.__rhnexport__
+backend.server.action_extra_data.kickstart_host.__rhnexport__
+backend.server.action_extra_data.packages.__rhnexport__
+backend.server.action_extra_data.reboot.__rhnexport__
+backend.server.action_extra_data.rhn_applet.__rhnexport__
+backend.server.action_extra_data.rhnsd.__rhnexport__
+backend.server.action_extra_data.rollback.__rhnexport__
+backend.server.action_extra_data.scap.__rhnexport__
+backend.server.action_extra_data.script.__rhnexport__
+backend.server.action_extra_data.up2date_config.__rhnexport__
+backend.server.action_extra_data.virt.__rhnexport__
+clientcert.__rhnexport__
+image.__rhnexport__
+kickstart.__rhnexport__
+kickstart_guest.__rhnexport__
+rhn_applet.__rhnexport__
+virt.__rhnexport__" class="py-name" href="#" onclick="return doclink('link-26', '__rhnexport__', 'link-26');">__rhnexport__</a></tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt> </tt>
+<a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line">    <tt class="py-string">'deploy'</tt> </tt>
+<a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line"><tt class="py-op">]</tt> </tt>
+<a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line"> </tt>
+<a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line"><tt class="py-comment"># download and extract tar.gz file with image</tt> </tt>
+<a name="_downloadFile"></a><div id="_downloadFile-def"><a name="L41"></a><tt class="py-lineno"> 41</tt> <a class="py-toggle" href="#" id="_downloadFile-toggle" onclick="return toggle('_downloadFile');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="image-module.html#_downloadFile">_downloadFile</a><tt class="py-op">(</tt><tt class="py-param">imageName</tt><tt class="py-op">,</tt><tt class="py-param">serverUrl</tt><tt class="py-op">,</tt><tt class="py-param">proxySetting</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="_downloadFile-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="_downloadFile-expanded"><a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line">    <tt id="link-27" class="py-name"><a title="actions.reboot.log
+backend.satellite_tools.syncLib.log
+image.log
+rhn_check.log
+up2date_client.hardware.log
+up2date_client.rhnreg.log
+up2date_client.rhnregGui.log
+up2date_client.tui.log
+up2date_client.up2dateLog.log
+virtualization.notification.log" class="py-name" href="#" onclick="return doclink('link-27', 'log', 'link-11');">log</a></tt><tt class="py-op">.</tt><tt id="link-28" class="py-name" targets="Function backend.common.rhnLog.log_debug()=backend.common.rhnLog-module.html#log_debug,Method config_common.rhn_log.Logger.log_debug()=config_common.rhn_log.Logger-class.html#log_debug,Function config_common.rhn_log.log_debug()=config_common.rhn_log-module.html#log_debug,Method src.rhn_log.Logger.log_debug()=src.rhn_log.Logger-class.html#log_debug,Function src.rhn_log.log_debug()=src.rhn_log-module.html#log_debug,Method up2date_client.up2dateLog.Log.log_debug()=up2date_client.up2dateLog.Log-class.html#log_debug"><a title="backend.common.rhnLog.log_debug
+config_common.rhn_log.Logger.log_debug
+config_common.rhn_log.log_debug
+src.rhn_log.Logger.log_debug
+src.rhn_log.log_debug
+up2date_client.up2dateLog.Log.log_debug" class="py-name" href="#" onclick="return doclink('link-28', 'log_debug', 'link-28');">log_debug</a></tt><tt class="py-op">(</tt><tt class="py-string">"downloading %s"</tt> <tt class="py-op">%</tt> <tt class="py-name">serverUrl</tt><tt class="py-op">)</tt> </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line"> </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line">    <tt class="py-comment"># get the file via pycurl</tt> </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line">    <tt class="py-name">c</tt> <tt class="py-op">=</tt> <tt class="py-name">pycurl</tt><tt class="py-op">.</tt><tt class="py-name">Curl</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line">    <tt class="py-name">c</tt><tt class="py-op">.</tt><tt class="py-name">setopt</tt><tt class="py-op">(</tt><tt class="py-name">pycurl</tt><tt class="py-op">.</tt><tt class="py-name">URL</tt><tt class="py-op">,</tt> <tt class="py-name">serverUrl</tt><tt class="py-op">)</tt> </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line"> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line">    <tt class="py-comment"># proxySetting : { proxyURL  : http://myproxy.site:3128</tt> </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line">    <tt class="py-comment">#                  proxyUser : user</tt> </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line">    <tt class="py-comment">#                  proxyPass : s3cr3t }</tt> </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line">    <tt class="py-comment"># proxyUser and proxyPass are optional</tt> </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line">    <tt class="py-comment">#</tt> </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-string">"proxyURL"</tt> <tt class="py-keyword">in</tt> <tt class="py-name">proxySetting</tt> <tt class="py-keyword">and</tt> <tt class="py-name">proxySetting</tt><tt class="py-op">[</tt><tt class="py-string">"proxyURL"</tt><tt class="py-op">]</tt> <tt class="py-keyword">is</tt> <tt class="py-keyword">not</tt> <tt class="py-name">None</tt> <tt class="py-keyword">and</tt> <tt class="py-name">proxySetting</tt><tt class="py-op">[</tt><tt class="py-string">"proxyURL"</tt><tt class="py-op">]</tt> <tt class="py-op">!=</tt> <tt class="py-string">""</tt><tt class="py-op">:</tt> </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line">        <tt id="link-29" class="py-name" targets="Package backend.server=backend.server-module.html,Method up2date_client.rpcServer.ServerList.server()=up2date_client.rpcServer.ServerList-class.html#server"><a title="backend.server
+up2date_client.rpcServer.ServerList.server" class="py-name" href="#" onclick="return doclink('link-29', 'server', 'link-29');">server</a></tt> <tt class="py-op">=</tt> <tt class="py-name">proxySetting</tt><tt class="py-op">[</tt><tt class="py-string">"proxyURL"</tt><tt class="py-op">]</tt> </tt>
+<a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line">        <tt class="py-name">c</tt><tt class="py-op">.</tt><tt class="py-name">setopt</tt><tt class="py-op">(</tt><tt class="py-name">pycurl</tt><tt class="py-op">.</tt><tt class="py-name">PROXY</tt><tt class="py-op">,</tt> <tt id="link-30" class="py-name"><a title="backend.server
+up2date_client.rpcServer.ServerList.server" class="py-name" href="#" onclick="return doclink('link-30', 'server', 'link-29');">server</a></tt> <tt class="py-op">)</tt> </tt>
+<a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-string">"proxyUser"</tt> <tt class="py-keyword">in</tt> <tt class="py-name">proxySetting</tt> <tt class="py-keyword">and</tt> <tt class="py-name">proxySetting</tt><tt class="py-op">[</tt><tt class="py-string">"proxyUser"</tt><tt class="py-op">]</tt> <tt class="py-keyword">is</tt> <tt class="py-keyword">not</tt> <tt class="py-name">None</tt> <tt class="py-keyword">and</tt> <tt class="py-name">proxySetting</tt><tt class="py-op">[</tt><tt class="py-string">"proxyUser"</tt><tt class="py-op">]</tt> <tt class="py-op">!=</tt> <tt class="py-string">""</tt><tt class="py-op">:</tt> </tt>
+<a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line">            <tt class="py-name">user</tt>     <tt class="py-op">=</tt> <tt class="py-name">proxySetting</tt><tt class="py-op">[</tt><tt class="py-string">"proxyUser"</tt><tt class="py-op">]</tt> </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line">            <tt id="link-31" class="py-name" targets="Variable up2date_client.rhnregGui.password=up2date_client.rhnregGui-module.html#password"><a title="up2date_client.rhnregGui.password" class="py-name" href="#" onclick="return doclink('link-31', 'password', 'link-31');">password</a></tt> <tt class="py-op">=</tt> <tt class="py-name">base64</tt><tt class="py-op">.</tt><tt class="py-name">b64decode</tt><tt class="py-op">(</tt> <tt class="py-name">proxySetting</tt><tt class="py-op">[</tt><tt class="py-string">"proxyPass"</tt><tt class="py-op">]</tt> <tt class="py-op">)</tt> </tt>
+<a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line">            <tt class="py-name">c</tt><tt class="py-op">.</tt><tt class="py-name">setopt</tt><tt class="py-op">(</tt><tt class="py-name">pycurl</tt><tt class="py-op">.</tt><tt class="py-name">PROXYUSERPWD</tt><tt class="py-op">,</tt> <tt class="py-string">"%s:%s"</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt class="py-name">user</tt><tt class="py-op">,</tt><tt id="link-32" class="py-name"><a title="up2date_client.rhnregGui.password" class="py-name" href="#" onclick="return doclink('link-32', 'password', 'link-31');">password</a></tt><tt class="py-op">)</tt> <tt class="py-op">)</tt> </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line">    <tt class="py-comment"># default IMAGE_BASE_PATH is /var/lib/libvirt/images</tt> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line">    <tt class="py-name">filePath</tt> <tt class="py-op">=</tt> <tt class="py-string">"/%s/%s"</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt id="link-33" class="py-name"><a title="image.IMAGE_BASE_PATH" class="py-name" href="#" onclick="return doclink('link-33', 'IMAGE_BASE_PATH', 'link-17');">IMAGE_BASE_PATH</a></tt><tt class="py-op">,</tt> <tt class="py-name">imageName</tt><tt class="py-op">)</tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line">    <tt class="py-name">f</tt> <tt class="py-op">=</tt> <tt class="py-name">open</tt><tt class="py-op">(</tt><tt class="py-name">filePath</tt><tt class="py-op">,</tt> <tt class="py-string">'w'</tt><tt class="py-op">)</tt> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line">    <tt class="py-name">c</tt><tt class="py-op">.</tt><tt class="py-name">setopt</tt><tt class="py-op">(</tt><tt class="py-name">pycurl</tt><tt class="py-op">.</tt><tt class="py-name">WRITEFUNCTION</tt><tt class="py-op">,</tt> <tt class="py-name">f</tt><tt class="py-op">.</tt><tt id="link-34" class="py-name" targets="Static Method backend.common.fileutils.payload.write()=backend.common.fileutils.payload-class.html#write,Method backend.common.rhn_mpm.MPM_Package.write()=backend.common.rhn_mpm.MPM_Package-class.html#write,Method backend.satellite_tools.disk_dumper.dumper.TeeStream.write()=backend.satellite_tools.disk_dumper.dumper.TeeStream-class.html#write,Method backend.satellite_tools.disk_dumper.string_buffer.StringBuffer.write()=backend.satellite_tools.disk_dumper.string_buffer.StringBuffer-class.html#write,Method backend.satellite_tools.repo_plugins.yum_src.YumWarnings.write()=backend.satellite_tools.repo_plugins.yum_src.YumWarnings-class.html#write,Method backend.wsgi.wsgiRequest.WsgiRequest.write()=backend.wsgi.wsgiRequest.WsgiRequest-class.html#write,Method rhn.SSL.SSLSocket.write()=rhn.SSL.SSLSocket-class.html#write,Method rhn.SmartIO.SmartIO.write()=rhn.SmartIO.SmartIO-class.html#write,Method rhn.nonblocking.NonBlockingFile.write()=rhn.nonblocking.NonBlockingFile-class.html#write,Method rhnkickstart.lilo.LiloConfigFile.write()=rhnkickstart.lilo.LiloConfigFile-class.html#write,Method rhnpush.rhnpush_config.rhnpushConfigParser.write()=rhnpush.rhnpush_config.rhnpushConfigParser-class.html#write"><a title="backend.common.fileutils.payload.write
+backend.common.rhn_mpm.MPM_Package.write
+backend.satellite_tools.disk_dumper.dumper.TeeStream.write
+backend.satellite_tools.disk_dumper.string_buffer.StringBuffer.write
+backend.satellite_tools.repo_plugins.yum_src.YumWarnings.write
+backend.wsgi.wsgiRequest.WsgiRequest.write
+rhn.SSL.SSLSocket.write
+rhn.SmartIO.SmartIO.write
+rhn.nonblocking.NonBlockingFile.write
+rhnkickstart.lilo.LiloConfigFile.write
+rhnpush.rhnpush_config.rhnpushConfigParser.write" class="py-name" href="#" onclick="return doclink('link-34', 'write', 'link-34');">write</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line">    <tt class="py-name">c</tt><tt class="py-op">.</tt><tt class="py-name">setopt</tt><tt class="py-op">(</tt><tt class="py-name">pycurl</tt><tt class="py-op">.</tt><tt class="py-name">SSL_VERIFYPEER</tt><tt class="py-op">,</tt> <tt class="py-number">0</tt><tt class="py-op">)</tt> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line">    <tt class="py-name">c</tt><tt class="py-op">.</tt><tt class="py-name">perform</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line">    <tt id="link-35" class="py-name"><a title="actions.reboot.log
+backend.satellite_tools.syncLib.log
+image.log
+rhn_check.log
+up2date_client.hardware.log
+up2date_client.rhnreg.log
+up2date_client.rhnregGui.log
+up2date_client.tui.log
+up2date_client.up2dateLog.log
+virtualization.notification.log" class="py-name" href="#" onclick="return doclink('link-35', 'log', 'link-11');">log</a></tt><tt class="py-op">.</tt><tt id="link-36" class="py-name"><a title="backend.common.rhnLog.log_debug
+config_common.rhn_log.Logger.log_debug
+config_common.rhn_log.log_debug
+src.rhn_log.Logger.log_debug
+src.rhn_log.log_debug
+up2date_client.up2dateLog.Log.log_debug" class="py-name" href="#" onclick="return doclink('link-36', 'log_debug', 'link-28');">log_debug</a></tt><tt class="py-op">(</tt><tt class="py-string">"curl got HTTP code: %s"</tt> <tt class="py-op">%</tt> <tt class="py-name">c</tt><tt class="py-op">.</tt><tt class="py-name">getinfo</tt><tt class="py-op">(</tt><tt class="py-name">pycurl</tt><tt class="py-op">.</tt><tt class="py-name">HTTP_CODE</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line">    <tt class="py-name">f</tt><tt class="py-op">.</tt><tt id="link-37" class="py-name" targets="Method backend.common.rhnCache.ClosingZipFile.close()=backend.common.rhnCache.ClosingZipFile-class.html#close,Method backend.common.rhnCache.LockedFile.close()=backend.common.rhnCache.LockedFile-class.html#close,Method backend.satellite_exporter.handlers.non_auth_dumper.NonAuthenticatedDumper.close()=backend.satellite_exporter.handlers.non_auth_dumper.NonAuthenticatedDumper-class.html#close,Method backend.satellite_tools.connection.CompressedStream.close()=backend.satellite_tools.connection.CompressedStream-class.html#close,Method backend.satellite_tools.disk_dumper.dumper.CachedQueryIterator.close()=backend.satellite_tools.disk_dumper.dumper.CachedQueryIterator-class.html#close,Method backend.satellite_tools.disk_dumper.dumper.XML_Dumper.close()=backend.satellite_tools.disk_dumper.dumper.XML_Dumper-class.html#close,Method backend.satellite_tools.disk_dumper.iss.Dumper.close()=backend.satellite_tools.disk_dumper.iss.Dumper-class.html#close,Method backend.satellite_tools.disk_dumper.string_buffer.StringBuffer.close()=backend.satellite_tools.disk_dumper.string_buffer.StringBuffer-class.html#close,Method backend.satellite_tools.satsync.StreamProducer.close()=backend.satellite_tools.satsync.StreamProducer-class.html#close,Method backend.satellite_tools.sync_handlers.ContainerHandler.close()=backend.satellite_tools.sync_handlers.ContainerHandler-class.html#close,Method backend.satellite_tools.xmlSource.BaseDispatchHandler.close()=backend.satellite_tools.xmlSource.BaseDispatchHandler-class.html#close,Method backend.server.rhnSQL.driver_cx_Oracle.Database.close()=backend.server.rhnSQL.driver_cx_Oracle.Database-class.html#close,Method backend.server.rhnSQL.driver_postgresql.Cursor.close()=backend.server.rhnSQL.driver_postgresql.Cursor-class.html#close,Method backend.server.rhnSQL.sql_base.Database.close()=backend.server.rhnSQL.sql_base.Database-class.html#close,Method proxy.responseContext.ResponseContext.close()=proxy.responseContext.ResponseContext-class.html#close,Method rhn.SSL.SSLSocket.close()=rhn.SSL.SSLSocket-class.html#close,Method rhn.rpclib.Server.close()=rhn.rpclib.Server-class.html#close,Method rhn.transports.BaseOutput.close()=rhn.transports.BaseOutput-class.html#close,Method up2date_client.rhnregGui.NetworkConfigDialog.close()=up2date_client.rhnregGui.NetworkConfigDialog-class.html#close"><a title="backend.common.rhnCache.ClosingZipFile.close
+backend.common.rhnCache.LockedFile.close
+backend.satellite_exporter.handlers.non_auth_dumper.NonAuthenticatedDumper.close
+backend.satellite_tools.connection.CompressedStream.close
+backend.satellite_tools.disk_dumper.dumper.CachedQueryIterator.close
+backend.satellite_tools.disk_dumper.dumper.XML_Dumper.close
+backend.satellite_tools.disk_dumper.iss.Dumper.close
+backend.satellite_tools.disk_dumper.string_buffer.StringBuffer.close
+backend.satellite_tools.satsync.StreamProducer.close
+backend.satellite_tools.sync_handlers.ContainerHandler.close
+backend.satellite_tools.xmlSource.BaseDispatchHandler.close
+backend.server.rhnSQL.driver_cx_Oracle.Database.close
+backend.server.rhnSQL.driver_postgresql.Cursor.close
+backend.server.rhnSQL.sql_base.Database.close
+proxy.responseContext.ResponseContext.close
+rhn.SSL.SSLSocket.close
+rhn.rpclib.Server.close
+rhn.transports.BaseOutput.close
+up2date_client.rhnregGui.NetworkConfigDialog.close" class="py-name" href="#" onclick="return doclink('link-37', 'close', 'link-37');">close</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">c</tt><tt class="py-op">.</tt><tt class="py-name">getinfo</tt><tt class="py-op">(</tt><tt class="py-name">pycurl</tt><tt class="py-op">.</tt><tt class="py-name">HTTP_CODE</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line"> </tt>
+<a name="_connect_to_hypervisor"></a><div id="_connect_to_hypervisor-def"><a name="L70"></a><tt class="py-lineno"> 70</tt> <a class="py-toggle" href="#" id="_connect_to_hypervisor-toggle" onclick="return toggle('_connect_to_hypervisor');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="image-module.html#_connect_to_hypervisor">_connect_to_hypervisor</a><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="_connect_to_hypervisor-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="_connect_to_hypervisor-expanded"><a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line"><tt class="py-docstring">    Connects to the hypervisor.</tt> </tt>
+<a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line">    <tt class="py-comment"># First, attempt to import libvirt.  If we don't have that, we can't do</tt> </tt>
+<a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line">    <tt class="py-comment"># much else.</tt> </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line">    <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line">        <tt class="py-keyword">import</tt> <tt id="link-38" class="py-name" targets="Variable virtualization.domain_control.libvirt=virtualization.domain_control-module.html#libvirt,Variable virtualization.domain_directory.libvirt=virtualization.domain_directory-module.html#libvirt,Variable virtualization.poller.libvirt=virtualization.poller-module.html#libvirt,Variable virtualization.support.libvirt=virtualization.support-module.html#libvirt"><a title="virtualization.domain_control.libvirt
+virtualization.domain_directory.libvirt
+virtualization.poller.libvirt
+virtualization.support.libvirt" class="py-name" href="#" onclick="return doclink('link-38', 'libvirt', 'link-38');">libvirt</a></tt> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line">    <tt class="py-keyword">except</tt> <tt class="py-name">ImportError</tt><tt class="py-op">:</tt> </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line">        <tt class="py-name">ie</tt> <tt class="py-op">=</tt> <tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">exc_info</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line">        <tt class="py-keyword">raise</tt> <tt id="link-39" class="py-name"><a title="virtualization.errors.VirtualizationException" class="py-name" href="#" onclick="return doclink('link-39', 'VirtualizationException', 'link-8');">VirtualizationException</a></tt><tt class="py-op">(</tt><tt class="py-string">"Unable to locate libvirt: %s"</tt> <tt class="py-op">%</tt> <tt id="link-40" class="py-name" targets="Class str=str-class.html"><a title="str" class="py-name" href="#" onclick="return doclink('link-40', 'str', 'link-40');">str</a></tt><tt class="py-op">(</tt><tt class="py-name">ie</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line"> </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line">    <tt class="py-comment"># Attempt to connect to the hypervisor.</tt> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line">    <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line">        <tt id="link-41" class="py-name" targets="Module backend.satellite_tools.connection=backend.satellite_tools.connection-module.html,Module rhnpush.connection=rhnpush.connection-module.html"><a title="backend.satellite_tools.connection
+rhnpush.connection" class="py-name" href="#" onclick="return doclink('link-41', 'connection', 'link-41');">connection</a></tt> <tt class="py-op">=</tt> <tt id="link-42" class="py-name"><a title="virtualization.domain_control.libvirt
+virtualization.domain_directory.libvirt
+virtualization.poller.libvirt
+virtualization.support.libvirt" class="py-name" href="#" onclick="return doclink('link-42', 'libvirt', 'link-38');">libvirt</a></tt><tt class="py-op">.</tt><tt class="py-name">open</tt><tt class="py-op">(</tt><tt class="py-name">None</tt><tt class="py-op">)</tt> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line">    <tt class="py-keyword">except</tt> <tt class="py-name">Exception</tt><tt class="py-op">:</tt> </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line">        <tt id="link-43" class="py-name" targets="Variable invocation.e=invocation-module.html#e,Variable virtualization.init_action.e=virtualization.init_action-module.html#e"><a title="invocation.e
+virtualization.init_action.e" class="py-name" href="#" onclick="return doclink('link-43', 'e', 'link-43');">e</a></tt> <tt class="py-op">=</tt> <tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">exc_info</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line">        <tt class="py-keyword">raise</tt> <tt id="link-44" class="py-name"><a title="virtualization.errors.VirtualizationException" class="py-name" href="#" onclick="return doclink('link-44', 'VirtualizationException', 'link-8');">VirtualizationException</a></tt><tt class="py-op">(</tt><tt class="py-string">"Could not connect to hypervisor: %s"</tt> <tt class="py-op">%</tt> <tt id="link-45" class="py-name"><a title="str" class="py-name" href="#" onclick="return doclink('link-45', 'str', 'link-40');">str</a></tt><tt class="py-op">(</tt><tt id="link-46" class="py-name"><a title="invocation.e
+virtualization.init_action.e" class="py-name" href="#" onclick="return doclink('link-46', 'e', 'link-43');">e</a></tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line"> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt id="link-47" class="py-name"><a title="backend.satellite_tools.connection
+rhnpush.connection" class="py-name" href="#" onclick="return doclink('link-47', 'connection', 'link-41');">connection</a></tt> </tt>
+</div><a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line"> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line"><tt class="py-comment"># this is not nice but tarfile.py does not support</tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line"><tt class="py-comment"># sparse file writing :(</tt> </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="_extractImage"></a><div id="_extractImage-def"><a name="L95"></a><tt class="py-lineno"> 95</tt> <a class="py-toggle" href="#" id="_extractImage-toggle" onclick="return toggle('_extractImage');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="image-module.html#_extractImage">_extractImage</a><tt class="py-op">(</tt> <tt class="py-param">source</tt><tt class="py-op">,</tt> <tt class="py-param">dest</tt><tt class="py-op">,</tt> <tt class="py-param">imageType</tt> <tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="_extractImage-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="_extractImage-expanded"><a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line">    <tt class="py-name">param</tt> <tt class="py-op">=</tt> <tt class="py-string">"xf"</tt> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt id="link-48" class="py-name" targets="Method backend.server.action.utils.ChannelPackage.exists()=backend.server.action.utils.ChannelPackage-class.html#exists,Method backend.server.rhnChannel.BaseChannelObject.exists()=backend.server.rhnChannel.BaseChannelObject-class.html#exists"><a title="backend.server.action.utils.ChannelPackage.exists
+backend.server.rhnChannel.BaseChannelObject.exists" class="py-name" href="#" onclick="return doclink('link-48', 'exists', 'link-48');">exists</a></tt><tt class="py-op">(</tt> <tt class="py-name">source</tt> <tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line">        <tt id="link-49" class="py-name"><a title="actions.reboot.log
+backend.satellite_tools.syncLib.log
+image.log
+rhn_check.log
+up2date_client.hardware.log
+up2date_client.rhnreg.log
+up2date_client.rhnregGui.log
+up2date_client.tui.log
+up2date_client.up2dateLog.log
+virtualization.notification.log" class="py-name" href="#" onclick="return doclink('link-49', 'log', 'link-11');">log</a></tt><tt class="py-op">.</tt><tt id="link-50" class="py-name"><a title="backend.common.rhnLog.log_debug
+config_common.rhn_log.Logger.log_debug
+config_common.rhn_log.log_debug
+src.rhn_log.Logger.log_debug
+src.rhn_log.log_debug
+up2date_client.up2dateLog.Log.log_debug" class="py-name" href="#" onclick="return doclink('link-50', 'log_debug', 'link-28');">log_debug</a></tt><tt class="py-op">(</tt><tt class="py-string">"source file not found: %s"</tt> <tt class="py-op">%</tt> <tt class="py-name">source</tt><tt class="py-op">)</tt> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line">        <tt class="py-keyword">raise</tt> <tt class="py-name">Exception</tt><tt class="py-op">(</tt><tt class="py-string">"source file not found: %s"</tt> <tt class="py-op">%</tt> <tt class="py-name">source</tt><tt class="py-op">)</tt> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line"> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt id="link-51" class="py-name"><a title="backend.server.action.utils.ChannelPackage.exists
+backend.server.rhnChannel.BaseChannelObject.exists" class="py-name" href="#" onclick="return doclink('link-51', 'exists', 'link-48');">exists</a></tt><tt class="py-op">(</tt> <tt class="py-name">dest</tt> <tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line">        <tt id="link-52" class="py-name"><a title="actions.reboot.log
+backend.satellite_tools.syncLib.log
+image.log
+rhn_check.log
+up2date_client.hardware.log
+up2date_client.rhnreg.log
+up2date_client.rhnregGui.log
+up2date_client.tui.log
+up2date_client.up2dateLog.log
+virtualization.notification.log" class="py-name" href="#" onclick="return doclink('link-52', 'log', 'link-11');">log</a></tt><tt class="py-op">.</tt><tt id="link-53" class="py-name"><a title="backend.common.rhnLog.log_debug
+config_common.rhn_log.Logger.log_debug
+config_common.rhn_log.log_debug
+src.rhn_log.Logger.log_debug
+src.rhn_log.log_debug
+up2date_client.up2dateLog.Log.log_debug" class="py-name" href="#" onclick="return doclink('link-53', 'log_debug', 'link-28');">log_debug</a></tt><tt class="py-op">(</tt><tt class="py-string">"target path not found: %s"</tt> <tt class="py-op">%</tt> <tt class="py-name">dest</tt><tt class="py-op">)</tt> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line">        <tt class="py-keyword">raise</tt> <tt class="py-name">Exception</tt><tt class="py-op">(</tt><tt class="py-string">"target path not found: %s"</tt> <tt class="py-op">%</tt> <tt class="py-name">dest</tt><tt class="py-op">)</tt> </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line"> </tt>
+<a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-name">source</tt><tt class="py-op">.</tt><tt class="py-name">endswith</tt><tt class="py-op">(</tt><tt class="py-string">"gz"</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line">        <tt class="py-name">param</tt> <tt class="py-op">+=</tt> <tt class="py-string">"z"</tt> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line">    <tt class="py-keyword">elif</tt> <tt class="py-name">source</tt><tt class="py-op">.</tt><tt class="py-name">endswith</tt><tt class="py-op">(</tt><tt class="py-string">"bz2"</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line">        <tt class="py-name">param</tt> <tt class="py-op">+=</tt> <tt class="py-string">"j"</tt> </tt>
+<a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line"> </tt>
+<a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-name">imageType</tt> <tt class="py-op">==</tt> <tt class="py-string">'qcow2'</tt><tt class="py-op">:</tt> </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line">        <tt id="link-54" class="py-name"><a title="actions.reboot.log
+backend.satellite_tools.syncLib.log
+image.log
+rhn_check.log
+up2date_client.hardware.log
+up2date_client.rhnreg.log
+up2date_client.rhnregGui.log
+up2date_client.tui.log
+up2date_client.up2dateLog.log
+virtualization.notification.log" class="py-name" href="#" onclick="return doclink('link-54', 'log', 'link-11');">log</a></tt><tt class="py-op">.</tt><tt id="link-55" class="py-name"><a title="backend.common.rhnLog.log_debug
+config_common.rhn_log.Logger.log_debug
+config_common.rhn_log.log_debug
+src.rhn_log.Logger.log_debug
+src.rhn_log.log_debug
+up2date_client.up2dateLog.Log.log_debug" class="py-name" href="#" onclick="return doclink('link-55', 'log_debug', 'link-28');">log_debug</a></tt><tt class="py-op">(</tt><tt class="py-number">2</tt><tt class="py-op">,</tt> <tt class="py-string">"copy %s to %s"</tt> <tt class="py-op">%</tt><tt class="py-op">(</tt><tt class="py-name">source</tt><tt class="py-op">,</tt> <tt class="py-name">dest</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line">        <tt class="py-name">shutil</tt><tt class="py-op">.</tt><tt class="py-name">copy2</tt><tt class="py-op">(</tt><tt class="py-name">source</tt><tt class="py-op">,</tt> <tt class="py-name">dest</tt><tt class="py-op">)</tt> </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line">    <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line">        <tt class="py-comment"># skip the root directory in the tar - extract only the image files</tt> </tt>
+<a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line">        <tt class="py-name">cmd</tt> <tt class="py-op">=</tt> <tt class="py-string">"tar %s %s -C %s --strip-components=1"</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt> <tt class="py-name">param</tt><tt class="py-op">,</tt> <tt class="py-name">source</tt><tt class="py-op">,</tt> <tt class="py-name">dest</tt> <tt class="py-op">)</tt> </tt>
+<a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line">        <tt id="link-56" class="py-name"><a title="actions.reboot.log
+backend.satellite_tools.syncLib.log
+image.log
+rhn_check.log
+up2date_client.hardware.log
+up2date_client.rhnreg.log
+up2date_client.rhnregGui.log
+up2date_client.tui.log
+up2date_client.up2dateLog.log
+virtualization.notification.log" class="py-name" href="#" onclick="return doclink('link-56', 'log', 'link-11');">log</a></tt><tt class="py-op">.</tt><tt id="link-57" class="py-name"><a title="backend.common.rhnLog.log_debug
+config_common.rhn_log.Logger.log_debug
+config_common.rhn_log.log_debug
+src.rhn_log.Logger.log_debug
+src.rhn_log.log_debug
+up2date_client.up2dateLog.Log.log_debug" class="py-name" href="#" onclick="return doclink('link-57', 'log_debug', 'link-28');">log_debug</a></tt><tt class="py-op">(</tt><tt class="py-name">cmd</tt><tt class="py-op">)</tt> </tt>
+<a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">system</tt><tt class="py-op">(</tt> <tt class="py-name">cmd</tt> <tt class="py-op">)</tt> <tt class="py-op">!=</tt> <tt class="py-number">0</tt><tt class="py-op">:</tt> </tt>
+<a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line">            <tt id="link-58" class="py-name"><a title="actions.reboot.log
+backend.satellite_tools.syncLib.log
+image.log
+rhn_check.log
+up2date_client.hardware.log
+up2date_client.rhnreg.log
+up2date_client.rhnregGui.log
+up2date_client.tui.log
+up2date_client.up2dateLog.log
+virtualization.notification.log" class="py-name" href="#" onclick="return doclink('link-58', 'log', 'link-11');">log</a></tt><tt class="py-op">.</tt><tt id="link-59" class="py-name"><a title="backend.common.rhnLog.log_debug
+config_common.rhn_log.Logger.log_debug
+config_common.rhn_log.log_debug
+src.rhn_log.Logger.log_debug
+src.rhn_log.log_debug
+up2date_client.up2dateLog.Log.log_debug" class="py-name" href="#" onclick="return doclink('link-59', 'log_debug', 'link-28');">log_debug</a></tt><tt class="py-op">(</tt> <tt class="py-string">"%s failed"</tt> <tt class="py-op">%</tt> <tt class="py-name">cmd</tt> <tt class="py-op">)</tt> </tt>
+<a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt class="py-name">Exception</tt><tt class="py-op">(</tt><tt class="py-string">"%s failed"</tt> <tt class="py-op">%</tt> <tt class="py-name">cmd</tt><tt class="py-op">)</tt> </tt>
+<a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line"> </tt>
+<a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-number">0</tt> </tt>
+</div><a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line"> </tt>
+<a name="_md5"></a><div id="_md5-def"><a name="L123"></a><tt class="py-lineno">123</tt> <a class="py-toggle" href="#" id="_md5-toggle" onclick="return toggle('_md5');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="image-module.html#_md5">_md5</a><tt class="py-op">(</tt><tt class="py-param">path</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="_md5-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="_md5-expanded"><a name="L124"></a><tt class="py-lineno">124</tt>  <tt class="py-line">    <tt class="py-name">f</tt> <tt class="py-op">=</tt> <tt class="py-name">open</tt><tt class="py-op">(</tt><tt class="py-name">path</tt><tt class="py-op">,</tt> <tt class="py-string">"rb"</tt><tt class="py-op">)</tt> </tt>
+<a name="L125"></a><tt class="py-lineno">125</tt>  <tt class="py-line">    <tt class="py-name">sum</tt> <tt class="py-op">=</tt> <tt class="py-name">hashlib</tt><tt class="py-op">.</tt><tt class="py-name">md5</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L126"></a><tt class="py-lineno">126</tt>  <tt class="py-line">    <tt class="py-keyword">while</tt> <tt class="py-number">1</tt><tt class="py-op">:</tt> </tt>
+<a name="L127"></a><tt class="py-lineno">127</tt>  <tt class="py-line">        <tt class="py-name">block</tt> <tt class="py-op">=</tt> <tt class="py-name">f</tt><tt class="py-op">.</tt><tt id="link-60" class="py-name"><a title="backend.wsgi.wsgiRequest.WsgiRequest.read
+rhn.SSL.SSLSocket.read
+rhn.nonblocking.NonBlockingFile.read
+rhn.transports.File.read
+rhn.transports.Input.read
+rhnkickstart.lilo.LiloConfigFile.read
+rhnpush.archive.ArchiveParser.read
+src.jabber_lib.JabberClient.read" class="py-name" href="#" onclick="return doclink('link-60', 'read', 'link-16');">read</a></tt><tt class="py-op">(</tt><tt class="py-number">128</tt><tt class="py-op">)</tt> </tt>
+<a name="L128"></a><tt class="py-lineno">128</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">block</tt><tt class="py-op">:</tt> </tt>
+<a name="L129"></a><tt class="py-lineno">129</tt>  <tt class="py-line">            <tt class="py-keyword">break</tt> </tt>
+<a name="L130"></a><tt class="py-lineno">130</tt>  <tt class="py-line">        <tt class="py-name">sum</tt><tt class="py-op">.</tt><tt id="link-61" class="py-name" targets="Function actions.up2date_config.update()=actions.up2date_config-module.html#update,Method backend.satellite_tools.progress_bar.ProgressBar.update()=backend.satellite_tools.progress_bar.ProgressBar-class.html#update,Function backend.server.action.errata.update()=backend.server.action.errata-module.html#update,Function backend.server.action.packages.update()=backend.server.action.packages-module.html#update,Function backend.server.action_extra_data.errata.update()=backend.server.action_extra_data.errata-module.html#update,Function backend.server.action_extra_data.packages.update()=backend.server.action_extra_data.packages-module.html#update,Function backend.server.action_extra_data.up2date_config.update()=backend.server.action_extra_data.up2date_config-module.html#update,Method rhn.UserDictCase.UserDictCase.update()=rhn.UserDictCase.UserDictCase-class.html#update,Method up2date_client.config.ConfigFile.update()=up2date_client.config.ConfigFile-class.html#update"><a title="actions.up2date_config.update
+backend.satellite_tools.progress_bar.ProgressBar.update
+backend.server.action.errata.update
+backend.server.action.packages.update
+backend.server.action_extra_data.errata.update
+backend.server.action_extra_data.packages.update
+backend.server.action_extra_data.up2date_config.update
+rhn.UserDictCase.UserDictCase.update
+up2date_client.config.ConfigFile.update" class="py-name" href="#" onclick="return doclink('link-61', 'update', 'link-61');">update</a></tt><tt class="py-op">(</tt><tt class="py-name">block</tt><tt class="py-op">)</tt> </tt>
+<a name="L131"></a><tt class="py-lineno">131</tt>  <tt class="py-line">    <tt class="py-name">f</tt><tt class="py-op">.</tt><tt id="link-62" class="py-name"><a title="backend.common.rhnCache.ClosingZipFile.close
+backend.common.rhnCache.LockedFile.close
+backend.satellite_exporter.handlers.non_auth_dumper.NonAuthenticatedDumper.close
+backend.satellite_tools.connection.CompressedStream.close
+backend.satellite_tools.disk_dumper.dumper.CachedQueryIterator.close
+backend.satellite_tools.disk_dumper.dumper.XML_Dumper.close
+backend.satellite_tools.disk_dumper.iss.Dumper.close
+backend.satellite_tools.disk_dumper.string_buffer.StringBuffer.close
+backend.satellite_tools.satsync.StreamProducer.close
+backend.satellite_tools.sync_handlers.ContainerHandler.close
+backend.satellite_tools.xmlSource.BaseDispatchHandler.close
+backend.server.rhnSQL.driver_cx_Oracle.Database.close
+backend.server.rhnSQL.driver_postgresql.Cursor.close
+backend.server.rhnSQL.sql_base.Database.close
+proxy.responseContext.ResponseContext.close
+rhn.SSL.SSLSocket.close
+rhn.rpclib.Server.close
+rhn.transports.BaseOutput.close
+up2date_client.rhnregGui.NetworkConfigDialog.close" class="py-name" href="#" onclick="return doclink('link-62', 'close', 'link-37');">close</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L132"></a><tt class="py-lineno">132</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">sum</tt><tt class="py-op">.</tt><tt class="py-name">hexdigest</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L133"></a><tt class="py-lineno">133</tt>  <tt class="py-line"> </tt>
+<a name="L134"></a><tt class="py-lineno">134</tt>  <tt class="py-line"> </tt>
+<a name="_fileExists"></a><div id="_fileExists-def"><a name="L135"></a><tt class="py-lineno">135</tt> <a class="py-toggle" href="#" id="_fileExists-toggle" onclick="return toggle('_fileExists');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="image-module.html#_fileExists">_fileExists</a><tt class="py-op">(</tt><tt class="py-param">name</tt><tt class="py-op">,</tt> <tt class="py-param">md5Sum</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="_fileExists-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="_fileExists-expanded"><a name="L136"></a><tt class="py-lineno">136</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt id="link-63" class="py-name"><a title="backend.server.action.utils.ChannelPackage.exists
+backend.server.rhnChannel.BaseChannelObject.exists" class="py-name" href="#" onclick="return doclink('link-63', 'exists', 'link-48');">exists</a></tt><tt class="py-op">(</tt> <tt id="link-64" class="py-name" targets="Variable up2date_client.tui.AlreadyRegisteredSubscriptionManagerWindow.name=up2date_client.tui.AlreadyRegisteredSubscriptionManagerWindow-class.html#name,Variable up2date_client.tui.AlreadyRegisteredWindow.name=up2date_client.tui.AlreadyRegisteredWindow-class.html#name,Variable up2date_client.tui.ConnectWindow.name=up2date_client.tui.ConnectWindow-class.html#name,Variable up2date_client.tui.FinishWindow.name=up2date_client.tui.FinishWindow-class.html#name,Variable up2date_client.tui.HardwareWindow.name=up2date_client.tui.HardwareWindow-class.html#name,Variable up2date_client.tui.InfoWindow.name=up2date_client.tui.InfoWindow-class.html#name,Variable up2date_client.tui.OSReleaseWindow.name=up2date_client.tui.OSReleaseWindow-class.html#name,Variable up2date_client.tui.PackagesWindow.name=up2date_client.tui.PackagesWindow-class.html#name,Variable up2date_client.tui.ReviewWindow.name=up2date_client.tui.ReviewWindow-class.html#name,Variable up2date_client.tui.SatelliteUrlWindow.name=up2date_client.tui.SatelliteUrlWindow-class.html#name,Variable up2date_client.tui.SendWindow.name=up2date_client.tui.SendWindow-class.html#name,Variable up2date_client.tui.SendingWindow.name=up2date_client.tui.SendingWindow-class.html#name,Variable up2date_client.tui.StartWindow.name=up2date_client.tui.StartWindow-class.html#name,Variable up2date_client.tui.Tui.name=up2date_client.tui.Tui-class.html#name,Variable up2date_client.tui.WhyRegisterWindow.name=up2date_client.tui.WhyRegisterWindow-class.html#name"><a title="up2date_client.tui.AlreadyRegisteredSubscriptionManagerWindow.name
+up2date_client.tui.AlreadyRegisteredWindow.name
+up2date_client.tui.ConnectWindow.name
+up2date_client.tui.FinishWindow.name
+up2date_client.tui.HardwareWindow.name
+up2date_client.tui.InfoWindow.name
+up2date_client.tui.OSReleaseWindow.name
+up2date_client.tui.PackagesWindow.name
+up2date_client.tui.ReviewWindow.name
+up2date_client.tui.SatelliteUrlWindow.name
+up2date_client.tui.SendWindow.name
+up2date_client.tui.SendingWindow.name
+up2date_client.tui.StartWindow.name
+up2date_client.tui.Tui.name
+up2date_client.tui.WhyRegisterWindow.name" class="py-name" href="#" onclick="return doclink('link-64', 'name', 'link-64');">name</a></tt> <tt class="py-op">)</tt> <tt class="py-keyword">and</tt> <tt class="py-name">md5Sum</tt> <tt class="py-op">==</tt> <tt id="link-65" class="py-name" targets="Function image._md5()=image-module.html#_md5"><a title="image._md5" class="py-name" href="#" onclick="return doclink('link-65', '_md5', 'link-65');">_md5</a></tt><tt class="py-op">(</tt> <tt id="link-66" class="py-name"><a title="up2date_client.tui.AlreadyRegisteredSubscriptionManagerWindow.name
+up2date_client.tui.AlreadyRegisteredWindow.name
+up2date_client.tui.ConnectWindow.name
+up2date_client.tui.FinishWindow.name
+up2date_client.tui.HardwareWindow.name
+up2date_client.tui.InfoWindow.name
+up2date_client.tui.OSReleaseWindow.name
+up2date_client.tui.PackagesWindow.name
+up2date_client.tui.ReviewWindow.name
+up2date_client.tui.SatelliteUrlWindow.name
+up2date_client.tui.SendWindow.name
+up2date_client.tui.SendingWindow.name
+up2date_client.tui.StartWindow.name
+up2date_client.tui.Tui.name
+up2date_client.tui.WhyRegisterWindow.name" class="py-name" href="#" onclick="return doclink('link-66', 'name', 'link-64');">name</a></tt> <tt class="py-op">)</tt> </tt>
+</div><a name="L137"></a><tt class="py-lineno">137</tt>  <tt class="py-line"> </tt>
+<a name="_domainExists"></a><div id="_domainExists-def"><a name="L138"></a><tt class="py-lineno">138</tt> <a class="py-toggle" href="#" id="_domainExists-toggle" onclick="return toggle('_domainExists');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="image-module.html#_domainExists">_domainExists</a><tt class="py-op">(</tt> <tt class="py-param">dom</tt><tt class="py-op">,</tt> <tt class="py-param">connection</tt> <tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="_domainExists-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="_domainExists-expanded"><a name="L139"></a><tt class="py-lineno">139</tt>  <tt class="py-line">    <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L140"></a><tt class="py-lineno">140</tt>  <tt class="py-line">        <tt id="link-67" class="py-name"><a title="backend.satellite_tools.connection
+rhnpush.connection" class="py-name" href="#" onclick="return doclink('link-67', 'connection', 'link-41');">connection</a></tt><tt class="py-op">.</tt><tt class="py-name">lookupByName</tt><tt class="py-op">(</tt><tt class="py-name">dom</tt><tt class="py-op">)</tt> </tt>
+<a name="L141"></a><tt class="py-lineno">141</tt>  <tt class="py-line">    <tt class="py-keyword">except</tt> <tt class="py-name">Exception</tt><tt class="py-op">:</tt> </tt>
+<a name="L142"></a><tt class="py-lineno">142</tt>  <tt class="py-line">        <tt id="link-68" class="py-name"><a title="actions.reboot.log
+backend.satellite_tools.syncLib.log
+image.log
+rhn_check.log
+up2date_client.hardware.log
+up2date_client.rhnreg.log
+up2date_client.rhnregGui.log
+up2date_client.tui.log
+up2date_client.up2dateLog.log
+virtualization.notification.log" class="py-name" href="#" onclick="return doclink('link-68', 'log', 'link-11');">log</a></tt><tt class="py-op">.</tt><tt id="link-69" class="py-name"><a title="backend.common.rhnLog.log_debug
+config_common.rhn_log.Logger.log_debug
+config_common.rhn_log.log_debug
+src.rhn_log.Logger.log_debug
+src.rhn_log.log_debug
+up2date_client.up2dateLog.Log.log_debug" class="py-name" href="#" onclick="return doclink('link-69', 'log_debug', 'link-28');">log_debug</a></tt><tt class="py-op">(</tt><tt class="py-string">"domain %s does not exist"</tt> <tt class="py-op">%</tt> <tt class="py-name">dom</tt><tt class="py-op">)</tt> </tt>
+<a name="L143"></a><tt class="py-lineno">143</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">False</tt> </tt>
+<a name="L144"></a><tt class="py-lineno">144</tt>  <tt class="py-line">    <tt id="link-70" class="py-name"><a title="actions.reboot.log
+backend.satellite_tools.syncLib.log
+image.log
+rhn_check.log
+up2date_client.hardware.log
+up2date_client.rhnreg.log
+up2date_client.rhnregGui.log
+up2date_client.tui.log
+up2date_client.up2dateLog.log
+virtualization.notification.log" class="py-name" href="#" onclick="return doclink('link-70', 'log', 'link-11');">log</a></tt><tt class="py-op">.</tt><tt id="link-71" class="py-name"><a title="backend.common.rhnLog.log_debug
+config_common.rhn_log.Logger.log_debug
+config_common.rhn_log.log_debug
+src.rhn_log.Logger.log_debug
+src.rhn_log.log_debug
+up2date_client.up2dateLog.Log.log_debug" class="py-name" href="#" onclick="return doclink('link-71', 'log_debug', 'link-28');">log_debug</a></tt><tt class="py-op">(</tt><tt class="py-string">"domain %s exists"</tt> <tt class="py-op">%</tt> <tt class="py-name">dom</tt><tt class="py-op">)</tt> </tt>
+<a name="L145"></a><tt class="py-lineno">145</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">True</tt> </tt>
+</div><a name="L146"></a><tt class="py-lineno">146</tt>  <tt class="py-line"> </tt>
+<a name="L147"></a><tt class="py-lineno">147</tt>  <tt class="py-line"><tt class="py-comment"># create a new or reuse an existing directory</tt> </tt>
+<a name="_createTargetDir"></a><div id="_createTargetDir-def"><a name="L148"></a><tt class="py-lineno">148</tt> <a class="py-toggle" href="#" id="_createTargetDir-toggle" onclick="return toggle('_createTargetDir');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="image-module.html#_createTargetDir">_createTargetDir</a><tt class="py-op">(</tt> <tt class="py-param">wantedDir</tt> <tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="_createTargetDir-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="_createTargetDir-expanded"><a name="L149"></a><tt class="py-lineno">149</tt>  <tt class="py-line">    <tt class="py-name">new_dir_name</tt> <tt class="py-op">=</tt> <tt class="py-name">wantedDir</tt> </tt>
+<a name="L150"></a><tt class="py-lineno">150</tt>  <tt class="py-line">    <tt class="py-keyword">for</tt> <tt class="py-name">i</tt> <tt class="py-keyword">in</tt> <tt class="py-name">itertools</tt><tt class="py-op">.</tt><tt class="py-name">count</tt><tt class="py-op">(</tt><tt class="py-number">1</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L151"></a><tt class="py-lineno">151</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt id="link-72" class="py-name"><a title="backend.server.action.utils.ChannelPackage.exists
+backend.server.rhnChannel.BaseChannelObject.exists" class="py-name" href="#" onclick="return doclink('link-72', 'exists', 'link-48');">exists</a></tt><tt class="py-op">(</tt><tt class="py-name">new_dir_name</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L152"></a><tt class="py-lineno">152</tt>  <tt class="py-line">            <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L153"></a><tt class="py-lineno">153</tt>  <tt class="py-line">                <tt class="py-name">os</tt><tt class="py-op">.</tt><tt id="link-73" class="py-name" targets="Function backend.common.fileutils.makedirs()=backend.common.fileutils-module.html#makedirs"><a title="backend.common.fileutils.makedirs" class="py-name" href="#" onclick="return doclink('link-73', 'makedirs', 'link-73');">makedirs</a></tt><tt class="py-op">(</tt> <tt class="py-name">new_dir_name</tt> <tt class="py-op">)</tt> </tt>
+<a name="L154"></a><tt class="py-lineno">154</tt>  <tt class="py-line">            <tt class="py-keyword">except</tt> <tt class="py-name">OSError</tt><tt class="py-op">:</tt> </tt>
+<a name="L155"></a><tt class="py-lineno">155</tt>  <tt class="py-line">                <tt class="py-keyword">return</tt> <tt class="py-op">(</tt><tt class="py-number">1</tt><tt class="py-op">,</tt> <tt class="py-string">"creating directory %s failed"</tt> <tt class="py-op">%</tt> <tt class="py-name">new_dir_name</tt><tt class="py-op">)</tt> </tt>
+<a name="L156"></a><tt class="py-lineno">156</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-name">new_dir_name</tt> </tt>
+<a name="L157"></a><tt class="py-lineno">157</tt>  <tt class="py-line">        <tt class="py-keyword">elif</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">os</tt><tt class="py-op">.</tt><tt id="link-74" class="py-name" targets="Function rhnpush.uploadLib.listdir()=rhnpush.uploadLib-module.html#listdir"><a title="rhnpush.uploadLib.listdir" class="py-name" href="#" onclick="return doclink('link-74', 'listdir', 'link-74');">listdir</a></tt><tt class="py-op">(</tt><tt class="py-name">new_dir_name</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> <tt class="py-op">&lt;=</tt> <tt class="py-number">1</tt><tt class="py-op">:</tt> </tt>
+<a name="L158"></a><tt class="py-lineno">158</tt>  <tt class="py-line">            <tt class="py-comment"># if the directory exists with zero or only one file, we'll use it</tt> </tt>
+<a name="L159"></a><tt class="py-lineno">159</tt>  <tt class="py-line">            <tt class="py-comment"># to extract the image into it</tt> </tt>
+<a name="L160"></a><tt class="py-lineno">160</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-name">new_dir_name</tt> </tt>
+<a name="L161"></a><tt class="py-lineno">161</tt>  <tt class="py-line">        <tt class="py-name">new_dir_name</tt> <tt class="py-op">=</tt> <tt class="py-string">"%s-%i"</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt> <tt class="py-name">wantedDir</tt><tt class="py-op">,</tt> <tt class="py-name">i</tt> <tt class="py-op">)</tt> </tt>
+</div><a name="L162"></a><tt class="py-lineno">162</tt>  <tt class="py-line"> </tt>
+<a name="L163"></a><tt class="py-lineno">163</tt>  <tt class="py-line"><tt class="py-comment"># fillout the variables in the XML template file</tt> </tt>
+<a name="_generateXML"></a><div id="_generateXML-def"><a name="L164"></a><tt class="py-lineno">164</tt> <a class="py-toggle" href="#" id="_generateXML-toggle" onclick="return toggle('_generateXML');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="image-module.html#_generateXML">_generateXML</a><tt class="py-op">(</tt> <tt class="py-param">params</tt> <tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="_generateXML-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="_generateXML-expanded"><a name="L165"></a><tt class="py-lineno">165</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt id="link-75" class="py-name"><a title="image.PRE_SCRIPT" class="py-name" href="#" onclick="return doclink('link-75', 'PRE_SCRIPT', 'link-23');">PRE_SCRIPT</a></tt> <tt class="py-op">!=</tt> <tt class="py-string">""</tt><tt class="py-op">:</tt> </tt>
+<a name="L166"></a><tt class="py-lineno">166</tt>  <tt class="py-line">        <tt id="link-76" class="py-name"><a title="actions.reboot.log
+backend.satellite_tools.syncLib.log
+image.log
+rhn_check.log
+up2date_client.hardware.log
+up2date_client.rhnreg.log
+up2date_client.rhnregGui.log
+up2date_client.tui.log
+up2date_client.up2dateLog.log
+virtualization.notification.log" class="py-name" href="#" onclick="return doclink('link-76', 'log', 'link-11');">log</a></tt><tt class="py-op">.</tt><tt id="link-77" class="py-name"><a title="backend.common.rhnLog.log_debug
+config_common.rhn_log.Logger.log_debug
+config_common.rhn_log.log_debug
+src.rhn_log.Logger.log_debug
+src.rhn_log.log_debug
+up2date_client.up2dateLog.Log.log_debug" class="py-name" href="#" onclick="return doclink('link-77', 'log_debug', 'link-28');">log_debug</a></tt><tt class="py-op">(</tt><tt class="py-string">"running image pre-script %s"</tt> <tt class="py-op">%</tt> <tt id="link-78" class="py-name"><a title="image.PRE_SCRIPT" class="py-name" href="#" onclick="return doclink('link-78', 'PRE_SCRIPT', 'link-23');">PRE_SCRIPT</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L167"></a><tt class="py-lineno">167</tt>  <tt class="py-line">        <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">system</tt><tt class="py-op">(</tt> <tt id="link-79" class="py-name"><a title="image.PRE_SCRIPT" class="py-name" href="#" onclick="return doclink('link-79', 'PRE_SCRIPT', 'link-23');">PRE_SCRIPT</a></tt> <tt class="py-op">)</tt> </tt>
+<a name="L168"></a><tt class="py-lineno">168</tt>  <tt class="py-line"> </tt>
+<a name="L169"></a><tt class="py-lineno">169</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">isfile</tt><tt class="py-op">(</tt><tt id="link-80" class="py-name"><a title="image.IMAGE_CFG_TEMPLATE" class="py-name" href="#" onclick="return doclink('link-80', 'IMAGE_CFG_TEMPLATE', 'link-20');">IMAGE_CFG_TEMPLATE</a></tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L170"></a><tt class="py-lineno">170</tt>  <tt class="py-line">        <tt class="py-name">f</tt> <tt class="py-op">=</tt> <tt class="py-name">open</tt><tt class="py-op">(</tt><tt id="link-81" class="py-name"><a title="image.IMAGE_CFG_TEMPLATE" class="py-name" href="#" onclick="return doclink('link-81', 'IMAGE_CFG_TEMPLATE', 'link-20');">IMAGE_CFG_TEMPLATE</a></tt><tt class="py-op">,</tt> <tt class="py-string">'r'</tt><tt class="py-op">)</tt> </tt>
+<a name="L171"></a><tt class="py-lineno">171</tt>  <tt class="py-line">        <tt class="py-name">CREATE_TEMPLATE</tt> <tt class="py-op">=</tt> <tt class="py-name">f</tt><tt class="py-op">.</tt><tt id="link-82" class="py-name"><a title="backend.wsgi.wsgiRequest.WsgiRequest.read
+rhn.SSL.SSLSocket.read
+rhn.nonblocking.NonBlockingFile.read
+rhn.transports.File.read
+rhn.transports.Input.read
+rhnkickstart.lilo.LiloConfigFile.read
+rhnpush.archive.ArchiveParser.read
+src.jabber_lib.JabberClient.read" class="py-name" href="#" onclick="return doclink('link-82', 'read', 'link-16');">read</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L172"></a><tt class="py-lineno">172</tt>  <tt class="py-line">        <tt class="py-name">f</tt><tt class="py-op">.</tt><tt id="link-83" class="py-name"><a title="backend.common.rhnCache.ClosingZipFile.close
+backend.common.rhnCache.LockedFile.close
+backend.satellite_exporter.handlers.non_auth_dumper.NonAuthenticatedDumper.close
+backend.satellite_tools.connection.CompressedStream.close
+backend.satellite_tools.disk_dumper.dumper.CachedQueryIterator.close
+backend.satellite_tools.disk_dumper.dumper.XML_Dumper.close
+backend.satellite_tools.disk_dumper.iss.Dumper.close
+backend.satellite_tools.disk_dumper.string_buffer.StringBuffer.close
+backend.satellite_tools.satsync.StreamProducer.close
+backend.satellite_tools.sync_handlers.ContainerHandler.close
+backend.satellite_tools.xmlSource.BaseDispatchHandler.close
+backend.server.rhnSQL.driver_cx_Oracle.Database.close
+backend.server.rhnSQL.driver_postgresql.Cursor.close
+backend.server.rhnSQL.sql_base.Database.close
+proxy.responseContext.ResponseContext.close
+rhn.SSL.SSLSocket.close
+rhn.rpclib.Server.close
+rhn.transports.BaseOutput.close
+up2date_client.rhnregGui.NetworkConfigDialog.close" class="py-name" href="#" onclick="return doclink('link-83', 'close', 'link-37');">close</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L173"></a><tt class="py-lineno">173</tt>  <tt class="py-line"> </tt>
+<a name="L174"></a><tt class="py-lineno">174</tt>  <tt class="py-line">    <tt class="py-name">created_xml</tt> <tt class="py-op">=</tt> <tt class="py-name">CREATE_TEMPLATE</tt> <tt class="py-op">%</tt> <tt class="py-name">params</tt> </tt>
+<a name="L175"></a><tt class="py-lineno">175</tt>  <tt class="py-line">    <tt id="link-84" class="py-name"><a title="actions.reboot.log
+backend.satellite_tools.syncLib.log
+image.log
+rhn_check.log
+up2date_client.hardware.log
+up2date_client.rhnreg.log
+up2date_client.rhnregGui.log
+up2date_client.tui.log
+up2date_client.up2dateLog.log
+virtualization.notification.log" class="py-name" href="#" onclick="return doclink('link-84', 'log', 'link-11');">log</a></tt><tt class="py-op">.</tt><tt id="link-85" class="py-name"><a title="backend.common.rhnLog.log_debug
+config_common.rhn_log.Logger.log_debug
+config_common.rhn_log.log_debug
+src.rhn_log.Logger.log_debug
+src.rhn_log.log_debug
+up2date_client.up2dateLog.Log.log_debug" class="py-name" href="#" onclick="return doclink('link-85', 'log_debug', 'link-28');">log_debug</a></tt><tt class="py-op">(</tt><tt class="py-string">"libvirt XML: %s"</tt> <tt class="py-op">%</tt> <tt class="py-name">created_xml</tt><tt class="py-op">)</tt> </tt>
+<a name="L176"></a><tt class="py-lineno">176</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">created_xml</tt> </tt>
+</div><a name="L177"></a><tt class="py-lineno">177</tt>  <tt class="py-line"> </tt>
+<a name="L178"></a><tt class="py-lineno">178</tt>  <tt class="py-line"><tt class="py-comment"># download/extract and start a new image</tt> </tt>
+<a name="L179"></a><tt class="py-lineno">179</tt>  <tt class="py-line"><tt class="py-comment"># imageName = myImage.x86_64.</tt> </tt>
+<a name="L180"></a><tt class="py-lineno">180</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L181"></a><tt class="py-lineno">181</tt>  <tt class="py-line"><tt class="py-comment"># downloadURL  : http://susestudio.com/download/f98.../my_image.i686-0.0.3.vmx.tar.gz</tt> </tt>
+<a name="L182"></a><tt class="py-lineno">182</tt>  <tt class="py-line"><tt class="py-comment"># proxySetting : { proxyURL  : http://myproxy.site:3128</tt> </tt>
+<a name="L183"></a><tt class="py-lineno">183</tt>  <tt class="py-line"><tt class="py-comment">#                  proxyUser : user</tt> </tt>
+<a name="L184"></a><tt class="py-lineno">184</tt>  <tt class="py-line"><tt class="py-comment">#                  proxyPass : s3cr3t }</tt> </tt>
+<a name="L185"></a><tt class="py-lineno">185</tt>  <tt class="py-line"><tt class="py-comment"># memKB      : 524288</tt> </tt>
+<a name="L186"></a><tt class="py-lineno">186</tt>  <tt class="py-line"><tt class="py-comment"># vCPUs      : 1</tt> </tt>
+<a name="L187"></a><tt class="py-lineno">187</tt>  <tt class="py-line"><tt class="py-comment"># domainName : virt_test_machine</tt> </tt>
+<a name="L188"></a><tt class="py-lineno">188</tt>  <tt class="py-line"><tt class="py-comment"># virtBridge : br0</tt> </tt>
+<a name="L189"></a><tt class="py-lineno">189</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="deploy"></a><div id="deploy-def"><a name="L190"></a><tt class="py-lineno">190</tt> <a class="py-toggle" href="#" id="deploy-toggle" onclick="return toggle('deploy');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="image-module.html#deploy">deploy</a><tt class="py-op">(</tt><tt class="py-param">params</tt><tt class="py-op">,</tt> <tt class="py-param">extraParams</tt><tt class="py-op">=</tt><tt class="py-string">""</tt><tt class="py-op">,</tt><tt class="py-param">cache_only</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="deploy-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="deploy-expanded"><a name="L191"></a><tt class="py-lineno">191</tt>  <tt class="py-line">    <tt class="py-docstring">"""start and connect a local image with SUSE Manager"""</tt> </tt>
+<a name="L192"></a><tt class="py-lineno">192</tt>  <tt class="py-line"> </tt>
+<a name="L193"></a><tt class="py-lineno">193</tt>  <tt class="py-line">    <tt class="py-name">urlParts</tt>  <tt class="py-op">=</tt> <tt class="py-name">params</tt><tt class="py-op">[</tt><tt class="py-string">"downloadURL"</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt class="py-name">split</tt><tt class="py-op">(</tt><tt class="py-string">'/'</tt><tt class="py-op">)</tt> </tt>
+<a name="L194"></a><tt class="py-lineno">194</tt>  <tt class="py-line">    <tt class="py-name">studioArchiveFileName</tt>  <tt class="py-op">=</tt> <tt class="py-name">urlParts</tt><tt class="py-op">[</tt><tt class="py-op">-</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> </tt>
+<a name="L195"></a><tt class="py-lineno">195</tt>  <tt class="py-line">    <tt id="link-86" class="py-name" targets="Module backend.common.checksum=backend.common.checksum-module.html"><a title="backend.common.checksum" class="py-name" href="#" onclick="return doclink('link-86', 'checksum', 'link-86');">checksum</a></tt>  <tt class="py-op">=</tt> <tt class="py-name">urlParts</tt><tt class="py-op">[</tt><tt class="py-op">-</tt><tt class="py-number">2</tt><tt class="py-op">]</tt> </tt>
+<a name="L196"></a><tt class="py-lineno">196</tt>  <tt class="py-line"> </tt>
+<a name="L197"></a><tt class="py-lineno">197</tt>  <tt class="py-line">    <tt class="py-comment"># studioArchiveFileName = workshop_test_sles11sp1.i686-0.0.1.vmx.tar.gz</tt> </tt>
+<a name="L198"></a><tt class="py-lineno">198</tt>  <tt class="py-line">    <tt class="py-comment"># studioArchiveFileName = Just_enough_OS_openSUSE_12.1.x86_64-0.0.1.xen.tar.gz</tt> </tt>
+<a name="L199"></a><tt class="py-lineno">199</tt>  <tt class="py-line">    <tt class="py-name">m</tt> <tt class="py-op">=</tt> <tt class="py-name">re</tt><tt class="py-op">.</tt><tt id="link-87" class="py-name" targets="Function backend.server.rhnServer.search()=backend.server.rhnServer-module.html#search,Function backend.server.rhnUser.search()=backend.server.rhnUser-module.html#search"><a title="backend.server.rhnServer.search
+backend.server.rhnUser.search" class="py-name" href="#" onclick="return doclink('link-87', 'search', 'link-87');">search</a></tt><tt class="py-op">(</tt> <tt class="py-string">'(.*)\.(x86_64|i\d86)-(\d+\.\d+\.\d+)\.(xen|vmx|qcow2)'</tt><tt class="py-op">,</tt> <tt class="py-name">studioArchiveFileName</tt> <tt class="py-op">)</tt> </tt>
+<a name="L200"></a><tt class="py-lineno">200</tt>  <tt class="py-line"> </tt>
+<a name="L201"></a><tt class="py-lineno">201</tt>  <tt class="py-line">    <tt class="py-name">imageName</tt>    <tt class="py-op">=</tt> <tt class="py-name">m</tt><tt class="py-op">.</tt><tt class="py-name">group</tt><tt class="py-op">(</tt><tt class="py-number">1</tt><tt class="py-op">)</tt> </tt>
+<a name="L202"></a><tt class="py-lineno">202</tt>  <tt class="py-line">    <tt class="py-name">imageArch</tt>    <tt class="py-op">=</tt> <tt class="py-name">m</tt><tt class="py-op">.</tt><tt class="py-name">group</tt><tt class="py-op">(</tt><tt class="py-number">2</tt><tt class="py-op">)</tt> </tt>
+<a name="L203"></a><tt class="py-lineno">203</tt>  <tt class="py-line">    <tt class="py-name">imageVersion</tt> <tt class="py-op">=</tt> <tt class="py-name">m</tt><tt class="py-op">.</tt><tt class="py-name">group</tt><tt class="py-op">(</tt><tt class="py-number">3</tt><tt class="py-op">)</tt> </tt>
+<a name="L204"></a><tt class="py-lineno">204</tt>  <tt class="py-line">    <tt class="py-name">imageType</tt>    <tt class="py-op">=</tt> <tt class="py-name">m</tt><tt class="py-op">.</tt><tt class="py-name">group</tt><tt class="py-op">(</tt><tt class="py-number">4</tt><tt class="py-op">)</tt> </tt>
+<a name="L205"></a><tt class="py-lineno">205</tt>  <tt class="py-line">    <tt class="py-name">studioImageDiskFileName</tt> <tt class="py-op">=</tt> <tt class="py-name">imageName</tt><tt class="py-op">+</tt><tt class="py-string">"."</tt><tt class="py-op">+</tt><tt class="py-name">imageArch</tt><tt class="py-op">+</tt><tt class="py-string">"-"</tt><tt class="py-op">+</tt><tt class="py-name">imageVersion</tt> </tt>
+<a name="L206"></a><tt class="py-lineno">206</tt>  <tt class="py-line"> </tt>
+<a name="L207"></a><tt class="py-lineno">207</tt>  <tt class="py-line">    <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L208"></a><tt class="py-lineno">208</tt>  <tt class="py-line">        <tt id="link-88" class="py-name"><a title="backend.satellite_tools.connection
+rhnpush.connection" class="py-name" href="#" onclick="return doclink('link-88', 'connection', 'link-41');">connection</a></tt> <tt class="py-op">=</tt> <tt id="link-89" class="py-name" targets="Function image._connect_to_hypervisor()=image-module.html#_connect_to_hypervisor,Function rhnkickstart.kickstart_guest._connect_to_hypervisor()=rhnkickstart.kickstart_guest-module.html#_connect_to_hypervisor"><a title="image._connect_to_hypervisor
+rhnkickstart.kickstart_guest._connect_to_hypervisor" class="py-name" href="#" onclick="return doclink('link-89', '_connect_to_hypervisor', 'link-89');">_connect_to_hypervisor</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L209"></a><tt class="py-lineno">209</tt>  <tt class="py-line">    <tt class="py-keyword">except</tt> <tt class="py-name">Exception</tt><tt class="py-op">:</tt> </tt>
+<a name="L210"></a><tt class="py-lineno">210</tt>  <tt class="py-line">        <tt id="link-90" class="py-name"><a title="invocation.e
+virtualization.init_action.e" class="py-name" href="#" onclick="return doclink('link-90', 'e', 'link-43');">e</a></tt> <tt class="py-op">=</tt> <tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">exc_info</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> </tt>
+<a name="L211"></a><tt class="py-lineno">211</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-op">(</tt><tt class="py-number">1</tt><tt class="py-op">,</tt> <tt class="py-string">"%s"</tt> <tt class="py-op">%</tt> <tt id="link-91" class="py-name"><a title="invocation.e
+virtualization.init_action.e" class="py-name" href="#" onclick="return doclink('link-91', 'e', 'link-43');">e</a></tt><tt class="py-op">,</tt> <tt class="py-op">{</tt><tt class="py-op">}</tt><tt class="py-op">)</tt> </tt>
+<a name="L212"></a><tt class="py-lineno">212</tt>  <tt class="py-line"> </tt>
+<a name="L213"></a><tt class="py-lineno">213</tt>  <tt class="py-line">    <tt class="py-comment"># if we got an explicit name, we'll use it</tt> </tt>
+<a name="L214"></a><tt class="py-lineno">214</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-string">"domainName"</tt> <tt class="py-keyword">in</tt> <tt class="py-name">params</tt> <tt class="py-keyword">and</tt> <tt class="py-name">params</tt><tt class="py-op">[</tt><tt class="py-string">"domainName"</tt><tt class="py-op">]</tt> <tt class="py-op">!=</tt> <tt class="py-string">""</tt><tt class="py-op">:</tt> </tt>
+<a name="L215"></a><tt class="py-lineno">215</tt>  <tt class="py-line">        <tt class="py-name">imageName</tt> <tt class="py-op">=</tt> <tt class="py-name">params</tt><tt class="py-op">[</tt><tt class="py-string">"domainName"</tt><tt class="py-op">]</tt> </tt>
+<a name="L216"></a><tt class="py-lineno">216</tt>  <tt class="py-line">    <tt class="py-comment"># if not, we'll try to find a free name</tt> </tt>
+<a name="L217"></a><tt class="py-lineno">217</tt>  <tt class="py-line">    <tt class="py-keyword">elif</tt><tt class="py-op">(</tt> <tt id="link-92" class="py-name" targets="Function image._domainExists()=image-module.html#_domainExists"><a title="image._domainExists" class="py-name" href="#" onclick="return doclink('link-92', '_domainExists', 'link-92');">_domainExists</a></tt><tt class="py-op">(</tt><tt class="py-name">imageName</tt><tt class="py-op">,</tt> <tt id="link-93" class="py-name"><a title="backend.satellite_tools.connection
+rhnpush.connection" class="py-name" href="#" onclick="return doclink('link-93', 'connection', 'link-41');">connection</a></tt><tt class="py-op">)</tt> <tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L218"></a><tt class="py-lineno">218</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">i</tt> <tt class="py-keyword">in</tt> <tt class="py-name">itertools</tt><tt class="py-op">.</tt><tt class="py-name">count</tt><tt class="py-op">(</tt><tt class="py-number">1</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L219"></a><tt class="py-lineno">219</tt>  <tt class="py-line">            <tt class="py-name">newImageName</tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt class="py-string">"%s-%i"</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt class="py-name">imageName</tt><tt class="py-op">,</tt><tt class="py-name">i</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L220"></a><tt class="py-lineno">220</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt id="link-94" class="py-name"><a title="image._domainExists" class="py-name" href="#" onclick="return doclink('link-94', '_domainExists', 'link-92');">_domainExists</a></tt><tt class="py-op">(</tt><tt class="py-name">newImageName</tt><tt class="py-op">,</tt> <tt id="link-95" class="py-name"><a title="backend.satellite_tools.connection
+rhnpush.connection" class="py-name" href="#" onclick="return doclink('link-95', 'connection', 'link-41');">connection</a></tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L221"></a><tt class="py-lineno">221</tt>  <tt class="py-line">                <tt id="link-96" class="py-name"><a title="actions.reboot.log
+backend.satellite_tools.syncLib.log
+image.log
+rhn_check.log
+up2date_client.hardware.log
+up2date_client.rhnreg.log
+up2date_client.rhnregGui.log
+up2date_client.tui.log
+up2date_client.up2dateLog.log
+virtualization.notification.log" class="py-name" href="#" onclick="return doclink('link-96', 'log', 'link-11');">log</a></tt><tt class="py-op">.</tt><tt id="link-97" class="py-name"><a title="backend.common.rhnLog.log_debug
+config_common.rhn_log.Logger.log_debug
+config_common.rhn_log.log_debug
+src.rhn_log.Logger.log_debug
+src.rhn_log.log_debug
+up2date_client.up2dateLog.Log.log_debug" class="py-name" href="#" onclick="return doclink('link-97', 'log_debug', 'link-28');">log_debug</a></tt><tt class="py-op">(</tt><tt class="py-string">"free domain found"</tt><tt class="py-op">)</tt> </tt>
+<a name="L222"></a><tt class="py-lineno">222</tt>  <tt class="py-line">                <tt class="py-name">imageName</tt> <tt class="py-op">=</tt> <tt class="py-name">newImageName</tt> </tt>
+<a name="L223"></a><tt class="py-lineno">223</tt>  <tt class="py-line">                <tt class="py-keyword">break</tt> </tt>
+<a name="L224"></a><tt class="py-lineno">224</tt>  <tt class="py-line">    <tt id="link-98" class="py-name"><a title="actions.reboot.log
+backend.satellite_tools.syncLib.log
+image.log
+rhn_check.log
+up2date_client.hardware.log
+up2date_client.rhnreg.log
+up2date_client.rhnregGui.log
+up2date_client.tui.log
+up2date_client.up2dateLog.log
+virtualization.notification.log" class="py-name" href="#" onclick="return doclink('link-98', 'log', 'link-11');">log</a></tt><tt class="py-op">.</tt><tt id="link-99" class="py-name"><a title="backend.common.rhnLog.log_debug
+config_common.rhn_log.Logger.log_debug
+config_common.rhn_log.log_debug
+src.rhn_log.Logger.log_debug
+src.rhn_log.log_debug
+up2date_client.up2dateLog.Log.log_debug" class="py-name" href="#" onclick="return doclink('link-99', 'log_debug', 'link-28');">log_debug</a></tt><tt class="py-op">(</tt> <tt class="py-string">"name=%s arch=%s ver=%s type=%s"</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt class="py-name">imageName</tt><tt class="py-op">,</tt><tt class="py-name">imageArch</tt><tt class="py-op">,</tt><tt class="py-name">imageVersion</tt><tt class="py-op">,</tt><tt class="py-name">imageType</tt><tt class="py-op">)</tt> <tt class="py-op">)</tt> </tt>
+<a name="L225"></a><tt class="py-lineno">225</tt>  <tt class="py-line"> </tt>
+<a name="L226"></a><tt class="py-lineno">226</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">imageName</tt><tt class="py-op">)</tt> <tt class="py-op">&lt;</tt> <tt class="py-number">1</tt> <tt class="py-keyword">or</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">imageArch</tt><tt class="py-op">)</tt> <tt class="py-op">&lt;</tt> <tt class="py-number">1</tt><tt class="py-op">:</tt> </tt>
+<a name="L227"></a><tt class="py-lineno">227</tt>  <tt class="py-line">        <tt id="link-100" class="py-name"><a title="actions.reboot.log
+backend.satellite_tools.syncLib.log
+image.log
+rhn_check.log
+up2date_client.hardware.log
+up2date_client.rhnreg.log
+up2date_client.rhnregGui.log
+up2date_client.tui.log
+up2date_client.up2dateLog.log
+virtualization.notification.log" class="py-name" href="#" onclick="return doclink('link-100', 'log', 'link-11');">log</a></tt><tt class="py-op">.</tt><tt id="link-101" class="py-name"><a title="backend.common.rhnLog.log_debug
+config_common.rhn_log.Logger.log_debug
+config_common.rhn_log.log_debug
+src.rhn_log.Logger.log_debug
+src.rhn_log.log_debug
+up2date_client.up2dateLog.Log.log_debug" class="py-name" href="#" onclick="return doclink('link-101', 'log_debug', 'link-28');">log_debug</a></tt><tt class="py-op">(</tt><tt class="py-string">"invalid image name or arch"</tt><tt class="py-op">)</tt> </tt>
+<a name="L228"></a><tt class="py-lineno">228</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-op">(</tt><tt class="py-number">1</tt><tt class="py-op">,</tt> <tt class="py-string">"invalid image name or arch: name=%s arch=%s ver=%s type=%s"</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt class="py-name">imageName</tt><tt class="py-op">,</tt><tt class="py-name">imageArch</tt><tt class="py-op">,</tt><tt class="py-name">imageVersion</tt><tt class="py-op">,</tt><tt class="py-name">imageType</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-op">{</tt><tt class="py-op">}</tt><tt class="py-op">)</tt> </tt>
+<a name="L229"></a><tt class="py-lineno">229</tt>  <tt class="py-line"> </tt>
+<a name="L230"></a><tt class="py-lineno">230</tt>  <tt class="py-line">    <tt class="py-name">httpResponseCode</tt> <tt class="py-op">=</tt> <tt class="py-op">-</tt><tt class="py-number">1</tt> </tt>
+<a name="L231"></a><tt class="py-lineno">231</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt id="link-102" class="py-name" targets="Function image._fileExists()=image-module.html#_fileExists"><a title="image._fileExists" class="py-name" href="#" onclick="return doclink('link-102', '_fileExists', 'link-102');">_fileExists</a></tt><tt class="py-op">(</tt><tt class="py-string">"%s/%s"</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt id="link-103" class="py-name"><a title="image.IMAGE_BASE_PATH" class="py-name" href="#" onclick="return doclink('link-103', 'IMAGE_BASE_PATH', 'link-17');">IMAGE_BASE_PATH</a></tt><tt class="py-op">,</tt><tt class="py-name">studioArchiveFileName</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt id="link-104" class="py-name"><a title="backend.common.checksum" class="py-name" href="#" onclick="return doclink('link-104', 'checksum', 'link-86');">checksum</a></tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L232"></a><tt class="py-lineno">232</tt>  <tt class="py-line">        <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L233"></a><tt class="py-lineno">233</tt>  <tt class="py-line">            <tt class="py-name">httpResponseCode</tt> <tt class="py-op">=</tt> <tt id="link-105" class="py-name" targets="Function image._downloadFile()=image-module.html#_downloadFile"><a title="image._downloadFile" class="py-name" href="#" onclick="return doclink('link-105', '_downloadFile', 'link-105');">_downloadFile</a></tt><tt class="py-op">(</tt><tt class="py-name">studioArchiveFileName</tt><tt class="py-op">,</tt><tt class="py-name">params</tt><tt class="py-op">[</tt><tt class="py-string">"downloadURL"</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt class="py-name">params</tt><tt class="py-op">[</tt><tt class="py-string">"proxySettings"</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L234"></a><tt class="py-lineno">234</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt id="link-106" class="py-name"><a title="image._fileExists" class="py-name" href="#" onclick="return doclink('link-106', '_fileExists', 'link-102');">_fileExists</a></tt><tt class="py-op">(</tt><tt class="py-string">"%s/%s"</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt id="link-107" class="py-name"><a title="image.IMAGE_BASE_PATH" class="py-name" href="#" onclick="return doclink('link-107', 'IMAGE_BASE_PATH', 'link-17');">IMAGE_BASE_PATH</a></tt><tt class="py-op">,</tt><tt class="py-name">studioArchiveFileName</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt id="link-108" class="py-name"><a title="backend.common.checksum" class="py-name" href="#" onclick="return doclink('link-108', 'checksum', 'link-86');">checksum</a></tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L235"></a><tt class="py-lineno">235</tt>  <tt class="py-line">                <tt id="link-109" class="py-name"><a title="actions.reboot.log
+backend.satellite_tools.syncLib.log
+image.log
+rhn_check.log
+up2date_client.hardware.log
+up2date_client.rhnreg.log
+up2date_client.rhnregGui.log
+up2date_client.tui.log
+up2date_client.up2dateLog.log
+virtualization.notification.log" class="py-name" href="#" onclick="return doclink('link-109', 'log', 'link-11');">log</a></tt><tt class="py-op">.</tt><tt id="link-110" class="py-name"><a title="backend.common.rhnLog.log_debug
+config_common.rhn_log.Logger.log_debug
+config_common.rhn_log.log_debug
+src.rhn_log.Logger.log_debug
+src.rhn_log.log_debug
+up2date_client.up2dateLog.Log.log_debug" class="py-name" href="#" onclick="return doclink('link-110', 'log_debug', 'link-28');">log_debug</a></tt><tt class="py-op">(</tt><tt class="py-string">"downloading image file failed. HTTP Code is: %s"</tt> <tt class="py-op">%</tt> <tt class="py-name">httpResponseCode</tt><tt class="py-op">)</tt> </tt>
+<a name="L236"></a><tt class="py-lineno">236</tt>  <tt class="py-line">                <tt class="py-keyword">return</tt> <tt class="py-op">(</tt><tt class="py-number">1</tt><tt class="py-op">,</tt> <tt class="py-string">"downloading image file failed: %s/%s (%s)"</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt id="link-111" class="py-name"><a title="image.IMAGE_BASE_PATH" class="py-name" href="#" onclick="return doclink('link-111', 'IMAGE_BASE_PATH', 'link-17');">IMAGE_BASE_PATH</a></tt><tt class="py-op">,</tt> <tt class="py-name">studioArchiveFileName</tt><tt class="py-op">,</tt><tt class="py-name">httpResponseCode</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-op">{</tt><tt class="py-op">}</tt><tt class="py-op">)</tt> </tt>
+<a name="L237"></a><tt class="py-lineno">237</tt>  <tt class="py-line">        <tt class="py-keyword">except</tt> <tt class="py-name">Exception</tt><tt class="py-op">:</tt> </tt>
+<a name="L238"></a><tt class="py-lineno">238</tt>  <tt class="py-line">            <tt id="link-112" class="py-name"><a title="invocation.e
+virtualization.init_action.e" class="py-name" href="#" onclick="return doclink('link-112', 'e', 'link-43');">e</a></tt> <tt class="py-op">=</tt> <tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">exc_info</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> </tt>
+<a name="L239"></a><tt class="py-lineno">239</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-op">(</tt> <tt class="py-number">1</tt><tt class="py-op">,</tt> <tt class="py-string">"getting the image failed with: %s"</tt> <tt class="py-op">%</tt> <tt id="link-113" class="py-name"><a title="invocation.e
+virtualization.init_action.e" class="py-name" href="#" onclick="return doclink('link-113', 'e', 'link-43');">e</a></tt> <tt class="py-op">)</tt> </tt>
+<a name="L240"></a><tt class="py-lineno">240</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-name">cache_only</tt><tt class="py-op">:</tt> </tt>
+<a name="L241"></a><tt class="py-lineno">241</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-op">(</tt><tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-string">"image fetched and cached for later deployment"</tt><tt class="py-op">,</tt> <tt class="py-op">{</tt><tt class="py-op">}</tt><tt class="py-op">)</tt> </tt>
+<a name="L242"></a><tt class="py-lineno">242</tt>  <tt class="py-line">    <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L243"></a><tt class="py-lineno">243</tt>  <tt class="py-line">        <tt class="py-name">targetDir</tt> <tt class="py-op">=</tt> <tt id="link-114" class="py-name" targets="Function image._createTargetDir()=image-module.html#_createTargetDir"><a title="image._createTargetDir" class="py-name" href="#" onclick="return doclink('link-114', '_createTargetDir', 'link-114');">_createTargetDir</a></tt><tt class="py-op">(</tt> <tt class="py-string">"%s/%s"</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt id="link-115" class="py-name"><a title="image.IMAGE_BASE_PATH" class="py-name" href="#" onclick="return doclink('link-115', 'IMAGE_BASE_PATH', 'link-17');">IMAGE_BASE_PATH</a></tt><tt class="py-op">,</tt> <tt class="py-name">imageName</tt><tt class="py-op">)</tt> <tt class="py-op">)</tt> </tt>
+<a name="L244"></a><tt class="py-lineno">244</tt>  <tt class="py-line">        <tt id="link-116" class="py-name" targets="Function image._extractImage()=image-module.html#_extractImage"><a title="image._extractImage" class="py-name" href="#" onclick="return doclink('link-116', '_extractImage', 'link-116');">_extractImage</a></tt><tt class="py-op">(</tt> <tt class="py-string">"%s/%s"</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt id="link-117" class="py-name"><a title="image.IMAGE_BASE_PATH" class="py-name" href="#" onclick="return doclink('link-117', 'IMAGE_BASE_PATH', 'link-17');">IMAGE_BASE_PATH</a></tt><tt class="py-op">,</tt><tt class="py-name">studioArchiveFileName</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-name">targetDir</tt><tt class="py-op">,</tt> <tt class="py-name">imageType</tt> <tt class="py-op">)</tt> </tt>
+<a name="L245"></a><tt class="py-lineno">245</tt>  <tt class="py-line">    <tt class="py-keyword">except</tt> <tt class="py-name">Exception</tt><tt class="py-op">:</tt> </tt>
+<a name="L246"></a><tt class="py-lineno">246</tt>  <tt class="py-line">        <tt id="link-118" class="py-name"><a title="invocation.e
+virtualization.init_action.e" class="py-name" href="#" onclick="return doclink('link-118', 'e', 'link-43');">e</a></tt> <tt class="py-op">=</tt> <tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">exc_info</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> </tt>
+<a name="L247"></a><tt class="py-lineno">247</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-op">(</tt><tt class="py-number">1</tt><tt class="py-op">,</tt> <tt class="py-string">"extracting the image tarball failed with: %s"</tt> <tt class="py-op">%</tt> <tt id="link-119" class="py-name"><a title="invocation.e
+virtualization.init_action.e" class="py-name" href="#" onclick="return doclink('link-119', 'e', 'link-43');">e</a></tt><tt class="py-op">,</tt> <tt class="py-op">{</tt><tt class="py-op">}</tt><tt class="py-op">)</tt> </tt>
+<a name="L248"></a><tt class="py-lineno">248</tt>  <tt class="py-line"> </tt>
+<a name="L249"></a><tt class="py-lineno">249</tt>  <tt class="py-line">    <tt class="py-comment"># image exists in $IMAGE_BASE_PATH/$imageName now</tt> </tt>
+<a name="L250"></a><tt class="py-lineno">250</tt>  <tt class="py-line"> </tt>
+<a name="L251"></a><tt class="py-lineno">251</tt>  <tt class="py-line">    <tt id="link-120" class="py-name" targets="Variable virtualization.init_action.uuid=virtualization.init_action-module.html#uuid"><a title="virtualization.init_action.uuid" class="py-name" href="#" onclick="return doclink('link-120', 'uuid', 'link-120');">uuid</a></tt> <tt class="py-op">=</tt> <tt id="link-121" class="py-name"><a title="virtualization.util.generate_uuid" class="py-name" href="#" onclick="return doclink('link-121', 'generate_uuid', 'link-5');">generate_uuid</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L252"></a><tt class="py-lineno">252</tt>  <tt class="py-line">    <tt class="py-comment"># FIXME: check for the extensions. There might be more</tt> </tt>
+<a name="L253"></a><tt class="py-lineno">253</tt>  <tt class="py-line">    <tt class="py-name">studioFileExtension</tt> <tt class="py-op">=</tt> <tt class="py-string">"vmdk"</tt> </tt>
+<a name="L254"></a><tt class="py-lineno">254</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-name">imageType</tt> <tt class="py-op">==</tt> <tt class="py-string">"xen"</tt><tt class="py-op">:</tt> </tt>
+<a name="L255"></a><tt class="py-lineno">255</tt>  <tt class="py-line">        <tt class="py-name">studioFileExtension</tt> <tt class="py-op">=</tt> <tt class="py-string">"raw"</tt> </tt>
+<a name="L256"></a><tt class="py-lineno">256</tt>  <tt class="py-line">    <tt class="py-keyword">elif</tt> <tt class="py-name">imageType</tt> <tt class="py-op">==</tt> <tt class="py-string">"qcow2"</tt><tt class="py-op">:</tt> </tt>
+<a name="L257"></a><tt class="py-lineno">257</tt>  <tt class="py-line">        <tt class="py-name">studioFileExtension</tt> <tt class="py-op">=</tt> <tt class="py-string">"qcow2"</tt> </tt>
+<a name="L258"></a><tt class="py-lineno">258</tt>  <tt class="py-line">    <tt class="py-name">extractedImagePath</tt> <tt class="py-op">=</tt> <tt class="py-string">"%s/%s.%s"</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt class="py-name">targetDir</tt><tt class="py-op">,</tt><tt class="py-name">studioImageDiskFileName</tt><tt class="py-op">,</tt><tt class="py-name">studioFileExtension</tt><tt class="py-op">)</tt> </tt>
+<a name="L259"></a><tt class="py-lineno">259</tt>  <tt class="py-line">    <tt id="link-122" class="py-name"><a title="actions.reboot.log
+backend.satellite_tools.syncLib.log
+image.log
+rhn_check.log
+up2date_client.hardware.log
+up2date_client.rhnreg.log
+up2date_client.rhnregGui.log
+up2date_client.tui.log
+up2date_client.up2dateLog.log
+virtualization.notification.log" class="py-name" href="#" onclick="return doclink('link-122', 'log', 'link-11');">log</a></tt><tt class="py-op">.</tt><tt id="link-123" class="py-name"><a title="backend.common.rhnLog.log_debug
+config_common.rhn_log.Logger.log_debug
+config_common.rhn_log.log_debug
+src.rhn_log.Logger.log_debug
+src.rhn_log.log_debug
+up2date_client.up2dateLog.Log.log_debug" class="py-name" href="#" onclick="return doclink('link-123', 'log_debug', 'link-28');">log_debug</a></tt><tt class="py-op">(</tt><tt class="py-string">"working on image in %s"</tt> <tt class="py-op">%</tt> <tt class="py-name">extractedImagePath</tt><tt class="py-op">)</tt> </tt>
+<a name="L260"></a><tt class="py-lineno">260</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt id="link-124" class="py-name"><a title="backend.server.action.utils.ChannelPackage.exists
+backend.server.rhnChannel.BaseChannelObject.exists" class="py-name" href="#" onclick="return doclink('link-124', 'exists', 'link-48');">exists</a></tt><tt class="py-op">(</tt> <tt class="py-name">extractedImagePath</tt> <tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L261"></a><tt class="py-lineno">261</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-op">(</tt><tt class="py-number">1</tt><tt class="py-op">,</tt> <tt class="py-string">"extracted image not found at %s"</tt> <tt class="py-op">%</tt> <tt class="py-name">extractedImagePath</tt><tt class="py-op">,</tt> <tt class="py-op">{</tt><tt class="py-op">}</tt><tt class="py-op">)</tt> </tt>
+<a name="L262"></a><tt class="py-lineno">262</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-name">imageArch</tt> <tt class="py-keyword">in</tt> <tt class="py-op">(</tt> <tt class="py-string">'i386'</tt><tt class="py-op">,</tt> <tt class="py-string">'i486'</tt><tt class="py-op">,</tt> <tt class="py-string">'i568'</tt> <tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L263"></a><tt class="py-lineno">263</tt>  <tt class="py-line">        <tt class="py-name">imageArch</tt> <tt class="py-op">=</tt> <tt class="py-string">'i686'</tt> </tt>
+<a name="L264"></a><tt class="py-lineno">264</tt>  <tt class="py-line"> </tt>
+<a name="L265"></a><tt class="py-lineno">265</tt>  <tt class="py-line">    <tt class="py-name">create_params</tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt> <tt class="py-string">'name'</tt>           <tt class="py-op">:</tt> <tt class="py-name">imageName</tt><tt class="py-op">,</tt> </tt>
+<a name="L266"></a><tt class="py-lineno">266</tt>  <tt class="py-line">                      <tt class="py-string">'arch'</tt>           <tt class="py-op">:</tt> <tt class="py-name">imageArch</tt><tt class="py-op">,</tt> </tt>
+<a name="L267"></a><tt class="py-lineno">267</tt>  <tt class="py-line">                      <tt class="py-string">'extra'</tt>          <tt class="py-op">:</tt> <tt class="py-name">extraParams</tt><tt class="py-op">,</tt> </tt>
+<a name="L268"></a><tt class="py-lineno">268</tt>  <tt class="py-line">                      <tt class="py-string">'mem_kb'</tt>         <tt class="py-op">:</tt> <tt class="py-name">params</tt><tt class="py-op">[</tt><tt class="py-string">"memKB"</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> </tt>
+<a name="L269"></a><tt class="py-lineno">269</tt>  <tt class="py-line">                      <tt class="py-string">'vcpus'</tt>          <tt class="py-op">:</tt> <tt class="py-name">params</tt><tt class="py-op">[</tt><tt class="py-string">"vCPUs"</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> </tt>
+<a name="L270"></a><tt class="py-lineno">270</tt>  <tt class="py-line">                      <tt class="py-string">'uuid'</tt>           <tt class="py-op">:</tt> <tt id="link-125" class="py-name"><a title="virtualization.init_action.uuid" class="py-name" href="#" onclick="return doclink('link-125', 'uuid', 'link-120');">uuid</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L271"></a><tt class="py-lineno">271</tt>  <tt class="py-line">                      <tt class="py-string">'disk'</tt>           <tt class="py-op">:</tt> <tt class="py-name">extractedImagePath</tt><tt class="py-op">,</tt> </tt>
+<a name="L272"></a><tt class="py-lineno">272</tt>  <tt class="py-line">                      <tt class="py-string">'imageType'</tt>      <tt class="py-op">:</tt> <tt class="py-name">imageType</tt><tt class="py-op">,</tt> </tt>
+<a name="L273"></a><tt class="py-lineno">273</tt>  <tt class="py-line">                      <tt class="py-string">'virtBridge'</tt>     <tt class="py-op">:</tt> <tt class="py-name">params</tt><tt class="py-op">[</tt><tt class="py-string">"virtBridge"</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> </tt>
+<a name="L274"></a><tt class="py-lineno">274</tt>  <tt class="py-line">                    <tt class="py-op">}</tt> </tt>
+<a name="L275"></a><tt class="py-lineno">275</tt>  <tt class="py-line">    <tt class="py-name">create_xml</tt> <tt class="py-op">=</tt> <tt id="link-126" class="py-name" targets="Function image._generateXML()=image-module.html#_generateXML"><a title="image._generateXML" class="py-name" href="#" onclick="return doclink('link-126', '_generateXML', 'link-126');">_generateXML</a></tt><tt class="py-op">(</tt> <tt class="py-name">create_params</tt> <tt class="py-op">)</tt> </tt>
+<a name="L276"></a><tt class="py-lineno">276</tt>  <tt class="py-line">    <tt id="link-127" class="py-name" targets="Module backend.server.repomd.domain=backend.server.repomd.domain-module.html"><a title="backend.server.repomd.domain" class="py-name" href="#" onclick="return doclink('link-127', 'domain', 'link-127');">domain</a></tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+<a name="L277"></a><tt class="py-lineno">277</tt>  <tt class="py-line">    <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L278"></a><tt class="py-lineno">278</tt>  <tt class="py-line">        <tt id="link-128" class="py-name"><a title="backend.server.repomd.domain" class="py-name" href="#" onclick="return doclink('link-128', 'domain', 'link-127');">domain</a></tt> <tt class="py-op">=</tt> <tt id="link-129" class="py-name"><a title="backend.satellite_tools.connection
+rhnpush.connection" class="py-name" href="#" onclick="return doclink('link-129', 'connection', 'link-41');">connection</a></tt><tt class="py-op">.</tt><tt class="py-name">defineXML</tt><tt class="py-op">(</tt><tt class="py-name">create_xml</tt><tt class="py-op">)</tt> </tt>
+<a name="L279"></a><tt class="py-lineno">279</tt>  <tt class="py-line">    <tt class="py-keyword">except</tt> <tt class="py-name">Exception</tt><tt class="py-op">:</tt> </tt>
+<a name="L280"></a><tt class="py-lineno">280</tt>  <tt class="py-line">        <tt id="link-130" class="py-name"><a title="invocation.e
+virtualization.init_action.e" class="py-name" href="#" onclick="return doclink('link-130', 'e', 'link-43');">e</a></tt> <tt class="py-op">=</tt> <tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">exc_info</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> </tt>
+<a name="L281"></a><tt class="py-lineno">281</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-op">(</tt><tt class="py-number">1</tt><tt class="py-op">,</tt> <tt class="py-string">"failed to pass XML to libvirt: %s"</tt> <tt class="py-op">%</tt> <tt id="link-131" class="py-name"><a title="invocation.e
+virtualization.init_action.e" class="py-name" href="#" onclick="return doclink('link-131', 'e', 'link-43');">e</a></tt><tt class="py-op">,</tt> <tt class="py-op">{</tt><tt class="py-op">}</tt><tt class="py-op">)</tt> </tt>
+<a name="L282"></a><tt class="py-lineno">282</tt>  <tt class="py-line"> </tt>
+<a name="L283"></a><tt class="py-lineno">283</tt>  <tt class="py-line">    <tt id="link-132" class="py-name"><a title="backend.server.repomd.domain" class="py-name" href="#" onclick="return doclink('link-132', 'domain', 'link-127');">domain</a></tt><tt class="py-op">.</tt><tt id="link-133" class="py-name" targets="Method backend.server.rhnSQL.sql_row.Row.create()=backend.server.rhnSQL.sql_row.Row-class.html#create"><a title="backend.server.rhnSQL.sql_row.Row.create" class="py-name" href="#" onclick="return doclink('link-133', 'create', 'link-133');">create</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L284"></a><tt class="py-lineno">284</tt>  <tt class="py-line">    <tt class="py-name">virt_support</tt><tt class="py-op">.</tt><tt id="link-134" class="py-name" targets="Function backend.server.action.virt.refresh()=backend.server.action.virt-module.html#refresh,Function virt.refresh()=virt-module.html#refresh,Function virtualization.support.refresh()=virtualization.support-module.html#refresh"><a title="backend.server.action.virt.refresh
+virt.refresh
+virtualization.support.refresh" class="py-name" href="#" onclick="return doclink('link-134', 'refresh', 'link-134');">refresh</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L285"></a><tt class="py-lineno">285</tt>  <tt class="py-line"> </tt>
+<a name="L286"></a><tt class="py-lineno">286</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-op">(</tt><tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-string">"image '%s' deployed and started"</tt> <tt class="py-op">%</tt> <tt class="py-name">imageName</tt><tt class="py-op">,</tt> <tt class="py-op">{</tt><tt class="py-op">}</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L287"></a><tt class="py-lineno">287</tt>  <tt class="py-line"> </tt>
+<a name="L288"></a><tt class="py-lineno">288</tt>  <tt class="py-line"><tt class="py-comment"># just for testing</tt> </tt>
+<a name="L289"></a><tt class="py-lineno">289</tt>  <tt class="py-line"><tt class="py-keyword">if</tt> <tt class="py-name">__name__</tt> <tt class="py-op">==</tt> <tt class="py-string">"__main__"</tt><tt class="py-op">:</tt> </tt>
+<a name="L290"></a><tt class="py-lineno">290</tt>  <tt class="py-line">    <tt class="py-comment"># test code</tt> </tt>
+<a name="L291"></a><tt class="py-lineno">291</tt>  <tt class="py-line">    <tt id="link-135" class="py-name"><a title="actions.reboot.log
+backend.satellite_tools.syncLib.log
+image.log
+rhn_check.log
+up2date_client.hardware.log
+up2date_client.rhnreg.log
+up2date_client.rhnregGui.log
+up2date_client.tui.log
+up2date_client.up2dateLog.log
+virtualization.notification.log" class="py-name" href="#" onclick="return doclink('link-135', 'log', 'link-11');">log</a></tt><tt class="py-op">.</tt><tt id="link-136" class="py-name"><a title="backend.common.rhnLog.log_debug
+config_common.rhn_log.Logger.log_debug
+config_common.rhn_log.log_debug
+src.rhn_log.Logger.log_debug
+src.rhn_log.log_debug
+up2date_client.up2dateLog.Log.log_debug" class="py-name" href="#" onclick="return doclink('link-136', 'log_debug', 'link-28');">log_debug</a></tt><tt class="py-op">(</tt><tt class="py-string">"actions/image.py called"</tt><tt class="py-op">)</tt> </tt>
+<a name="L292"></a><tt class="py-lineno">292</tt>  <tt class="py-line">    <tt class="py-keyword">print</tt><tt class="py-op">(</tt><tt class="py-string">"You can not run this module by itself"</tt><tt class="py-op">)</tt> </tt>
+<a name="L293"></a><tt class="py-lineno">293</tt>  <tt class="py-line">    <tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">exit</tt><tt class="py-op">(</tt><tt class="py-op">-</tt><tt class="py-number">1</tt><tt class="py-op">)</tt> </tt>
+<a name="L294"></a><tt class="py-lineno">294</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Fri Nov 25 11:30:39 2016
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

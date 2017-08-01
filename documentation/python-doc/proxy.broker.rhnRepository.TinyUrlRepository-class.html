@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>proxy.broker.rhnRepository.TinyUrlRepository</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="proxy-module.html">Package&nbsp;proxy</a> ::
+        <a href="proxy.broker-module.html">Package&nbsp;broker</a> ::
+        <a href="proxy.broker.rhnRepository-module.html">Module&nbsp;rhnRepository</a> ::
+        Class&nbsp;TinyUrlRepository
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="proxy.broker.rhnRepository.TinyUrlRepository-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class TinyUrlRepository</h1><p class="nomargin-top"><span class="codelink"><a href="proxy.broker.rhnRepository-pysrc.html#TinyUrlRepository">source&nbsp;code</a></span></p>
+<center>
+<center>  <map id="uml_class_diagram_for_proxy_br_5" name="uml_class_diagram_for_proxy_br_5">
+<area shape="rect" id="node1_3" href="proxy.broker.rhnRepository.TinyUrlRepository-class.html#__init__" title="proxy.broker.rhnRepository.TinyUrlRepository.__init__" alt="" coords="17,197,1087,217"/>
+<area shape="rect" id="node1" href="proxy.broker.rhnRepository.TinyUrlRepository-class.html" title="TinyURL kickstarts have actually already made a HEAD request up to the Satellite to to get the checksum for the rpm, however we can&#39;t just use that data because the epoch information is not in the filename so we&#39;d never find files with a non&#45;None epoch." alt="" coords="5,165,1099,224"/>
+<area shape="rect" id="node2" href="proxy.broker.rhnRepository.KickstartRepository-class.html" title="Kickstarts always end up pointing to a channel that they&#39;re getting rpms from." alt="" coords="481,103,621,147"/>
+<area shape="rect" id="node3_4" href="proxy.broker.rhnRepository.Repository-class.html#getPackagePath" title="OVERLOADS getPackagePath in common/rhnRepository." alt="" coords="412,38,691,58"/>
+<area shape="rect" id="node3_5" href="proxy.broker.rhnRepository.Repository-class.html#getSourcePackagePath" title="OVERLOADS getSourcePackagePath in common/rhnRepository." alt="" coords="412,58,691,78"/>
+<area shape="rect" id="node3" href="proxy.broker.rhnRepository.Repository-class.html" title="Proxy local package repository lookup and manipulation code." alt="" coords="399,5,702,84"/>
+</map>
+  <img src="uml_class_diagram_for_proxy_br_5.png" alt='' usemap="#uml_class_diagram_for_proxy_br_5" ismap="ismap" class="graph-without-title" />
+</center>
+</center>
+<hr />
+<p>TinyURL kickstarts have actually already made a HEAD request up to the
+  Satellite to to get the checksum for the rpm, however we can't just use 
+  that data because the epoch information is not in the filename so we'd 
+  never find files with a non-None epoch. Instead do the same thing we do 
+  for non-tiny-urlified kickstarts and look up what channel it maps to.</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="proxy.broker.rhnRepository.TinyUrlRepository-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">tinyurl</span>,
+        <span class="summary-sig-arg">clientInfo</span>,
+        <span class="summary-sig-arg">rhnParent</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">rhnParentXMLRPC</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">httpProxy</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">httpProxyUsername</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">httpProxyPassword</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">caChain</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">systemId</span>=<span class="summary-sig-default">None</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="proxy.broker.rhnRepository-pysrc.html#TinyUrlRepository.__init__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="proxy.broker.rhnRepository.TinyUrlRepository-class.html#_getMapping" class="summary-sig-name" onclick="show_private();">_getMapping</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">server</span>)</span><br />
+      Generate a hash that tells us what channel this kickstart is looking 
+      at.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="proxy.broker.rhnRepository-pysrc.html#TinyUrlRepository._getMapping">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <div class="private">    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="proxy.broker.rhnRepository.KickstartRepository-class.html">KickstartRepository</a></code></b> (private):
+      <code><a href="proxy.broker.rhnRepository.KickstartRepository-class.html#_listPackages" onclick="show_private();">_listPackages</a></code>,
+      <code><a href="proxy.broker.rhnRepository.KickstartRepository-class.html#_lookupKickstart" onclick="show_private();">_lookupKickstart</a></code>
+      </p></div>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="proxy.broker.rhnRepository.Repository-class.html">Repository</a></code></b>:
+      <code><a href="proxy.broker.rhnRepository.Repository-class.html#getPackagePath">getPackagePath</a></code>,
+      <code><a href="proxy.broker.rhnRepository.Repository-class.html#getSourcePackagePath">getSourcePackagePath</a></code>
+      </p>
+    <div class="private">    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="proxy.broker.rhnRepository.Repository-class.html">Repository</a></code></b> (private):
+      <code><a href="proxy.broker.rhnRepository.Repository-class.html#_cacheObj" onclick="show_private();">_cacheObj</a></code>
+      </p></div>
+    </td>
+  </tr>
+</table>
+<!-- ==================== STATIC METHODS ==================== -->
+<a name="section-StaticMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Static Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-StaticMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <div class="private">    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="proxy.broker.rhnRepository.Repository-class.html">Repository</a></code></b> (private):
+      <code><a href="proxy.broker.rhnRepository.Repository-class.html#_getPkgListDir" onclick="show_private();">_getPkgListDir</a></code>
+      </p></div>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">tinyurl</span>,
+        <span class="sig-arg">clientInfo</span>,
+        <span class="sig-arg">rhnParent</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">rhnParentXMLRPC</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">httpProxy</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">httpProxyUsername</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">httpProxyPassword</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">caChain</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">systemId</span>=<span class="sig-default">None</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="proxy.broker.rhnRepository-pysrc.html#TinyUrlRepository.__init__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  
+  <dl class="fields">
+    <dt>Overrides:
+        <a href="proxy.broker.rhnRepository.Repository-class.html#__init__">Repository.__init__</a>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_getMapping"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_getMapping</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">server</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="proxy.broker.rhnRepository-pysrc.html#TinyUrlRepository._getMapping">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Generate a hash that tells us what channel this kickstart is looking 
+  at. We have no equivalent to channel version, so expire the cached file 
+  after an hour.</p>
+  <dl class="fields">
+    <dt>Overrides:
+        <a href="proxy.broker.rhnRepository.KickstartRepository-class.html#_getMapping" onclick="show_private();">KickstartRepository._getMapping</a>
+        <dd><em class="note">(inherited documentation)</em></dd>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Fri Nov 25 11:30:30 2016
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

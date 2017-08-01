@@ -1,0 +1,546 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>backend.cdn_tools.activation</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="backend-module.html">Package&nbsp;backend</a> ::
+        <a href="backend.cdn_tools-module.html">Package&nbsp;cdn_tools</a> ::
+        Module&nbsp;activation
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="backend.cdn_tools.activation-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="backend.cdn_tools.activation-module.html">Module backend.cdn_tools.activation</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-comment"># Copyright (c) 2016 Red Hat, Inc.</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-comment"># This software is licensed to you under the GNU General Public License,</tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-comment"># version 2 (GPLv2). There is NO WARRANTY for this software, express or</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-comment"># implied, including the implied warranties of MERCHANTABILITY or FITNESS</tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-comment"># FOR A PARTICULAR PURPOSE. You should have received a copy of GPLv2</tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-comment"># along with this software; if not, see</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt class="py-comment"># http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt.</tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"><tt class="py-comment"># Red Hat trademarks are not licensed under GPLv2. No permission is</tt> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line"><tt class="py-comment"># granted to use or replicate Red Hat trademarks that are incorporated</tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line"><tt class="py-comment"># in this software or its documentation.</tt> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">json</tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line"> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">spacewalk</tt><tt class="py-op">.</tt><tt id="link-0" class="py-name" targets="Package backend.satellite_tools=backend.satellite_tools-module.html"><a title="backend.satellite_tools" class="py-name" href="#" onclick="return doclink('link-0', 'satellite_tools', 'link-0');">satellite_tools</a></tt> <tt class="py-keyword">import</tt> <tt id="link-1" class="py-name" targets="Module backend.satellite_tools.satCerts=backend.satellite_tools.satCerts-module.html"><a title="backend.satellite_tools.satCerts" class="py-name" href="#" onclick="return doclink('link-1', 'satCerts', 'link-1');">satCerts</a></tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">spacewalk</tt><tt class="py-op">.</tt><tt id="link-2" class="py-name" targets="Package backend.server=backend.server-module.html,Method up2date_client.rpcServer.ServerList.server()=up2date_client.rpcServer.ServerList-class.html#server"><a title="backend.server
+up2date_client.rpcServer.ServerList.server" class="py-name" href="#" onclick="return doclink('link-2', 'server', 'link-2');">server</a></tt> <tt class="py-keyword">import</tt> <tt id="link-3" class="py-name" targets="Package backend.server.rhnSQL=backend.server.rhnSQL-module.html"><a title="backend.server.rhnSQL" class="py-name" href="#" onclick="return doclink('link-3', 'rhnSQL', 'link-3');">rhnSQL</a></tt> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">spacewalk</tt><tt class="py-op">.</tt><tt id="link-4" class="py-name"><a title="backend.server
+up2date_client.rpcServer.ServerList.server" class="py-name" href="#" onclick="return doclink('link-4', 'server', 'link-2');">server</a></tt><tt class="py-op">.</tt><tt id="link-5" class="py-name" targets="Package backend.server.importlib=backend.server.importlib-module.html"><a title="backend.server.importlib" class="py-name" href="#" onclick="return doclink('link-5', 'importlib', 'link-5');">importlib</a></tt><tt class="py-op">.</tt><tt id="link-6" class="py-name" targets="Module backend.server.importlib.backendOracle=backend.server.importlib.backendOracle-module.html"><a title="backend.server.importlib.backendOracle" class="py-name" href="#" onclick="return doclink('link-6', 'backendOracle', 'link-6');">backendOracle</a></tt> <tt class="py-keyword">import</tt> <tt id="link-7" class="py-name" targets="Function backend.server.importlib.backendOracle.SQLBackend()=backend.server.importlib.backendOracle-module.html#SQLBackend"><a title="backend.server.importlib.backendOracle.SQLBackend" class="py-name" href="#" onclick="return doclink('link-7', 'SQLBackend', 'link-7');">SQLBackend</a></tt> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">spacewalk</tt><tt class="py-op">.</tt><tt id="link-8" class="py-name"><a title="backend.server
+up2date_client.rpcServer.ServerList.server" class="py-name" href="#" onclick="return doclink('link-8', 'server', 'link-2');">server</a></tt><tt class="py-op">.</tt><tt id="link-9" class="py-name"><a title="backend.server.importlib" class="py-name" href="#" onclick="return doclink('link-9', 'importlib', 'link-5');">importlib</a></tt><tt class="py-op">.</tt><tt id="link-10" class="py-name" targets="Module backend.server.importlib.channelImport=backend.server.importlib.channelImport-module.html"><a title="backend.server.importlib.channelImport" class="py-name" href="#" onclick="return doclink('link-10', 'channelImport', 'link-10');">channelImport</a></tt> <tt class="py-keyword">import</tt> <tt id="link-11" class="py-name" targets="Class backend.server.importlib.channelImport.ChannelFamilyImport=backend.server.importlib.channelImport.ChannelFamilyImport-class.html"><a title="backend.server.importlib.channelImport.ChannelFamilyImport" class="py-name" href="#" onclick="return doclink('link-11', 'ChannelFamilyImport', 'link-11');">ChannelFamilyImport</a></tt> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">spacewalk</tt><tt class="py-op">.</tt><tt id="link-12" class="py-name"><a title="backend.server
+up2date_client.rpcServer.ServerList.server" class="py-name" href="#" onclick="return doclink('link-12', 'server', 'link-2');">server</a></tt><tt class="py-op">.</tt><tt id="link-13" class="py-name"><a title="backend.server.importlib" class="py-name" href="#" onclick="return doclink('link-13', 'importlib', 'link-5');">importlib</a></tt><tt class="py-op">.</tt><tt id="link-14" class="py-name" targets="Module backend.server.importlib.importLib=backend.server.importlib.importLib-module.html"><a title="backend.server.importlib.importLib" class="py-name" href="#" onclick="return doclink('link-14', 'importLib', 'link-14');">importLib</a></tt> <tt class="py-keyword">import</tt> <tt id="link-15" class="py-name" targets="Class backend.server.importlib.importLib.ChannelFamily=backend.server.importlib.importLib.ChannelFamily-class.html,Class backend.server.rhnChannel.ChannelFamily=backend.server.rhnChannel.ChannelFamily-class.html,Class backend.server.rhnServer.satellite_cert.ChannelFamily=backend.server.rhnServer.satellite_cert.ChannelFamily-class.html"><a title="backend.server.importlib.importLib.ChannelFamily
+backend.server.rhnChannel.ChannelFamily
+backend.server.rhnServer.satellite_cert.ChannelFamily" class="py-name" href="#" onclick="return doclink('link-15', 'ChannelFamily', 'link-15');">ChannelFamily</a></tt><tt class="py-op">,</tt> <tt id="link-16" class="py-name" targets="Class backend.satellite_tools.repo_plugins.deb_src.ContentSource=backend.satellite_tools.repo_plugins.deb_src.ContentSource-class.html,Class backend.satellite_tools.repo_plugins.uln_src.ContentSource=backend.satellite_tools.repo_plugins.uln_src.ContentSource-class.html,Class backend.satellite_tools.repo_plugins.yum_src.ContentSource=backend.satellite_tools.repo_plugins.yum_src.ContentSource-class.html,Class backend.server.importlib.importLib.ContentSource=backend.server.importlib.importLib.ContentSource-class.html"><a title="backend.satellite_tools.repo_plugins.deb_src.ContentSource
+backend.satellite_tools.repo_plugins.uln_src.ContentSource
+backend.satellite_tools.repo_plugins.yum_src.ContentSource
+backend.server.importlib.importLib.ContentSource" class="py-name" href="#" onclick="return doclink('link-16', 'ContentSource', 'link-16');">ContentSource</a></tt> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">spacewalk</tt><tt class="py-op">.</tt><tt id="link-17" class="py-name"><a title="backend.server
+up2date_client.rpcServer.ServerList.server" class="py-name" href="#" onclick="return doclink('link-17', 'server', 'link-2');">server</a></tt><tt class="py-op">.</tt><tt id="link-18" class="py-name"><a title="backend.server.importlib" class="py-name" href="#" onclick="return doclink('link-18', 'importlib', 'link-5');">importlib</a></tt><tt class="py-op">.</tt><tt id="link-19" class="py-name" targets="Module backend.server.importlib.contentSourcesImport=backend.server.importlib.contentSourcesImport-module.html"><a title="backend.server.importlib.contentSourcesImport" class="py-name" href="#" onclick="return doclink('link-19', 'contentSourcesImport', 'link-19');">contentSourcesImport</a></tt> <tt class="py-keyword">import</tt> <tt id="link-20" class="py-name" targets="Class backend.server.importlib.contentSourcesImport.ContentSourcesImport=backend.server.importlib.contentSourcesImport.ContentSourcesImport-class.html"><a title="backend.server.importlib.contentSourcesImport.ContentSourcesImport" class="py-name" href="#" onclick="return doclink('link-20', 'ContentSourcesImport', 'link-20');">ContentSourcesImport</a></tt> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">spacewalk</tt><tt class="py-op">.</tt><tt id="link-21" class="py-name"><a title="backend.server
+up2date_client.rpcServer.ServerList.server" class="py-name" href="#" onclick="return doclink('link-21', 'server', 'link-2');">server</a></tt><tt class="py-op">.</tt><tt id="link-22" class="py-name" targets="Package backend.server.rhnServer=backend.server.rhnServer-module.html"><a title="backend.server.rhnServer" class="py-name" href="#" onclick="return doclink('link-22', 'rhnServer', 'link-22');">rhnServer</a></tt><tt class="py-op">.</tt><tt id="link-23" class="py-name" targets="Module backend.server.rhnServer.satellite_cert=backend.server.rhnServer.satellite_cert-module.html"><a title="backend.server.rhnServer.satellite_cert" class="py-name" href="#" onclick="return doclink('link-23', 'satellite_cert', 'link-23');">satellite_cert</a></tt> <tt class="py-keyword">import</tt> <tt id="link-24" class="py-name" targets="Class backend.server.rhnServer.satellite_cert.SatelliteCert=backend.server.rhnServer.satellite_cert.SatelliteCert-class.html"><a title="backend.server.rhnServer.satellite_cert.SatelliteCert" class="py-name" href="#" onclick="return doclink('link-24', 'SatelliteCert', 'link-24');">SatelliteCert</a></tt> </tt>
+<a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-25" class="py-name" targets="Module backend.cdn_tools.common=backend.cdn_tools.common-module.html,Package backend.common=backend.common-module.html,Module rhnkickstart.common=rhnkickstart.common-module.html"><a title="backend.cdn_tools.common
+backend.common
+rhnkickstart.common" class="py-name" href="#" onclick="return doclink('link-25', 'common', 'link-25');">common</a></tt> <tt class="py-keyword">import</tt> <tt id="link-26" class="py-name" targets="Function backend.cdn_tools.common.verify_mappings()=backend.cdn_tools.common-module.html#verify_mappings"><a title="backend.cdn_tools.common.verify_mappings" class="py-name" href="#" onclick="return doclink('link-26', 'verify_mappings', 'link-26');">verify_mappings</a></tt> </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt id="link-27" class="py-name" targets="Module backend.cdn_tools.constants=backend.cdn_tools.constants-module.html,Module backend.satellite_tools.constants=backend.satellite_tools.constants-module.html,Module virtualization.constants=virtualization.constants-module.html"><a title="backend.cdn_tools.constants
+backend.satellite_tools.constants
+virtualization.constants" class="py-name" href="#" onclick="return doclink('link-27', 'constants', 'link-27');">constants</a></tt> </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-28" class="py-name" targets="Module backend.cdn_tools.manifest=backend.cdn_tools.manifest-module.html"><a title="backend.cdn_tools.manifest" class="py-name" href="#" onclick="return doclink('link-28', 'manifest', 'link-28');">manifest</a></tt> <tt class="py-keyword">import</tt> <tt id="link-29" class="py-name" targets="Class backend.cdn_tools.manifest.Manifest=backend.cdn_tools.manifest.Manifest-class.html"><a title="backend.cdn_tools.manifest.Manifest" class="py-name" href="#" onclick="return doclink('link-29', 'Manifest', 'link-29');">Manifest</a></tt><tt class="py-op">,</tt> <tt id="link-30" class="py-name" targets="Class backend.cdn_tools.manifest.ManifestValidationError=backend.cdn_tools.manifest.ManifestValidationError-class.html,Variable backend.satellite_tools.rhn_satellite_activate.ManifestValidationError=backend.satellite_tools.rhn_satellite_activate-module.html#ManifestValidationError"><a title="backend.cdn_tools.manifest.ManifestValidationError
+backend.satellite_tools.rhn_satellite_activate.ManifestValidationError" class="py-name" href="#" onclick="return doclink('link-30', 'ManifestValidationError', 'link-30');">ManifestValidationError</a></tt> </tt>
+<a name="Activation"></a><div id="Activation-def"><a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line"> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line"> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt> <a class="py-toggle" href="#" id="Activation-toggle" onclick="return toggle('Activation');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="backend.cdn_tools.activation.Activation-class.html">Activation</a><tt class="py-op">(</tt><tt class="py-base-class">object</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Activation-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="Activation-expanded"><a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line">    <tt class="py-docstring">"""Class inserting channel families and SSL metadata into DB."""</tt> </tt>
+<a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line"> </tt>
+<a name="Activation.__init__"></a><div id="Activation.__init__-def"><a name="L32"></a><tt class="py-lineno"> 32</tt> <a class="py-toggle" href="#" id="Activation.__init__-toggle" onclick="return toggle('Activation.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="backend.cdn_tools.activation.Activation-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">manifest_path</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Activation.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Activation.__init__-expanded"><a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line">        <tt id="link-31" class="py-name"><a title="backend.server.rhnSQL" class="py-name" href="#" onclick="return doclink('link-31', 'rhnSQL', 'link-3');">rhnSQL</a></tt><tt class="py-op">.</tt><tt id="link-32" class="py-name" targets="Function backend.server.rhnSQL.initDB()=backend.server.rhnSQL-module.html#initDB"><a title="backend.server.rhnSQL.initDB" class="py-name" href="#" onclick="return doclink('link-32', 'initDB', 'link-32');">initDB</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-33" class="py-name"><a title="backend.cdn_tools.manifest" class="py-name" href="#" onclick="return doclink('link-33', 'manifest', 'link-28');">manifest</a></tt> <tt class="py-op">=</tt> <tt id="link-34" class="py-name"><a title="backend.cdn_tools.manifest.Manifest" class="py-name" href="#" onclick="return doclink('link-34', 'Manifest', 'link-29');">Manifest</a></tt><tt class="py-op">(</tt><tt class="py-name">manifest_path</tt><tt class="py-op">)</tt> </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">sat5_cert</tt> <tt class="py-op">=</tt> <tt id="link-35" class="py-name"><a title="backend.server.rhnServer.satellite_cert.SatelliteCert" class="py-name" href="#" onclick="return doclink('link-35', 'SatelliteCert', 'link-24');">SatelliteCert</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">sat5_cert</tt><tt class="py-op">.</tt><tt id="link-36" class="py-name" targets="Method backend.common.rhn_mpm.MPM_Package.load()=backend.common.rhn_mpm.MPM_Package-class.html#load,Function backend.common.rhn_mpm.load()=backend.common.rhn_mpm-module.html#load,Method backend.satellite_tools.xmlDiskSource.DiskSource.load()=backend.satellite_tools.xmlDiskSource.DiskSource-class.html#load,Method backend.server.rhnImport.Loader.load()=backend.server.rhnImport.Loader-class.html#load,Function backend.server.rhnImport.load()=backend.server.rhnImport-module.html#load,Method backend.server.rhnSQL.sql_row.Row.load()=backend.server.rhnSQL.sql_row.Row-class.html#load,Method backend.server.rhnServer.satellite_cert.SatelliteCert.load()=backend.server.rhnServer.satellite_cert.SatelliteCert-class.html#load,Method backend.server.rhnSession.Session.load()=backend.server.rhnSession.Session-class.html#load,Function backend.server.rhnSession.load()=backend.server.rhnSession-module.html#load,Method up2date_client.config.Config.load()=up2date_client.config.Config-class.html#load,Method up2date_client.config.ConfigFile.load()=up2date_client.config.ConfigFile-class.html#load"><a title="backend.common.rhn_mpm.MPM_Package.load
+backend.common.rhn_mpm.load
+backend.satellite_tools.xmlDiskSource.DiskSource.load
+backend.server.rhnImport.Loader.load
+backend.server.rhnImport.load
+backend.server.rhnSQL.sql_row.Row.load
+backend.server.rhnServer.satellite_cert.SatelliteCert.load
+backend.server.rhnSession.Session.load
+backend.server.rhnSession.load
+up2date_client.config.Config.load
+up2date_client.config.ConfigFile.load" class="py-name" href="#" onclick="return doclink('link-36', 'load', 'link-36');">load</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-37" class="py-name"><a title="backend.cdn_tools.manifest" class="py-name" href="#" onclick="return doclink('link-37', 'manifest', 'link-28');">manifest</a></tt><tt class="py-op">.</tt><tt id="link-38" class="py-name" targets="Method backend.cdn_tools.manifest.Manifest.get_satellite_certificate()=backend.cdn_tools.manifest.Manifest-class.html#get_satellite_certificate"><a title="backend.cdn_tools.manifest.Manifest.get_satellite_certificate" class="py-name" href="#" onclick="return doclink('link-38', 'get_satellite_certificate', 'link-38');">get_satellite_certificate</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line"> </tt>
+<a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line">        <tt id="link-39" class="py-name"><a title="backend.cdn_tools.common.verify_mappings" class="py-name" href="#" onclick="return doclink('link-39', 'verify_mappings', 'link-26');">verify_mappings</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line"> </tt>
+<a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line">        <tt class="py-comment"># Channel families metadata</tt> </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line">        <tt class="py-name">f</tt> <tt class="py-op">=</tt> <tt class="py-name">open</tt><tt class="py-op">(</tt><tt id="link-40" class="py-name"><a title="backend.cdn_tools.constants
+backend.satellite_tools.constants
+virtualization.constants" class="py-name" href="#" onclick="return doclink('link-40', 'constants', 'link-27');">constants</a></tt><tt class="py-op">.</tt><tt id="link-41" class="py-name" targets="Variable backend.cdn_tools.constants.CHANNEL_FAMILY_MAPPING_PATH=backend.cdn_tools.constants-module.html#CHANNEL_FAMILY_MAPPING_PATH"><a title="backend.cdn_tools.constants.CHANNEL_FAMILY_MAPPING_PATH" class="py-name" href="#" onclick="return doclink('link-41', 'CHANNEL_FAMILY_MAPPING_PATH', 'link-41');">CHANNEL_FAMILY_MAPPING_PATH</a></tt><tt class="py-op">,</tt> <tt class="py-string">'r'</tt><tt class="py-op">)</tt> </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line">        <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">families</tt> <tt class="py-op">=</tt> <tt class="py-name">json</tt><tt class="py-op">.</tt><tt id="link-42" class="py-name"><a title="backend.common.rhn_mpm.MPM_Package.load
+backend.common.rhn_mpm.load
+backend.satellite_tools.xmlDiskSource.DiskSource.load
+backend.server.rhnImport.Loader.load
+backend.server.rhnImport.load
+backend.server.rhnSQL.sql_row.Row.load
+backend.server.rhnServer.satellite_cert.SatelliteCert.load
+backend.server.rhnSession.Session.load
+backend.server.rhnSession.load
+up2date_client.config.Config.load
+up2date_client.config.ConfigFile.load" class="py-name" href="#" onclick="return doclink('link-42', 'load', 'link-36');">load</a></tt><tt class="py-op">(</tt><tt class="py-name">f</tt><tt class="py-op">)</tt> </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line">        <tt class="py-keyword">finally</tt><tt class="py-op">:</tt> </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">f</tt> <tt class="py-keyword">is</tt> <tt class="py-keyword">not</tt> <tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line">                <tt class="py-name">f</tt><tt class="py-op">.</tt><tt id="link-43" class="py-name" targets="Method backend.common.rhnCache.ClosingZipFile.close()=backend.common.rhnCache.ClosingZipFile-class.html#close,Method backend.common.rhnCache.LockedFile.close()=backend.common.rhnCache.LockedFile-class.html#close,Method backend.satellite_exporter.handlers.non_auth_dumper.NonAuthenticatedDumper.close()=backend.satellite_exporter.handlers.non_auth_dumper.NonAuthenticatedDumper-class.html#close,Method backend.satellite_tools.connection.CompressedStream.close()=backend.satellite_tools.connection.CompressedStream-class.html#close,Method backend.satellite_tools.disk_dumper.dumper.CachedQueryIterator.close()=backend.satellite_tools.disk_dumper.dumper.CachedQueryIterator-class.html#close,Method backend.satellite_tools.disk_dumper.dumper.XML_Dumper.close()=backend.satellite_tools.disk_dumper.dumper.XML_Dumper-class.html#close,Method backend.satellite_tools.disk_dumper.iss.Dumper.close()=backend.satellite_tools.disk_dumper.iss.Dumper-class.html#close,Method backend.satellite_tools.disk_dumper.string_buffer.StringBuffer.close()=backend.satellite_tools.disk_dumper.string_buffer.StringBuffer-class.html#close,Method backend.satellite_tools.satsync.StreamProducer.close()=backend.satellite_tools.satsync.StreamProducer-class.html#close,Method backend.satellite_tools.sync_handlers.ContainerHandler.close()=backend.satellite_tools.sync_handlers.ContainerHandler-class.html#close,Method backend.satellite_tools.xmlSource.BaseDispatchHandler.close()=backend.satellite_tools.xmlSource.BaseDispatchHandler-class.html#close,Method backend.server.rhnSQL.driver_cx_Oracle.Database.close()=backend.server.rhnSQL.driver_cx_Oracle.Database-class.html#close,Method backend.server.rhnSQL.driver_postgresql.Cursor.close()=backend.server.rhnSQL.driver_postgresql.Cursor-class.html#close,Method backend.server.rhnSQL.sql_base.Database.close()=backend.server.rhnSQL.sql_base.Database-class.html#close,Method proxy.responseContext.ResponseContext.close()=proxy.responseContext.ResponseContext-class.html#close,Method rhn.SSL.SSLSocket.close()=rhn.SSL.SSLSocket-class.html#close,Method rhn.rpclib.Server.close()=rhn.rpclib.Server-class.html#close,Method rhn.transports.BaseOutput.close()=rhn.transports.BaseOutput-class.html#close,Method up2date_client.rhnregGui.NetworkConfigDialog.close()=up2date_client.rhnregGui.NetworkConfigDialog-class.html#close"><a title="backend.common.rhnCache.ClosingZipFile.close
+backend.common.rhnCache.LockedFile.close
+backend.satellite_exporter.handlers.non_auth_dumper.NonAuthenticatedDumper.close
+backend.satellite_tools.connection.CompressedStream.close
+backend.satellite_tools.disk_dumper.dumper.CachedQueryIterator.close
+backend.satellite_tools.disk_dumper.dumper.XML_Dumper.close
+backend.satellite_tools.disk_dumper.iss.Dumper.close
+backend.satellite_tools.disk_dumper.string_buffer.StringBuffer.close
+backend.satellite_tools.satsync.StreamProducer.close
+backend.satellite_tools.sync_handlers.ContainerHandler.close
+backend.satellite_tools.xmlSource.BaseDispatchHandler.close
+backend.server.rhnSQL.driver_cx_Oracle.Database.close
+backend.server.rhnSQL.driver_postgresql.Cursor.close
+backend.server.rhnSQL.sql_base.Database.close
+proxy.responseContext.ResponseContext.close
+rhn.SSL.SSLSocket.close
+rhn.rpclib.Server.close
+rhn.transports.BaseOutput.close
+up2date_client.rhnregGui.NetworkConfigDialog.close" class="py-name" href="#" onclick="return doclink('link-43', 'close', 'link-43');">close</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line"> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">families_to_import</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+</div><a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line"> </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">staticmethod</tt> </tt>
+<a name="Activation._remove_certificates"></a><div id="Activation._remove_certificates-def"><a name="L51"></a><tt class="py-lineno"> 51</tt> <a class="py-toggle" href="#" id="Activation._remove_certificates-toggle" onclick="return toggle('Activation._remove_certificates');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="backend.cdn_tools.activation.Activation-class.html#_remove_certificates">_remove_certificates</a><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Activation._remove_certificates-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Activation._remove_certificates-expanded"><a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">description_prefix</tt> <tt class="py-keyword">in</tt> <tt class="py-op">(</tt><tt id="link-44" class="py-name"><a title="backend.cdn_tools.constants
+backend.satellite_tools.constants
+virtualization.constants" class="py-name" href="#" onclick="return doclink('link-44', 'constants', 'link-27');">constants</a></tt><tt class="py-op">.</tt><tt id="link-45" class="py-name" targets="Variable backend.cdn_tools.constants.CA_CERT_NAME=backend.cdn_tools.constants-module.html#CA_CERT_NAME"><a title="backend.cdn_tools.constants.CA_CERT_NAME" class="py-name" href="#" onclick="return doclink('link-45', 'CA_CERT_NAME', 'link-45');">CA_CERT_NAME</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line">                                   <tt id="link-46" class="py-name"><a title="backend.cdn_tools.constants
+backend.satellite_tools.constants
+virtualization.constants" class="py-name" href="#" onclick="return doclink('link-46', 'constants', 'link-27');">constants</a></tt><tt class="py-op">.</tt><tt id="link-47" class="py-name" targets="Variable backend.cdn_tools.constants.CLIENT_CERT_PREFIX=backend.cdn_tools.constants-module.html#CLIENT_CERT_PREFIX"><a title="backend.cdn_tools.constants.CLIENT_CERT_PREFIX" class="py-name" href="#" onclick="return doclink('link-47', 'CLIENT_CERT_PREFIX', 'link-47');">CLIENT_CERT_PREFIX</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line">                                   <tt id="link-48" class="py-name"><a title="backend.cdn_tools.constants
+backend.satellite_tools.constants
+virtualization.constants" class="py-name" href="#" onclick="return doclink('link-48', 'constants', 'link-27');">constants</a></tt><tt class="py-op">.</tt><tt id="link-49" class="py-name" targets="Variable backend.cdn_tools.constants.CLIENT_KEY_PREFIX=backend.cdn_tools.constants-module.html#CLIENT_KEY_PREFIX"><a title="backend.cdn_tools.constants.CLIENT_KEY_PREFIX" class="py-name" href="#" onclick="return doclink('link-49', 'CLIENT_KEY_PREFIX', 'link-49');">CLIENT_KEY_PREFIX</a></tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line"> </tt>
+<a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line">            <tt id="link-50" class="py-name"><a title="backend.satellite_tools.satCerts" class="py-name" href="#" onclick="return doclink('link-50', 'satCerts', 'link-1');">satCerts</a></tt><tt class="py-op">.</tt><tt id="link-51" class="py-name" targets="Function backend.satellite_tools.satCerts.delete_rhnCryptoKey_null_org()=backend.satellite_tools.satCerts-module.html#delete_rhnCryptoKey_null_org"><a title="backend.satellite_tools.satCerts.delete_rhnCryptoKey_null_org" class="py-name" href="#" onclick="return doclink('link-51', 'delete_rhnCryptoKey_null_org', 'link-51');">delete_rhnCryptoKey_null_org</a></tt><tt class="py-op">(</tt><tt class="py-name">description_prefix</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line"> </tt>
+<a name="Activation._update_certificates"></a><div id="Activation._update_certificates-def"><a name="L58"></a><tt class="py-lineno"> 58</tt> <a class="py-toggle" href="#" id="Activation._update_certificates-toggle" onclick="return toggle('Activation._update_certificates');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="backend.cdn_tools.activation.Activation-class.html#_update_certificates">_update_certificates</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Activation._update_certificates-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Activation._update_certificates-expanded"><a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line">        <tt class="py-docstring">"""Delete and insert certificates needed for syncing from CDN repositories."""</tt> </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line"> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line">        <tt class="py-comment"># Remove all previously used certs/keys</tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-52" class="py-name" targets="Static Method backend.cdn_tools.activation.Activation._remove_certificates()=backend.cdn_tools.activation.Activation-class.html#_remove_certificates"><a title="backend.cdn_tools.activation.Activation._remove_certificates" class="py-name" href="#" onclick="return doclink('link-52', '_remove_certificates', 'link-52');">_remove_certificates</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line"> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line">        <tt class="py-comment"># Read RHSM cert</tt> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line">        <tt class="py-name">f</tt> <tt class="py-op">=</tt> <tt class="py-name">open</tt><tt class="py-op">(</tt><tt id="link-53" class="py-name"><a title="backend.cdn_tools.constants
+backend.satellite_tools.constants
+virtualization.constants" class="py-name" href="#" onclick="return doclink('link-53', 'constants', 'link-27');">constants</a></tt><tt class="py-op">.</tt><tt id="link-54" class="py-name" targets="Variable backend.cdn_tools.constants.CA_CERT_PATH=backend.cdn_tools.constants-module.html#CA_CERT_PATH"><a title="backend.cdn_tools.constants.CA_CERT_PATH" class="py-name" href="#" onclick="return doclink('link-54', 'CA_CERT_PATH', 'link-54');">CA_CERT_PATH</a></tt><tt class="py-op">,</tt> <tt class="py-string">'r'</tt><tt class="py-op">)</tt> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line">        <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line">            <tt class="py-name">ca_cert</tt> <tt class="py-op">=</tt> <tt class="py-name">f</tt><tt class="py-op">.</tt><tt id="link-55" class="py-name" targets="Method backend.wsgi.wsgiRequest.WsgiRequest.read()=backend.wsgi.wsgiRequest.WsgiRequest-class.html#read,Method rhn.SSL.SSLSocket.read()=rhn.SSL.SSLSocket-class.html#read,Method rhn.nonblocking.NonBlockingFile.read()=rhn.nonblocking.NonBlockingFile-class.html#read,Method rhn.transports.File.read()=rhn.transports.File-class.html#read,Method rhn.transports.Input.read()=rhn.transports.Input-class.html#read,Method rhnkickstart.lilo.LiloConfigFile.read()=rhnkickstart.lilo.LiloConfigFile-class.html#read,Method rhnpush.archive.ArchiveParser.read()=rhnpush.archive.ArchiveParser-class.html#read,Method src.jabber_lib.JabberClient.read()=src.jabber_lib.JabberClient-class.html#read"><a title="backend.wsgi.wsgiRequest.WsgiRequest.read
+rhn.SSL.SSLSocket.read
+rhn.nonblocking.NonBlockingFile.read
+rhn.transports.File.read
+rhn.transports.Input.read
+rhnkickstart.lilo.LiloConfigFile.read
+rhnpush.archive.ArchiveParser.read
+src.jabber_lib.JabberClient.read" class="py-name" href="#" onclick="return doclink('link-55', 'read', 'link-55');">read</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line">        <tt class="py-keyword">finally</tt><tt class="py-op">:</tt> </tt>
+<a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">f</tt> <tt class="py-keyword">is</tt> <tt class="py-keyword">not</tt> <tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line">                <tt class="py-name">f</tt><tt class="py-op">.</tt><tt id="link-56" class="py-name"><a title="backend.common.rhnCache.ClosingZipFile.close
+backend.common.rhnCache.LockedFile.close
+backend.satellite_exporter.handlers.non_auth_dumper.NonAuthenticatedDumper.close
+backend.satellite_tools.connection.CompressedStream.close
+backend.satellite_tools.disk_dumper.dumper.CachedQueryIterator.close
+backend.satellite_tools.disk_dumper.dumper.XML_Dumper.close
+backend.satellite_tools.disk_dumper.iss.Dumper.close
+backend.satellite_tools.disk_dumper.string_buffer.StringBuffer.close
+backend.satellite_tools.satsync.StreamProducer.close
+backend.satellite_tools.sync_handlers.ContainerHandler.close
+backend.satellite_tools.xmlSource.BaseDispatchHandler.close
+backend.server.rhnSQL.driver_cx_Oracle.Database.close
+backend.server.rhnSQL.driver_postgresql.Cursor.close
+backend.server.rhnSQL.sql_base.Database.close
+proxy.responseContext.ResponseContext.close
+rhn.SSL.SSLSocket.close
+rhn.rpclib.Server.close
+rhn.transports.BaseOutput.close
+up2date_client.rhnregGui.NetworkConfigDialog.close" class="py-name" href="#" onclick="return doclink('link-56', 'close', 'link-43');">close</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line"> </tt>
+<a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line">        <tt class="py-comment"># Insert RHSM cert and certs from manifest into DB</tt> </tt>
+<a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line">        <tt id="link-57" class="py-name"><a title="backend.satellite_tools.satCerts" class="py-name" href="#" onclick="return doclink('link-57', 'satCerts', 'link-1');">satCerts</a></tt><tt class="py-op">.</tt><tt id="link-58" class="py-name" targets="Function backend.satellite_tools.satCerts.store_rhnCryptoKey()=backend.satellite_tools.satCerts-module.html#store_rhnCryptoKey"><a title="backend.satellite_tools.satCerts.store_rhnCryptoKey" class="py-name" href="#" onclick="return doclink('link-58', 'store_rhnCryptoKey', 'link-58');">store_rhnCryptoKey</a></tt><tt class="py-op">(</tt> </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line">            <tt id="link-59" class="py-name"><a title="backend.cdn_tools.constants
+backend.satellite_tools.constants
+virtualization.constants" class="py-name" href="#" onclick="return doclink('link-59', 'constants', 'link-27');">constants</a></tt><tt class="py-op">.</tt><tt id="link-60" class="py-name"><a title="backend.cdn_tools.constants.CA_CERT_NAME" class="py-name" href="#" onclick="return doclink('link-60', 'CA_CERT_NAME', 'link-45');">CA_CERT_NAME</a></tt><tt class="py-op">,</tt> <tt class="py-name">ca_cert</tt><tt class="py-op">,</tt> <tt class="py-name">None</tt><tt class="py-op">)</tt> </tt>
+<a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line"> </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">entitlement</tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-61" class="py-name"><a title="backend.cdn_tools.manifest" class="py-name" href="#" onclick="return doclink('link-61', 'manifest', 'link-28');">manifest</a></tt><tt class="py-op">.</tt><tt id="link-62" class="py-name" targets="Method backend.cdn_tools.manifest.Manifest.get_all_entitlements()=backend.cdn_tools.manifest.Manifest-class.html#get_all_entitlements"><a title="backend.cdn_tools.manifest.Manifest.get_all_entitlements" class="py-name" href="#" onclick="return doclink('link-62', 'get_all_entitlements', 'link-62');">get_all_entitlements</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line">            <tt class="py-name">creds</tt> <tt class="py-op">=</tt> <tt class="py-name">entitlement</tt><tt class="py-op">.</tt><tt id="link-63" class="py-name" targets="Method backend.cdn_tools.manifest.Entitlement.get_credentials()=backend.cdn_tools.manifest.Entitlement-class.html#get_credentials"><a title="backend.cdn_tools.manifest.Entitlement.get_credentials" class="py-name" href="#" onclick="return doclink('link-63', 'get_credentials', 'link-63');">get_credentials</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line">            <tt id="link-64" class="py-name"><a title="backend.satellite_tools.satCerts" class="py-name" href="#" onclick="return doclink('link-64', 'satCerts', 'link-1');">satCerts</a></tt><tt class="py-op">.</tt><tt id="link-65" class="py-name"><a title="backend.satellite_tools.satCerts.store_rhnCryptoKey" class="py-name" href="#" onclick="return doclink('link-65', 'store_rhnCryptoKey', 'link-58');">store_rhnCryptoKey</a></tt><tt class="py-op">(</tt> </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line">                <tt id="link-66" class="py-name"><a title="backend.cdn_tools.constants
+backend.satellite_tools.constants
+virtualization.constants" class="py-name" href="#" onclick="return doclink('link-66', 'constants', 'link-27');">constants</a></tt><tt class="py-op">.</tt><tt id="link-67" class="py-name"><a title="backend.cdn_tools.constants.CLIENT_CERT_PREFIX" class="py-name" href="#" onclick="return doclink('link-67', 'CLIENT_CERT_PREFIX', 'link-47');">CLIENT_CERT_PREFIX</a></tt> <tt class="py-op">+</tt> <tt class="py-name">creds</tt><tt class="py-op">.</tt><tt id="link-68" class="py-name" targets="Method backend.cdn_tools.manifest.Credentials.get_id()=backend.cdn_tools.manifest.Credentials-class.html#get_id,Method backend.cdn_tools.manifest.Product.get_id()=backend.cdn_tools.manifest.Product-class.html#get_id,Method backend.server.action.utils.ChannelPackage.get_id()=backend.server.action.utils.ChannelPackage-class.html#get_id"><a title="backend.cdn_tools.manifest.Credentials.get_id
+backend.cdn_tools.manifest.Product.get_id
+backend.server.action.utils.ChannelPackage.get_id" class="py-name" href="#" onclick="return doclink('link-68', 'get_id', 'link-68');">get_id</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-name">creds</tt><tt class="py-op">.</tt><tt id="link-69" class="py-name" targets="Method backend.cdn_tools.manifest.Credentials.get_cert()=backend.cdn_tools.manifest.Credentials-class.html#get_cert"><a title="backend.cdn_tools.manifest.Credentials.get_cert" class="py-name" href="#" onclick="return doclink('link-69', 'get_cert', 'link-69');">get_cert</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-name">None</tt><tt class="py-op">)</tt> </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line">            <tt id="link-70" class="py-name"><a title="backend.satellite_tools.satCerts" class="py-name" href="#" onclick="return doclink('link-70', 'satCerts', 'link-1');">satCerts</a></tt><tt class="py-op">.</tt><tt id="link-71" class="py-name"><a title="backend.satellite_tools.satCerts.store_rhnCryptoKey" class="py-name" href="#" onclick="return doclink('link-71', 'store_rhnCryptoKey', 'link-58');">store_rhnCryptoKey</a></tt><tt class="py-op">(</tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line">                <tt id="link-72" class="py-name"><a title="backend.cdn_tools.constants
+backend.satellite_tools.constants
+virtualization.constants" class="py-name" href="#" onclick="return doclink('link-72', 'constants', 'link-27');">constants</a></tt><tt class="py-op">.</tt><tt id="link-73" class="py-name"><a title="backend.cdn_tools.constants.CLIENT_KEY_PREFIX" class="py-name" href="#" onclick="return doclink('link-73', 'CLIENT_KEY_PREFIX', 'link-49');">CLIENT_KEY_PREFIX</a></tt> <tt class="py-op">+</tt> <tt class="py-name">creds</tt><tt class="py-op">.</tt><tt id="link-74" class="py-name"><a title="backend.cdn_tools.manifest.Credentials.get_id
+backend.cdn_tools.manifest.Product.get_id
+backend.server.action.utils.ChannelPackage.get_id" class="py-name" href="#" onclick="return doclink('link-74', 'get_id', 'link-68');">get_id</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-name">creds</tt><tt class="py-op">.</tt><tt id="link-75" class="py-name" targets="Method backend.cdn_tools.manifest.Credentials.get_key()=backend.cdn_tools.manifest.Credentials-class.html#get_key"><a title="backend.cdn_tools.manifest.Credentials.get_key" class="py-name" href="#" onclick="return doclink('link-75', 'get_key', 'link-75');">get_key</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-name">None</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line"> </tt>
+<a name="Activation.import_channel_families"></a><div id="Activation.import_channel_families-def"><a name="L83"></a><tt class="py-lineno"> 83</tt> <a class="py-toggle" href="#" id="Activation.import_channel_families-toggle" onclick="return toggle('Activation.import_channel_families');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="backend.cdn_tools.activation.Activation-class.html#import_channel_families">import_channel_families</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Activation.import_channel_families-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Activation.import_channel_families-expanded"><a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line">        <tt class="py-docstring">"""Insert channel family data into DB."""</tt> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line"> </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line">        <tt class="py-comment"># Debug</tt> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line">        <tt class="py-keyword">print</tt><tt class="py-op">(</tt><tt class="py-string">"Channel families in cert: %d"</tt> <tt class="py-op">%</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">sat5_cert</tt><tt class="py-op">.</tt><tt id="link-76" class="py-name" targets="Method backend.satellite_exporter.handlers.non_auth_dumper.NonAuthenticatedDumper.channel_families()=backend.satellite_exporter.handlers.non_auth_dumper.NonAuthenticatedDumper-class.html#channel_families"><a title="backend.satellite_exporter.handlers.non_auth_dumper.NonAuthenticatedDumper.channel_families" class="py-name" href="#" onclick="return doclink('link-76', 'channel_families', 'link-76');">channel_families</a></tt><tt class="py-op">)</tt><tt class="py-op">)</tt> <tt class="py-comment"># pylint: disable=E1101</tt> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line"> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line">        <tt class="py-name">batch</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">cf</tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">sat5_cert</tt><tt class="py-op">.</tt><tt id="link-77" class="py-name"><a title="backend.satellite_exporter.handlers.non_auth_dumper.NonAuthenticatedDumper.channel_families" class="py-name" href="#" onclick="return doclink('link-77', 'channel_families', 'link-76');">channel_families</a></tt><tt class="py-op">:</tt> <tt class="py-comment"># pylint: disable=E1101</tt> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line">            <tt class="py-name">label</tt> <tt class="py-op">=</tt> <tt class="py-name">cf</tt><tt class="py-op">.</tt><tt id="link-78" class="py-name" targets="Variable up2date_client.tui.AlreadyRegisteredSubscriptionManagerWindow.name=up2date_client.tui.AlreadyRegisteredSubscriptionManagerWindow-class.html#name,Variable up2date_client.tui.AlreadyRegisteredWindow.name=up2date_client.tui.AlreadyRegisteredWindow-class.html#name,Variable up2date_client.tui.ConnectWindow.name=up2date_client.tui.ConnectWindow-class.html#name,Variable up2date_client.tui.FinishWindow.name=up2date_client.tui.FinishWindow-class.html#name,Variable up2date_client.tui.HardwareWindow.name=up2date_client.tui.HardwareWindow-class.html#name,Variable up2date_client.tui.InfoWindow.name=up2date_client.tui.InfoWindow-class.html#name,Variable up2date_client.tui.OSReleaseWindow.name=up2date_client.tui.OSReleaseWindow-class.html#name,Variable up2date_client.tui.PackagesWindow.name=up2date_client.tui.PackagesWindow-class.html#name,Variable up2date_client.tui.ReviewWindow.name=up2date_client.tui.ReviewWindow-class.html#name,Variable up2date_client.tui.SatelliteUrlWindow.name=up2date_client.tui.SatelliteUrlWindow-class.html#name,Variable up2date_client.tui.SendWindow.name=up2date_client.tui.SendWindow-class.html#name,Variable up2date_client.tui.SendingWindow.name=up2date_client.tui.SendingWindow-class.html#name,Variable up2date_client.tui.StartWindow.name=up2date_client.tui.StartWindow-class.html#name,Variable up2date_client.tui.Tui.name=up2date_client.tui.Tui-class.html#name,Variable up2date_client.tui.WhyRegisterWindow.name=up2date_client.tui.WhyRegisterWindow-class.html#name"><a title="up2date_client.tui.AlreadyRegisteredSubscriptionManagerWindow.name
+up2date_client.tui.AlreadyRegisteredWindow.name
+up2date_client.tui.ConnectWindow.name
+up2date_client.tui.FinishWindow.name
+up2date_client.tui.HardwareWindow.name
+up2date_client.tui.InfoWindow.name
+up2date_client.tui.OSReleaseWindow.name
+up2date_client.tui.PackagesWindow.name
+up2date_client.tui.ReviewWindow.name
+up2date_client.tui.SatelliteUrlWindow.name
+up2date_client.tui.SendWindow.name
+up2date_client.tui.SendingWindow.name
+up2date_client.tui.StartWindow.name
+up2date_client.tui.Tui.name
+up2date_client.tui.WhyRegisterWindow.name" class="py-name" href="#" onclick="return doclink('link-78', 'name', 'link-78');">name</a></tt> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line">            <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line">                <tt class="py-name">family</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">families</tt><tt class="py-op">[</tt><tt class="py-name">label</tt><tt class="py-op">]</tt> </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line">                <tt class="py-name">family_object</tt> <tt class="py-op">=</tt> <tt id="link-79" class="py-name"><a title="backend.server.importlib.importLib.ChannelFamily
+backend.server.rhnChannel.ChannelFamily
+backend.server.rhnServer.satellite_cert.ChannelFamily" class="py-name" href="#" onclick="return doclink('link-79', 'ChannelFamily', 'link-15');">ChannelFamily</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line">                <tt class="py-keyword">for</tt> <tt class="py-name">k</tt> <tt class="py-keyword">in</tt> <tt class="py-name">family</tt><tt class="py-op">.</tt><tt id="link-80" class="py-name" targets="Method backend.common.rhnConfig.RHNOptions.keys()=backend.common.rhnConfig.RHNOptions-class.html#keys,Method backend.server.rhnSQL.sql_table.Table.keys()=backend.server.rhnSQL.sql_table.Table-class.html#keys,Method backend.wsgi.wsgiRequest.WsgiMPtable.keys()=backend.wsgi.wsgiRequest.WsgiMPtable-class.html#keys,Function config_common.local_config.keys()=config_common.local_config-module.html#keys,Method config_common.local_config.rhncfgConfigParser.keys()=config_common.local_config.rhncfgConfigParser-class.html#keys,Method rhn.UserDictCase.UserDictCase.keys()=rhn.UserDictCase.UserDictCase-class.html#keys,Method rhnpush.rhnpush_config.rhnpushConfigParser.keys()=rhnpush.rhnpush_config.rhnpushConfigParser-class.html#keys,Method src.osad_config.ClientConfigParser.keys()=src.osad_config.ClientConfigParser-class.html#keys,Function src.osad_config.keys()=src.osad_config-module.html#keys,Method up2date_client.config.Config.keys()=up2date_client.config.Config-class.html#keys,Method up2date_client.config.ConfigFile.keys()=up2date_client.config.ConfigFile-class.html#keys,Method up2date_client.rhnChannel.rhnChannel.keys()=up2date_client.rhnChannel.rhnChannel-class.html#keys"><a title="backend.common.rhnConfig.RHNOptions.keys
+backend.server.rhnSQL.sql_table.Table.keys
+backend.wsgi.wsgiRequest.WsgiMPtable.keys
+config_common.local_config.keys
+config_common.local_config.rhncfgConfigParser.keys
+rhn.UserDictCase.UserDictCase.keys
+rhnpush.rhnpush_config.rhnpushConfigParser.keys
+src.osad_config.ClientConfigParser.keys
+src.osad_config.keys
+up2date_client.config.Config.keys
+up2date_client.config.ConfigFile.keys
+up2date_client.rhnChannel.rhnChannel.keys" class="py-name" href="#" onclick="return doclink('link-80', 'keys', 'link-80');">keys</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line">                    <tt class="py-name">family_object</tt><tt class="py-op">[</tt><tt class="py-name">k</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">family</tt><tt class="py-op">[</tt><tt class="py-name">k</tt><tt class="py-op">]</tt> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line">                <tt class="py-name">family_object</tt><tt class="py-op">[</tt><tt class="py-string">'label'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">label</tt> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line">                <tt class="py-name">batch</tt><tt class="py-op">.</tt><tt id="link-81" class="py-name" targets="Method backend.server.importlib.importLib.Collection.append()=backend.server.importlib.importLib.Collection-class.html#append"><a title="backend.server.importlib.importLib.Collection.append" class="py-name" href="#" onclick="return doclink('link-81', 'append', 'link-81');">append</a></tt><tt class="py-op">(</tt><tt class="py-name">family_object</tt><tt class="py-op">)</tt> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">families_to_import</tt><tt class="py-op">.</tt><tt id="link-82" class="py-name"><a title="backend.server.importlib.importLib.Collection.append" class="py-name" href="#" onclick="return doclink('link-82', 'append', 'link-81');">append</a></tt><tt class="py-op">(</tt><tt class="py-name">label</tt><tt class="py-op">)</tt> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line">            <tt class="py-keyword">except</tt> <tt class="py-name">KeyError</tt><tt class="py-op">:</tt> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line">                <tt class="py-keyword">print</tt><tt class="py-op">(</tt><tt class="py-string">"ERROR: Channel family '%s' was not found in mapping"</tt> <tt class="py-op">%</tt> <tt class="py-name">label</tt><tt class="py-op">)</tt> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line"> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line">        <tt class="py-comment"># Perform import</tt> </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line">        <tt id="link-83" class="py-name" targets="Package backend=backend-module.html,Module backend.server.importlib.backend=backend.server.importlib.backend-module.html,Variable backend.server.importlib.backend_checker.backend=backend.server.importlib.backend_checker-module.html#backend"><a title="backend
+backend.server.importlib.backend
+backend.server.importlib.backend_checker.backend" class="py-name" href="#" onclick="return doclink('link-83', 'backend', 'link-83');">backend</a></tt> <tt class="py-op">=</tt> <tt id="link-84" class="py-name"><a title="backend.server.importlib.backendOracle.SQLBackend" class="py-name" href="#" onclick="return doclink('link-84', 'SQLBackend', 'link-7');">SQLBackend</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line">        <tt class="py-name">importer</tt> <tt class="py-op">=</tt> <tt id="link-85" class="py-name"><a title="backend.server.importlib.channelImport.ChannelFamilyImport" class="py-name" href="#" onclick="return doclink('link-85', 'ChannelFamilyImport', 'link-11');">ChannelFamilyImport</a></tt><tt class="py-op">(</tt><tt class="py-name">batch</tt><tt class="py-op">,</tt> <tt id="link-86" class="py-name"><a title="backend
+backend.server.importlib.backend
+backend.server.importlib.backend_checker.backend" class="py-name" href="#" onclick="return doclink('link-86', 'backend', 'link-83');">backend</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line">        <tt class="py-name">importer</tt><tt class="py-op">.</tt><tt id="link-87" class="py-name" targets="Function actions.script.run()=actions.script-module.html#run,Method backend.satellite_tools.satsync.ThreadDownload.run()=backend.satellite_tools.satsync.ThreadDownload-class.html#run,Function backend.server.action.script.run()=backend.server.action.script-module.html#run,Function backend.server.action_extra_data.script.run()=backend.server.action_extra_data.script-module.html#run,Method backend.server.importlib.importLib.Import.run()=backend.server.importlib.importLib.Import-class.html#run,Method config_client.handler_base.HandlerBase.run()=config_client.handler_base.HandlerBase-class.html#run,Method config_client.rhncfgcli_channels.Handler.run()=config_client.rhncfgcli_channels.Handler-class.html#run,Method config_client.rhncfgcli_elist.Handler.run()=config_client.rhncfgcli_elist.Handler-class.html#run,Method config_client.rhncfgcli_get.Handler.run()=config_client.rhncfgcli_get.Handler-class.html#run,Method config_client.rhncfgcli_list.Handler.run()=config_client.rhncfgcli_list.Handler-class.html#run,Method config_client.rhncfgcli_verify.Handler.run()=config_client.rhncfgcli_verify.Handler-class.html#run,Method config_management.rhncfg_add.Handler.run()=config_management.rhncfg_add.Handler-class.html#run,Method config_management.rhncfg_create_channel.Handler.run()=config_management.rhncfg_create_channel.Handler-class.html#run,Method config_management.rhncfg_diff.Handler.run()=config_management.rhncfg_diff.Handler-class.html#run,Method config_management.rhncfg_diff_revisions.Handler.run()=config_management.rhncfg_diff_revisions.Handler-class.html#run,Method config_management.rhncfg_download_channel.Handler.run()=config_management.rhncfg_download_channel.Handler-class.html#run,Method config_management.rhncfg_get.Handler.run()=config_management.rhncfg_get.Handler-class.html#run,Method config_management.rhncfg_list.Handler.run()=config_management.rhncfg_list.Handler-class.html#run,Method config_management.rhncfg_list_channels.Handler.run()=config_management.rhncfg_list_channels.Handler-class.html#run,Method config_management.rhncfg_remove.Handler.run()=config_management.rhncfg_remove.Handler-class.html#run,Method config_management.rhncfg_remove_channel.Handler.run()=config_management.rhncfg_remove_channel.Handler-class.html#run,Method config_management.rhncfg_revisions.Handler.run()=config_management.rhncfg_revisions.Handler-class.html#run,Method config_management.rhncfg_upload_channel.Handler.run()=config_management.rhncfg_upload_channel.Handler-class.html#run,Method up2date_client.messageWindow.BulletedOkDialog.run()=up2date_client.messageWindow.BulletedOkDialog-class.html#run,Method up2date_client.rhncli.RhnCli.run()=up2date_client.rhncli.RhnCli-class.html#run,Method up2date_client.tui.AlreadyRegisteredSubscriptionManagerWindow.run()=up2date_client.tui.AlreadyRegisteredSubscriptionManagerWindow-class.html#run,Method up2date_client.tui.AlreadyRegisteredWindow.run()=up2date_client.tui.AlreadyRegisteredWindow-class.html#run,Method up2date_client.tui.ConnectWindow.run()=up2date_client.tui.ConnectWindow-class.html#run,Method up2date_client.tui.FinishWindow.run()=up2date_client.tui.FinishWindow-class.html#run,Method up2date_client.tui.HardwareWindow.run()=up2date_client.tui.HardwareWindow-class.html#run,Method up2date_client.tui.InfoWindow.run()=up2date_client.tui.InfoWindow-class.html#run,Method up2date_client.tui.OSReleaseWindow.run()=up2date_client.tui.OSReleaseWindow-class.html#run,Method up2date_client.tui.PackagesWindow.run()=up2date_client.tui.PackagesWindow-class.html#run,Method up2date_client.tui.ReviewWindow.run()=up2date_client.tui.ReviewWindow-class.html#run,Method up2date_client.tui.SatelliteUrlWindow.run()=up2date_client.tui.SatelliteUrlWindow-class.html#run,Method up2date_client.tui.SendWindow.run()=up2date_client.tui.SendWindow-class.html#run,Method up2date_client.tui.SendingWindow.run()=up2date_client.tui.SendingWindow-class.html#run,Method up2date_client.tui.StartWindow.run()=up2date_client.tui.StartWindow-class.html#run,Method up2date_client.tui.Tui.run()=up2date_client.tui.Tui-class.html#run,Method up2date_client.tui.WhyRegisterWindow.run()=up2date_client.tui.WhyRegisterWindow-class.html#run,Method virtualization.batching_log_notifier.NotifyThread.run()=virtualization.batching_log_notifier.NotifyThread-class.html#run"><a title="actions.script.run
+backend.satellite_tools.satsync.ThreadDownload.run
+backend.server.action.script.run
+backend.server.action_extra_data.script.run
+backend.server.importlib.importLib.Import.run
+config_client.handler_base.HandlerBase.run
+config_client.rhncfgcli_channels.Handler.run
+config_client.rhncfgcli_elist.Handler.run
+config_client.rhncfgcli_get.Handler.run
+config_client.rhncfgcli_list.Handler.run
+config_client.rhncfgcli_verify.Handler.run
+config_management.rhncfg_add.Handler.run
+config_management.rhncfg_create_channel.Handler.run
+config_management.rhncfg_diff.Handler.run
+config_management.rhncfg_diff_revisions.Handler.run
+config_management.rhncfg_download_channel.Handler.run
+config_management.rhncfg_get.Handler.run
+config_management.rhncfg_list.Handler.run
+config_management.rhncfg_list_channels.Handler.run
+config_management.rhncfg_remove.Handler.run
+config_management.rhncfg_remove_channel.Handler.run
+config_management.rhncfg_revisions.Handler.run
+config_management.rhncfg_upload_channel.Handler.run
+up2date_client.messageWindow.BulletedOkDialog.run
+up2date_client.rhncli.RhnCli.run
+up2date_client.tui.AlreadyRegisteredSubscriptionManagerWindow.run
+up2date_client.tui.AlreadyRegisteredWindow.run
+up2date_client.tui.ConnectWindow.run
+up2date_client.tui.FinishWindow.run
+up2date_client.tui.HardwareWindow.run
+up2date_client.tui.InfoWindow.run
+up2date_client.tui.OSReleaseWindow.run
+up2date_client.tui.PackagesWindow.run
+up2date_client.tui.ReviewWindow.run
+up2date_client.tui.SatelliteUrlWindow.run
+up2date_client.tui.SendWindow.run
+up2date_client.tui.SendingWindow.run
+up2date_client.tui.StartWindow.run
+up2date_client.tui.Tui.run
+up2date_client.tui.WhyRegisterWindow.run
+virtualization.batching_log_notifier.NotifyThread.run" class="py-name" href="#" onclick="return doclink('link-87', 'run', 'link-87');">run</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line"> </tt>
+<a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">staticmethod</tt> </tt>
+<a name="Activation._remove_repositories"></a><div id="Activation._remove_repositories-def"><a name="L109"></a><tt class="py-lineno">109</tt> <a class="py-toggle" href="#" id="Activation._remove_repositories-toggle" onclick="return toggle('Activation._remove_repositories');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="backend.cdn_tools.activation.Activation-class.html#_remove_repositories">_remove_repositories</a><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Activation._remove_repositories-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Activation._remove_repositories-expanded"><a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line">        <tt class="py-docstring">"""This method removes repositories obtained from manifest"""</tt> </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line">        <tt class="py-name">hdel_repos</tt> <tt class="py-op">=</tt> <tt id="link-88" class="py-name"><a title="backend.server.rhnSQL" class="py-name" href="#" onclick="return doclink('link-88', 'rhnSQL', 'link-3');">rhnSQL</a></tt><tt class="py-op">.</tt><tt id="link-89" class="py-name" targets="Method backend.server.rhnSQL.driver_cx_Oracle.Database.prepare()=backend.server.rhnSQL.driver_cx_Oracle.Database-class.html#prepare,Method backend.server.rhnSQL.driver_postgresql.Database.prepare()=backend.server.rhnSQL.driver_postgresql.Database-class.html#prepare,Function backend.server.rhnSQL.prepare()=backend.server.rhnSQL-module.html#prepare,Method backend.server.rhnSQL.sql_base.Cursor.prepare()=backend.server.rhnSQL.sql_base.Cursor-class.html#prepare,Method backend.server.rhnSQL.sql_base.Database.prepare()=backend.server.rhnSQL.sql_base.Database-class.html#prepare"><a title="backend.server.rhnSQL.driver_cx_Oracle.Database.prepare
+backend.server.rhnSQL.driver_postgresql.Database.prepare
+backend.server.rhnSQL.prepare
+backend.server.rhnSQL.sql_base.Cursor.prepare
+backend.server.rhnSQL.sql_base.Database.prepare" class="py-name" href="#" onclick="return doclink('link-89', 'prepare', 'link-89');">prepare</a></tt><tt class="py-op">(</tt><tt class="py-string">"""</tt> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line"><tt class="py-string">            delete from rhnContentSource where</tt> </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line"><tt class="py-string">            label like :prefix || '%%'</tt> </tt>
+<a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line"><tt class="py-string">            and org_id is null</tt> </tt>
+<a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line"><tt class="py-string">        """</tt><tt class="py-op">)</tt> </tt>
+<a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line">        <tt class="py-name">hdel_repos</tt><tt class="py-op">.</tt><tt id="link-90" class="py-name" targets="Method backend.server.rhnSQL.driver_cx_Oracle.Database.execute()=backend.server.rhnSQL.driver_cx_Oracle.Database-class.html#execute,Method backend.server.rhnSQL.driver_postgresql.Database.execute()=backend.server.rhnSQL.driver_postgresql.Database-class.html#execute,Function backend.server.rhnSQL.execute()=backend.server.rhnSQL-module.html#execute,Method backend.server.rhnSQL.sql_base.Cursor.execute()=backend.server.rhnSQL.sql_base.Cursor-class.html#execute,Function spacewalkkoan.spacewalkkoan.execute()=spacewalkkoan.spacewalkkoan-module.html#execute,Method virtualization.notification.Plan.execute()=virtualization.notification.Plan-class.html#execute"><a title="backend.server.rhnSQL.driver_cx_Oracle.Database.execute
+backend.server.rhnSQL.driver_postgresql.Database.execute
+backend.server.rhnSQL.execute
+backend.server.rhnSQL.sql_base.Cursor.execute
+spacewalkkoan.spacewalkkoan.execute
+virtualization.notification.Plan.execute" class="py-name" href="#" onclick="return doclink('link-90', 'execute', 'link-90');">execute</a></tt><tt class="py-op">(</tt><tt class="py-name">prefix</tt><tt class="py-op">=</tt><tt id="link-91" class="py-name"><a title="backend.cdn_tools.constants
+backend.satellite_tools.constants
+virtualization.constants" class="py-name" href="#" onclick="return doclink('link-91', 'constants', 'link-27');">constants</a></tt><tt class="py-op">.</tt><tt id="link-92" class="py-name" targets="Variable backend.cdn_tools.constants.MANIFEST_REPOSITORY_DB_PREFIX=backend.cdn_tools.constants-module.html#MANIFEST_REPOSITORY_DB_PREFIX"><a title="backend.cdn_tools.constants.MANIFEST_REPOSITORY_DB_PREFIX" class="py-name" href="#" onclick="return doclink('link-92', 'MANIFEST_REPOSITORY_DB_PREFIX', 'link-92');">MANIFEST_REPOSITORY_DB_PREFIX</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line">        <tt id="link-93" class="py-name"><a title="backend.server.rhnSQL" class="py-name" href="#" onclick="return doclink('link-93', 'rhnSQL', 'link-3');">rhnSQL</a></tt><tt class="py-op">.</tt><tt id="link-94" class="py-name" targets="Method backend.server.importlib.backend.Backend.commit()=backend.server.importlib.backend.Backend-class.html#commit,Function backend.server.rhnSQL.commit()=backend.server.rhnSQL-module.html#commit,Method backend.server.rhnSQL.driver_cx_Oracle.Database.commit()=backend.server.rhnSQL.driver_cx_Oracle.Database-class.html#commit,Method backend.server.rhnSQL.driver_postgresql.Database.commit()=backend.server.rhnSQL.driver_postgresql.Database-class.html#commit,Method backend.server.rhnSQL.sql_base.Database.commit()=backend.server.rhnSQL.sql_base.Database-class.html#commit,Method backend.server.rhnSQL.sql_table.Table.commit()=backend.server.rhnSQL.sql_table.Table-class.html#commit"><a title="backend.server.importlib.backend.Backend.commit
+backend.server.rhnSQL.commit
+backend.server.rhnSQL.driver_cx_Oracle.Database.commit
+backend.server.rhnSQL.driver_postgresql.Database.commit
+backend.server.rhnSQL.sql_base.Database.commit
+backend.server.rhnSQL.sql_table.Table.commit" class="py-name" href="#" onclick="return doclink('link-94', 'commit', 'link-94');">commit</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line"> </tt>
+<a name="Activation._update_repositories"></a><div id="Activation._update_repositories-def"><a name="L119"></a><tt class="py-lineno">119</tt> <a class="py-toggle" href="#" id="Activation._update_repositories-toggle" onclick="return toggle('Activation._update_repositories');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="backend.cdn_tools.activation.Activation-class.html#_update_repositories">_update_repositories</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Activation._update_repositories-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Activation._update_repositories-expanded"><a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line">        <tt class="py-docstring">"""Setup SSL credential to access repositories</tt> </tt>
+<a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line"><tt class="py-docstring">           We do this in 2 steps:</tt> </tt>
+<a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line"><tt class="py-docstring">           1. Fetching provided repositories from manifest - URL contains variables to substitute</tt> </tt>
+<a name="L123"></a><tt class="py-lineno">123</tt>  <tt class="py-line"><tt class="py-docstring">           2. Assigning one certificate/key set to each repository"""</tt> </tt>
+<a name="L124"></a><tt class="py-lineno">124</tt>  <tt class="py-line"> </tt>
+<a name="L125"></a><tt class="py-lineno">125</tt>  <tt class="py-line">        <tt class="py-comment"># First delete all repositories from previously used manifests</tt> </tt>
+<a name="L126"></a><tt class="py-lineno">126</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-95" class="py-name" targets="Static Method backend.cdn_tools.activation.Activation._remove_repositories()=backend.cdn_tools.activation.Activation-class.html#_remove_repositories"><a title="backend.cdn_tools.activation.Activation._remove_repositories" class="py-name" href="#" onclick="return doclink('link-95', '_remove_repositories', 'link-95');">_remove_repositories</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L127"></a><tt class="py-lineno">127</tt>  <tt class="py-line"> </tt>
+<a name="L128"></a><tt class="py-lineno">128</tt>  <tt class="py-line">        <tt id="link-96" class="py-name"><a title="backend
+backend.server.importlib.backend
+backend.server.importlib.backend_checker.backend" class="py-name" href="#" onclick="return doclink('link-96', 'backend', 'link-83');">backend</a></tt> <tt class="py-op">=</tt> <tt id="link-97" class="py-name"><a title="backend.server.importlib.backendOracle.SQLBackend" class="py-name" href="#" onclick="return doclink('link-97', 'SQLBackend', 'link-7');">SQLBackend</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L129"></a><tt class="py-lineno">129</tt>  <tt class="py-line">        <tt class="py-name">type_id</tt> <tt class="py-op">=</tt> <tt id="link-98" class="py-name"><a title="backend
+backend.server.importlib.backend
+backend.server.importlib.backend_checker.backend" class="py-name" href="#" onclick="return doclink('link-98', 'backend', 'link-83');">backend</a></tt><tt class="py-op">.</tt><tt id="link-99" class="py-name" targets="Method backend.server.importlib.backend.Backend.lookupContentSourceType()=backend.server.importlib.backend.Backend-class.html#lookupContentSourceType"><a title="backend.server.importlib.backend.Backend.lookupContentSourceType" class="py-name" href="#" onclick="return doclink('link-99', 'lookupContentSourceType', 'link-99');">lookupContentSourceType</a></tt><tt class="py-op">(</tt><tt class="py-string">'yum'</tt><tt class="py-op">)</tt> </tt>
+<a name="L130"></a><tt class="py-lineno">130</tt>  <tt class="py-line"> </tt>
+<a name="L131"></a><tt class="py-lineno">131</tt>  <tt class="py-line">        <tt class="py-comment"># Lookup CA cert</tt> </tt>
+<a name="L132"></a><tt class="py-lineno">132</tt>  <tt class="py-line">        <tt class="py-name">ca_cert</tt> <tt class="py-op">=</tt> <tt id="link-100" class="py-name"><a title="backend.satellite_tools.satCerts" class="py-name" href="#" onclick="return doclink('link-100', 'satCerts', 'link-1');">satCerts</a></tt><tt class="py-op">.</tt><tt id="link-101" class="py-name" targets="Function backend.satellite_tools.satCerts.lookup_cert()=backend.satellite_tools.satCerts-module.html#lookup_cert"><a title="backend.satellite_tools.satCerts.lookup_cert" class="py-name" href="#" onclick="return doclink('link-101', 'lookup_cert', 'link-101');">lookup_cert</a></tt><tt class="py-op">(</tt><tt id="link-102" class="py-name"><a title="backend.cdn_tools.constants
+backend.satellite_tools.constants
+virtualization.constants" class="py-name" href="#" onclick="return doclink('link-102', 'constants', 'link-27');">constants</a></tt><tt class="py-op">.</tt><tt id="link-103" class="py-name"><a title="backend.cdn_tools.constants.CA_CERT_NAME" class="py-name" href="#" onclick="return doclink('link-103', 'CA_CERT_NAME', 'link-45');">CA_CERT_NAME</a></tt><tt class="py-op">,</tt> <tt class="py-name">None</tt><tt class="py-op">)</tt> </tt>
+<a name="L133"></a><tt class="py-lineno">133</tt>  <tt class="py-line">        <tt class="py-name">ca_cert_id</tt> <tt class="py-op">=</tt> <tt id="link-104" class="py-name" targets="Class int=int-class.html"><a title="int" class="py-name" href="#" onclick="return doclink('link-104', 'int', 'link-104');">int</a></tt><tt class="py-op">(</tt><tt class="py-name">ca_cert</tt><tt class="py-op">[</tt><tt class="py-string">'id'</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L134"></a><tt class="py-lineno">134</tt>  <tt class="py-line"> </tt>
+<a name="L135"></a><tt class="py-lineno">135</tt>  <tt class="py-line">        <tt class="py-name">content_sources_batch</tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt><tt class="py-op">}</tt> </tt>
+<a name="L136"></a><tt class="py-lineno">136</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">entitlement</tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-105" class="py-name"><a title="backend.cdn_tools.manifest" class="py-name" href="#" onclick="return doclink('link-105', 'manifest', 'link-28');">manifest</a></tt><tt class="py-op">.</tt><tt id="link-106" class="py-name"><a title="backend.cdn_tools.manifest.Manifest.get_all_entitlements" class="py-name" href="#" onclick="return doclink('link-106', 'get_all_entitlements', 'link-62');">get_all_entitlements</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L137"></a><tt class="py-lineno">137</tt>  <tt class="py-line">            <tt class="py-name">creds</tt> <tt class="py-op">=</tt> <tt class="py-name">entitlement</tt><tt class="py-op">.</tt><tt id="link-107" class="py-name"><a title="backend.cdn_tools.manifest.Entitlement.get_credentials" class="py-name" href="#" onclick="return doclink('link-107', 'get_credentials', 'link-63');">get_credentials</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L138"></a><tt class="py-lineno">138</tt>  <tt class="py-line">            <tt class="py-name">client_cert</tt> <tt class="py-op">=</tt> <tt id="link-108" class="py-name"><a title="backend.satellite_tools.satCerts" class="py-name" href="#" onclick="return doclink('link-108', 'satCerts', 'link-1');">satCerts</a></tt><tt class="py-op">.</tt><tt id="link-109" class="py-name"><a title="backend.satellite_tools.satCerts.lookup_cert" class="py-name" href="#" onclick="return doclink('link-109', 'lookup_cert', 'link-101');">lookup_cert</a></tt><tt class="py-op">(</tt><tt id="link-110" class="py-name"><a title="backend.cdn_tools.constants
+backend.satellite_tools.constants
+virtualization.constants" class="py-name" href="#" onclick="return doclink('link-110', 'constants', 'link-27');">constants</a></tt><tt class="py-op">.</tt><tt id="link-111" class="py-name"><a title="backend.cdn_tools.constants.CLIENT_CERT_PREFIX" class="py-name" href="#" onclick="return doclink('link-111', 'CLIENT_CERT_PREFIX', 'link-47');">CLIENT_CERT_PREFIX</a></tt> <tt class="py-op">+</tt> </tt>
+<a name="L139"></a><tt class="py-lineno">139</tt>  <tt class="py-line">                                               <tt class="py-name">creds</tt><tt class="py-op">.</tt><tt id="link-112" class="py-name"><a title="backend.cdn_tools.manifest.Credentials.get_id
+backend.cdn_tools.manifest.Product.get_id
+backend.server.action.utils.ChannelPackage.get_id" class="py-name" href="#" onclick="return doclink('link-112', 'get_id', 'link-68');">get_id</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-name">None</tt><tt class="py-op">)</tt> </tt>
+<a name="L140"></a><tt class="py-lineno">140</tt>  <tt class="py-line">            <tt class="py-name">client_key</tt> <tt class="py-op">=</tt> <tt id="link-113" class="py-name"><a title="backend.satellite_tools.satCerts" class="py-name" href="#" onclick="return doclink('link-113', 'satCerts', 'link-1');">satCerts</a></tt><tt class="py-op">.</tt><tt id="link-114" class="py-name"><a title="backend.satellite_tools.satCerts.lookup_cert" class="py-name" href="#" onclick="return doclink('link-114', 'lookup_cert', 'link-101');">lookup_cert</a></tt><tt class="py-op">(</tt><tt id="link-115" class="py-name"><a title="backend.cdn_tools.constants
+backend.satellite_tools.constants
+virtualization.constants" class="py-name" href="#" onclick="return doclink('link-115', 'constants', 'link-27');">constants</a></tt><tt class="py-op">.</tt><tt id="link-116" class="py-name"><a title="backend.cdn_tools.constants.CLIENT_KEY_PREFIX" class="py-name" href="#" onclick="return doclink('link-116', 'CLIENT_KEY_PREFIX', 'link-49');">CLIENT_KEY_PREFIX</a></tt> <tt class="py-op">+</tt> </tt>
+<a name="L141"></a><tt class="py-lineno">141</tt>  <tt class="py-line">                                              <tt class="py-name">creds</tt><tt class="py-op">.</tt><tt id="link-117" class="py-name"><a title="backend.cdn_tools.manifest.Credentials.get_id
+backend.cdn_tools.manifest.Product.get_id
+backend.server.action.utils.ChannelPackage.get_id" class="py-name" href="#" onclick="return doclink('link-117', 'get_id', 'link-68');">get_id</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-name">None</tt><tt class="py-op">)</tt> </tt>
+<a name="L142"></a><tt class="py-lineno">142</tt>  <tt class="py-line">            <tt class="py-name">client_cert_id</tt> <tt class="py-op">=</tt> <tt id="link-118" class="py-name"><a title="int" class="py-name" href="#" onclick="return doclink('link-118', 'int', 'link-104');">int</a></tt><tt class="py-op">(</tt><tt class="py-name">client_cert</tt><tt class="py-op">[</tt><tt class="py-string">'id'</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L143"></a><tt class="py-lineno">143</tt>  <tt class="py-line">            <tt class="py-name">client_key_id</tt> <tt class="py-op">=</tt> <tt id="link-119" class="py-name"><a title="int" class="py-name" href="#" onclick="return doclink('link-119', 'int', 'link-104');">int</a></tt><tt class="py-op">(</tt><tt class="py-name">client_key</tt><tt class="py-op">[</tt><tt class="py-string">'id'</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L144"></a><tt class="py-lineno">144</tt>  <tt class="py-line">            <tt class="py-keyword">for</tt> <tt class="py-name">product</tt> <tt class="py-keyword">in</tt> <tt class="py-name">entitlement</tt><tt class="py-op">.</tt><tt id="link-120" class="py-name" targets="Method backend.cdn_tools.manifest.Entitlement.get_products()=backend.cdn_tools.manifest.Entitlement-class.html#get_products"><a title="backend.cdn_tools.manifest.Entitlement.get_products" class="py-name" href="#" onclick="return doclink('link-120', 'get_products', 'link-120');">get_products</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L145"></a><tt class="py-lineno">145</tt>  <tt class="py-line">                <tt class="py-name">repositories</tt> <tt class="py-op">=</tt> <tt class="py-name">product</tt><tt class="py-op">.</tt><tt id="link-121" class="py-name" targets="Method backend.cdn_tools.manifest.Product.get_repositories()=backend.cdn_tools.manifest.Product-class.html#get_repositories"><a title="backend.cdn_tools.manifest.Product.get_repositories" class="py-name" href="#" onclick="return doclink('link-121', 'get_repositories', 'link-121');">get_repositories</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L146"></a><tt class="py-lineno">146</tt>  <tt class="py-line">                <tt class="py-keyword">for</tt> <tt id="link-122" class="py-name" targets="Module backend.cdn_tools.repository=backend.cdn_tools.repository-module.html,Module backend.server.repomd.repository=backend.server.repomd.repository-module.html,Module config_common.repository=config_common.repository-module.html"><a title="backend.cdn_tools.repository
+backend.server.repomd.repository
+config_common.repository" class="py-name" href="#" onclick="return doclink('link-122', 'repository', 'link-122');">repository</a></tt> <tt class="py-keyword">in</tt> <tt class="py-name">repositories</tt><tt class="py-op">:</tt> </tt>
+<a name="L147"></a><tt class="py-lineno">147</tt>  <tt class="py-line">                    <tt class="py-keyword">if</tt> <tt id="link-123" class="py-name"><a title="backend.cdn_tools.repository
+backend.server.repomd.repository
+config_common.repository" class="py-name" href="#" onclick="return doclink('link-123', 'repository', 'link-122');">repository</a></tt> <tt class="py-keyword">not</tt> <tt class="py-keyword">in</tt> <tt class="py-name">content_sources_batch</tt><tt class="py-op">:</tt> </tt>
+<a name="L148"></a><tt class="py-lineno">148</tt>  <tt class="py-line">                        <tt class="py-name">content_source</tt> <tt class="py-op">=</tt> <tt id="link-124" class="py-name"><a title="backend.satellite_tools.repo_plugins.deb_src.ContentSource
+backend.satellite_tools.repo_plugins.uln_src.ContentSource
+backend.satellite_tools.repo_plugins.yum_src.ContentSource
+backend.server.importlib.importLib.ContentSource" class="py-name" href="#" onclick="return doclink('link-124', 'ContentSource', 'link-16');">ContentSource</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L149"></a><tt class="py-lineno">149</tt>  <tt class="py-line">                        <tt class="py-name">content_source</tt><tt class="py-op">[</tt><tt class="py-string">'label'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt id="link-125" class="py-name"><a title="backend.cdn_tools.constants
+backend.satellite_tools.constants
+virtualization.constants" class="py-name" href="#" onclick="return doclink('link-125', 'constants', 'link-27');">constants</a></tt><tt class="py-op">.</tt><tt id="link-126" class="py-name"><a title="backend.cdn_tools.constants.MANIFEST_REPOSITORY_DB_PREFIX" class="py-name" href="#" onclick="return doclink('link-126', 'MANIFEST_REPOSITORY_DB_PREFIX', 'link-92');">MANIFEST_REPOSITORY_DB_PREFIX</a></tt> <tt class="py-op">+</tt> <tt id="link-127" class="py-name"><a title="backend.cdn_tools.repository
+backend.server.repomd.repository
+config_common.repository" class="py-name" href="#" onclick="return doclink('link-127', 'repository', 'link-122');">repository</a></tt> </tt>
+<a name="L150"></a><tt class="py-lineno">150</tt>  <tt class="py-line">                        <tt class="py-name">content_source</tt><tt class="py-op">[</tt><tt class="py-string">'source_url'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">repositories</tt><tt class="py-op">[</tt><tt id="link-128" class="py-name"><a title="backend.cdn_tools.repository
+backend.server.repomd.repository
+config_common.repository" class="py-name" href="#" onclick="return doclink('link-128', 'repository', 'link-122');">repository</a></tt><tt class="py-op">]</tt> </tt>
+<a name="L151"></a><tt class="py-lineno">151</tt>  <tt class="py-line">                        <tt class="py-name">content_source</tt><tt class="py-op">[</tt><tt class="py-string">'org_id'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+<a name="L152"></a><tt class="py-lineno">152</tt>  <tt class="py-line">                        <tt class="py-name">content_source</tt><tt class="py-op">[</tt><tt class="py-string">'type_id'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">type_id</tt> </tt>
+<a name="L153"></a><tt class="py-lineno">153</tt>  <tt class="py-line">                        <tt class="py-name">content_source</tt><tt class="py-op">[</tt><tt class="py-string">'ssl_ca_cert_id'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">ca_cert_id</tt> </tt>
+<a name="L154"></a><tt class="py-lineno">154</tt>  <tt class="py-line">                        <tt class="py-name">content_source</tt><tt class="py-op">[</tt><tt class="py-string">'ssl_client_cert_id'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">client_cert_id</tt> </tt>
+<a name="L155"></a><tt class="py-lineno">155</tt>  <tt class="py-line">                        <tt class="py-name">content_source</tt><tt class="py-op">[</tt><tt class="py-string">'ssl_client_key_id'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">client_key_id</tt> </tt>
+<a name="L156"></a><tt class="py-lineno">156</tt>  <tt class="py-line">                        <tt class="py-name">content_sources_batch</tt><tt class="py-op">[</tt><tt id="link-129" class="py-name"><a title="backend.cdn_tools.repository
+backend.server.repomd.repository
+config_common.repository" class="py-name" href="#" onclick="return doclink('link-129', 'repository', 'link-122');">repository</a></tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">content_source</tt> </tt>
+<a name="L157"></a><tt class="py-lineno">157</tt>  <tt class="py-line"> </tt>
+<a name="L158"></a><tt class="py-lineno">158</tt>  <tt class="py-line">        <tt class="py-name">importer</tt> <tt class="py-op">=</tt> <tt id="link-130" class="py-name"><a title="backend.server.importlib.contentSourcesImport.ContentSourcesImport" class="py-name" href="#" onclick="return doclink('link-130', 'ContentSourcesImport', 'link-20');">ContentSourcesImport</a></tt><tt class="py-op">(</tt><tt class="py-name">content_sources_batch</tt><tt class="py-op">.</tt><tt id="link-131" class="py-name" targets="Method backend.common.rhnConfig.RHNOptions.values()=backend.common.rhnConfig.RHNOptions-class.html#values,Method up2date_client.config.Config.values()=up2date_client.config.Config-class.html#values,Method up2date_client.config.ConfigFile.values()=up2date_client.config.ConfigFile-class.html#values,Method up2date_client.rhnChannel.rhnChannel.values()=up2date_client.rhnChannel.rhnChannel-class.html#values"><a title="backend.common.rhnConfig.RHNOptions.values
+up2date_client.config.Config.values
+up2date_client.config.ConfigFile.values
+up2date_client.rhnChannel.rhnChannel.values" class="py-name" href="#" onclick="return doclink('link-131', 'values', 'link-131');">values</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt id="link-132" class="py-name"><a title="backend
+backend.server.importlib.backend
+backend.server.importlib.backend_checker.backend" class="py-name" href="#" onclick="return doclink('link-132', 'backend', 'link-83');">backend</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L159"></a><tt class="py-lineno">159</tt>  <tt class="py-line">        <tt class="py-name">importer</tt><tt class="py-op">.</tt><tt id="link-133" class="py-name"><a title="actions.script.run
+backend.satellite_tools.satsync.ThreadDownload.run
+backend.server.action.script.run
+backend.server.action_extra_data.script.run
+backend.server.importlib.importLib.Import.run
+config_client.handler_base.HandlerBase.run
+config_client.rhncfgcli_channels.Handler.run
+config_client.rhncfgcli_elist.Handler.run
+config_client.rhncfgcli_get.Handler.run
+config_client.rhncfgcli_list.Handler.run
+config_client.rhncfgcli_verify.Handler.run
+config_management.rhncfg_add.Handler.run
+config_management.rhncfg_create_channel.Handler.run
+config_management.rhncfg_diff.Handler.run
+config_management.rhncfg_diff_revisions.Handler.run
+config_management.rhncfg_download_channel.Handler.run
+config_management.rhncfg_get.Handler.run
+config_management.rhncfg_list.Handler.run
+config_management.rhncfg_list_channels.Handler.run
+config_management.rhncfg_remove.Handler.run
+config_management.rhncfg_remove_channel.Handler.run
+config_management.rhncfg_revisions.Handler.run
+config_management.rhncfg_upload_channel.Handler.run
+up2date_client.messageWindow.BulletedOkDialog.run
+up2date_client.rhncli.RhnCli.run
+up2date_client.tui.AlreadyRegisteredSubscriptionManagerWindow.run
+up2date_client.tui.AlreadyRegisteredWindow.run
+up2date_client.tui.ConnectWindow.run
+up2date_client.tui.FinishWindow.run
+up2date_client.tui.HardwareWindow.run
+up2date_client.tui.InfoWindow.run
+up2date_client.tui.OSReleaseWindow.run
+up2date_client.tui.PackagesWindow.run
+up2date_client.tui.ReviewWindow.run
+up2date_client.tui.SatelliteUrlWindow.run
+up2date_client.tui.SendWindow.run
+up2date_client.tui.SendingWindow.run
+up2date_client.tui.StartWindow.run
+up2date_client.tui.Tui.run
+up2date_client.tui.WhyRegisterWindow.run
+virtualization.batching_log_notifier.NotifyThread.run" class="py-name" href="#" onclick="return doclink('link-133', 'run', 'link-87');">run</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L160"></a><tt class="py-lineno">160</tt>  <tt class="py-line"> </tt>
+<a name="Activation.activate"></a><div id="Activation.activate-def"><a name="L161"></a><tt class="py-lineno">161</tt> <a class="py-toggle" href="#" id="Activation.activate-toggle" onclick="return toggle('Activation.activate');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="backend.cdn_tools.activation.Activation-class.html#activate">activate</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Activation.activate-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Activation.activate-expanded"><a name="L162"></a><tt class="py-lineno">162</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-134" class="py-name"><a title="backend.cdn_tools.manifest" class="py-name" href="#" onclick="return doclink('link-134', 'manifest', 'link-28');">manifest</a></tt><tt class="py-op">.</tt><tt id="link-135" class="py-name" targets="Method backend.cdn_tools.manifest.Manifest.check_signature()=backend.cdn_tools.manifest.Manifest-class.html#check_signature"><a title="backend.cdn_tools.manifest.Manifest.check_signature" class="py-name" href="#" onclick="return doclink('link-135', 'check_signature', 'link-135');">check_signature</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L163"></a><tt class="py-lineno">163</tt>  <tt class="py-line">            <tt class="py-keyword">print</tt><tt class="py-op">(</tt><tt class="py-string">"Populating channel families..."</tt><tt class="py-op">)</tt> </tt>
+<a name="L164"></a><tt class="py-lineno">164</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-136" class="py-name" targets="Method backend.cdn_tools.activation.Activation.import_channel_families()=backend.cdn_tools.activation.Activation-class.html#import_channel_families"><a title="backend.cdn_tools.activation.Activation.import_channel_families" class="py-name" href="#" onclick="return doclink('link-136', 'import_channel_families', 'link-136');">import_channel_families</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L165"></a><tt class="py-lineno">165</tt>  <tt class="py-line">            <tt class="py-keyword">print</tt><tt class="py-op">(</tt><tt class="py-string">"Updating certificates..."</tt><tt class="py-op">)</tt> </tt>
+<a name="L166"></a><tt class="py-lineno">166</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-137" class="py-name" targets="Method backend.cdn_tools.activation.Activation._update_certificates()=backend.cdn_tools.activation.Activation-class.html#_update_certificates"><a title="backend.cdn_tools.activation.Activation._update_certificates" class="py-name" href="#" onclick="return doclink('link-137', '_update_certificates', 'link-137');">_update_certificates</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L167"></a><tt class="py-lineno">167</tt>  <tt class="py-line">            <tt class="py-keyword">print</tt><tt class="py-op">(</tt><tt class="py-string">"Updating manifest repositories..."</tt><tt class="py-op">)</tt> </tt>
+<a name="L168"></a><tt class="py-lineno">168</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-138" class="py-name" targets="Method backend.cdn_tools.activation.Activation._update_repositories()=backend.cdn_tools.activation.Activation-class.html#_update_repositories"><a title="backend.cdn_tools.activation.Activation._update_repositories" class="py-name" href="#" onclick="return doclink('link-138', '_update_repositories', 'link-138');">_update_repositories</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L169"></a><tt class="py-lineno">169</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L170"></a><tt class="py-lineno">170</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt id="link-139" class="py-name"><a title="backend.cdn_tools.manifest.ManifestValidationError
+backend.satellite_tools.rhn_satellite_activate.ManifestValidationError" class="py-name" href="#" onclick="return doclink('link-139', 'ManifestValidationError', 'link-30');">ManifestValidationError</a></tt><tt class="py-op">(</tt><tt class="py-string">"Manifest validation failed! Make sure the specified manifest is correct."</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L171"></a><tt class="py-lineno">171</tt>  <tt class="py-line"> </tt>
+<a name="L172"></a><tt class="py-lineno">172</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">staticmethod</tt> </tt>
+<a name="Activation.deactivate"></a><div id="Activation.deactivate-def"><a name="L173"></a><tt class="py-lineno">173</tt> <a class="py-toggle" href="#" id="Activation.deactivate-toggle" onclick="return toggle('Activation.deactivate');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="backend.cdn_tools.activation.Activation-class.html#deactivate">deactivate</a><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Activation.deactivate-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Activation.deactivate-expanded"><a name="L174"></a><tt class="py-lineno">174</tt>  <tt class="py-line">        <tt class="py-docstring">"""Function to remove certificates and manifest repositories from DB"""</tt> </tt>
+<a name="L175"></a><tt class="py-lineno">175</tt>  <tt class="py-line">        <tt id="link-140" class="py-name"><a title="backend.server.rhnSQL" class="py-name" href="#" onclick="return doclink('link-140', 'rhnSQL', 'link-3');">rhnSQL</a></tt><tt class="py-op">.</tt><tt id="link-141" class="py-name"><a title="backend.server.rhnSQL.initDB" class="py-name" href="#" onclick="return doclink('link-141', 'initDB', 'link-32');">initDB</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L176"></a><tt class="py-lineno">176</tt>  <tt class="py-line">        <tt class="py-keyword">print</tt><tt class="py-op">(</tt><tt class="py-string">"Removing certificates..."</tt><tt class="py-op">)</tt> </tt>
+<a name="L177"></a><tt class="py-lineno">177</tt>  <tt class="py-line">        <tt id="link-142" class="py-name" targets="Class backend.cdn_tools.activation.Activation=backend.cdn_tools.activation.Activation-class.html"><a title="backend.cdn_tools.activation.Activation" class="py-name" href="#" onclick="return doclink('link-142', 'Activation', 'link-142');">Activation</a></tt><tt class="py-op">.</tt><tt id="link-143" class="py-name"><a title="backend.cdn_tools.activation.Activation._remove_certificates" class="py-name" href="#" onclick="return doclink('link-143', '_remove_certificates', 'link-52');">_remove_certificates</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L178"></a><tt class="py-lineno">178</tt>  <tt class="py-line">        <tt class="py-keyword">print</tt><tt class="py-op">(</tt><tt class="py-string">"Removing manifest repositories..."</tt><tt class="py-op">)</tt> </tt>
+<a name="L179"></a><tt class="py-lineno">179</tt>  <tt class="py-line">        <tt id="link-144" class="py-name"><a title="backend.cdn_tools.activation.Activation" class="py-name" href="#" onclick="return doclink('link-144', 'Activation', 'link-142');">Activation</a></tt><tt class="py-op">.</tt><tt id="link-145" class="py-name"><a title="backend.cdn_tools.activation.Activation._remove_repositories" class="py-name" href="#" onclick="return doclink('link-145', '_remove_repositories', 'link-95');">_remove_repositories</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L180"></a><tt class="py-lineno">180</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Fri Nov 25 11:30:44 2016
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

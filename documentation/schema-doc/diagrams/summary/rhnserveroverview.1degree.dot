@@ -1,0 +1,52 @@
+// dot 2.26.0 on Linux 2.6.32-504.el6.x86_64
+// SchemaSpy rev 590
+digraph "rhnserveroverview" {
+  graph [
+    rankdir="RL"
+    bgcolor="#f7f7f7"
+    nodesep="0.18"
+    ranksep="0.46"
+    fontname="Helvetica"
+    fontsize="11"
+  ];
+  node [
+    fontname="Helvetica"
+    fontsize="11"
+    shape="plaintext"
+  ];
+  edge [
+    arrowsize="0.8"
+  ];
+  "rhnserveroverview" [
+    label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">rhnserveroverview</TD></TR>
+      <TR><TD PORT="org_id" COLSPAN="3" ALIGN="LEFT">org_id</TD></TR>
+      <TR><TD PORT="server_id" COLSPAN="3" ALIGN="LEFT">server_id</TD></TR>
+      <TR><TD PORT="server_name" COLSPAN="3" ALIGN="LEFT">server_name</TD></TR>
+      <TR><TD PORT="modified" COLSPAN="3" ALIGN="LEFT">modified</TD></TR>
+      <TR><TD PORT="server_admins" COLSPAN="3" ALIGN="LEFT">server_admins</TD></TR>
+      <TR><TD PORT="group_count" COLSPAN="3" ALIGN="LEFT">group_count</TD></TR>
+      <TR><TD PORT="channel_id" COLSPAN="3" ALIGN="LEFT">channel_id</TD></TR>
+      <TR><TD PORT="channel_labels" COLSPAN="3" ALIGN="LEFT">channel_labels</TD></TR>
+      <TR><TD PORT="history_count" COLSPAN="3" ALIGN="LEFT">history_count</TD></TR>
+      <TR><TD PORT="security_errata" COLSPAN="3" ALIGN="LEFT">security_errata</TD></TR>
+      <TR><TD PORT="bug_errata" COLSPAN="3" ALIGN="LEFT">bug_errata</TD></TR>
+      <TR><TD PORT="enhancement_errata" COLSPAN="3" ALIGN="LEFT">enhancement_errata</TD></TR>
+      <TR><TD PORT="outdated_packages" COLSPAN="3" ALIGN="LEFT">outdated_packages</TD></TR>
+      <TR><TD PORT="config_files_with_differences" COLSPAN="3" ALIGN="LEFT">config_files_with_differences</TD></TR>
+      <TR><TD PORT="unique_crash_count" COLSPAN="3" ALIGN="LEFT">unique_crash_count</TD></TR>
+      <TR><TD PORT="total_crash_count" COLSPAN="3" ALIGN="LEFT">total_crash_count</TD></TR>
+      <TR><TD PORT="last_checkin_days_ago" COLSPAN="3" ALIGN="LEFT">last_checkin_days_ago</TD></TR>
+      <TR><TD PORT="last_checkin" COLSPAN="3" ALIGN="LEFT">last_checkin</TD></TR>
+      <TR><TD PORT="pending_updates" COLSPAN="3" ALIGN="LEFT">pending_updates</TD></TR>
+      <TR><TD PORT="os" COLSPAN="3" ALIGN="LEFT">os</TD></TR>
+      <TR><TD PORT="release" COLSPAN="3" ALIGN="LEFT">release</TD></TR>
+      <TR><TD PORT="server_arch_name" COLSPAN="3" ALIGN="LEFT">server_arch_name</TD></TR>
+      <TR><TD PORT="locked" COLSPAN="3" ALIGN="LEFT">locked</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">view</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+    </TABLE>>
+    URL="tables/rhnserveroverview.html"
+    tooltip="rhnserveroverview"
+  ];
+}

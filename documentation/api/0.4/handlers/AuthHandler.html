@@ -1,0 +1,162 @@
+<html>
+<head>
+<meta http-equiv="cache-control" content="no-cache" />
+
+</head>
+<body>
+<div class="toolbar-h1">
+<br />
+
+</div>
+<span class="small-text">( <a href="../index.html">Return to API Overview</a> )</span>
+<div class="rounded-box">
+<h2><a name="top">Available methods</a></h2>
+<ul class="apidoc">
+
+<li><a href="#checkAuthToken"/>checkAuthToken</a></li>
+<li><a href="#login"/>login</a></li>
+<li><a href="#login"/>login</a></li>
+<li><a href="#logout"/>logout</a></li>
+</ul>
+</div>
+<h2>Description</h2>
+This namespace provides methods to authenticate with the Red Hat
+ Network.
+<p>
+</p>
+<p><strong>Namespace</strong>:
+auth
+</p>
+<hr />
+
+<h3> <a name="checkAuthToken" href="#top">Method: checkAuthToken</a></h3>
+Description:<br />
+This method is used to see if an external service is 
+ handing back an authorized token indicating that Spacewalk trusts 
+ the requester in some manner.  This is currently used in the cobbler
+ integration.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+    string login - login of user to check against token
+ </li>
+<li>
+
+    string token - token to validate
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+int - 1 if the token is valid with this
+ username, 0 otherwise. 
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="login" href="#top">Method: login</a></h3>
+Description:<br />
+Login using a username and password. Returns the session key
+ used by most other API methods.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+    string username
+ </li>
+<li>
+
+    string password
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+string 
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="login" href="#top">Method: login</a></h3>
+Description:<br />
+Login using a username and password. Returns the session key
+ used by other methods.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+    string username
+ </li>
+<li>
+
+    string password
+ </li>
+<li>
+
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+string 
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="logout" href="#top">Method: logout</a></h3>
+Description:<br />
+Logout the user with the given session key.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+    string sessionKey
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+    int - 1 on success, exception thrown otherwise.
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+</body>
+Generated on 1/23/2009
+</html>

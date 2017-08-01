@@ -1,0 +1,174 @@
+<html>
+<head>
+<meta http-equiv="cache-control" content="no-cache" />
+
+</head>
+<body>
+<div class="toolbar-h1">
+<br />
+
+</div>
+<span class="small-text">( <a href="../index.html">Return to API Overview</a> )</span>
+<div class="rounded-box">
+<h2><a name="top">Available methods</a></h2>
+<ul class="apidoc">
+
+<li><a href="#create"/>create</a></li>
+<li><a href="#delete"/>delete</a></li>
+<li><a href="#getDetails"/>getDetails</a></li>
+<li><a href="#listAllKeys"/>listAllKeys</a></li>
+</ul>
+</div>
+<h2>Description</h2>
+Provides methods to manipulate kickstart keys.
+<p>
+</p>
+<p><strong>Namespace</strong>:
+kickstart.keys
+</p>
+<hr />
+
+<h3> <a name="create" href="#top">Method: create</a></h3>
+Description:<br />
+creates a new key with the given parameters
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+    string session_key
+ </li>
+<li>
+
+    string description
+ </li>
+<li>
+
+    string type - valid values are GPG or SSL
+ </li>
+<li>
+
+    string content
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+    int - 1 on success, exception thrown otherwise.
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="delete" href="#top">Method: delete</a></h3>
+Description:<br />
+deletes the key identified by the given parameters
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+    string session_key
+ </li>
+<li>
+
+    string description
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+    int - 1 on success, exception thrown otherwise.
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="getDetails" href="#top">Method: getDetails</a></h3>
+Description:<br />
+returns all of the data associated with the given key
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+    string session_key
+ </li>
+<li>
+
+    string description
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+	     struct - key
+	<ul>
+          	<li> string "description"</li>
+          	<li> string "type"</li>
+          	<li> string "content"</li>
+      	</ul>
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="listAllKeys" href="#top">Method: listAllKeys</a></h3>
+Description:<br />
+list all keys for the org associated with the user logged into the
+             given session
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+array:
+  <ul>
+   <li>
+          	     struct - key
+	<ul>
+              	<li> string "description"</li>
+              	<li> string "type"</li>
+          	</ul>
+      </li></ul>
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+</body>
+Generated on 9/22/2010
+</html>

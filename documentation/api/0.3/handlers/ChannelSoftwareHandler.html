@@ -1,0 +1,1482 @@
+<html>
+<head>
+<meta http-equiv="cache-control" content="no-cache" />
+
+</head>
+<body>
+<div class="toolbar-h1">
+<br />
+
+</div>
+<span class="small-text">( <a href="../index.html">Return to API Overview</a> )</span>
+<div class="rounded-box">
+<h2><a name="top">Available methods</a></h2>
+<ul class="apidoc">
+
+<li><a href="#addPackages"/>addPackages</a></li>
+<li><a href="#availableEntitlements"/>availableEntitlements</a></li>
+<li><a href="#clone"/>clone</a></li>
+<li><a href="#create"/>create</a></li>
+<li><a href="#delete"/>delete</a></li>
+<li><a href="#getDetails"/>getDetails</a></li>
+<li><a href="#getDetails"/>getDetails</a></li>
+<li><a href="#isGloballySubscribable"/>isGloballySubscribable</a></li>
+<li><a href="#isUserSubscribable"/>isUserSubscribable</a></li>
+<li><a href="#listAllPackages"/>listAllPackages</a></li>
+<li><a href="#listAllPackages"/>listAllPackages</a></li>
+<li><a href="#listAllPackages"/>listAllPackages</a></li>
+<li><a href="#listAllPackagesByDate"/>listAllPackagesByDate</a></li>
+<li><a href="#listAllPackagesByDate"/>listAllPackagesByDate</a></li>
+<li><a href="#listAllPackagesByDate"/>listAllPackagesByDate</a></li>
+<li><a href="#listArches"/>listArches</a></li>
+<li><a href="#listErrata"/>listErrata</a></li>
+<li><a href="#listErrata"/>listErrata</a></li>
+<li><a href="#listErrata"/>listErrata</a></li>
+<li><a href="#listErrataByType"/>listErrataByType</a></li>
+<li><a href="#listLatestPackages"/>listLatestPackages</a></li>
+<li><a href="#listPackagesWithoutChannel"/>listPackagesWithoutChannel</a></li>
+<li><a href="#listSubscribedSystems"/>listSubscribedSystems</a></li>
+<li><a href="#listSystemChannels"/>listSystemChannels</a></li>
+<li><a href="#mergeErrata"/>mergeErrata</a></li>
+<li><a href="#mergeErrata"/>mergeErrata</a></li>
+<li><a href="#mergePackages"/>mergePackages</a></li>
+<li><a href="#removePackages"/>removePackages</a></li>
+<li><a href="#setGloballySubscribable"/>setGloballySubscribable</a></li>
+<li><a href="#setSystemChannels"/>setSystemChannels</a></li>
+<li><a href="#setUserSubscribable"/>setUserSubscribable</a></li>
+<li><a href="#subscribeSystem"/>subscribeSystem</a></li>
+</ul>
+</div>
+<h2>Description</h2>
+Provides methods to access and modify many aspects of a channel.
+<p>
+</p>
+<p><strong>Namespace</strong>:
+channel.software
+</p>
+<hr />
+
+<h3> <a name="addPackages" href="#top">Method: addPackages</a></h3>
+Description:<br />
+Adds a given list of packages to the given channel.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string channelLabel - target channel.
+ </li>
+<li>
+
+array:
+<ul>
+    <li>int - packageId -  id of a package to
+                                   add to the channel.</li>
+</ul>
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+    int - 1 on success, exception thrown otherwise.
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="availableEntitlements" href="#top">Method: availableEntitlements</a></h3>
+Description:<br />
+Returns the number of available subscriptions for the given channel
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string channelLabel - channel to query
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+int number of available subscriptions for the given channel 
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="clone" href="#top">Method: clone</a></h3>
+Description:<br />
+Clone a channel.  If arch_label is omitted, the arch label of the 
+      original channel will be used. If parent_label is omitted, the clone will be
+      a base channel.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string original_label
+ </li>
+<li>
+
+	     struct - channel details
+	<ul>
+          	<li> string "name"</li>
+          	<li> string "label"</li>
+          	<li> string "summary"</li>
+              <li> string "parent_label" - (optional) </li>
+              <li> string "arch_label" - (optional) </li>
+              <li> string "gpg_url" - (optional) </li>
+              <li> string "gpg_id" - (optional) </li>
+              <li> string "gpg_fingerprint" - (optional) </li>
+              <li> string "description" - (optional) </li>
+      	</ul>
+ </li>
+<li>
+
+    boolean original_state
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+int the cloned channel ID 
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="create" href="#top">Method: create</a></h3>
+Description:<br />
+Creates a software channel
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string label - label of the new channel
+ </li>
+<li>
+
+    string name - name of the new channel
+ </li>
+<li>
+
+    string summary - summary of the channel
+ </li>
+<li>
+
+    string archLabel - the label of the arch the channel 
+                  corresponds to
+ </li>
+<li>
+
+    string parentLabel - label of the parent of this 
+              channel, an empty string if it does not have one
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+int - 1 if the creation operation succeeded, 0 otherwise 
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="delete" href="#top">Method: delete</a></h3>
+Description:<br />
+Deletes a custom software channel
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string channelLabel - channel to delete
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+    int - 1 on success, exception thrown otherwise.
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="getDetails" href="#top">Method: getDetails</a></h3>
+Description:<br />
+Returns details of the given channel as a map
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string channelLabel - channel to query
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+array:
+  <ul>
+   <li>
+             
+
+	     struct - channel
+	<ul>
+      	<li> int "id"</li>
+      	<li> string "name"</li>
+      	<li> string "label"</li>
+      	<li> string "arch_name"</li>
+      	<li> string "summary"</li>
+      	<li> string "description"</li>
+      	<li> string "gpg_key_url"</li>
+      	<li> string "gpg_key_id"</li>
+      	<li> string "gpg_key_fp"</li>
+      	<li> string "end_of_life"</li>
+      	<li> string "parent_channel_label"</li>
+  	</ul>
+ 
+      </li></ul>
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="getDetails" href="#top">Method: getDetails</a></h3>
+Description:<br />
+Returns details of the given channel as a map
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    int id - channel to query
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+array:
+  <ul>
+   <li>
+             
+
+	     struct - channel
+	<ul>
+      	<li> int "id"</li>
+      	<li> string "name"</li>
+      	<li> string "label"</li>
+      	<li> string "arch_name"</li>
+      	<li> string "summary"</li>
+      	<li> string "description"</li>
+      	<li> string "gpg_key_url"</li>
+      	<li> string "gpg_key_id"</li>
+      	<li> string "gpg_key_fp"</li>
+      	<li> string "end_of_life"</li>
+      	<li> string "parent_channel_label"</li>
+  	</ul>
+ 
+      </li></ul>
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="isGloballySubscribable" href="#top">Method: isGloballySubscribable</a></h3>
+Description:<br />
+Returns whether the channel is subscribable by any user
+ in the organization
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string channelLabel - channel to query
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+int - 1 if true, 0 otherwise 
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="isUserSubscribable" href="#top">Method: isUserSubscribable</a></h3>
+Description:<br />
+Returns whether the channel may be subscribed to by the given user.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string channelLabel - label of the channel
+ </li>
+<li>
+
+    string login - login of the target user
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+int - 1 if subscribable, 0 if not 
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="listAllPackages" href="#top">Method: listAllPackages</a></h3>
+Description:<br />
+Lists all packages in the channel, regardless of package version, 
+ between the given dates.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string channelLabel - channel to query
+ </li>
+<li>
+
+    dateTime.iso8601 startDate
+ </li>
+<li>
+
+    dateTime.iso8601 endDate
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+array:
+  <ul>
+   <li>
+          	     struct - package
+	<ul>
+              	<li> string "name"</li>
+              	<li> string "version"</li>
+              	<li> string "release"</li>
+              	<li> string "epoch"</li>
+              	<li> string "id"</li>
+              	<li> string "arch_label"</li>
+          	</ul>
+      </li></ul>
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="listAllPackages" href="#top">Method: listAllPackages</a></h3>
+Description:<br />
+Lists all packages in the channel, regardless of the package version
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string channelLabel - channel to query
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+array:
+  <ul>
+   <li>
+          	     struct - package
+	<ul>
+              	<li> string "name"</li>
+              	<li> string "version"</li>
+              	<li> string "release"</li>
+              	<li> string "epoch"</li>
+              	<li> string "id"</li>
+              	<li> string "arch_label"</li>
+          	</ul>
+      </li></ul>
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="listAllPackages" href="#top">Method: listAllPackages</a></h3>
+Description:<br />
+Lists all packages in the channel, regardless of version whose last
+ modified date is greater than given date.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string channelLabel - channel to query
+ </li>
+<li>
+
+    dateTime.iso8601 startDate
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+array:
+  <ul>
+   <li>
+          	     struct - package
+	<ul>
+              	<li> string "name"</li>
+              	<li> string "version"</li>
+              	<li> string "release"</li>
+              	<li> string "epoch"</li>
+              	<li> string "id"</li>
+              	<li> string "arch_label"</li>
+          	</ul>
+      </li></ul>
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="listAllPackagesByDate" href="#top">Method: listAllPackagesByDate</a></h3>
+Description:<br />
+Lists all packages in the channel, regardless of the package version, 
+ whose last modified date is greater than given date
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string channelLabel - channel to query
+ </li>
+<li>
+
+    dateTime.iso8601 startDate
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+array:
+  <ul>
+   <li>
+          	     struct - package
+	<ul>
+              	<li> string "name"</li>
+              	<li> string "version"</li>
+              	<li> string "release"</li>
+              	<li> string "epoch"</li>
+              	<li> string "id"</li>
+              	<li> string "arch_label"</li>
+          	</ul>
+      </li></ul>
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="listAllPackagesByDate" href="#top">Method: listAllPackagesByDate</a></h3>
+Description:<br />
+Lists all packages in the channel, regardless of the package version, 
+ between the given dates
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string channelLabel - channel to query
+ </li>
+<li>
+
+    dateTime.iso8601 startDate
+ </li>
+<li>
+
+    dateTime.iso8601 endDate
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+array:
+  <ul>
+   <li>
+          	     struct - package
+	<ul>
+              	<li> string "name"</li>
+              	<li> string "version"</li>
+              	<li> string "release"</li>
+              	<li> string "epoch"</li>
+              	<li> string "id"</li>
+              	<li> string "arch_label"</li>
+          	</ul>
+      </li></ul>
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="listAllPackagesByDate" href="#top">Method: listAllPackagesByDate</a></h3>
+Description:<br />
+Lists all packages in the channel, regardless of the package version
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string channelLabel - channel to query
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+array:
+  <ul>
+   <li>
+          	     struct - package
+	<ul>
+              	<li> string "name"</li>
+              	<li> string "version"</li>
+              	<li> string "release"</li>
+              	<li> string "epoch"</li>
+              	<li> string "id"</li>
+              	<li> string "arch_label"</li>
+          	</ul>
+      </li></ul>
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="listArches" href="#top">Method: listArches</a></h3>
+Description:<br />
+Lists the potential software channel architectures that can be created
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+array:
+  <ul>
+   <li>
+              
+
+	     struct - channel arch
+	<ul>
+          	<li> string "name"</li>
+          	<li> string "label"</li>
+      	</ul>
+ 
+          </li></ul>
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="listErrata" href="#top">Method: listErrata</a></h3>
+Description:<br />
+List the errata applicable to a channel
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string channelLabel - channel to query
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+array:
+  <ul>
+   <li>
+          	     struct - errata
+	<ul>
+                  <li> string "advisory" - name of the advisory </li>
+              	<li> string "issue_date"</li>
+              	<li> string "update_date"</li>
+              	<li> string "synopsis"</li>
+              	<li> string "advisory_type"</li>
+              	<li> string "last_modified_date"</li>
+          	</ul>
+      </li></ul>
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="listErrata" href="#top">Method: listErrata</a></h3>
+Description:<br />
+List the errata applicable to a channel after given startDate
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string channelLabel - channel to query
+ </li>
+<li>
+
+    string startDate
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+array:
+  <ul>
+   <li>
+          	     struct - errata
+	<ul>
+                  <li> string "advisory" - name of the advisory </li>
+              	<li> string "issue_date"</li>
+              	<li> string "update_date"</li>
+              	<li> string "synopsis"</li>
+              	<li> string "advisory_type"</li>
+              	<li> string "last_modified_date"</li>
+          	</ul>
+      </li></ul>
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="listErrata" href="#top">Method: listErrata</a></h3>
+Description:<br />
+Returns list of subscribed systems for the given channel label
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string channelLabel - channel to query
+ </li>
+<li>
+
+    string startDate
+ </li>
+<li>
+
+    string endDate
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+array:
+  <ul>
+   <li>
+          	     struct - errata
+	<ul>
+                  <li> string "advisory" - name of the advisory </li>
+              	<li> string "issue_date"</li>
+              	<li> string "update_date"</li>
+              	<li> string "synopsis"</li>
+              	<li> string "advisory_type"</li>
+              	<li> string "last_modified_date"</li>
+          	</ul>
+      </li></ul>
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="listErrataByType" href="#top">Method: listErrataByType</a></h3>
+Description:<br />
+List the errata of a specific type that are applicable to a channel
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string channelLabel - channel to query
+ </li>
+<li>
+
+    string advisoryType - type of advisory (one of
+ of the following: 'Security Advisory', 'Product Enhancement Advisory',
+ 'Bug Fix Advisory'
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+array:
+  <ul>
+   <li>
+          	     struct - errata
+	<ul>
+                  <li> string "advisory" - name of the advisory </li>
+              	<li> string "issue_date"</li>
+              	<li> string "update_date"</li>
+              	<li> string "synopsis"</li>
+              	<li> string "advisory_type"</li>
+              	<li> string "last_modified_date"</li>
+          	</ul>
+      </li></ul>
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="listLatestPackages" href="#top">Method: listLatestPackages</a></h3>
+Description:<br />
+Lists the packages with the largest version (including release and 
+ epoch) for the given channel
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string channelLabel - channel to query
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+array:
+  <ul>
+   <li>
+          	     struct - package
+	<ul>
+              	<li> string "name"</li>
+              	<li> string "version"</li>
+              	<li> string "release"</li>
+              	<li> string "epoch"</li>
+              	<li> string "id"</li>
+              	<li> string "arch_label"</li>
+          	</ul>
+      </li></ul>
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="listPackagesWithoutChannel" href="#top">Method: listPackagesWithoutChannel</a></h3>
+Description:<br />
+Lists all packages that are not associated with a channel.  Typically 
+          these are custom packages.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+array:
+  <ul>
+   <li>
+      
+
+	     struct - package
+	<ul>
+      	<li> string "name"</li>
+      	<li> string "version"</li>
+      	<li> string "release"</li>
+      	<li> string "epoch"</li>
+      	<li> int "id"</li>
+      	<li> string "arch_label"</li>
+          <li> string "path" - The path on that file system that the package
+             resides </li>
+          <li> string "provider" - The provider of the package, determined by 
+              the gpg key it was signed with. </li>
+      	<li> dateTime.iso8601 "last_modified"</li>
+  	</ul>
+ 
+   </li></ul>
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="listSubscribedSystems" href="#top">Method: listSubscribedSystems</a></h3>
+Description:<br />
+Returns list of subscribed systems for the given channel label
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string channelLabel - channel to query
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+array:
+  <ul>
+   <li>
+              	     struct - system
+	<ul>
+                  	<li> int "id"</li>
+                  	<li> string "name"</li>
+              	</ul>
+           </li></ul>
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="listSystemChannels" href="#top">Method: listSystemChannels</a></h3>
+Description:<br />
+Returns a list of channels that a system is subscribed to for the 
+ given system id
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    int serverId
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+array:
+  <ul>
+   <li>
+              	     struct - channel
+	<ul>
+                  	<li> string "label"</li>
+                  	<li> string "name"</li>
+              	</ul>
+           </li></ul>
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="mergeErrata" href="#top">Method: mergeErrata</a></h3>
+Description:<br />
+Merges all errata from one channel into another
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string mergeFromLabel - the label of the
+ channel to pull errata from
+ </li>
+<li>
+
+    string mergeToLabel - the label to push the
+ errata into
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+array:
+  <ul>
+   <li>
+          
+
+	     struct - errata
+	<ul>
+              <li> int "id" - Errata Id </li>
+              <li> string "date" - Date erratum was created. </li>
+              <li> string "advisory_type" - Type of the advisory. </li>
+              <li> string "advisory_name" - Name of the advisory. </li>
+              <li> string "advisory_synopsis" - Summary of the erratum. </li>
+     	</ul>
+ 
+      </li></ul>
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="mergeErrata" href="#top">Method: mergeErrata</a></h3>
+Description:<br />
+Merges all errata from one channel into another based upon a 
+ given start/end date.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string mergeFromLabel - the label of the
+ channel to pull errata from
+ </li>
+<li>
+
+    string mergeToLabel - the label to push the
+ errata into
+ </li>
+<li>
+
+    string startDate
+ </li>
+<li>
+
+    string endDate
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+array:
+  <ul>
+   <li>
+          
+
+	     struct - errata
+	<ul>
+              <li> int "id" - Errata Id </li>
+              <li> string "date" - Date erratum was created. </li>
+              <li> string "advisory_type" - Type of the advisory. </li>
+              <li> string "advisory_name" - Name of the advisory. </li>
+              <li> string "advisory_synopsis" - Summary of the erratum. </li>
+     	</ul>
+ 
+      </li></ul>
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="mergePackages" href="#top">Method: mergePackages</a></h3>
+Description:<br />
+Merges all packages from one channel into another
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string mergeFromLabel - the label of the 
+          channel to pull packages from
+ </li>
+<li>
+
+    string mergeToLabel - the label to push the 
+              packages into
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+array:
+  <ul>
+   <li>
+          
+
+	     struct - package
+	<ul>
+      	<li> string "name"</li>
+      	<li> string "version"</li>
+      	<li> string "release"</li>
+      	<li> string "epoch"</li>
+      	<li> int "id"</li>
+      	<li> string "arch_label"</li>
+          <li> string "path" - The path on that file system that the package
+             resides </li>
+          <li> string "provider" - The provider of the package, determined by 
+              the gpg key it was signed with. </li>
+      	<li> dateTime.iso8601 "last_modified"</li>
+  	</ul>
+ 
+      </li></ul>
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="removePackages" href="#top">Method: removePackages</a></h3>
+Description:<br />
+Removes a given list of packages from the given channel.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string channelLabel - target channel.
+ </li>
+<li>
+
+array:
+<ul>
+    <li>int - packageId -  id of a package to
+                                   add to the channel.</li>
+</ul>
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+    int - 1 on success, exception thrown otherwise.
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="setGloballySubscribable" href="#top">Method: setGloballySubscribable</a></h3>
+Description:<br />
+Set globally subscribable attribute for given channel.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string channelLabel - label of the channel
+ </li>
+<li>
+
+    boolean subscribable - true if the channel is to be   
+          globally subscribable.  False otherwise.
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+    int - 1 on success, exception thrown otherwise.
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="setSystemChannels" href="#top">Method: setSystemChannels</a></h3>
+Description:<br />
+Change a systems subscribed channels to the list of channels passed in.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    int serverId
+ </li>
+<li>
+
+array:
+<ul>
+    <li>string - channeLabel - labels of the channels to 
+              subscribe the system to.</li>
+</ul>
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+int - 1 on success, 0 otherwise 
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="setUserSubscribable" href="#top">Method: setUserSubscribable</a></h3>
+Description:<br />
+Set the subscribable flag for a given channel and user. 
+ If value is set to 'true', this method will give the user 
+ subscribe permissions to the channel. Otherwise, that privilege is revoked.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string channelLabel - label of the channel
+ </li>
+<li>
+
+    string login - login of the target user
+ </li>
+<li>
+
+    string value - value of the flag to set
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+    int - 1 on success, exception thrown otherwise.
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="subscribeSystem" href="#top">Method: subscribeSystem</a></h3>
+Description:<br />
+Subscribes a system to a list of channels.  If a base channel is  
+      included, that is set before setting child channels.  When setting child 
+      channels the current child channel subscriptions are cleared.  To fully 
+      unsubscribe the system from all channels, simply provide an empty list of 
+      channel labels.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    int serverId
+ </li>
+<li>
+
+array:
+<ul>
+    <li>string - label - channel label to subscribe 
+                  the system to.</li>
+</ul>
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+    int - 1 on success, exception thrown otherwise.
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+</body>
+Generated on 11/5/2008
+</html>

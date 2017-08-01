@@ -1,0 +1,722 @@
+<html>
+<head>
+<meta http-equiv="cache-control" content="no-cache" />
+
+</head>
+<body>
+<div class="toolbar-h1">
+<br />
+
+</div>
+<span class="small-text">( <a href="../index.html">Return to API Overview</a> )</span>
+<div class="rounded-box">
+<h2><a name="top">Available methods</a></h2>
+<ul class="apidoc">
+
+<li><a href="#channelExists"/>channelExists</a></li>
+<li><a href="#create"/>create</a></li>
+<li><a href="#createOrUpdatePath"/>createOrUpdatePath</a></li>
+<li><a href="#deleteChannels"/>deleteChannels</a></li>
+<li><a href="#deleteFiles"/>deleteFiles</a></li>
+<li><a href="#getDetails"/>getDetails</a></li>
+<li><a href="#getDetails"/>getDetails</a></li>
+<li><a href="#listFiles"/>listFiles</a></li>
+<li><a href="#listGlobals"/>listGlobals</a></li>
+<li><a href="#lookupChannelInfo"/>lookupChannelInfo</a></li>
+<li><a href="#lookupFileInfo"/>lookupFileInfo</a></li>
+<li><a href="#scheduleFileComparisons"/>scheduleFileComparisons</a></li>
+<li><a href="#update"/>update</a></li>
+</ul>
+</div>
+<h2>Description</h2>
+Provides methods to access and modify many aspects of 
+ configuration channels.
+<p>
+</p>
+<p><strong>Namespace</strong>:
+configchannel
+</p>
+<hr />
+
+<h3> <a name="channelExists" href="#top">Method: channelExists</a></h3>
+Description:<br />
+Check for the existence of the config channel provided.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string channelLabel - Channel to check for.
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+1 if exists, 0 otherwise. 
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="create" href="#top">Method: create</a></h3>
+Description:<br />
+Create a new global config channel. Caller must be at least a 
+ config admin or an organization admin.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string channelLabel
+ </li>
+<li>
+
+    string channelName
+ </li>
+<li>
+
+    string channelDescription
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+
+
+	     struct - Configuration Channel information
+	<ul>
+   	<li> int "id"</li>
+   	<li> int "orgId"</li>
+   	<li> string "label"</li>
+   	<li> string "name"</li>
+   	<li> string "description"</li>
+   	<li> struct "configChannelType"</li>
+   
+
+	     struct - Configuration Channel Type information
+	<ul>
+   	<li> int "id"</li>
+   	<li> string "label"</li>
+   	<li> string "name"</li>
+   	<li> int "priority"</li>
+ 	</ul>
+ 
+ 	</ul>
+  
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="createOrUpdatePath" href="#top">Method: createOrUpdatePath</a></h3>
+Description:<br />
+Create a new file or directory with the given path, or 
+ update an existing path.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string configChannelLabel
+ </li>
+<li>
+
+    string path
+ </li>
+<li>
+
+    boolean isDir - True if the path is a directory, False if it is a file.
+ </li>
+<li>
+
+	     struct - path info
+	<ul>
+          <li> string "contents" - Contents of the file (text or base64 encoded if binary).
+                   (ignored for directories) </li>
+          <li> string "owner" - Owner of the file/directory. </li>
+          <li> string "group" - Group name of the file/directory. </li>
+          <li> string "permissions" - Octal file/directory permissions (eg: 644) </li>
+          <li> string "macro-start-delimiter" - Config file macro start delimiter. Use null or empty 
+                  string to accept the default. (ignored if working with a
+                   directory) </li>
+          <li> string "macro-end-delimiter" - Config file macro end delimiter. Use null or 
+  empty string to accept the default. (ignored if working with a directory) </li>
+      
+  	</ul>
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+
+
+	     struct - Configuration Revision information
+	<ul>
+   	<li> string "type"</li>
+              	<ul>
+                  	<li>file</li>
+                  	<li>directory</li>
+              	</ul>
+       <li> string "path" - File Path </li>
+       <li> string "channel" - Channel Name </li>
+       <li> string "contents" - File contents for text files only. </li>
+       <li> int "revision" - File Revision </li>
+       <li> dateTime.iso8601 "creation" - Creation Date </li>
+       <li> dateTime.iso8601 "modified" - Last Modified Date </li>
+       <li> string "owner" - File Owner </li>
+       <li> string "group" - File Group </li>
+       <li> int "permissions" - File Group </li>
+       <li> boolean "binary" - true/false , Present for files only. </li>
+       <li> string "md5" - File's md5 signature. Present for files only. </li>
+       <li> string "macro-start-delimiter" - Macro start delimiter for a config file. Present for files only. </li>
+       <li> string "macro-end-delimiter" - Macro end delimiter for a config file. Present for files only. </li>
+ 	</ul>
+  
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="deleteChannels" href="#top">Method: deleteChannels</a></h3>
+Description:<br />
+Delete a list of global config channels.
+ Caller must be a config admin.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+array:
+<ul>
+    <li>string - configuration channel labels to delete.</li>
+</ul>
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+    int - 1 on success, exception thrown otherwise.
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="deleteFiles" href="#top">Method: deleteFiles</a></h3>
+Description:<br />
+Remove file paths from a global channel.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string channelLabel - Channel to remove the files from.
+ </li>
+<li>
+
+array:
+<ul>
+    <li>string - file paths to remove.</li>
+</ul>
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+    int - 1 on success, exception thrown otherwise.
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="getDetails" href="#top">Method: getDetails</a></h3>
+Description:<br />
+Lookup config channel details.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string channelLabel
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+
+
+	     struct - Configuration Channel information
+	<ul>
+   	<li> int "id"</li>
+   	<li> int "orgId"</li>
+   	<li> string "label"</li>
+   	<li> string "name"</li>
+   	<li> string "description"</li>
+   	<li> struct "configChannelType"</li>
+   
+
+	     struct - Configuration Channel Type information
+	<ul>
+   	<li> int "id"</li>
+   	<li> string "label"</li>
+   	<li> string "name"</li>
+   	<li> int "priority"</li>
+ 	</ul>
+ 
+ 	</ul>
+  
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="getDetails" href="#top">Method: getDetails</a></h3>
+Description:<br />
+Lookup config channel details.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+int channelId 
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+
+
+	     struct - Configuration Channel information
+	<ul>
+   	<li> int "id"</li>
+   	<li> int "orgId"</li>
+   	<li> string "label"</li>
+   	<li> string "name"</li>
+   	<li> string "description"</li>
+   	<li> struct "configChannelType"</li>
+   
+
+	     struct - Configuration Channel Type information
+	<ul>
+   	<li> int "id"</li>
+   	<li> string "label"</li>
+   	<li> string "name"</li>
+   	<li> int "priority"</li>
+ 	</ul>
+ 
+ 	</ul>
+  
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="listFiles" href="#top">Method: listFiles</a></h3>
+Description:<br />
+Return a list of files in a channel.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string channelLabel - label of config channel to list files on.
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+array:
+  <ul>
+   <li>
+ 
+
+	     struct - Configuration File information
+	<ul>
+   	<li> string "type"</li>
+              	<ul>
+                  	<li>file</li>
+                  	<li>directory</li>
+              	</ul>
+       <li> string "path" - File Path </li>
+       <li> dateTime.iso8601 "last_modified" - Last Modified Date </li>
+ 	</ul>
+ 
+ </li></ul>
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="listGlobals" href="#top">Method: listGlobals</a></h3>
+Description:<br />
+List all the global config channels accessible to the logged-in user.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+array:
+  <ul>
+   <li>
+  
+
+	     struct - Configuration Channel information
+	<ul>
+   	<li> int "id"</li>
+   	<li> int "orgId"</li>
+   	<li> string "label"</li>
+   	<li> string "name"</li>
+   	<li> string "description"</li>
+   	<li> string "type"</li>
+   	<li> struct "configChannelType"</li>
+   
+
+	     struct - Configuration Channel Type information
+	<ul>
+   	<li> int "id"</li>
+   	<li> string "label"</li>
+   	<li> string "name"</li>
+   	<li> int "priority"</li>
+ 	</ul>
+ 
+ 	</ul>
+ 
+ </li></ul>
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="lookupChannelInfo" href="#top">Method: lookupChannelInfo</a></h3>
+Description:<br />
+Lists details on a list channels given their channel labels.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+array:
+<ul>
+    <li>string - configuration channel label</li>
+</ul>
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+array:
+  <ul>
+   <li>
+  
+
+	     struct - Configuration Channel information
+	<ul>
+   	<li> int "id"</li>
+   	<li> int "orgId"</li>
+   	<li> string "label"</li>
+   	<li> string "name"</li>
+   	<li> string "description"</li>
+   	<li> struct "configChannelType"</li>
+   
+
+	     struct - Configuration Channel Type information
+	<ul>
+   	<li> int "id"</li>
+   	<li> string "label"</li>
+   	<li> string "name"</li>
+   	<li> int "priority"</li>
+ 	</ul>
+ 
+ 	</ul>
+ 
+ </li></ul>
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="lookupFileInfo" href="#top">Method: lookupFileInfo</a></h3>
+Description:<br />
+Given a list of paths and a channel, returns details about 
+ the latest revisions of the paths.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string channelLabel - label of config channel to lookup on
+ </li>
+<li>
+
+array:
+<ul>
+    <li>string - List of paths to examine.</li>
+</ul>
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+array:
+  <ul>
+   <li>
+ 
+
+	     struct - Configuration Revision information
+	<ul>
+   	<li> string "type"</li>
+              	<ul>
+                  	<li>file</li>
+                  	<li>directory</li>
+              	</ul>
+       <li> string "path" - File Path </li>
+       <li> string "channel" - Channel Name </li>
+       <li> string "contents" - File contents for text files only. </li>
+       <li> int "revision" - File Revision </li>
+       <li> dateTime.iso8601 "creation" - Creation Date </li>
+       <li> dateTime.iso8601 "modified" - Last Modified Date </li>
+       <li> string "owner" - File Owner </li>
+       <li> string "group" - File Group </li>
+       <li> int "permissions" - File Group </li>
+       <li> boolean "binary" - true/false , Present for files only. </li>
+       <li> string "md5" - File's md5 signature. Present for files only. </li>
+       <li> string "macro-start-delimiter" - Macro start delimiter for a config file. Present for files only. </li>
+       <li> string "macro-end-delimiter" - Macro end delimiter for a config file. Present for files only. </li>
+ 	</ul>
+ 
+ </li></ul>
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="scheduleFileComparisons" href="#top">Method: scheduleFileComparisons</a></h3>
+Description:<br />
+Schedule a comparison of the latest revision of a file 
+ against the version deployed on a list of systems.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string channelLabel - Label of config channel
+ </li>
+<li>
+
+    string path - File path
+ </li>
+<li>
+
+array:
+<ul>
+    <li>long - The list of server id that the 
+ comparison will be performed on</li>
+</ul>
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+int actionId - The action id of the scheduled action 
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="update" href="#top">Method: update</a></h3>
+Description:<br />
+Update a global config channel. Caller must be at least a 
+ config admin or an organization admin, or have access to a system containing this
+ config channel.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+string channelLabel 
+ </li>
+<li>
+
+string channelName 
+ </li>
+<li>
+
+string description 
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+
+
+	     struct - Configuration Channel information
+	<ul>
+   	<li> int "id"</li>
+   	<li> int "orgId"</li>
+   	<li> string "label"</li>
+   	<li> string "name"</li>
+   	<li> string "description"</li>
+   	<li> struct "configChannelType"</li>
+   
+
+	     struct - Configuration Channel Type information
+	<ul>
+   	<li> int "id"</li>
+   	<li> string "label"</li>
+   	<li> string "name"</li>
+   	<li> int "priority"</li>
+ 	</ul>
+ 
+ 	</ul>
+  
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+</body>
+Generated on 5/12/2009
+</html>

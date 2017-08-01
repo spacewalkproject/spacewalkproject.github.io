@@ -1,0 +1,250 @@
+<html>
+<head>
+<meta http-equiv="cache-control" content="no-cache" />
+
+</head>
+<body>
+<div class="toolbar-h1">
+<br />
+
+</div>
+<span class="small-text">( <a href="../index.html">Return to API Overview</a> )</span>
+<div class="rounded-box">
+<h2><a name="top">Available methods</a></h2>
+<ul class="apidoc">
+
+<li><a href="#disableConfigManagement"/>disableConfigManagement</a></li>
+<li><a href="#disableRemoteCommands"/>disableRemoteCommands</a></li>
+<li><a href="#enableConfigManagement"/>enableConfigManagement</a></li>
+<li><a href="#enableRemoteCommands"/>enableRemoteCommands</a></li>
+<li><a href="#setNetworkConnection"/>setNetworkConnection</a></li>
+<li><a href="#setSELinux"/>setSELinux</a></li>
+</ul>
+</div>
+<h2>Description</h2>
+Provides methods to set various properties of a kickstart profile.
+<p>
+</p>
+<p><strong>Namespace</strong>:
+kickstart.profile.system
+</p>
+<hr />
+
+<h3> <a name="disableConfigManagement" href="#top">Method: disableConfigManagement</a></h3>
+Description:<br />
+Disables the configuration management flag in a kickstart profile 
+ so that a system created using this profile will be NOT be configuration capable.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string ksLabel - the kickstart profile label
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+    int - 1 on success, exception thrown otherwise.
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="disableRemoteCommands" href="#top">Method: disableRemoteCommands</a></h3>
+Description:<br />
+Disables the remote command flag in a kickstart profile 
+ so that a system created using this profile
+ will be capable of running remote commands
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string ksLabel - the kickstart profile label
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+    int - 1 on success, exception thrown otherwise.
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="enableConfigManagement" href="#top">Method: enableConfigManagement</a></h3>
+Description:<br />
+Enables the configuration management flag in a kickstart profile 
+ so that a system created using this profile will be configuration capable.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string ksLabel - the kickstart profile label
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+    int - 1 on success, exception thrown otherwise.
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="enableRemoteCommands" href="#top">Method: enableRemoteCommands</a></h3>
+Description:<br />
+Enables the remote command flag in a kickstart profile 
+ so that a system created using this profile
+  will be capable of running remote commands
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string ksLabel - the kickstart profile label
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+    int - 1 on success, exception thrown otherwise.
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="setNetworkConnection" href="#top">Method: setNetworkConnection</a></h3>
+Description:<br />
+Sets the network device property of a kickstart profile 
+ so that a system created using this profile will be have 
+ the appropriate network device associated to it.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string ksLabel - the kickstart profile label
+ </li>
+<li>
+
+    int isDhcp
+      	<ul>
+          	<li>1 - to set the network type of the connection type to dhcp</li>
+          	<li>0 - to set the network type of the connection type to static device</li>
+      	</ul>
+ </li>
+<li>
+
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+    int - 1 on success, exception thrown otherwise.
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="setSELinux" href="#top">Method: setSELinux</a></h3>
+Description:<br />
+Sets the SELinux enforcing mode property of a kickstart profile 
+ so that a system created using this profile will be have 
+ the appropriate SELinux enforcing mode.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string ksLabel - the kickstart profile label
+ </li>
+<li>
+
+    string enforcingMode - the selinux enforcing mode
+      	<ul>
+          	<li>enforcing</li>
+          	<li>permissive</li>
+          	<li>disabled</li>
+      	</ul>
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+    int - 1 on success, exception thrown otherwise.
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+</body>
+Generated on 9/15/2008
+</html>

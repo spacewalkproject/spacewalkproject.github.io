@@ -1,0 +1,222 @@
+<html>
+<head>
+<meta http-equiv="cache-control" content="no-cache" />
+
+</head>
+<body>
+<div class="spacewalk-toolbar-h1">
+<br />
+
+</div>
+<span class="small-text">( <a href="../index.html">Return to API Overview</a> )</span>
+<div class="rounded-box">
+<h2><a name="top">Available methods</a></h2>
+<ul class="apidoc">
+
+<li><a href="#getCertificateExpirationDate"/>getCertificateExpirationDate</a></li>
+<li><a href="#isMonitoringEnabled"/>isMonitoringEnabled</a></li>
+<li><a href="#isMonitoringEnabledBySystemId"/>isMonitoringEnabledBySystemId</a></li>
+<li><a href="#listEntitlements"/>listEntitlements</a></li>
+<li><a href="#listProxies"/>listProxies</a></li>
+</ul>
+</div>
+<h2>Description</h2>
+Provides methods to obtain details on the Satellite.
+<p>
+</p>
+<p><strong>Namespace</strong>:
+satellite
+</p>
+<hr />
+
+<h3> <a name="getCertificateExpirationDate" href="#top">Method: getCertificateExpirationDate</a></h3>
+Description:<br />
+Retrieves the certificate expiration date of the activated
+      certificate.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+    string sessionKey
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+dateTime.iso8601 
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="isMonitoringEnabled" href="#top">Method: isMonitoringEnabled</a></h3>
+Description:<br />
+Indicates if monitoring is enabled on the satellite
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+    string sessionKey
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+    boolean True if monitoring is enabled
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="isMonitoringEnabledBySystemId" href="#top">Method: isMonitoringEnabledBySystemId</a></h3>
+Description:<br />
+Indicates if monitoring is enabled on the satellite
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+    string systemid - systemid file
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+    boolean True if monitoring is enabled
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="listEntitlements" href="#top">Method: listEntitlements</a></h3>
+Description:<br />
+Lists all channel and system entitlements for the organization
+ associated with the user executing the request.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+    string sessionKey
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+	     struct - channel/system entitlements
+	<ul>
+       <li>array "system"
+        <ul>
+            <li>
+     
+
+	     struct - system entitlement
+	<ul>
+   	<li> string "label"</li>
+   	<li> string "name"</li>
+   	<li> int "used_slots"</li>
+   	<li> int "free_slots"</li>
+   	<li> int "total_slots"</li>
+ 	</ul>
+ 
+              </li>
+        </ul>
+    </li>
+       <li>array "channel"
+        <ul>
+            <li>
+     
+
+	     struct - channel entitlement
+	<ul>
+   	<li> string "label"</li>
+   	<li> string "name"</li>
+   	<li> int "used_slots"</li>
+   	<li> int "free_slots"</li>
+   	<li> int "total_slots"</li>
+   	<li> int "used_flex"</li>
+   	<li> int "free_flex"</li>
+   	<li> int "total_flex"</li>
+ 	</ul>
+ 
+              </li>
+        </ul>
+    </li>
+ 	</ul>
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="listProxies" href="#top">Method: listProxies</a></h3>
+Description:<br />
+List the proxies within the user's organization.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+    string sessionKey
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+array:
+  <ul>
+   <li>
+   
+
+	     struct - system
+	<ul>
+      	<li> int "id"</li>
+      	<li> string "name"</li>
+           <li> dateTime.iso8601 "last_checkin" - Last time server
+              successfully checked in </li>
+ 	</ul>
+ 
+ </li></ul>
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+</body>
+Generated on 7/14/2014
+</html>

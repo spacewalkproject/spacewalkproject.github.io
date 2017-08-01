@@ -1,0 +1,316 @@
+<html>
+<head>
+<meta http-equiv="cache-control" content="no-cache" />
+
+</head>
+<body>
+<div class="toolbar-h1">
+<br />
+
+</div>
+<span class="small-text">( <a href="../index.html">Return to API Overview</a> )</span>
+<div class="rounded-box">
+<h2><a name="top">Available methods</a></h2>
+<ul class="apidoc">
+
+<li><a href="#deleteCrash"/>deleteCrash</a></li>
+<li><a href="#getCrashFile"/>getCrashFile</a></li>
+<li><a href="#getCrashFileUrl"/>getCrashFileUrl</a></li>
+<li><a href="#getLastReportDate"/>getLastReportDate</a></li>
+<li><a href="#getTotalCrashCount"/>getTotalCrashCount</a></li>
+<li><a href="#getUniqueCrashCount"/>getUniqueCrashCount</a></li>
+<li><a href="#listSystemCrashFiles"/>listSystemCrashFiles</a></li>
+<li><a href="#listSystemCrashes"/>listSystemCrashes</a></li>
+</ul>
+</div>
+<h2>Description</h2>
+Provides methods to access and modify software crash information.
+<p>
+</p>
+<p><strong>Namespace</strong>:
+system.crash
+</p>
+<hr />
+
+<h3> <a name="deleteCrash" href="#top">Method: deleteCrash</a></h3>
+Description:<br />
+Delete a crash with given crash id.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+    string sessionKey
+ </li>
+<li>
+
+    int crashId
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+    int - 1 on success, exception thrown otherwise.
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="getCrashFile" href="#top">Method: getCrashFile</a></h3>
+Description:<br />
+Download a crash file.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+    string sessionKey
+ </li>
+<li>
+
+    int crashFileId
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+base64 - base64 encoded crash file. 
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="getCrashFileUrl" href="#top">Method: getCrashFileUrl</a></h3>
+Description:<br />
+Get a crash file download url.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+    string sessionKey
+ </li>
+<li>
+
+    int crashFileId
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+string - The crash file download url 
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="getLastReportDate" href="#top">Method: getLastReportDate</a></h3>
+Description:<br />
+Return date of last software crashes report for given system
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+@param("string", "sessionKey") 
+ </li>
+<li>
+
+    int serverId
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+dateTime.iso8601 - Date of the last software crash report. 
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="getTotalCrashCount" href="#top">Method: getTotalCrashCount</a></h3>
+Description:<br />
+Return total number of software recorded crashes for given system
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+@param("string", "sessionKey") 
+ </li>
+<li>
+
+    int serverId
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+int - Total number of recorded software crashes 
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="getUniqueCrashCount" href="#top">Method: getUniqueCrashCount</a></h3>
+Description:<br />
+Return number of unique software recorded crashes for given system
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+@param("string", "sessionKey") 
+ </li>
+<li>
+
+    int serverId
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+int - Number of unique software crashes 
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="listSystemCrashFiles" href="#top">Method: listSystemCrashFiles</a></h3>
+Description:<br />
+Return list of crash files for given crash id.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+@param("string", "sessionKey") 
+ </li>
+<li>
+
+    int crashId
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+array:
+  <ul>
+   <li>
+         	     struct - crashFile
+	<ul>
+             	<li> int "id"</li>
+             	<li> string "filename"</li>
+             	<li> string "path"</li>
+             	<li> int "filesize"</li>
+             	<li> date "created"</li>
+             	<li> date "modified"</li>
+         	</ul>
+     </li></ul>
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="listSystemCrashes" href="#top">Method: listSystemCrashes</a></h3>
+Description:<br />
+Return list of software crashes for a system.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+@param("string", "sessionKey") 
+ </li>
+<li>
+
+    int serverId
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+array:
+  <ul>
+   <li>
+         	     struct - crash
+	<ul>
+             	<li> int "id"</li>
+             	<li> string "crash"</li>
+             	<li> string "path"</li>
+             	<li> int "count"</li>
+             	<li> string "analyzer"</li>
+             	<li> string "architecture"</li>
+             	<li> string "cmdline"</li>
+             	<li> string "component"</li>
+             	<li> string "executable"</li>
+             	<li> string "kernel"</li>
+             	<li> string "reason"</li>
+             	<li> string "username"</li>
+             	<li> date "created"</li>
+             	<li> date "modified"</li>
+         	</ul>
+     </li></ul>
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+</body>
+Generated on 3/4/2013
+</html>

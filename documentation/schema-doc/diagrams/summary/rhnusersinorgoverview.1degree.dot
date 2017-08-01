@@ -1,0 +1,38 @@
+// dot 2.26.0 on Linux 2.6.32-504.el6.x86_64
+// SchemaSpy rev 590
+digraph "rhnusersinorgoverview" {
+  graph [
+    rankdir="RL"
+    bgcolor="#f7f7f7"
+    nodesep="0.18"
+    ranksep="0.46"
+    fontname="Helvetica"
+    fontsize="11"
+  ];
+  node [
+    fontname="Helvetica"
+    fontsize="11"
+    shape="plaintext"
+  ];
+  edge [
+    arrowsize="0.8"
+  ];
+  "rhnusersinorgoverview" [
+    label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">rhnusersinorgoverview</TD></TR>
+      <TR><TD PORT="org_id" COLSPAN="3" ALIGN="LEFT">org_id</TD></TR>
+      <TR><TD PORT="user_id" COLSPAN="3" ALIGN="LEFT">user_id</TD></TR>
+      <TR><TD PORT="user_login" COLSPAN="3" ALIGN="LEFT">user_login</TD></TR>
+      <TR><TD PORT="user_first_name" COLSPAN="3" ALIGN="LEFT">user_first_name</TD></TR>
+      <TR><TD PORT="user_last_name" COLSPAN="3" ALIGN="LEFT">user_last_name</TD></TR>
+      <TR><TD PORT="user_modified" COLSPAN="3" ALIGN="LEFT">user_modified</TD></TR>
+      <TR><TD PORT="server_count" COLSPAN="3" ALIGN="LEFT">server_count</TD></TR>
+      <TR><TD PORT="server_group_count" COLSPAN="3" ALIGN="LEFT">server_group_count</TD></TR>
+      <TR><TD PORT="role_names" COLSPAN="3" ALIGN="LEFT">role_names</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">view</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+    </TABLE>>
+    URL="tables/rhnusersinorgoverview.html"
+    tooltip="rhnusersinorgoverview"
+  ];
+}

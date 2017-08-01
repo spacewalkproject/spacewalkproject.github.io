@@ -1,0 +1,257 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="description" content="" />
+<meta name="keywords" content="Spacewalk, HN, Satellite, Open Source, FOSS, Free &amp; Open Source, System Management, Systems Management, Linux, Red Hat, Fedora" />
+<title>Spacewalk: Free &amp; Open Source Linux Systems Management</title>
+
+  <link rel="shortcut icon" href="img/spacewalk_favicon.ico" />
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+</head>
+
+<body>
+
+<div id="wrap">
+
+
+<h1 id="logo">
+<a href="/">
+  <img src="img/spacewalk-logo.png" alt="Spacewalk" />
+</a>
+</h1>
+
+<div id="main">
+  <div id="nav">
+    <ul>
+       <li><a href="/" title="Return to the Spacewalk front page.">Home</a></li>
+       <li><a class="current" href="faq.html" title="Frequently Asked Questions">FAQ</a></li>
+       <li><a href="download.html" title="Download Spacewalk">Download</a></li>
+       <li><a href="screenshots.html" title="Spacewalk Screenshots">Screenshots</a></li>
+       <li><a href="communicate.html" title="Mailing List and IRC">Mailing List / IRC</a></li>
+       <li><a href="development.html" title="Wiki / Development">Wiki / Development</a></li>
+       <li><a href="documentation.html" title="Documentation">Documentation</a></li>
+       <li><a href="repository.html" title="Source Repository">Source Repository</a></li>
+       <li><a href="relatedlinks.html" title="Related Links">Related Links</a></li>
+    </ul>
+  </div>
+
+  <div id="content">
+  <div id="sidebar">
+<h2>More Questions?</h2>
+
+<p>The frequently-asked questions listed here are meant to address general questions about Spacewalk. If you have more technical questions that aren't covered here, see the <a href="https://fedorahosted.org/spacewalk/wiki/SpacewalkFaq">Frequently Asked Questions</a> Spacewalk wiki page</p>
+<p>Ask your question on the <a href="communicate.html">spacewalk users list or IRC channel</a>. We'd love the opportunity to get your questions answered!</p>
+  </div>
+
+<h2>Frequently Asked Questions</h2>
+
+<ul>
+<li><a href="#whatis">What is Spacewalk?</a></li>
+<li><a href="#howlong">How long has Spacewalk been around?</a></li>
+<li><a href="#whynow">Why Spacewalk?</a></li>
+<li><a href="#compare">What's the difference between Satellite and Spacewalk?</a></li>
+<li><a href="#support">Is Spacewalk supported?</a></li>
+<li><a href="#entitlements">Can I use Spacewalk to sync my entitlements for Red Hat Enterprise Linux and other Red Hat software products?</a></li>
+<li><a href="#featurestiming">How long will it take for a Spacewalk feature to become a part of the Satellite product?</a></li>
+<li><a href="#roadmap">How can I contribute to the Satellite roadmap?</a></li>
+<li><a href="#whichparts">What does the Spacewalk release consist of?</a></li>
+<li><a href="#whatissat6">What is Satellite 6?</a></li>
+<li><a href="#sat6andspacewalk">What does this mean for Spacewalk?</a></li>
+</ul>
+
+<h3><a name="whatis">What is Spacewalk?</a></h3>
+<p>Spacewalk is an open source (GPLv2) Linux systems management solution. It is the upstream community project for <a href="http://www.redhat.com/products/enterprise-linux/satellite/">Red Hat Satellite</a>. Its capabilities include:
+<ul>
+<li>Inventory your systems (hardware and software information)
+</li><li>
+Install and update software on your systems
+</li><li>
+Collect and distribute your custom software packages into manageable groups
+</li><li>
+Provision (kickstart) your systems
+</li><li>
+Manage and deploy configuration files to your systems
+</li><li>
+Provision virtual guests
+</li><li>
+Start/stop/configure virtual guests
+</li><li>
+Distribute content across multiple geographical sites in an efficient manner
+</li>
+</ul>
+
+<h3><a name="howlong">How long has Spacewalk been around?</a></h3>
+<p><a href="http://rhn.redhat.com/">Red Hat Network</a> (RHN Classic) first started in 2001 as a hosted service. RHN later spawned a stand-alone product called <a href="http://www.redhat.com/products/enterprise-linux/satellite/">Red Hat Satellite</a>. Spacewalk as a project officially became an open source, community driven project in June 2008, and it is the upstream for the <a href="http://www.redhat.com/products/enterprise-linux/satellite/">Red Hat Satellite &amp; Satellite Proxy</a> products.</p>
+
+<h3><a name="whynow">Why was Spacewalk released in June, 2008?</a></h3>
+<p>Red Hat's continued commitment to open source technology and the open source development model drove the release of Spacewalk in 2008. By releasing the Satellite code base, Red Hat enhanced its ability to incorporate new open source management projects into the future roadmap for its products and solutions.</p>
+
+<p>The Spacewalk project and the Red Hat Satellite product fully support and believe that community participation is a critical success factor for any open source initiative.</p>
+
+<h3><a name="compare">What's the difference between Satellite and Spacewalk?</a></h3>
+
+<p>Spacewalk is a project where you can make use of the latest free &amp; open source management technologies. Changes will occur frequenty in the Spacewalk project to fulfill this mission. However, if your needs require a level of stability and support, you may decide that a <a href="http://www.redhat.com/products/enterprise-linux/satellite/">Red Hat Satellite</a> subscription is right for you. Please refer to the table below for some direct comparisons:</p>
+
+<table>
+   <tr>
+    <th></th>
+    <th>Satellite</th>
+    <th>Spacewalk</th>
+   </tr>
+   <tr class="row-even">
+    <td class="topic">Primary Benefits</td>
+    <td>Stable and supported.</td>
+    <td>The latest technology released early and often.</td>
+   </tr>
+   <tr class="row-odd">
+    <td class="topic">Feature selection and Integration</td>
+    <td>Red Hat</td>
+    <td>Red Hat and developer community</td>
+   </tr>
+   <tr class="row-even">
+    <td class="topic">Development Model</td>
+    <td>Open source</td>
+    <td>Open source</td>
+   </tr>
+   <tr class="row-odd">
+    <td class="topic">Architectures</td>
+    <td>x86_64 &amp; s390x</td>
+    <td>x86_64</td>
+   </tr>
+   <tr class="row-even">
+    <td class="topic">Managed Systems</td>
+    <td><a href="http://www.redhat.com/rhel/">Red Hat Enterprise Linux</a></a></td>
+    <td><a href="http://fedoraproject.org/">Fedora</a>, <a href="http://centos.org/">CentOS</a>, <a href="http://www.novell.com/solutions/enterprise-linux-servers/">SLE</a> and <a href="http://www.debian.org/">Debian</a></td>
+   </tr>
+   <tr class="row-odd">
+    <td class="topic">Red Hat Support Options</td>
+    <td>Many, including 24x7 premium with unlimited incidents</td>
+    <td>None (community supported)</td>
+   </tr>
+   <tr class="row-even">
+    <td class="topic">Content Stream</td>
+    <td>Direct via <a href="http://rhn.redhat.com">Red Hat Network<a/></td>
+    <td>Manual Import</td>
+   </tr>
+   <tr class="row-odd">
+    <td class="topic">Release Interval</td>
+    <td>9-12 months</td>
+    <td>2-5 months</td>
+   </tr>
+   <tr class="row-even">
+    <td class="topic">Testers</td>
+    <td>Red Hat</td>
+    <td>Community</td>
+   </tr>
+   <tr class="row-odd">
+    <td class="topic">Maintenance and updates</td>
+    <td>Available via <a href="http://rhn.redhat.com/">Red Hat Network</a></td>
+    <td>Community-driven</td>
+   </tr>
+   <tr class="row-even">
+    <td class="topic">Where to Buy</td>
+    <td>Contact <a href="http://www.redhat.com/contact/sales.html">Red Hat Sales</a>, and partners</td>
+    <td>Free download</td>
+   </tr>
+   <tr class="row-odd">
+    <td class="topic">Price</td>
+    <td>Annual subscription, multiple offerings</td>
+    <td>Free download</td>
+   </tr>
+ </table>
+
+<p>The true value of a <a href="http://www.redhat.com/products/enterprise-linux/satellite/">Red Hat
+Satellite</a> subscription is similar to the value of any Red Hat
+subscription, including: </p>
+<ul>
+<li>Worldwide 24/7 technical support under guaranteed Service Level Agreements.</li>
+<li>Advocacy for your needs and requirements in the open source community.</li>
+<li>Access to a certified stream of Red Hat software content, including Red Hat Enterprise Linux releases and updates directly to the center of your Linux software distribution process - your Satellite server.</li>
+<li>A very strong bugfix service level agreement (SLA), with an excellent track record of timely support.</li>
+<li>Enablement for new hardware through minor releases, developed through engineering partnerships with hardware vendors.</li>
+<li>High quality implementations of software features based on customer requirements.</li>
+<li>The promise to work such features in the upstream communities on their behalf. This insures that the customer gains the full benefit of the Open Source model and is not locked into features and fixes that can only be supported by one vendor. </li>
+<li>Engineering that insures rock solid stability with every major and minor release, backwards compatibility with previous releases and the ability to back port features to earlier releases if needed.</li>
+<li>Constant contribution to the Open Source innovation and development of future technologies.</li>
+</ul>
+
+<h3><a name="support">Is Spacewalk supported?</a></h3>
+<p>Spacewalk is supported within an open community via <a href="communicate.html">IRC, mailing lists and bug reports</a>, similar to the <a href="http://fedoraproject.org">Fedora community</a>. There is no pay-for support for Spacewalk, nor is it supported by the Red Hat Global Support Services.</p>
+
+<h3><a name="entitlements">Can I use Spacewalk to sync my entitlements for Red Hat Enterprise Linux and other Red Hat software products?</a></h3>
+<p>No. In order to be able to connect to <a href="http://rhn.redhat.com/">rhn.redhat.com</a> and satellite-sync Red Hat software content, you need the <a href="http://www.redhat.com/products/enterprise-linux/satellite/">Satellite</a> product with an active Satellite certificate.</p>
+
+<h3><a name="featurestiming">How long will it take for a Spacewalk feature to become a part of the Satellite product?</a></h3>
+<p>
+In many cases, new Spacewalk features may become available in <a href="http://www.redhat.com/products/enterprise-linux/satellite/">Satellite</a>. There are various reasons why a feature in Spacewalk may or may not become a part of Satellite. For example, a Spacewalk feature will not be accepted into Satellite if it does not meet Red Hat quality standards or if it does not comply with the vision and goals that Red Hat has set for the Satellite product.
+</p>
+
+<p>When a given feature is accepted in Spacewalk and has been approved to be included in the Satellite product, it will likely be made available in the next major release of Satellite, depending on timing (it may be too late to make the next release, but it might make the following release.)</p>
+
+<h3><a name="roadmap">How can I contribute to the Satellite roadmap?</a></h3>
+<p>Simple. If you are a current Red Hat Satellite customer, either open a ticket within <a href="https://access.redhat.com/">Red Hat Customer Portal</a> for your product feature request, or simply contact your Technical Account Manager. Otherwise, get involved in the Spacewalk community and champion your ideas, engage in discussions, or even contribute code.</p>
+<p>If you're a programmer, you can contribute directly by writing code and submitting a
+<a href="https://fedorahosted.org/spacewalk/wiki/PatchProcess">patch</a>.
+</p>
+
+<h3><a name="whichparts">What does the Spacewalk release consist of?</a></h3>
+<p>The Red Hat Satellite server, including the web interface and back-end, as well as Red Hat Satellite Proxy Server and all clients that connect to Satellite are now open source. Satellite can now run on PostgreSQL (default) or optional as an External Database, Oracle Database. Spacewalk can run on Oracle or PostgreSQL. Both Satellite and Spacewalk are completely open source.</p>
+
+<h3> <a name="whatissat6">What is Satellite 6?</a></h3>
+<p>
+Red Hat Satellite 6 is a re-engineering of the Red Hat Satellite product.
+Spacewalk (and its downstream product, Red Hat Satellite 5) is a systems-management tool, and Satellite 6 is designed to accomplish the same set of goals.
+However, Satellite 6 has been built from the ground-up on different and more modern technologies.
+Spacewalk is <em>not</em> the upstream for Satellite 6, and never will be.
+Instead Satellite 6 is a federation of several upstream open source projects, including <a href="http://www.katello.org/">Katello</a>, <a href="http://theforeman.org/">Foreman</a>, <a href="http://www.pulpproject.org/">Pulp</a>, and <a href="http://www.candlepinproject.org/">Candlepin</a>.
+</p>
+
+<h3><a name="sat6andspacewalk">What does this mean for Spacewalk?</a></h3>
+<p>In the immediate future, probably not a lot.
+<p>
+Given that the <a href="https://access.redhat.com/support/policy/updates/satellite">Red Hat Satellite and Proxy Server Life Cycle</a> extends through March of 2017, with an Extended Life Phase through June of 2019, Red Hat will continue working on and contributing to Satellite 5 for a long time to come.
+Spacewalk will remain the upstream for Satellite 5, and Red Hat will continue to push up the work it does for the benefit of the open source community.
+</p>
+<p>
+However, that is not to say that nothing will change.
+Currently, Red Hat maintains a controlling interest in the Spacewalk project, in the form of the majority of code commits, ownership and maintenance of much of the infrastructure and builders, management and orchestration of Spacewalk releases, etc.
+As Red Hat's participation in Satellite 5 / Spacewalk decreases in the upcoming years, that will have to change.
+</p>
+<p>
+Spacewalk is a community project; its <a href="https://github.com/spacewalkproject/spacewalk">code</a> is open source and GPLv2-licensed, and its <a href="https://fedorahosted.org/spacewalk/wiki/ContributorList">contributors</a> come from all over the world and from many different companies.
+As Red Hat's participation ramps down, there will be an opportunity for the participation from other community members to ramp up.
+Someone (or several someones!) will need to take over some of the management role that currently rests on Red Hat.
+What exactly that will look like is still an open question, and one that the Spacewalk community will need to be talking about over the next several years.
+</p>
+<p>
+Regardless of how that plays out, the project will not simply disappear overnight.
+As long as people continue to find Spacewalk a useful tool and are willing to participate together in the open source spirit, there is no reason that the project and community will not continue to grow and flourish.
+</p>
+</div>
+
+<div id="footer">
+<p>Copyright © 2015 Red Hat, Inc. All Rights Reserved. The Spacewalk logo is a trademark of Red Hat, Inc. <br />Please send any comments or corrections to <a href="communicate.html">the Spacewalk mailing list</a>.
+<br />
+Please report any security concerns about Spacewalk to <a href="mailto:secalert@redhat.com">the Red Hat Security Response Team</a>.</p>
+</div>
+
+</div>
+</div>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29244526-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>

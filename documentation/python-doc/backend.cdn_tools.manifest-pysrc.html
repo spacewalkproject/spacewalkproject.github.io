@@ -1,0 +1,556 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>backend.cdn_tools.manifest</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="backend-module.html">Package&nbsp;backend</a> ::
+        <a href="backend.cdn_tools-module.html">Package&nbsp;cdn_tools</a> ::
+        Module&nbsp;manifest
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="backend.cdn_tools.manifest-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="backend.cdn_tools.manifest-module.html">Module backend.cdn_tools.manifest</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-comment"># Copyright (c) 2016 Red Hat, Inc.</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-comment"># This software is licensed to you under the GNU General Public License,</tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-comment"># version 2 (GPLv2). There is NO WARRANTY for this software, express or</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-comment"># implied, including the implied warranties of MERCHANTABILITY or FITNESS</tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-comment"># FOR A PARTICULAR PURPOSE. You should have received a copy of GPLv2</tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-comment"># along with this software; if not, see</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt class="py-comment"># http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt.</tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"><tt class="py-comment"># Red Hat trademarks are not licensed under GPLv2. No permission is</tt> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line"><tt class="py-comment"># granted to use or replicate Red Hat trademarks that are incorporated</tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line"><tt class="py-comment"># in this software or its documentation.</tt> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">cStringIO</tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">json</tt> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">zipfile</tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">os</tt> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">M2Crypto</tt> <tt class="py-keyword">import</tt> <tt class="py-name">X509</tt> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line"> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt id="link-0" class="py-name" targets="Module backend.cdn_tools.constants=backend.cdn_tools.constants-module.html,Module backend.satellite_tools.constants=backend.satellite_tools.constants-module.html,Module virtualization.constants=virtualization.constants-module.html"><a title="backend.cdn_tools.constants
+backend.satellite_tools.constants
+virtualization.constants" class="py-name" href="#" onclick="return doclink('link-0', 'constants', 'link-0');">constants</a></tt> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line"> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line"> </tt>
+<a name="Manifest"></a><div id="Manifest-def"><a name="L24"></a><tt class="py-lineno"> 24</tt> <a class="py-toggle" href="#" id="Manifest-toggle" onclick="return toggle('Manifest');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="backend.cdn_tools.manifest.Manifest-class.html">Manifest</a><tt class="py-op">(</tt><tt class="py-base-class">object</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Manifest-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="Manifest-expanded"><a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line">    <tt class="py-docstring">"""Class containing relevant data from RHSM manifest."""</tt> </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line"> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line">    <tt id="link-1" class="py-name" targets="Variable backend.cdn_tools.manifest.Manifest.SIGNATURE_NAME=backend.cdn_tools.manifest.Manifest-class.html#SIGNATURE_NAME"><a title="backend.cdn_tools.manifest.Manifest.SIGNATURE_NAME" class="py-name" href="#" onclick="return doclink('link-1', 'SIGNATURE_NAME', 'link-1');">SIGNATURE_NAME</a></tt> <tt class="py-op">=</tt> <tt class="py-string">"signature"</tt> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line">    <tt id="link-2" class="py-name" targets="Variable backend.cdn_tools.manifest.Manifest.INNER_ZIP_NAME=backend.cdn_tools.manifest.Manifest-class.html#INNER_ZIP_NAME"><a title="backend.cdn_tools.manifest.Manifest.INNER_ZIP_NAME" class="py-name" href="#" onclick="return doclink('link-2', 'INNER_ZIP_NAME', 'link-2');">INNER_ZIP_NAME</a></tt> <tt class="py-op">=</tt> <tt class="py-string">"consumer_export.zip"</tt> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line">    <tt id="link-3" class="py-name" targets="Variable backend.cdn_tools.manifest.Manifest.ENTITLEMENTS_PATH=backend.cdn_tools.manifest.Manifest-class.html#ENTITLEMENTS_PATH"><a title="backend.cdn_tools.manifest.Manifest.ENTITLEMENTS_PATH" class="py-name" href="#" onclick="return doclink('link-3', 'ENTITLEMENTS_PATH', 'link-3');">ENTITLEMENTS_PATH</a></tt> <tt class="py-op">=</tt> <tt class="py-string">"export/entitlements"</tt> </tt>
+<a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line">    <tt id="link-4" class="py-name" targets="Variable backend.cdn_tools.manifest.Manifest.CERTIFICATE_PATH=backend.cdn_tools.manifest.Manifest-class.html#CERTIFICATE_PATH"><a title="backend.cdn_tools.manifest.Manifest.CERTIFICATE_PATH" class="py-name" href="#" onclick="return doclink('link-4', 'CERTIFICATE_PATH', 'link-4');">CERTIFICATE_PATH</a></tt> <tt class="py-op">=</tt> <tt class="py-string">"export/extensions"</tt> </tt>
+<a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line">    <tt id="link-5" class="py-name" targets="Variable backend.cdn_tools.manifest.Manifest.PRODUCTS_PATH=backend.cdn_tools.manifest.Manifest-class.html#PRODUCTS_PATH"><a title="backend.cdn_tools.manifest.Manifest.PRODUCTS_PATH" class="py-name" href="#" onclick="return doclink('link-5', 'PRODUCTS_PATH', 'link-5');">PRODUCTS_PATH</a></tt> <tt class="py-op">=</tt> <tt class="py-string">"export/products"</tt> </tt>
+<a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line"> </tt>
+<a name="Manifest.__init__"></a><div id="Manifest.__init__-def"><a name="L33"></a><tt class="py-lineno"> 33</tt> <a class="py-toggle" href="#" id="Manifest.__init__-toggle" onclick="return toggle('Manifest.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="backend.cdn_tools.manifest.Manifest-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">zip_path</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Manifest.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Manifest.__init__-expanded"><a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">all_entitlements</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">manifest_repos</tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt><tt class="py-op">}</tt> </tt>
+<a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">sat5_certificate</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+<a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line">        <tt class="py-comment"># Signature and signed data</tt> </tt>
+<a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">signature</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+<a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-6" class="py-name" targets="Method backend.satellite_exporter.handlers.non_auth_dumper.ContainerWriter.data()=backend.satellite_exporter.handlers.non_auth_dumper.ContainerWriter-class.html#data,Method backend.satellite_tools.exporter.xmlWriter.XMLWriter.data()=backend.satellite_tools.exporter.xmlWriter.XMLWriter-class.html#data"><a title="backend.satellite_exporter.handlers.non_auth_dumper.ContainerWriter.data
+backend.satellite_tools.exporter.xmlWriter.XMLWriter.data" class="py-name" href="#" onclick="return doclink('link-6', 'data', 'link-6');">data</a></tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+<a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line">        <tt class="py-comment"># Open manifest from path</tt> </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line">        <tt class="py-name">top_zip</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line">        <tt class="py-name">inner_zip</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line">        <tt class="py-name">inner_file</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line">        <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line">            <tt class="py-name">top_zip</tt> <tt class="py-op">=</tt> <tt class="py-name">zipfile</tt><tt class="py-op">.</tt><tt class="py-name">ZipFile</tt><tt class="py-op">(</tt><tt class="py-name">zip_path</tt><tt class="py-op">,</tt> <tt class="py-string">'r'</tt><tt class="py-op">)</tt> </tt>
+<a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line">            <tt class="py-comment"># Fetch inner zip file into memory</tt> </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line">            <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line">                <tt class="py-comment"># inner_file = top_zip.open(zip_path.split('.zip')[0] + '/' + self.INNER_ZIP_NAME)</tt> </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line">                <tt class="py-name">inner_file</tt> <tt class="py-op">=</tt> <tt class="py-name">top_zip</tt><tt class="py-op">.</tt><tt class="py-name">open</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-7" class="py-name"><a title="backend.cdn_tools.manifest.Manifest.INNER_ZIP_NAME" class="py-name" href="#" onclick="return doclink('link-7', 'INNER_ZIP_NAME', 'link-2');">INNER_ZIP_NAME</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-8" class="py-name"><a title="backend.satellite_exporter.handlers.non_auth_dumper.ContainerWriter.data
+backend.satellite_tools.exporter.xmlWriter.XMLWriter.data" class="py-name" href="#" onclick="return doclink('link-8', 'data', 'link-6');">data</a></tt> <tt class="py-op">=</tt> <tt class="py-name">inner_file</tt><tt class="py-op">.</tt><tt id="link-9" class="py-name" targets="Method backend.wsgi.wsgiRequest.WsgiRequest.read()=backend.wsgi.wsgiRequest.WsgiRequest-class.html#read,Method rhn.SSL.SSLSocket.read()=rhn.SSL.SSLSocket-class.html#read,Method rhn.nonblocking.NonBlockingFile.read()=rhn.nonblocking.NonBlockingFile-class.html#read,Method rhn.transports.File.read()=rhn.transports.File-class.html#read,Method rhn.transports.Input.read()=rhn.transports.Input-class.html#read,Method rhnkickstart.lilo.LiloConfigFile.read()=rhnkickstart.lilo.LiloConfigFile-class.html#read,Method rhnpush.archive.ArchiveParser.read()=rhnpush.archive.ArchiveParser-class.html#read,Method src.jabber_lib.JabberClient.read()=src.jabber_lib.JabberClient-class.html#read"><a title="backend.wsgi.wsgiRequest.WsgiRequest.read
+rhn.SSL.SSLSocket.read
+rhn.nonblocking.NonBlockingFile.read
+rhn.transports.File.read
+rhn.transports.Input.read
+rhnkickstart.lilo.LiloConfigFile.read
+rhnpush.archive.ArchiveParser.read
+src.jabber_lib.JabberClient.read" class="py-name" href="#" onclick="return doclink('link-9', 'read', 'link-9');">read</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line">                <tt class="py-name">inner_file_data</tt> <tt class="py-op">=</tt> <tt class="py-name">cStringIO</tt><tt class="py-op">.</tt><tt class="py-name">StringIO</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-10" class="py-name"><a title="backend.satellite_exporter.handlers.non_auth_dumper.ContainerWriter.data
+backend.satellite_tools.exporter.xmlWriter.XMLWriter.data" class="py-name" href="#" onclick="return doclink('link-10', 'data', 'link-6');">data</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line">                <tt class="py-name">signature_file</tt> <tt class="py-op">=</tt> <tt class="py-name">top_zip</tt><tt class="py-op">.</tt><tt class="py-name">open</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-11" class="py-name"><a title="backend.cdn_tools.manifest.Manifest.SIGNATURE_NAME" class="py-name" href="#" onclick="return doclink('link-11', 'SIGNATURE_NAME', 'link-1');">SIGNATURE_NAME</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">signature</tt> <tt class="py-op">=</tt> <tt class="py-name">signature_file</tt><tt class="py-op">.</tt><tt id="link-12" class="py-name"><a title="backend.wsgi.wsgiRequest.WsgiRequest.read
+rhn.SSL.SSLSocket.read
+rhn.nonblocking.NonBlockingFile.read
+rhn.transports.File.read
+rhn.transports.Input.read
+rhnkickstart.lilo.LiloConfigFile.read
+rhnpush.archive.ArchiveParser.read
+src.jabber_lib.JabberClient.read" class="py-name" href="#" onclick="return doclink('link-12', 'read', 'link-9');">read</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line">                <tt class="py-comment"># Open the inner zip file</tt> </tt>
+<a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line">                <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line">                    <tt class="py-name">inner_zip</tt> <tt class="py-op">=</tt> <tt class="py-name">zipfile</tt><tt class="py-op">.</tt><tt class="py-name">ZipFile</tt><tt class="py-op">(</tt><tt class="py-name">inner_file_data</tt><tt class="py-op">)</tt> </tt>
+<a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line">                    <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-13" class="py-name" targets="Method backend.cdn_tools.manifest.Manifest._load_entitlements()=backend.cdn_tools.manifest.Manifest-class.html#_load_entitlements"><a title="backend.cdn_tools.manifest.Manifest._load_entitlements" class="py-name" href="#" onclick="return doclink('link-13', '_load_entitlements', 'link-13');">_load_entitlements</a></tt><tt class="py-op">(</tt><tt class="py-name">inner_zip</tt><tt class="py-op">)</tt> </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line">                    <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-14" class="py-name" targets="Method backend.cdn_tools.manifest.Manifest._extract_certificate()=backend.cdn_tools.manifest.Manifest-class.html#_extract_certificate"><a title="backend.cdn_tools.manifest.Manifest._extract_certificate" class="py-name" href="#" onclick="return doclink('link-14', '_extract_certificate', 'link-14');">_extract_certificate</a></tt><tt class="py-op">(</tt><tt class="py-name">inner_zip</tt><tt class="py-op">)</tt> </tt>
+<a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line">                <tt class="py-keyword">finally</tt><tt class="py-op">:</tt> </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line">                    <tt class="py-keyword">if</tt> <tt class="py-name">inner_zip</tt> <tt class="py-keyword">is</tt> <tt class="py-keyword">not</tt> <tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line">                        <tt class="py-name">inner_zip</tt><tt class="py-op">.</tt><tt id="link-15" class="py-name" targets="Method backend.common.rhnCache.ClosingZipFile.close()=backend.common.rhnCache.ClosingZipFile-class.html#close,Method backend.common.rhnCache.LockedFile.close()=backend.common.rhnCache.LockedFile-class.html#close,Method backend.satellite_exporter.handlers.non_auth_dumper.NonAuthenticatedDumper.close()=backend.satellite_exporter.handlers.non_auth_dumper.NonAuthenticatedDumper-class.html#close,Method backend.satellite_tools.connection.CompressedStream.close()=backend.satellite_tools.connection.CompressedStream-class.html#close,Method backend.satellite_tools.disk_dumper.dumper.CachedQueryIterator.close()=backend.satellite_tools.disk_dumper.dumper.CachedQueryIterator-class.html#close,Method backend.satellite_tools.disk_dumper.dumper.XML_Dumper.close()=backend.satellite_tools.disk_dumper.dumper.XML_Dumper-class.html#close,Method backend.satellite_tools.disk_dumper.iss.Dumper.close()=backend.satellite_tools.disk_dumper.iss.Dumper-class.html#close,Method backend.satellite_tools.disk_dumper.string_buffer.StringBuffer.close()=backend.satellite_tools.disk_dumper.string_buffer.StringBuffer-class.html#close,Method backend.satellite_tools.satsync.StreamProducer.close()=backend.satellite_tools.satsync.StreamProducer-class.html#close,Method backend.satellite_tools.sync_handlers.ContainerHandler.close()=backend.satellite_tools.sync_handlers.ContainerHandler-class.html#close,Method backend.satellite_tools.xmlSource.BaseDispatchHandler.close()=backend.satellite_tools.xmlSource.BaseDispatchHandler-class.html#close,Method backend.server.rhnSQL.driver_cx_Oracle.Database.close()=backend.server.rhnSQL.driver_cx_Oracle.Database-class.html#close,Method backend.server.rhnSQL.driver_postgresql.Cursor.close()=backend.server.rhnSQL.driver_postgresql.Cursor-class.html#close,Method backend.server.rhnSQL.sql_base.Database.close()=backend.server.rhnSQL.sql_base.Database-class.html#close,Method proxy.responseContext.ResponseContext.close()=proxy.responseContext.ResponseContext-class.html#close,Method rhn.SSL.SSLSocket.close()=rhn.SSL.SSLSocket-class.html#close,Method rhn.rpclib.Server.close()=rhn.rpclib.Server-class.html#close,Method rhn.transports.BaseOutput.close()=rhn.transports.BaseOutput-class.html#close,Method up2date_client.rhnregGui.NetworkConfigDialog.close()=up2date_client.rhnregGui.NetworkConfigDialog-class.html#close"><a title="backend.common.rhnCache.ClosingZipFile.close
+backend.common.rhnCache.LockedFile.close
+backend.satellite_exporter.handlers.non_auth_dumper.NonAuthenticatedDumper.close
+backend.satellite_tools.connection.CompressedStream.close
+backend.satellite_tools.disk_dumper.dumper.CachedQueryIterator.close
+backend.satellite_tools.disk_dumper.dumper.XML_Dumper.close
+backend.satellite_tools.disk_dumper.iss.Dumper.close
+backend.satellite_tools.disk_dumper.string_buffer.StringBuffer.close
+backend.satellite_tools.satsync.StreamProducer.close
+backend.satellite_tools.sync_handlers.ContainerHandler.close
+backend.satellite_tools.xmlSource.BaseDispatchHandler.close
+backend.server.rhnSQL.driver_cx_Oracle.Database.close
+backend.server.rhnSQL.driver_postgresql.Cursor.close
+backend.server.rhnSQL.sql_base.Database.close
+proxy.responseContext.ResponseContext.close
+rhn.SSL.SSLSocket.close
+rhn.rpclib.Server.close
+rhn.transports.BaseOutput.close
+up2date_client.rhnregGui.NetworkConfigDialog.close" class="py-name" href="#" onclick="return doclink('link-15', 'close', 'link-15');">close</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line">            <tt class="py-keyword">finally</tt><tt class="py-op">:</tt> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line">                <tt class="py-keyword">if</tt> <tt class="py-name">inner_file</tt> <tt class="py-keyword">is</tt> <tt class="py-keyword">not</tt> <tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line">                    <tt class="py-name">inner_file</tt><tt class="py-op">.</tt><tt id="link-16" class="py-name"><a title="backend.common.rhnCache.ClosingZipFile.close
+backend.common.rhnCache.LockedFile.close
+backend.satellite_exporter.handlers.non_auth_dumper.NonAuthenticatedDumper.close
+backend.satellite_tools.connection.CompressedStream.close
+backend.satellite_tools.disk_dumper.dumper.CachedQueryIterator.close
+backend.satellite_tools.disk_dumper.dumper.XML_Dumper.close
+backend.satellite_tools.disk_dumper.iss.Dumper.close
+backend.satellite_tools.disk_dumper.string_buffer.StringBuffer.close
+backend.satellite_tools.satsync.StreamProducer.close
+backend.satellite_tools.sync_handlers.ContainerHandler.close
+backend.satellite_tools.xmlSource.BaseDispatchHandler.close
+backend.server.rhnSQL.driver_cx_Oracle.Database.close
+backend.server.rhnSQL.driver_postgresql.Cursor.close
+backend.server.rhnSQL.sql_base.Database.close
+proxy.responseContext.ResponseContext.close
+rhn.SSL.SSLSocket.close
+rhn.rpclib.Server.close
+rhn.transports.BaseOutput.close
+up2date_client.rhnregGui.NetworkConfigDialog.close" class="py-name" href="#" onclick="return doclink('link-16', 'close', 'link-15');">close</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line">        <tt class="py-keyword">finally</tt><tt class="py-op">:</tt> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">top_zip</tt> <tt class="py-keyword">is</tt> <tt class="py-keyword">not</tt> <tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line">                <tt class="py-name">top_zip</tt><tt class="py-op">.</tt><tt id="link-17" class="py-name"><a title="backend.common.rhnCache.ClosingZipFile.close
+backend.common.rhnCache.LockedFile.close
+backend.satellite_exporter.handlers.non_auth_dumper.NonAuthenticatedDumper.close
+backend.satellite_tools.connection.CompressedStream.close
+backend.satellite_tools.disk_dumper.dumper.CachedQueryIterator.close
+backend.satellite_tools.disk_dumper.dumper.XML_Dumper.close
+backend.satellite_tools.disk_dumper.iss.Dumper.close
+backend.satellite_tools.disk_dumper.string_buffer.StringBuffer.close
+backend.satellite_tools.satsync.StreamProducer.close
+backend.satellite_tools.sync_handlers.ContainerHandler.close
+backend.satellite_tools.xmlSource.BaseDispatchHandler.close
+backend.server.rhnSQL.driver_cx_Oracle.Database.close
+backend.server.rhnSQL.driver_postgresql.Cursor.close
+backend.server.rhnSQL.sql_base.Database.close
+proxy.responseContext.ResponseContext.close
+rhn.SSL.SSLSocket.close
+rhn.rpclib.Server.close
+rhn.transports.BaseOutput.close
+up2date_client.rhnregGui.NetworkConfigDialog.close" class="py-name" href="#" onclick="return doclink('link-17', 'close', 'link-15');">close</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line"> </tt>
+<a name="Manifest._extract_certificate"></a><div id="Manifest._extract_certificate-def"><a name="L69"></a><tt class="py-lineno"> 69</tt> <a class="py-toggle" href="#" id="Manifest._extract_certificate-toggle" onclick="return toggle('Manifest._extract_certificate');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="backend.cdn_tools.manifest.Manifest-class.html#_extract_certificate">_extract_certificate</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">zip_file</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Manifest._extract_certificate-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Manifest._extract_certificate-expanded"><a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line">        <tt class="py-name">files</tt> <tt class="py-op">=</tt> <tt class="py-name">zip_file</tt><tt class="py-op">.</tt><tt class="py-name">namelist</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line">        <tt class="py-name">certificates_names</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">f</tt> <tt class="py-keyword">in</tt> <tt class="py-name">files</tt><tt class="py-op">:</tt> </tt>
+<a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">f</tt><tt class="py-op">.</tt><tt class="py-name">startswith</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-18" class="py-name"><a title="backend.cdn_tools.manifest.Manifest.CERTIFICATE_PATH" class="py-name" href="#" onclick="return doclink('link-18', 'CERTIFICATE_PATH', 'link-4');">CERTIFICATE_PATH</a></tt><tt class="py-op">)</tt> <tt class="py-keyword">and</tt> <tt class="py-name">f</tt><tt class="py-op">.</tt><tt class="py-name">endswith</tt><tt class="py-op">(</tt><tt class="py-string">".xml"</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line">                <tt class="py-name">certificates_names</tt><tt class="py-op">.</tt><tt id="link-19" class="py-name" targets="Method backend.server.importlib.importLib.Collection.append()=backend.server.importlib.importLib.Collection-class.html#append"><a title="backend.server.importlib.importLib.Collection.append" class="py-name" href="#" onclick="return doclink('link-19', 'append', 'link-19');">append</a></tt><tt class="py-op">(</tt><tt class="py-name">f</tt><tt class="py-op">)</tt> </tt>
+<a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">certificates_names</tt><tt class="py-op">)</tt> <tt class="py-op">&gt;=</tt> <tt class="py-number">1</tt><tt class="py-op">:</tt> </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line">            <tt class="py-comment"># take only first file</tt> </tt>
+<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line">            <tt class="py-name">cert_file</tt> <tt class="py-op">=</tt> <tt class="py-name">zip_file</tt><tt class="py-op">.</tt><tt class="py-name">open</tt><tt class="py-op">(</tt><tt class="py-name">certificates_names</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">)</tt>  <tt class="py-comment"># take only first file</tt> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">sat5_certificate</tt> <tt class="py-op">=</tt> <tt class="py-name">cert_file</tt><tt class="py-op">.</tt><tt id="link-20" class="py-name"><a title="backend.wsgi.wsgiRequest.WsgiRequest.read
+rhn.SSL.SSLSocket.read
+rhn.nonblocking.NonBlockingFile.read
+rhn.transports.File.read
+rhn.transports.Input.read
+rhnkickstart.lilo.LiloConfigFile.read
+rhnpush.archive.ArchiveParser.read
+src.jabber_lib.JabberClient.read" class="py-name" href="#" onclick="return doclink('link-20', 'read', 'link-9');">read</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-21" class="py-name" targets="Method backend.server.config_common.base_templated_document.TemplatedDocument.strip()=backend.server.config_common.base_templated_document.TemplatedDocument-class.html#strip"><a title="backend.server.config_common.base_templated_document.TemplatedDocument.strip" class="py-name" href="#" onclick="return doclink('link-21', 'strip', 'link-21');">strip</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line">            <tt class="py-name">cert_file</tt><tt class="py-op">.</tt><tt id="link-22" class="py-name"><a title="backend.common.rhnCache.ClosingZipFile.close
+backend.common.rhnCache.LockedFile.close
+backend.satellite_exporter.handlers.non_auth_dumper.NonAuthenticatedDumper.close
+backend.satellite_tools.connection.CompressedStream.close
+backend.satellite_tools.disk_dumper.dumper.CachedQueryIterator.close
+backend.satellite_tools.disk_dumper.dumper.XML_Dumper.close
+backend.satellite_tools.disk_dumper.iss.Dumper.close
+backend.satellite_tools.disk_dumper.string_buffer.StringBuffer.close
+backend.satellite_tools.satsync.StreamProducer.close
+backend.satellite_tools.sync_handlers.ContainerHandler.close
+backend.satellite_tools.xmlSource.BaseDispatchHandler.close
+backend.server.rhnSQL.driver_cx_Oracle.Database.close
+backend.server.rhnSQL.driver_postgresql.Cursor.close
+backend.server.rhnSQL.sql_base.Database.close
+proxy.responseContext.ResponseContext.close
+rhn.SSL.SSLSocket.close
+rhn.rpclib.Server.close
+rhn.transports.BaseOutput.close
+up2date_client.rhnregGui.NetworkConfigDialog.close" class="py-name" href="#" onclick="return doclink('link-22', 'close', 'link-15');">close</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt id="link-23" class="py-name" targets="Class backend.cdn_tools.manifest.MissingSatelliteCertificateError=backend.cdn_tools.manifest.MissingSatelliteCertificateError-class.html,Variable backend.satellite_tools.rhn_satellite_activate.MissingSatelliteCertificateError=backend.satellite_tools.rhn_satellite_activate-module.html#MissingSatelliteCertificateError"><a title="backend.cdn_tools.manifest.MissingSatelliteCertificateError
+backend.satellite_tools.rhn_satellite_activate.MissingSatelliteCertificateError" class="py-name" href="#" onclick="return doclink('link-23', 'MissingSatelliteCertificateError', 'link-23');">MissingSatelliteCertificateError</a></tt><tt class="py-op">(</tt><tt class="py-string">"Satellite Certificate was not found in manifest."</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line"> </tt>
+<a name="Manifest._fill_product_repositories"></a><div id="Manifest._fill_product_repositories-def"><a name="L83"></a><tt class="py-lineno"> 83</tt> <a class="py-toggle" href="#" id="Manifest._fill_product_repositories-toggle" onclick="return toggle('Manifest._fill_product_repositories');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="backend.cdn_tools.manifest.Manifest-class.html#_fill_product_repositories">_fill_product_repositories</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">zip_file</tt><tt class="py-op">,</tt> <tt class="py-param">product</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Manifest._fill_product_repositories-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Manifest._fill_product_repositories-expanded"><a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line">        <tt class="py-name">product_file</tt> <tt class="py-op">=</tt> <tt class="py-name">zip_file</tt><tt class="py-op">.</tt><tt class="py-name">open</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-24" class="py-name"><a title="backend.cdn_tools.manifest.Manifest.PRODUCTS_PATH" class="py-name" href="#" onclick="return doclink('link-24', 'PRODUCTS_PATH', 'link-5');">PRODUCTS_PATH</a></tt> <tt class="py-op">+</tt> <tt class="py-string">'/'</tt> <tt class="py-op">+</tt> <tt id="link-25" class="py-name" targets="Class str=str-class.html"><a title="str" class="py-name" href="#" onclick="return doclink('link-25', 'str', 'link-25');">str</a></tt><tt class="py-op">(</tt><tt class="py-name">product</tt><tt class="py-op">.</tt><tt id="link-26" class="py-name" targets="Method backend.cdn_tools.manifest.Credentials.get_id()=backend.cdn_tools.manifest.Credentials-class.html#get_id,Method backend.cdn_tools.manifest.Product.get_id()=backend.cdn_tools.manifest.Product-class.html#get_id,Method backend.server.action.utils.ChannelPackage.get_id()=backend.server.action.utils.ChannelPackage-class.html#get_id"><a title="backend.cdn_tools.manifest.Credentials.get_id
+backend.cdn_tools.manifest.Product.get_id
+backend.server.action.utils.ChannelPackage.get_id" class="py-name" href="#" onclick="return doclink('link-26', 'get_id', 'link-26');">get_id</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> <tt class="py-op">+</tt> <tt class="py-string">'.json'</tt><tt class="py-op">)</tt> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line">        <tt class="py-name">product_data</tt> <tt class="py-op">=</tt> <tt class="py-name">json</tt><tt class="py-op">.</tt><tt id="link-27" class="py-name" targets="Method backend.common.rhn_mpm.MPM_Package.load()=backend.common.rhn_mpm.MPM_Package-class.html#load,Function backend.common.rhn_mpm.load()=backend.common.rhn_mpm-module.html#load,Method backend.satellite_tools.xmlDiskSource.DiskSource.load()=backend.satellite_tools.xmlDiskSource.DiskSource-class.html#load,Method backend.server.rhnImport.Loader.load()=backend.server.rhnImport.Loader-class.html#load,Function backend.server.rhnImport.load()=backend.server.rhnImport-module.html#load,Method backend.server.rhnSQL.sql_row.Row.load()=backend.server.rhnSQL.sql_row.Row-class.html#load,Method backend.server.rhnServer.satellite_cert.SatelliteCert.load()=backend.server.rhnServer.satellite_cert.SatelliteCert-class.html#load,Method backend.server.rhnSession.Session.load()=backend.server.rhnSession.Session-class.html#load,Function backend.server.rhnSession.load()=backend.server.rhnSession-module.html#load,Method up2date_client.config.Config.load()=up2date_client.config.Config-class.html#load,Method up2date_client.config.ConfigFile.load()=up2date_client.config.ConfigFile-class.html#load"><a title="backend.common.rhn_mpm.MPM_Package.load
+backend.common.rhn_mpm.load
+backend.satellite_tools.xmlDiskSource.DiskSource.load
+backend.server.rhnImport.Loader.load
+backend.server.rhnImport.load
+backend.server.rhnSQL.sql_row.Row.load
+backend.server.rhnServer.satellite_cert.SatelliteCert.load
+backend.server.rhnSession.Session.load
+backend.server.rhnSession.load
+up2date_client.config.Config.load
+up2date_client.config.ConfigFile.load" class="py-name" href="#" onclick="return doclink('link-27', 'load', 'link-27');">load</a></tt><tt class="py-op">(</tt><tt class="py-name">product_file</tt><tt class="py-op">)</tt> </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line">        <tt class="py-name">product_file</tt><tt class="py-op">.</tt><tt id="link-28" class="py-name"><a title="backend.common.rhnCache.ClosingZipFile.close
+backend.common.rhnCache.LockedFile.close
+backend.satellite_exporter.handlers.non_auth_dumper.NonAuthenticatedDumper.close
+backend.satellite_tools.connection.CompressedStream.close
+backend.satellite_tools.disk_dumper.dumper.CachedQueryIterator.close
+backend.satellite_tools.disk_dumper.dumper.XML_Dumper.close
+backend.satellite_tools.disk_dumper.iss.Dumper.close
+backend.satellite_tools.disk_dumper.string_buffer.StringBuffer.close
+backend.satellite_tools.satsync.StreamProducer.close
+backend.satellite_tools.sync_handlers.ContainerHandler.close
+backend.satellite_tools.xmlSource.BaseDispatchHandler.close
+backend.server.rhnSQL.driver_cx_Oracle.Database.close
+backend.server.rhnSQL.driver_postgresql.Cursor.close
+backend.server.rhnSQL.sql_base.Database.close
+proxy.responseContext.ResponseContext.close
+rhn.SSL.SSLSocket.close
+rhn.rpclib.Server.close
+rhn.transports.BaseOutput.close
+up2date_client.rhnregGui.NetworkConfigDialog.close" class="py-name" href="#" onclick="return doclink('link-28', 'close', 'link-15');">close</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line">        <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line">            <tt class="py-keyword">for</tt> <tt class="py-name">content</tt> <tt class="py-keyword">in</tt> <tt class="py-name">product_data</tt><tt class="py-op">[</tt><tt class="py-string">'productContent'</tt><tt class="py-op">]</tt><tt class="py-op">:</tt> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line">                <tt class="py-name">content</tt> <tt class="py-op">=</tt> <tt class="py-name">content</tt><tt class="py-op">[</tt><tt class="py-string">'content'</tt><tt class="py-op">]</tt> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line">                <tt class="py-name">product</tt><tt class="py-op">.</tt><tt id="link-29" class="py-name" targets="Method backend.cdn_tools.manifest.Product.add_repository()=backend.cdn_tools.manifest.Product-class.html#add_repository,Method backend.cdn_tools.repository.CdnRepositoryTree.add_repository()=backend.cdn_tools.repository.CdnRepositoryTree-class.html#add_repository"><a title="backend.cdn_tools.manifest.Product.add_repository
+backend.cdn_tools.repository.CdnRepositoryTree.add_repository" class="py-name" href="#" onclick="return doclink('link-29', 'add_repository', 'link-29');">add_repository</a></tt><tt class="py-op">(</tt><tt class="py-name">content</tt><tt class="py-op">[</tt><tt class="py-string">'label'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">content</tt><tt class="py-op">[</tt><tt class="py-string">'contentUrl'</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line">        <tt class="py-keyword">except</tt> <tt class="py-name">KeyError</tt><tt class="py-op">:</tt> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line">            <tt class="py-keyword">print</tt><tt class="py-op">(</tt><tt class="py-string">"ERROR: Cannot access required field in product '%s'"</tt> <tt class="py-op">%</tt> <tt class="py-name">product</tt><tt class="py-op">.</tt><tt id="link-30" class="py-name"><a title="backend.cdn_tools.manifest.Credentials.get_id
+backend.cdn_tools.manifest.Product.get_id
+backend.server.action.utils.ChannelPackage.get_id" class="py-name" href="#" onclick="return doclink('link-30', 'get_id', 'link-26');">get_id</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> </tt>
+</div><a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line"> </tt>
+<a name="Manifest._load_entitlements"></a><div id="Manifest._load_entitlements-def"><a name="L95"></a><tt class="py-lineno"> 95</tt> <a class="py-toggle" href="#" id="Manifest._load_entitlements-toggle" onclick="return toggle('Manifest._load_entitlements');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="backend.cdn_tools.manifest.Manifest-class.html#_load_entitlements">_load_entitlements</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">zip_file</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Manifest._load_entitlements-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Manifest._load_entitlements-expanded"><a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line">        <tt class="py-name">files</tt> <tt class="py-op">=</tt> <tt class="py-name">zip_file</tt><tt class="py-op">.</tt><tt class="py-name">namelist</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line">        <tt class="py-name">entitlements_files</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">f</tt> <tt class="py-keyword">in</tt> <tt class="py-name">files</tt><tt class="py-op">:</tt> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">f</tt><tt class="py-op">.</tt><tt class="py-name">startswith</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-31" class="py-name"><a title="backend.cdn_tools.manifest.Manifest.ENTITLEMENTS_PATH" class="py-name" href="#" onclick="return doclink('link-31', 'ENTITLEMENTS_PATH', 'link-3');">ENTITLEMENTS_PATH</a></tt><tt class="py-op">)</tt> <tt class="py-keyword">and</tt> <tt class="py-name">f</tt><tt class="py-op">.</tt><tt class="py-name">endswith</tt><tt class="py-op">(</tt><tt class="py-string">".json"</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line">                <tt class="py-name">entitlements_files</tt><tt class="py-op">.</tt><tt id="link-32" class="py-name"><a title="backend.server.importlib.importLib.Collection.append" class="py-name" href="#" onclick="return doclink('link-32', 'append', 'link-19');">append</a></tt><tt class="py-op">(</tt><tt class="py-name">f</tt><tt class="py-op">)</tt> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line"> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">entitlements_files</tt><tt class="py-op">)</tt> <tt class="py-op">&gt;=</tt> <tt class="py-number">1</tt><tt class="py-op">:</tt> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">all_entitlements</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line">            <tt class="py-keyword">for</tt> <tt class="py-name">entitlement_file</tt> <tt class="py-keyword">in</tt> <tt class="py-name">entitlements_files</tt><tt class="py-op">:</tt> </tt>
+<a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line">                <tt class="py-name">entitlements</tt> <tt class="py-op">=</tt> <tt class="py-name">zip_file</tt><tt class="py-op">.</tt><tt class="py-name">open</tt><tt class="py-op">(</tt><tt class="py-name">entitlement_file</tt><tt class="py-op">)</tt> </tt>
+<a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line">                <tt class="py-comment"># try block in try block - this is hack for python 2.4 compatibility</tt> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line">                <tt class="py-comment"># to support finally</tt> </tt>
+<a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line">                <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line">                    <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line">                        <tt id="link-33" class="py-name"><a title="backend.satellite_exporter.handlers.non_auth_dumper.ContainerWriter.data
+backend.satellite_tools.exporter.xmlWriter.XMLWriter.data" class="py-name" href="#" onclick="return doclink('link-33', 'data', 'link-6');">data</a></tt> <tt class="py-op">=</tt> <tt class="py-name">json</tt><tt class="py-op">.</tt><tt id="link-34" class="py-name"><a title="backend.common.rhn_mpm.MPM_Package.load
+backend.common.rhn_mpm.load
+backend.satellite_tools.xmlDiskSource.DiskSource.load
+backend.server.rhnImport.Loader.load
+backend.server.rhnImport.load
+backend.server.rhnSQL.sql_row.Row.load
+backend.server.rhnServer.satellite_cert.SatelliteCert.load
+backend.server.rhnSession.Session.load
+backend.server.rhnSession.load
+up2date_client.config.Config.load
+up2date_client.config.ConfigFile.load" class="py-name" href="#" onclick="return doclink('link-34', 'load', 'link-27');">load</a></tt><tt class="py-op">(</tt><tt class="py-name">entitlements</tt><tt class="py-op">)</tt> </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line"> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line">                        <tt class="py-comment"># Extract credentials</tt> </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line">                        <tt class="py-name">certs</tt> <tt class="py-op">=</tt> <tt id="link-35" class="py-name"><a title="backend.satellite_exporter.handlers.non_auth_dumper.ContainerWriter.data
+backend.satellite_tools.exporter.xmlWriter.XMLWriter.data" class="py-name" href="#" onclick="return doclink('link-35', 'data', 'link-6');">data</a></tt><tt class="py-op">[</tt><tt class="py-string">'certificates'</tt><tt class="py-op">]</tt> </tt>
+<a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line">                        <tt class="py-keyword">if</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">certs</tt><tt class="py-op">)</tt> <tt class="py-op">!=</tt> <tt class="py-number">1</tt><tt class="py-op">:</tt> </tt>
+<a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line">                            <tt class="py-keyword">raise</tt> <tt id="link-36" class="py-name" targets="Class backend.cdn_tools.manifest.IncorrectEntitlementsFileFormatError=backend.cdn_tools.manifest.IncorrectEntitlementsFileFormatError-class.html"><a title="backend.cdn_tools.manifest.IncorrectEntitlementsFileFormatError" class="py-name" href="#" onclick="return doclink('link-36', 'IncorrectEntitlementsFileFormatError', 'link-36');">IncorrectEntitlementsFileFormatError</a></tt><tt class="py-op">(</tt> </tt>
+<a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line">                                <tt class="py-string">"ERROR: Single certificate in entitlements file is expected, found: %d"</tt> </tt>
+<a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line">                                <tt class="py-op">%</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">certs</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line">                        <tt id="link-37" class="py-name" targets="Module backend.server.handlers.sat.cert=backend.server.handlers.sat.cert-module.html"><a title="backend.server.handlers.sat.cert" class="py-name" href="#" onclick="return doclink('link-37', 'cert', 'link-37');">cert</a></tt> <tt class="py-op">=</tt> <tt class="py-name">certs</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> </tt>
+<a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line">                        <tt class="py-name">credentials</tt> <tt class="py-op">=</tt> <tt id="link-38" class="py-name" targets="Class backend.cdn_tools.manifest.Credentials=backend.cdn_tools.manifest.Credentials-class.html,Class script-spacewalk_channel_py.Credentials=script-spacewalk_channel_py.Credentials-class.html"><a title="backend.cdn_tools.manifest.Credentials
+script-spacewalk_channel_py.Credentials" class="py-name" href="#" onclick="return doclink('link-38', 'Credentials', 'link-38');">Credentials</a></tt><tt class="py-op">(</tt><tt id="link-39" class="py-name"><a title="backend.satellite_exporter.handlers.non_auth_dumper.ContainerWriter.data
+backend.satellite_tools.exporter.xmlWriter.XMLWriter.data" class="py-name" href="#" onclick="return doclink('link-39', 'data', 'link-6');">data</a></tt><tt class="py-op">[</tt><tt class="py-string">'id'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt id="link-40" class="py-name"><a title="backend.server.handlers.sat.cert" class="py-name" href="#" onclick="return doclink('link-40', 'cert', 'link-37');">cert</a></tt><tt class="py-op">[</tt><tt class="py-string">'cert'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt id="link-41" class="py-name"><a title="backend.server.handlers.sat.cert" class="py-name" href="#" onclick="return doclink('link-41', 'cert', 'link-37');">cert</a></tt><tt class="py-op">[</tt><tt class="py-string">'key'</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line"> </tt>
+<a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line">                        <tt class="py-comment"># Extract product IDs</tt> </tt>
+<a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line">                        <tt class="py-name">products</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L123"></a><tt class="py-lineno">123</tt>  <tt class="py-line">                        <tt class="py-name">provided_products</tt> <tt class="py-op">=</tt> <tt id="link-42" class="py-name"><a title="backend.satellite_exporter.handlers.non_auth_dumper.ContainerWriter.data
+backend.satellite_tools.exporter.xmlWriter.XMLWriter.data" class="py-name" href="#" onclick="return doclink('link-42', 'data', 'link-6');">data</a></tt><tt class="py-op">[</tt><tt class="py-string">'pool'</tt><tt class="py-op">]</tt><tt class="py-op">[</tt><tt class="py-string">'providedProducts'</tt><tt class="py-op">]</tt> </tt>
+<a name="L124"></a><tt class="py-lineno">124</tt>  <tt class="py-line">                        <tt class="py-keyword">for</tt> <tt class="py-name">provided_product</tt> <tt class="py-keyword">in</tt> <tt class="py-name">provided_products</tt><tt class="py-op">:</tt> </tt>
+<a name="L125"></a><tt class="py-lineno">125</tt>  <tt class="py-line">                            <tt class="py-name">product</tt> <tt class="py-op">=</tt> <tt id="link-43" class="py-name" targets="Class backend.cdn_tools.manifest.Product=backend.cdn_tools.manifest.Product-class.html"><a title="backend.cdn_tools.manifest.Product" class="py-name" href="#" onclick="return doclink('link-43', 'Product', 'link-43');">Product</a></tt><tt class="py-op">(</tt><tt class="py-name">provided_product</tt><tt class="py-op">[</tt><tt class="py-string">'productId'</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L126"></a><tt class="py-lineno">126</tt>  <tt class="py-line">                            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-44" class="py-name" targets="Method backend.cdn_tools.manifest.Manifest._fill_product_repositories()=backend.cdn_tools.manifest.Manifest-class.html#_fill_product_repositories"><a title="backend.cdn_tools.manifest.Manifest._fill_product_repositories" class="py-name" href="#" onclick="return doclink('link-44', '_fill_product_repositories', 'link-44');">_fill_product_repositories</a></tt><tt class="py-op">(</tt><tt class="py-name">zip_file</tt><tt class="py-op">,</tt> <tt class="py-name">product</tt><tt class="py-op">)</tt> </tt>
+<a name="L127"></a><tt class="py-lineno">127</tt>  <tt class="py-line">                            <tt class="py-name">products</tt><tt class="py-op">.</tt><tt id="link-45" class="py-name"><a title="backend.server.importlib.importLib.Collection.append" class="py-name" href="#" onclick="return doclink('link-45', 'append', 'link-19');">append</a></tt><tt class="py-op">(</tt><tt class="py-name">product</tt><tt class="py-op">)</tt> </tt>
+<a name="L128"></a><tt class="py-lineno">128</tt>  <tt class="py-line"> </tt>
+<a name="L129"></a><tt class="py-lineno">129</tt>  <tt class="py-line">                        <tt class="py-name">entitlement</tt> <tt class="py-op">=</tt> <tt id="link-46" class="py-name" targets="Class backend.cdn_tools.manifest.Entitlement=backend.cdn_tools.manifest.Entitlement-class.html"><a title="backend.cdn_tools.manifest.Entitlement" class="py-name" href="#" onclick="return doclink('link-46', 'Entitlement', 'link-46');">Entitlement</a></tt><tt class="py-op">(</tt><tt class="py-name">products</tt><tt class="py-op">,</tt> <tt class="py-name">credentials</tt><tt class="py-op">)</tt> </tt>
+<a name="L130"></a><tt class="py-lineno">130</tt>  <tt class="py-line">                        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">all_entitlements</tt><tt class="py-op">.</tt><tt id="link-47" class="py-name"><a title="backend.server.importlib.importLib.Collection.append" class="py-name" href="#" onclick="return doclink('link-47', 'append', 'link-19');">append</a></tt><tt class="py-op">(</tt><tt class="py-name">entitlement</tt><tt class="py-op">)</tt> </tt>
+<a name="L131"></a><tt class="py-lineno">131</tt>  <tt class="py-line">                    <tt class="py-keyword">except</tt> <tt class="py-name">KeyError</tt><tt class="py-op">:</tt> </tt>
+<a name="L132"></a><tt class="py-lineno">132</tt>  <tt class="py-line">                        <tt class="py-keyword">print</tt><tt class="py-op">(</tt><tt class="py-string">"ERROR: Cannot access required field in file '%s'"</tt> <tt class="py-op">%</tt> <tt class="py-name">entitlement_file</tt><tt class="py-op">)</tt> </tt>
+<a name="L133"></a><tt class="py-lineno">133</tt>  <tt class="py-line">                        <tt class="py-keyword">raise</tt> </tt>
+<a name="L134"></a><tt class="py-lineno">134</tt>  <tt class="py-line">                <tt class="py-keyword">finally</tt><tt class="py-op">:</tt> </tt>
+<a name="L135"></a><tt class="py-lineno">135</tt>  <tt class="py-line">                    <tt class="py-name">entitlements</tt><tt class="py-op">.</tt><tt id="link-48" class="py-name"><a title="backend.common.rhnCache.ClosingZipFile.close
+backend.common.rhnCache.LockedFile.close
+backend.satellite_exporter.handlers.non_auth_dumper.NonAuthenticatedDumper.close
+backend.satellite_tools.connection.CompressedStream.close
+backend.satellite_tools.disk_dumper.dumper.CachedQueryIterator.close
+backend.satellite_tools.disk_dumper.dumper.XML_Dumper.close
+backend.satellite_tools.disk_dumper.iss.Dumper.close
+backend.satellite_tools.disk_dumper.string_buffer.StringBuffer.close
+backend.satellite_tools.satsync.StreamProducer.close
+backend.satellite_tools.sync_handlers.ContainerHandler.close
+backend.satellite_tools.xmlSource.BaseDispatchHandler.close
+backend.server.rhnSQL.driver_cx_Oracle.Database.close
+backend.server.rhnSQL.driver_postgresql.Cursor.close
+backend.server.rhnSQL.sql_base.Database.close
+proxy.responseContext.ResponseContext.close
+rhn.SSL.SSLSocket.close
+rhn.rpclib.Server.close
+rhn.transports.BaseOutput.close
+up2date_client.rhnregGui.NetworkConfigDialog.close" class="py-name" href="#" onclick="return doclink('link-48', 'close', 'link-15');">close</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L136"></a><tt class="py-lineno">136</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L137"></a><tt class="py-lineno">137</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt id="link-49" class="py-name"><a title="backend.cdn_tools.manifest.IncorrectEntitlementsFileFormatError" class="py-name" href="#" onclick="return doclink('link-49', 'IncorrectEntitlementsFileFormatError', 'link-36');">IncorrectEntitlementsFileFormatError</a></tt><tt class="py-op">(</tt> </tt>
+<a name="L138"></a><tt class="py-lineno">138</tt>  <tt class="py-line">                <tt class="py-string">"ERROR: There has to be at least one entitlements file"</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L139"></a><tt class="py-lineno">139</tt>  <tt class="py-line"> </tt>
+<a name="Manifest.get_all_entitlements"></a><div id="Manifest.get_all_entitlements-def"><a name="L140"></a><tt class="py-lineno">140</tt> <a class="py-toggle" href="#" id="Manifest.get_all_entitlements-toggle" onclick="return toggle('Manifest.get_all_entitlements');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="backend.cdn_tools.manifest.Manifest-class.html#get_all_entitlements">get_all_entitlements</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Manifest.get_all_entitlements-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Manifest.get_all_entitlements-expanded"><a name="L141"></a><tt class="py-lineno">141</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">all_entitlements</tt> </tt>
+</div><a name="L142"></a><tt class="py-lineno">142</tt>  <tt class="py-line"> </tt>
+<a name="Manifest.get_satellite_certificate"></a><div id="Manifest.get_satellite_certificate-def"><a name="L143"></a><tt class="py-lineno">143</tt> <a class="py-toggle" href="#" id="Manifest.get_satellite_certificate-toggle" onclick="return toggle('Manifest.get_satellite_certificate');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="backend.cdn_tools.manifest.Manifest-class.html#get_satellite_certificate">get_satellite_certificate</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Manifest.get_satellite_certificate-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Manifest.get_satellite_certificate-expanded"><a name="L144"></a><tt class="py-lineno">144</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">sat5_certificate</tt> </tt>
+</div><a name="L145"></a><tt class="py-lineno">145</tt>  <tt class="py-line"> </tt>
+<a name="Manifest.check_signature"></a><div id="Manifest.check_signature-def"><a name="L146"></a><tt class="py-lineno">146</tt> <a class="py-toggle" href="#" id="Manifest.check_signature-toggle" onclick="return toggle('Manifest.check_signature');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="backend.cdn_tools.manifest.Manifest-class.html#check_signature">check_signature</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Manifest.check_signature-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Manifest.check_signature-expanded"><a name="L147"></a><tt class="py-lineno">147</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">signature</tt> <tt class="py-keyword">and</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-50" class="py-name"><a title="backend.satellite_exporter.handlers.non_auth_dumper.ContainerWriter.data
+backend.satellite_tools.exporter.xmlWriter.XMLWriter.data" class="py-name" href="#" onclick="return doclink('link-50', 'data', 'link-6');">data</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L148"></a><tt class="py-lineno">148</tt>  <tt class="py-line">            <tt class="py-name">certs</tt> <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt id="link-51" class="py-name" targets="Function rhnpush.uploadLib.listdir()=rhnpush.uploadLib-module.html#listdir"><a title="rhnpush.uploadLib.listdir" class="py-name" href="#" onclick="return doclink('link-51', 'listdir', 'link-51');">listdir</a></tt><tt class="py-op">(</tt><tt id="link-52" class="py-name"><a title="backend.cdn_tools.constants
+backend.satellite_tools.constants
+virtualization.constants" class="py-name" href="#" onclick="return doclink('link-52', 'constants', 'link-0');">constants</a></tt><tt class="py-op">.</tt><tt id="link-53" class="py-name" targets="Variable backend.cdn_tools.constants.CANDLEPIN_CA_CERT_DIR=backend.cdn_tools.constants-module.html#CANDLEPIN_CA_CERT_DIR"><a title="backend.cdn_tools.constants.CANDLEPIN_CA_CERT_DIR" class="py-name" href="#" onclick="return doclink('link-53', 'CANDLEPIN_CA_CERT_DIR', 'link-53');">CANDLEPIN_CA_CERT_DIR</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L149"></a><tt class="py-lineno">149</tt>  <tt class="py-line">            <tt class="py-comment"># At least one certificate has to match</tt> </tt>
+<a name="L150"></a><tt class="py-lineno">150</tt>  <tt class="py-line">            <tt class="py-keyword">for</tt> <tt class="py-name">cert_name</tt> <tt class="py-keyword">in</tt> <tt class="py-name">certs</tt><tt class="py-op">:</tt> </tt>
+<a name="L151"></a><tt class="py-lineno">151</tt>  <tt class="py-line">                <tt class="py-name">cert_file</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+<a name="L152"></a><tt class="py-lineno">152</tt>  <tt class="py-line">                <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L153"></a><tt class="py-lineno">153</tt>  <tt class="py-line">                    <tt class="py-name">cert_file</tt> <tt class="py-op">=</tt> <tt class="py-name">open</tt><tt class="py-op">(</tt><tt id="link-54" class="py-name"><a title="backend.cdn_tools.constants
+backend.satellite_tools.constants
+virtualization.constants" class="py-name" href="#" onclick="return doclink('link-54', 'constants', 'link-0');">constants</a></tt><tt class="py-op">.</tt><tt id="link-55" class="py-name"><a title="backend.cdn_tools.constants.CANDLEPIN_CA_CERT_DIR" class="py-name" href="#" onclick="return doclink('link-55', 'CANDLEPIN_CA_CERT_DIR', 'link-53');">CANDLEPIN_CA_CERT_DIR</a></tt> <tt class="py-op">+</tt> <tt class="py-string">'/'</tt> <tt class="py-op">+</tt> <tt class="py-name">cert_name</tt><tt class="py-op">,</tt> <tt class="py-string">'r'</tt><tt class="py-op">)</tt> </tt>
+<a name="L154"></a><tt class="py-lineno">154</tt>  <tt class="py-line">                    <tt id="link-56" class="py-name"><a title="backend.server.handlers.sat.cert" class="py-name" href="#" onclick="return doclink('link-56', 'cert', 'link-37');">cert</a></tt> <tt class="py-op">=</tt> <tt class="py-name">X509</tt><tt class="py-op">.</tt><tt class="py-name">load_cert_string</tt><tt class="py-op">(</tt><tt class="py-name">cert_file</tt><tt class="py-op">.</tt><tt id="link-57" class="py-name"><a title="backend.wsgi.wsgiRequest.WsgiRequest.read
+rhn.SSL.SSLSocket.read
+rhn.nonblocking.NonBlockingFile.read
+rhn.transports.File.read
+rhn.transports.Input.read
+rhnkickstart.lilo.LiloConfigFile.read
+rhnpush.archive.ArchiveParser.read
+src.jabber_lib.JabberClient.read" class="py-name" href="#" onclick="return doclink('link-57', 'read', 'link-9');">read</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L155"></a><tt class="py-lineno">155</tt>  <tt class="py-line">                <tt class="py-keyword">except</tt> <tt class="py-op">(</tt><tt class="py-name">IOError</tt><tt class="py-op">,</tt> <tt class="py-name">X509</tt><tt class="py-op">.</tt><tt class="py-name">X509Error</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L156"></a><tt class="py-lineno">156</tt>  <tt class="py-line">                    <tt class="py-keyword">continue</tt> </tt>
+<a name="L157"></a><tt class="py-lineno">157</tt>  <tt class="py-line">                <tt class="py-keyword">finally</tt><tt class="py-op">:</tt> </tt>
+<a name="L158"></a><tt class="py-lineno">158</tt>  <tt class="py-line">                    <tt class="py-keyword">if</tt> <tt class="py-name">cert_file</tt> <tt class="py-keyword">is</tt> <tt class="py-keyword">not</tt> <tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L159"></a><tt class="py-lineno">159</tt>  <tt class="py-line">                        <tt class="py-name">cert_file</tt><tt class="py-op">.</tt><tt id="link-58" class="py-name"><a title="backend.common.rhnCache.ClosingZipFile.close
+backend.common.rhnCache.LockedFile.close
+backend.satellite_exporter.handlers.non_auth_dumper.NonAuthenticatedDumper.close
+backend.satellite_tools.connection.CompressedStream.close
+backend.satellite_tools.disk_dumper.dumper.CachedQueryIterator.close
+backend.satellite_tools.disk_dumper.dumper.XML_Dumper.close
+backend.satellite_tools.disk_dumper.iss.Dumper.close
+backend.satellite_tools.disk_dumper.string_buffer.StringBuffer.close
+backend.satellite_tools.satsync.StreamProducer.close
+backend.satellite_tools.sync_handlers.ContainerHandler.close
+backend.satellite_tools.xmlSource.BaseDispatchHandler.close
+backend.server.rhnSQL.driver_cx_Oracle.Database.close
+backend.server.rhnSQL.driver_postgresql.Cursor.close
+backend.server.rhnSQL.sql_base.Database.close
+proxy.responseContext.ResponseContext.close
+rhn.SSL.SSLSocket.close
+rhn.rpclib.Server.close
+rhn.transports.BaseOutput.close
+up2date_client.rhnregGui.NetworkConfigDialog.close" class="py-name" href="#" onclick="return doclink('link-58', 'close', 'link-15');">close</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L160"></a><tt class="py-lineno">160</tt>  <tt class="py-line">                <tt class="py-name">pubkey</tt> <tt class="py-op">=</tt> <tt id="link-59" class="py-name"><a title="backend.server.handlers.sat.cert" class="py-name" href="#" onclick="return doclink('link-59', 'cert', 'link-37');">cert</a></tt><tt class="py-op">.</tt><tt class="py-name">get_pubkey</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L161"></a><tt class="py-lineno">161</tt>  <tt class="py-line">                <tt class="py-name">pubkey</tt><tt class="py-op">.</tt><tt class="py-name">reset_context</tt><tt class="py-op">(</tt><tt class="py-name">md</tt><tt class="py-op">=</tt><tt class="py-string">'sha256'</tt><tt class="py-op">)</tt> </tt>
+<a name="L162"></a><tt class="py-lineno">162</tt>  <tt class="py-line">                <tt class="py-name">pubkey</tt><tt class="py-op">.</tt><tt class="py-name">verify_init</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L163"></a><tt class="py-lineno">163</tt>  <tt class="py-line"> </tt>
+<a name="L164"></a><tt class="py-lineno">164</tt>  <tt class="py-line">                <tt class="py-name">pubkey</tt><tt class="py-op">.</tt><tt class="py-name">verify_update</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-60" class="py-name"><a title="backend.satellite_exporter.handlers.non_auth_dumper.ContainerWriter.data
+backend.satellite_tools.exporter.xmlWriter.XMLWriter.data" class="py-name" href="#" onclick="return doclink('link-60', 'data', 'link-6');">data</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L165"></a><tt class="py-lineno">165</tt>  <tt class="py-line">                <tt class="py-keyword">if</tt> <tt class="py-name">pubkey</tt><tt class="py-op">.</tt><tt class="py-name">verify_final</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">signature</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L166"></a><tt class="py-lineno">166</tt>  <tt class="py-line">                    <tt class="py-keyword">return</tt> <tt class="py-name">True</tt> </tt>
+<a name="L167"></a><tt class="py-lineno">167</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">False</tt> </tt>
+</div></div><a name="L168"></a><tt class="py-lineno">168</tt>  <tt class="py-line"> </tt>
+<a name="L169"></a><tt class="py-lineno">169</tt>  <tt class="py-line"> </tt>
+<a name="Entitlement"></a><div id="Entitlement-def"><a name="L170"></a><tt class="py-lineno">170</tt> <a class="py-toggle" href="#" id="Entitlement-toggle" onclick="return toggle('Entitlement');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="backend.cdn_tools.manifest.Entitlement-class.html">Entitlement</a><tt class="py-op">(</tt><tt class="py-base-class">object</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Entitlement-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="Entitlement-expanded"><a name="Entitlement.__init__"></a><div id="Entitlement.__init__-def"><a name="L171"></a><tt class="py-lineno">171</tt> <a class="py-toggle" href="#" id="Entitlement.__init__-toggle" onclick="return toggle('Entitlement.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="backend.cdn_tools.manifest.Entitlement-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">products</tt><tt class="py-op">,</tt> <tt class="py-param">credentials</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Entitlement.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Entitlement.__init__-expanded"><a name="L172"></a><tt class="py-lineno">172</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">products</tt> <tt class="py-keyword">and</tt> <tt class="py-name">credentials</tt><tt class="py-op">:</tt> </tt>
+<a name="L173"></a><tt class="py-lineno">173</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">products</tt> <tt class="py-op">=</tt> <tt class="py-name">products</tt> </tt>
+<a name="L174"></a><tt class="py-lineno">174</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">credentials</tt> <tt class="py-op">=</tt> <tt class="py-name">credentials</tt> </tt>
+<a name="L175"></a><tt class="py-lineno">175</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L176"></a><tt class="py-lineno">176</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt id="link-61" class="py-name" targets="Class backend.cdn_tools.manifest.IncorrectEntitlementError=backend.cdn_tools.manifest.IncorrectEntitlementError-class.html"><a title="backend.cdn_tools.manifest.IncorrectEntitlementError" class="py-name" href="#" onclick="return doclink('link-61', 'IncorrectEntitlementError', 'link-61');">IncorrectEntitlementError</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L177"></a><tt class="py-lineno">177</tt>  <tt class="py-line"> </tt>
+<a name="Entitlement.get_products"></a><div id="Entitlement.get_products-def"><a name="L178"></a><tt class="py-lineno">178</tt> <a class="py-toggle" href="#" id="Entitlement.get_products-toggle" onclick="return toggle('Entitlement.get_products');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="backend.cdn_tools.manifest.Entitlement-class.html#get_products">get_products</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Entitlement.get_products-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Entitlement.get_products-expanded"><a name="L179"></a><tt class="py-lineno">179</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">products</tt> </tt>
+</div><a name="L180"></a><tt class="py-lineno">180</tt>  <tt class="py-line"> </tt>
+<a name="Entitlement.get_credentials"></a><div id="Entitlement.get_credentials-def"><a name="L181"></a><tt class="py-lineno">181</tt> <a class="py-toggle" href="#" id="Entitlement.get_credentials-toggle" onclick="return toggle('Entitlement.get_credentials');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="backend.cdn_tools.manifest.Entitlement-class.html#get_credentials">get_credentials</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Entitlement.get_credentials-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Entitlement.get_credentials-expanded"><a name="L182"></a><tt class="py-lineno">182</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">credentials</tt> </tt>
+</div></div><a name="L183"></a><tt class="py-lineno">183</tt>  <tt class="py-line"> </tt>
+<a name="L184"></a><tt class="py-lineno">184</tt>  <tt class="py-line"> </tt>
+<a name="Credentials"></a><div id="Credentials-def"><a name="L185"></a><tt class="py-lineno">185</tt> <a class="py-toggle" href="#" id="Credentials-toggle" onclick="return toggle('Credentials');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="backend.cdn_tools.manifest.Credentials-class.html">Credentials</a><tt class="py-op">(</tt><tt class="py-base-class">object</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Credentials-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="Credentials-expanded"><a name="Credentials.__init__"></a><div id="Credentials.__init__-def"><a name="L186"></a><tt class="py-lineno">186</tt> <a class="py-toggle" href="#" id="Credentials.__init__-toggle" onclick="return toggle('Credentials.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="backend.cdn_tools.manifest.Credentials-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">identifier</tt><tt class="py-op">,</tt> <tt class="py-param">cert</tt><tt class="py-op">,</tt> <tt class="py-param">key</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Credentials.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Credentials.__init__-expanded"><a name="L187"></a><tt class="py-lineno">187</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">identifier</tt><tt class="py-op">:</tt> </tt>
+<a name="L188"></a><tt class="py-lineno">188</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">id</tt> <tt class="py-op">=</tt> <tt class="py-name">identifier</tt> </tt>
+<a name="L189"></a><tt class="py-lineno">189</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L190"></a><tt class="py-lineno">190</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt id="link-62" class="py-name" targets="Class backend.cdn_tools.manifest.IncorrectCredentialsError=backend.cdn_tools.manifest.IncorrectCredentialsError-class.html"><a title="backend.cdn_tools.manifest.IncorrectCredentialsError" class="py-name" href="#" onclick="return doclink('link-62', 'IncorrectCredentialsError', 'link-62');">IncorrectCredentialsError</a></tt><tt class="py-op">(</tt> </tt>
+<a name="L191"></a><tt class="py-lineno">191</tt>  <tt class="py-line">                <tt class="py-string">"ERROR: ID of credentials has to be defined"</tt> </tt>
+<a name="L192"></a><tt class="py-lineno">192</tt>  <tt class="py-line">            <tt class="py-op">)</tt> </tt>
+<a name="L193"></a><tt class="py-lineno">193</tt>  <tt class="py-line"> </tt>
+<a name="L194"></a><tt class="py-lineno">194</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt id="link-63" class="py-name"><a title="backend.server.handlers.sat.cert" class="py-name" href="#" onclick="return doclink('link-63', 'cert', 'link-37');">cert</a></tt> <tt class="py-keyword">and</tt> <tt class="py-name">key</tt><tt class="py-op">:</tt> </tt>
+<a name="L195"></a><tt class="py-lineno">195</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-64" class="py-name"><a title="backend.server.handlers.sat.cert" class="py-name" href="#" onclick="return doclink('link-64', 'cert', 'link-37');">cert</a></tt> <tt class="py-op">=</tt> <tt id="link-65" class="py-name"><a title="backend.server.handlers.sat.cert" class="py-name" href="#" onclick="return doclink('link-65', 'cert', 'link-37');">cert</a></tt> </tt>
+<a name="L196"></a><tt class="py-lineno">196</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">key</tt> <tt class="py-op">=</tt> <tt class="py-name">key</tt> </tt>
+<a name="L197"></a><tt class="py-lineno">197</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L198"></a><tt class="py-lineno">198</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt id="link-66" class="py-name"><a title="backend.cdn_tools.manifest.IncorrectCredentialsError" class="py-name" href="#" onclick="return doclink('link-66', 'IncorrectCredentialsError', 'link-62');">IncorrectCredentialsError</a></tt><tt class="py-op">(</tt> </tt>
+<a name="L199"></a><tt class="py-lineno">199</tt>  <tt class="py-line">                <tt class="py-string">"ERROR: Trying to create object with cert = %s and key = %s"</tt> </tt>
+<a name="L200"></a><tt class="py-lineno">200</tt>  <tt class="py-line">                <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt id="link-67" class="py-name"><a title="backend.server.handlers.sat.cert" class="py-name" href="#" onclick="return doclink('link-67', 'cert', 'link-37');">cert</a></tt><tt class="py-op">,</tt> <tt class="py-name">key</tt><tt class="py-op">)</tt> </tt>
+<a name="L201"></a><tt class="py-lineno">201</tt>  <tt class="py-line">            <tt class="py-op">)</tt> </tt>
+</div><a name="L202"></a><tt class="py-lineno">202</tt>  <tt class="py-line"> </tt>
+<a name="Credentials.get_id"></a><div id="Credentials.get_id-def"><a name="L203"></a><tt class="py-lineno">203</tt> <a class="py-toggle" href="#" id="Credentials.get_id-toggle" onclick="return toggle('Credentials.get_id');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="backend.cdn_tools.manifest.Credentials-class.html#get_id">get_id</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Credentials.get_id-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Credentials.get_id-expanded"><a name="L204"></a><tt class="py-lineno">204</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">id</tt> </tt>
+</div><a name="L205"></a><tt class="py-lineno">205</tt>  <tt class="py-line"> </tt>
+<a name="Credentials.get_cert"></a><div id="Credentials.get_cert-def"><a name="L206"></a><tt class="py-lineno">206</tt> <a class="py-toggle" href="#" id="Credentials.get_cert-toggle" onclick="return toggle('Credentials.get_cert');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="backend.cdn_tools.manifest.Credentials-class.html#get_cert">get_cert</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Credentials.get_cert-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Credentials.get_cert-expanded"><a name="L207"></a><tt class="py-lineno">207</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-68" class="py-name"><a title="backend.server.handlers.sat.cert" class="py-name" href="#" onclick="return doclink('link-68', 'cert', 'link-37');">cert</a></tt> </tt>
+</div><a name="L208"></a><tt class="py-lineno">208</tt>  <tt class="py-line"> </tt>
+<a name="Credentials.get_key"></a><div id="Credentials.get_key-def"><a name="L209"></a><tt class="py-lineno">209</tt> <a class="py-toggle" href="#" id="Credentials.get_key-toggle" onclick="return toggle('Credentials.get_key');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="backend.cdn_tools.manifest.Credentials-class.html#get_key">get_key</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Credentials.get_key-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Credentials.get_key-expanded"><a name="L210"></a><tt class="py-lineno">210</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">key</tt> </tt>
+</div></div><a name="L211"></a><tt class="py-lineno">211</tt>  <tt class="py-line"> </tt>
+<a name="L212"></a><tt class="py-lineno">212</tt>  <tt class="py-line"> </tt>
+<a name="Product"></a><div id="Product-def"><a name="L213"></a><tt class="py-lineno">213</tt> <a class="py-toggle" href="#" id="Product-toggle" onclick="return toggle('Product');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="backend.cdn_tools.manifest.Product-class.html">Product</a><tt class="py-op">(</tt><tt class="py-base-class">object</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Product-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="Product-expanded"><a name="Product.__init__"></a><div id="Product.__init__-def"><a name="L214"></a><tt class="py-lineno">214</tt> <a class="py-toggle" href="#" id="Product.__init__-toggle" onclick="return toggle('Product.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="backend.cdn_tools.manifest.Product-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">identifier</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Product.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Product.__init__-expanded"><a name="L215"></a><tt class="py-lineno">215</tt>  <tt class="py-line">        <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L216"></a><tt class="py-lineno">216</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">id</tt> <tt class="py-op">=</tt> <tt id="link-69" class="py-name" targets="Class int=int-class.html"><a title="int" class="py-name" href="#" onclick="return doclink('link-69', 'int', 'link-69');">int</a></tt><tt class="py-op">(</tt><tt class="py-name">identifier</tt><tt class="py-op">)</tt> </tt>
+<a name="L217"></a><tt class="py-lineno">217</tt>  <tt class="py-line">        <tt class="py-keyword">except</tt> <tt class="py-name">ValueError</tt><tt class="py-op">:</tt> </tt>
+<a name="L218"></a><tt class="py-lineno">218</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt id="link-70" class="py-name" targets="Class backend.cdn_tools.manifest.IncorrectProductError=backend.cdn_tools.manifest.IncorrectProductError-class.html"><a title="backend.cdn_tools.manifest.IncorrectProductError" class="py-name" href="#" onclick="return doclink('link-70', 'IncorrectProductError', 'link-70');">IncorrectProductError</a></tt><tt class="py-op">(</tt> </tt>
+<a name="L219"></a><tt class="py-lineno">219</tt>  <tt class="py-line">                <tt class="py-string">"ERROR: Invalid product id: %s"</tt> <tt class="py-op">%</tt> <tt class="py-name">identifier</tt> </tt>
+<a name="L220"></a><tt class="py-lineno">220</tt>  <tt class="py-line">            <tt class="py-op">)</tt> </tt>
+<a name="L221"></a><tt class="py-lineno">221</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">repositories</tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt><tt class="py-op">}</tt> </tt>
+</div><a name="L222"></a><tt class="py-lineno">222</tt>  <tt class="py-line"> </tt>
+<a name="Product.get_id"></a><div id="Product.get_id-def"><a name="L223"></a><tt class="py-lineno">223</tt> <a class="py-toggle" href="#" id="Product.get_id-toggle" onclick="return toggle('Product.get_id');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="backend.cdn_tools.manifest.Product-class.html#get_id">get_id</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Product.get_id-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Product.get_id-expanded"><a name="L224"></a><tt class="py-lineno">224</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">id</tt> </tt>
+</div><a name="L225"></a><tt class="py-lineno">225</tt>  <tt class="py-line"> </tt>
+<a name="Product.get_repositories"></a><div id="Product.get_repositories-def"><a name="L226"></a><tt class="py-lineno">226</tt> <a class="py-toggle" href="#" id="Product.get_repositories-toggle" onclick="return toggle('Product.get_repositories');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="backend.cdn_tools.manifest.Product-class.html#get_repositories">get_repositories</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Product.get_repositories-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Product.get_repositories-expanded"><a name="L227"></a><tt class="py-lineno">227</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">repositories</tt> </tt>
+</div><a name="L228"></a><tt class="py-lineno">228</tt>  <tt class="py-line"> </tt>
+<a name="Product.add_repository"></a><div id="Product.add_repository-def"><a name="L229"></a><tt class="py-lineno">229</tt> <a class="py-toggle" href="#" id="Product.add_repository-toggle" onclick="return toggle('Product.add_repository');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="backend.cdn_tools.manifest.Product-class.html#add_repository">add_repository</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">label</tt><tt class="py-op">,</tt> <tt class="py-param">url</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Product.add_repository-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Product.add_repository-expanded"><a name="L230"></a><tt class="py-lineno">230</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">repositories</tt><tt class="py-op">[</tt><tt class="py-name">label</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt id="link-71" class="py-name" targets="Variable backend.satellite_tools.xmlWireSource.BaseWireSource.url=backend.satellite_tools.xmlWireSource.BaseWireSource-class.html#url"><a title="backend.satellite_tools.xmlWireSource.BaseWireSource.url" class="py-name" href="#" onclick="return doclink('link-71', 'url', 'link-71');">url</a></tt> </tt>
+</div></div><a name="L231"></a><tt class="py-lineno">231</tt>  <tt class="py-line"> </tt>
+<a name="L232"></a><tt class="py-lineno">232</tt>  <tt class="py-line"> </tt>
+<a name="IncorrectProductError"></a><div id="IncorrectProductError-def"><a name="L233"></a><tt class="py-lineno">233</tt> <a class="py-toggle" href="#" id="IncorrectProductError-toggle" onclick="return toggle('IncorrectProductError');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="backend.cdn_tools.manifest.IncorrectProductError-class.html">IncorrectProductError</a><tt class="py-op">(</tt><tt class="py-base-class">Exception</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="IncorrectProductError-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="IncorrectProductError-expanded"><a name="L234"></a><tt class="py-lineno">234</tt>  <tt class="py-line">    <tt class="py-keyword">pass</tt> </tt>
+</div><a name="L235"></a><tt class="py-lineno">235</tt>  <tt class="py-line"> </tt>
+<a name="L236"></a><tt class="py-lineno">236</tt>  <tt class="py-line"> </tt>
+<a name="IncorrectEntitlementError"></a><div id="IncorrectEntitlementError-def"><a name="L237"></a><tt class="py-lineno">237</tt> <a class="py-toggle" href="#" id="IncorrectEntitlementError-toggle" onclick="return toggle('IncorrectEntitlementError');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="backend.cdn_tools.manifest.IncorrectEntitlementError-class.html">IncorrectEntitlementError</a><tt class="py-op">(</tt><tt class="py-base-class">Exception</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="IncorrectEntitlementError-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="IncorrectEntitlementError-expanded"><a name="L238"></a><tt class="py-lineno">238</tt>  <tt class="py-line">    <tt class="py-keyword">pass</tt> </tt>
+</div><a name="L239"></a><tt class="py-lineno">239</tt>  <tt class="py-line"> </tt>
+<a name="L240"></a><tt class="py-lineno">240</tt>  <tt class="py-line"> </tt>
+<a name="IncorrectCredentialsError"></a><div id="IncorrectCredentialsError-def"><a name="L241"></a><tt class="py-lineno">241</tt> <a class="py-toggle" href="#" id="IncorrectCredentialsError-toggle" onclick="return toggle('IncorrectCredentialsError');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="backend.cdn_tools.manifest.IncorrectCredentialsError-class.html">IncorrectCredentialsError</a><tt class="py-op">(</tt><tt class="py-base-class">Exception</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="IncorrectCredentialsError-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="IncorrectCredentialsError-expanded"><a name="L242"></a><tt class="py-lineno">242</tt>  <tt class="py-line">    <tt class="py-keyword">pass</tt> </tt>
+</div><a name="L243"></a><tt class="py-lineno">243</tt>  <tt class="py-line"> </tt>
+<a name="L244"></a><tt class="py-lineno">244</tt>  <tt class="py-line"> </tt>
+<a name="IncorrectEntitlementsFileFormatError"></a><div id="IncorrectEntitlementsFileFormatError-def"><a name="L245"></a><tt class="py-lineno">245</tt> <a class="py-toggle" href="#" id="IncorrectEntitlementsFileFormatError-toggle" onclick="return toggle('IncorrectEntitlementsFileFormatError');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="backend.cdn_tools.manifest.IncorrectEntitlementsFileFormatError-class.html">IncorrectEntitlementsFileFormatError</a><tt class="py-op">(</tt><tt class="py-base-class">Exception</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="IncorrectEntitlementsFileFormatError-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="IncorrectEntitlementsFileFormatError-expanded"><a name="L246"></a><tt class="py-lineno">246</tt>  <tt class="py-line">    <tt class="py-keyword">pass</tt> </tt>
+</div><a name="L247"></a><tt class="py-lineno">247</tt>  <tt class="py-line"> </tt>
+<a name="L248"></a><tt class="py-lineno">248</tt>  <tt class="py-line"> </tt>
+<a name="MissingSatelliteCertificateError"></a><div id="MissingSatelliteCertificateError-def"><a name="L249"></a><tt class="py-lineno">249</tt> <a class="py-toggle" href="#" id="MissingSatelliteCertificateError-toggle" onclick="return toggle('MissingSatelliteCertificateError');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="backend.cdn_tools.manifest.MissingSatelliteCertificateError-class.html">MissingSatelliteCertificateError</a><tt class="py-op">(</tt><tt class="py-base-class">Exception</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MissingSatelliteCertificateError-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="MissingSatelliteCertificateError-expanded"><a name="L250"></a><tt class="py-lineno">250</tt>  <tt class="py-line">    <tt class="py-keyword">pass</tt> </tt>
+</div><a name="L251"></a><tt class="py-lineno">251</tt>  <tt class="py-line"> </tt>
+<a name="L252"></a><tt class="py-lineno">252</tt>  <tt class="py-line"> </tt>
+<a name="ManifestValidationError"></a><div id="ManifestValidationError-def"><a name="L253"></a><tt class="py-lineno">253</tt> <a class="py-toggle" href="#" id="ManifestValidationError-toggle" onclick="return toggle('ManifestValidationError');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="backend.cdn_tools.manifest.ManifestValidationError-class.html">ManifestValidationError</a><tt class="py-op">(</tt><tt class="py-base-class">Exception</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ManifestValidationError-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="ManifestValidationError-expanded"><a name="L254"></a><tt class="py-lineno">254</tt>  <tt class="py-line">    <tt class="py-keyword">pass</tt> </tt>
+</div><a name="L255"></a><tt class="py-lineno">255</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Fri Nov 25 11:30:42 2016
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

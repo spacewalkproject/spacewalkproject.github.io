@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>up2date_client.capabilities.Capabilities</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="up2date_client-module.html">Package&nbsp;up2date_client</a> ::
+        <a href="up2date_client.capabilities-module.html">Module&nbsp;capabilities</a> ::
+        Class&nbsp;Capabilities
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="up2date_client.capabilities.Capabilities-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class Capabilities</h1><p class="nomargin-top"><span class="codelink"><a href="up2date_client.capabilities-pysrc.html#Capabilities">source&nbsp;code</a></span></p>
+<center>
+<center>  <map id="uml_class_diagram_for_up2date_" name="uml_class_diagram_for_up2date_">
+<area shape="rect" id="node1_23" href="up2date_client.capabilities.Capabilities-class.html#__init__" title="up2date_client.capabilities.Capabilities.__init__" alt="" coords="17,410,284,430"/>
+<area shape="rect" id="node1_24" href="up2date_client.capabilities.Capabilities-class.html#populate" title="up2date_client.capabilities.Capabilities.populate" alt="" coords="17,430,284,450"/>
+<area shape="rect" id="node1_25" href="up2date_client.capabilities.Capabilities-class.html#parseCapVersion" title="up2date_client.capabilities.Capabilities.parseCapVersion" alt="" coords="17,450,284,470"/>
+<area shape="rect" id="node1_26" href="up2date_client.capabilities.Capabilities-class.html#validateCap" title="up2date_client.capabilities.Capabilities.validateCap" alt="" coords="17,470,284,490"/>
+<area shape="rect" id="node1_27" href="up2date_client.capabilities.Capabilities-class.html#validate" title="up2date_client.capabilities.Capabilities.validate" alt="" coords="17,490,284,510"/>
+<area shape="rect" id="node1_28" href="up2date_client.capabilities.Capabilities-class.html#setConfig" title="up2date_client.capabilities.Capabilities.setConfig" alt="" coords="17,510,284,530"/>
+<area shape="rect" id="node1_29" href="up2date_client.capabilities.Capabilities-class.html#workaroundMissingCaps" title="up2date_client.capabilities.Capabilities.workaroundMissingCaps" alt="" coords="17,530,284,550"/>
+<area shape="rect" id="node1_30" href="up2date_client.capabilities.Capabilities-class.html#hasCapability" title="Checks if the server supports a capability and optionally a version." alt="" coords="17,550,284,570"/>
+<area shape="rect" id="node1" href="up2date_client.capabilities.Capabilities-class.html" title="up2date_client.capabilities.Capabilities" alt="" coords="5,377,296,576"/>
+<area shape="rect" id="node2_31" href="javascript:void(0);" title="hash(x)" alt="" coords="44,30,257,50"/>
+<area shape="rect" id="node2_32" href="javascript:void(0);" title="UserDict.UserDict.__repr__" alt="" coords="44,53,257,73"/>
+<area shape="rect" id="node2_33" href="javascript:void(0);" title="UserDict.UserDict.__cmp__" alt="" coords="44,73,257,93"/>
+<area shape="rect" id="node2_34" href="javascript:void(0);" title="UserDict.UserDict.__len__" alt="" coords="44,93,257,113"/>
+<area shape="rect" id="node2_35" href="javascript:void(0);" title="UserDict.UserDict.__getitem__" alt="" coords="44,113,257,133"/>
+<area shape="rect" id="node2_36" href="javascript:void(0);" title="UserDict.UserDict.__setitem__" alt="" coords="44,133,257,153"/>
+<area shape="rect" id="node2_37" href="javascript:void(0);" title="UserDict.UserDict.__delitem__" alt="" coords="44,153,257,173"/>
+<area shape="rect" id="node2_38" href="javascript:void(0);" title="UserDict.UserDict.clear" alt="" coords="44,173,257,193"/>
+<area shape="rect" id="node2_39" href="javascript:void(0);" title="UserDict.UserDict.copy" alt="" coords="44,193,257,213"/>
+<area shape="rect" id="node2_40" href="javascript:void(0);" title="UserDict.UserDict.keys" alt="" coords="44,213,257,233"/>
+<area shape="rect" id="node2_41" href="javascript:void(0);" title="UserDict.UserDict.items" alt="" coords="44,233,257,253"/>
+<area shape="rect" id="node2_42" href="javascript:void(0);" title="UserDict.UserDict.iteritems" alt="" coords="44,253,257,273"/>
+<area shape="rect" id="node2_43" href="javascript:void(0);" title="UserDict.UserDict.iterkeys" alt="" coords="44,273,257,293"/>
+<area shape="rect" id="node2_44" href="javascript:void(0);" title="UserDict.UserDict.itervalues" alt="" coords="44,293,257,313"/>
+<area shape="rect" id="node2_45" href="javascript:void(0);" title="UserDict.UserDict.fromkeys" alt="" coords="44,333,257,353"/>
+<area shape="rect" id="node2" href="javascript:void(0);" title="UserDict.UserDict" alt="" coords="32,5,269,359"/>
+</map>
+  <img src="uml_class_diagram_for_up2date_.png" alt='' usemap="#uml_class_diagram_for_up2date_" ismap="ismap" class="graph-without-title" />
+</center>
+</center>
+<hr />
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="up2date_client.capabilities.Capabilities-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="up2date_client.capabilities-pysrc.html#Capabilities.__init__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="populate"></a><span class="summary-sig-name">populate</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">headers</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="up2date_client.capabilities-pysrc.html#Capabilities.populate">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="parseCapVersion"></a><span class="summary-sig-name">parseCapVersion</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">versionString</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="up2date_client.capabilities-pysrc.html#Capabilities.parseCapVersion">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="validateCap"></a><span class="summary-sig-name">validateCap</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">cap</span>,
+        <span class="summary-sig-arg">capvalue</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="up2date_client.capabilities-pysrc.html#Capabilities.validateCap">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="validate"></a><span class="summary-sig-name">validate</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="up2date_client.capabilities-pysrc.html#Capabilities.validate">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setConfig"></a><span class="summary-sig-name">setConfig</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">key</span>,
+        <span class="summary-sig-arg">configItem</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="up2date_client.capabilities-pysrc.html#Capabilities.setConfig">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="workaroundMissingCaps"></a><span class="summary-sig-name">workaroundMissingCaps</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="up2date_client.capabilities-pysrc.html#Capabilities.workaroundMissingCaps">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="up2date_client.capabilities.Capabilities-class.html#hasCapability" class="summary-sig-name">hasCapability</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">capability</span>,
+        <span class="summary-sig-arg">version</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Checks if the server supports a capability and optionally a version.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="up2date_client.capabilities-pysrc.html#Capabilities.hasCapability">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>UserDict.UserDict</code></b>:
+      <code>__cmp__</code>,
+      <code>__contains__</code>,
+      <code>__delitem__</code>,
+      <code>__getitem__</code>,
+      <code>__len__</code>,
+      <code>__repr__</code>,
+      <code>__setitem__</code>,
+      <code>clear</code>,
+      <code>copy</code>,
+      <code>get</code>,
+      <code>has_key</code>,
+      <code>items</code>,
+      <code>iteritems</code>,
+      <code>iterkeys</code>,
+      <code>itervalues</code>,
+      <code>keys</code>,
+      <code>pop</code>,
+      <code>popitem</code>,
+      <code>setdefault</code>,
+      <code>update</code>,
+      <code>values</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS METHODS ==================== -->
+<a name="section-ClassMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>UserDict.UserDict</code></b>:
+      <code>fromkeys</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>UserDict.UserDict</code></b>:
+      <code>__hash__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="up2date_client.capabilities-pysrc.html#Capabilities.__init__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  
+  <dl class="fields">
+    <dt>Overrides:
+        UserDict.UserDict.__init__
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="hasCapability"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">hasCapability</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">capability</span>,
+        <span class="sig-arg">version</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="up2date_client.capabilities-pysrc.html#Capabilities.hasCapability">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Checks if the server supports a capability and optionally a version. 
+  Returns True or False.</p>
+  <p>This complements the neededCaps mechanism provided by this module. 
+  Using hasCapability makes it easier to do something only if the server 
+  supports it or to put workaround code in the user of this class. The 
+  neededCaps mechanism makes it easier to put workaround code in this 
+  module, which makes sense if it is to be shared.</p>
+  <p>'capability' should be a string such as 'registration.foobar'. It can 
+  be a capability in 'neededCaps' above or one that isn't there. 'version' 
+  can be a string (where isdigit() is True) or an int.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Fri Nov 25 11:30:34 2016
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

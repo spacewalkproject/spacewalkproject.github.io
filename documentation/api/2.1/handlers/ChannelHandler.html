@@ -1,0 +1,387 @@
+<html>
+<head>
+<meta http-equiv="cache-control" content="no-cache" />
+
+</head>
+<body>
+<div class="spacewalk-toolbar-h1">
+<br />
+
+</div>
+<span class="small-text">( <a href="../index.html">Return to API Overview</a> )</span>
+<div class="rounded-box">
+<h2><a name="top">Available methods</a></h2>
+<ul class="apidoc">
+
+<li><a href="#listAllChannels"/>listAllChannels</a></li>
+<li><a href="#listMyChannels"/>listMyChannels</a></li>
+<li><a href="#listPopularChannels"/>listPopularChannels</a></li>
+<li><a href="#listRedHatChannels"/>listRedHatChannels</a></li>
+<li><a href="#listRetiredChannels"/>listRetiredChannels</a></li>
+<li><a href="#listSharedChannels"/>listSharedChannels</a></li>
+<li><a href="#listSoftwareChannels"/>listSoftwareChannels</a></li>
+<li><a href="#listVendorChannels"/>listVendorChannels</a></li>
+</ul>
+</div>
+<h2>Description</h2>
+Provides method to get back a list of Software Channels.
+<p>
+</p>
+<p><strong>Namespace</strong>:
+channel
+</p>
+<hr />
+
+<h3> <a name="listAllChannels" href="#top">Method: listAllChannels</a></h3>
+Description:<br />
+List all software channels that the user's organization is entitled to.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+array:
+  <ul>
+   <li>
+         
+
+	     struct - channel info
+	<ul>
+     	<li> int "id"</li>
+     	<li> string "label"</li>
+     	<li> string "name"</li>
+     	<li> string "provider_name"</li>
+     	<li> int "packages"</li>
+     	<li> int "systems"</li>
+     	<li> string "arch_name"</li>
+   	</ul>
+ 
+     </li></ul>
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="listMyChannels" href="#top">Method: listMyChannels</a></h3>
+Description:<br />
+List all software channels that belong to the user's organization.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+array:
+  <ul>
+   <li>
+         
+
+	     struct - channel info
+	<ul>
+     	<li> int "id"</li>
+     	<li> string "label"</li>
+     	<li> string "name"</li>
+     	<li> string "provider_name"</li>
+     	<li> int "packages"</li>
+     	<li> int "systems"</li>
+     	<li> string "arch_name"</li>
+   	</ul>
+ 
+     </li></ul>
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="listPopularChannels" href="#top">Method: listPopularChannels</a></h3>
+Description:<br />
+List the most popular software channels.  Channels that have at least
+ the number of systems subscribed as specified by the popularity count will be
+ returned.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    int popularityCount
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+array:
+  <ul>
+   <li>
+         
+
+	     struct - channel info
+	<ul>
+     	<li> int "id"</li>
+     	<li> string "label"</li>
+     	<li> string "name"</li>
+     	<li> string "provider_name"</li>
+     	<li> int "packages"</li>
+     	<li> int "systems"</li>
+     	<li> string "arch_name"</li>
+   	</ul>
+ 
+     </li></ul>
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3 class="deprecated"><a name="listRedHatChannels" href="#top">Method: listRedHatChannels</a></h3>
+Description:<br />
+List all Red Hat software channels that the user's organization is
+ entitled to.
+<p />
+
+
+Deprecated - being replaced by listVendorChannels(String sessionKey) <p />
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+array:
+  <ul>
+   <li>
+         
+
+	     struct - channel info
+	<ul>
+     	<li> int "id"</li>
+     	<li> string "label"</li>
+     	<li> string "name"</li>
+     	<li> string "provider_name"</li>
+     	<li> int "packages"</li>
+     	<li> int "systems"</li>
+     	<li> string "arch_name"</li>
+   	</ul>
+ 
+     </li></ul>
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="listRetiredChannels" href="#top">Method: listRetiredChannels</a></h3>
+Description:<br />
+List all retired software channels.  These are channels that the user's
+ organization is entitled to, but are no longer supported because they have reached
+ their 'end-of-life' date.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+array:
+  <ul>
+   <li>
+         
+
+	     struct - channel info
+	<ul>
+     	<li> int "id"</li>
+     	<li> string "label"</li>
+     	<li> string "name"</li>
+     	<li> string "provider_name"</li>
+     	<li> int "packages"</li>
+     	<li> int "systems"</li>
+     	<li> string "arch_name"</li>
+   	</ul>
+ 
+     </li></ul>
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="listSharedChannels" href="#top">Method: listSharedChannels</a></h3>
+Description:<br />
+List all software channels that may be shared by the user's
+ organization.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+array:
+  <ul>
+   <li>
+         
+
+	     struct - channel info
+	<ul>
+     	<li> int "id"</li>
+     	<li> string "label"</li>
+     	<li> string "name"</li>
+     	<li> string "provider_name"</li>
+     	<li> int "packages"</li>
+     	<li> int "systems"</li>
+     	<li> string "arch_name"</li>
+   	</ul>
+ 
+     </li></ul>
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="listSoftwareChannels" href="#top">Method: listSoftwareChannels</a></h3>
+Description:<br />
+List all visible software channels.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+array:
+  <ul>
+   <li>
+      	     struct - channel
+	<ul>
+          	<li> string "label"</li>
+          	<li> string "name"</li>
+          	<li> string "parent_label"</li>
+          	<li> string "end_of_life"</li>
+          	<li> string "arch"</li>
+      	</ul>
+  </li></ul>
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="listVendorChannels" href="#top">Method: listVendorChannels</a></h3>
+Description:<br />
+Lists all the vendor software channels that the user's organization
+ is entitled to.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+array:
+  <ul>
+   <li>
+         
+
+	     struct - channel info
+	<ul>
+     	<li> int "id"</li>
+     	<li> string "label"</li>
+     	<li> string "name"</li>
+     	<li> string "provider_name"</li>
+     	<li> int "packages"</li>
+     	<li> int "systems"</li>
+     	<li> string "arch_name"</li>
+   	</ul>
+ 
+     </li></ul>
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+</body>
+Generated on 2/25/2014
+</html>

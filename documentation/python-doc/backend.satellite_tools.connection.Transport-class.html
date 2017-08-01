@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>backend.satellite_tools.connection.Transport</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="backend-module.html">Package&nbsp;backend</a> ::
+        <a href="backend.satellite_tools-module.html">Package&nbsp;satellite_tools</a> ::
+        <a href="backend.satellite_tools.connection-module.html">Module&nbsp;connection</a> ::
+        Class&nbsp;Transport
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="backend.satellite_tools.connection.Transport-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class Transport</h1><p class="nomargin-top"><span class="codelink"><a href="backend.satellite_tools.connection-pysrc.html#Transport">source&nbsp;code</a></span></p>
+<center>
+<center>  <map id="uml_class_diagram_for_backend__48" name="uml_class_diagram_for_backend__48">
+<area shape="rect" id="node1_28" href="backend.satellite_tools.connection.Transport-class.html#user_agent" title="backend.satellite_tools.connection.Transport.user_agent" alt="" coords="131,659,302,679"/>
+<area shape="rect" id="node1_29" href="backend.satellite_tools.connection.Transport-class.html#__init__" title="backend.satellite_tools.connection.Transport.__init__" alt="" coords="131,682,302,702"/>
+<area shape="rect" id="node1" href="backend.satellite_tools.connection.Transport-class.html" title="backend.satellite_tools.connection.Transport" alt="" coords="119,635,314,708"/>
+<area shape="rect" id="node2_30" href="rhn.transports.Transport-class.html#set_progress_callback" title="rhn.transports.Transport.set_progress_callback" alt="" coords="18,309,414,329"/>
+<area shape="rect" id="node2_31" href="rhn.transports.Transport-class.html#set_refresh_callback" title="rhn.transports.Transport.set_refresh_callback" alt="" coords="18,329,414,349"/>
+<area shape="rect" id="node2_32" href="rhn.transports.Transport-class.html#set_buffer_size" title="rhn.transports.Transport.set_buffer_size" alt="" coords="18,349,414,369"/>
+<area shape="rect" id="node2_33" href="rhn.transports.Transport-class.html#set_method" title="rhn.transports.Transport.set_method" alt="" coords="18,369,414,389"/>
+<area shape="rect" id="node2_34" href="rhn.transports.Transport-class.html#set_transport_flags" title="rhn.transports.Transport.set_transport_flags" alt="" coords="18,389,414,409"/>
+<area shape="rect" id="node2_35" href="rhn.transports.Transport-class.html#get_transport_flags" title="rhn.transports.Transport.get_transport_flags" alt="" coords="18,409,414,429"/>
+<area shape="rect" id="node2_36" href="rhn.transports.Transport-class.html#validate_transport_flags" title="rhn.transports.Transport.validate_transport_flags" alt="" coords="18,429,414,449"/>
+<area shape="rect" id="node2_37" href="rhn.transports.Transport-class.html#set_header" title="rhn.transports.Transport.set_header" alt="" coords="18,449,414,469"/>
+<area shape="rect" id="node2_38" href="rhn.transports.Transport-class.html#add_header" title="rhn.transports.Transport.add_header" alt="" coords="18,469,414,489"/>
+<area shape="rect" id="node2_39" href="rhn.transports.Transport-class.html#clear_headers" title="rhn.transports.Transport.clear_headers" alt="" coords="18,489,414,509"/>
+<area shape="rect" id="node2_40" href="rhn.transports.Transport-class.html#get_connection" title="rhn.transports.Transport.get_connection" alt="" coords="18,509,414,529"/>
+<area shape="rect" id="node2_41" href="rhn.transports.Transport-class.html#request" title="rhn.transports.Transport.request" alt="" coords="18,529,414,549"/>
+<area shape="rect" id="node2_42" href="rhn.transports.Transport-class.html#redirected" title="rhn.transports.Transport.redirected" alt="" coords="18,549,414,569"/>
+<area shape="rect" id="node2_43" href="rhn.transports.Transport-class.html#parse_response" title="rhn.transports.Transport.parse_response" alt="" coords="18,569,414,589"/>
+<area shape="rect" id="node2_44" href="rhn.transports.Transport-class.html#setlang" title="rhn.transports.Transport.setlang" alt="" coords="18,589,414,609"/>
+<area shape="rect" id="node2" href="rhn.transports.Transport-class.html" title="rhn.transports.Transport" alt="" coords="5,277,425,616"/>
+<area shape="rect" id="node3_45" href="javascript:void(0);" title="xmlrpclib.Transport.accept_gzip_encoding" alt="" coords="38,29,395,49"/>
+<area shape="rect" id="node3_46" href="javascript:void(0);" title="hash(x)" alt="" coords="38,49,395,69"/>
+<area shape="rect" id="node3_47" href="javascript:void(0);" title="xmlrpclib.Transport.close" alt="" coords="38,72,395,92"/>
+<area shape="rect" id="node3_48" href="javascript:void(0);" title="xmlrpclib.Transport.get_host_info" alt="" coords="38,92,395,112"/>
+<area shape="rect" id="node3_49" href="javascript:void(0);" title="xmlrpclib.Transport.getparser" alt="" coords="38,112,395,132"/>
+<area shape="rect" id="node3_50" href="javascript:void(0);" title="xmlrpclib.Transport.make_connection" alt="" coords="38,132,395,152"/>
+<area shape="rect" id="node3_51" href="javascript:void(0);" title="xmlrpclib.Transport.send_content" alt="" coords="38,152,395,172"/>
+<area shape="rect" id="node3_52" href="javascript:void(0);" title="xmlrpclib.Transport.send_host" alt="" coords="38,172,395,192"/>
+<area shape="rect" id="node3_53" href="javascript:void(0);" title="xmlrpclib.Transport.send_request" alt="" coords="38,192,395,212"/>
+<area shape="rect" id="node3_54" href="javascript:void(0);" title="xmlrpclib.Transport.send_user_agent" alt="" coords="38,212,395,232"/>
+<area shape="rect" id="node3_55" href="javascript:void(0);" title="xmlrpclib.Transport.single_request" alt="" coords="38,232,395,252"/>
+<area shape="rect" id="node3" href="javascript:void(0);" title="Handles an HTTP transaction to an XML&#45;RPC server." alt="" coords="26,5,407,259"/>
+</map>
+  <img src="uml_class_diagram_for_backend__48.png" alt='' usemap="#uml_class_diagram_for_backend__48" ismap="ismap" class="graph-without-title" />
+</center>
+</center>
+<hr />
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="backend.satellite_tools.connection.Transport-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">timeout</span>=<span class="summary-sig-default">None</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="backend.satellite_tools.connection-pysrc.html#Transport.__init__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="backend.satellite_tools.connection.Transport-class.html#_process_response" class="summary-sig-name" onclick="show_private();">_process_response</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">fd</span>,
+        <span class="summary-sig-arg">connection</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="backend.satellite_tools.connection-pysrc.html#Transport._process_response">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="rhn.transports.Transport-class.html">rhn.transports.Transport</a></code></b>:
+      <code><a href="rhn.transports.Transport-class.html#add_header">add_header</a></code>,
+      <code><a href="rhn.transports.Transport-class.html#clear_headers">clear_headers</a></code>,
+      <code><a href="rhn.transports.Transport-class.html#get_connection">get_connection</a></code>,
+      <code><a href="rhn.transports.Transport-class.html#get_transport_flags">get_transport_flags</a></code>,
+      <code><a href="rhn.transports.Transport-class.html#parse_response">parse_response</a></code>,
+      <code><a href="rhn.transports.Transport-class.html#redirected">redirected</a></code>,
+      <code><a href="rhn.transports.Transport-class.html#request">request</a></code>,
+      <code><a href="rhn.transports.Transport-class.html#set_buffer_size">set_buffer_size</a></code>,
+      <code><a href="rhn.transports.Transport-class.html#set_header">set_header</a></code>,
+      <code><a href="rhn.transports.Transport-class.html#set_method">set_method</a></code>,
+      <code><a href="rhn.transports.Transport-class.html#set_progress_callback">set_progress_callback</a></code>,
+      <code><a href="rhn.transports.Transport-class.html#set_refresh_callback">set_refresh_callback</a></code>,
+      <code><a href="rhn.transports.Transport-class.html#set_transport_flags">set_transport_flags</a></code>,
+      <code><a href="rhn.transports.Transport-class.html#setlang">setlang</a></code>,
+      <code><a href="rhn.transports.Transport-class.html#validate_transport_flags">validate_transport_flags</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>xmlrpclib.Transport</code></b>:
+      <code>close</code>,
+      <code>get_host_info</code>,
+      <code>getparser</code>,
+      <code>make_connection</code>,
+      <code>send_content</code>,
+      <code>send_host</code>,
+      <code>send_request</code>,
+      <code>send_user_agent</code>,
+      <code>single_request</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="user_agent"></a><span class="summary-name">user_agent</span> = <code title="&quot;satellite-sync/%s&quot; % __version__">&quot;satellite-sync/%s&quot; % __version__</code>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>xmlrpclib.Transport</code></b>:
+      <code>accept_gzip_encoding</code>,
+      <code>encode_threshold</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">timeout</span>=<span class="sig-default">None</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="backend.satellite_tools.connection-pysrc.html#Transport.__init__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  
+  <dl class="fields">
+    <dt>Overrides:
+        xmlrpclib.Transport.__init__
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_process_response"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_process_response</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">fd</span>,
+        <span class="sig-arg">connection</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="backend.satellite_tools.connection-pysrc.html#Transport._process_response">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  
+  <dl class="fields">
+    <dt>Overrides:
+        <a href="rhn.transports.Transport-class.html#_process_response" onclick="show_private();">rhn.transports.Transport._process_response</a>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Fri Nov 25 11:30:11 2016
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

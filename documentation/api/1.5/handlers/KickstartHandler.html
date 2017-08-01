@@ -1,0 +1,613 @@
+<html>
+<head>
+<meta http-equiv="cache-control" content="no-cache" />
+
+</head>
+<body>
+<div class="toolbar-h1">
+<br />
+
+</div>
+<span class="small-text">( <a href="../index.html">Return to API Overview</a> )</span>
+<div class="rounded-box">
+<h2><a name="top">Available methods</a></h2>
+<ul class="apidoc">
+
+<li><a href="#cloneProfile"/>cloneProfile</a></li>
+<li><a href="#createProfile"/>createProfile</a></li>
+<li><a href="#createProfileWithCustomUrl"/>createProfileWithCustomUrl</a></li>
+<li><a href="#deleteProfile"/>deleteProfile</a></li>
+<li><a href="#findKickstartForIp"/>findKickstartForIp</a></li>
+<li><a href="#importFile"/>importFile</a></li>
+<li><a href="#importFile"/>importFile</a></li>
+<li><a href="#importRawFile"/>importRawFile</a></li>
+<li><a href="#listAllIpRanges"/>listAllIpRanges</a></li>
+<li><a href="#listKickstartableChannels"/>listKickstartableChannels</a></li>
+<li><a href="#listKickstartableTrees"/>listKickstartableTrees</a></li>
+<li><a href="#listKickstarts"/>listKickstarts</a></li>
+<li><a href="#renameProfile"/>renameProfile</a></li>
+</ul>
+</div>
+<h2>Description</h2>
+Provides methods to create kickstart files
+<p>
+</p>
+<p><strong>Namespace</strong>:
+kickstart
+</p>
+<hr />
+
+<h3> <a name="cloneProfile" href="#top">Method: cloneProfile</a></h3>
+Description:<br />
+Clone a Kickstart Profile
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string ksLabelToClone - Label of the
+ kickstart profile to clone
+ </li>
+<li>
+
+    string newKsLabel - label of the cloned profile
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+    int - 1 on success, exception thrown otherwise.
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="createProfile" href="#top">Method: createProfile</a></h3>
+Description:<br />
+Import a kickstart profile into RHN.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string profileLabel - Label for the new
+ kickstart profile.
+ </li>
+<li>
+
+    string virtualizationType - none, para_host,
+ qemu, xenfv or xenpv.
+ </li>
+<li>
+
+    string kickstartableTreeLabel - Label of a
+ kickstartable tree to associate the new profile with.
+ </li>
+<li>
+
+    string kickstartHost - Kickstart hostname
+ (of a satellite or proxy) used to construct the default download URL for
+ the new kickstart profile.
+ </li>
+<li>
+
+    string rootPassword - Root password.
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+    int - 1 on success, exception thrown otherwise.
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="createProfileWithCustomUrl" href="#top">Method: createProfileWithCustomUrl</a></h3>
+Description:<br />
+Import a kickstart profile into RHN.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string profileLabel - Label for the new
+ kickstart profile.
+ </li>
+<li>
+
+    string virtualizationType - none, para_host,
+ qemu, xenfv or xenpv.
+ </li>
+<li>
+
+    string kickstartableTreeLabel - Label of a
+ kickstartable tree to associate the new profile with.
+ </li>
+<li>
+
+    boolean downloadUrl - Download URL, or
+ 'default' to use the kickstart tree's default URL.
+ </li>
+<li>
+
+    string rootPassword - Root password.
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+    int - 1 on success, exception thrown otherwise.
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="deleteProfile" href="#top">Method: deleteProfile</a></h3>
+Description:<br />
+Delete a kickstart profile
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string ksLabel - The label of
+ the kickstart profile you want to remove
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+    int - 1 on success, exception thrown otherwise.
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="findKickstartForIp" href="#top">Method: findKickstartForIp</a></h3>
+Description:<br />
+Find an associated kickstart for a given ip address.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string ipAddress - The ip address to
+ search for (i.e. 192.168.0.1)
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+string - label of the kickstart. Empty string ("") if
+ not found. 
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="importFile" href="#top">Method: importFile</a></h3>
+Description:<br />
+Import a kickstart profile into RHN.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string profileLabel - Label for the new
+ kickstart profile.
+ </li>
+<li>
+
+    string virtualizationType - none, para_host,
+ qemu, xenfv or xenpv.
+ </li>
+<li>
+
+    string kickstartableTreeLabel - Label of a
+ kickstartable tree to associate the new profile with.
+ </li>
+<li>
+
+    string kickstartFileContents - Contents of
+ the kickstart file to import.
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+    int - 1 on success, exception thrown otherwise.
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="importFile" href="#top">Method: importFile</a></h3>
+Description:<br />
+Import a kickstart profile into RHN.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string profileLabel - Label for the new
+ kickstart profile.
+ </li>
+<li>
+
+    string virtualizationType - none, para_host,
+ qemu, xenfv or xenpv.
+ </li>
+<li>
+
+    string kickstartableTreeLabel - Label of a
+ kickstartable tree to associate the new profile with.
+ </li>
+<li>
+
+    string kickstartHost - Kickstart hostname
+ (of a satellite or proxy) used to construct the default download URL for
+ the new kickstart profile. Using this option signifies that this default
+ URL will be used instead of any url/nfs/cdrom/harddrive commands in the
+ kickstart file itself.
+ </li>
+<li>
+
+    string kickstartFileContents - Contents of
+ the kickstart file to import.
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+    int - 1 on success, exception thrown otherwise.
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="importRawFile" href="#top">Method: importRawFile</a></h3>
+Description:<br />
+Import a raw kickstart file into satellite.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string profileLabel - Label for the new
+ kickstart profile.
+ </li>
+<li>
+
+    string virtualizationType - none, para_host,
+ qemu, xenfv or xenpv.
+ </li>
+<li>
+
+    string kickstartableTreeLabel - Label of a
+ kickstartable tree to associate the new profile with.
+ </li>
+<li>
+
+    string kickstartFileContents - Contents of
+ the kickstart file to import.
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+    int - 1 on success, exception thrown otherwise.
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="listAllIpRanges" href="#top">Method: listAllIpRanges</a></h3>
+Description:<br />
+List all Ip Ranges and their associated kickstarts available
+ in the user's org.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+array:
+  <ul>
+   <li>
+ 
+
+	     struct - Kickstart Ip Range
+	<ul>
+         <li> string "ksLabel" - The kickstart label associated with the ip range </li>
+         <li> string "max" - The max ip of the range </li>
+         <li> string "min" - The min ip of the range </li>
+   	</ul>
+  </li></ul>
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="listKickstartableChannels" href="#top">Method: listKickstartableChannels</a></h3>
+Description:<br />
+List kickstartable channels for the logged in user.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+array:
+  <ul>
+   <li>
+ 
+
+	     struct - channel
+	<ul>
+      	<li> int "id"</li>
+      	<li> string "name"</li>
+      	<li> string "label"</li>
+      	<li> string "arch_name"</li>
+      	<li> string "summary"</li>
+      	<li> string "description"</li>
+      	<li> string "checksum_label"</li>
+      	<li> dateTime.iso8601 "last_modified"</li>
+      	<li> string "maintainer_name"</li>
+      	<li> string "maintainer_email"</li>
+      	<li> string "maintainer_phone"</li>
+      	<li> string "support_policy"</li>
+      	<li> string "gpg_key_url"</li>
+      	<li> string "gpg_key_id"</li>
+      	<li> string "gpg_key_fp"</li>
+      	<li> string "yumrepo_source_url"</li>
+      	<li> string "yumrepo_label"</li>
+      	<li> dateTime.iso8601 "yumrepo_last_sync"</li>
+      	<li> string "end_of_life"</li>
+      	<li> string "parent_channel_label"</li>
+      	<li> string "clone_original"</li>
+  	</ul>
+  </li></ul>
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3 class="deprecated"><a name="listKickstartableTrees" href="#top">Method: listKickstartableTrees</a></h3>
+Description:<br />
+List the available kickstartable trees for the given channel.
+<p />
+
+
+Deprecated - being replaced by kickstart.tree.list(string sessionKey,
+ string channelLabel) <p />
+
+
+Parameters:<br />
+<ul>
+<li>
+
+    string sessionKey
+ </li>
+<li>
+
+    string channelLabel - Label of channel to
+ search.
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+array:
+  <ul>
+   <li>
+ 
+
+	     struct - kickstartable tree
+	<ul>
+   	<li> int "id"</li>
+   	<li> string "label"</li>
+   	<li> string "base_path"</li>
+   	<li> int "channel_id"</li>
+ 	</ul>
+  </li></ul>
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="listKickstarts" href="#top">Method: listKickstarts</a></h3>
+Description:<br />
+Provides a list of kickstart profiles visible to the user's
+ org
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+array:
+  <ul>
+   <li>
+ 
+
+	     struct - kickstart
+	<ul>
+          	<li> string "label"</li>
+          	<li> string "tree_label"</li>
+          	<li> string "name"</li>
+          	<li> boolean "advanced_mode"</li>
+          	<li> boolean "org_default"</li>
+          	<li> boolean "active"</li>
+   	</ul>
+  </li></ul>
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="renameProfile" href="#top">Method: renameProfile</a></h3>
+Description:<br />
+Rename a Kickstart Tree (Distribution) in Satellite
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+        string sessionKey
+ </li>
+<li>
+
+    string originalLabel - Label for the
+ kickstart tree you want to rename
+ </li>
+<li>
+
+    string newLabel - new label to change too
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+    int - 1 on success, exception thrown otherwise.
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+</body>
+Generated on 7/20/2011
+</html>

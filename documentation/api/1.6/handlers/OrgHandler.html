@@ -1,0 +1,967 @@
+<html>
+<head>
+<meta http-equiv="cache-control" content="no-cache" />
+
+</head>
+<body>
+<div class="toolbar-h1">
+<br />
+
+</div>
+<span class="small-text">( <a href="../index.html">Return to API Overview</a> )</span>
+<div class="rounded-box">
+<h2><a name="top">Available methods</a></h2>
+<ul class="apidoc">
+
+<li><a href="#create"/>create</a></li>
+<li><a href="#delete"/>delete</a></li>
+<li><a href="#getDetails"/>getDetails</a></li>
+<li><a href="#getDetails"/>getDetails</a></li>
+<li><a href="#listOrgs"/>listOrgs</a></li>
+<li><a href="#listSoftwareEntitlements"/>listSoftwareEntitlements</a></li>
+<li><a href="#listSoftwareEntitlements"/>listSoftwareEntitlements</a></li>
+<li><a href="#listSoftwareEntitlements"/>listSoftwareEntitlements</a></li>
+<li><a href="#listSoftwareEntitlementsForOrg"/>listSoftwareEntitlementsForOrg</a></li>
+<li><a href="#listSystemEntitlements"/>listSystemEntitlements</a></li>
+<li><a href="#listSystemEntitlements"/>listSystemEntitlements</a></li>
+<li><a href="#listSystemEntitlements"/>listSystemEntitlements</a></li>
+<li><a href="#listSystemEntitlementsForOrg"/>listSystemEntitlementsForOrg</a></li>
+<li><a href="#listUsers"/>listUsers</a></li>
+<li><a href="#migrateSystems"/>migrateSystems</a></li>
+<li><a href="#setSoftwareEntitlements"/>setSoftwareEntitlements</a></li>
+<li><a href="#setSoftwareFlexEntitlements"/>setSoftwareFlexEntitlements</a></li>
+<li><a href="#setSystemEntitlements"/>setSystemEntitlements</a></li>
+<li><a href="#updateName"/>updateName</a></li>
+</ul>
+</div>
+<h2>Description</h2>
+Contains methods to access common organization management
+ functions available from the web interface.
+<p>
+</p>
+<p><strong>Namespace</strong>:
+org
+</p>
+<hr />
+
+<h3> <a name="create" href="#top">Method: create</a></h3>
+Description:<br />
+Create a new organization and associated administrator account.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+    string sessionKey
+ </li>
+<li>
+
+    string orgName - Organization name. Must meet same
+ criteria as in the web UI.
+ </li>
+<li>
+
+    string adminLogin - New administrator login name.
+ </li>
+<li>
+
+    string adminPassword - New administrator password.
+ </li>
+<li>
+
+    string prefix - New administrator's prefix. Must
+ match one of the values available in the web UI. (i.e. Dr., Mr., Mrs., Sr., etc.)
+ </li>
+<li>
+
+    string firstName - New administrator's first name.
+ </li>
+<li>
+
+    string lastName - New administrator's first name.
+ </li>
+<li>
+
+    string email - New administrator's e-mail.
+ </li>
+<li>
+
+    boolean usePamAuth - True if PAM authentication
+ should be used for the new administrator account.
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+
+
+	     struct - organization info
+	<ul>
+   	<li> int "id"</li>
+   	<li> string "name"</li>
+       <li> int "active_users" - Number of active users in the organization. </li>
+       <li> int "systems" - Number of systems in the organization. </li>
+       <li> int "trusts" - Number of trusted organizations. </li>
+       <li> int "system_groups" - Number of system groups in the organization. (optional) </li>
+       <li> int "activation_keys" - Number of activation keys in the organization. (optional) </li>
+       <li> int "kickstart_profiles" - Number of kickstart profiles in the organization. (optional) </li>
+       <li> int "configuration_channels" - Number of configuration channels in the organization. (optional) </li>
+ 	</ul>
+  
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="delete" href="#top">Method: delete</a></h3>
+Description:<br />
+Delete an organization. The default organization
+ (i.e. orgId=1) cannot be deleted.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+    string sessionKey
+ </li>
+<li>
+
+    int orgId
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+    int - 1 on success, exception thrown otherwise.
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="getDetails" href="#top">Method: getDetails</a></h3>
+Description:<br />
+The detailed information about an organization given
+ the organization ID.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+    string sessionKey
+ </li>
+<li>
+
+    int orgId
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+
+
+	     struct - organization info
+	<ul>
+   	<li> int "id"</li>
+   	<li> string "name"</li>
+       <li> int "active_users" - Number of active users in the organization. </li>
+       <li> int "systems" - Number of systems in the organization. </li>
+       <li> int "trusts" - Number of trusted organizations. </li>
+       <li> int "system_groups" - Number of system groups in the organization. (optional) </li>
+       <li> int "activation_keys" - Number of activation keys in the organization. (optional) </li>
+       <li> int "kickstart_profiles" - Number of kickstart profiles in the organization. (optional) </li>
+       <li> int "configuration_channels" - Number of configuration channels in the organization. (optional) </li>
+ 	</ul>
+  
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="getDetails" href="#top">Method: getDetails</a></h3>
+Description:<br />
+The detailed information about an organization given
+ the organization name.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+    string sessionKey
+ </li>
+<li>
+
+    string name
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+
+
+	     struct - organization info
+	<ul>
+   	<li> int "id"</li>
+   	<li> string "name"</li>
+       <li> int "active_users" - Number of active users in the organization. </li>
+       <li> int "systems" - Number of systems in the organization. </li>
+       <li> int "trusts" - Number of trusted organizations. </li>
+       <li> int "system_groups" - Number of system groups in the organization. (optional) </li>
+       <li> int "activation_keys" - Number of activation keys in the organization. (optional) </li>
+       <li> int "kickstart_profiles" - Number of kickstart profiles in the organization. (optional) </li>
+       <li> int "configuration_channels" - Number of configuration channels in the organization. (optional) </li>
+ 	</ul>
+  
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="listOrgs" href="#top">Method: listOrgs</a></h3>
+Description:<br />
+Returns the list of organizations.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+    string sessionKey
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+
+
+	     struct - organization info
+	<ul>
+   	<li> int "id"</li>
+   	<li> string "name"</li>
+       <li> int "active_users" - Number of active users in the organization. </li>
+       <li> int "systems" - Number of systems in the organization. </li>
+       <li> int "trusts" - Number of trusted organizations. </li>
+       <li> int "system_groups" - Number of system groups in the organization. (optional) </li>
+       <li> int "activation_keys" - Number of activation keys in the organization. (optional) </li>
+       <li> int "kickstart_profiles" - Number of kickstart profiles in the organization. (optional) </li>
+       <li> int "configuration_channels" - Number of configuration channels in the organization. (optional) </li>
+ 	</ul>
+  
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="listSoftwareEntitlements" href="#top">Method: listSoftwareEntitlements</a></h3>
+Description:<br />
+List software entitlement allocation information
+ across all organizations.
+ Caller must be a satellite administrator.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+    string sessionKey
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+array:
+  <ul>
+   <li>
+      
+
+	     struct - entitlement usage
+	<ul>
+   	<li> string "label"</li>
+   	<li> string "name"</li>
+   	<li> int "free"</li>
+   	<li> int "used"</li>
+   	<li> int "allocated"</li>
+   	<li> int "unallocated"</li>
+   	<li> int "free_flex"</li>
+   	<li> int "used_flex"</li>
+   	<li> int "allocated_flex"</li>
+   	<li> int "unallocated_flex"</li>
+ *
+ 	</ul>
+ 
+   </li></ul>
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3 class="deprecated"><a name="listSoftwareEntitlements" href="#top">Method: listSoftwareEntitlements</a></h3>
+Description:<br />
+List each organization's allocation of a given software entitlement.
+ Organizations with no allocation will not be present in the list. A value of -1
+ indicates unlimited entitlements.
+<p />
+
+
+Deprecated - being replaced by listSoftwareEntitlements(string sessionKey,
+ string label, boolean includeUnentitled) <p />
+
+
+Parameters:<br />
+<ul>
+<li>
+
+    string sessionKey
+ </li>
+<li>
+
+    string label - Software entitlement label.
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+array:
+  <ul>
+   <li>
+     
+
+	     struct - entitlement usage
+	<ul>
+   	<li> int "org_id"</li>
+   	<li> string "org_name"</li>
+   	<li> int "allocated"</li>
+   	<li> int "unallocated"</li>
+   	<li> int "used"</li>
+   	<li> int "free"</li>
+ 	</ul>
+ 
+   </li></ul>
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="listSoftwareEntitlements" href="#top">Method: listSoftwareEntitlements</a></h3>
+Description:<br />
+List each organization's allocation of a given software entitlement.
+ A value of -1 indicates unlimited entitlements.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+    string sessionKey
+ </li>
+<li>
+
+    string label - Software entitlement label.
+ </li>
+<li>
+
+    boolean includeUnentitled - If true, the
+ result will include both organizations that have the entitlement as well as
+ those that do not; otherwise, the result will only include organizations
+ that have the entitlement.
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+array:
+  <ul>
+   <li>
+     
+
+	     struct - entitlement usage
+	<ul>
+   	<li> int "org_id"</li>
+   	<li> string "org_name"</li>
+   	<li> int "allocated"</li>
+   	<li> int "unallocated"</li>
+   	<li> int "used"</li>
+   	<li> int "free"</li>
+ 	</ul>
+ 
+   </li></ul>
+ 
+</li></ul>
+</code>
+<p />
+Available since: 10.4 <p />
+<hr />
+
+<h3> <a name="listSoftwareEntitlementsForOrg" href="#top">Method: listSoftwareEntitlementsForOrg</a></h3>
+Description:<br />
+List an organization's allocation of each software entitlement.
+ A value of -1 indicates unlimited entitlements.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+    string sessionKey
+ </li>
+<li>
+
+    int orgId
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+array:
+  <ul>
+   <li>
+      
+
+	     struct - entitlement usage
+	<ul>
+   	<li> string "label"</li>
+   	<li> string "name"</li>
+   	<li> int "allocated"</li>
+   	<li> int "unallocated"</li>
+   	<li> int "free"</li>
+   	<li> int "used"</li>
+   	<li> int "allocated_flex"</li>
+   	<li> int "unallocated_flex"</li>
+   	<li> int "free_flex"</li>
+   	<li> int "used_flex"</li>
+ 	</ul>
+ 
+   </li></ul>
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="listSystemEntitlements" href="#top">Method: listSystemEntitlements</a></h3>
+Description:<br />
+Lists system entitlement allocation information
+ across all organizations.
+ Caller must be a satellite administrator.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+    string sessionKey
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+array:
+  <ul>
+   <li>
+     
+
+	     struct - entitlement usage
+	<ul>
+   	<li> string "label"</li>
+   	<li> string "name"</li>
+   	<li> int "free"</li>
+   	<li> int "used"</li>
+   	<li> int "allocated"</li>
+   	<li> int "unallocated"</li>
+   	<li> int "free_flex"</li>
+   	<li> int "used_flex"</li>
+   	<li> int "allocated_flex"</li>
+   	<li> int "unallocated_flex"</li>
+ *
+ 	</ul>
+ 
+   </li></ul>
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3 class="deprecated"><a name="listSystemEntitlements" href="#top">Method: listSystemEntitlements</a></h3>
+Description:<br />
+List each organization's allocation of a system entitlement.
+ If the organization has no allocation for a particular entitlement, it will
+ not appear in the list.
+<p />
+
+
+Deprecated - being replaced by listSystemEntitlements(string sessionKey,
+ string label, boolean includeUnentitled) <p />
+
+
+Parameters:<br />
+<ul>
+<li>
+
+    string sessionKey
+ </li>
+<li>
+
+    string label
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+array:
+  <ul>
+   <li>
+     	     struct - entitlement usage
+	<ul>
+       	<li> int "org_id"</li>
+       	<li> string "org_name"</li>
+       	<li> int "allocated"</li>
+       	<li> int "unallocated"</li>
+       	<li> int "used"</li>
+       	<li> int "free"</li>
+     	</ul>
+   </li></ul>
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="listSystemEntitlements" href="#top">Method: listSystemEntitlements</a></h3>
+Description:<br />
+List each organization's allocation of a system entitlement.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+    string sessionKey
+ </li>
+<li>
+
+    string label
+ </li>
+<li>
+
+    boolean includeUnentitled - If true, the
+ result will include both organizations that have the entitlement as well as
+ those that do not; otherwise, the result will only include organizations
+ that have the entitlement.
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+array:
+  <ul>
+   <li>
+     	     struct - entitlement usage
+	<ul>
+       	<li> int "org_id"</li>
+       	<li> string "org_name"</li>
+       	<li> int "allocated"</li>
+       	<li> int "unallocated"</li>
+       	<li> int "used"</li>
+       	<li> int "free"</li>
+     	</ul>
+   </li></ul>
+ 
+</li></ul>
+</code>
+<p />
+Available since: 10.4 <p />
+<hr />
+
+<h3> <a name="listSystemEntitlementsForOrg" href="#top">Method: listSystemEntitlementsForOrg</a></h3>
+Description:<br />
+List an organization's allocation of each system entitlement.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+    string sessionKey
+ </li>
+<li>
+
+    int orgId
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+array:
+  <ul>
+   <li>
+     
+
+	     struct - entitlement usage
+	<ul>
+   	<li> string "label"</li>
+   	<li> string "name"</li>
+   	<li> int "free"</li>
+   	<li> int "used"</li>
+   	<li> int "allocated"</li>
+   	<li> int "unallocated"</li>
+ 	</ul>
+ 
+   </li></ul>
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="listUsers" href="#top">Method: listUsers</a></h3>
+Description:<br />
+Returns the list of users in a given organization.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+    string sessionKey
+ </li>
+<li>
+
+    int orgId
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+array:
+  <ul>
+   <li>
+     
+
+	     struct - user
+	<ul>
+   	<li> string "login"</li>
+   	<li> string "login_uc"</li>
+   	<li> string "name"</li>
+   	<li> string "email"</li>
+   	<li> boolean "is_org_admin"</li>
+ 	</ul>
+ 
+   </li></ul>
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="migrateSystems" href="#top">Method: migrateSystems</a></h3>
+Description:<br />
+Migrate systems from one organization to another.  If executed by
+ a Satellite administrator, the systems will be migrated from their current
+ organization to the organization specified by the toOrgId.  If executed by
+ an organization administrator, the systems must exist in the same organization
+ as that administrator and the systems will be migrated to the organization
+ specified by the toOrgId. In any scenario, the origination and destination
+ organizations must be defined in a trust.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+    string sessionKey
+ </li>
+<li>
+
+    int toOrgId - ID of the organization where the
+ system(s) will be migrated to.
+ </li>
+<li>
+
+array:
+<ul>
+    <li>int - systemId</li>
+</ul>
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+array:
+<ul>
+    <li>int - serverIdMigrated</li>
+</ul>
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="setSoftwareEntitlements" href="#top">Method: setSoftwareEntitlements</a></h3>
+Description:<br />
+Set an organization's entitlement allocation for the given software
+ entitlement.
+
+ If increasing the entitlement allocation, the default organization
+ (i.e. orgId=1) must have a sufficient number of free entitlements.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+    string sessionKey
+ </li>
+<li>
+
+    int orgId
+ </li>
+<li>
+
+    string label - Software entitlement label.
+ </li>
+<li>
+
+    int allocation
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+    int - 1 on success, exception thrown otherwise.
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="setSoftwareFlexEntitlements" href="#top">Method: setSoftwareFlexEntitlements</a></h3>
+Description:<br />
+Set an organization's flex entitlement allocation for the given software
+ entitlement.
+
+ If increasing the flex entitlement allocation, the default organization
+ (i.e. orgId=1) must have a sufficient number of free flex entitlements.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+    string sessionKey
+ </li>
+<li>
+
+    int orgId
+ </li>
+<li>
+
+    string label - Software entitlement label.
+ </li>
+<li>
+
+    int allocation
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+    int - 1 on success, exception thrown otherwise.
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="setSystemEntitlements" href="#top">Method: setSystemEntitlements</a></h3>
+Description:<br />
+Set an organization's entitlement allocation for the given
+ software entitlement.
+
+ If increasing the entitlement allocation, the default organization
+ (i.e. orgId=1) must have a sufficient number of free entitlements.
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+    string sessionKey
+ </li>
+<li>
+
+    int orgId
+ </li>
+<li>
+
+    string label - System entitlement label.
+ Valid values include:
+   	<ul>
+     	<li>enterprise_entitled</li>
+     	<li>monitoring_entitled</li>
+     	<li>provisioning_entitled</li>
+     	<li>virtualization_host</li>
+     	<li>virtualization_host_platform</li>
+   	</ul>
+ </li>
+<li>
+
+    int allocation
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+    int - 1 on success, exception thrown otherwise.
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+
+<h3> <a name="updateName" href="#top">Method: updateName</a></h3>
+Description:<br />
+Updates the name of an organization
+<p />
+
+
+
+
+Parameters:<br />
+<ul>
+<li>
+
+    string sessionKey
+ </li>
+<li>
+
+    int orgId
+ </li>
+<li>
+
+    string name - Organization name. Must meet same
+ criteria as in the web UI.
+ </li>
+</ul>
+<p />
+Returns:
+<code><ul><li>
+
+
+
+
+	     struct - organization info
+	<ul>
+   	<li> int "id"</li>
+   	<li> string "name"</li>
+       <li> int "active_users" - Number of active users in the organization. </li>
+       <li> int "systems" - Number of systems in the organization. </li>
+       <li> int "trusts" - Number of trusted organizations. </li>
+       <li> int "system_groups" - Number of system groups in the organization. (optional) </li>
+       <li> int "activation_keys" - Number of activation keys in the organization. (optional) </li>
+       <li> int "kickstart_profiles" - Number of kickstart profiles in the organization. (optional) </li>
+       <li> int "configuration_channels" - Number of configuration channels in the organization. (optional) </li>
+ 	</ul>
+  
+ 
+</li></ul>
+</code>
+<p />
+<hr />
+</body>
+Generated on 12/21/2011
+</html>

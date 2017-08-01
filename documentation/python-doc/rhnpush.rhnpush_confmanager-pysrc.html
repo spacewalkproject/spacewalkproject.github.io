@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>rhnpush.rhnpush_confmanager</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="rhnpush-module.html">Package&nbsp;rhnpush</a> ::
+        Module&nbsp;rhnpush_confmanager
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="rhnpush.rhnpush_confmanager-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="rhnpush.rhnpush_confmanager-module.html">Module rhnpush.rhnpush_confmanager</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-comment"># Copyright (c) 2008--2016 Red Hat, Inc.</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-comment"># This software is licensed to you under the GNU General Public License,</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-comment"># version 2 (GPLv2). There is NO WARRANTY for this software, express or</tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-comment"># implied, including the implied warranties of MERCHANTABILITY or FITNESS</tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-comment"># FOR A PARTICULAR PURPOSE. You should have received a copy of GPLv2</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt class="py-comment"># along with this software; if not, see</tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"><tt class="py-comment"># http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt.</tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line"><tt class="py-comment"># Red Hat trademarks are not licensed under GPLv2. No permission is</tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line"><tt class="py-comment"># granted to use or replicate Red Hat trademarks that are incorporated</tt> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line"><tt class="py-comment"># in this software or its documentation.</tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">sys</tt> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">os</tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-0" class="py-name" targets="Package rhnpush=rhnpush-module.html"><a title="rhnpush" class="py-name" href="#" onclick="return doclink('link-0', 'rhnpush', 'link-0');">rhnpush</a></tt> <tt class="py-keyword">import</tt> <tt id="link-1" class="py-name" targets="Module rhnpush.rhnpush_config=rhnpush.rhnpush_config-module.html"><a title="rhnpush.rhnpush_config" class="py-name" href="#" onclick="return doclink('link-1', 'rhnpush_config', 'link-1');">rhnpush_config</a></tt> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-2" class="py-name"><a title="rhnpush" class="py-name" href="#" onclick="return doclink('link-2', 'rhnpush', 'link-0');">rhnpush</a></tt> <tt class="py-keyword">import</tt> <tt id="link-3" class="py-name" targets="Module backend.server.action.utils=backend.server.action.utils-module.html,Module config_common.utils=config_common.utils-module.html,Module rhnpush.utils=rhnpush.utils-module.html"><a title="backend.server.action.utils
+config_common.utils
+rhnpush.utils" class="py-name" href="#" onclick="return doclink('link-3', 'utils', 'link-3');">utils</a></tt> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line"> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line"> </tt>
+<a name="ConfManager"></a><div id="ConfManager-def"><a name="L22"></a><tt class="py-lineno"> 22</tt> <a class="py-toggle" href="#" id="ConfManager-toggle" onclick="return toggle('ConfManager');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="rhnpush.rhnpush_confmanager.ConfManager-class.html">ConfManager</a><tt class="py-op">:</tt> </tt>
+</div><div id="ConfManager-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="ConfManager-expanded"><a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line"> </tt>
+<a name="ConfManager.__init__"></a><div id="ConfManager.__init__-def"><a name="L24"></a><tt class="py-lineno"> 24</tt> <a class="py-toggle" href="#" id="ConfManager.__init__-toggle" onclick="return toggle('ConfManager.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="rhnpush.rhnpush_confmanager.ConfManager-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">optionparser</tt><tt class="py-op">,</tt> <tt class="py-param">store_true_list</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ConfManager.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ConfManager.__init__-expanded"><a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line">        <tt class="py-name">sysdir</tt> <tt class="py-op">=</tt> <tt class="py-string">'/etc/sysconfig/rhn'</tt> </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line">        <tt class="py-name">homedir</tt> <tt class="py-op">=</tt> <tt id="link-4" class="py-name"><a title="backend.server.action.utils
+config_common.utils
+rhnpush.utils" class="py-name" href="#" onclick="return doclink('link-4', 'utils', 'link-3');">utils</a></tt><tt class="py-op">.</tt><tt id="link-5" class="py-name" targets="Function config_common.utils.get_home_dir()=config_common.utils-module.html#get_home_dir,Function rhnpush.utils.get_home_dir()=rhnpush.utils-module.html#get_home_dir"><a title="config_common.utils.get_home_dir
+rhnpush.utils.get_home_dir" class="py-name" href="#" onclick="return doclink('link-5', 'get_home_dir', 'link-5');">get_home_dir</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line">        <tt class="py-name">default</tt> <tt class="py-op">=</tt> <tt class="py-string">'rhnpushrc'</tt> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line">        <tt class="py-name">regular</tt> <tt class="py-op">=</tt> <tt class="py-string">'.rhnpushrc'</tt> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line">        <tt class="py-name">deffile</tt> <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">join</tt><tt class="py-op">(</tt><tt class="py-name">sysdir</tt><tt class="py-op">,</tt> <tt class="py-name">default</tt><tt class="py-op">)</tt> </tt>
+<a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line">        <tt class="py-name">regfile</tt> <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">join</tt><tt class="py-op">(</tt><tt class="py-name">homedir</tt><tt class="py-op">,</tt> <tt class="py-name">regular</tt><tt class="py-op">)</tt> </tt>
+<a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line">        <tt class="py-name">cwdfile</tt> <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">join</tt><tt class="py-op">(</tt><tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">getcwd</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-name">regular</tt><tt class="py-op">)</tt> </tt>
+<a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line"> </tt>
+<a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">cfgFileList</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-name">deffile</tt><tt class="py-op">,</tt> <tt class="py-name">regfile</tt><tt class="py-op">,</tt> <tt class="py-name">cwdfile</tt><tt class="py-op">]</tt> </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">defaultconfig</tt> <tt class="py-op">=</tt> <tt id="link-6" class="py-name"><a title="rhnpush.rhnpush_config" class="py-name" href="#" onclick="return doclink('link-6', 'rhnpush_config', 'link-1');">rhnpush_config</a></tt><tt class="py-op">.</tt><tt id="link-7" class="py-name" targets="Class rhnpush.rhnpush_config.rhnpushConfigParser=rhnpush.rhnpush_config.rhnpushConfigParser-class.html"><a title="rhnpush.rhnpush_config.rhnpushConfigParser" class="py-name" href="#" onclick="return doclink('link-7', 'rhnpushConfigParser', 'link-7');">rhnpushConfigParser</a></tt><tt class="py-op">(</tt><tt class="py-name">ensure_consistency</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line"> </tt>
+<a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line">        <tt class="py-comment"># Get a reference to the object containing command-line options</tt> </tt>
+<a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">cmdconfig</tt> <tt class="py-op">=</tt> <tt class="py-name">optionparser</tt> </tt>
+<a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">store_true_list</tt> <tt class="py-op">=</tt> <tt class="py-name">store_true_list</tt> </tt>
+</div><a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line"> </tt>
+<a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line">    <tt class="py-comment"># Change the files options of the self.userconfig</tt> </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line">    <tt class="py-comment"># Change the exclude options of the self.userconfig</tt> </tt>
+<a name="ConfManager._files_to_list"></a><div id="ConfManager._files_to_list-def"><a name="L42"></a><tt class="py-lineno"> 42</tt> <a class="py-toggle" href="#" id="ConfManager._files_to_list-toggle" onclick="return toggle('ConfManager._files_to_list');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="rhnpush.rhnpush_confmanager.ConfManager-class.html#_files_to_list">_files_to_list</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ConfManager._files_to_list-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ConfManager._files_to_list-expanded"><a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line">        <tt class="py-comment"># Change the files options to lists.</tt> </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-op">(</tt><tt class="py-string">'files'</tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">defaultconfig</tt><tt class="py-op">.</tt><tt class="py-name">__dict__</tt> <tt class="py-keyword">and</tt> </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line">                <tt class="py-keyword">not</tt> <tt class="py-name">isinstance</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">defaultconfig</tt><tt class="py-op">.</tt><tt class="py-name">files</tt><tt class="py-op">,</tt> <tt class="py-name">type</tt><tt class="py-op">(</tt><tt class="py-op">[</tt><tt class="py-op">]</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">defaultconfig</tt><tt class="py-op">.</tt><tt class="py-name">files</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-name">x</tt><tt class="py-op">.</tt><tt id="link-8" class="py-name" targets="Method backend.server.config_common.base_templated_document.TemplatedDocument.strip()=backend.server.config_common.base_templated_document.TemplatedDocument-class.html#strip"><a title="backend.server.config_common.base_templated_document.TemplatedDocument.strip" class="py-name" href="#" onclick="return doclink('link-8', 'strip', 'link-8');">strip</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> <tt class="py-keyword">for</tt> <tt class="py-name">x</tt> <tt class="py-keyword">in</tt> </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line">                                        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">defaultconfig</tt><tt class="py-op">.</tt><tt class="py-name">files</tt><tt class="py-op">.</tt><tt class="py-name">split</tt><tt class="py-op">(</tt><tt class="py-string">','</tt><tt class="py-op">)</tt><tt class="py-op">]</tt> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line"> </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line">        <tt class="py-comment"># Change the exclude options to list.</tt> </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-op">(</tt><tt class="py-string">'exclude'</tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">defaultconfig</tt><tt class="py-op">.</tt><tt class="py-name">__dict__</tt> <tt class="py-keyword">and</tt> </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line">                <tt class="py-keyword">not</tt> <tt class="py-name">isinstance</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">defaultconfig</tt><tt class="py-op">.</tt><tt class="py-name">__dict__</tt><tt class="py-op">[</tt><tt class="py-string">'exclude'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">type</tt><tt class="py-op">(</tt><tt class="py-op">[</tt><tt class="py-op">]</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">defaultconfig</tt><tt class="py-op">.</tt><tt class="py-name">exclude</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-name">x</tt><tt class="py-op">.</tt><tt id="link-9" class="py-name"><a title="backend.server.config_common.base_templated_document.TemplatedDocument.strip" class="py-name" href="#" onclick="return doclink('link-9', 'strip', 'link-8');">strip</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> <tt class="py-keyword">for</tt> <tt class="py-name">x</tt> <tt class="py-keyword">in</tt> </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line">                                          <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">defaultconfig</tt><tt class="py-op">.</tt><tt class="py-name">exclude</tt><tt class="py-op">.</tt><tt class="py-name">split</tt><tt class="py-op">(</tt><tt class="py-string">','</tt><tt class="py-op">)</tt><tt class="py-op">]</tt> </tt>
+</div><a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line"> </tt>
+<a name="ConfManager.get_config"></a><div id="ConfManager.get_config-def"><a name="L55"></a><tt class="py-lineno"> 55</tt> <a class="py-toggle" href="#" id="ConfManager.get_config-toggle" onclick="return toggle('ConfManager.get_config');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="rhnpush.rhnpush_confmanager.ConfManager-class.html#get_config">get_config</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ConfManager.get_config-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ConfManager.get_config-expanded"><a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">f</tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">cfgFileList</tt><tt class="py-op">:</tt> </tt>
+<a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">access</tt><tt class="py-op">(</tt><tt class="py-name">f</tt><tt class="py-op">,</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">F_OK</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line">                <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">access</tt><tt class="py-op">(</tt><tt class="py-name">f</tt><tt class="py-op">,</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">R_OK</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line">                    <tt class="py-keyword">print</tt><tt class="py-op">(</tt><tt class="py-op">(</tt><tt class="py-string">"rhnpush does not have read permission on %s"</tt> <tt class="py-op">%</tt> <tt class="py-name">f</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line">                    <tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">exit</tt><tt class="py-op">(</tt><tt class="py-number">1</tt><tt class="py-op">)</tt> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line">                <tt class="py-name">config2</tt> <tt class="py-op">=</tt> <tt id="link-10" class="py-name"><a title="rhnpush.rhnpush_config" class="py-name" href="#" onclick="return doclink('link-10', 'rhnpush_config', 'link-1');">rhnpush_config</a></tt><tt class="py-op">.</tt><tt id="link-11" class="py-name"><a title="rhnpush.rhnpush_config.rhnpushConfigParser" class="py-name" href="#" onclick="return doclink('link-11', 'rhnpushConfigParser', 'link-7');">rhnpushConfigParser</a></tt><tt class="py-op">(</tt><tt class="py-name">f</tt><tt class="py-op">)</tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">defaultconfig</tt><tt class="py-op">,</tt> <tt class="py-name">config2</tt> <tt class="py-op">=</tt> <tt id="link-12" class="py-name"><a title="backend.server.action.utils
+config_common.utils
+rhnpush.utils" class="py-name" href="#" onclick="return doclink('link-12', 'utils', 'link-3');">utils</a></tt><tt class="py-op">.</tt><tt id="link-13" class="py-name" targets="Function rhnpush.utils.make_common_attr_equal()=rhnpush.utils-module.html#make_common_attr_equal"><a title="rhnpush.utils.make_common_attr_equal" class="py-name" href="#" onclick="return doclink('link-13', 'make_common_attr_equal', 'link-13');">make_common_attr_equal</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">defaultconfig</tt><tt class="py-op">,</tt> <tt class="py-name">config2</tt><tt class="py-op">)</tt> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line"> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-14" class="py-name" targets="Method rhnpush.rhnpush_confmanager.ConfManager._files_to_list()=rhnpush.rhnpush_confmanager.ConfManager-class.html#_files_to_list"><a title="rhnpush.rhnpush_confmanager.ConfManager._files_to_list" class="py-name" href="#" onclick="return doclink('link-14', '_files_to_list', 'link-14');">_files_to_list</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line"> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line">        <tt class="py-comment"># Change the channel string into a list of strings.</tt> </tt>
+<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line">        <tt class="py-comment"># pylint: disable=E1103</tt> </tt>
+<a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">defaultconfig</tt><tt class="py-op">.</tt><tt id="link-15" class="py-name" targets="Method backend.server.repomd.repository.Repository.channel()=backend.server.repomd.repository.Repository-class.html#channel"><a title="backend.server.repomd.repository.Repository.channel" class="py-name" href="#" onclick="return doclink('link-15', 'channel', 'link-15');">channel</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line">            <tt class="py-comment"># if no channel then make it null array instead of</tt> </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line">            <tt class="py-comment"># an empty string array from of size 1 [''] .</tt> </tt>
+<a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">defaultconfig</tt><tt class="py-op">.</tt><tt id="link-16" class="py-name"><a title="backend.server.repomd.repository.Repository.channel" class="py-name" href="#" onclick="return doclink('link-16', 'channel', 'link-15');">channel</a></tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">defaultconfig</tt><tt class="py-op">.</tt><tt id="link-17" class="py-name"><a title="backend.server.repomd.repository.Repository.channel" class="py-name" href="#" onclick="return doclink('link-17', 'channel', 'link-15');">channel</a></tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-name">x</tt><tt class="py-op">.</tt><tt id="link-18" class="py-name"><a title="backend.server.config_common.base_templated_document.TemplatedDocument.strip" class="py-name" href="#" onclick="return doclink('link-18', 'strip', 'link-8');">strip</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> <tt class="py-keyword">for</tt> <tt class="py-name">x</tt> <tt class="py-keyword">in</tt> </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line">                                          <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">defaultconfig</tt><tt class="py-op">.</tt><tt id="link-19" class="py-name"><a title="backend.server.repomd.repository.Repository.channel" class="py-name" href="#" onclick="return doclink('link-19', 'channel', 'link-15');">channel</a></tt><tt class="py-op">.</tt><tt class="py-name">split</tt><tt class="py-op">(</tt><tt class="py-string">','</tt><tt class="py-op">)</tt><tt class="py-op">]</tt> </tt>
+<a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line"> </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line">        <tt class="py-comment"># Get the command line arguments. These take precedence over the other settings</tt> </tt>
+<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line">        <tt class="py-name">argoptions</tt><tt class="py-op">,</tt> <tt class="py-name">files</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">cmdconfig</tt><tt class="py-op">.</tt><tt id="link-20" class="py-name" targets="Function script-rhn_custom_info_py.parse_args()=script-rhn_custom_info_py-module.html#parse_args"><a title="script-rhn_custom_info_py.parse_args" class="py-name" href="#" onclick="return doclink('link-20', 'parse_args', 'link-20');">parse_args</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line"> </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line">        <tt class="py-comment"># Makes self.defaultconfig compatible with argoptions by changing all '0' value attributes to None.</tt> </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line">        <tt id="link-21" class="py-name" targets="Function rhnpush.rhnpush_confmanager._zero_to_none()=rhnpush.rhnpush_confmanager-module.html#_zero_to_none"><a title="rhnpush.rhnpush_confmanager._zero_to_none" class="py-name" href="#" onclick="return doclink('link-21', '_zero_to_none', 'link-21');">_zero_to_none</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">defaultconfig</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">store_true_list</tt><tt class="py-op">)</tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line"> </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line">        <tt class="py-comment"># If verbose isn't set at the command-line, it automatically gets set to zero. If it's at zero, change it to</tt> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line">        <tt class="py-comment"># None so the settings in the config files take precedence.</tt> </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">argoptions</tt><tt class="py-op">.</tt><tt id="link-22" class="py-name" targets="Variable backend.satellite_tools.updatePackages.verbose=backend.satellite_tools.updatePackages-module.html#verbose"><a title="backend.satellite_tools.updatePackages.verbose" class="py-name" href="#" onclick="return doclink('link-22', 'verbose', 'link-22');">verbose</a></tt> <tt class="py-op">==</tt> <tt class="py-number">0</tt><tt class="py-op">:</tt> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line">            <tt class="py-name">argoptions</tt><tt class="py-op">.</tt><tt id="link-23" class="py-name"><a title="backend.satellite_tools.updatePackages.verbose" class="py-name" href="#" onclick="return doclink('link-23', 'verbose', 'link-22');">verbose</a></tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line"> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line">        <tt class="py-comment"># Orgid, count, cache_lifetime, and verbose all need to be integers, just like in argoptions.</tt> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">defaultconfig</tt><tt class="py-op">.</tt><tt class="py-name">orgid</tt><tt class="py-op">:</tt> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">defaultconfig</tt><tt class="py-op">.</tt><tt class="py-name">orgid</tt> <tt class="py-op">=</tt> <tt id="link-24" class="py-name" targets="Class int=int-class.html"><a title="int" class="py-name" href="#" onclick="return doclink('link-24', 'int', 'link-24');">int</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">defaultconfig</tt><tt class="py-op">.</tt><tt class="py-name">orgid</tt><tt class="py-op">)</tt> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line"> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">defaultconfig</tt><tt class="py-op">.</tt><tt class="py-name">count</tt><tt class="py-op">:</tt> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">defaultconfig</tt><tt class="py-op">.</tt><tt class="py-name">count</tt> <tt class="py-op">=</tt> <tt id="link-25" class="py-name"><a title="int" class="py-name" href="#" onclick="return doclink('link-25', 'int', 'link-24');">int</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">defaultconfig</tt><tt class="py-op">.</tt><tt class="py-name">count</tt><tt class="py-op">)</tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line"> </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">defaultconfig</tt><tt class="py-op">.</tt><tt class="py-name">cache_lifetime</tt><tt class="py-op">:</tt> </tt>
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">defaultconfig</tt><tt class="py-op">.</tt><tt class="py-name">cache_lifetime</tt> <tt class="py-op">=</tt> <tt id="link-26" class="py-name"><a title="int" class="py-name" href="#" onclick="return doclink('link-26', 'int', 'link-24');">int</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">defaultconfig</tt><tt class="py-op">.</tt><tt class="py-name">cache_lifetime</tt><tt class="py-op">)</tt> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line"> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">defaultconfig</tt><tt class="py-op">.</tt><tt id="link-27" class="py-name"><a title="backend.satellite_tools.updatePackages.verbose" class="py-name" href="#" onclick="return doclink('link-27', 'verbose', 'link-22');">verbose</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">defaultconfig</tt><tt class="py-op">.</tt><tt id="link-28" class="py-name"><a title="backend.satellite_tools.updatePackages.verbose" class="py-name" href="#" onclick="return doclink('link-28', 'verbose', 'link-22');">verbose</a></tt> <tt class="py-op">=</tt> <tt id="link-29" class="py-name"><a title="int" class="py-name" href="#" onclick="return doclink('link-29', 'int', 'link-24');">int</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">defaultconfig</tt><tt class="py-op">.</tt><tt id="link-30" class="py-name"><a title="backend.satellite_tools.updatePackages.verbose" class="py-name" href="#" onclick="return doclink('link-30', 'verbose', 'link-22');">verbose</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line"> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">defaultconfig</tt><tt class="py-op">.</tt><tt id="link-31" class="py-name" targets="Variable config_common.rpc_wrapper.timeout=config_common.rpc_wrapper-module.html#timeout"><a title="config_common.rpc_wrapper.timeout" class="py-name" href="#" onclick="return doclink('link-31', 'timeout', 'link-31');">timeout</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">defaultconfig</tt><tt class="py-op">.</tt><tt id="link-32" class="py-name"><a title="config_common.rpc_wrapper.timeout" class="py-name" href="#" onclick="return doclink('link-32', 'timeout', 'link-31');">timeout</a></tt> <tt class="py-op">=</tt> <tt id="link-33" class="py-name"><a title="int" class="py-name" href="#" onclick="return doclink('link-33', 'int', 'link-24');">int</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">defaultconfig</tt><tt class="py-op">.</tt><tt id="link-34" class="py-name"><a title="config_common.rpc_wrapper.timeout" class="py-name" href="#" onclick="return doclink('link-34', 'timeout', 'link-31');">timeout</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line"> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line">        <tt class="py-comment"># Copy the settings in argoptions into self.defaultconfig.</tt> </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">defaultconfig</tt><tt class="py-op">,</tt> <tt class="py-name">argoptions</tt> <tt class="py-op">=</tt> <tt id="link-35" class="py-name"><a title="backend.server.action.utils
+config_common.utils
+rhnpush.utils" class="py-name" href="#" onclick="return doclink('link-35', 'utils', 'link-3');">utils</a></tt><tt class="py-op">.</tt><tt id="link-36" class="py-name"><a title="rhnpush.utils.make_common_attr_equal" class="py-name" href="#" onclick="return doclink('link-36', 'make_common_attr_equal', 'link-13');">make_common_attr_equal</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">defaultconfig</tt><tt class="py-op">,</tt> <tt class="py-name">argoptions</tt><tt class="py-op">)</tt> </tt>
+<a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line"> </tt>
+<a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line">        <tt class="py-comment"># Make sure files is in the correct format.</tt> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">defaultconfig</tt><tt class="py-op">.</tt><tt class="py-name">files</tt> <tt class="py-op">!=</tt> <tt class="py-name">files</tt><tt class="py-op">:</tt> </tt>
+<a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">defaultconfig</tt><tt class="py-op">.</tt><tt class="py-name">files</tt> <tt class="py-op">=</tt> <tt class="py-name">files</tt> </tt>
+<a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line"> </tt>
+<a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">defaultconfig</tt> </tt>
+</div></div><a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line"> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line"> </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line"><tt class="py-comment"># Changes every option in config that is also in store_true_list that is set to '0' to None</tt> </tt>
+<a name="_zero_to_none"></a><div id="_zero_to_none-def"><a name="L114"></a><tt class="py-lineno">114</tt> <a class="py-toggle" href="#" id="_zero_to_none-toggle" onclick="return toggle('_zero_to_none');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="rhnpush.rhnpush_confmanager-module.html#_zero_to_none">_zero_to_none</a><tt class="py-op">(</tt><tt class="py-param">config</tt><tt class="py-op">,</tt> <tt class="py-param">store_true_list</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="_zero_to_none-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="_zero_to_none-expanded"><a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line">    <tt class="py-keyword">for</tt> <tt class="py-name">opt</tt> <tt class="py-keyword">in</tt> <tt id="link-37" class="py-name" targets="Function backend.server.action.rollback.config()=backend.server.action.rollback-module.html#config,Function backend.server.action_extra_data.rollback.config()=backend.server.action_extra_data.rollback-module.html#config,Package backend.server.handlers.config=backend.server.handlers.config-module.html,Module backend.wsgi.config=backend.wsgi.config-module.html,Variable image.config=image-module.html#config,Module rhnkickstart.config=rhnkickstart.config-module.html,Module up2date_client.config=up2date_client.config-module.html"><a title="backend.server.action.rollback.config
+backend.server.action_extra_data.rollback.config
+backend.server.handlers.config
+backend.wsgi.config
+image.config
+rhnkickstart.config
+up2date_client.config" class="py-name" href="#" onclick="return doclink('link-37', 'config', 'link-37');">config</a></tt><tt class="py-op">.</tt><tt id="link-38" class="py-name" targets="Method backend.common.rhnConfig.RHNOptions.keys()=backend.common.rhnConfig.RHNOptions-class.html#keys,Method backend.server.rhnSQL.sql_table.Table.keys()=backend.server.rhnSQL.sql_table.Table-class.html#keys,Method backend.wsgi.wsgiRequest.WsgiMPtable.keys()=backend.wsgi.wsgiRequest.WsgiMPtable-class.html#keys,Function config_common.local_config.keys()=config_common.local_config-module.html#keys,Method config_common.local_config.rhncfgConfigParser.keys()=config_common.local_config.rhncfgConfigParser-class.html#keys,Method rhn.UserDictCase.UserDictCase.keys()=rhn.UserDictCase.UserDictCase-class.html#keys,Method rhnpush.rhnpush_config.rhnpushConfigParser.keys()=rhnpush.rhnpush_config.rhnpushConfigParser-class.html#keys,Method src.osad_config.ClientConfigParser.keys()=src.osad_config.ClientConfigParser-class.html#keys,Function src.osad_config.keys()=src.osad_config-module.html#keys,Method up2date_client.config.Config.keys()=up2date_client.config.Config-class.html#keys,Method up2date_client.config.ConfigFile.keys()=up2date_client.config.ConfigFile-class.html#keys,Method up2date_client.rhnChannel.rhnChannel.keys()=up2date_client.rhnChannel.rhnChannel-class.html#keys"><a title="backend.common.rhnConfig.RHNOptions.keys
+backend.server.rhnSQL.sql_table.Table.keys
+backend.wsgi.wsgiRequest.WsgiMPtable.keys
+config_common.local_config.keys
+config_common.local_config.rhncfgConfigParser.keys
+rhn.UserDictCase.UserDictCase.keys
+rhnpush.rhnpush_config.rhnpushConfigParser.keys
+src.osad_config.ClientConfigParser.keys
+src.osad_config.keys
+up2date_client.config.Config.keys
+up2date_client.config.ConfigFile.keys
+up2date_client.rhnChannel.rhnChannel.keys" class="py-name" href="#" onclick="return doclink('link-38', 'keys', 'link-38');">keys</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">cmd</tt> <tt class="py-keyword">in</tt> <tt class="py-name">store_true_list</tt><tt class="py-op">:</tt> </tt>
+<a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt id="link-39" class="py-name" targets="Class str=str-class.html"><a title="str" class="py-name" href="#" onclick="return doclink('link-39', 'str', 'link-39');">str</a></tt><tt class="py-op">(</tt><tt class="py-name">opt</tt><tt class="py-op">)</tt> <tt class="py-op">==</tt> <tt class="py-name">cmd</tt> <tt class="py-keyword">and</tt> <tt id="link-40" class="py-name"><a title="backend.server.action.rollback.config
+backend.server.action_extra_data.rollback.config
+backend.server.handlers.config
+backend.wsgi.config
+image.config
+rhnkickstart.config
+up2date_client.config" class="py-name" href="#" onclick="return doclink('link-40', 'config', 'link-37');">config</a></tt><tt class="py-op">.</tt><tt class="py-name">__dict__</tt><tt class="py-op">[</tt><tt class="py-name">opt</tt><tt class="py-op">]</tt> <tt class="py-op">==</tt> <tt class="py-string">'0'</tt><tt class="py-op">:</tt> </tt>
+<a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line">                <tt id="link-41" class="py-name"><a title="backend.server.action.rollback.config
+backend.server.action_extra_data.rollback.config
+backend.server.handlers.config
+backend.wsgi.config
+image.config
+rhnkickstart.config
+up2date_client.config" class="py-name" href="#" onclick="return doclink('link-41', 'config', 'link-37');">config</a></tt><tt class="py-op">.</tt><tt class="py-name">__dict__</tt><tt class="py-op">[</tt><tt class="py-name">opt</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+</div><a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Fri Nov 25 11:30:48 2016
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

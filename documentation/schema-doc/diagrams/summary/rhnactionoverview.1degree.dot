@@ -1,0 +1,42 @@
+// dot 2.26.0 on Linux 2.6.32-504.el6.x86_64
+// SchemaSpy rev 590
+digraph "rhnactionoverview" {
+  graph [
+    rankdir="RL"
+    bgcolor="#f7f7f7"
+    nodesep="0.18"
+    ranksep="0.46"
+    fontname="Helvetica"
+    fontsize="11"
+  ];
+  node [
+    fontname="Helvetica"
+    fontsize="11"
+    shape="plaintext"
+  ];
+  edge [
+    arrowsize="0.8"
+  ];
+  "rhnactionoverview" [
+    label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">rhnactionoverview</TD></TR>
+      <TR><TD PORT="org_id" COLSPAN="3" ALIGN="LEFT">org_id</TD></TR>
+      <TR><TD PORT="action_id" COLSPAN="3" ALIGN="LEFT">action_id</TD></TR>
+      <TR><TD PORT="type_id" COLSPAN="3" ALIGN="LEFT">type_id</TD></TR>
+      <TR><TD PORT="type_name" COLSPAN="3" ALIGN="LEFT">type_name</TD></TR>
+      <TR><TD PORT="name" COLSPAN="3" ALIGN="LEFT">name</TD></TR>
+      <TR><TD PORT="scheduler" COLSPAN="3" ALIGN="LEFT">scheduler</TD></TR>
+      <TR><TD PORT="scheduler_login" COLSPAN="3" ALIGN="LEFT">scheduler_login</TD></TR>
+      <TR><TD PORT="earliest_action" COLSPAN="3" ALIGN="LEFT">earliest_action</TD></TR>
+      <TR><TD PORT="total_count" COLSPAN="3" ALIGN="LEFT">total_count</TD></TR>
+      <TR><TD PORT="successful_count" COLSPAN="3" ALIGN="LEFT">successful_count</TD></TR>
+      <TR><TD PORT="failed_count" COLSPAN="3" ALIGN="LEFT">failed_count</TD></TR>
+      <TR><TD PORT="in_progress_count" COLSPAN="3" ALIGN="LEFT">in_progress_count</TD></TR>
+      <TR><TD PORT="archived" COLSPAN="3" ALIGN="LEFT">archived</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">view</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+    </TABLE>>
+    URL="tables/rhnactionoverview.html"
+    tooltip="rhnactionoverview"
+  ];
+}

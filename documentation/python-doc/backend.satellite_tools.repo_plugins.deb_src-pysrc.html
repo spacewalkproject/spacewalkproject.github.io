@@ -1,0 +1,546 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>backend.satellite_tools.repo_plugins.deb_src</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="backend-module.html">Package&nbsp;backend</a> ::
+        <a href="backend.satellite_tools-module.html">Package&nbsp;satellite_tools</a> ::
+        <a href="backend.satellite_tools.repo_plugins-module.html">Package&nbsp;repo_plugins</a> ::
+        Module&nbsp;deb_src
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="backend.satellite_tools.repo_plugins.deb_src-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="backend.satellite_tools.repo_plugins.deb_src-module.html">Module backend.satellite_tools.repo_plugins.deb_src</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-comment"># Copyright (c) 2016 Red Hat, Inc.</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-comment"># This software is licensed to you under the GNU General Public License,</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-comment"># version 2 (GPLv2). There is NO WARRANTY for this software, express or</tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-comment"># implied, including the implied warranties of MERCHANTABILITY or FITNESS</tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-comment"># FOR A PARTICULAR PURPOSE. You should have received a copy of GPLv2</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt class="py-comment"># along with this software; if not, see</tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"><tt class="py-comment"># http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt.</tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line"><tt class="py-comment"># Red Hat trademarks are not licensed under GPLv2. No permission is</tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line"><tt class="py-comment"># granted to use or replicate Red Hat trademarks that are incorporated</tt> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line"><tt class="py-comment"># in this software or its documentation.</tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">shutil</tt> <tt class="py-keyword">import</tt> <tt class="py-name">rmtree</tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">time</tt> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">requests</tt> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">spacewalk</tt><tt class="py-op">.</tt><tt id="link-0" class="py-name" targets="Module backend.cdn_tools.common=backend.cdn_tools.common-module.html,Package backend.common=backend.common-module.html,Module rhnkickstart.common=rhnkickstart.common-module.html"><a title="backend.cdn_tools.common
+backend.common
+rhnkickstart.common" class="py-name" href="#" onclick="return doclink('link-0', 'common', 'link-0');">common</a></tt> <tt class="py-keyword">import</tt> <tt id="link-1" class="py-name" targets="Module backend.common.fileutils=backend.common.fileutils-module.html"><a title="backend.common.fileutils" class="py-name" href="#" onclick="return doclink('link-1', 'fileutils', 'link-1');">fileutils</a></tt> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">spacewalk</tt><tt class="py-op">.</tt><tt id="link-2" class="py-name" targets="Package backend.satellite_tools=backend.satellite_tools-module.html"><a title="backend.satellite_tools" class="py-name" href="#" onclick="return doclink('link-2', 'satellite_tools', 'link-2');">satellite_tools</a></tt><tt class="py-op">.</tt><tt id="link-3" class="py-name" targets="Package backend.satellite_tools.repo_plugins=backend.satellite_tools.repo_plugins-module.html"><a title="backend.satellite_tools.repo_plugins" class="py-name" href="#" onclick="return doclink('link-3', 'repo_plugins', 'link-3');">repo_plugins</a></tt> <tt class="py-keyword">import</tt> <tt id="link-4" class="py-name" targets="Class backend.satellite_tools.repo_plugins.ContentPackage=backend.satellite_tools.repo_plugins.ContentPackage-class.html"><a title="backend.satellite_tools.repo_plugins.ContentPackage" class="py-name" href="#" onclick="return doclink('link-4', 'ContentPackage', 'link-4');">ContentPackage</a></tt> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">spacewalk</tt><tt class="py-op">.</tt><tt id="link-5" class="py-name"><a title="backend.cdn_tools.common
+backend.common
+rhnkickstart.common" class="py-name" href="#" onclick="return doclink('link-5', 'common', 'link-0');">common</a></tt><tt class="py-op">.</tt><tt id="link-6" class="py-name" targets="Module backend.common.rhnConfig=backend.common.rhnConfig-module.html"><a title="backend.common.rhnConfig" class="py-name" href="#" onclick="return doclink('link-6', 'rhnConfig', 'link-6');">rhnConfig</a></tt> <tt class="py-keyword">import</tt> <tt id="link-7" class="py-name" targets="Variable backend.common.rhnConfig.CFG=backend.common.rhnConfig-module.html#CFG"><a title="backend.common.rhnConfig.CFG" class="py-name" href="#" onclick="return doclink('link-7', 'CFG', 'link-7');">CFG</a></tt><tt class="py-op">,</tt> <tt id="link-8" class="py-name" targets="Function backend.common.rhnConfig.initCFG()=backend.common.rhnConfig-module.html#initCFG"><a title="backend.common.rhnConfig.initCFG" class="py-name" href="#" onclick="return doclink('link-8', 'initCFG', 'link-8');">initCFG</a></tt> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">spacewalk</tt><tt class="py-op">.</tt><tt id="link-9" class="py-name"><a title="backend.cdn_tools.common
+backend.common
+rhnkickstart.common" class="py-name" href="#" onclick="return doclink('link-9', 'common', 'link-0');">common</a></tt><tt class="py-op">.</tt><tt id="link-10" class="py-name" targets="Module backend.common.checksum=backend.common.checksum-module.html"><a title="backend.common.checksum" class="py-name" href="#" onclick="return doclink('link-10', 'checksum', 'link-10');">checksum</a></tt> <tt class="py-keyword">import</tt> <tt id="link-11" class="py-name" targets="Function backend.common.checksum.getFileChecksum()=backend.common.checksum-module.html#getFileChecksum"><a title="backend.common.checksum.getFileChecksum" class="py-name" href="#" onclick="return doclink('link-11', 'getFileChecksum', 'link-11');">getFileChecksum</a></tt> </tt>
+<a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line"> </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line"><tt id="link-12" class="py-name" targets="Variable backend.satellite_tools.repo_plugins.deb_src.CACHE_DIR=backend.satellite_tools.repo_plugins.deb_src-module.html#CACHE_DIR,Variable backend.satellite_tools.repo_plugins.yum_src.CACHE_DIR=backend.satellite_tools.repo_plugins.yum_src-module.html#CACHE_DIR"><a title="backend.satellite_tools.repo_plugins.deb_src.CACHE_DIR
+backend.satellite_tools.repo_plugins.yum_src.CACHE_DIR" class="py-name" href="#" onclick="return doclink('link-12', 'CACHE_DIR', 'link-12');">CACHE_DIR</a></tt> <tt class="py-op">=</tt> <tt class="py-string">'/var/cache/rhn/reposync/'</tt> </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line"><tt id="link-13" class="py-name" targets="Variable backend.satellite_tools.repo_plugins.deb_src.RETRIES=backend.satellite_tools.repo_plugins.deb_src-module.html#RETRIES"><a title="backend.satellite_tools.repo_plugins.deb_src.RETRIES" class="py-name" href="#" onclick="return doclink('link-13', 'RETRIES', 'link-13');">RETRIES</a></tt> <tt class="py-op">=</tt> <tt class="py-number">10</tt> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line"><tt id="link-14" class="py-name" targets="Variable backend.satellite_tools.repo_plugins.deb_src.RETRY_DELAY=backend.satellite_tools.repo_plugins.deb_src-module.html#RETRY_DELAY"><a title="backend.satellite_tools.repo_plugins.deb_src.RETRY_DELAY" class="py-name" href="#" onclick="return doclink('link-14', 'RETRY_DELAY', 'link-14');">RETRY_DELAY</a></tt> <tt class="py-op">=</tt> <tt class="py-number">1</tt> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line"><tt id="link-15" class="py-name" targets="Variable backend.satellite_tools.repo_plugins.deb_src.FORMAT_PRIORITY=backend.satellite_tools.repo_plugins.deb_src-module.html#FORMAT_PRIORITY"><a title="backend.satellite_tools.repo_plugins.deb_src.FORMAT_PRIORITY" class="py-name" href="#" onclick="return doclink('link-15', 'FORMAT_PRIORITY', 'link-15');">FORMAT_PRIORITY</a></tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-string">'.xz'</tt><tt class="py-op">,</tt> <tt class="py-string">'.gz'</tt><tt class="py-op">,</tt> <tt class="py-string">''</tt><tt class="py-op">]</tt> </tt>
+<a name="DebRepo"></a><div id="DebRepo-def"><a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line"> </tt>
+<a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line"> </tt>
+<a name="L31"></a><tt class="py-lineno"> 31</tt> <a class="py-toggle" href="#" id="DebRepo-toggle" onclick="return toggle('DebRepo');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="backend.satellite_tools.repo_plugins.deb_src.DebRepo-class.html">DebRepo</a><tt class="py-op">(</tt><tt class="py-base-class">object</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="DebRepo-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="DebRepo-expanded"><a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line">    <tt class="py-comment"># url example - http://ftp.debian.org/debian/dists/jessie/main/binary-amd64/</tt> </tt>
+<a name="DebRepo.__init__"></a><div id="DebRepo.__init__-def"><a name="L33"></a><tt class="py-lineno"> 33</tt> <a class="py-toggle" href="#" id="DebRepo.__init__-toggle" onclick="return toggle('DebRepo.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="backend.satellite_tools.repo_plugins.deb_src.DebRepo-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">url</tt><tt class="py-op">,</tt> <tt class="py-param">cache_dir</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="DebRepo.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="DebRepo.__init__-expanded"><a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-16" class="py-name" targets="Variable backend.satellite_tools.xmlWireSource.BaseWireSource.url=backend.satellite_tools.xmlWireSource.BaseWireSource-class.html#url"><a title="backend.satellite_tools.xmlWireSource.BaseWireSource.url" class="py-name" href="#" onclick="return doclink('link-16', 'url', 'link-16');">url</a></tt> <tt class="py-op">=</tt> <tt id="link-17" class="py-name"><a title="backend.satellite_tools.xmlWireSource.BaseWireSource.url" class="py-name" href="#" onclick="return doclink('link-17', 'url', 'link-16');">url</a></tt> </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line">        <tt class="py-name">parts</tt> <tt class="py-op">=</tt> <tt id="link-18" class="py-name"><a title="backend.satellite_tools.xmlWireSource.BaseWireSource.url" class="py-name" href="#" onclick="return doclink('link-18', 'url', 'link-16');">url</a></tt><tt class="py-op">.</tt><tt class="py-name">split</tt><tt class="py-op">(</tt><tt class="py-string">'/dists'</tt><tt class="py-op">)</tt> </tt>
+<a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">base_url</tt> <tt class="py-op">=</tt> <tt class="py-name">parts</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> </tt>
+<a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">sslclientcert</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">sslclientkey</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">sslcacert</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+<a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">basecachedir</tt> <tt class="py-op">=</tt> <tt class="py-name">cache_dir</tt> </tt>
+<a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">isdir</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">basecachedir</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line">            <tt id="link-19" class="py-name"><a title="backend.common.fileutils" class="py-name" href="#" onclick="return doclink('link-19', 'fileutils', 'link-1');">fileutils</a></tt><tt class="py-op">.</tt><tt id="link-20" class="py-name" targets="Function backend.common.fileutils.makedirs()=backend.common.fileutils-module.html#makedirs"><a title="backend.common.fileutils.makedirs" class="py-name" href="#" onclick="return doclink('link-20', 'makedirs', 'link-20');">makedirs</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">basecachedir</tt><tt class="py-op">,</tt> <tt class="py-name">user</tt><tt class="py-op">=</tt><tt class="py-string">'apache'</tt><tt class="py-op">,</tt> <tt class="py-name">group</tt><tt class="py-op">=</tt><tt class="py-string">'apache'</tt><tt class="py-op">)</tt> </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">includepkgs</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">exclude</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+</div><a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line"> </tt>
+<a name="DebRepo._download"></a><div id="DebRepo._download-def"><a name="L44"></a><tt class="py-lineno"> 44</tt> <a class="py-toggle" href="#" id="DebRepo._download-toggle" onclick="return toggle('DebRepo._download');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="backend.satellite_tools.repo_plugins.deb_src.DebRepo-class.html#_download">_download</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">url</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="DebRepo._download-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="DebRepo._download-expanded"><a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt id="link-21" class="py-name" targets="Variable backend.common.rhnTranslate._=backend.common.rhnTranslate-module.html#_,Variable backend.satellite_tools.disk_dumper.iss._=backend.satellite_tools.disk_dumper.iss-module.html#_,Variable backend.satellite_tools.satsync._=backend.satellite_tools.satsync-module.html#_,Variable rhn_choose_channel._=rhn_choose_channel-module.html#_,Variable rhn_choose_server_gui._=rhn_choose_server_gui-module.html#_,Variable rhn_create_profile_gui._=rhn_create_profile_gui-module.html#_,Variable rhn_finish_gui._=rhn_finish_gui-module.html#_,Variable rhn_login_gui._=rhn_login_gui-module.html#_,Variable rhn_provide_certificate_gui._=rhn_provide_certificate_gui-module.html#_,Variable rhn_register._=rhn_register-module.html#_,Variable rhn_review_gui._=rhn_review_gui-module.html#_,Variable rhn_start_gui._=rhn_start_gui-module.html#_,Variable rhnreg_ks._=rhnreg_ks-module.html#_,Variable script-rhn_profile_sync_py._=script-rhn_profile_sync_py-module.html#_,Variable script-spacewalk_channel_py._=script-spacewalk_channel_py-module.html#_,Variable up2date_client.debUtils._=up2date_client.debUtils-module.html#_,Variable up2date_client.gui._=up2date_client.gui-module.html#_,Variable up2date_client.hardware._=up2date_client.hardware-module.html#_,Variable up2date_client.rhnreg._=up2date_client.rhnreg-module.html#_,Variable up2date_client.rhnregGui._=up2date_client.rhnregGui-module.html#_,Variable up2date_client.tui._=up2date_client.tui-module.html#_,Variable virtualization.poller._=virtualization.poller-module.html#_,Variable virtualization.support._=virtualization.support-module.html#_"><a title="backend.common.rhnTranslate._
+backend.satellite_tools.disk_dumper.iss._
+backend.satellite_tools.satsync._
+rhn_choose_channel._
+rhn_choose_server_gui._
+rhn_create_profile_gui._
+rhn_finish_gui._
+rhn_login_gui._
+rhn_provide_certificate_gui._
+rhn_register._
+rhn_review_gui._
+rhn_start_gui._
+rhnreg_ks._
+script-rhn_profile_sync_py._
+script-spacewalk_channel_py._
+up2date_client.debUtils._
+up2date_client.gui._
+up2date_client.hardware._
+up2date_client.rhnreg._
+up2date_client.rhnregGui._
+up2date_client.tui._
+virtualization.poller._
+virtualization.support._" class="py-name" href="#" onclick="return doclink('link-21', '_', 'link-21');">_</a></tt> <tt class="py-keyword">in</tt> <tt class="py-name">range</tt><tt class="py-op">(</tt><tt class="py-number">0</tt><tt class="py-op">,</tt> <tt id="link-22" class="py-name"><a title="backend.satellite_tools.repo_plugins.deb_src.RETRIES" class="py-name" href="#" onclick="return doclink('link-22', 'RETRIES', 'link-13');">RETRIES</a></tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line">            <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line">                <tt id="link-23" class="py-name" targets="Method backend.satellite_exporter.handlers.non_auth_dumper.ContainerWriter.data()=backend.satellite_exporter.handlers.non_auth_dumper.ContainerWriter-class.html#data,Method backend.satellite_tools.exporter.xmlWriter.XMLWriter.data()=backend.satellite_tools.exporter.xmlWriter.XMLWriter-class.html#data"><a title="backend.satellite_exporter.handlers.non_auth_dumper.ContainerWriter.data
+backend.satellite_tools.exporter.xmlWriter.XMLWriter.data" class="py-name" href="#" onclick="return doclink('link-23', 'data', 'link-23');">data</a></tt> <tt class="py-op">=</tt> <tt class="py-name">requests</tt><tt class="py-op">.</tt><tt id="link-24" class="py-name" targets="Function actions.up2date_config.get()=actions.up2date_config-module.html#get,Method backend.common.rhnCache.Cache.get()=backend.common.rhnCache.Cache-class.html#get,Method backend.common.rhnCache.CompressedCache.get()=backend.common.rhnCache.CompressedCache-class.html#get,Method backend.common.rhnCache.NullCache.get()=backend.common.rhnCache.NullCache-class.html#get,Method backend.common.rhnCache.ObjectCache.get()=backend.common.rhnCache.ObjectCache-class.html#get,Function backend.common.rhnCache.get()=backend.common.rhnCache-module.html#get,Method backend.common.rhnConfig.RHNOptions.get()=backend.common.rhnConfig.RHNOptions-class.html#get,Function backend.common.rhnFlags.get()=backend.common.rhnFlags-module.html#get,Function backend.server.action_extra_data.up2date_config.get()=backend.server.action_extra_data.up2date_config-module.html#get,Method backend.server.handlers.xmlrpc.queue.Queue.get()=backend.server.handlers.xmlrpc.queue.Queue-class.html#get,Method backend.server.handlers.xmlrpc.up2date.Servers.get()=backend.server.handlers.xmlrpc.up2date.Servers-class.html#get,Method backend.server.rhnSQL.sql_row.Row.get()=backend.server.rhnSQL.sql_row.Row-class.html#get,Method backend.server.rhnSQL.sql_table.Table.get()=backend.server.rhnSQL.sql_table.Table-class.html#get,Function backend.server.rhnServer.get()=backend.server.rhnServer-module.html#get,Function config_common.local_config.get()=config_common.local_config-module.html#get,Function src.osad_config.get()=src.osad_config-module.html#get"><a title="actions.up2date_config.get
+backend.common.rhnCache.Cache.get
+backend.common.rhnCache.CompressedCache.get
+backend.common.rhnCache.NullCache.get
+backend.common.rhnCache.ObjectCache.get
+backend.common.rhnCache.get
+backend.common.rhnConfig.RHNOptions.get
+backend.common.rhnFlags.get
+backend.server.action_extra_data.up2date_config.get
+backend.server.handlers.xmlrpc.queue.Queue.get
+backend.server.handlers.xmlrpc.up2date.Servers.get
+backend.server.rhnSQL.sql_row.Row.get
+backend.server.rhnSQL.sql_table.Table.get
+backend.server.rhnServer.get
+config_common.local_config.get
+src.osad_config.get" class="py-name" href="#" onclick="return doclink('link-24', 'get', 'link-24');">get</a></tt><tt class="py-op">(</tt><tt id="link-25" class="py-name"><a title="backend.satellite_tools.xmlWireSource.BaseWireSource.url" class="py-name" href="#" onclick="return doclink('link-25', 'url', 'link-16');">url</a></tt><tt class="py-op">,</tt> <tt id="link-26" class="py-name" targets="Module backend.server.handlers.sat.cert=backend.server.handlers.sat.cert-module.html"><a title="backend.server.handlers.sat.cert" class="py-name" href="#" onclick="return doclink('link-26', 'cert', 'link-26');">cert</a></tt><tt class="py-op">=</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">sslclientcert</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">sslclientkey</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt id="link-27" class="py-name" targets="Function backend.server.action.configfiles.verify()=backend.server.action.configfiles-module.html#verify,Function backend.server.action.packages.verify()=backend.server.action.packages-module.html#verify,Function backend.server.action_extra_data.packages.verify()=backend.server.action_extra_data.packages-module.html#verify"><a title="backend.server.action.configfiles.verify
+backend.server.action.packages.verify
+backend.server.action_extra_data.packages.verify" class="py-name" href="#" onclick="return doclink('link-27', 'verify', 'link-27');">verify</a></tt><tt class="py-op">=</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">sslcacert</tt><tt class="py-op">)</tt> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line">                <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt id="link-28" class="py-name"><a title="backend.satellite_exporter.handlers.non_auth_dumper.ContainerWriter.data
+backend.satellite_tools.exporter.xmlWriter.XMLWriter.data" class="py-name" href="#" onclick="return doclink('link-28', 'data', 'link-23');">data</a></tt><tt class="py-op">.</tt><tt class="py-name">ok</tt><tt class="py-op">:</tt> </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line">                    <tt class="py-keyword">return</tt> <tt class="py-string">''</tt> </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line">                <tt id="link-29" class="py-name" targets="Variable backend.satellite_tools.xmlDiskSource.ArchesDiskSource.filename=backend.satellite_tools.xmlDiskSource.ArchesDiskSource-class.html#filename,Variable backend.satellite_tools.xmlDiskSource.ArchesExtraDiskSource.filename=backend.satellite_tools.xmlDiskSource.ArchesExtraDiskSource-class.html#filename,Variable virtualization.get_config_value.filename=virtualization.get_config_value-module.html#filename"><a title="backend.satellite_tools.xmlDiskSource.ArchesDiskSource.filename
+backend.satellite_tools.xmlDiskSource.ArchesExtraDiskSource.filename
+virtualization.get_config_value.filename" class="py-name" href="#" onclick="return doclink('link-29', 'filename', 'link-29');">filename</a></tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">basecachedir</tt> <tt class="py-op">+</tt> <tt class="py-string">'/'</tt> <tt class="py-op">+</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">basename</tt><tt class="py-op">(</tt><tt id="link-30" class="py-name"><a title="backend.satellite_tools.xmlWireSource.BaseWireSource.url" class="py-name" href="#" onclick="return doclink('link-30', 'url', 'link-16');">url</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line">                <tt class="py-name">fd</tt> <tt class="py-op">=</tt> <tt class="py-name">open</tt><tt class="py-op">(</tt><tt id="link-31" class="py-name"><a title="backend.satellite_tools.xmlDiskSource.ArchesDiskSource.filename
+backend.satellite_tools.xmlDiskSource.ArchesExtraDiskSource.filename
+virtualization.get_config_value.filename" class="py-name" href="#" onclick="return doclink('link-31', 'filename', 'link-29');">filename</a></tt><tt class="py-op">,</tt> <tt class="py-string">'wb'</tt><tt class="py-op">)</tt> </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line">                <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line">                    <tt class="py-keyword">for</tt> <tt class="py-name">chunk</tt> <tt class="py-keyword">in</tt> <tt id="link-32" class="py-name"><a title="backend.satellite_exporter.handlers.non_auth_dumper.ContainerWriter.data
+backend.satellite_tools.exporter.xmlWriter.XMLWriter.data" class="py-name" href="#" onclick="return doclink('link-32', 'data', 'link-23');">data</a></tt><tt class="py-op">.</tt><tt class="py-name">iter_content</tt><tt class="py-op">(</tt><tt class="py-name">chunk_size</tt><tt class="py-op">=</tt><tt class="py-number">1024</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line">                        <tt class="py-name">fd</tt><tt class="py-op">.</tt><tt id="link-33" class="py-name" targets="Static Method backend.common.fileutils.payload.write()=backend.common.fileutils.payload-class.html#write,Method backend.common.rhn_mpm.MPM_Package.write()=backend.common.rhn_mpm.MPM_Package-class.html#write,Method backend.satellite_tools.disk_dumper.dumper.TeeStream.write()=backend.satellite_tools.disk_dumper.dumper.TeeStream-class.html#write,Method backend.satellite_tools.disk_dumper.string_buffer.StringBuffer.write()=backend.satellite_tools.disk_dumper.string_buffer.StringBuffer-class.html#write,Method backend.satellite_tools.repo_plugins.yum_src.YumWarnings.write()=backend.satellite_tools.repo_plugins.yum_src.YumWarnings-class.html#write,Method backend.wsgi.wsgiRequest.WsgiRequest.write()=backend.wsgi.wsgiRequest.WsgiRequest-class.html#write,Method rhn.SSL.SSLSocket.write()=rhn.SSL.SSLSocket-class.html#write,Method rhn.SmartIO.SmartIO.write()=rhn.SmartIO.SmartIO-class.html#write,Method rhn.nonblocking.NonBlockingFile.write()=rhn.nonblocking.NonBlockingFile-class.html#write,Method rhnkickstart.lilo.LiloConfigFile.write()=rhnkickstart.lilo.LiloConfigFile-class.html#write,Method rhnpush.rhnpush_config.rhnpushConfigParser.write()=rhnpush.rhnpush_config.rhnpushConfigParser-class.html#write"><a title="backend.common.fileutils.payload.write
+backend.common.rhn_mpm.MPM_Package.write
+backend.satellite_tools.disk_dumper.dumper.TeeStream.write
+backend.satellite_tools.disk_dumper.string_buffer.StringBuffer.write
+backend.satellite_tools.repo_plugins.yum_src.YumWarnings.write
+backend.wsgi.wsgiRequest.WsgiRequest.write
+rhn.SSL.SSLSocket.write
+rhn.SmartIO.SmartIO.write
+rhn.nonblocking.NonBlockingFile.write
+rhnkickstart.lilo.LiloConfigFile.write
+rhnpush.rhnpush_config.rhnpushConfigParser.write" class="py-name" href="#" onclick="return doclink('link-33', 'write', 'link-33');">write</a></tt><tt class="py-op">(</tt><tt class="py-name">chunk</tt><tt class="py-op">)</tt> </tt>
+<a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line">                <tt class="py-keyword">finally</tt><tt class="py-op">:</tt> </tt>
+<a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line">                    <tt class="py-keyword">if</tt> <tt class="py-name">fd</tt> <tt class="py-keyword">is</tt> <tt class="py-keyword">not</tt> <tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line">                        <tt class="py-name">fd</tt><tt class="py-op">.</tt><tt id="link-34" class="py-name" targets="Method backend.common.rhnCache.ClosingZipFile.close()=backend.common.rhnCache.ClosingZipFile-class.html#close,Method backend.common.rhnCache.LockedFile.close()=backend.common.rhnCache.LockedFile-class.html#close,Method backend.satellite_exporter.handlers.non_auth_dumper.NonAuthenticatedDumper.close()=backend.satellite_exporter.handlers.non_auth_dumper.NonAuthenticatedDumper-class.html#close,Method backend.satellite_tools.connection.CompressedStream.close()=backend.satellite_tools.connection.CompressedStream-class.html#close,Method backend.satellite_tools.disk_dumper.dumper.CachedQueryIterator.close()=backend.satellite_tools.disk_dumper.dumper.CachedQueryIterator-class.html#close,Method backend.satellite_tools.disk_dumper.dumper.XML_Dumper.close()=backend.satellite_tools.disk_dumper.dumper.XML_Dumper-class.html#close,Method backend.satellite_tools.disk_dumper.iss.Dumper.close()=backend.satellite_tools.disk_dumper.iss.Dumper-class.html#close,Method backend.satellite_tools.disk_dumper.string_buffer.StringBuffer.close()=backend.satellite_tools.disk_dumper.string_buffer.StringBuffer-class.html#close,Method backend.satellite_tools.satsync.StreamProducer.close()=backend.satellite_tools.satsync.StreamProducer-class.html#close,Method backend.satellite_tools.sync_handlers.ContainerHandler.close()=backend.satellite_tools.sync_handlers.ContainerHandler-class.html#close,Method backend.satellite_tools.xmlSource.BaseDispatchHandler.close()=backend.satellite_tools.xmlSource.BaseDispatchHandler-class.html#close,Method backend.server.rhnSQL.driver_cx_Oracle.Database.close()=backend.server.rhnSQL.driver_cx_Oracle.Database-class.html#close,Method backend.server.rhnSQL.driver_postgresql.Cursor.close()=backend.server.rhnSQL.driver_postgresql.Cursor-class.html#close,Method backend.server.rhnSQL.sql_base.Database.close()=backend.server.rhnSQL.sql_base.Database-class.html#close,Method proxy.responseContext.ResponseContext.close()=proxy.responseContext.ResponseContext-class.html#close,Method rhn.SSL.SSLSocket.close()=rhn.SSL.SSLSocket-class.html#close,Method rhn.rpclib.Server.close()=rhn.rpclib.Server-class.html#close,Method rhn.transports.BaseOutput.close()=rhn.transports.BaseOutput-class.html#close,Method up2date_client.rhnregGui.NetworkConfigDialog.close()=up2date_client.rhnregGui.NetworkConfigDialog-class.html#close"><a title="backend.common.rhnCache.ClosingZipFile.close
+backend.common.rhnCache.LockedFile.close
+backend.satellite_exporter.handlers.non_auth_dumper.NonAuthenticatedDumper.close
+backend.satellite_tools.connection.CompressedStream.close
+backend.satellite_tools.disk_dumper.dumper.CachedQueryIterator.close
+backend.satellite_tools.disk_dumper.dumper.XML_Dumper.close
+backend.satellite_tools.disk_dumper.iss.Dumper.close
+backend.satellite_tools.disk_dumper.string_buffer.StringBuffer.close
+backend.satellite_tools.satsync.StreamProducer.close
+backend.satellite_tools.sync_handlers.ContainerHandler.close
+backend.satellite_tools.xmlSource.BaseDispatchHandler.close
+backend.server.rhnSQL.driver_cx_Oracle.Database.close
+backend.server.rhnSQL.driver_postgresql.Cursor.close
+backend.server.rhnSQL.sql_base.Database.close
+proxy.responseContext.ResponseContext.close
+rhn.SSL.SSLSocket.close
+rhn.rpclib.Server.close
+rhn.transports.BaseOutput.close
+up2date_client.rhnregGui.NetworkConfigDialog.close" class="py-name" href="#" onclick="return doclink('link-34', 'close', 'link-34');">close</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line">                <tt class="py-keyword">return</tt> <tt id="link-35" class="py-name"><a title="backend.satellite_tools.xmlDiskSource.ArchesDiskSource.filename
+backend.satellite_tools.xmlDiskSource.ArchesExtraDiskSource.filename
+virtualization.get_config_value.filename" class="py-name" href="#" onclick="return doclink('link-35', 'filename', 'link-29');">filename</a></tt> </tt>
+<a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line">            <tt class="py-keyword">except</tt> <tt class="py-name">requests</tt><tt class="py-op">.</tt><tt class="py-name">exceptions</tt><tt class="py-op">.</tt><tt class="py-name">RequestException</tt><tt class="py-op">:</tt> </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line">                <tt class="py-keyword">print</tt> <tt class="py-string">"ERROR: requests.exceptions.RequestException occured"</tt> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line">                <tt class="py-name">time</tt><tt class="py-op">.</tt><tt class="py-name">sleep</tt><tt class="py-op">(</tt><tt id="link-36" class="py-name"><a title="backend.satellite_tools.repo_plugins.deb_src.RETRY_DELAY" class="py-name" href="#" onclick="return doclink('link-36', 'RETRY_DELAY', 'link-14');">RETRY_DELAY</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line"> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-string">''</tt> </tt>
+</div><a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line"> </tt>
+<a name="DebRepo.get_package_list"></a><div id="DebRepo.get_package_list-def"><a name="L65"></a><tt class="py-lineno"> 65</tt> <a class="py-toggle" href="#" id="DebRepo.get_package_list-toggle" onclick="return toggle('DebRepo.get_package_list');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="backend.satellite_tools.repo_plugins.deb_src.DebRepo-class.html#get_package_list">get_package_list</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="DebRepo.get_package_list-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="DebRepo.get_package_list-expanded"><a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line">        <tt class="py-name">decompressed</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line">        <tt class="py-name">packages_raw</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line">        <tt class="py-name">to_return</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line"> </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">extension</tt> <tt class="py-keyword">in</tt> <tt id="link-37" class="py-name"><a title="backend.satellite_tools.repo_plugins.deb_src.FORMAT_PRIORITY" class="py-name" href="#" onclick="return doclink('link-37', 'FORMAT_PRIORITY', 'link-15');">FORMAT_PRIORITY</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line">            <tt id="link-38" class="py-name"><a title="backend.satellite_tools.xmlWireSource.BaseWireSource.url" class="py-name" href="#" onclick="return doclink('link-38', 'url', 'link-16');">url</a></tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-39" class="py-name"><a title="backend.satellite_tools.xmlWireSource.BaseWireSource.url" class="py-name" href="#" onclick="return doclink('link-39', 'url', 'link-16');">url</a></tt> <tt class="py-op">+</tt> <tt class="py-string">'/Packages'</tt> <tt class="py-op">+</tt> <tt class="py-name">extension</tt> </tt>
+<a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line">            <tt id="link-40" class="py-name"><a title="backend.satellite_tools.xmlDiskSource.ArchesDiskSource.filename
+backend.satellite_tools.xmlDiskSource.ArchesExtraDiskSource.filename
+virtualization.get_config_value.filename" class="py-name" href="#" onclick="return doclink('link-40', 'filename', 'link-29');">filename</a></tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-41" class="py-name" targets="Method backend.satellite_tools.repo_plugins.deb_src.DebRepo._download()=backend.satellite_tools.repo_plugins.deb_src.DebRepo-class.html#_download"><a title="backend.satellite_tools.repo_plugins.deb_src.DebRepo._download" class="py-name" href="#" onclick="return doclink('link-41', '_download', 'link-41');">_download</a></tt><tt class="py-op">(</tt><tt id="link-42" class="py-name"><a title="backend.satellite_tools.xmlWireSource.BaseWireSource.url" class="py-name" href="#" onclick="return doclink('link-42', 'url', 'link-16');">url</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt id="link-43" class="py-name"><a title="backend.satellite_tools.xmlDiskSource.ArchesDiskSource.filename
+backend.satellite_tools.xmlDiskSource.ArchesExtraDiskSource.filename
+virtualization.get_config_value.filename" class="py-name" href="#" onclick="return doclink('link-43', 'filename', 'link-29');">filename</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line">                <tt class="py-name">decompressed</tt> <tt class="py-op">=</tt> <tt id="link-44" class="py-name"><a title="backend.common.fileutils" class="py-name" href="#" onclick="return doclink('link-44', 'fileutils', 'link-1');">fileutils</a></tt><tt class="py-op">.</tt><tt id="link-45" class="py-name" targets="Function backend.common.fileutils.decompress_open()=backend.common.fileutils-module.html#decompress_open"><a title="backend.common.fileutils.decompress_open" class="py-name" href="#" onclick="return doclink('link-45', 'decompress_open', 'link-45');">decompress_open</a></tt><tt class="py-op">(</tt><tt id="link-46" class="py-name"><a title="backend.satellite_tools.xmlDiskSource.ArchesDiskSource.filename
+backend.satellite_tools.xmlDiskSource.ArchesExtraDiskSource.filename
+virtualization.get_config_value.filename" class="py-name" href="#" onclick="return doclink('link-46', 'filename', 'link-29');">filename</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line">                <tt class="py-keyword">break</tt> </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line"> </tt>
+<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">decompressed</tt><tt class="py-op">:</tt> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line">            <tt class="py-keyword">for</tt> <tt class="py-name">pkg</tt> <tt class="py-keyword">in</tt> <tt class="py-name">decompressed</tt><tt class="py-op">.</tt><tt id="link-47" class="py-name" targets="Method backend.wsgi.wsgiRequest.WsgiRequest.read()=backend.wsgi.wsgiRequest.WsgiRequest-class.html#read,Method rhn.SSL.SSLSocket.read()=rhn.SSL.SSLSocket-class.html#read,Method rhn.nonblocking.NonBlockingFile.read()=rhn.nonblocking.NonBlockingFile-class.html#read,Method rhn.transports.File.read()=rhn.transports.File-class.html#read,Method rhn.transports.Input.read()=rhn.transports.Input-class.html#read,Method rhnkickstart.lilo.LiloConfigFile.read()=rhnkickstart.lilo.LiloConfigFile-class.html#read,Method rhnpush.archive.ArchiveParser.read()=rhnpush.archive.ArchiveParser-class.html#read,Method src.jabber_lib.JabberClient.read()=src.jabber_lib.JabberClient-class.html#read"><a title="backend.wsgi.wsgiRequest.WsgiRequest.read
+rhn.SSL.SSLSocket.read
+rhn.nonblocking.NonBlockingFile.read
+rhn.transports.File.read
+rhn.transports.Input.read
+rhnkickstart.lilo.LiloConfigFile.read
+rhnpush.archive.ArchiveParser.read
+src.jabber_lib.JabberClient.read" class="py-name" href="#" onclick="return doclink('link-47', 'read', 'link-47');">read</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt class="py-name">split</tt><tt class="py-op">(</tt><tt class="py-string">"\n\n"</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line">                <tt class="py-name">packages_raw</tt><tt class="py-op">.</tt><tt id="link-48" class="py-name" targets="Method backend.server.importlib.importLib.Collection.append()=backend.server.importlib.importLib.Collection-class.html#append"><a title="backend.server.importlib.importLib.Collection.append" class="py-name" href="#" onclick="return doclink('link-48', 'append', 'link-48');">append</a></tt><tt class="py-op">(</tt><tt class="py-name">pkg</tt><tt class="py-op">)</tt> </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line">            <tt class="py-name">decompressed</tt><tt class="py-op">.</tt><tt id="link-49" class="py-name"><a title="backend.common.rhnCache.ClosingZipFile.close
+backend.common.rhnCache.LockedFile.close
+backend.satellite_exporter.handlers.non_auth_dumper.NonAuthenticatedDumper.close
+backend.satellite_tools.connection.CompressedStream.close
+backend.satellite_tools.disk_dumper.dumper.CachedQueryIterator.close
+backend.satellite_tools.disk_dumper.dumper.XML_Dumper.close
+backend.satellite_tools.disk_dumper.iss.Dumper.close
+backend.satellite_tools.disk_dumper.string_buffer.StringBuffer.close
+backend.satellite_tools.satsync.StreamProducer.close
+backend.satellite_tools.sync_handlers.ContainerHandler.close
+backend.satellite_tools.xmlSource.BaseDispatchHandler.close
+backend.server.rhnSQL.driver_cx_Oracle.Database.close
+backend.server.rhnSQL.driver_postgresql.Cursor.close
+backend.server.rhnSQL.sql_base.Database.close
+proxy.responseContext.ResponseContext.close
+rhn.SSL.SSLSocket.close
+rhn.rpclib.Server.close
+rhn.transports.BaseOutput.close
+up2date_client.rhnregGui.NetworkConfigDialog.close" class="py-name" href="#" onclick="return doclink('link-49', 'close', 'link-34');">close</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line">            <tt class="py-keyword">print</tt><tt class="py-op">(</tt><tt class="py-string">"ERROR: Download of package list failed."</tt><tt class="py-op">)</tt> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line"> </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line">        <tt class="py-comment"># Parse and format package metadata</tt> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">chunk</tt> <tt class="py-keyword">in</tt> <tt class="py-name">packages_raw</tt><tt class="py-op">:</tt> </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line">            <tt id="link-50" class="py-name" targets="Method rhnpush.rhnpush_main.UploadClass.package()=rhnpush.rhnpush_main.UploadClass-class.html#package"><a title="rhnpush.rhnpush_main.UploadClass.package" class="py-name" href="#" onclick="return doclink('link-50', 'package', 'link-50');">package</a></tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt><tt class="py-op">}</tt> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line">            <tt id="link-51" class="py-name"><a title="rhnpush.rhnpush_main.UploadClass.package" class="py-name" href="#" onclick="return doclink('link-51', 'package', 'link-50');">package</a></tt><tt class="py-op">[</tt><tt class="py-string">'epoch'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-string">""</tt> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line">            <tt class="py-name">lines</tt> <tt class="py-op">=</tt> <tt class="py-name">chunk</tt><tt class="py-op">.</tt><tt class="py-name">split</tt><tt class="py-op">(</tt><tt class="py-string">"\n"</tt><tt class="py-op">)</tt> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line">            <tt class="py-name">checksums</tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt><tt class="py-op">}</tt> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line">            <tt class="py-keyword">for</tt> <tt class="py-name">line</tt> <tt class="py-keyword">in</tt> <tt class="py-name">lines</tt><tt class="py-op">:</tt> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line">                <tt class="py-name">pair</tt> <tt class="py-op">=</tt> <tt class="py-name">line</tt><tt class="py-op">.</tt><tt class="py-name">split</tt><tt class="py-op">(</tt><tt class="py-string">" "</tt><tt class="py-op">,</tt> <tt class="py-number">1</tt><tt class="py-op">)</tt> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line">                <tt class="py-keyword">if</tt> <tt class="py-name">pair</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> <tt class="py-op">==</tt> <tt class="py-string">"Package:"</tt><tt class="py-op">:</tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line">                    <tt id="link-52" class="py-name"><a title="rhnpush.rhnpush_main.UploadClass.package" class="py-name" href="#" onclick="return doclink('link-52', 'package', 'link-50');">package</a></tt><tt class="py-op">[</tt><tt class="py-string">'name'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">pair</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line">                <tt class="py-keyword">elif</tt> <tt class="py-name">pair</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> <tt class="py-op">==</tt> <tt class="py-string">"Architecture:"</tt><tt class="py-op">:</tt> </tt>
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line">                    <tt id="link-53" class="py-name"><a title="rhnpush.rhnpush_main.UploadClass.package" class="py-name" href="#" onclick="return doclink('link-53', 'package', 'link-50');">package</a></tt><tt class="py-op">[</tt><tt class="py-string">'arch'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">pair</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> <tt class="py-op">+</tt> <tt class="py-string">'-deb'</tt> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line">                <tt class="py-keyword">elif</tt> <tt class="py-name">pair</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> <tt class="py-op">==</tt> <tt class="py-string">"Version:"</tt><tt class="py-op">:</tt> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line">                    <tt id="link-54" class="py-name" targets="Variable backend.satellite_tools.xmlSource.SatelliteDispatchHandler.version=backend.satellite_tools.xmlSource.SatelliteDispatchHandler-class.html#version,Function up2date_client.up2dateUtils.version()=up2date_client.up2dateUtils-module.html#version"><a title="backend.satellite_tools.xmlSource.SatelliteDispatchHandler.version
+up2date_client.up2dateUtils.version" class="py-name" href="#" onclick="return doclink('link-54', 'version', 'link-54');">version</a></tt> <tt class="py-op">=</tt> <tt class="py-name">pair</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt class="py-name">split</tt><tt class="py-op">(</tt><tt class="py-string">'-'</tt><tt class="py-op">,</tt> <tt class="py-number">1</tt><tt class="py-op">)</tt> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line">                    <tt class="py-keyword">if</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt id="link-55" class="py-name"><a title="backend.satellite_tools.xmlSource.SatelliteDispatchHandler.version
+up2date_client.up2dateUtils.version" class="py-name" href="#" onclick="return doclink('link-55', 'version', 'link-54');">version</a></tt><tt class="py-op">)</tt> <tt class="py-op">==</tt> <tt class="py-number">1</tt><tt class="py-op">:</tt> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line">                        <tt id="link-56" class="py-name"><a title="rhnpush.rhnpush_main.UploadClass.package" class="py-name" href="#" onclick="return doclink('link-56', 'package', 'link-50');">package</a></tt><tt class="py-op">[</tt><tt class="py-string">'version'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt id="link-57" class="py-name"><a title="backend.satellite_tools.xmlSource.SatelliteDispatchHandler.version
+up2date_client.up2dateUtils.version" class="py-name" href="#" onclick="return doclink('link-57', 'version', 'link-54');">version</a></tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line">                        <tt id="link-58" class="py-name"><a title="rhnpush.rhnpush_main.UploadClass.package" class="py-name" href="#" onclick="return doclink('link-58', 'package', 'link-50');">package</a></tt><tt class="py-op">[</tt><tt class="py-string">'release'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-string">'X'</tt> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line">                    <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line">                        <tt id="link-59" class="py-name"><a title="rhnpush.rhnpush_main.UploadClass.package" class="py-name" href="#" onclick="return doclink('link-59', 'package', 'link-50');">package</a></tt><tt class="py-op">[</tt><tt class="py-string">'version'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt id="link-60" class="py-name"><a title="backend.satellite_tools.xmlSource.SatelliteDispatchHandler.version
+up2date_client.up2dateUtils.version" class="py-name" href="#" onclick="return doclink('link-60', 'version', 'link-54');">version</a></tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line">                        <tt id="link-61" class="py-name"><a title="rhnpush.rhnpush_main.UploadClass.package" class="py-name" href="#" onclick="return doclink('link-61', 'package', 'link-50');">package</a></tt><tt class="py-op">[</tt><tt class="py-string">'release'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt id="link-62" class="py-name"><a title="backend.satellite_tools.xmlSource.SatelliteDispatchHandler.version
+up2date_client.up2dateUtils.version" class="py-name" href="#" onclick="return doclink('link-62', 'version', 'link-54');">version</a></tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line">                <tt class="py-keyword">elif</tt> <tt class="py-name">pair</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> <tt class="py-op">==</tt> <tt class="py-string">"Filename:"</tt><tt class="py-op">:</tt> </tt>
+<a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line">                    <tt id="link-63" class="py-name"><a title="rhnpush.rhnpush_main.UploadClass.package" class="py-name" href="#" onclick="return doclink('link-63', 'package', 'link-50');">package</a></tt><tt class="py-op">[</tt><tt class="py-string">'path'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">pair</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> </tt>
+<a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line">                <tt class="py-keyword">elif</tt> <tt class="py-name">pair</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> <tt class="py-op">==</tt> <tt class="py-string">"SHA256:"</tt><tt class="py-op">:</tt> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line">                    <tt class="py-name">checksums</tt><tt class="py-op">[</tt><tt class="py-string">'sha256'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">pair</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> </tt>
+<a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line">                <tt class="py-keyword">elif</tt> <tt class="py-name">pair</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> <tt class="py-op">==</tt> <tt class="py-string">"SHA1:"</tt><tt class="py-op">:</tt> </tt>
+<a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line">                    <tt class="py-name">checksums</tt><tt class="py-op">[</tt><tt class="py-string">'sha1'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">pair</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> </tt>
+<a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line">                <tt class="py-keyword">elif</tt> <tt class="py-name">pair</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> <tt class="py-op">==</tt> <tt class="py-string">"MD5sum:"</tt><tt class="py-op">:</tt> </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line">                    <tt class="py-name">checksums</tt><tt class="py-op">[</tt><tt class="py-string">'md5'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">pair</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line"> </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line">            <tt class="py-comment"># Pick best available checksum</tt> </tt>
+<a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-string">'sha256'</tt> <tt class="py-keyword">in</tt> <tt class="py-name">checksums</tt><tt class="py-op">:</tt> </tt>
+<a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line">                <tt id="link-64" class="py-name"><a title="rhnpush.rhnpush_main.UploadClass.package" class="py-name" href="#" onclick="return doclink('link-64', 'package', 'link-50');">package</a></tt><tt class="py-op">[</tt><tt class="py-string">'checksum_type'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-string">'sha256'</tt> </tt>
+<a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line">                <tt id="link-65" class="py-name"><a title="rhnpush.rhnpush_main.UploadClass.package" class="py-name" href="#" onclick="return doclink('link-65', 'package', 'link-50');">package</a></tt><tt class="py-op">[</tt><tt class="py-string">'checksum'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">checksums</tt><tt class="py-op">[</tt><tt class="py-string">'sha256'</tt><tt class="py-op">]</tt> </tt>
+<a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line">            <tt class="py-keyword">elif</tt> <tt class="py-string">'sha1'</tt> <tt class="py-keyword">in</tt> <tt class="py-name">checksums</tt><tt class="py-op">:</tt> </tt>
+<a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line">                <tt id="link-66" class="py-name"><a title="rhnpush.rhnpush_main.UploadClass.package" class="py-name" href="#" onclick="return doclink('link-66', 'package', 'link-50');">package</a></tt><tt class="py-op">[</tt><tt class="py-string">'checksum_type'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-string">'sha1'</tt> </tt>
+<a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line">                <tt id="link-67" class="py-name"><a title="rhnpush.rhnpush_main.UploadClass.package" class="py-name" href="#" onclick="return doclink('link-67', 'package', 'link-50');">package</a></tt><tt class="py-op">[</tt><tt class="py-string">'checksum'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">checksums</tt><tt class="py-op">[</tt><tt class="py-string">'sha1'</tt><tt class="py-op">]</tt> </tt>
+<a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line">            <tt class="py-keyword">elif</tt> <tt class="py-string">'md5'</tt> <tt class="py-keyword">in</tt> <tt class="py-name">checksums</tt><tt class="py-op">:</tt> </tt>
+<a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line">                <tt id="link-68" class="py-name"><a title="rhnpush.rhnpush_main.UploadClass.package" class="py-name" href="#" onclick="return doclink('link-68', 'package', 'link-50');">package</a></tt><tt class="py-op">[</tt><tt class="py-string">'checksum_type'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-string">'md5'</tt> </tt>
+<a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line">                <tt id="link-69" class="py-name"><a title="rhnpush.rhnpush_main.UploadClass.package" class="py-name" href="#" onclick="return doclink('link-69', 'package', 'link-50');">package</a></tt><tt class="py-op">[</tt><tt class="py-string">'checksum'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">checksums</tt><tt class="py-op">[</tt><tt class="py-string">'md5'</tt><tt class="py-op">]</tt> </tt>
+<a name="L123"></a><tt class="py-lineno">123</tt>  <tt class="py-line"> </tt>
+<a name="L124"></a><tt class="py-lineno">124</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt id="link-70" class="py-name" targets="Function backend.common.rhnFlags.all()=backend.common.rhnFlags-module.html#all"><a title="backend.common.rhnFlags.all" class="py-name" href="#" onclick="return doclink('link-70', 'all', 'link-70');">all</a></tt><tt class="py-op">(</tt><tt class="py-name">k</tt> <tt class="py-keyword">in</tt> <tt id="link-71" class="py-name"><a title="rhnpush.rhnpush_main.UploadClass.package" class="py-name" href="#" onclick="return doclink('link-71', 'package', 'link-50');">package</a></tt> <tt class="py-keyword">for</tt> <tt class="py-name">k</tt> <tt class="py-keyword">in</tt> <tt class="py-op">(</tt><tt class="py-string">'name'</tt><tt class="py-op">,</tt> <tt class="py-string">'epoch'</tt><tt class="py-op">,</tt> <tt class="py-string">'version'</tt><tt class="py-op">,</tt> <tt class="py-string">'release'</tt><tt class="py-op">,</tt> <tt class="py-string">'arch'</tt><tt class="py-op">,</tt> <tt class="py-string">'path'</tt><tt class="py-op">,</tt> </tt>
+<a name="L125"></a><tt class="py-lineno">125</tt>  <tt class="py-line">                                          <tt class="py-string">'checksum_type'</tt><tt class="py-op">,</tt> <tt class="py-string">'checksum'</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L126"></a><tt class="py-lineno">126</tt>  <tt class="py-line">                <tt class="py-name">to_return</tt><tt class="py-op">.</tt><tt id="link-72" class="py-name"><a title="backend.server.importlib.importLib.Collection.append" class="py-name" href="#" onclick="return doclink('link-72', 'append', 'link-48');">append</a></tt><tt class="py-op">(</tt><tt id="link-73" class="py-name"><a title="rhnpush.rhnpush_main.UploadClass.package" class="py-name" href="#" onclick="return doclink('link-73', 'package', 'link-50');">package</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L127"></a><tt class="py-lineno">127</tt>  <tt class="py-line"> </tt>
+<a name="L128"></a><tt class="py-lineno">128</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">to_return</tt> </tt>
+</div><a name="L129"></a><tt class="py-lineno">129</tt>  <tt class="py-line"> </tt>
+<a name="DebRepo.get_package"></a><div id="DebRepo.get_package-def"><a name="L130"></a><tt class="py-lineno">130</tt> <a class="py-toggle" href="#" id="DebRepo.get_package-toggle" onclick="return toggle('DebRepo.get_package');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="backend.satellite_tools.repo_plugins.deb_src.DebRepo-class.html#get_package">get_package</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">pack</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="DebRepo.get_package-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="DebRepo.get_package-expanded"><a name="L131"></a><tt class="py-lineno">131</tt>  <tt class="py-line">        <tt id="link-74" class="py-name"><a title="backend.satellite_tools.xmlWireSource.BaseWireSource.url" class="py-name" href="#" onclick="return doclink('link-74', 'url', 'link-16');">url</a></tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">base_url</tt> <tt class="py-op">+</tt> <tt class="py-string">'/'</tt> <tt class="py-op">+</tt> <tt class="py-name">pack</tt><tt class="py-op">[</tt><tt class="py-string">'path'</tt><tt class="py-op">]</tt> </tt>
+<a name="L132"></a><tt class="py-lineno">132</tt>  <tt class="py-line">        <tt class="py-name">file_path</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-75" class="py-name"><a title="backend.satellite_tools.repo_plugins.deb_src.DebRepo._download" class="py-name" href="#" onclick="return doclink('link-75', '_download', 'link-41');">_download</a></tt><tt class="py-op">(</tt><tt id="link-76" class="py-name"><a title="backend.satellite_tools.xmlWireSource.BaseWireSource.url" class="py-name" href="#" onclick="return doclink('link-76', 'url', 'link-16');">url</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L133"></a><tt class="py-lineno">133</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt id="link-77" class="py-name"><a title="backend.common.checksum.getFileChecksum" class="py-name" href="#" onclick="return doclink('link-77', 'getFileChecksum', 'link-11');">getFileChecksum</a></tt><tt class="py-op">(</tt><tt class="py-name">pack</tt><tt class="py-op">[</tt><tt class="py-string">'checksum_type'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt id="link-78" class="py-name"><a title="backend.satellite_tools.xmlDiskSource.ArchesDiskSource.filename
+backend.satellite_tools.xmlDiskSource.ArchesExtraDiskSource.filename
+virtualization.get_config_value.filename" class="py-name" href="#" onclick="return doclink('link-78', 'filename', 'link-29');">filename</a></tt><tt class="py-op">=</tt><tt class="py-name">file_path</tt><tt class="py-op">)</tt> <tt class="py-op">!=</tt> <tt class="py-name">pack</tt><tt class="py-op">[</tt><tt class="py-string">'checksum'</tt><tt class="py-op">]</tt><tt class="py-op">:</tt> </tt>
+<a name="L134"></a><tt class="py-lineno">134</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt class="py-name">IOError</tt><tt class="py-op">(</tt><tt class="py-string">"Package file does not match intended download."</tt><tt class="py-op">)</tt> </tt>
+<a name="L135"></a><tt class="py-lineno">135</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">file_path</tt> </tt>
+</div></div><a name="L136"></a><tt class="py-lineno">136</tt>  <tt class="py-line"> </tt>
+<a name="ContentSource"></a><div id="ContentSource-def"><a name="L137"></a><tt class="py-lineno">137</tt>  <tt class="py-line"> </tt>
+<a name="L138"></a><tt class="py-lineno">138</tt> <a class="py-toggle" href="#" id="ContentSource-toggle" onclick="return toggle('ContentSource');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="backend.satellite_tools.repo_plugins.deb_src.ContentSource-class.html">ContentSource</a><tt class="py-op">(</tt><tt class="py-base-class">object</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ContentSource-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="ContentSource-expanded"><a name="L139"></a><tt class="py-lineno">139</tt>  <tt class="py-line"> </tt>
+<a name="ContentSource.__init__"></a><div id="ContentSource.__init__-def"><a name="L140"></a><tt class="py-lineno">140</tt> <a class="py-toggle" href="#" id="ContentSource.__init__-toggle" onclick="return toggle('ContentSource.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="backend.satellite_tools.repo_plugins.deb_src.ContentSource-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">url</tt><tt class="py-op">,</tt> <tt class="py-param">name</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ContentSource.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ContentSource.__init__-expanded"><a name="L141"></a><tt class="py-lineno">141</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-79" class="py-name"><a title="backend.satellite_tools.xmlWireSource.BaseWireSource.url" class="py-name" href="#" onclick="return doclink('link-79', 'url', 'link-16');">url</a></tt> <tt class="py-op">=</tt> <tt id="link-80" class="py-name"><a title="backend.satellite_tools.xmlWireSource.BaseWireSource.url" class="py-name" href="#" onclick="return doclink('link-80', 'url', 'link-16');">url</a></tt> </tt>
+<a name="L142"></a><tt class="py-lineno">142</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-81" class="py-name" targets="Variable up2date_client.tui.AlreadyRegisteredSubscriptionManagerWindow.name=up2date_client.tui.AlreadyRegisteredSubscriptionManagerWindow-class.html#name,Variable up2date_client.tui.AlreadyRegisteredWindow.name=up2date_client.tui.AlreadyRegisteredWindow-class.html#name,Variable up2date_client.tui.ConnectWindow.name=up2date_client.tui.ConnectWindow-class.html#name,Variable up2date_client.tui.FinishWindow.name=up2date_client.tui.FinishWindow-class.html#name,Variable up2date_client.tui.HardwareWindow.name=up2date_client.tui.HardwareWindow-class.html#name,Variable up2date_client.tui.InfoWindow.name=up2date_client.tui.InfoWindow-class.html#name,Variable up2date_client.tui.OSReleaseWindow.name=up2date_client.tui.OSReleaseWindow-class.html#name,Variable up2date_client.tui.PackagesWindow.name=up2date_client.tui.PackagesWindow-class.html#name,Variable up2date_client.tui.ReviewWindow.name=up2date_client.tui.ReviewWindow-class.html#name,Variable up2date_client.tui.SatelliteUrlWindow.name=up2date_client.tui.SatelliteUrlWindow-class.html#name,Variable up2date_client.tui.SendWindow.name=up2date_client.tui.SendWindow-class.html#name,Variable up2date_client.tui.SendingWindow.name=up2date_client.tui.SendingWindow-class.html#name,Variable up2date_client.tui.StartWindow.name=up2date_client.tui.StartWindow-class.html#name,Variable up2date_client.tui.Tui.name=up2date_client.tui.Tui-class.html#name,Variable up2date_client.tui.WhyRegisterWindow.name=up2date_client.tui.WhyRegisterWindow-class.html#name"><a title="up2date_client.tui.AlreadyRegisteredSubscriptionManagerWindow.name
+up2date_client.tui.AlreadyRegisteredWindow.name
+up2date_client.tui.ConnectWindow.name
+up2date_client.tui.FinishWindow.name
+up2date_client.tui.HardwareWindow.name
+up2date_client.tui.InfoWindow.name
+up2date_client.tui.OSReleaseWindow.name
+up2date_client.tui.PackagesWindow.name
+up2date_client.tui.ReviewWindow.name
+up2date_client.tui.SatelliteUrlWindow.name
+up2date_client.tui.SendWindow.name
+up2date_client.tui.SendingWindow.name
+up2date_client.tui.StartWindow.name
+up2date_client.tui.Tui.name
+up2date_client.tui.WhyRegisterWindow.name" class="py-name" href="#" onclick="return doclink('link-81', 'name', 'link-81');">name</a></tt> <tt class="py-op">=</tt> <tt id="link-82" class="py-name"><a title="up2date_client.tui.AlreadyRegisteredSubscriptionManagerWindow.name
+up2date_client.tui.AlreadyRegisteredWindow.name
+up2date_client.tui.ConnectWindow.name
+up2date_client.tui.FinishWindow.name
+up2date_client.tui.HardwareWindow.name
+up2date_client.tui.InfoWindow.name
+up2date_client.tui.OSReleaseWindow.name
+up2date_client.tui.PackagesWindow.name
+up2date_client.tui.ReviewWindow.name
+up2date_client.tui.SatelliteUrlWindow.name
+up2date_client.tui.SendWindow.name
+up2date_client.tui.SendingWindow.name
+up2date_client.tui.StartWindow.name
+up2date_client.tui.Tui.name
+up2date_client.tui.WhyRegisterWindow.name" class="py-name" href="#" onclick="return doclink('link-82', 'name', 'link-81');">name</a></tt> </tt>
+<a name="L143"></a><tt class="py-lineno">143</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-83" class="py-name" targets="Static Method backend.satellite_tools.repo_plugins.deb_src.ContentSource._clean_cache()=backend.satellite_tools.repo_plugins.deb_src.ContentSource-class.html#_clean_cache"><a title="backend.satellite_tools.repo_plugins.deb_src.ContentSource._clean_cache" class="py-name" href="#" onclick="return doclink('link-83', '_clean_cache', 'link-83');">_clean_cache</a></tt><tt class="py-op">(</tt><tt id="link-84" class="py-name"><a title="backend.satellite_tools.repo_plugins.deb_src.CACHE_DIR
+backend.satellite_tools.repo_plugins.yum_src.CACHE_DIR" class="py-name" href="#" onclick="return doclink('link-84', 'CACHE_DIR', 'link-12');">CACHE_DIR</a></tt> <tt class="py-op">+</tt> <tt id="link-85" class="py-name"><a title="up2date_client.tui.AlreadyRegisteredSubscriptionManagerWindow.name
+up2date_client.tui.AlreadyRegisteredWindow.name
+up2date_client.tui.ConnectWindow.name
+up2date_client.tui.FinishWindow.name
+up2date_client.tui.HardwareWindow.name
+up2date_client.tui.InfoWindow.name
+up2date_client.tui.OSReleaseWindow.name
+up2date_client.tui.PackagesWindow.name
+up2date_client.tui.ReviewWindow.name
+up2date_client.tui.SatelliteUrlWindow.name
+up2date_client.tui.SendWindow.name
+up2date_client.tui.SendingWindow.name
+up2date_client.tui.StartWindow.name
+up2date_client.tui.Tui.name
+up2date_client.tui.WhyRegisterWindow.name" class="py-name" href="#" onclick="return doclink('link-85', 'name', 'link-81');">name</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L144"></a><tt class="py-lineno">144</tt>  <tt class="py-line"> </tt>
+<a name="L145"></a><tt class="py-lineno">145</tt>  <tt class="py-line">        <tt class="py-comment"># read the proxy configuration in /etc/rhn/rhn.conf</tt> </tt>
+<a name="L146"></a><tt class="py-lineno">146</tt>  <tt class="py-line">        <tt id="link-86" class="py-name"><a title="backend.common.rhnConfig.initCFG" class="py-name" href="#" onclick="return doclink('link-86', 'initCFG', 'link-8');">initCFG</a></tt><tt class="py-op">(</tt><tt class="py-string">'server.satellite'</tt><tt class="py-op">)</tt> </tt>
+<a name="L147"></a><tt class="py-lineno">147</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">proxy_addr</tt> <tt class="py-op">=</tt> <tt id="link-87" class="py-name"><a title="backend.common.rhnConfig.CFG" class="py-name" href="#" onclick="return doclink('link-87', 'CFG', 'link-7');">CFG</a></tt><tt class="py-op">.</tt><tt class="py-name">http_proxy</tt> </tt>
+<a name="L148"></a><tt class="py-lineno">148</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">proxy_user</tt> <tt class="py-op">=</tt> <tt id="link-88" class="py-name"><a title="backend.common.rhnConfig.CFG" class="py-name" href="#" onclick="return doclink('link-88', 'CFG', 'link-7');">CFG</a></tt><tt class="py-op">.</tt><tt class="py-name">http_proxy_username</tt> </tt>
+<a name="L149"></a><tt class="py-lineno">149</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">proxy_pass</tt> <tt class="py-op">=</tt> <tt id="link-89" class="py-name"><a title="backend.common.rhnConfig.CFG" class="py-name" href="#" onclick="return doclink('link-89', 'CFG', 'link-7');">CFG</a></tt><tt class="py-op">.</tt><tt class="py-name">http_proxy_password</tt> </tt>
+<a name="L150"></a><tt class="py-lineno">150</tt>  <tt class="py-line"> </tt>
+<a name="L151"></a><tt class="py-lineno">151</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">repo</tt> <tt class="py-op">=</tt> <tt id="link-90" class="py-name" targets="Class backend.satellite_tools.repo_plugins.deb_src.DebRepo=backend.satellite_tools.repo_plugins.deb_src.DebRepo-class.html"><a title="backend.satellite_tools.repo_plugins.deb_src.DebRepo" class="py-name" href="#" onclick="return doclink('link-90', 'DebRepo', 'link-90');">DebRepo</a></tt><tt class="py-op">(</tt><tt id="link-91" class="py-name"><a title="backend.satellite_tools.xmlWireSource.BaseWireSource.url" class="py-name" href="#" onclick="return doclink('link-91', 'url', 'link-16');">url</a></tt><tt class="py-op">,</tt> <tt id="link-92" class="py-name"><a title="backend.satellite_tools.repo_plugins.deb_src.CACHE_DIR
+backend.satellite_tools.repo_plugins.yum_src.CACHE_DIR" class="py-name" href="#" onclick="return doclink('link-92', 'CACHE_DIR', 'link-12');">CACHE_DIR</a></tt> <tt class="py-op">+</tt> <tt id="link-93" class="py-name"><a title="up2date_client.tui.AlreadyRegisteredSubscriptionManagerWindow.name
+up2date_client.tui.AlreadyRegisteredWindow.name
+up2date_client.tui.ConnectWindow.name
+up2date_client.tui.FinishWindow.name
+up2date_client.tui.HardwareWindow.name
+up2date_client.tui.InfoWindow.name
+up2date_client.tui.OSReleaseWindow.name
+up2date_client.tui.PackagesWindow.name
+up2date_client.tui.ReviewWindow.name
+up2date_client.tui.SatelliteUrlWindow.name
+up2date_client.tui.SendWindow.name
+up2date_client.tui.SendingWindow.name
+up2date_client.tui.StartWindow.name
+up2date_client.tui.Tui.name
+up2date_client.tui.WhyRegisterWindow.name" class="py-name" href="#" onclick="return doclink('link-93', 'name', 'link-81');">name</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L152"></a><tt class="py-lineno">152</tt>  <tt class="py-line"> </tt>
+<a name="L153"></a><tt class="py-lineno">153</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">num_packages</tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt> </tt>
+<a name="L154"></a><tt class="py-lineno">154</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">num_excluded</tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt> </tt>
+</div><a name="L155"></a><tt class="py-lineno">155</tt>  <tt class="py-line"> </tt>
+<a name="ContentSource.list_packages"></a><div id="ContentSource.list_packages-def"><a name="L156"></a><tt class="py-lineno">156</tt> <a class="py-toggle" href="#" id="ContentSource.list_packages-toggle" onclick="return toggle('ContentSource.list_packages');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="backend.satellite_tools.repo_plugins.deb_src.ContentSource-class.html#list_packages">list_packages</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">filters</tt><tt class="py-op">,</tt> <tt class="py-param">latest</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ContentSource.list_packages-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ContentSource.list_packages-expanded"><a name="L157"></a><tt class="py-lineno">157</tt>  <tt class="py-line">        <tt class="py-docstring">""" list packages"""</tt> </tt>
+<a name="L158"></a><tt class="py-lineno">158</tt>  <tt class="py-line"> </tt>
+<a name="L159"></a><tt class="py-lineno">159</tt>  <tt class="py-line">        <tt class="py-name">pkglist</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">repo</tt><tt class="py-op">.</tt><tt id="link-94" class="py-name" targets="Method backend.satellite_tools.repo_plugins.deb_src.DebRepo.get_package_list()=backend.satellite_tools.repo_plugins.deb_src.DebRepo-class.html#get_package_list"><a title="backend.satellite_tools.repo_plugins.deb_src.DebRepo.get_package_list" class="py-name" href="#" onclick="return doclink('link-94', 'get_package_list', 'link-94');">get_package_list</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L160"></a><tt class="py-lineno">160</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">num_packages</tt> <tt class="py-op">=</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">pkglist</tt><tt class="py-op">)</tt> </tt>
+<a name="L161"></a><tt class="py-lineno">161</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">latest</tt><tt class="py-op">:</tt> </tt>
+<a name="L162"></a><tt class="py-lineno">162</tt>  <tt class="py-line">            <tt class="py-comment"># TODO</tt> </tt>
+<a name="L163"></a><tt class="py-lineno">163</tt>  <tt class="py-line">            <tt class="py-keyword">pass</tt> </tt>
+<a name="L164"></a><tt class="py-lineno">164</tt>  <tt class="py-line">        <tt class="py-name">pkglist</tt><tt class="py-op">.</tt><tt class="py-name">sort</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-95" class="py-name" targets="Static Method backend.satellite_tools.repo_plugins.deb_src.ContentSource._sort_packages()=backend.satellite_tools.repo_plugins.deb_src.ContentSource-class.html#_sort_packages,Static Method backend.satellite_tools.repo_plugins.yum_src.ContentSource._sort_packages()=backend.satellite_tools.repo_plugins.yum_src.ContentSource-class.html#_sort_packages"><a title="backend.satellite_tools.repo_plugins.deb_src.ContentSource._sort_packages
+backend.satellite_tools.repo_plugins.yum_src.ContentSource._sort_packages" class="py-name" href="#" onclick="return doclink('link-95', '_sort_packages', 'link-95');">_sort_packages</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L165"></a><tt class="py-lineno">165</tt>  <tt class="py-line"> </tt>
+<a name="L166"></a><tt class="py-lineno">166</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">filters</tt><tt class="py-op">:</tt> </tt>
+<a name="L167"></a><tt class="py-lineno">167</tt>  <tt class="py-line">            <tt class="py-comment"># if there's no include/exclude filter on command line or in database</tt> </tt>
+<a name="L168"></a><tt class="py-lineno">168</tt>  <tt class="py-line">            <tt class="py-keyword">for</tt> <tt class="py-name">p</tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">repo</tt><tt class="py-op">.</tt><tt class="py-name">includepkgs</tt><tt class="py-op">:</tt> </tt>
+<a name="L169"></a><tt class="py-lineno">169</tt>  <tt class="py-line">                <tt class="py-name">filters</tt><tt class="py-op">.</tt><tt id="link-96" class="py-name"><a title="backend.server.importlib.importLib.Collection.append" class="py-name" href="#" onclick="return doclink('link-96', 'append', 'link-48');">append</a></tt><tt class="py-op">(</tt><tt class="py-op">(</tt><tt class="py-string">'+'</tt><tt class="py-op">,</tt> <tt class="py-op">[</tt><tt class="py-name">p</tt><tt class="py-op">]</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L170"></a><tt class="py-lineno">170</tt>  <tt class="py-line">            <tt class="py-keyword">for</tt> <tt class="py-name">p</tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">repo</tt><tt class="py-op">.</tt><tt class="py-name">exclude</tt><tt class="py-op">:</tt> </tt>
+<a name="L171"></a><tt class="py-lineno">171</tt>  <tt class="py-line">                <tt class="py-name">filters</tt><tt class="py-op">.</tt><tt id="link-97" class="py-name"><a title="backend.server.importlib.importLib.Collection.append" class="py-name" href="#" onclick="return doclink('link-97', 'append', 'link-48');">append</a></tt><tt class="py-op">(</tt><tt class="py-op">(</tt><tt class="py-string">'-'</tt><tt class="py-op">,</tt> <tt class="py-op">[</tt><tt class="py-name">p</tt><tt class="py-op">]</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L172"></a><tt class="py-lineno">172</tt>  <tt class="py-line"> </tt>
+<a name="L173"></a><tt class="py-lineno">173</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">filters</tt><tt class="py-op">:</tt> </tt>
+<a name="L174"></a><tt class="py-lineno">174</tt>  <tt class="py-line">            <tt class="py-comment"># TODO</tt> </tt>
+<a name="L175"></a><tt class="py-lineno">175</tt>  <tt class="py-line">            <tt class="py-keyword">pass</tt> </tt>
+<a name="L176"></a><tt class="py-lineno">176</tt>  <tt class="py-line"> </tt>
+<a name="L177"></a><tt class="py-lineno">177</tt>  <tt class="py-line">        <tt class="py-name">to_return</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L178"></a><tt class="py-lineno">178</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">pack</tt> <tt class="py-keyword">in</tt> <tt class="py-name">pkglist</tt><tt class="py-op">:</tt> </tt>
+<a name="L179"></a><tt class="py-lineno">179</tt>  <tt class="py-line">            <tt class="py-name">new_pack</tt> <tt class="py-op">=</tt> <tt id="link-98" class="py-name"><a title="backend.satellite_tools.repo_plugins.ContentPackage" class="py-name" href="#" onclick="return doclink('link-98', 'ContentPackage', 'link-4');">ContentPackage</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L180"></a><tt class="py-lineno">180</tt>  <tt class="py-line">            <tt class="py-name">new_pack</tt><tt class="py-op">.</tt><tt id="link-99" class="py-name" targets="Method backend.satellite_tools.repo_plugins.ContentPackage.setNVREA()=backend.satellite_tools.repo_plugins.ContentPackage-class.html#setNVREA"><a title="backend.satellite_tools.repo_plugins.ContentPackage.setNVREA" class="py-name" href="#" onclick="return doclink('link-99', 'setNVREA', 'link-99');">setNVREA</a></tt><tt class="py-op">(</tt><tt class="py-name">pack</tt><tt class="py-op">[</tt><tt class="py-string">'name'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">pack</tt><tt class="py-op">[</tt><tt class="py-string">'version'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">pack</tt><tt class="py-op">[</tt><tt class="py-string">'release'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> </tt>
+<a name="L181"></a><tt class="py-lineno">181</tt>  <tt class="py-line">                              <tt class="py-name">pack</tt><tt class="py-op">[</tt><tt class="py-string">'epoch'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">pack</tt><tt class="py-op">[</tt><tt class="py-string">'arch'</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L182"></a><tt class="py-lineno">182</tt>  <tt class="py-line">            <tt class="py-name">new_pack</tt><tt class="py-op">.</tt><tt class="py-name">unique_id</tt> <tt class="py-op">=</tt> <tt class="py-name">pack</tt> </tt>
+<a name="L183"></a><tt class="py-lineno">183</tt>  <tt class="py-line">            <tt class="py-name">new_pack</tt><tt class="py-op">.</tt><tt id="link-100" class="py-name" targets="Static Method backend.common.rhn_deb.deb_Header.checksum_type()=backend.common.rhn_deb.deb_Header-class.html#checksum_type,Static Method backend.common.rhn_mpm.MPM_Header.checksum_type()=backend.common.rhn_mpm.MPM_Header-class.html#checksum_type,Method backend.common.rhn_rpm.RPM_Header.checksum_type()=backend.common.rhn_rpm.RPM_Header-class.html#checksum_type"><a title="backend.common.rhn_deb.deb_Header.checksum_type
+backend.common.rhn_mpm.MPM_Header.checksum_type
+backend.common.rhn_rpm.RPM_Header.checksum_type" class="py-name" href="#" onclick="return doclink('link-100', 'checksum_type', 'link-100');">checksum_type</a></tt> <tt class="py-op">=</tt> <tt class="py-name">pack</tt><tt class="py-op">[</tt><tt class="py-string">'checksum_type'</tt><tt class="py-op">]</tt> </tt>
+<a name="L184"></a><tt class="py-lineno">184</tt>  <tt class="py-line">            <tt class="py-name">new_pack</tt><tt class="py-op">.</tt><tt id="link-101" class="py-name"><a title="backend.common.checksum" class="py-name" href="#" onclick="return doclink('link-101', 'checksum', 'link-10');">checksum</a></tt> <tt class="py-op">=</tt> <tt class="py-name">pack</tt><tt class="py-op">[</tt><tt class="py-string">'checksum'</tt><tt class="py-op">]</tt> </tt>
+<a name="L185"></a><tt class="py-lineno">185</tt>  <tt class="py-line">            <tt class="py-name">to_return</tt><tt class="py-op">.</tt><tt id="link-102" class="py-name"><a title="backend.server.importlib.importLib.Collection.append" class="py-name" href="#" onclick="return doclink('link-102', 'append', 'link-48');">append</a></tt><tt class="py-op">(</tt><tt class="py-name">new_pack</tt><tt class="py-op">)</tt> </tt>
+<a name="L186"></a><tt class="py-lineno">186</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">to_return</tt> </tt>
+</div><a name="L187"></a><tt class="py-lineno">187</tt>  <tt class="py-line"> </tt>
+<a name="L188"></a><tt class="py-lineno">188</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">staticmethod</tt> </tt>
+<a name="ContentSource._sort_packages"></a><div id="ContentSource._sort_packages-def"><a name="L189"></a><tt class="py-lineno">189</tt> <a class="py-toggle" href="#" id="ContentSource._sort_packages-toggle" onclick="return toggle('ContentSource._sort_packages');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="backend.satellite_tools.repo_plugins.deb_src.ContentSource-class.html#_sort_packages">_sort_packages</a><tt class="py-op">(</tt><tt class="py-param">pkg1</tt><tt class="py-op">,</tt> <tt class="py-param">pkg2</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ContentSource._sort_packages-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ContentSource._sort_packages-expanded"><a name="L190"></a><tt class="py-lineno">190</tt>  <tt class="py-line">        <tt class="py-docstring">"""sorts a list of deb package dicts by name"""</tt> </tt>
+<a name="L191"></a><tt class="py-lineno">191</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">pkg1</tt><tt class="py-op">[</tt><tt class="py-string">'name'</tt><tt class="py-op">]</tt> <tt class="py-op">&gt;</tt> <tt class="py-name">pkg2</tt><tt class="py-op">[</tt><tt class="py-string">'name'</tt><tt class="py-op">]</tt><tt class="py-op">:</tt> </tt>
+<a name="L192"></a><tt class="py-lineno">192</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-number">1</tt> </tt>
+<a name="L193"></a><tt class="py-lineno">193</tt>  <tt class="py-line">        <tt class="py-keyword">elif</tt> <tt class="py-name">pkg1</tt><tt class="py-op">[</tt><tt class="py-string">'name'</tt><tt class="py-op">]</tt> <tt class="py-op">==</tt> <tt class="py-name">pkg2</tt><tt class="py-op">[</tt><tt class="py-string">'name'</tt><tt class="py-op">]</tt><tt class="py-op">:</tt> </tt>
+<a name="L194"></a><tt class="py-lineno">194</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-number">0</tt> </tt>
+<a name="L195"></a><tt class="py-lineno">195</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L196"></a><tt class="py-lineno">196</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-op">-</tt><tt class="py-number">1</tt> </tt>
+</div><a name="L197"></a><tt class="py-lineno">197</tt>  <tt class="py-line"> </tt>
+<a name="ContentSource.get_package"></a><div id="ContentSource.get_package-def"><a name="L198"></a><tt class="py-lineno">198</tt> <a class="py-toggle" href="#" id="ContentSource.get_package-toggle" onclick="return toggle('ContentSource.get_package');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="backend.satellite_tools.repo_plugins.deb_src.ContentSource-class.html#get_package">get_package</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">package</tt><tt class="py-op">,</tt> <tt class="py-param">metadata_only</tt><tt class="py-op">=</tt><tt class="py-name">False</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ContentSource.get_package-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ContentSource.get_package-expanded"><a name="L199"></a><tt class="py-lineno">199</tt>  <tt class="py-line">        <tt class="py-docstring">""" get package """</tt> </tt>
+<a name="L200"></a><tt class="py-lineno">200</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">metadata_only</tt><tt class="py-op">:</tt> </tt>
+<a name="L201"></a><tt class="py-lineno">201</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt class="py-name">NotImplementedError</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L202"></a><tt class="py-lineno">202</tt>  <tt class="py-line">        <tt class="py-name">pack</tt> <tt class="py-op">=</tt> <tt id="link-103" class="py-name"><a title="rhnpush.rhnpush_main.UploadClass.package" class="py-name" href="#" onclick="return doclink('link-103', 'package', 'link-50');">package</a></tt><tt class="py-op">.</tt><tt class="py-name">unique_id</tt> </tt>
+<a name="L203"></a><tt class="py-lineno">203</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">repo</tt><tt class="py-op">.</tt><tt id="link-104" class="py-name" targets="Method backend.satellite_tools.repo_plugins.deb_src.ContentSource.get_package()=backend.satellite_tools.repo_plugins.deb_src.ContentSource-class.html#get_package,Method backend.satellite_tools.repo_plugins.deb_src.DebRepo.get_package()=backend.satellite_tools.repo_plugins.deb_src.DebRepo-class.html#get_package,Method backend.satellite_tools.repo_plugins.yum_src.ContentSource.get_package()=backend.satellite_tools.repo_plugins.yum_src.ContentSource-class.html#get_package,Method backend.satellite_tools.sync_handlers.ShortPackageCollection.get_package()=backend.satellite_tools.sync_handlers.ShortPackageCollection-class.html#get_package,Method backend.server.repomd.mapper.CachedPackageMapper.get_package()=backend.server.repomd.mapper.CachedPackageMapper-class.html#get_package,Method backend.server.repomd.mapper.SqlPackageMapper.get_package()=backend.server.repomd.mapper.SqlPackageMapper-class.html#get_package"><a title="backend.satellite_tools.repo_plugins.deb_src.ContentSource.get_package
+backend.satellite_tools.repo_plugins.deb_src.DebRepo.get_package
+backend.satellite_tools.repo_plugins.yum_src.ContentSource.get_package
+backend.satellite_tools.sync_handlers.ShortPackageCollection.get_package
+backend.server.repomd.mapper.CachedPackageMapper.get_package
+backend.server.repomd.mapper.SqlPackageMapper.get_package" class="py-name" href="#" onclick="return doclink('link-104', 'get_package', 'link-104');">get_package</a></tt><tt class="py-op">(</tt><tt class="py-name">pack</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L204"></a><tt class="py-lineno">204</tt>  <tt class="py-line"> </tt>
+<a name="L205"></a><tt class="py-lineno">205</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">staticmethod</tt> </tt>
+<a name="ContentSource._clean_cache"></a><div id="ContentSource._clean_cache-def"><a name="L206"></a><tt class="py-lineno">206</tt> <a class="py-toggle" href="#" id="ContentSource._clean_cache-toggle" onclick="return toggle('ContentSource._clean_cache');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="backend.satellite_tools.repo_plugins.deb_src.ContentSource-class.html#_clean_cache">_clean_cache</a><tt class="py-op">(</tt><tt class="py-param">directory</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ContentSource._clean_cache-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ContentSource._clean_cache-expanded"><a name="L207"></a><tt class="py-lineno">207</tt>  <tt class="py-line">        <tt class="py-name">rmtree</tt><tt class="py-op">(</tt><tt id="link-105" class="py-name" targets="Method rhnpush.uploadLib.UploadClass.directory()=rhnpush.uploadLib.UploadClass-class.html#directory"><a title="rhnpush.uploadLib.UploadClass.directory" class="py-name" href="#" onclick="return doclink('link-105', 'directory', 'link-105');">directory</a></tt><tt class="py-op">,</tt> <tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L208"></a><tt class="py-lineno">208</tt>  <tt class="py-line"> </tt>
+<a name="L209"></a><tt class="py-lineno">209</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">staticmethod</tt> </tt>
+<a name="ContentSource.get_updates"></a><div id="ContentSource.get_updates-def"><a name="L210"></a><tt class="py-lineno">210</tt> <a class="py-toggle" href="#" id="ContentSource.get_updates-toggle" onclick="return toggle('ContentSource.get_updates');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="backend.satellite_tools.repo_plugins.deb_src.ContentSource-class.html#get_updates">get_updates</a><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ContentSource.get_updates-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ContentSource.get_updates-expanded"><a name="L211"></a><tt class="py-lineno">211</tt>  <tt class="py-line">        <tt class="py-comment"># There isn't any update info in the repository</tt> </tt>
+<a name="L212"></a><tt class="py-lineno">212</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+</div><a name="L213"></a><tt class="py-lineno">213</tt>  <tt class="py-line"> </tt>
+<a name="L214"></a><tt class="py-lineno">214</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">staticmethod</tt> </tt>
+<a name="ContentSource.get_groups"></a><div id="ContentSource.get_groups-def"><a name="L215"></a><tt class="py-lineno">215</tt> <a class="py-toggle" href="#" id="ContentSource.get_groups-toggle" onclick="return toggle('ContentSource.get_groups');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="backend.satellite_tools.repo_plugins.deb_src.ContentSource-class.html#get_groups">get_groups</a><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ContentSource.get_groups-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ContentSource.get_groups-expanded"><a name="L216"></a><tt class="py-lineno">216</tt>  <tt class="py-line">        <tt class="py-comment"># There aren't any</tt> </tt>
+<a name="L217"></a><tt class="py-lineno">217</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">None</tt> </tt>
+</div><a name="L218"></a><tt class="py-lineno">218</tt>  <tt class="py-line"> </tt>
+<a name="ContentSource.set_ssl_options"></a><div id="ContentSource.set_ssl_options-def"><a name="L219"></a><tt class="py-lineno">219</tt> <a class="py-toggle" href="#" id="ContentSource.set_ssl_options-toggle" onclick="return toggle('ContentSource.set_ssl_options');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="backend.satellite_tools.repo_plugins.deb_src.ContentSource-class.html#set_ssl_options">set_ssl_options</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">ca_cert</tt><tt class="py-op">,</tt> <tt class="py-param">client_cert</tt><tt class="py-op">,</tt> <tt class="py-param">client_key</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ContentSource.set_ssl_options-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ContentSource.set_ssl_options-expanded"><a name="L220"></a><tt class="py-lineno">220</tt>  <tt class="py-line">        <tt class="py-comment"># TODO</tt> </tt>
+<a name="L221"></a><tt class="py-lineno">221</tt>  <tt class="py-line">        <tt class="py-keyword">pass</tt> </tt>
+</div><a name="L222"></a><tt class="py-lineno">222</tt>  <tt class="py-line"> </tt>
+<a name="ContentSource.clear_ssl_cache"></a><div id="ContentSource.clear_ssl_cache-def"><a name="L223"></a><tt class="py-lineno">223</tt> <a class="py-toggle" href="#" id="ContentSource.clear_ssl_cache-toggle" onclick="return toggle('ContentSource.clear_ssl_cache');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="backend.satellite_tools.repo_plugins.deb_src.ContentSource-class.html#clear_ssl_cache">clear_ssl_cache</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ContentSource.clear_ssl_cache-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ContentSource.clear_ssl_cache-expanded"><a name="L224"></a><tt class="py-lineno">224</tt>  <tt class="py-line">        <tt class="py-name">repo</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">repo</tt> </tt>
+<a name="L225"></a><tt class="py-lineno">225</tt>  <tt class="py-line">        <tt class="py-name">ssldir</tt> <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">join</tt><tt class="py-op">(</tt><tt class="py-name">repo</tt><tt class="py-op">.</tt><tt class="py-name">basecachedir</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-106" class="py-name"><a title="up2date_client.tui.AlreadyRegisteredSubscriptionManagerWindow.name
+up2date_client.tui.AlreadyRegisteredWindow.name
+up2date_client.tui.ConnectWindow.name
+up2date_client.tui.FinishWindow.name
+up2date_client.tui.HardwareWindow.name
+up2date_client.tui.InfoWindow.name
+up2date_client.tui.OSReleaseWindow.name
+up2date_client.tui.PackagesWindow.name
+up2date_client.tui.ReviewWindow.name
+up2date_client.tui.SatelliteUrlWindow.name
+up2date_client.tui.SendWindow.name
+up2date_client.tui.SendingWindow.name
+up2date_client.tui.StartWindow.name
+up2date_client.tui.Tui.name
+up2date_client.tui.WhyRegisterWindow.name" class="py-name" href="#" onclick="return doclink('link-106', 'name', 'link-81');">name</a></tt><tt class="py-op">,</tt> <tt class="py-string">'.ssl-certs'</tt><tt class="py-op">)</tt> </tt>
+<a name="L226"></a><tt class="py-lineno">226</tt>  <tt class="py-line">        <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L227"></a><tt class="py-lineno">227</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-107" class="py-name"><a title="backend.satellite_tools.repo_plugins.deb_src.ContentSource._clean_cache" class="py-name" href="#" onclick="return doclink('link-107', '_clean_cache', 'link-83');">_clean_cache</a></tt><tt class="py-op">(</tt><tt class="py-name">ssldir</tt><tt class="py-op">)</tt> </tt>
+<a name="L228"></a><tt class="py-lineno">228</tt>  <tt class="py-line">        <tt class="py-keyword">except</tt> <tt class="py-op">(</tt><tt class="py-name">OSError</tt><tt class="py-op">,</tt> <tt class="py-name">IOError</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L229"></a><tt class="py-lineno">229</tt>  <tt class="py-line">            <tt class="py-keyword">pass</tt> </tt>
+</div><a name="L230"></a><tt class="py-lineno">230</tt>  <tt class="py-line"> </tt>
+<a name="L231"></a><tt class="py-lineno">231</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">staticmethod</tt> </tt>
+<a name="ContentSource.get_file"></a><div id="ContentSource.get_file-def"><a name="L232"></a><tt class="py-lineno">232</tt> <a class="py-toggle" href="#" id="ContentSource.get_file-toggle" onclick="return toggle('ContentSource.get_file');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="backend.satellite_tools.repo_plugins.deb_src.ContentSource-class.html#get_file">get_file</a><tt class="py-op">(</tt><tt class="py-param">path</tt><tt class="py-op">,</tt> <tt class="py-param">local_base</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ContentSource.get_file-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ContentSource.get_file-expanded"><a name="L233"></a><tt class="py-lineno">233</tt>  <tt class="py-line">        <tt class="py-comment"># Called from import_kickstarts, not working for deb repo</tt> </tt>
+<a name="L234"></a><tt class="py-lineno">234</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">local_base</tt><tt class="py-op">:</tt> </tt>
+<a name="L235"></a><tt class="py-lineno">235</tt>  <tt class="py-line">            <tt class="py-keyword">print</tt><tt class="py-op">(</tt><tt class="py-string">"Unable to download path %s from deb repo into %s."</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt class="py-name">path</tt><tt class="py-op">,</tt> <tt class="py-name">local_base</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L236"></a><tt class="py-lineno">236</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L237"></a><tt class="py-lineno">237</tt>  <tt class="py-line">            <tt class="py-keyword">print</tt><tt class="py-op">(</tt><tt class="py-string">"Unable to download path %s from deb repo."</tt> <tt class="py-op">%</tt> <tt class="py-name">path</tt><tt class="py-op">)</tt> </tt>
+<a name="L238"></a><tt class="py-lineno">238</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">None</tt> </tt>
+</div></div><a name="L239"></a><tt class="py-lineno">239</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Fri Nov 25 11:30:40 2016
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

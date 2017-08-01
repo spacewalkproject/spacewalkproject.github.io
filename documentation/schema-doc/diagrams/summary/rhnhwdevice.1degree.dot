@@ -1,0 +1,42 @@
+// dot 2.26.0 on Linux 2.6.32-504.el6.x86_64
+// SchemaSpy rev 590
+digraph "rhnhwdevice" {
+  graph [
+    rankdir="RL"
+    bgcolor="#f7f7f7"
+    nodesep="0.18"
+    ranksep="0.46"
+    fontname="Helvetica"
+    fontsize="11"
+  ];
+  node [
+    fontname="Helvetica"
+    fontsize="11"
+    shape="plaintext"
+  ];
+  edge [
+    arrowsize="0.8"
+  ];
+  "rhnhwdevice" [
+    label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">rhnhwdevice</TD></TR>
+      <TR><TD PORT="id" COLSPAN="3" ALIGN="LEFT">id</TD></TR>
+      <TR><TD PORT="server_id" COLSPAN="3" ALIGN="LEFT">server_id</TD></TR>
+      <TR><TD PORT="class" COLSPAN="3" ALIGN="LEFT">class</TD></TR>
+      <TR><TD PORT="bus" COLSPAN="3" ALIGN="LEFT">bus</TD></TR>
+      <TR><TD PORT="detached" COLSPAN="3" ALIGN="LEFT">detached</TD></TR>
+      <TR><TD PORT="device" COLSPAN="3" ALIGN="LEFT">device</TD></TR>
+      <TR><TD PORT="driver" COLSPAN="3" ALIGN="LEFT">driver</TD></TR>
+      <TR><TD PORT="description" COLSPAN="3" ALIGN="LEFT">description</TD></TR>
+      <TR><TD PORT="vendor_id" COLSPAN="3" ALIGN="LEFT">vendor_id</TD></TR>
+      <TR><TD PORT="device_id" COLSPAN="3" ALIGN="LEFT">device_id</TD></TR>
+      <TR><TD PORT="subvendor_id" COLSPAN="3" ALIGN="LEFT">subvendor_id</TD></TR>
+      <TR><TD PORT="subdevice_id" COLSPAN="3" ALIGN="LEFT">subdevice_id</TD></TR>
+      <TR><TD PORT="pcitype" COLSPAN="3" ALIGN="LEFT">pcitype</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">view</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+    </TABLE>>
+    URL="tables/rhnhwdevice.html"
+    tooltip="rhnhwdevice"
+  ];
+}

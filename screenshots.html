@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="description" content="" />
+<meta name="keywords" content="Spacewalk, HN, Satellite, Open Source, FOSS, Free &amp; Open Source, System Management, Systems Management, Linux, Red Hat, Fedora" />
+<title>Spacewalk: Free &amp; Open Source Linux Systems Management</title>
+  <link rel="shortcut icon" href="img/spacewalk_favicon.ico" />
+
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+</head>
+
+<body>
+
+<div id="wrap">
+
+
+<h1 id="logo">
+<a href="/">
+  <img src="img/spacewalk-logo.png" alt="Spacewalk" />
+</a>
+</h1>
+
+<div id="main">
+  <div id="nav">
+    <ul>
+       <li><a href="/" title="Return to the Spacewalk front page.">Home</a></li>
+       <li><a href="faq.html" title="Frequently Asked Questions">FAQ</a></li>
+       <li><a href="download.html" title="Download Spacewalk">Download</a></li>
+       <li><a class="current" href="screenshots.html" title="Spacewalk Screenshots">Screenshots</a></li>
+       <li><a href="communicate.html" title="Mailing List and IRC">Mailing List / IRC</a></li>
+       <li><a href="development.html" title="Wiki / Development">Wiki / Development</a></li>
+       <li><a href="documentation.html" title="Documentation">Documentation</a></li>
+       <li><a href="repository.html" title="Source Repository">Source Repository</a></li>
+       <li><a href="relatedlinks.html" title="Related Links">Related Links</a></li>
+    </ul>
+  </div>
+
+  <div id="content">
+  <div id="sidebar" style="display: none;">
+
+<h2>Sidebar Title</h2>
+
+<p>Sidebar text.</p>
+
+  </div>
+
+<h2>Screenshots</h2>
+
+<p>Here are some screenshots of Spacewalk's web-based user interface. Of course, screenshots can only offer a small fraction of the full experience, so why not <a href="download.html">download Spacewalk</a> and see it for yourself?</p>
+
+<h3>Your Spacewalk</h3>
+<p>This overview page, which appears when you first log into the Spacewalk web interface, is a customizable at-a-glance view your systems' status. Some highlights that can be displayed on this screen include the most out-of-date systems, the systems with the most critical out-of-date status, the latest errata releases, the systems that have most recently registered to your Spacewalk server, and more. You can determine which modules appear on this screen in your user preferences.
+</p>
+<a href="img/screenshots/your_spacewalk.png"><img src="img/screenshots/thumbs/your_spacewalk.png" /></a>
+
+<h3>System Set Manager</h3>
+<p>The system set manager is an interface in Spacewalk where you can perform actions on multiple systems at once. First, you select a group of systems to join the 'system set.' Then, you go to the System Set Manager menu (shown in the screenshot below) to select which actions you would like to run on those systems. These actions can range from rebooting the entire group of systems, to installing a specific package on those systems, to deploying a configuration file to all those systems. Where systems are not completely homogeneous (e.g., if your system set consists of both Fedora 8 and Fedora 9 systems) and an action can only apply to a subset of the systems in the set, the web interface will alert you of this and let you know which systems will be affected and which systems can not be affected.</p>
+<a href="img/screenshots/system-set-manager.png"><img src="img/screenshots/thumbs/system-set-manager.png" /></a>
+
+<h3>System Groups</h3>
+<p>While the system set manager is a good way to work with a group of systems on the fly that may not be a part of a permanent group, it is also helpful to establish permanent logical groups of systems when there are tasks that involve working with them as a set on a regular basis. (Any system set you create may also be saved out to a permanent system group.) System groups can be used to populate the system set to conduct en masse actions as described above in <em>System Set Manager</em>. System groups are also not mutually exclusive, so a web server located in your Newark data center may be a member of both a "Newark Systems" group as well as your "Web Servers" group. You may grant Spacewalk user accounts access to systems on a system group basis, so system groups are also a good way to limit particular users' access to systems registered to your Spacewalk server.</p>
+<a href="img/screenshots/system-groups.png"><img src="img/screenshots/thumbs/system-groups.png"></a>
+
+<h3>Kickstart</h3>
+<p>Spacewalk has a kickstart system that allows you to create and store kickstart settings for systems as well as conduct kickstarts on systems registered to the Spacewalk server. Shown below is a screenshot of the <em>Kickstart Overview</em> screen which gives you a summary of the saved kickstart profiles on Spacewalk as well as a summary of pending and currently-running kickstart actions</a>. Also shown below is a screenshot of the kickstart creation wizard that allows you to create new Spacewalk kickstart profiles.</p>
+
+<a href="img/screenshots/kickstart_overview.png"><img src="img/screenshots/thumbs/kickstart_overview.png"></a>
+<br /><br />
+<a href="img/screenshots/kickstart_create.png"><img src="img/screenshots/thumbs/kickstart_create.png"></a>
+
+<h3>System Overview</h3>
+<p>The system overview screen, shown below, is a listing of all the systems that you have access to on the Spacewalk server. The list is sortable by selected columns, and it displays each systems update status (as well as health status when available). It also displays which operating system (by software base channel) each system is running and to which entitlements (provisioining, virtualization, etc) the system has access to.</p>
+
+<a href="img/screenshots/system-overview.png"><img src="img/screenshots/thumbs/system-overview.png"></a>
+
+<h3>Custom Keys</h3>
+<p>In Spacewalk, you can define custom information keys that you can set and store for any system in Spacewalk. In the screenshot shown below, you can see by example that these keys can be used for storing hardware support keys.</p>
+
+<a href="img/screenshots/custom-keys.png"><img src="img/screenshots/thumbs/custom-keys.png"></a>
+
+<h3>Activation Keys</h3>
+<p>Activation keys are tokens that you can create and provide when registering a system to Spacewalk in order to determine registration-time set properties of that system. For example, if you register a system using a 'Fedora 9 Virtual Server' that you created to associate systems with the virtualization entitlement and virtualization-specific software channels for Fedora 9, then that system will automatically subscribe to those channels and be granted a virtualization entitlement during registration. You may also impose a limit on the number of times a given activation key can be used to register to Spacewalk, so they can serve as a method of limiting access to Spacewalk content. (For example, you could hand out an activation key that could only be used 10 times to associate systems to a third-party content channel for which the department you provide with the key only has 10 paid licenses for.)</p>
+
+<a href="img/screenshots/activationkey.png"><img src="img/screenshots/thumbs/activationkey.png"></a>
+
+<h3>Configuration Overview</h3>
+<p>Spacewalk has a configuration file management system that is based off of the concept of channels of configuration content, similar to the concept of channels of software content. The screenshot below shows the <em>Configuration Overview</em> screen, which gives you a picture of how many configuration files and channels are across your Spacewalk server as well as which configuration files were most-recently modified and deployed.</p>
+
+<a href="img/screenshots/configuration-overview.png"><img src="img/screenshots/thumbs/configuration-overview.png"></a>
+
+<h3>Software Channels Overview</h3>
+<p>The screen below shows an overview of Spacewalk software channels. Software channels are basically repositories of packages that particular systems can subscribe to in order to get access to those packages. You can create base software channels which generally are used for operating system packages, and underneath these channels you can create child software channels which are typically used for storing third-party add on content or extra content that need not be available to all systems. For example, you might wish to separate out desktop-specific applications such as the web browser and email client packages into a desktop child channel, to limit access to those packages from server-class system that are connected to the same base channel.</p>
+
+<a href="img/screenshots/channels-overview.png"><img src="img/screenshots/thumbs/channels-overview.png"></a>
+
+<h3>Search System</h3>
+<p>Spacewalk has a nice search system that allows you to search for particular systems, errata, or packages (package search shown below.) Package search is particularly useful if you are looking to install an application but are not sure what channel your system needs access to in order to retrieve the package from Spacewalk.<p>
+<a href="img/screenshots/package-search.png"><img src="img/screenshots/thumbs/package-search.png"></a>
+
+<h3>Conclusion</h3>
+<p>We hope these screenshots have given you a better feel for what Spacewalk's web interface can do. Please note that much functionality of Spacewalk is not covered here: live kickstart status monitoring of systems, creation and management of virtual systems, multiple organization partitioning of a Spacewalk server, errata management, the action scheduling interface, and more.</p>
+
+<p>If you like what you see here and/or are curious and want to learn more, we encourage you to <a href="download.html">download Spacewalk</a> and see for yourself what it can do!</p>
+</div>
+
+<div id="footer">
+<p>Copyright © 2014 Red Hat, Inc. All Rights Reserved. The Spacewalk logo is a trademark of Red Hat, Inc. <br />Please send any comments or corrections to <a href="communicate.html">the Spacewalk mailing list</a>.
+<br />
+Please report any security concerns about Spacewalk to <a href="mailto:secalert@redhat.com">the Red Hat Security Response Team</a>.</p>
+</div>
+
+</div>
+</div>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29244526-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>config_client.rhncfgcli_diff</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="config_client-module.html">Package&nbsp;config_client</a> ::
+        Module&nbsp;rhncfgcli_diff
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="config_client.rhncfgcli_diff-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="config_client.rhncfgcli_diff-module.html">Module config_client.rhncfgcli_diff</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno"> 1</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L2"></a><tt class="py-lineno"> 2</tt>  <tt class="py-line"><tt class="py-comment"># Copyright (c) 2008--2016 Red Hat, Inc.</tt> </tt>
+<a name="L3"></a><tt class="py-lineno"> 3</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L4"></a><tt class="py-lineno"> 4</tt>  <tt class="py-line"><tt class="py-comment"># This software is licensed to you under the GNU General Public License,</tt> </tt>
+<a name="L5"></a><tt class="py-lineno"> 5</tt>  <tt class="py-line"><tt class="py-comment"># version 2 (GPLv2). There is NO WARRANTY for this software, express or</tt> </tt>
+<a name="L6"></a><tt class="py-lineno"> 6</tt>  <tt class="py-line"><tt class="py-comment"># implied, including the implied warranties of MERCHANTABILITY or FITNESS</tt> </tt>
+<a name="L7"></a><tt class="py-lineno"> 7</tt>  <tt class="py-line"><tt class="py-comment"># FOR A PARTICULAR PURPOSE. You should have received a copy of GPLv2</tt> </tt>
+<a name="L8"></a><tt class="py-lineno"> 8</tt>  <tt class="py-line"><tt class="py-comment"># along with this software; if not, see</tt> </tt>
+<a name="L9"></a><tt class="py-lineno"> 9</tt>  <tt class="py-line"><tt class="py-comment"># http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt.</tt> </tt>
+<a name="L10"></a><tt class="py-lineno">10</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L11"></a><tt class="py-lineno">11</tt>  <tt class="py-line"><tt class="py-comment"># Red Hat trademarks are not licensed under GPLv2. No permission is</tt> </tt>
+<a name="L12"></a><tt class="py-lineno">12</tt>  <tt class="py-line"><tt class="py-comment"># granted to use or replicate Red Hat trademarks that are incorporated</tt> </tt>
+<a name="L13"></a><tt class="py-lineno">13</tt>  <tt class="py-line"><tt class="py-comment"># in this software or its documentation.</tt> </tt>
+<a name="L14"></a><tt class="py-lineno">14</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L15"></a><tt class="py-lineno">15</tt>  <tt class="py-line"> </tt>
+<a name="L16"></a><tt class="py-lineno">16</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">sys</tt> </tt>
+<a name="L17"></a><tt class="py-lineno">17</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">os</tt> </tt>
+<a name="L18"></a><tt class="py-lineno">18</tt>  <tt class="py-line"> </tt>
+<a name="L19"></a><tt class="py-lineno">19</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt id="link-0" class="py-name" targets="Module config_client.handler_base=config_client.handler_base-module.html,Module config_common.handler_base=config_common.handler_base-module.html"><a title="config_client.handler_base
+config_common.handler_base" class="py-name" href="#" onclick="return doclink('link-0', 'handler_base', 'link-0');">handler_base</a></tt> </tt>
+<a name="L20"></a><tt class="py-lineno">20</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-1" class="py-name" targets="Package backend.server.config_common=backend.server.config_common-module.html,Package config_common=config_common-module.html"><a title="backend.server.config_common
+config_common" class="py-name" href="#" onclick="return doclink('link-1', 'config_common', 'link-1');">config_common</a></tt><tt class="py-op">.</tt><tt id="link-2" class="py-name" targets="Module config_common.file_utils=config_common.file_utils-module.html"><a title="config_common.file_utils" class="py-name" href="#" onclick="return doclink('link-2', 'file_utils', 'link-2');">file_utils</a></tt> <tt class="py-keyword">import</tt> <tt id="link-3" class="py-name" targets="Function actions.configfiles.diff()=actions.configfiles-module.html#diff,Function backend.server.action.configfiles.diff()=backend.server.action.configfiles-module.html#diff,Function backend.server.action_extra_data.configfiles.diff()=backend.server.action_extra_data.configfiles-module.html#diff,Method config_common.file_utils.FileProcessor.diff()=config_common.file_utils.FileProcessor-class.html#diff,Function config_common.file_utils.diff()=config_common.file_utils-module.html#diff"><a title="actions.configfiles.diff
+backend.server.action.configfiles.diff
+backend.server.action_extra_data.configfiles.diff
+config_common.file_utils.FileProcessor.diff
+config_common.file_utils.diff" class="py-name" href="#" onclick="return doclink('link-3', 'diff', 'link-3');">diff</a></tt> </tt>
+<a name="L21"></a><tt class="py-lineno">21</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-4" class="py-name"><a title="backend.server.config_common
+config_common" class="py-name" href="#" onclick="return doclink('link-4', 'config_common', 'link-1');">config_common</a></tt><tt class="py-op">.</tt><tt id="link-5" class="py-name" targets="Module config_common.local_config=config_common.local_config-module.html"><a title="config_common.local_config" class="py-name" href="#" onclick="return doclink('link-5', 'local_config', 'link-5');">local_config</a></tt> <tt class="py-keyword">import</tt> <tt id="link-6" class="py-name" targets="Function actions.up2date_config.get()=actions.up2date_config-module.html#get,Method backend.common.rhnCache.Cache.get()=backend.common.rhnCache.Cache-class.html#get,Method backend.common.rhnCache.CompressedCache.get()=backend.common.rhnCache.CompressedCache-class.html#get,Method backend.common.rhnCache.NullCache.get()=backend.common.rhnCache.NullCache-class.html#get,Method backend.common.rhnCache.ObjectCache.get()=backend.common.rhnCache.ObjectCache-class.html#get,Function backend.common.rhnCache.get()=backend.common.rhnCache-module.html#get,Method backend.common.rhnConfig.RHNOptions.get()=backend.common.rhnConfig.RHNOptions-class.html#get,Function backend.common.rhnFlags.get()=backend.common.rhnFlags-module.html#get,Function backend.server.action_extra_data.up2date_config.get()=backend.server.action_extra_data.up2date_config-module.html#get,Method backend.server.handlers.xmlrpc.queue.Queue.get()=backend.server.handlers.xmlrpc.queue.Queue-class.html#get,Method backend.server.handlers.xmlrpc.up2date.Servers.get()=backend.server.handlers.xmlrpc.up2date.Servers-class.html#get,Method backend.server.rhnSQL.sql_row.Row.get()=backend.server.rhnSQL.sql_row.Row-class.html#get,Method backend.server.rhnSQL.sql_table.Table.get()=backend.server.rhnSQL.sql_table.Table-class.html#get,Function backend.server.rhnServer.get()=backend.server.rhnServer-module.html#get,Function config_common.local_config.get()=config_common.local_config-module.html#get,Function src.osad_config.get()=src.osad_config-module.html#get"><a title="actions.up2date_config.get
+backend.common.rhnCache.Cache.get
+backend.common.rhnCache.CompressedCache.get
+backend.common.rhnCache.NullCache.get
+backend.common.rhnCache.ObjectCache.get
+backend.common.rhnCache.get
+backend.common.rhnConfig.RHNOptions.get
+backend.common.rhnFlags.get
+backend.server.action_extra_data.up2date_config.get
+backend.server.handlers.xmlrpc.queue.Queue.get
+backend.server.handlers.xmlrpc.up2date.Servers.get
+backend.server.rhnSQL.sql_row.Row.get
+backend.server.rhnSQL.sql_table.Table.get
+backend.server.rhnServer.get
+config_common.local_config.get
+src.osad_config.get" class="py-name" href="#" onclick="return doclink('link-6', 'get', 'link-6');">get</a></tt> <tt class="py-keyword">as</tt> <tt id="link-7" class="py-name" targets="Method backend.wsgi.wsgiRequest.WsgiRequest.get_config()=backend.wsgi.wsgiRequest.WsgiRequest-class.html#get_config,Method rhnpush.rhnpush_confmanager.ConfManager.get_config()=rhnpush.rhnpush_confmanager.ConfManager-class.html#get_config"><a title="backend.wsgi.wsgiRequest.WsgiRequest.get_config
+rhnpush.rhnpush_confmanager.ConfManager.get_config" class="py-name" href="#" onclick="return doclink('link-7', 'get_config', 'link-7');">get_config</a></tt> </tt>
+<a name="L22"></a><tt class="py-lineno">22</tt>  <tt class="py-line"> </tt>
+<a name="Handler"></a><div id="Handler-def"><a name="L23"></a><tt class="py-lineno">23</tt> <a class="py-toggle" href="#" id="Handler-toggle" onclick="return toggle('Handler');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="config_client.rhncfgcli_diff.Handler-class.html">Handler</a><tt class="py-op">(</tt><tt class="py-base-class">handler_base</tt><tt class="py-op">.</tt><tt class="py-base-class">HandlerBase</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Handler-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="Handler-expanded"><a name="L24"></a><tt class="py-lineno">24</tt>  <tt class="py-line">    <tt id="link-8" class="py-name" targets="Variable config_client.handler_base.TopdirHandlerBase._options_table=config_client.handler_base.TopdirHandlerBase-class.html#_options_table,Variable config_client.rhncfgcli_diff.Handler._options_table=config_client.rhncfgcli_diff.Handler-class.html#_options_table,Variable config_client.rhncfgcli_verify.Handler._options_table=config_client.rhncfgcli_verify.Handler-class.html#_options_table,Variable config_common.handler_base.HandlerBase._options_table=config_common.handler_base.HandlerBase-class.html#_options_table,Variable config_management.rhncfg_add.Handler._options_table=config_management.rhncfg_add.Handler-class.html#_options_table,Variable config_management.rhncfg_diff.Handler._options_table=config_management.rhncfg_diff.Handler-class.html#_options_table,Variable config_management.rhncfg_diff_revisions.Handler._options_table=config_management.rhncfg_diff_revisions.Handler-class.html#_options_table,Variable config_management.rhncfg_download_channel.Handler._options_table=config_management.rhncfg_download_channel.Handler-class.html#_options_table,Variable config_management.rhncfg_get.Handler._options_table=config_management.rhncfg_get.Handler-class.html#_options_table,Variable config_management.rhncfg_remove.Handler._options_table=config_management.rhncfg_remove.Handler-class.html#_options_table,Variable config_management.rhncfg_revisions.Handler._options_table=config_management.rhncfg_revisions.Handler-class.html#_options_table,Variable config_management.rhncfg_upload_channel.Handler._options_table=config_management.rhncfg_upload_channel.Handler-class.html#_options_table"><a title="config_client.handler_base.TopdirHandlerBase._options_table
+config_client.rhncfgcli_diff.Handler._options_table
+config_client.rhncfgcli_verify.Handler._options_table
+config_common.handler_base.HandlerBase._options_table
+config_management.rhncfg_add.Handler._options_table
+config_management.rhncfg_diff.Handler._options_table
+config_management.rhncfg_diff_revisions.Handler._options_table
+config_management.rhncfg_download_channel.Handler._options_table
+config_management.rhncfg_get.Handler._options_table
+config_management.rhncfg_remove.Handler._options_table
+config_management.rhncfg_revisions.Handler._options_table
+config_management.rhncfg_upload_channel.Handler._options_table" class="py-name" href="#" onclick="return doclink('link-8', '_options_table', 'link-8');">_options_table</a></tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt> </tt>
+<a name="L25"></a><tt class="py-lineno">25</tt>  <tt class="py-line">        <tt id="link-9" class="py-name"><a title="config_client.handler_base
+config_common.handler_base" class="py-name" href="#" onclick="return doclink('link-9', 'handler_base', 'link-0');">handler_base</a></tt><tt class="py-op">.</tt><tt id="link-10" class="py-name" targets="Class config_client.handler_base.HandlerBase=config_client.handler_base.HandlerBase-class.html,Class config_common.handler_base.HandlerBase=config_common.handler_base.HandlerBase-class.html"><a title="config_client.handler_base.HandlerBase
+config_common.handler_base.HandlerBase" class="py-name" href="#" onclick="return doclink('link-10', 'HandlerBase', 'link-10');">HandlerBase</a></tt><tt class="py-op">.</tt><tt class="py-name">_option_class</tt><tt class="py-op">(</tt> </tt>
+<a name="L26"></a><tt class="py-lineno">26</tt>  <tt class="py-line">            <tt class="py-string">'-d'</tt><tt class="py-op">,</tt> <tt class="py-string">'--diff-secure-files'</tt><tt class="py-op">,</tt> <tt class="py-name">dest</tt><tt class="py-op">=</tt><tt class="py-string">'display_diff'</tt><tt class="py-op">,</tt> </tt>
+<a name="L27"></a><tt class="py-lineno">27</tt>  <tt class="py-line">            <tt id="link-11" class="py-name" targets="Package backend.server.action=backend.server.action-module.html,Function backend.server.action.virt.action()=backend.server.action.virt-module.html#action"><a title="backend.server.action
+backend.server.action.virt.action" class="py-name" href="#" onclick="return doclink('link-11', 'action', 'link-11');">action</a></tt><tt class="py-op">=</tt><tt class="py-string">"store_true"</tt><tt class="py-op">,</tt> <tt class="py-name">default</tt><tt class="py-op">=</tt><tt class="py-name">False</tt><tt class="py-op">,</tt> </tt>
+<a name="L28"></a><tt class="py-lineno">28</tt>  <tt class="py-line">            <tt class="py-name">help</tt><tt class="py-op">=</tt><tt class="py-string">"Force diff to display the diff for secure files."</tt><tt class="py-op">,</tt> </tt>
+<a name="L29"></a><tt class="py-lineno">29</tt>  <tt class="py-line">        <tt class="py-op">)</tt> </tt>
+<a name="L30"></a><tt class="py-lineno">30</tt>  <tt class="py-line">    <tt class="py-op">]</tt> </tt>
+<a name="L31"></a><tt class="py-lineno">31</tt>  <tt class="py-line">    <tt id="link-12" class="py-name" targets="Variable config_client.rhncfgcli_diff.Handler._usage_options=config_client.rhncfgcli_diff.Handler-class.html#_usage_options,Variable config_client.rhncfgcli_get.Handler._usage_options=config_client.rhncfgcli_get.Handler-class.html#_usage_options,Variable config_client.rhncfgcli_verify.Handler._usage_options=config_client.rhncfgcli_verify.Handler-class.html#_usage_options,Variable config_common.handler_base.HandlerBase._usage_options=config_common.handler_base.HandlerBase-class.html#_usage_options,Variable config_management.rhncfg_add.Handler._usage_options=config_management.rhncfg_add.Handler-class.html#_usage_options,Variable config_management.rhncfg_create_channel.Handler._usage_options=config_management.rhncfg_create_channel.Handler-class.html#_usage_options,Variable config_management.rhncfg_diff.Handler._usage_options=config_management.rhncfg_diff.Handler-class.html#_usage_options,Variable config_management.rhncfg_diff_revisions.Handler._usage_options=config_management.rhncfg_diff_revisions.Handler-class.html#_usage_options,Variable config_management.rhncfg_download_channel.Handler._usage_options=config_management.rhncfg_download_channel.Handler-class.html#_usage_options,Variable config_management.rhncfg_get.Handler._usage_options=config_management.rhncfg_get.Handler-class.html#_usage_options,Variable config_management.rhncfg_list.Handler._usage_options=config_management.rhncfg_list.Handler-class.html#_usage_options,Variable config_management.rhncfg_list_channels.Handler._usage_options=config_management.rhncfg_list_channels.Handler-class.html#_usage_options,Variable config_management.rhncfg_remove.Handler._usage_options=config_management.rhncfg_remove.Handler-class.html#_usage_options,Variable config_management.rhncfg_remove_channel.Handler._usage_options=config_management.rhncfg_remove_channel.Handler-class.html#_usage_options,Variable config_management.rhncfg_revisions.Handler._usage_options=config_management.rhncfg_revisions.Handler-class.html#_usage_options,Variable config_management.rhncfg_upload_channel.Handler._usage_options=config_management.rhncfg_upload_channel.Handler-class.html#_usage_options"><a title="config_client.rhncfgcli_diff.Handler._usage_options
+config_client.rhncfgcli_get.Handler._usage_options
+config_client.rhncfgcli_verify.Handler._usage_options
+config_common.handler_base.HandlerBase._usage_options
+config_management.rhncfg_add.Handler._usage_options
+config_management.rhncfg_create_channel.Handler._usage_options
+config_management.rhncfg_diff.Handler._usage_options
+config_management.rhncfg_diff_revisions.Handler._usage_options
+config_management.rhncfg_download_channel.Handler._usage_options
+config_management.rhncfg_get.Handler._usage_options
+config_management.rhncfg_list.Handler._usage_options
+config_management.rhncfg_list_channels.Handler._usage_options
+config_management.rhncfg_remove.Handler._usage_options
+config_management.rhncfg_remove_channel.Handler._usage_options
+config_management.rhncfg_revisions.Handler._usage_options
+config_management.rhncfg_upload_channel.Handler._usage_options" class="py-name" href="#" onclick="return doclink('link-12', '_usage_options', 'link-12');">_usage_options</a></tt> <tt class="py-op">=</tt> <tt id="link-13" class="py-name"><a title="config_client.handler_base
+config_common.handler_base" class="py-name" href="#" onclick="return doclink('link-13', 'handler_base', 'link-0');">handler_base</a></tt><tt class="py-op">.</tt><tt id="link-14" class="py-name"><a title="config_client.handler_base.HandlerBase
+config_common.handler_base.HandlerBase" class="py-name" href="#" onclick="return doclink('link-14', 'HandlerBase', 'link-10');">HandlerBase</a></tt><tt class="py-op">.</tt><tt id="link-15" class="py-name"><a title="config_client.rhncfgcli_diff.Handler._usage_options
+config_client.rhncfgcli_get.Handler._usage_options
+config_client.rhncfgcli_verify.Handler._usage_options
+config_common.handler_base.HandlerBase._usage_options
+config_management.rhncfg_add.Handler._usage_options
+config_management.rhncfg_create_channel.Handler._usage_options
+config_management.rhncfg_diff.Handler._usage_options
+config_management.rhncfg_diff_revisions.Handler._usage_options
+config_management.rhncfg_download_channel.Handler._usage_options
+config_management.rhncfg_get.Handler._usage_options
+config_management.rhncfg_list.Handler._usage_options
+config_management.rhncfg_list_channels.Handler._usage_options
+config_management.rhncfg_remove.Handler._usage_options
+config_management.rhncfg_remove_channel.Handler._usage_options
+config_management.rhncfg_revisions.Handler._usage_options
+config_management.rhncfg_upload_channel.Handler._usage_options" class="py-name" href="#" onclick="return doclink('link-15', '_usage_options', 'link-12');">_usage_options</a></tt> <tt class="py-op">+</tt> <tt class="py-string">" [ files ... ]"</tt> </tt>
+<a name="Handler._process_file"></a><div id="Handler._process_file-def"><a name="L32"></a><tt class="py-lineno">32</tt> <a class="py-toggle" href="#" id="Handler._process_file-toggle" onclick="return toggle('Handler._process_file');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="config_client.rhncfgcli_diff.Handler-class.html#_process_file">_process_file</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-param">args</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Handler._process_file-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="Handler._process_file-expanded"><a name="L33"></a><tt class="py-lineno">33</tt>  <tt class="py-line">        <tt id="link-16" class="py-name" targets="Package src=src-module.html"><a title="src" class="py-name" href="#" onclick="return doclink('link-16', 'src', 'link-16');">src</a></tt><tt class="py-op">,</tt> <tt class="py-name">dst</tt><tt class="py-op">=</tt> <tt class="py-name">args</tt> <tt class="py-op">[</tt><tt class="py-op">:</tt><tt class="py-number">2</tt><tt class="py-op">]</tt> </tt>
+<a name="L34"></a><tt class="py-lineno">34</tt>  <tt class="py-line">        <tt class="py-name">type</tt> <tt class="py-op">=</tt> <tt class="py-name">args</tt><tt class="py-op">[</tt><tt class="py-number">3</tt><tt class="py-op">]</tt> </tt>
+<a name="L35"></a><tt class="py-lineno">35</tt>  <tt class="py-line">        <tt class="py-name">file_info</tt> <tt class="py-op">=</tt> <tt class="py-name">args</tt><tt class="py-op">[</tt><tt class="py-number">4</tt><tt class="py-op">]</tt> </tt>
+<a name="L36"></a><tt class="py-lineno">36</tt>  <tt class="py-line"> </tt>
+<a name="L37"></a><tt class="py-lineno">37</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">type</tt> <tt class="py-op">==</tt> <tt class="py-string">'symlink'</tt><tt class="py-op">:</tt> </tt>
+<a name="L38"></a><tt class="py-lineno">38</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt id="link-17" class="py-name" targets="Method backend.server.action.utils.ChannelPackage.exists()=backend.server.action.utils.ChannelPackage-class.html#exists,Method backend.server.rhnChannel.BaseChannelObject.exists()=backend.server.rhnChannel.BaseChannelObject-class.html#exists"><a title="backend.server.action.utils.ChannelPackage.exists
+backend.server.rhnChannel.BaseChannelObject.exists" class="py-name" href="#" onclick="return doclink('link-17', 'exists', 'link-17');">exists</a></tt><tt class="py-op">(</tt><tt class="py-name">dst</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L39"></a><tt class="py-lineno">39</tt>  <tt class="py-line">                <tt class="py-keyword">print</tt><tt class="py-op">(</tt><tt class="py-string">"Symbolic link '%s' is missing"</tt> <tt class="py-op">%</tt> <tt class="py-name">dst</tt><tt class="py-op">)</tt> </tt>
+<a name="L40"></a><tt class="py-lineno">40</tt>  <tt class="py-line">                <tt class="py-keyword">return</tt> </tt>
+<a name="L41"></a><tt class="py-lineno">41</tt>  <tt class="py-line"> </tt>
+<a name="L42"></a><tt class="py-lineno">42</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">islink</tt><tt class="py-op">(</tt><tt class="py-name">dst</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L43"></a><tt class="py-lineno">43</tt>  <tt class="py-line">                <tt class="py-keyword">print</tt><tt class="py-op">(</tt><tt class="py-string">"Path '%s' is not a symbolic link"</tt> <tt class="py-op">%</tt> <tt class="py-name">dst</tt><tt class="py-op">)</tt> </tt>
+<a name="L44"></a><tt class="py-lineno">44</tt>  <tt class="py-line">                <tt class="py-keyword">return</tt> </tt>
+<a name="L45"></a><tt class="py-lineno">45</tt>  <tt class="py-line"> </tt>
+<a name="L46"></a><tt class="py-lineno">46</tt>  <tt class="py-line">            <tt class="py-comment">#dst is a symlink, so just tell the user we're skipping the entry</tt> </tt>
+<a name="L47"></a><tt class="py-lineno">47</tt>  <tt class="py-line">            <tt class="py-name">srclink</tt> <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">readlink</tt><tt class="py-op">(</tt><tt id="link-18" class="py-name"><a title="src" class="py-name" href="#" onclick="return doclink('link-18', 'src', 'link-16');">src</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L48"></a><tt class="py-lineno">48</tt>  <tt class="py-line">            <tt class="py-name">destlink</tt> <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">readlink</tt><tt class="py-op">(</tt><tt class="py-name">dst</tt><tt class="py-op">)</tt> </tt>
+<a name="L49"></a><tt class="py-lineno">49</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">srclink</tt> <tt class="py-op">!=</tt> <tt class="py-name">destlink</tt><tt class="py-op">:</tt> </tt>
+<a name="L50"></a><tt class="py-lineno">50</tt>  <tt class="py-line">                <tt class="py-keyword">print</tt><tt class="py-op">(</tt><tt class="py-string">"Symbolic links differ. Channel: '%s' -&gt; '%s'   System: '%s' -&gt; '%s' "</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt class="py-name">dst</tt><tt class="py-op">,</tt><tt class="py-name">srclink</tt><tt class="py-op">,</tt> <tt class="py-name">dst</tt><tt class="py-op">,</tt> <tt class="py-name">destlink</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L51"></a><tt class="py-lineno">51</tt>  <tt class="py-line">        <tt class="py-keyword">elif</tt> <tt class="py-name">type</tt> <tt class="py-op">==</tt> <tt class="py-string">'file'</tt><tt class="py-op">:</tt> </tt>
+<a name="L52"></a><tt class="py-lineno">52</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-string">'is_binary'</tt> <tt class="py-keyword">in</tt> <tt class="py-name">file_info</tt> <tt class="py-keyword">and</tt> <tt class="py-name">file_info</tt><tt class="py-op">[</tt><tt class="py-string">'is_binary'</tt><tt class="py-op">]</tt> <tt class="py-op">==</tt> <tt class="py-string">'Y'</tt><tt class="py-op">:</tt> </tt>
+<a name="L53"></a><tt class="py-lineno">53</tt>  <tt class="py-line">                <tt class="py-name">src_content</tt> <tt class="py-op">=</tt> <tt class="py-name">dst_content</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+<a name="L54"></a><tt class="py-lineno">54</tt>  <tt class="py-line">                <tt class="py-name">content_differs</tt> <tt class="py-op">=</tt> <tt class="py-name">False</tt> </tt>
+<a name="L55"></a><tt class="py-lineno">55</tt>  <tt class="py-line">                <tt class="py-name">src_file</tt> <tt class="py-op">=</tt> <tt class="py-name">open</tt><tt class="py-op">(</tt><tt id="link-19" class="py-name"><a title="src" class="py-name" href="#" onclick="return doclink('link-19', 'src', 'link-16');">src</a></tt><tt class="py-op">,</tt> <tt class="py-string">'rb'</tt><tt class="py-op">)</tt> </tt>
+<a name="L56"></a><tt class="py-lineno">56</tt>  <tt class="py-line">                <tt class="py-name">src_content</tt> <tt class="py-op">=</tt> <tt class="py-name">src_file</tt><tt class="py-op">.</tt><tt id="link-20" class="py-name" targets="Method backend.wsgi.wsgiRequest.WsgiRequest.read()=backend.wsgi.wsgiRequest.WsgiRequest-class.html#read,Method rhn.SSL.SSLSocket.read()=rhn.SSL.SSLSocket-class.html#read,Method rhn.nonblocking.NonBlockingFile.read()=rhn.nonblocking.NonBlockingFile-class.html#read,Method rhn.transports.File.read()=rhn.transports.File-class.html#read,Method rhn.transports.Input.read()=rhn.transports.Input-class.html#read,Method rhnkickstart.lilo.LiloConfigFile.read()=rhnkickstart.lilo.LiloConfigFile-class.html#read,Method rhnpush.archive.ArchiveParser.read()=rhnpush.archive.ArchiveParser-class.html#read,Method src.jabber_lib.JabberClient.read()=src.jabber_lib.JabberClient-class.html#read"><a title="backend.wsgi.wsgiRequest.WsgiRequest.read
+rhn.SSL.SSLSocket.read
+rhn.nonblocking.NonBlockingFile.read
+rhn.transports.File.read
+rhn.transports.Input.read
+rhnkickstart.lilo.LiloConfigFile.read
+rhnpush.archive.ArchiveParser.read
+src.jabber_lib.JabberClient.read" class="py-name" href="#" onclick="return doclink('link-20', 'read', 'link-20');">read</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L57"></a><tt class="py-lineno">57</tt>  <tt class="py-line">                <tt class="py-name">src_file</tt><tt class="py-op">.</tt><tt id="link-21" class="py-name" targets="Method backend.common.rhnCache.ClosingZipFile.close()=backend.common.rhnCache.ClosingZipFile-class.html#close,Method backend.common.rhnCache.LockedFile.close()=backend.common.rhnCache.LockedFile-class.html#close,Method backend.satellite_exporter.handlers.non_auth_dumper.NonAuthenticatedDumper.close()=backend.satellite_exporter.handlers.non_auth_dumper.NonAuthenticatedDumper-class.html#close,Method backend.satellite_tools.connection.CompressedStream.close()=backend.satellite_tools.connection.CompressedStream-class.html#close,Method backend.satellite_tools.disk_dumper.dumper.CachedQueryIterator.close()=backend.satellite_tools.disk_dumper.dumper.CachedQueryIterator-class.html#close,Method backend.satellite_tools.disk_dumper.dumper.XML_Dumper.close()=backend.satellite_tools.disk_dumper.dumper.XML_Dumper-class.html#close,Method backend.satellite_tools.disk_dumper.iss.Dumper.close()=backend.satellite_tools.disk_dumper.iss.Dumper-class.html#close,Method backend.satellite_tools.disk_dumper.string_buffer.StringBuffer.close()=backend.satellite_tools.disk_dumper.string_buffer.StringBuffer-class.html#close,Method backend.satellite_tools.satsync.StreamProducer.close()=backend.satellite_tools.satsync.StreamProducer-class.html#close,Method backend.satellite_tools.sync_handlers.ContainerHandler.close()=backend.satellite_tools.sync_handlers.ContainerHandler-class.html#close,Method backend.satellite_tools.xmlSource.BaseDispatchHandler.close()=backend.satellite_tools.xmlSource.BaseDispatchHandler-class.html#close,Method backend.server.rhnSQL.driver_cx_Oracle.Database.close()=backend.server.rhnSQL.driver_cx_Oracle.Database-class.html#close,Method backend.server.rhnSQL.driver_postgresql.Cursor.close()=backend.server.rhnSQL.driver_postgresql.Cursor-class.html#close,Method backend.server.rhnSQL.sql_base.Database.close()=backend.server.rhnSQL.sql_base.Database-class.html#close,Method proxy.responseContext.ResponseContext.close()=proxy.responseContext.ResponseContext-class.html#close,Method rhn.SSL.SSLSocket.close()=rhn.SSL.SSLSocket-class.html#close,Method rhn.rpclib.Server.close()=rhn.rpclib.Server-class.html#close,Method rhn.transports.BaseOutput.close()=rhn.transports.BaseOutput-class.html#close,Method up2date_client.rhnregGui.NetworkConfigDialog.close()=up2date_client.rhnregGui.NetworkConfigDialog-class.html#close"><a title="backend.common.rhnCache.ClosingZipFile.close
+backend.common.rhnCache.LockedFile.close
+backend.satellite_exporter.handlers.non_auth_dumper.NonAuthenticatedDumper.close
+backend.satellite_tools.connection.CompressedStream.close
+backend.satellite_tools.disk_dumper.dumper.CachedQueryIterator.close
+backend.satellite_tools.disk_dumper.dumper.XML_Dumper.close
+backend.satellite_tools.disk_dumper.iss.Dumper.close
+backend.satellite_tools.disk_dumper.string_buffer.StringBuffer.close
+backend.satellite_tools.satsync.StreamProducer.close
+backend.satellite_tools.sync_handlers.ContainerHandler.close
+backend.satellite_tools.xmlSource.BaseDispatchHandler.close
+backend.server.rhnSQL.driver_cx_Oracle.Database.close
+backend.server.rhnSQL.driver_postgresql.Cursor.close
+backend.server.rhnSQL.sql_base.Database.close
+proxy.responseContext.ResponseContext.close
+rhn.SSL.SSLSocket.close
+rhn.rpclib.Server.close
+rhn.transports.BaseOutput.close
+up2date_client.rhnregGui.NetworkConfigDialog.close" class="py-name" href="#" onclick="return doclink('link-21', 'close', 'link-21');">close</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L58"></a><tt class="py-lineno">58</tt>  <tt class="py-line">                <tt class="py-keyword">if</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">access</tt><tt class="py-op">(</tt><tt class="py-name">dst</tt><tt class="py-op">,</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">R_OK</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L59"></a><tt class="py-lineno">59</tt>  <tt class="py-line">                    <tt class="py-name">dst_file</tt> <tt class="py-op">=</tt> <tt class="py-name">open</tt><tt class="py-op">(</tt><tt class="py-name">dst</tt><tt class="py-op">,</tt> <tt class="py-string">'rb'</tt><tt class="py-op">)</tt> </tt>
+<a name="L60"></a><tt class="py-lineno">60</tt>  <tt class="py-line">                    <tt class="py-name">dst_content</tt> <tt class="py-op">=</tt> <tt class="py-name">dst_file</tt><tt class="py-op">.</tt><tt id="link-22" class="py-name"><a title="backend.wsgi.wsgiRequest.WsgiRequest.read
+rhn.SSL.SSLSocket.read
+rhn.nonblocking.NonBlockingFile.read
+rhn.transports.File.read
+rhn.transports.Input.read
+rhnkickstart.lilo.LiloConfigFile.read
+rhnpush.archive.ArchiveParser.read
+src.jabber_lib.JabberClient.read" class="py-name" href="#" onclick="return doclink('link-22', 'read', 'link-20');">read</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L61"></a><tt class="py-lineno">61</tt>  <tt class="py-line">                    <tt class="py-name">dst_file</tt><tt class="py-op">.</tt><tt id="link-23" class="py-name"><a title="backend.common.rhnCache.ClosingZipFile.close
+backend.common.rhnCache.LockedFile.close
+backend.satellite_exporter.handlers.non_auth_dumper.NonAuthenticatedDumper.close
+backend.satellite_tools.connection.CompressedStream.close
+backend.satellite_tools.disk_dumper.dumper.CachedQueryIterator.close
+backend.satellite_tools.disk_dumper.dumper.XML_Dumper.close
+backend.satellite_tools.disk_dumper.iss.Dumper.close
+backend.satellite_tools.disk_dumper.string_buffer.StringBuffer.close
+backend.satellite_tools.satsync.StreamProducer.close
+backend.satellite_tools.sync_handlers.ContainerHandler.close
+backend.satellite_tools.xmlSource.BaseDispatchHandler.close
+backend.server.rhnSQL.driver_cx_Oracle.Database.close
+backend.server.rhnSQL.driver_postgresql.Cursor.close
+backend.server.rhnSQL.sql_base.Database.close
+proxy.responseContext.ResponseContext.close
+rhn.SSL.SSLSocket.close
+rhn.rpclib.Server.close
+rhn.transports.BaseOutput.close
+up2date_client.rhnregGui.NetworkConfigDialog.close" class="py-name" href="#" onclick="return doclink('link-23', 'close', 'link-21');">close</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L62"></a><tt class="py-lineno">62</tt>  <tt class="py-line">                <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">dst_content</tt> <tt class="py-keyword">or</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">src_content</tt><tt class="py-op">)</tt> <tt class="py-op">!=</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">dst_content</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L63"></a><tt class="py-lineno">63</tt>  <tt class="py-line">                    <tt class="py-name">content_differs</tt> <tt class="py-op">=</tt> <tt class="py-name">True</tt> </tt>
+<a name="L64"></a><tt class="py-lineno">64</tt>  <tt class="py-line">                <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L65"></a><tt class="py-lineno">65</tt>  <tt class="py-line">                    <tt class="py-keyword">for</tt> <tt class="py-name">i</tt> <tt class="py-keyword">in</tt> <tt class="py-name">range</tt><tt class="py-op">(</tt><tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">src_content</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L66"></a><tt class="py-lineno">66</tt>  <tt class="py-line">                        <tt class="py-keyword">if</tt> <tt class="py-name">src_content</tt><tt class="py-op">[</tt><tt class="py-name">i</tt><tt class="py-op">]</tt> <tt class="py-op">!=</tt> <tt class="py-name">dst_content</tt><tt class="py-op">[</tt><tt class="py-name">i</tt><tt class="py-op">]</tt><tt class="py-op">:</tt> </tt>
+<a name="L67"></a><tt class="py-lineno">67</tt>  <tt class="py-line">                            <tt class="py-name">content_differs</tt> <tt class="py-op">=</tt> <tt class="py-name">True</tt> </tt>
+<a name="L68"></a><tt class="py-lineno">68</tt>  <tt class="py-line">                            <tt class="py-keyword">break</tt> </tt>
+<a name="L69"></a><tt class="py-lineno">69</tt>  <tt class="py-line">                <tt class="py-keyword">if</tt> <tt class="py-name">content_differs</tt><tt class="py-op">:</tt> </tt>
+<a name="L70"></a><tt class="py-lineno">70</tt>  <tt class="py-line">                    <tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">stdout</tt><tt class="py-op">.</tt><tt id="link-24" class="py-name" targets="Static Method backend.common.fileutils.payload.write()=backend.common.fileutils.payload-class.html#write,Method backend.common.rhn_mpm.MPM_Package.write()=backend.common.rhn_mpm.MPM_Package-class.html#write,Method backend.satellite_tools.disk_dumper.dumper.TeeStream.write()=backend.satellite_tools.disk_dumper.dumper.TeeStream-class.html#write,Method backend.satellite_tools.disk_dumper.string_buffer.StringBuffer.write()=backend.satellite_tools.disk_dumper.string_buffer.StringBuffer-class.html#write,Method backend.satellite_tools.repo_plugins.yum_src.YumWarnings.write()=backend.satellite_tools.repo_plugins.yum_src.YumWarnings-class.html#write,Method backend.wsgi.wsgiRequest.WsgiRequest.write()=backend.wsgi.wsgiRequest.WsgiRequest-class.html#write,Method rhn.SSL.SSLSocket.write()=rhn.SSL.SSLSocket-class.html#write,Method rhn.SmartIO.SmartIO.write()=rhn.SmartIO.SmartIO-class.html#write,Method rhn.nonblocking.NonBlockingFile.write()=rhn.nonblocking.NonBlockingFile-class.html#write,Method rhnkickstart.lilo.LiloConfigFile.write()=rhnkickstart.lilo.LiloConfigFile-class.html#write,Method rhnpush.rhnpush_config.rhnpushConfigParser.write()=rhnpush.rhnpush_config.rhnpushConfigParser-class.html#write"><a title="backend.common.fileutils.payload.write
+backend.common.rhn_mpm.MPM_Package.write
+backend.satellite_tools.disk_dumper.dumper.TeeStream.write
+backend.satellite_tools.disk_dumper.string_buffer.StringBuffer.write
+backend.satellite_tools.repo_plugins.yum_src.YumWarnings.write
+backend.wsgi.wsgiRequest.WsgiRequest.write
+rhn.SSL.SSLSocket.write
+rhn.SmartIO.SmartIO.write
+rhn.nonblocking.NonBlockingFile.write
+rhnkickstart.lilo.LiloConfigFile.write
+rhnpush.rhnpush_config.rhnpushConfigParser.write" class="py-name" href="#" onclick="return doclink('link-24', 'write', 'link-24');">write</a></tt><tt class="py-op">(</tt><tt class="py-string">"Binary file content differs.\n"</tt><tt class="py-op">)</tt> </tt>
+<a name="L71"></a><tt class="py-lineno">71</tt>  <tt class="py-line">            <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L72"></a><tt class="py-lineno">72</tt>  <tt class="py-line">                <tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">stdout</tt><tt class="py-op">.</tt><tt id="link-25" class="py-name"><a title="backend.common.fileutils.payload.write
+backend.common.rhn_mpm.MPM_Package.write
+backend.satellite_tools.disk_dumper.dumper.TeeStream.write
+backend.satellite_tools.disk_dumper.string_buffer.StringBuffer.write
+backend.satellite_tools.repo_plugins.yum_src.YumWarnings.write
+backend.wsgi.wsgiRequest.WsgiRequest.write
+rhn.SSL.SSLSocket.write
+rhn.SmartIO.SmartIO.write
+rhn.nonblocking.NonBlockingFile.write
+rhnkickstart.lilo.LiloConfigFile.write
+rhnpush.rhnpush_config.rhnpushConfigParser.write" class="py-name" href="#" onclick="return doclink('link-25', 'write', 'link-24');">write</a></tt><tt class="py-op">(</tt><tt class="py-string">''</tt><tt class="py-op">.</tt><tt class="py-name">join</tt><tt class="py-op">(</tt><tt id="link-26" class="py-name"><a title="actions.configfiles.diff
+backend.server.action.configfiles.diff
+backend.server.action_extra_data.configfiles.diff
+config_common.file_utils.FileProcessor.diff
+config_common.file_utils.diff" class="py-name" href="#" onclick="return doclink('link-26', 'diff', 'link-3');">diff</a></tt><tt class="py-op">(</tt><tt id="link-27" class="py-name"><a title="src" class="py-name" href="#" onclick="return doclink('link-27', 'src', 'link-16');">src</a></tt><tt class="py-op">,</tt> <tt class="py-name">dst</tt><tt class="py-op">,</tt> <tt class="py-name">srcname</tt><tt class="py-op">=</tt><tt class="py-name">dst</tt><tt class="py-op">,</tt> <tt class="py-name">dstname</tt><tt class="py-op">=</tt><tt class="py-name">dst</tt><tt class="py-op">,</tt> </tt>
+<a name="L73"></a><tt class="py-lineno">73</tt>  <tt class="py-line">                    <tt class="py-name">display_diff</tt><tt class="py-op">=</tt> </tt>
+<a name="L74"></a><tt class="py-lineno">74</tt>  <tt class="py-line">                    <tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-28" class="py-name" targets="Variable rhnpush.solaris2mpm.options=rhnpush.solaris2mpm-module.html#options,Variable virtualization.poller.options=virtualization.poller-module.html#options"><a title="rhnpush.solaris2mpm.options
+virtualization.poller.options" class="py-name" href="#" onclick="return doclink('link-28', 'options', 'link-28');">options</a></tt><tt class="py-op">.</tt><tt class="py-name">display_diff</tt> <tt class="py-keyword">or</tt> <tt id="link-29" class="py-name"><a title="backend.wsgi.wsgiRequest.WsgiRequest.get_config
+rhnpush.rhnpush_confmanager.ConfManager.get_config" class="py-name" href="#" onclick="return doclink('link-29', 'get_config', 'link-7');">get_config</a></tt><tt class="py-op">(</tt><tt class="py-string">'display_diff'</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L75"></a><tt class="py-lineno">75</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Fri Nov 25 11:30:46 2016
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>
