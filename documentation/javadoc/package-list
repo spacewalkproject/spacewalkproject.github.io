@@ -375,7 +375,6 @@ com.redhat.rhn.taskomatic.task.repomd
 com.redhat.rhn.taskomatic.task.test
 com.redhat.rhn.taskomatic.task.threaded
 com.redhat.rhn.testing
-com.redhat.rhn.testing.jmock.matchers
 com.redhat.rhn.webapp
 com.redhat.rhn.webapp.test
 java
