@@ -1,4 +1,4 @@
-// dot 2.26.0 on Linux 2.6.32-504.el6.x86_64
+// dot 2.26.0 on Linux 2.6.32-696.6.3.el6.x86_64
 // SchemaSpy rev 590
 digraph "oneDegreeRelationshipsDiagram" {
   graph [
@@ -53,7 +53,7 @@ digraph "oneDegreeRelationshipsDiagram" {
       <TR><TD PORT="cobbler_id" COLSPAN="3" ALIGN="LEFT">cobbler_id</TD></TR>
       <TR><TD PORT="created" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">created</TD></TR>
       <TR><TD PORT="modified" COLSPAN="3" ALIGN="LEFT">modified</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 4</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">50 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 4</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 row</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">50 &gt;</TD></TR>
     </TABLE>>
     URL="rhnserver.html"
     tooltip="rhnserver"
@@ -69,7 +69,7 @@ digraph "oneDegreeRelationshipsDiagram" {
       <TR><TD PORT="server_id" COLSPAN="2" BGCOLOR="#f4f7da" ALIGN="LEFT">server_id</TD><TD PORT="server_id.type" ALIGN="LEFT">numeric[131089]</TD></TR>
       <TR><TD PORT="created" COLSPAN="2" ALIGN="LEFT">created</TD><TD PORT="created.type" ALIGN="LEFT">timestamptz[35,6]</TD></TR>
       <TR><TD PORT="modified" COLSPAN="2" ALIGN="LEFT">modified</TD><TD PORT="modified.type" ALIGN="LEFT">timestamptz[35,6]</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 3</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">6 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 3</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">3 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">6 &gt;</TD></TR>
     </TABLE>>
     URL="rhnsnapshot.html"
     tooltip="rhnsnapshot"
@@ -131,7 +131,7 @@ digraph "oneDegreeRelationshipsDiagram" {
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">rhnsnapshotpackage</TD></TR>
       <TR><TD PORT="snapshot_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">snapshot_id</TD></TR>
       <TR><TD PORT="nevra_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">nevra_id</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">8,336 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
     </TABLE>>
     URL="rhnsnapshotpackage.html"
     tooltip="rhnsnapshotpackage"
@@ -142,7 +142,7 @@ digraph "oneDegreeRelationshipsDiagram" {
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">rhnsnapshotservergroup</TD></TR>
       <TR><TD PORT="snapshot_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">snapshot_id</TD></TR>
       <TR><TD PORT="server_group_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">server_group_id</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">6 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
     </TABLE>>
     URL="rhnsnapshotservergroup.html"
     tooltip="rhnsnapshotservergroup"

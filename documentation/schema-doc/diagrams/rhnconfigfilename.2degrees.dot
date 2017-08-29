@@ -1,4 +1,4 @@
-// dot 2.26.0 on Linux 2.6.32-504.el6.x86_64
+// dot 2.26.0 on Linux 2.6.32-696.6.3.el6.x86_64
 // SchemaSpy rev 590
 digraph "twoDegreesRelationshipsDiagram" {
   graph [
@@ -28,7 +28,7 @@ digraph "twoDegreesRelationshipsDiagram" {
   "rhnconfigfile":"config_file_name_id":w -> "rhnconfigfilename":"id.type":e [arrowhead=none dir=back arrowtail=crowodot];
   "rhnconfigfile":"latest_config_revision_id":w -> "rhnconfigrevision":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "rhnconfigfile":"state_id":w -> "rhnconfigfilestate":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
-  "rhnconfiginfo":"symlink_target_filename_id":w -> "rhnconfigfilename":"id.type":e [arrowhead=none dir=back arrowtail=crowodot];
+  "rhnconfiginfo":"symlink_target_filename_id":w -> "rhnconfigfilename":"id.type":e [arrowhead=none dir=back arrowtail=teeodot];
   "rhnconfigrevision":"elipses":w -> "rhnconfigfile":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "rhnconfigrevision":"elipses":w -> "rhnconfiginfo":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "rhnfilelistmembers":"config_file_name_id":w -> "rhnconfigfilename":"id.type":e [arrowhead=none dir=back arrowtail=crowodot];

@@ -18,7 +18,7 @@
       <table name="dual" numRows="1" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" digits="0" id="0" name="dummy" nullable="true" remarks="" size="1" type="bpchar"/>
       </table>
-      <table name="log" numRows="1" remarks="" schema="public" type="TABLE">
+      <table name="log" numRows="4" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" digits="0" id="0" name="id" nullable="false" remarks="" size="131089" type="numeric">
             <child column="log_id" foreignKey="rhnserver_log_log_id_fkey" implied="false" onDeleteCascade="false" table="rhnserver_log"/>
             <child column="log_id" foreignKey="rhnservergroup_log_log_id_fkey" implied="false" onDeleteCascade="false" table="rhnservergroup_log"/>
@@ -33,7 +33,7 @@
             <column ascending="true" name="id"/>
          </index>
       </table>
-      <table name="pxtsessions" numRows="0" remarks="" schema="public" type="TABLE">
+      <table name="pxtsessions" numRows="1" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" digits="0" id="0" name="id" nullable="false" remarks="" size="131089" type="numeric">
             <child column="pxt_session_id" foreignKey="rhn_vis_objs_sess_fk" implied="false" onDeleteCascade="true" table="rhnvisibleobjects"/>
          </column>
@@ -287,44 +287,6 @@
          </index>
          <index name="idx_qrtz_t_volatile" unique="false">
             <column ascending="true" name="is_volatile"/>
-         </index>
-      </table>
-      <table name="rhn_config_group" numRows="28" remarks="confg  configuration group definition:general,mail,cf_db" schema="public" type="TABLE">
-         <column autoUpdated="false" digits="0" id="0" name="name" nullable="false" remarks="" size="255" type="varchar">
-            <child column="group_name" foreignKey="rhn_confp_grpnm_group_name_fk" implied="false" onDeleteCascade="false" table="rhn_config_parameter"/>
-         </column>
-         <column autoUpdated="false" digits="0" id="1" name="description" nullable="true" remarks="" size="255" type="varchar"/>
-         <primaryKey column="name" sequenceNumberInPK="1"/>
-         <index name="rhn_confg_name_pk" unique="true">
-            <column ascending="true" name="name"/>
-         </index>
-      </table>
-      <table name="rhn_config_parameter" numRows="179" remarks="confp  configuration parameter definition" schema="public" type="TABLE">
-         <column autoUpdated="false" digits="0" id="0" name="group_name" nullable="false" remarks="" size="255" type="varchar">
-            <parent column="name" foreignKey="rhn_confp_grpnm_group_name_fk" implied="false" onDeleteCascade="false" table="rhn_config_group"/>
-         </column>
-         <column autoUpdated="false" digits="0" id="1" name="name" nullable="false" remarks="" size="255" type="varchar"/>
-         <column autoUpdated="false" digits="0" id="2" name="value" nullable="true" remarks="" size="255" type="varchar"/>
-         <column autoUpdated="false" digits="0" id="3" name="security_type" nullable="false" remarks="" size="255" type="varchar">
-            <parent column="name" foreignKey="rhn_confp_scrty_sec_type_fk" implied="false" onDeleteCascade="false" table="rhn_config_security_type"/>
-         </column>
-         <column autoUpdated="false" digits="0" id="4" name="last_update_user" nullable="true" remarks="" size="40" type="varchar"/>
-         <column autoUpdated="false" digits="6" id="5" name="last_update_date" nullable="true" remarks="" size="35" type="timestamptz"/>
-         <primaryKey column="group_name" sequenceNumberInPK="1"/>
-         <primaryKey column="name" sequenceNumberInPK="2"/>
-         <index name="rhn_confp_group_name_name_pk" unique="true">
-            <column ascending="true" name="group_name"/>
-            <column ascending="true" name="name"/>
-         </index>
-      </table>
-      <table name="rhn_config_security_type" numRows="3" remarks="conct security levels internal,external,all" schema="public" type="TABLE">
-         <column autoUpdated="false" digits="0" id="0" name="name" nullable="false" remarks="" size="255" type="varchar">
-            <child column="security_type" foreignKey="rhn_confp_scrty_sec_type_fk" implied="false" onDeleteCascade="false" table="rhn_config_parameter"/>
-         </column>
-         <column autoUpdated="false" digits="0" id="1" name="description" nullable="true" remarks="" size="255" type="varchar"/>
-         <primaryKey column="name" sequenceNumberInPK="1"/>
-         <index name="rhn_conct_name_pk" unique="true">
-            <column ascending="true" name="name"/>
          </index>
       </table>
       <table name="rhnaction" numRows="0" remarks="" schema="public" type="TABLE">
@@ -986,7 +948,7 @@
             <column ascending="true" name="action_id"/>
          </index>
       </table>
-      <table name="rhnactivationkey" numRows="0" remarks="" schema="public" type="TABLE">
+      <table name="rhnactivationkey" numRows="1" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" digits="0" id="0" name="token" nullable="false" remarks="" size="48" type="varchar"/>
          <column autoUpdated="false" digits="0" id="1" name="reg_token_id" nullable="false" remarks="" size="131089" type="numeric">
             <parent column="id" foreignKey="rhn_act_key_reg_tid_fk" implied="false" onDeleteCascade="true" table="rhnregtoken"/>
@@ -1007,7 +969,7 @@
             <column ascending="true" name="token"/>
          </index>
       </table>
-      <table name="rhnarchtype" numRows="6" remarks="" schema="public" type="TABLE">
+      <table name="rhnarchtype" numRows="3" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" digits="0" id="0" name="id" nullable="false" remarks="" size="131089" type="numeric">
             <child column="arch_type_id" foreignKey="rhn_archtypeacts_atid_fk" implied="false" onDeleteCascade="false" table="rhnarchtypeactions"/>
             <child column="arch_type_id" foreignKey="rhn_carch_atid_fk" implied="false" onDeleteCascade="false" table="rhnchannelarch"/>
@@ -1030,7 +992,7 @@
             <column ascending="true" name="label"/>
          </index>
       </table>
-      <table name="rhnarchtypeactions" numRows="11" remarks="" schema="public" type="TABLE">
+      <table name="rhnarchtypeactions" numRows="4" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" digits="0" id="0" name="arch_type_id" nullable="false" remarks="" size="131089" type="numeric">
             <parent column="id" foreignKey="rhn_archtypeacts_atid_fk" implied="false" onDeleteCascade="false" table="rhnarchtype"/>
          </column>
@@ -1072,7 +1034,7 @@
          <column autoUpdated="false" digits="0" id="11" name="dev_lun" nullable="true" remarks="" size="256" type="varchar"/>
          <column autoUpdated="false" digits="0" id="12" name="pcitype" nullable="true" remarks="" size="131089" type="numeric"/>
       </table>
-      <table name="rhnchannel" numRows="7" remarks="" schema="public" type="TABLE">
+      <table name="rhnchannel" numRows="0" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" digits="0" id="0" name="id" nullable="false" remarks="" size="131089" type="numeric">
             <child column="parent_channel" foreignKey="rhn_channel_parent_ch_fk" implied="false" onDeleteCascade="false" table="rhnchannel"/>
             <child column="id" foreignKey="rhn_channelclone_tcid_fk" implied="false" onDeleteCascade="true" table="rhnchannelcloned"/>
@@ -1210,7 +1172,7 @@
             <column ascending="true" name="id"/>
          </index>
       </table>
-      <table name="rhnchannelcomps" numRows="1" remarks="" schema="public" type="TABLE">
+      <table name="rhnchannelcomps" numRows="0" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" digits="0" id="0" name="id" nullable="false" remarks="" size="131089" type="numeric"/>
          <column autoUpdated="false" digits="0" id="1" name="channel_id" nullable="false" remarks="" size="131089" type="numeric">
             <parent column="id" foreignKey="rhn_channelcomps_cid_fk" implied="false" onDeleteCascade="true" table="rhnchannel"/>
@@ -1227,7 +1189,7 @@
             <column ascending="true" name="channel_id"/>
          </index>
       </table>
-      <table name="rhnchannelcontentsource" numRows="7" remarks="" schema="public" type="TABLE">
+      <table name="rhnchannelcontentsource" numRows="0" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" digits="0" id="0" name="source_id" nullable="false" remarks="" size="131089" type="numeric">
             <parent column="id" foreignKey="rhn_ccs_src_id_fk" implied="false" onDeleteCascade="true" table="rhncontentsource"/>
          </column>
@@ -1283,7 +1245,7 @@
             <column ascending="true" name="name"/>
          </index>
       </table>
-      <table name="rhnchannelfamilymembers" numRows="7" remarks="" schema="public" type="TABLE">
+      <table name="rhnchannelfamilymembers" numRows="0" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" digits="0" id="0" name="channel_id" nullable="false" remarks="" size="131089" type="numeric">
             <parent column="id" foreignKey="rhn_cf_members_c_fk" implied="false" onDeleteCascade="true" table="rhnchannel"/>
          </column>
@@ -1306,7 +1268,7 @@
          <column autoUpdated="false" digits="6" id="2" name="created" nullable="true" remarks="" size="35" type="timestamptz"/>
          <column autoUpdated="false" digits="6" id="3" name="modified" nullable="true" remarks="" size="35" type="timestamptz"/>
       </table>
-      <table name="rhnchannelnewestpackage" numRows="6696" remarks="" schema="public" type="TABLE">
+      <table name="rhnchannelnewestpackage" numRows="0" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" digits="0" id="0" name="channel_id" nullable="false" remarks="" size="131089" type="numeric">
             <parent column="id" foreignKey="rhn_cnp_cid_fk" implied="false" onDeleteCascade="true" table="rhnchannel"/>
          </column>
@@ -1331,7 +1293,7 @@
             <column ascending="true" name="package_id"/>
          </index>
       </table>
-      <table name="rhnchannelnewestpackageaudit" numRows="8" remarks="" schema="public" type="TABLE">
+      <table name="rhnchannelnewestpackageaudit" numRows="0" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="now()" digits="6" id="0" name="refresh_time" nullable="false" remarks="" size="35" type="timestamptz"/>
          <column autoUpdated="false" digits="0" id="1" name="channel_id" nullable="false" remarks="" size="131089" type="numeric">
             <parent column="id" foreignKey="rhn_cnp_at_cid_fk" implied="false" onDeleteCascade="true" table="rhnchannel"/>
@@ -1350,7 +1312,7 @@
          <column autoUpdated="false" digits="0" id="3" name="package_arch_id" nullable="true" remarks="" size="131089" type="numeric"/>
          <column autoUpdated="false" digits="0" id="4" name="package_id" nullable="true" remarks="" size="131089" type="numeric"/>
       </table>
-      <table name="rhnchannelpackage" numRows="6696" remarks="" schema="public" type="TABLE">
+      <table name="rhnchannelpackage" numRows="0" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" digits="0" id="0" name="channel_id" nullable="false" remarks="" size="131089" type="numeric">
             <parent column="id" foreignKey="rhn_cp_cid_fk" implied="false" onDeleteCascade="true" table="rhnchannel"/>
          </column>
@@ -1475,7 +1437,7 @@
             <column ascending="true" name="org_trust_id"/>
          </index>
       </table>
-      <table name="rhnchecksum" numRows="679048" remarks="" schema="public" type="TABLE">
+      <table name="rhnchecksum" numRows="0" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" digits="0" id="0" name="id" nullable="false" remarks="" size="131089" type="numeric">
             <child column="checksum_id" foreignKey="rhn_confcontent_chsum_fk" implied="false" onDeleteCascade="false" table="rhnconfigcontent"/>
             <child column="checksum_id" foreignKey="rhn_erratafile_chsum_fk" implied="false" onDeleteCascade="false" table="rhnerratafile"/>
@@ -1544,7 +1506,7 @@
             <column ascending="true" name="child_arch_id"/>
          </index>
       </table>
-      <table name="rhnclientcapability" numRows="0" remarks="" schema="public" type="TABLE">
+      <table name="rhnclientcapability" numRows="7" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" digits="0" id="0" name="server_id" nullable="false" remarks="" size="131089" type="numeric">
             <parent column="id" foreignKey="rhn_clientcap_sid_fk" implied="false" onDeleteCascade="false" table="rhnserver"/>
          </column>
@@ -1559,7 +1521,7 @@
             <column ascending="true" name="capability_name_id"/>
          </index>
       </table>
-      <table name="rhnclientcapabilityname" numRows="0" remarks="" schema="public" type="TABLE">
+      <table name="rhnclientcapabilityname" numRows="7" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" digits="0" id="0" name="id" nullable="false" remarks="" size="131089" type="numeric">
             <child column="capability_name_id" foreignKey="rhn_clientcap_cap_nid_fk" implied="false" onDeleteCascade="false" table="rhnclientcapability"/>
          </column>
@@ -1761,12 +1723,23 @@
          <index name="rhn_confinfo_id_pk" unique="true">
             <column ascending="true" name="id"/>
          </index>
-         <index name="rhn_confinfo_ugf_uq" unique="true">
+         <index name="rhn_confinfo_s_se_uq" unique="true">
+            <column ascending="true" name="symlink_target_filename_id"/>
+            <column ascending="true" name="selinux_ctx"/>
+         </index>
+         <index name="rhn_confinfo_s_uq" unique="true">
+            <column ascending="true" name="symlink_target_filename_id"/>
+         </index>
+         <index name="rhn_confinfo_ugf_se_uq" unique="true">
             <column ascending="true" name="username"/>
             <column ascending="true" name="groupname"/>
             <column ascending="true" name="filemode"/>
             <column ascending="true" name="selinux_ctx"/>
-            <column ascending="true" name="symlink_target_filename_id"/>
+         </index>
+         <index name="rhn_confinfo_ugf_uq" unique="true">
+            <column ascending="true" name="username"/>
+            <column ascending="true" name="groupname"/>
+            <column ascending="true" name="filemode"/>
          </index>
       </table>
       <table name="rhnconfigrevision" numRows="0" remarks="" schema="public" type="TABLE">
@@ -1818,10 +1791,11 @@
             <column ascending="true" name="key"/>
          </index>
       </table>
-      <table name="rhncontentsource" numRows="7" remarks="" schema="public" type="TABLE">
+      <table name="rhncontentsource" numRows="0" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" digits="0" id="0" name="id" nullable="false" remarks="" size="131089" type="numeric">
             <child column="source_id" foreignKey="rhn_ccs_src_id_fk" implied="false" onDeleteCascade="true" table="rhnchannelcontentsource"/>
-            <child column="source_id" foreignKey="rhn_csf_source_fk" implied="false" onDeleteCascade="false" table="rhncontentsourcefilter"/>
+            <child column="source_id" foreignKey="rhn_csf_source_fk" implied="false" onDeleteCascade="true" table="rhncontentsourcefilter"/>
+            <child column="content_source_id" foreignKey="rhn_csssl_csid_fk" implied="false" onDeleteCascade="true" table="rhncontentsourcessl"/>
          </column>
          <column autoUpdated="false" digits="0" id="1" name="org_id" nullable="true" remarks="" size="131089" type="numeric">
             <parent column="id" foreignKey="rhn_cs_org_fk" implied="false" onDeleteCascade="false" table="web_customer"/>
@@ -1831,17 +1805,8 @@
          </column>
          <column autoUpdated="false" digits="0" id="3" name="source_url" nullable="false" remarks="" size="2048" type="varchar"/>
          <column autoUpdated="false" digits="0" id="4" name="label" nullable="false" remarks="" size="128" type="varchar"/>
-         <column autoUpdated="false" digits="0" id="5" name="ssl_ca_cert_id" nullable="true" remarks="" size="131089" type="numeric">
-            <parent column="id" foreignKey="rhn_cs_cacertid_fk" implied="false" onDeleteCascade="false" table="rhncryptokey"/>
-         </column>
-         <column autoUpdated="false" digits="0" id="6" name="ssl_client_cert_id" nullable="true" remarks="" size="131089" type="numeric">
-            <parent column="id" foreignKey="rhn_cs_clcertid_fk" implied="false" onDeleteCascade="false" table="rhncryptokey"/>
-         </column>
-         <column autoUpdated="false" digits="0" id="7" name="ssl_client_key_id" nullable="true" remarks="" size="131089" type="numeric">
-            <parent column="id" foreignKey="rhn_cs_clkeyid_fk" implied="false" onDeleteCascade="false" table="rhncryptokey"/>
-         </column>
-         <column autoUpdated="false" defaultValue="now()" digits="6" id="8" name="created" nullable="false" remarks="" size="35" type="timestamptz"/>
-         <column autoUpdated="false" defaultValue="now()" digits="6" id="9" name="modified" nullable="false" remarks="" size="35" type="timestamptz"/>
+         <column autoUpdated="false" defaultValue="now()" digits="6" id="5" name="created" nullable="false" remarks="" size="35" type="timestamptz"/>
+         <column autoUpdated="false" defaultValue="now()" digits="6" id="6" name="modified" nullable="false" remarks="" size="35" type="timestamptz"/>
          <primaryKey column="id" sequenceNumberInPK="1"/>
          <index name="rhn_cs_id_pk" unique="true">
             <column ascending="true" name="id"/>
@@ -1859,7 +1824,7 @@
       <table name="rhncontentsourcefilter" numRows="0" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" digits="0" id="0" name="id" nullable="false" remarks="" size="131089" type="numeric"/>
          <column autoUpdated="false" digits="0" id="1" name="source_id" nullable="true" remarks="" size="131089" type="numeric">
-            <parent column="id" foreignKey="rhn_csf_source_fk" implied="false" onDeleteCascade="false" table="rhncontentsource"/>
+            <parent column="id" foreignKey="rhn_csf_source_fk" implied="false" onDeleteCascade="true" table="rhncontentsource"/>
          </column>
          <column autoUpdated="false" digits="0" id="2" name="sort_order" nullable="false" remarks="" size="131089" type="numeric"/>
          <column autoUpdated="false" digits="0" id="3" name="flag" nullable="false" remarks="" size="1" type="varchar"/>
@@ -1873,6 +1838,40 @@
          <index name="rhn_csf_sid_so_uq" unique="true">
             <column ascending="true" name="source_id"/>
             <column ascending="true" name="sort_order"/>
+         </index>
+      </table>
+      <table name="rhncontentsourcessl" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="content_source_id" nullable="false" remarks="" size="131089" type="numeric">
+            <parent column="id" foreignKey="rhn_csssl_csid_fk" implied="false" onDeleteCascade="true" table="rhncontentsource"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="ssl_ca_cert_id" nullable="false" remarks="" size="131089" type="numeric">
+            <parent column="id" foreignKey="rhn_csssl_cacertid_fk" implied="false" onDeleteCascade="true" table="rhncryptokey"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="2" name="ssl_client_cert_id" nullable="true" remarks="" size="131089" type="numeric">
+            <parent column="id" foreignKey="rhn_csssl_clcertid_fk" implied="false" onDeleteCascade="true" table="rhncryptokey"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="3" name="ssl_client_key_id" nullable="true" remarks="" size="131089" type="numeric">
+            <parent column="id" foreignKey="rhn_csssl_clkeyid_fk" implied="false" onDeleteCascade="true" table="rhncryptokey"/>
+         </column>
+         <column autoUpdated="false" defaultValue="now()" digits="6" id="4" name="created" nullable="false" remarks="" size="35" type="timestamptz"/>
+         <column autoUpdated="false" defaultValue="now()" digits="6" id="5" name="modified" nullable="false" remarks="" size="35" type="timestamptz"/>
+         <index name="rhn_csssl_ca_cert_key_uq" unique="true">
+            <column ascending="true" name="content_source_id"/>
+            <column ascending="true" name="ssl_ca_cert_id"/>
+            <column ascending="true" name="ssl_client_cert_id"/>
+            <column ascending="true" name="ssl_client_key_id"/>
+         </index>
+         <index name="rhn_csssl_ca_cert_uq" unique="true">
+            <column ascending="true" name="content_source_id"/>
+            <column ascending="true" name="ssl_ca_cert_id"/>
+            <column ascending="true" name="ssl_client_cert_id"/>
+         </index>
+         <index name="rhn_csssl_ca_uq" unique="true">
+            <column ascending="true" name="content_source_id"/>
+            <column ascending="true" name="ssl_ca_cert_id"/>
+         </index>
+         <index name="rhn_csssl_cs" unique="false">
+            <column ascending="true" name="content_source_id"/>
          </index>
       </table>
       <table name="rhncontentsourcetype" numRows="3" remarks="" schema="public" type="TABLE">
@@ -1890,7 +1889,7 @@
             <column ascending="true" name="label"/>
          </index>
       </table>
-      <table name="rhncpu" numRows="0" remarks="" schema="public" type="TABLE">
+      <table name="rhncpu" numRows="1" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" digits="0" id="0" name="id" nullable="false" remarks="" size="131089" type="numeric"/>
          <column autoUpdated="false" digits="0" id="1" name="server_id" nullable="false" remarks="" size="131089" type="numeric">
             <parent column="id" foreignKey="rhn_cpu_server_fk" implied="false" onDeleteCascade="false" table="rhnserver"/>
@@ -1946,9 +1945,9 @@
       </table>
       <table name="rhncryptokey" numRows="2" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" digits="0" id="0" name="id" nullable="false" remarks="" size="131089" type="numeric">
-            <child column="ssl_ca_cert_id" foreignKey="rhn_cs_cacertid_fk" implied="false" onDeleteCascade="false" table="rhncontentsource"/>
-            <child column="ssl_client_cert_id" foreignKey="rhn_cs_clcertid_fk" implied="false" onDeleteCascade="false" table="rhncontentsource"/>
-            <child column="ssl_client_key_id" foreignKey="rhn_cs_clkeyid_fk" implied="false" onDeleteCascade="false" table="rhncontentsource"/>
+            <child column="ssl_ca_cert_id" foreignKey="rhn_csssl_cacertid_fk" implied="false" onDeleteCascade="true" table="rhncontentsourcessl"/>
+            <child column="ssl_client_cert_id" foreignKey="rhn_csssl_clcertid_fk" implied="false" onDeleteCascade="true" table="rhncontentsourcessl"/>
+            <child column="ssl_client_key_id" foreignKey="rhn_csssl_clkeyid_fk" implied="false" onDeleteCascade="true" table="rhncontentsourcessl"/>
             <child column="crypto_key_id" foreignKey="rhn_ckey_ks_ckid_fk" implied="false" onDeleteCascade="true" table="rhncryptokeykickstart"/>
          </column>
          <column autoUpdated="false" digits="0" id="1" name="org_id" nullable="true" remarks="" size="131089" type="numeric">
@@ -2060,7 +2059,7 @@
             <column ascending="true" name="org_id"/>
          </index>
       </table>
-      <table name="rhndevice" numRows="0" remarks="" schema="public" type="TABLE">
+      <table name="rhndevice" numRows="121" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" digits="0" id="0" name="id" nullable="false" remarks="" size="131089" type="numeric"/>
          <column autoUpdated="false" digits="0" id="1" name="server_id" nullable="false" remarks="" size="131089" type="numeric">
             <parent column="id" foreignKey="rhn_device_sid_fk" implied="false" onDeleteCascade="true" table="rhnserver"/>
@@ -2169,11 +2168,19 @@
          <index name="rhn_errata_id_pk" unique="true">
             <column ascending="true" name="id"/>
          </index>
-         <index name="rhn_errata_advisory_name_uq" unique="true">
-            <column ascending="true" name="advisory_name"/>
-         </index>
-         <index name="rhn_errata_advisory_uq" unique="true">
+         <index name="rhn_errata_adv_org_uq" unique="true">
             <column ascending="true" name="advisory"/>
+            <column ascending="true" name="org_id"/>
+         </index>
+         <index name="rhn_errata_adv_uq" unique="true">
+            <column ascending="true" name="advisory"/>
+         </index>
+         <index name="rhn_errata_advname_org_uq" unique="true">
+            <column ascending="true" name="advisory_name"/>
+            <column ascending="true" name="org_id"/>
+         </index>
+         <index name="rhn_errata_advname_uq" unique="true">
+            <column ascending="true" name="advisory_name"/>
          </index>
          <index name="rhn_errata_syn_index" unique="false">
             <column ascending="true" name="synopsis"/>
@@ -2746,7 +2753,7 @@
          <column autoUpdated="false" digits="0" id="11" name="subdevice_id" nullable="true" remarks="" size="256" type="varchar"/>
          <column autoUpdated="false" digits="0" id="12" name="pcitype" nullable="true" remarks="" size="131089" type="numeric"/>
       </table>
-      <table name="rhnindexerwork" numRows="1" remarks="" schema="public" type="TABLE">
+      <table name="rhnindexerwork" numRows="2" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" digits="0" id="0" name="object_type" nullable="false" remarks="" size="40" type="varchar"/>
          <column autoUpdated="false" digits="0" id="1" name="last_id" nullable="false" remarks="" size="131089" type="numeric"/>
          <column autoUpdated="false" defaultValue="now()" digits="6" id="2" name="last_modified" nullable="false" remarks="" size="35" type="timestamptz"/>
@@ -2886,6 +2893,7 @@
          <column autoUpdated="false" digits="0" id="3" name="arguments" nullable="true" remarks="" size="2048" type="varchar"/>
          <column autoUpdated="false" defaultValue="now()" digits="6" id="4" name="created" nullable="false" remarks="" size="35" type="timestamptz"/>
          <column autoUpdated="false" defaultValue="now()" digits="6" id="5" name="modified" nullable="false" remarks="" size="35" type="timestamptz"/>
+         <column autoUpdated="false" digits="0" id="6" name="custom_position" nullable="true" remarks="" size="131089" type="numeric"/>
          <primaryKey column="id" sequenceNumberInPK="1"/>
          <index name="rhn_kscommand_id_pk" unique="true">
             <column ascending="true" name="id"/>
@@ -3419,7 +3427,7 @@
             <column ascending="true" name="server_group_id"/>
          </index>
       </table>
-      <table name="rhnpackage" numRows="6696" remarks="" schema="public" type="TABLE">
+      <table name="rhnpackage" numRows="0" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" digits="0" id="0" name="id" nullable="false" remarks="" size="131089" type="numeric">
             <child column="package_id" foreignKey="rhn_cnp_pid_fk" implied="false" onDeleteCascade="true" table="rhnchannelnewestpackage"/>
             <child column="package_id" foreignKey="rhn_cp_pid_fk" implied="false" onDeleteCascade="false" table="rhnchannelpackage"/>
@@ -3554,7 +3562,7 @@
             <column ascending="true" name="sense"/>
          </index>
       </table>
-      <table name="rhnpackagecapability" numRows="927472" remarks="" schema="public" type="TABLE">
+      <table name="rhnpackagecapability" numRows="0" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" digits="0" id="0" name="id" nullable="false" remarks="" size="131089" type="numeric">
             <child column="capability_id" foreignKey="rhn_apr_failure_capid_fk" implied="false" onDeleteCascade="false" table="rhnactionpackageremovalfailure"/>
             <child column="capability_id" foreignKey="rhn_pkg_brks_capability_fk" implied="false" onDeleteCascade="false" table="rhnpackagebreaks"/>
@@ -3594,7 +3602,7 @@
          <column autoUpdated="false" digits="6" id="6" name="created" nullable="true" remarks="" size="35" type="timestamptz"/>
          <column autoUpdated="false" digits="6" id="7" name="modified" nullable="true" remarks="" size="35" type="timestamptz"/>
       </table>
-      <table name="rhnpackagechangelogdata" numRows="101688" remarks="" schema="public" type="TABLE">
+      <table name="rhnpackagechangelogdata" numRows="0" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" digits="0" id="0" name="id" nullable="false" remarks="" size="131089" type="numeric">
             <child column="changelog_data_id" foreignKey="rhn_pkg_clr_cld_fk" implied="false" onDeleteCascade="false" table="rhnpackagechangelogrec"/>
          </column>
@@ -3611,7 +3619,7 @@
             <column ascending="true" name="time"/>
          </index>
       </table>
-      <table name="rhnpackagechangelogrec" numRows="514510" remarks="" schema="public" type="TABLE">
+      <table name="rhnpackagechangelogrec" numRows="0" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" digits="0" id="0" name="id" nullable="false" remarks="" size="131089" type="numeric"/>
          <column autoUpdated="false" digits="0" id="1" name="package_id" nullable="false" remarks="" size="131089" type="numeric">
             <parent column="id" foreignKey="rhn_pkg_clr_pid_fk" implied="false" onDeleteCascade="true" table="rhnpackage"/>
@@ -3633,7 +3641,7 @@
             <column ascending="true" name="changelog_data_id"/>
          </index>
       </table>
-      <table name="rhnpackageconflicts" numRows="430" remarks="" schema="public" type="TABLE">
+      <table name="rhnpackageconflicts" numRows="0" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" digits="0" id="0" name="package_id" nullable="false" remarks="" size="131089" type="numeric">
             <parent column="id" foreignKey="rhn_pkg_conflicts_package_fk" implied="false" onDeleteCascade="true" table="rhnpackage"/>
          </column>
@@ -3700,7 +3708,7 @@
             <column ascending="true" name="sense"/>
          </index>
       </table>
-      <table name="rhnpackageevr" numRows="2093" remarks="" schema="public" type="TABLE">
+      <table name="rhnpackageevr" numRows="1812" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" digits="0" id="0" name="id" nullable="false" remarks="" size="131089" type="numeric">
             <child column="evr_id" foreignKey="rhn_act_p_evr_fk" implied="false" onDeleteCascade="false" table="rhnactionpackage"/>
             <child column="evr_id" foreignKey="rhn_apr_failure_eid_fk" implied="false" onDeleteCascade="false" table="rhnactionpackageremovalfailure"/>
@@ -3731,7 +3739,7 @@
             <column ascending="true" name="epoch"/>
          </index>
       </table>
-      <table name="rhnpackagefile" numRows="978001" remarks="" schema="public" type="TABLE">
+      <table name="rhnpackagefile" numRows="0" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" digits="0" id="0" name="package_id" nullable="false" remarks="" size="131089" type="numeric">
             <parent column="id" foreignKey="rhn_package_file_pid_fk" implied="false" onDeleteCascade="true" table="rhnpackage"/>
          </column>
@@ -3770,7 +3778,7 @@
             <column ascending="true" name="path"/>
          </index>
       </table>
-      <table name="rhnpackagegroup" numRows="63" remarks="" schema="public" type="TABLE">
+      <table name="rhnpackagegroup" numRows="1" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" digits="0" id="0" name="id" nullable="false" remarks="" size="131089" type="numeric">
             <child column="package_group" foreignKey="rhn_package_group_fk" implied="false" onDeleteCascade="false" table="rhnpackage"/>
             <child column="package_group" foreignKey="rhn_pkgsrc_group_fk" implied="false" onDeleteCascade="false" table="rhnpackagesource"/>
@@ -3807,7 +3815,7 @@
             <column ascending="true" name="key_id"/>
          </index>
       </table>
-      <table name="rhnpackagekeyassociation" numRows="6696" remarks="" schema="public" type="TABLE">
+      <table name="rhnpackagekeyassociation" numRows="0" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" digits="0" id="0" name="package_id" nullable="false" remarks="" size="131089" type="numeric">
             <parent column="id" foreignKey="rhn_pkeya_pid_fk" implied="false" onDeleteCascade="true" table="rhnpackage"/>
          </column>
@@ -3840,7 +3848,7 @@
             <column ascending="true" name="label"/>
          </index>
       </table>
-      <table name="rhnpackagename" numRows="5146" remarks="" schema="public" type="TABLE">
+      <table name="rhnpackagename" numRows="2781" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" digits="0" id="0" name="id" nullable="false" remarks="" size="131089" type="numeric">
             <child column="name_id" foreignKey="rhn_act_p_name_fk" implied="false" onDeleteCascade="false" table="rhnactionpackage"/>
             <child column="name_id" foreignKey="rhn_apr_failure_nid_fk" implied="false" onDeleteCascade="false" table="rhnactionpackageremovalfailure"/>
@@ -3868,7 +3876,7 @@
             <column ascending="true" name="name"/>
          </index>
       </table>
-      <table name="rhnpackagenevra" numRows="6696" remarks="" schema="public" type="TABLE">
+      <table name="rhnpackagenevra" numRows="3309" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" digits="0" id="0" name="id" nullable="false" remarks="" size="131089" type="numeric">
             <child column="nevra_id" foreignKey="rhn_snapshotpkg_nid_fk" implied="false" onDeleteCascade="false" table="rhnsnapshotpackage"/>
          </column>
@@ -3891,7 +3899,7 @@
             <column ascending="true" name="package_arch_id"/>
          </index>
       </table>
-      <table name="rhnpackageobsoletes" numRows="1752" remarks="" schema="public" type="TABLE">
+      <table name="rhnpackageobsoletes" numRows="0" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" digits="0" id="0" name="package_id" nullable="false" remarks="" size="131089" type="numeric">
             <parent column="id" foreignKey="rhn_pkg_obsoletes_package_fk" implied="false" onDeleteCascade="true" table="rhnpackage"/>
          </column>
@@ -3948,7 +3956,7 @@
             <column ascending="true" name="name"/>
          </index>
       </table>
-      <table name="rhnpackageprovides" numRows="70722" remarks="" schema="public" type="TABLE">
+      <table name="rhnpackageprovides" numRows="0" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" digits="0" id="0" name="package_id" nullable="false" remarks="" size="131089" type="numeric">
             <parent column="id" foreignKey="rhn_pkg_provides_package_fk" implied="false" onDeleteCascade="true" table="rhnpackage"/>
          </column>
@@ -3986,7 +3994,7 @@
             <column ascending="true" name="sense"/>
          </index>
       </table>
-      <table name="rhnpackagerepodata" numRows="6696" remarks="" schema="public" type="TABLE">
+      <table name="rhnpackagerepodata" numRows="0" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" digits="0" id="0" name="package_id" nullable="false" remarks="" size="131089" type="numeric">
             <parent column="id" foreignKey="rhn_pkey_rd_pid_fk" implied="false" onDeleteCascade="true" table="rhnpackage"/>
          </column>
@@ -4000,7 +4008,7 @@
             <column ascending="true" name="package_id"/>
          </index>
       </table>
-      <table name="rhnpackagerequires" numRows="125461" remarks="" schema="public" type="TABLE">
+      <table name="rhnpackagerequires" numRows="0" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" digits="0" id="0" name="package_id" nullable="false" remarks="" size="131089" type="numeric">
             <parent column="id" foreignKey="rhn_pkg_requires_package_fk" implied="false" onDeleteCascade="true" table="rhnpackage"/>
          </column>
@@ -4254,9 +4262,8 @@
          <column autoUpdated="false" digits="0" id="2" name="password" nullable="true" remarks="" size="32" type="varchar"/>
          <column autoUpdated="false" defaultValue="now()" digits="6" id="3" name="last_checkin" nullable="false" remarks="" size="35" type="timestamptz"/>
          <column autoUpdated="false" digits="0" id="4" name="hostname" nullable="false" remarks="" size="256" type="varchar"/>
-         <column autoUpdated="false" digits="0" id="5" name="port" nullable="false" remarks="" size="131089" type="numeric"/>
-         <column autoUpdated="false" defaultValue="now()" digits="6" id="6" name="created" nullable="false" remarks="" size="35" type="timestamptz"/>
-         <column autoUpdated="false" defaultValue="now()" digits="6" id="7" name="modified" nullable="false" remarks="" size="35" type="timestamptz"/>
+         <column autoUpdated="false" defaultValue="now()" digits="6" id="5" name="created" nullable="false" remarks="" size="35" type="timestamptz"/>
+         <column autoUpdated="false" defaultValue="now()" digits="6" id="6" name="modified" nullable="false" remarks="" size="35" type="timestamptz"/>
          <primaryKey column="id" sequenceNumberInPK="1"/>
          <index name="rhn_pushdispatch_id_pk" unique="true">
             <column ascending="true" name="id"/>
@@ -4269,7 +4276,7 @@
             <column ascending="true" name="jabber_id"/>
          </index>
       </table>
-      <table name="rhnram" numRows="0" remarks="" schema="public" type="TABLE">
+      <table name="rhnram" numRows="1" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" digits="0" id="0" name="id" nullable="false" remarks="" size="131089" type="numeric"/>
          <column autoUpdated="false" digits="0" id="1" name="server_id" nullable="false" remarks="" size="131089" type="numeric">
             <parent column="id" foreignKey="rhn_ram_server_fk" implied="false" onDeleteCascade="false" table="rhnserver"/>
@@ -4286,7 +4293,7 @@
             <column ascending="true" name="server_id"/>
          </index>
       </table>
-      <table name="rhnregtoken" numRows="0" remarks="" schema="public" type="TABLE">
+      <table name="rhnregtoken" numRows="1" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" digits="0" id="0" name="id" nullable="false" remarks="" size="131089" type="numeric">
             <child column="reg_token_id" foreignKey="rhn_act_key_reg_tid_fk" implied="false" onDeleteCascade="true" table="rhnactivationkey"/>
             <child column="regtoken_id" foreignKey="rhn_ksdrt_rtid_fk" implied="false" onDeleteCascade="true" table="rhnkickstartdefaultregtoken"/>
@@ -4354,7 +4361,7 @@
             <column ascending="true" name="config_channel_id"/>
          </index>
       </table>
-      <table name="rhnregtokenentitlement" numRows="0" remarks="" schema="public" type="TABLE">
+      <table name="rhnregtokenentitlement" numRows="2" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" digits="0" id="0" name="reg_token_id" nullable="false" remarks="" size="131089" type="numeric">
             <parent column="id" foreignKey="rhn_reg_tok_ent_rtid_fk" implied="false" onDeleteCascade="true" table="rhnregtoken"/>
          </column>
@@ -4488,7 +4495,7 @@
             <column ascending="true" name="server_id"/>
          </index>
       </table>
-      <table name="rhnserver" numRows="0" remarks="" schema="public" type="TABLE">
+      <table name="rhnserver" numRows="1" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" digits="0" id="0" name="id" nullable="false" remarks="" size="131089" type="numeric">
             <child column="server_id" foreignKey="rhn_actchainent_sid_fk" implied="false" onDeleteCascade="true" table="rhnactionchainentry"/>
             <child column="server_id" foreignKey="rhn_actioncc_sid_fk" implied="false" onDeleteCascade="false" table="rhnactionconfigchannel"/>
@@ -4586,7 +4593,7 @@
             <column ascending="true" name="id"/>
          </index>
       </table>
-      <table name="rhnserver_log" numRows="0" remarks="" schema="public" type="TABLE">
+      <table name="rhnserver_log" numRows="4" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" digits="0" id="0" name="id" nullable="false" remarks="" size="131089" type="numeric"/>
          <column autoUpdated="false" digits="0" id="1" name="log_id" nullable="false" remarks="" size="131089" type="numeric">
             <parent column="id" foreignKey="rhnserver_log_log_id_fkey" implied="false" onDeleteCascade="false" table="log"/>
@@ -4946,7 +4953,7 @@
             <column ascending="true" name="key_id"/>
          </index>
       </table>
-      <table name="rhnserverdmi" numRows="0" remarks="" schema="public" type="TABLE">
+      <table name="rhnserverdmi" numRows="1" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" digits="0" id="0" name="id" nullable="false" remarks="" size="131089" type="numeric"/>
          <column autoUpdated="false" digits="0" id="1" name="server_id" nullable="false" remarks="" size="131089" type="numeric">
             <parent column="id" foreignKey="rhn_server_dmi_sid_fk" implied="false" onDeleteCascade="false" table="rhnserver"/>
@@ -5051,7 +5058,7 @@
             <column ascending="true" name="id"/>
          </index>
       </table>
-      <table name="rhnservergroup_log" numRows="2" remarks="" schema="public" type="TABLE">
+      <table name="rhnservergroup_log" numRows="4" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" digits="0" id="0" name="id" nullable="false" remarks="" size="131089" type="numeric"/>
          <column autoUpdated="false" digits="0" id="1" name="log_id" nullable="false" remarks="" size="131089" type="numeric">
             <parent column="id" foreignKey="rhnservergroup_log_log_id_fkey" implied="false" onDeleteCascade="false" table="log"/>
@@ -5066,7 +5073,7 @@
             <column ascending="true" name="id"/>
          </index>
       </table>
-      <table name="rhnservergroupmembers" numRows="0" remarks="" schema="public" type="TABLE">
+      <table name="rhnservergroupmembers" numRows="2" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" digits="0" id="0" name="server_id" nullable="false" remarks="" size="131089" type="numeric">
             <parent column="id" foreignKey="rhn_sg_members_fk" implied="false" onDeleteCascade="false" table="rhnserver"/>
          </column>
@@ -5143,7 +5150,7 @@
             <column ascending="true" name="feature_id"/>
          </index>
       </table>
-      <table name="rhnserverhistory" numRows="0" remarks="" schema="public" type="TABLE">
+      <table name="rhnserverhistory" numRows="3" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" digits="0" id="0" name="id" nullable="false" remarks="" size="131089" type="numeric"/>
          <column autoUpdated="false" digits="0" id="1" name="server_id" nullable="false" remarks="" size="131089" type="numeric">
             <parent column="id" foreignKey="rhn_serverhistory_sid_fk" implied="false" onDeleteCascade="false" table="rhnserver"/>
@@ -5160,7 +5167,7 @@
             <column ascending="true" name="server_id"/>
          </index>
       </table>
-      <table name="rhnserverinfo" numRows="0" remarks="" schema="public" type="TABLE">
+      <table name="rhnserverinfo" numRows="1" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" digits="0" id="0" name="server_id" nullable="false" remarks="" size="131089" type="numeric">
             <parent column="id" foreignKey="rhn_server_info_sid_fk" implied="false" onDeleteCascade="false" table="rhnserver"/>
          </column>
@@ -5333,7 +5340,7 @@
             <column ascending="true" name="name"/>
          </index>
       </table>
-      <table name="rhnservernetwork" numRows="0" remarks="" schema="public" type="TABLE">
+      <table name="rhnservernetwork" numRows="1" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" digits="0" id="0" name="id" nullable="false" remarks="" size="131089" type="numeric"/>
          <column autoUpdated="false" digits="0" id="1" name="server_id" nullable="false" remarks="" size="131089" type="numeric">
             <parent column="id" foreignKey="rhn_servernetwork_sid_fk" implied="false" onDeleteCascade="false" table="rhnserver"/>
@@ -5409,7 +5416,7 @@
          <column autoUpdated="false" digits="0" id="21" name="server_arch_name" nullable="true" remarks="" size="64" type="varchar"/>
          <column autoUpdated="false" digits="0" id="22" name="locked" nullable="true" remarks="" size="10" type="int4"/>
       </table>
-      <table name="rhnserverpackage" numRows="0" remarks="" schema="public" type="TABLE">
+      <table name="rhnserverpackage" numRows="2781" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" digits="0" id="0" name="server_id" nullable="false" remarks="" size="131089" type="numeric">
             <parent column="id" foreignKey="rhnserverpackage_server_id_fkey" implied="false" onDeleteCascade="true" table="rhnserver"/>
          </column>
@@ -5588,7 +5595,7 @@
             <column ascending="true" name="server_group_type"/>
          </index>
       </table>
-      <table name="rhnservertokenregs" numRows="0" remarks="" schema="public" type="TABLE">
+      <table name="rhnservertokenregs" numRows="1" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" digits="0" id="0" name="token_id" nullable="false" remarks="" size="131089" type="numeric">
             <parent column="id" foreignKey="rhn_srv_reg_tok_tid_fk" implied="false" onDeleteCascade="true" table="rhnregtoken"/>
          </column>
@@ -5616,7 +5623,7 @@
             <column ascending="true" name="server_id"/>
          </index>
       </table>
-      <table name="rhnset" numRows="0" remarks="" schema="public" type="TABLE">
+      <table name="rhnset" numRows="1" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" digits="0" id="0" name="user_id" nullable="false" remarks="" size="131089" type="numeric">
             <parent column="id" foreignKey="rhn_set_user_fk" implied="false" onDeleteCascade="true" table="web_contact"/>
          </column>
@@ -5624,12 +5631,29 @@
          <column autoUpdated="false" digits="0" id="2" name="element" nullable="false" remarks="" size="131089" type="numeric"/>
          <column autoUpdated="false" digits="0" id="3" name="element_two" nullable="true" remarks="" size="131089" type="numeric"/>
          <column autoUpdated="false" digits="0" id="4" name="element_three" nullable="true" remarks="" size="131089" type="numeric"/>
-         <index name="rhn_set_user_label_elem_unq" unique="true">
+         <index name="rhn_set_user_label_elem_elem2_elem3_unq" unique="true">
             <column ascending="true" name="user_id"/>
             <column ascending="true" name="label"/>
             <column ascending="true" name="element"/>
             <column ascending="true" name="element_two"/>
             <column ascending="true" name="element_three"/>
+         </index>
+         <index name="rhn_set_user_label_elem_elem2_unq" unique="true">
+            <column ascending="true" name="user_id"/>
+            <column ascending="true" name="label"/>
+            <column ascending="true" name="element"/>
+            <column ascending="true" name="element_two"/>
+         </index>
+         <index name="rhn_set_user_label_elem_elem3_unq" unique="true">
+            <column ascending="true" name="user_id"/>
+            <column ascending="true" name="label"/>
+            <column ascending="true" name="element"/>
+            <column ascending="true" name="element_three"/>
+         </index>
+         <index name="rhn_set_user_label_elem_unq" unique="true">
+            <column ascending="true" name="user_id"/>
+            <column ascending="true" name="label"/>
+            <column ascending="true" name="element"/>
          </index>
       </table>
       <table name="rhnsgtypebaseaddoncompat" numRows="1" remarks="" schema="public" type="TABLE">
@@ -5676,7 +5700,7 @@
          <column autoUpdated="false" digits="0" id="19" name="channel_access" nullable="true" remarks="" size="10" type="varchar"/>
          <column autoUpdated="false" digits="0" id="20" name="org_trust_id" nullable="true" remarks="" size="131089" type="numeric"/>
       </table>
-      <table name="rhnsnapshot" numRows="0" remarks="" schema="public" type="TABLE">
+      <table name="rhnsnapshot" numRows="3" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" digits="0" id="0" name="id" nullable="false" remarks="" size="131089" type="numeric">
             <child column="snapshot_id" foreignKey="rhn_snapchan_sid_fk" implied="false" onDeleteCascade="true" table="rhnsnapshotchannel"/>
             <child column="snapshot_id" foreignKey="rhn_snapshotcc_sid_fk" implied="false" onDeleteCascade="true" table="rhnsnapshotconfigchannel"/>
@@ -5773,7 +5797,7 @@
             <column ascending="true" name="label"/>
          </index>
       </table>
-      <table name="rhnsnapshotpackage" numRows="0" remarks="" schema="public" type="TABLE">
+      <table name="rhnsnapshotpackage" numRows="8336" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" digits="0" id="0" name="snapshot_id" nullable="false" remarks="" size="131089" type="numeric">
             <parent column="id" foreignKey="rhn_snapshotpkg_sid_fk" implied="false" onDeleteCascade="true" table="rhnsnapshot"/>
          </column>
@@ -5785,7 +5809,7 @@
             <column ascending="true" name="nevra_id"/>
          </index>
       </table>
-      <table name="rhnsnapshotservergroup" numRows="0" remarks="" schema="public" type="TABLE">
+      <table name="rhnsnapshotservergroup" numRows="6" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" digits="0" id="0" name="snapshot_id" nullable="false" remarks="" size="131089" type="numeric">
             <parent column="id" foreignKey="rhn_snapshotsg_sid_fk" implied="false" onDeleteCascade="true" table="rhnsnapshot"/>
          </column>
@@ -5824,7 +5848,7 @@
             <column ascending="true" name="tag_id"/>
          </index>
       </table>
-      <table name="rhnsourcerpm" numRows="2169" remarks="" schema="public" type="TABLE">
+      <table name="rhnsourcerpm" numRows="0" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" digits="0" id="0" name="id" nullable="false" remarks="" size="131089" type="numeric">
             <child column="source_rpm_id" foreignKey="rhn_package_srcrpmid_fk" implied="false" onDeleteCascade="false" table="rhnpackage"/>
             <child column="source_rpm_id" foreignKey="rhn_pkgsrc_srid_fk" implied="false" onDeleteCascade="false" table="rhnpackagesource"/>
@@ -5948,7 +5972,7 @@
             <column ascending="true" name="name"/>
          </index>
       </table>
-      <table name="rhntaskorun" numRows="30177" remarks="" schema="public" type="TABLE">
+      <table name="rhntaskorun" numRows="6476" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" digits="0" id="0" name="id" nullable="false" remarks="" size="131089" type="numeric"/>
          <column autoUpdated="false" digits="0" id="1" name="template_id" nullable="false" remarks="" size="131089" type="numeric">
             <parent column="id" foreignKey="rhn_tasko_run_template_fk" implied="false" onDeleteCascade="false" table="rhntaskotemplate"/>
@@ -6432,7 +6456,7 @@
             <column ascending="true" name="server_group_id"/>
          </index>
       </table>
-      <table name="rhnuserserverperms" numRows="0" remarks="" schema="public" type="TABLE">
+      <table name="rhnuserserverperms" numRows="1" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" digits="0" id="0" name="user_id" nullable="false" remarks="" size="131089" type="numeric">
             <parent column="id" foreignKey="rhn_usperms_uid_fk" implied="false" onDeleteCascade="false" table="web_contact"/>
          </column>

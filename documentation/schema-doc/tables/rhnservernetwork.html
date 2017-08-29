@@ -21,7 +21,7 @@
   <li><a href='../constraints.html' title='Useful for diagnosing error messages that just give constraint name or number'>Constraints</a></li>
   <li><a href='../anomalies.html' title="Things that might not be quite right">Anomalies</a></li>
   <li><a href='../columns.byTable.html' title="All of the columns in the schema">Columns</a></li>
-
+  <li><a href='http://sourceforge.net/donate/index.php?group_id=137197' title='Please help keep SchemaSpy alive' target='_blank'>Donate</a></li>
  </ul>
 </div>
 </td></tr></table>
@@ -101,7 +101,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </tr>
 </thead>
 <tbody valign='top'>
-<tr class='even'>
+<tr class='odd'>
  <td class='primaryKey' title='Primary Key'>id</td>
  <td class='detail'>numeric</td>
  <td class='detail' align='right'>131089</td>
@@ -112,7 +112,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='indexedColumn' title='Indexed'>server_id</td>
  <td class='detail'>numeric</td>
  <td class='detail' align='right'>131089</td>
@@ -122,7 +122,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'></td>
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative odd' valign='top'>
+   <tr class='relative even' valign='top'>
     <td class='relatedTable detail' title="rhnservernetwork.server_id refs rhnserver.id via rhn_servernetwork_sid_fk"><a href='rhnserver.html'>rhnserver</a><span class='relatedKey'>.id</span>
     </td>
     <td class='constraint detail'>rhn_servernetwork_sid_fk<span title='Restrict delete:
@@ -132,7 +132,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='detail'>hostname</td>
  <td class='detail'>varchar</td>
  <td class='detail' align='right'>128</td>
@@ -143,7 +143,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='detail'>ipaddr</td>
  <td class='detail'>varchar</td>
  <td class='detail' align='right'>16</td>
@@ -154,7 +154,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='detail'>ip6addr</td>
  <td class='detail'>varchar</td>
  <td class='detail' align='right'>45</td>
@@ -165,7 +165,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='detail'>created</td>
  <td class='detail'>timestamptz</td>
  <td class='detail' align='right'>35,6</td>
@@ -176,7 +176,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='detail'>modified</td>
  <td class='detail'>timestamptz</td>
  <td class='detail' align='right'>35,6</td>
@@ -188,7 +188,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='comment detail'></td>
 </tr>
 </table>
-<p title='7 columns'>Table contained 0 rows at Fri Nov 25 12:03 CET 2016<p/>
+<p title='7 columns'>Table contained 1 rows at Tue Aug 29 15:36 EDT 2017<p/>
 </td></tr></table>
 <div class='indent'>
 <b>Indexes:</b>
@@ -220,62 +220,62 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 <br><form action='get'><b>Close relationships</b><span class='degrees' id='degrees' title='Detail diminishes with increased separation from rhnservernetwork'>
 &nbsp;within <label for='oneDegree'><input type='radio' name='degrees' id='oneDegree' checked>one</label>  <label for='twoDegrees'><input type='radio' name='degrees' id='twoDegrees'>two degrees</label> of separation</span><b>:</b></form>
 <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
-<area shape="rect" id="node1" href="rhnservernetwork.html" title="rhnservernetwork" alt="" coords="212,5,455,227">
-<area shape="rect" id="node3" href="rhnserver.html" title="rhnserver" alt="" coords="5,31,168,519">
+<area shape="rect" id="node1" href="rhnservernetwork.html" title="rhnservernetwork" alt="" coords="208,5,443,227">
+<area shape="rect" id="node3" href="rhnserver.html" title="rhnserver" alt="" coords="7,31,161,519">
 </map>
   <a name='diagram'><img id='oneDegreeImg' src='../diagrams/rhnservernetwork.1degree.png' usemap='#oneDegreeRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>
 <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
-<area shape="rect" id="node1" href="rhnactionchainentry.html" title="rhnactionchainentry" alt="" coords="635,759,800,839">
-<area shape="rect" id="node3" href="rhnserver.html" title="rhnserver" alt="" coords="389,1916,552,2404">
+<area shape="rect" id="node1" href="rhnactionchainentry.html" title="rhnactionchainentry" alt="" coords="627,759,792,839">
+<area shape="rect" id="node3" href="rhnserver.html" title="rhnserver" alt="" coords="391,1916,545,2404">
 <area shape="rect" id="node24" href="web_customer.html" title="web_customer" alt="" coords="7,200,145,280">
 <area shape="rect" id="node26" href="web_contact.html" title="web_contact" alt="" coords="200,4001,336,4081">
 <area shape="rect" id="node40" href="rhnprovisionstate.html" title="rhnprovisionstate" alt="" coords="191,2233,345,2313">
 <area shape="rect" id="node42" href="rhnserverarch.html" title="rhnserverarch" alt="" coords="193,1983,343,2063">
-<area shape="rect" id="node4" href="rhnactionconfigchannel.html" title="rhnactionconfigchannel" alt="" coords="883,856,1061,936">
-<area shape="rect" id="node6" href="rhnserveraction.html" title="rhnserveraction" alt="" coords="644,856,791,936">
-<area shape="rect" id="node9" href="rhnactionconfigrevision.html" title="rhnactionconfigrevision" alt="" coords="628,989,807,1069">
-<area shape="rect" id="node11" href="rhnactionpackageremovalfailure.html" title="rhnactionpackageremovalfailure" alt="" coords="600,1087,835,1167">
-<area shape="rect" id="node13" href="rhnclientcapability.html" title="rhnclientcapability" alt="" coords="639,1184,796,1264">
-<area shape="rect" id="node15" href="rhncpu.html" title="rhncpu" alt="" coords="656,1281,779,1361">
-<area shape="rect" id="node17" href="rhndevice.html" title="rhndevice" alt="" coords="653,1379,781,1459">
-<area shape="rect" id="node19" href="rhnkickstartsession.html" title="rhnkickstartsession" alt="" coords="636,200,799,280">
-<area shape="rect" id="node27" href="rhnproxyinfo.html" title="rhnproxyinfo" alt="" coords="651,1476,784,1556">
-<area shape="rect" id="node29" href="rhnram.html" title="rhnram" alt="" coords="656,1573,779,1653">
-<area shape="rect" id="node31" href="rhnregtoken.html" title="rhnregtoken" alt="" coords="651,3856,784,3936">
-<area shape="rect" id="node35" href="rhnsatelliteinfo.html" title="rhnsatelliteinfo" alt="" coords="645,1671,789,1751">
-<area shape="rect" id="node44" href="rhnserveractionpackageresult.html" title="rhnserveractionpackageresult" alt="" coords="607,1768,828,1848">
-<area shape="rect" id="node46" href="rhnserveractionscriptresult.html" title="rhnserveractionscriptresult" alt="" coords="616,1865,819,1945">
-<area shape="rect" id="node48" href="rhnserveractionverifymissing.html" title="rhnserveractionverifymissing" alt="" coords="611,1963,824,2043">
-<area shape="rect" id="node50" href="rhnserveractionverifyresult.html" title="rhnserveractionverifyresult" alt="" coords="616,2060,819,2140">
-<area shape="rect" id="node52" href="rhnserverchannel.html" title="rhnserverchannel" alt="" coords="640,2157,795,2237">
-<area shape="rect" id="node54" href="rhnserverconfigchannel.html" title="rhnserverconfigchannel" alt="" coords="627,2255,808,2335">
-<area shape="rect" id="node56" href="rhnservercrash.html" title="rhnservercrash" alt="" coords="644,2352,791,2432">
-<area shape="rect" id="node58" href="rhnservercustomdatavalue.html" title="rhnservercustomdatavalue" alt="" coords="616,4245,819,4325">
-<area shape="rect" id="node62" href="rhnserverdmi.html" title="rhnserverdmi" alt="" coords="648,2449,787,2529">
-<area shape="rect" id="node64" href="rhnserverevent.html" title="rhnserverevent" alt="" coords="644,2547,791,2627">
-<area shape="rect" id="node66" href="rhnservergroupmembers.html" title="rhnservergroupmembers" alt="" coords="623,2644,812,2724">
-<area shape="rect" id="node68" href="rhnserverhistory.html" title="rhnserverhistory" alt="" coords="643,2741,792,2821">
-<area shape="rect" id="node70" href="rhnserverinfo.html" title="rhnserverinfo" alt="" coords="648,2839,787,2919">
-<area shape="rect" id="node72" href="rhnserverinstallinfo.html" title="rhnserverinstallinfo" alt="" coords="636,2936,799,3016">
-<area shape="rect" id="node74" href="rhnserverlocation.html" title="rhnserverlocation" alt="" coords="640,3033,795,3113">
-<area shape="rect" id="node76" href="rhnserverlock.html" title="rhnserverlock" alt="" coords="648,4343,787,4423">
-<area shape="rect" id="node79" href="rhnserverneededcache.html" title="rhnserverneededcache" alt="" coords="628,3131,807,3211">
-<area shape="rect" id="node81" href="rhnservernetinterface.html" title="rhnservernetinterface" alt="" coords="631,3228,804,3308">
-<area shape="rect" id="node83" href="rhnservernetwork.html" title="rhnservernetwork" alt="" coords="596,3325,839,3547">
-<area shape="rect" id="node85" href="rhnservernotes.html" title="rhnservernotes" alt="" coords="644,3953,791,4033">
-<area shape="rect" id="node88" href="rhnserverpackage.html" title="rhnserverpackage" alt="" coords="639,3564,796,3644">
-<area shape="rect" id="node90" href="rhnserverpath.html" title="rhnserverpath" alt="" coords="647,3661,788,3741">
-<area shape="rect" id="node93" href="rhnserverpreservefilelist.html" title="rhnserverpreservefilelist" alt="" coords="624,3759,811,3839">
-<area shape="rect" id="node95" href="rhnservertokenregs.html" title="rhnservertokenregs" alt="" coords="889,2404,1055,2484">
-<area shape="rect" id="node98" href="rhnserveruuid.html" title="rhnserveruuid" alt="" coords="647,333,788,413">
-<area shape="rect" id="node100" href="rhnsnapshot.html" title="rhnsnapshot" alt="" coords="651,5,784,85">
-<area shape="rect" id="node103" href="rhnsnapshottag.html" title="rhnsnapshottag" alt="" coords="899,136,1045,216">
-<area shape="rect" id="node106" href="rhnssmoperationserver.html" title="rhnssmoperationserver" alt="" coords="628,467,807,547">
-<area shape="rect" id="node108" href="rhnsystemmigrations.html" title="rhnsystemmigrations" alt="" coords="632,103,803,183">
-<area shape="rect" id="node112" href="rhnuserserverperms.html" title="rhnuserserverperms" alt="" coords="633,4051,801,4131">
-<area shape="rect" id="node115" href="rhnuserserverprefs.html" title="rhnuserserverprefs" alt="" coords="636,4148,799,4228">
-<area shape="rect" id="node118" href="rhnvirtualinstance.html" title="rhnvirtualinstance" alt="" coords="639,564,796,644">
-<area shape="rect" id="node121" href="rhnxccdftestresult.html" title="rhnxccdftestresult" alt="" coords="639,661,796,741">
+<area shape="rect" id="node4" href="rhnactionconfigchannel.html" title="rhnactionconfigchannel" alt="" coords="872,856,1051,936">
+<area shape="rect" id="node6" href="rhnserveraction.html" title="rhnserveraction" alt="" coords="636,856,783,936">
+<area shape="rect" id="node9" href="rhnactionconfigrevision.html" title="rhnactionconfigrevision" alt="" coords="620,989,799,1069">
+<area shape="rect" id="node11" href="rhnactionpackageremovalfailure.html" title="rhnactionpackageremovalfailure" alt="" coords="592,1087,827,1167">
+<area shape="rect" id="node13" href="rhnclientcapability.html" title="rhnclientcapability" alt="" coords="631,1184,788,1264">
+<area shape="rect" id="node15" href="rhncpu.html" title="rhncpu" alt="" coords="652,1281,767,1361">
+<area shape="rect" id="node17" href="rhndevice.html" title="rhndevice" alt="" coords="637,1379,781,1459">
+<area shape="rect" id="node19" href="rhnkickstartsession.html" title="rhnkickstartsession" alt="" coords="628,200,791,280">
+<area shape="rect" id="node27" href="rhnproxyinfo.html" title="rhnproxyinfo" alt="" coords="643,1476,776,1556">
+<area shape="rect" id="node29" href="rhnram.html" title="rhnram" alt="" coords="652,1573,767,1653">
+<area shape="rect" id="node31" href="rhnregtoken.html" title="rhnregtoken" alt="" coords="647,3856,772,3936">
+<area shape="rect" id="node35" href="rhnsatelliteinfo.html" title="rhnsatelliteinfo" alt="" coords="637,1671,781,1751">
+<area shape="rect" id="node44" href="rhnserveractionpackageresult.html" title="rhnserveractionpackageresult" alt="" coords="599,1768,820,1848">
+<area shape="rect" id="node46" href="rhnserveractionscriptresult.html" title="rhnserveractionscriptresult" alt="" coords="608,1865,811,1945">
+<area shape="rect" id="node48" href="rhnserveractionverifymissing.html" title="rhnserveractionverifymissing" alt="" coords="603,1963,816,2043">
+<area shape="rect" id="node50" href="rhnserveractionverifyresult.html" title="rhnserveractionverifyresult" alt="" coords="608,2060,811,2140">
+<area shape="rect" id="node52" href="rhnserverchannel.html" title="rhnserverchannel" alt="" coords="632,2157,787,2237">
+<area shape="rect" id="node54" href="rhnserverconfigchannel.html" title="rhnserverconfigchannel" alt="" coords="619,2255,800,2335">
+<area shape="rect" id="node56" href="rhnservercrash.html" title="rhnservercrash" alt="" coords="636,2352,783,2432">
+<area shape="rect" id="node58" href="rhnservercustomdatavalue.html" title="rhnservercustomdatavalue" alt="" coords="608,4245,811,4325">
+<area shape="rect" id="node62" href="rhnserverdmi.html" title="rhnserverdmi" alt="" coords="644,2449,775,2529">
+<area shape="rect" id="node64" href="rhnserverevent.html" title="rhnserverevent" alt="" coords="636,2547,783,2627">
+<area shape="rect" id="node66" href="rhnservergroupmembers.html" title="rhnservergroupmembers" alt="" coords="615,2644,804,2724">
+<area shape="rect" id="node68" href="rhnserverhistory.html" title="rhnserverhistory" alt="" coords="635,2741,784,2821">
+<area shape="rect" id="node70" href="rhnserverinfo.html" title="rhnserverinfo" alt="" coords="644,2839,775,2919">
+<area shape="rect" id="node72" href="rhnserverinstallinfo.html" title="rhnserverinstallinfo" alt="" coords="628,2936,791,3016">
+<area shape="rect" id="node74" href="rhnserverlocation.html" title="rhnserverlocation" alt="" coords="632,3033,787,3113">
+<area shape="rect" id="node76" href="rhnserverlock.html" title="rhnserverlock" alt="" coords="640,4343,779,4423">
+<area shape="rect" id="node79" href="rhnserverneededcache.html" title="rhnserverneededcache" alt="" coords="620,3131,799,3211">
+<area shape="rect" id="node81" href="rhnservernetinterface.html" title="rhnservernetinterface" alt="" coords="623,3228,796,3308">
+<area shape="rect" id="node83" href="rhnservernetwork.html" title="rhnservernetwork" alt="" coords="592,3325,827,3547">
+<area shape="rect" id="node85" href="rhnservernotes.html" title="rhnservernotes" alt="" coords="636,3953,783,4033">
+<area shape="rect" id="node88" href="rhnserverpackage.html" title="rhnserverpackage" alt="" coords="617,3564,801,3644">
+<area shape="rect" id="node90" href="rhnserverpath.html" title="rhnserverpath" alt="" coords="639,3661,780,3741">
+<area shape="rect" id="node93" href="rhnserverpreservefilelist.html" title="rhnserverpreservefilelist" alt="" coords="616,3759,803,3839">
+<area shape="rect" id="node95" href="rhnservertokenregs.html" title="rhnservertokenregs" alt="" coords="883,2404,1040,2484">
+<area shape="rect" id="node98" href="rhnserveruuid.html" title="rhnserveruuid" alt="" coords="639,333,780,413">
+<area shape="rect" id="node100" href="rhnsnapshot.html" title="rhnsnapshot" alt="" coords="643,5,776,85">
+<area shape="rect" id="node103" href="rhnsnapshottag.html" title="rhnsnapshottag" alt="" coords="888,136,1035,216">
+<area shape="rect" id="node106" href="rhnssmoperationserver.html" title="rhnssmoperationserver" alt="" coords="620,467,799,547">
+<area shape="rect" id="node108" href="rhnsystemmigrations.html" title="rhnsystemmigrations" alt="" coords="624,103,795,183">
+<area shape="rect" id="node112" href="rhnuserserverperms.html" title="rhnuserserverperms" alt="" coords="628,4051,791,4131">
+<area shape="rect" id="node115" href="rhnuserserverprefs.html" title="rhnuserserverprefs" alt="" coords="628,4148,791,4228">
+<area shape="rect" id="node118" href="rhnvirtualinstance.html" title="rhnvirtualinstance" alt="" coords="631,564,788,644">
+<area shape="rect" id="node121" href="rhnxccdftestresult.html" title="rhnxccdftestresult" alt="" coords="631,661,788,741">
 </map>
 
   <a name='diagram'><img id='twoDegreesImg' src='../diagrams/rhnservernetwork.2degrees.png' usemap='#twoDegreesRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>
