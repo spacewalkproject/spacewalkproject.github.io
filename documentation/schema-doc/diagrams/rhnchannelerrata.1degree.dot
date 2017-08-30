@@ -1,4 +1,4 @@
-// dot 2.26.0 on Linux 2.6.32-504.el6.x86_64
+// dot 2.26.0 on Linux 2.6.32-696.6.3.el6.x86_64
 // SchemaSpy rev 590
 digraph "oneDegreeRelationshipsDiagram" {
   graph [
@@ -51,7 +51,7 @@ digraph "oneDegreeRelationshipsDiagram" {
       <TR><TD PORT="support_policy" COLSPAN="3" ALIGN="LEFT">support_policy</TD></TR>
       <TR><TD PORT="created" COLSPAN="3" ALIGN="LEFT">created</TD></TR>
       <TR><TD PORT="modified" COLSPAN="3" ALIGN="LEFT">modified</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 6</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">7 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">26 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 6</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">26 &gt;</TD></TR>
     </TABLE>>
     URL="rhnchannel.html"
     tooltip="rhnchannel"
@@ -87,7 +87,7 @@ digraph "oneDegreeRelationshipsDiagram" {
       <TR><TD PORT="update_date" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">update_date</TD></TR>
       <TR><TD PORT="refers_to" COLSPAN="3" ALIGN="LEFT">refers_to</TD></TR>
       <TR><TD PORT="notes" COLSPAN="3" ALIGN="LEFT">notes</TD></TR>
-      <TR><TD PORT="org_id" COLSPAN="3" ALIGN="LEFT">org_id</TD></TR>
+      <TR><TD PORT="org_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">org_id</TD></TR>
       <TR><TD PORT="locally_modified" COLSPAN="3" ALIGN="LEFT">locally_modified</TD></TR>
       <TR><TD PORT="errata_from" COLSPAN="3" ALIGN="LEFT">errata_from</TD></TR>
       <TR><TD PORT="created" COLSPAN="3" ALIGN="LEFT">created</TD></TR>

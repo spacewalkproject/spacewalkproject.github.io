@@ -1,4 +1,4 @@
-// dot 2.26.0 on Linux 2.6.32-504.el6.x86_64
+// dot 2.26.0 on Linux 2.6.32-696.6.3.el6.x86_64
 // SchemaSpy rev 590
 digraph "oneDegreeRelationshipsDiagram" {
   graph [
@@ -50,7 +50,7 @@ digraph "oneDegreeRelationshipsDiagram" {
       <TR><TD PORT="update_date" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">update_date</TD></TR>
       <TR><TD PORT="refers_to" COLSPAN="3" ALIGN="LEFT">refers_to</TD></TR>
       <TR><TD PORT="notes" COLSPAN="3" ALIGN="LEFT">notes</TD></TR>
-      <TR><TD PORT="org_id" COLSPAN="3" ALIGN="LEFT">org_id</TD></TR>
+      <TR><TD PORT="org_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">org_id</TD></TR>
       <TR><TD PORT="locally_modified" COLSPAN="3" ALIGN="LEFT">locally_modified</TD></TR>
       <TR><TD PORT="errata_from" COLSPAN="3" ALIGN="LEFT">errata_from</TD></TR>
       <TR><TD PORT="created" COLSPAN="3" ALIGN="LEFT">created</TD></TR>

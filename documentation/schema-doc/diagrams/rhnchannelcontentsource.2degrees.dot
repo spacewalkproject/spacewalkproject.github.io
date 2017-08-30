@@ -1,4 +1,4 @@
-// dot 2.26.0 on Linux 2.6.32-504.el6.x86_64
+// dot 2.26.0 on Linux 2.6.32-696.6.3.el6.x86_64
 // SchemaSpy rev 590
 digraph "twoDegreesRelationshipsDiagram" {
   graph [
@@ -38,12 +38,9 @@ digraph "twoDegreesRelationshipsDiagram" {
   "rhnchanneltrust":"elipses":w -> "rhnchannel":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "rhnchanneltrust":"elipses":w -> "web_customer":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "rhncontentsource":"org_id":w -> "web_customer":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
-  "rhncontentsource":"ssl_ca_cert_id":w -> "rhncryptokey":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
-  "rhncontentsource":"ssl_client_cert_id":w -> "rhncryptokey":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
-  "rhncontentsource":"ssl_client_key_id":w -> "rhncryptokey":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "rhncontentsource":"type_id":w -> "rhncontentsourcetype":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "rhncontentsourcefilter":"elipses":w -> "rhncontentsource":"id":e [arrowhead=none dir=back arrowtail=crowodot];
-  "rhncryptokey":"elipses":w -> "web_customer":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
+  "rhncontentsourcessl":"elipses":w -> "rhncontentsource":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "rhndistchannelmap":"elipses":w -> "rhnchannelarch":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "rhndistchannelmap":"elipses":w -> "rhnchannel":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "rhndistchannelmap":"elipses":w -> "web_customer":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
@@ -95,7 +92,7 @@ digraph "twoDegreesRelationshipsDiagram" {
       <TR><TD PORT="support_policy" COLSPAN="3" ALIGN="LEFT">support_policy</TD></TR>
       <TR><TD PORT="created" COLSPAN="3" ALIGN="LEFT">created</TD></TR>
       <TR><TD PORT="modified" COLSPAN="3" ALIGN="LEFT">modified</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 6</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">7 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">26 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 6</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">26 &gt;</TD></TR>
     </TABLE>>
     URL="rhnchannel.html"
     tooltip="rhnchannel"
@@ -125,7 +122,7 @@ digraph "twoDegreesRelationshipsDiagram" {
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">rhnchannelcomps</TD></TR>
       <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 1</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 row</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 1</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
     </TABLE>>
     URL="rhnchannelcomps.html"
     tooltip="rhnchannelcomps"
@@ -138,7 +135,7 @@ digraph "twoDegreesRelationshipsDiagram" {
       <TR><TD PORT="channel_id" COLSPAN="2" BGCOLOR="#f4f7da" ALIGN="LEFT">channel_id</TD><TD PORT="channel_id.type" ALIGN="LEFT">numeric[131089]</TD></TR>
       <TR><TD PORT="created" COLSPAN="2" ALIGN="LEFT">created</TD><TD PORT="created.type" ALIGN="LEFT">timestamptz[35,6]</TD></TR>
       <TR><TD PORT="modified" COLSPAN="2" ALIGN="LEFT">modified</TD><TD PORT="modified.type" ALIGN="LEFT">timestamptz[35,6]</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">7 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 &gt;</TD></TR>
     </TABLE>>
     URL="rhnchannelcontentsource.html"
     tooltip="rhnchannelcontentsource"
@@ -158,7 +155,7 @@ digraph "twoDegreesRelationshipsDiagram" {
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">rhnchannelfamilymembers</TD></TR>
       <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">7 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
     </TABLE>>
     URL="rhnchannelfamilymembers.html"
     tooltip="rhnchannelfamilymembers"
@@ -168,7 +165,7 @@ digraph "twoDegreesRelationshipsDiagram" {
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">rhnchannelnewestpackage</TD></TR>
       <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 5</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">6,696 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 5</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
     </TABLE>>
     URL="rhnchannelnewestpackage.html"
     tooltip="rhnchannelnewestpackage"
@@ -178,7 +175,7 @@ digraph "twoDegreesRelationshipsDiagram" {
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">rhnchannelnewestpackageaudit</TD></TR>
       <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 1</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">8 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 1</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
     </TABLE>>
     URL="rhnchannelnewestpackageaudit.html"
     tooltip="rhnchannelnewestpackageaudit"
@@ -188,7 +185,7 @@ digraph "twoDegreesRelationshipsDiagram" {
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">rhnchannelpackage</TD></TR>
       <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">6,696 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
     </TABLE>>
     URL="rhnchannelpackage.html"
     tooltip="rhnchannelpackage"
@@ -242,12 +239,9 @@ digraph "twoDegreesRelationshipsDiagram" {
       <TR><TD PORT="type_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">type_id</TD></TR>
       <TR><TD PORT="source_url" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">source_url</TD></TR>
       <TR><TD PORT="label" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">label</TD></TR>
-      <TR><TD PORT="ssl_ca_cert_id" COLSPAN="3" ALIGN="LEFT">ssl_ca_cert_id</TD></TR>
-      <TR><TD PORT="ssl_client_cert_id" COLSPAN="3" ALIGN="LEFT">ssl_client_cert_id</TD></TR>
-      <TR><TD PORT="ssl_client_key_id" COLSPAN="3" ALIGN="LEFT">ssl_client_key_id</TD></TR>
       <TR><TD PORT="created" COLSPAN="3" ALIGN="LEFT">created</TD></TR>
       <TR><TD PORT="modified" COLSPAN="3" ALIGN="LEFT">modified</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 5</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">7 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">3 &gt;</TD></TR>
     </TABLE>>
     URL="rhncontentsource.html"
     tooltip="rhncontentsource"
@@ -262,6 +256,16 @@ digraph "twoDegreesRelationshipsDiagram" {
     URL="rhncontentsourcefilter.html"
     tooltip="rhncontentsourcefilter"
   ];
+  "rhncontentsourcessl" [
+    label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">rhncontentsourcessl</TD></TR>
+      <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 4</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+    </TABLE>>
+    URL="rhncontentsourcessl.html"
+    tooltip="rhncontentsourcessl"
+  ];
   "rhncontentsourcetype" [
     label=<
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
@@ -271,16 +275,6 @@ digraph "twoDegreesRelationshipsDiagram" {
     </TABLE>>
     URL="rhncontentsourcetype.html"
     tooltip="rhncontentsourcetype"
-  ];
-  "rhncryptokey" [
-    label=<
-    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
-      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">rhncryptokey</TD></TR>
-      <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">4 &gt;</TD></TR>
-    </TABLE>>
-    URL="rhncryptokey.html"
-    tooltip="rhncryptokey"
   ];
   "rhndistchannelmap" [
     label=<

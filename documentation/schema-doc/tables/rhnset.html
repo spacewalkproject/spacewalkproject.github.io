@@ -21,7 +21,7 @@
   <li><a href='../constraints.html' title='Useful for diagnosing error messages that just give constraint name or number'>Constraints</a></li>
   <li><a href='../anomalies.html' title="Things that might not be quite right">Anomalies</a></li>
   <li><a href='../columns.byTable.html' title="All of the columns in the schema">Columns</a></li>
-
+  <li><a href='http://sourceforge.net/donate/index.php?group_id=137197' title='Please help keep SchemaSpy alive' target='_blank'>Donate</a></li>
  </ul>
 </div>
 </td></tr></table>
@@ -166,7 +166,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='comment detail'></td>
 </tr>
 </table>
-<p title='5 columns'>Table contained 0 rows at Fri Nov 25 12:03 CET 2016<p/>
+<p title='5 columns'>Table contained 1 rows at Tue Aug 29 15:36 EDT 2017<p/>
 </td></tr></table>
 <div class='indent'>
 <b>Indexes:</b>
@@ -184,6 +184,24 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
   <td class='indexedColumn'>user_id + label + element + element_two + element_three</td>
   <td class='detail'>Must be unique</td>
   <td class='detail' style='text-align:left;'><span title='Ascending'>Asc</span>/<span title='Ascending'>Asc</span>/<span title='Ascending'>Asc</span>/<span title='Ascending'>Asc</span>/<span title='Ascending'>Asc</span></td>
+  <td class='constraint' style='text-align:left;'>rhn_set_user_label_elem_elem2_elem3_unq</td>
+ </tr>
+ <tr>
+  <td class='indexedColumn'>user_id + label + element + element_two</td>
+  <td class='detail'>Must be unique</td>
+  <td class='detail' style='text-align:left;'><span title='Ascending'>Asc</span>/<span title='Ascending'>Asc</span>/<span title='Ascending'>Asc</span>/<span title='Ascending'>Asc</span></td>
+  <td class='constraint' style='text-align:left;'>rhn_set_user_label_elem_elem2_unq</td>
+ </tr>
+ <tr>
+  <td class='indexedColumn'>user_id + label + element + element_three</td>
+  <td class='detail'>Must be unique</td>
+  <td class='detail' style='text-align:left;'><span title='Ascending'>Asc</span>/<span title='Ascending'>Asc</span>/<span title='Ascending'>Asc</span>/<span title='Ascending'>Asc</span></td>
+  <td class='constraint' style='text-align:left;'>rhn_set_user_label_elem_elem3_unq</td>
+ </tr>
+ <tr>
+  <td class='indexedColumn'>user_id + label + element</td>
+  <td class='detail'>Must be unique</td>
+  <td class='detail' style='text-align:left;'><span title='Ascending'>Asc</span>/<span title='Ascending'>Asc</span>/<span title='Ascending'>Asc</span></td>
   <td class='constraint' style='text-align:left;'>rhn_set_user_label_elem_unq</td>
  </tr>
 </table>
@@ -192,42 +210,42 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 <br><form action='get'><b>Close relationships</b><span class='degrees' id='degrees' title='Detail diminishes with increased separation from rhnset'>
 &nbsp;within <label for='oneDegree'><input type='radio' name='degrees' id='oneDegree' checked>one</label>  <label for='twoDegrees'><input type='radio' name='degrees' id='twoDegrees'>two degrees</label> of separation</span><b>:</b></form>
 <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
-<area shape="rect" id="node1" href="rhnset.html" title="rhnset" alt="" coords="203,5,448,181">
+<area shape="rect" id="node1" href="rhnset.html" title="rhnset" alt="" coords="201,5,447,181">
 <area shape="rect" id="node3" href="web_contact.html" title="web_contact" alt="" coords="7,7,156,291">
 </map>
   <a name='diagram'><img id='oneDegreeImg' src='../diagrams/rhnset.1degree.png' usemap='#oneDegreeRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>
 <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
-<area shape="rect" id="node1" href="pxtsessions.html" title="pxtsessions" alt="" coords="444,2360,577,2440">
-<area shape="rect" id="node3" href="web_contact.html" title="web_contact" alt="" coords="192,1088,341,1372">
+<area shape="rect" id="node1" href="pxtsessions.html" title="pxtsessions" alt="" coords="447,2360,572,2440">
+<area shape="rect" id="node3" href="web_contact.html" title="web_contact" alt="" coords="192,1087,341,1371">
 <area shape="rect" id="node6" href="web_customer.html" title="web_customer" alt="" coords="7,276,145,356">
-<area shape="rect" id="node4" href="rhnaction.html" title="rhnaction" alt="" coords="440,50,581,130">
-<area shape="rect" id="node8" href="rhnactionchain.html" title="rhnactionchain" alt="" coords="439,2458,583,2538">
-<area shape="rect" id="node10" href="rhnchannelpermission.html" title="rhnchannelpermission" alt="" coords="423,414,599,494">
-<area shape="rect" id="node12" href="rhnconfigrevision.html" title="rhnconfigrevision" alt="" coords="433,511,588,591">
-<area shape="rect" id="node14" href="rhncustomdatakey.html" title="rhncustomdatakey" alt="" coords="431,316,591,396">
-<area shape="rect" id="node18" href="rhnfiledownload.html" title="rhnfiledownload" alt="" coords="436,608,585,688">
-<area shape="rect" id="node20" href="rhnkickstartsession.html" title="rhnkickstartsession" alt="" coords="699,118,861,198">
-<area shape="rect" id="node23" href="rhnserver.html" title="rhnserver" alt="" coords="440,219,581,299">
-<area shape="rect" id="node28" href="rhnregtoken.html" title="rhnregtoken" alt="" coords="713,2000,847,2080">
-<area shape="rect" id="node32" href="rhnresetpassword.html" title="rhnresetpassword" alt="" coords="432,891,589,971">
-<area shape="rect" id="node36" href="rhnservercrashnote.html" title="rhnservercrashnote" alt="" coords="428,988,593,1068">
-<area shape="rect" id="node38" href="rhnservercustomdatavalue.html" title="rhnservercustomdatavalue" alt="" coords="679,499,881,579">
-<area shape="rect" id="node43" href="rhnserverlock.html" title="rhnserverlock" alt="" coords="711,1027,849,1107">
-<area shape="rect" id="node46" href="rhnservernotes.html" title="rhnservernotes" alt="" coords="707,1399,853,1479">
-<area shape="rect" id="node49" href="rhnset.html" title="rhnset" alt="" coords="388,1086,633,1262">
-<area shape="rect" id="node51" href="rhnssmoperation.html" title="rhnssmoperation" alt="" coords="435,1315,587,1395">
-<area shape="rect" id="node53" href="rhnuserdefaultsystemgroups.html" title="rhnuserdefaultsystemgroups" alt="" coords="404,1412,617,1492">
-<area shape="rect" id="node55" href="rhnusergroupmembers.html" title="rhnusergroupmembers" alt="" coords="421,1510,600,1590">
-<area shape="rect" id="node57" href="rhnuserinfo.html" title="rhnuserinfo" alt="" coords="448,1607,573,1687">
-<area shape="rect" id="node59" href="rhnuserinfopane.html" title="rhnuserinfopane" alt="" coords="435,1740,587,1820">
-<area shape="rect" id="node61" href="rhnuserservergroupperms.html" title="rhnuserservergroupperms" alt="" coords="412,1838,609,1918">
-<area shape="rect" id="node63" href="rhnuserserverperms.html" title="rhnuserserverperms" alt="" coords="696,218,864,298">
-<area shape="rect" id="node66" href="rhnuserserverprefs.html" title="rhnuserserverprefs" alt="" coords="699,710,861,790">
-<area shape="rect" id="node69" href="rhnwebcontactchangelog.html" title="rhnwebcontactchangelog" alt="" coords="413,1935,608,2015">
-<area shape="rect" id="node72" href="susecredentials.html" title="susecredentials" alt="" coords="437,2068,584,2148">
-<area shape="rect" id="node75" href="web_user_contact_permission.html" title="web_user_contact_permission" alt="" coords="397,2166,624,2246">
-<area shape="rect" id="node77" href="web_user_personal_info.html" title="web_user_personal_info" alt="" coords="416,2263,605,2343">
-<area shape="rect" id="node79" href="web_user_site_info.html" title="web_user_site_info" alt="" coords="432,758,589,838">
+<area shape="rect" id="node4" href="rhnaction.html" title="rhnaction" alt="" coords="439,49,580,129">
+<area shape="rect" id="node8" href="rhnactionchain.html" title="rhnactionchain" alt="" coords="437,2457,581,2537">
+<area shape="rect" id="node10" href="rhnchannelpermission.html" title="rhnchannelpermission" alt="" coords="421,413,597,493">
+<area shape="rect" id="node12" href="rhnconfigrevision.html" title="rhnconfigrevision" alt="" coords="432,511,587,591">
+<area shape="rect" id="node14" href="rhncustomdatakey.html" title="rhncustomdatakey" alt="" coords="429,316,589,396">
+<area shape="rect" id="node18" href="rhnfiledownload.html" title="rhnfiledownload" alt="" coords="435,608,584,688">
+<area shape="rect" id="node20" href="rhnkickstartsession.html" title="rhnkickstartsession" alt="" coords="696,117,859,197">
+<area shape="rect" id="node23" href="rhnserver.html" title="rhnserver" alt="" coords="443,219,576,299">
+<area shape="rect" id="node28" href="rhnregtoken.html" title="rhnregtoken" alt="" coords="715,2000,840,2080">
+<area shape="rect" id="node32" href="rhnresetpassword.html" title="rhnresetpassword" alt="" coords="431,891,588,971">
+<area shape="rect" id="node36" href="rhnservercrashnote.html" title="rhnservercrashnote" alt="" coords="427,988,592,1068">
+<area shape="rect" id="node38" href="rhnservercustomdatavalue.html" title="rhnservercustomdatavalue" alt="" coords="676,499,879,579">
+<area shape="rect" id="node43" href="rhnserverlock.html" title="rhnserverlock" alt="" coords="708,1027,847,1107">
+<area shape="rect" id="node46" href="rhnservernotes.html" title="rhnservernotes" alt="" coords="704,1399,851,1479">
+<area shape="rect" id="node49" href="rhnset.html" title="rhnset" alt="" coords="387,1085,632,1261">
+<area shape="rect" id="node51" href="rhnssmoperation.html" title="rhnssmoperation" alt="" coords="433,1315,585,1395">
+<area shape="rect" id="node53" href="rhnuserdefaultsystemgroups.html" title="rhnuserdefaultsystemgroups" alt="" coords="403,1412,616,1492">
+<area shape="rect" id="node55" href="rhnusergroupmembers.html" title="rhnusergroupmembers" alt="" coords="420,1509,599,1589">
+<area shape="rect" id="node57" href="rhnuserinfo.html" title="rhnuserinfo" alt="" coords="447,1607,572,1687">
+<area shape="rect" id="node59" href="rhnuserinfopane.html" title="rhnuserinfopane" alt="" coords="433,1740,585,1820">
+<area shape="rect" id="node61" href="rhnuserservergroupperms.html" title="rhnuserservergroupperms" alt="" coords="411,1837,608,1917">
+<area shape="rect" id="node63" href="rhnuserserverperms.html" title="rhnuserserverperms" alt="" coords="696,217,859,297">
+<area shape="rect" id="node66" href="rhnuserserverprefs.html" title="rhnuserserverprefs" alt="" coords="696,709,859,789">
+<area shape="rect" id="node69" href="rhnwebcontactchangelog.html" title="rhnwebcontactchangelog" alt="" coords="412,1935,607,2015">
+<area shape="rect" id="node72" href="susecredentials.html" title="susecredentials" alt="" coords="436,2068,583,2148">
+<area shape="rect" id="node75" href="web_user_contact_permission.html" title="web_user_contact_permission" alt="" coords="396,2165,623,2245">
+<area shape="rect" id="node77" href="web_user_personal_info.html" title="web_user_personal_info" alt="" coords="415,2263,604,2343">
+<area shape="rect" id="node79" href="web_user_site_info.html" title="web_user_site_info" alt="" coords="431,757,588,837">
 </map>
 
   <a name='diagram'><img id='twoDegreesImg' src='../diagrams/rhnset.2degrees.png' usemap='#twoDegreesRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>
