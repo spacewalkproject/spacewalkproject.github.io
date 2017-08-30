@@ -1,4 +1,4 @@
-// dot 2.26.0 on Linux 2.6.32-696.6.3.el6.x86_64
+// dot 2.26.0 on Linux 2.6.32-504.el6.x86_64
 // SchemaSpy rev 590
 digraph "oneDegreeRelationshipsDiagram" {
   graph [
@@ -77,7 +77,7 @@ digraph "oneDegreeRelationshipsDiagram" {
       <TR><TD PORT="update_date" COLSPAN="2" BGCOLOR="#f4f7da" ALIGN="LEFT">update_date</TD><TD PORT="update_date.type" ALIGN="LEFT">timestamptz[35,6]</TD></TR>
       <TR><TD PORT="refers_to" COLSPAN="2" ALIGN="LEFT">refers_to</TD><TD PORT="refers_to.type" ALIGN="LEFT">varchar[4000]</TD></TR>
       <TR><TD PORT="notes" COLSPAN="2" ALIGN="LEFT">notes</TD><TD PORT="notes.type" ALIGN="LEFT">varchar[4000]</TD></TR>
-      <TR><TD PORT="org_id" COLSPAN="2" BGCOLOR="#f4f7da" ALIGN="LEFT">org_id</TD><TD PORT="org_id.type" ALIGN="LEFT">numeric[131089]</TD></TR>
+      <TR><TD PORT="org_id" COLSPAN="2" ALIGN="LEFT">org_id</TD><TD PORT="org_id.type" ALIGN="LEFT">numeric[131089]</TD></TR>
       <TR><TD PORT="locally_modified" COLSPAN="2" ALIGN="LEFT">locally_modified</TD><TD PORT="locally_modified.type" ALIGN="LEFT">bpchar[1]</TD></TR>
       <TR><TD PORT="errata_from" COLSPAN="2" ALIGN="LEFT">errata_from</TD><TD PORT="errata_from.type" ALIGN="LEFT">varchar[127]</TD></TR>
       <TR><TD PORT="created" COLSPAN="2" ALIGN="LEFT">created</TD><TD PORT="created.type" ALIGN="LEFT">timestamptz[35,6]</TD></TR>

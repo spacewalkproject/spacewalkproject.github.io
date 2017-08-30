@@ -27,7 +27,6 @@ rhnserverpackage
 rhnserverneededcache
 rhnservercustomdatavalue
 rhnkickstartdefaults
-rhncontentsourcessl
 rhnwebcontactchangelog
 rhnvirtualinstanceinfo
 rhnsystemmigrations
@@ -141,6 +140,7 @@ rhnactionpackagedelta
 rhnactionkickstartguest
 rhnactionkickstartfilelist
 rhnactionerrataupdate
+rhn_config_parameter
 qrtz_trigger_listeners
 qrtz_simple_triggers
 qrtz_job_listeners
@@ -218,6 +218,7 @@ rhnactionscript
 rhnactionkickstart
 rhnactionchain
 pxtsessions
+rhncontentsource
 rhnservercrash
 rhnactionpackage
 rhnerratafiletmp
@@ -226,12 +227,10 @@ rhnfile
 rhnuserextgroup
 rhnservernetinterface
 rhnerratafile
-rhncontentsource
 rhnchannelfamily
 log
 rhnkickstartsession
 rhnserveraction
-rhncryptokey
 rhnfilelist
 rhnsnapshot
 rhnservergroup
@@ -249,6 +248,7 @@ rhnconfigfile
 rhnconfigcontent
 rhnserver
 rhnconfiginfo
+rhncryptokey
 rhnserverarch
 rhnconfigchannel
 rhnerratatmp
@@ -301,6 +301,8 @@ rhnclientcapabilityname
 rhnchannelproduct
 rhnchannelpermissionrole
 rhnactionstatus
+rhn_config_security_type
+rhn_config_group
 rhnusergrouptype
 rhntaskobunch
 rhnsourcerpm

@@ -1,4 +1,4 @@
-// dot 2.26.0 on Linux 2.6.32-696.6.3.el6.x86_64
+// dot 2.26.0 on Linux 2.6.32-504.el6.x86_64
 // SchemaSpy rev 590
 digraph "oneDegreeRelationshipsDiagram" {
   graph [
@@ -19,7 +19,7 @@ digraph "oneDegreeRelationshipsDiagram" {
   edge [
     arrowsize="0.8"
   ];
-  "rhnconfiginfo":"symlink_target_filename_id":w -> "rhnconfigfilename":"id":e [arrowhead=none dir=back arrowtail=teeodot];
+  "rhnconfiginfo":"symlink_target_filename_id":w -> "rhnconfigfilename":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "rhnconfigrevision":"config_info_id":w -> "rhnconfiginfo":"id.type":e [arrowhead=none dir=back arrowtail=crowodot];
   "rhnconfigfilename" [
     label=<

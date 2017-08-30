@@ -21,7 +21,7 @@
   <li><a href='../constraints.html' title='Useful for diagnosing error messages that just give constraint name or number'>Constraints</a></li>
   <li><a href='../anomalies.html' title="Things that might not be quite right">Anomalies</a></li>
   <li><a href='../columns.byTable.html' title="All of the columns in the schema">Columns</a></li>
-  <li><a href='http://sourceforge.net/donate/index.php?group_id=137197' title='Please help keep SchemaSpy alive' target='_blank'>Donate</a></li>
+
  </ul>
 </div>
 </td></tr></table>
@@ -101,7 +101,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </tr>
 </thead>
 <tbody valign='top'>
-<tr class='even'>
+<tr class='odd'>
  <td class='primaryKey' title='Primary Key'>id</td>
  <td class='detail'>numeric</td>
  <td class='detail' align='right'>131089</td>
@@ -110,13 +110,13 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'></td>
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative even' valign='top'>
+   <tr class='relative odd' valign='top'>
     <td class='relatedTable detail' title="rhnpackage.source_rpm_id refs rhnsourcerpm.id via rhn_package_srcrpmid_fk"><a href='rhnpackage.html'>rhnpackage</a><span class='relatedKey'>.source_rpm_id</span>
     </td>
     <td class='constraint detail'>rhn_package_srcrpmid_fk<span title='Restrict delete:
  Parent cannot be deleted if children exist'>&nbsp;R</span></td>
    </tr>
-   <tr class='relative even' valign='top'>
+   <tr class='relative odd' valign='top'>
     <td class='relatedTable detail' title="rhnpackagesource.source_rpm_id refs rhnsourcerpm.id via rhn_pkgsrc_srid_fk"><a href='rhnpackagesource.html'>rhnpackagesource</a><span class='relatedKey'>.source_rpm_id</span>
     </td>
     <td class='constraint detail'>rhn_pkgsrc_srid_fk<span title='Restrict delete:
@@ -127,7 +127,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='indexedColumn' title='Indexed'>name</td>
  <td class='detail'>varchar</td>
  <td class='detail' align='right'>256</td>
@@ -139,7 +139,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='comment detail'></td>
 </tr>
 </table>
-<p title='2 columns'>Table contained 0 rows at Tue Aug 29 15:36 EDT 2017<p/>
+<p title='2 columns'>Table contained 2,169 rows at Fri Nov 25 12:03 CET 2016<p/>
 </td></tr></table>
 <div class='indent'>
 <b>Indexes:</b>
@@ -171,43 +171,43 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 <br><form action='get'><b>Close relationships</b><span class='degrees' id='degrees' title='Detail diminishes with increased separation from rhnsourcerpm'>
 &nbsp;within <label for='oneDegree'><input type='radio' name='degrees' id='oneDegree' checked>one</label>  <label for='twoDegrees'><input type='radio' name='degrees' id='twoDegrees'>two degrees</label> of separation</span><b>:</b></form>
 <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
-<area shape="rect" id="node1" href="rhnpackage.html" title="rhnpackage" alt="" coords="281,5,436,697">
-<area shape="rect" id="node3" href="rhnsourcerpm.html" title="rhnsourcerpm" alt="" coords="5,538,235,646">
-<area shape="rect" id="node4" href="rhnpackagesource.html" title="rhnpackagesource" alt="" coords="279,713,439,1156">
+<area shape="rect" id="node1" href="rhnpackage.html" title="rhnpackage" alt="" coords="309,5,491,697">
+<area shape="rect" id="node3" href="rhnsourcerpm.html" title="rhnsourcerpm" alt="" coords="7,538,263,646">
+<area shape="rect" id="node4" href="rhnpackagesource.html" title="rhnpackagesource" alt="" coords="320,713,480,1156">
 </map>
   <a name='diagram'><img id='oneDegreeImg' src='../diagrams/rhnsourcerpm.1degree.png' usemap='#oneDegreeRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>
 <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
-<area shape="rect" id="node1" href="rhnchannelnewestpackage.html" title="rhnchannelnewestpackage" alt="" coords="485,5,688,85">
-<area shape="rect" id="node3" href="rhnpackageevr.html" title="rhnpackageevr" alt="" coords="33,445,207,525">
-<area shape="rect" id="node5" href="rhnpackagename.html" title="rhnpackagename" alt="" coords="29,179,211,259">
-<area shape="rect" id="node7" href="rhnpackagearch.html" title="rhnpackagearch" alt="" coords="41,855,199,935">
-<area shape="rect" id="node9" href="rhnpackage.html" title="rhnpackage" alt="" coords="281,849,436,1541">
-<area shape="rect" id="node24" href="rhnchecksum.html" title="rhnchecksum" alt="" coords="51,1784,189,1864">
-<area shape="rect" id="node28" href="web_customer.html" title="web_customer" alt="" coords="51,1044,189,1124">
-<area shape="rect" id="node31" href="rhnpackagegroup.html" title="rhnpackagegroup" alt="" coords="45,1325,195,1405">
-<area shape="rect" id="node33" href="rhnsourcerpm.html" title="rhnsourcerpm" alt="" coords="5,1511,235,1619">
-<area shape="rect" id="node10" href="rhnchannelpackage.html" title="rhnchannelpackage" alt="" coords="504,979,669,1059">
-<area shape="rect" id="node12" href="rhnerratafilepackage.html" title="rhnerratafilepackage" alt="" coords="503,1076,671,1156">
-<area shape="rect" id="node14" href="rhnerratafilepackagesource.html" title="rhnerratafilepackagesource" alt="" coords="484,2049,689,2129">
-<area shape="rect" id="node16" href="rhnpackagesource.html" title="rhnpackagesource" alt="" coords="279,1557,439,2000">
-<area shape="rect" id="node17" href="rhnerratafilepackagetmp.html" title="rhnerratafilepackagetmp" alt="" coords="493,1173,680,1253">
-<area shape="rect" id="node19" href="rhnerratapackage.html" title="rhnerratapackage" alt="" coords="508,1271,665,1351">
-<area shape="rect" id="node21" href="rhnerratapackagetmp.html" title="rhnerratapackagetmp" alt="" coords="500,1368,673,1448">
-<area shape="rect" id="node34" href="rhnpackagebreaks.html" title="rhnpackagebreaks" alt="" coords="507,1465,667,1545">
-<area shape="rect" id="node36" href="rhnpackagechangelogrec.html" title="rhnpackagechangelogrec" alt="" coords="489,1563,684,1643">
-<area shape="rect" id="node38" href="rhnpackageconflicts.html" title="rhnpackageconflicts" alt="" coords="504,1660,669,1740">
-<area shape="rect" id="node40" href="rhnpackageenhances.html" title="rhnpackageenhances" alt="" coords="500,1757,673,1837">
-<area shape="rect" id="node42" href="rhnpackagefile.html" title="rhnpackagefile" alt="" coords="515,1952,659,2032">
-<area shape="rect" id="node45" href="rhnpackagekeyassociation.html" title="rhnpackagekeyassociation" alt="" coords="485,1855,688,1935">
-<area shape="rect" id="node47" href="rhnpackageobsoletes.html" title="rhnpackageobsoletes" alt="" coords="500,103,673,183">
-<area shape="rect" id="node49" href="rhnpackagepredepends.html" title="rhnpackagepredepends" alt="" coords="496,200,677,280">
-<area shape="rect" id="node51" href="rhnpackageprovides.html" title="rhnpackageprovides" alt="" coords="503,297,671,377">
-<area shape="rect" id="node53" href="rhnpackagerecommends.html" title="rhnpackagerecommends" alt="" coords="492,395,681,475">
-<area shape="rect" id="node55" href="rhnpackagerepodata.html" title="rhnpackagerepodata" alt="" coords="501,492,672,572">
-<area shape="rect" id="node57" href="rhnpackagerequires.html" title="rhnpackagerequires" alt="" coords="504,589,669,669">
-<area shape="rect" id="node64" href="rhnpackagesuggests.html" title="rhnpackagesuggests" alt="" coords="501,687,672,767">
-<area shape="rect" id="node66" href="rhnpackagesupplements.html" title="rhnpackagesupplements" alt="" coords="492,784,681,864">
-<area shape="rect" id="node68" href="rhnserverneededcache.html" title="rhnserverneededcache" alt="" coords="497,881,676,961">
+<area shape="rect" id="node1" href="rhnchannelnewestpackage.html" title="rhnchannelnewestpackage" alt="" coords="543,5,764,85">
+<area shape="rect" id="node3" href="rhnpackageevr.html" title="rhnpackageevr" alt="" coords="48,445,221,525">
+<area shape="rect" id="node5" href="rhnpackagename.html" title="rhnpackagename" alt="" coords="44,179,225,259">
+<area shape="rect" id="node7" href="rhnpackagearch.html" title="rhnpackagearch" alt="" coords="56,855,213,935">
+<area shape="rect" id="node9" href="rhnpackage.html" title="rhnpackage" alt="" coords="309,849,491,1541">
+<area shape="rect" id="node24" href="rhnchecksum.html" title="rhnchecksum" alt="" coords="44,1784,225,1864">
+<area shape="rect" id="node28" href="web_customer.html" title="web_customer" alt="" coords="65,1044,204,1124">
+<area shape="rect" id="node31" href="rhnpackagegroup.html" title="rhnpackagegroup" alt="" coords="52,1325,217,1405">
+<area shape="rect" id="node33" href="rhnsourcerpm.html" title="rhnsourcerpm" alt="" coords="7,1511,263,1619">
+<area shape="rect" id="node10" href="rhnchannelpackage.html" title="rhnchannelpackage" alt="" coords="557,979,749,1059">
+<area shape="rect" id="node12" href="rhnerratafilepackage.html" title="rhnerratafilepackage" alt="" coords="569,1076,737,1156">
+<area shape="rect" id="node14" href="rhnerratafilepackagesource.html" title="rhnerratafilepackagesource" alt="" coords="551,2049,756,2129">
+<area shape="rect" id="node16" href="rhnpackagesource.html" title="rhnpackagesource" alt="" coords="320,1557,480,2000">
+<area shape="rect" id="node17" href="rhnerratafilepackagetmp.html" title="rhnerratafilepackagetmp" alt="" coords="560,1173,747,1253">
+<area shape="rect" id="node19" href="rhnerratapackage.html" title="rhnerratapackage" alt="" coords="575,1271,732,1351">
+<area shape="rect" id="node21" href="rhnerratapackagetmp.html" title="rhnerratapackagetmp" alt="" coords="567,1368,740,1448">
+<area shape="rect" id="node34" href="rhnpackagebreaks.html" title="rhnpackagebreaks" alt="" coords="573,1465,733,1545">
+<area shape="rect" id="node36" href="rhnpackagechangelogrec.html" title="rhnpackagechangelogrec" alt="" coords="537,1563,769,1643">
+<area shape="rect" id="node38" href="rhnpackageconflicts.html" title="rhnpackageconflicts" alt="" coords="563,1660,744,1740">
+<area shape="rect" id="node40" href="rhnpackageenhances.html" title="rhnpackageenhances" alt="" coords="567,1757,740,1837">
+<area shape="rect" id="node42" href="rhnpackagefile.html" title="rhnpackagefile" alt="" coords="560,1952,747,2032">
+<area shape="rect" id="node45" href="rhnpackagekeyassociation.html" title="rhnpackagekeyassociation" alt="" coords="543,1855,764,1935">
+<area shape="rect" id="node47" href="rhnpackageobsoletes.html" title="rhnpackageobsoletes" alt="" coords="553,103,753,183">
+<area shape="rect" id="node49" href="rhnpackagepredepends.html" title="rhnpackagepredepends" alt="" coords="563,200,744,280">
+<area shape="rect" id="node51" href="rhnpackageprovides.html" title="rhnpackageprovides" alt="" coords="552,297,755,377">
+<area shape="rect" id="node53" href="rhnpackagerecommends.html" title="rhnpackagerecommends" alt="" coords="559,395,748,475">
+<area shape="rect" id="node55" href="rhnpackagerepodata.html" title="rhnpackagerepodata" alt="" coords="555,492,752,572">
+<area shape="rect" id="node57" href="rhnpackagerequires.html" title="rhnpackagerequires" alt="" coords="549,589,757,669">
+<area shape="rect" id="node64" href="rhnpackagesuggests.html" title="rhnpackagesuggests" alt="" coords="568,687,739,767">
+<area shape="rect" id="node66" href="rhnpackagesupplements.html" title="rhnpackagesupplements" alt="" coords="559,784,748,864">
+<area shape="rect" id="node68" href="rhnserverneededcache.html" title="rhnserverneededcache" alt="" coords="564,881,743,961">
 </map>
 
   <a name='diagram'><img id='twoDegreesImg' src='../diagrams/rhnsourcerpm.2degrees.png' usemap='#twoDegreesRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>

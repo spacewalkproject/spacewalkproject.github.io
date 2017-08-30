@@ -21,7 +21,7 @@
   <li><a href='../constraints.html' title='Useful for diagnosing error messages that just give constraint name or number'>Constraints</a></li>
   <li><a href='../anomalies.html' title="Things that might not be quite right">Anomalies</a></li>
   <li><a href='../columns.byTable.html' title="All of the columns in the schema">Columns</a></li>
-  <li><a href='http://sourceforge.net/donate/index.php?group_id=137197' title='Please help keep SchemaSpy alive' target='_blank'>Donate</a></li>
+
  </ul>
 </div>
 </td></tr></table>
@@ -101,7 +101,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </tr>
 </thead>
 <tbody valign='top'>
-<tr class='odd'>
+<tr class='even'>
  <td class='primaryKey' title='Primary Key'>id</td>
  <td class='detail'>numeric</td>
  <td class='detail' align='right'>131089</td>
@@ -110,37 +110,37 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'></td>
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative odd' valign='top'>
+   <tr class='relative even' valign='top'>
     <td class='relatedTable detail' title="rhnregtokenentitlement.server_group_type_id refs rhnservergrouptype.id via rhn_reg_tok_ent_sgtid_fk"><a href='rhnregtokenentitlement.html'>rhnregtokenentitlement</a><span class='relatedKey'>.server_group_type_id</span>
     </td>
     <td class='constraint detail'>rhn_reg_tok_ent_sgtid_fk<span title='Cascade on delete:
  Deletion of parent deletes child'>&nbsp;C</span></td>
    </tr>
-   <tr class='relative odd' valign='top'>
+   <tr class='relative even' valign='top'>
     <td class='relatedTable detail' title="rhnservergroup.group_type refs rhnservergrouptype.id via rhn_servergroup_type_fk"><a href='rhnservergroup.html'>rhnservergroup</a><span class='relatedKey'>.group_type</span>
     </td>
     <td class='constraint detail'>rhn_servergroup_type_fk<span title='Restrict delete:
  Parent cannot be deleted if children exist'>&nbsp;R</span></td>
    </tr>
-   <tr class='relative odd' valign='top'>
+   <tr class='relative even' valign='top'>
     <td class='relatedTable detail' title="rhnservergrouptypefeature.server_group_type_id refs rhnservergrouptype.id via rhn_sgt_sgid_fk"><a href='rhnservergrouptypefeature.html'>rhnservergrouptypefeature</a><span class='relatedKey'>.server_group_type_id</span>
     </td>
     <td class='constraint detail'>rhn_sgt_sgid_fk<span title='Restrict delete:
  Parent cannot be deleted if children exist'>&nbsp;R</span></td>
    </tr>
-   <tr class='relative odd' valign='top'>
+   <tr class='relative even' valign='top'>
     <td class='relatedTable detail' title="rhnserverservergrouparchcompat.server_group_type refs rhnservergrouptype.id via rhn_ssg_ac_sgt_fk"><a href='rhnserverservergrouparchcompat.html'>rhnserverservergrouparchcompat</a><span class='relatedKey'>.server_group_type</span>
     </td>
     <td class='constraint detail'>rhn_ssg_ac_sgt_fk<span title='Restrict delete:
  Parent cannot be deleted if children exist'>&nbsp;R</span></td>
    </tr>
-   <tr class='relative odd' valign='top'>
+   <tr class='relative even' valign='top'>
     <td class='relatedTable detail' title="rhnsgtypebaseaddoncompat.addon_id refs rhnservergrouptype.id via rhn_sgt_bac_aid_fk"><a href='rhnsgtypebaseaddoncompat.html'>rhnsgtypebaseaddoncompat</a><span class='relatedKey'>.addon_id</span>
     </td>
     <td class='constraint detail'>rhn_sgt_bac_aid_fk<span title='Restrict delete:
  Parent cannot be deleted if children exist'>&nbsp;R</span></td>
    </tr>
-   <tr class='relative odd' valign='top'>
+   <tr class='relative even' valign='top'>
     <td class='relatedTable detail' title="rhnsgtypebaseaddoncompat.base_id refs rhnservergrouptype.id via rhn_sgt_bac_bid_fk"><a href='rhnsgtypebaseaddoncompat.html'>rhnsgtypebaseaddoncompat</a><span class='relatedKey'>.base_id</span>
     </td>
     <td class='constraint detail'>rhn_sgt_bac_bid_fk<span title='Restrict delete:
@@ -151,7 +151,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='indexedColumn' title='Indexed'>label</td>
  <td class='detail'>varchar</td>
  <td class='detail' align='right'>32</td>
@@ -162,7 +162,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='detail'>name</td>
  <td class='detail'>varchar</td>
  <td class='detail' align='right'>64</td>
@@ -173,7 +173,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='detail'>created</td>
  <td class='detail'>timestamptz</td>
  <td class='detail' align='right'>35,6</td>
@@ -184,7 +184,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='detail'>modified</td>
  <td class='detail'>timestamptz</td>
  <td class='detail' align='right'>35,6</td>
@@ -195,7 +195,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='detail'>permanent</td>
  <td class='detail'>bpchar</td>
  <td class='detail' align='right'>1</td>
@@ -206,7 +206,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='detail'>is_base</td>
  <td class='detail'>bpchar</td>
  <td class='detail' align='right'>1</td>
@@ -218,7 +218,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='comment detail'></td>
 </tr>
 </table>
-<p title='7 columns'>Table contained 2 rows at Tue Aug 29 15:36 EDT 2017<p/>
+<p title='7 columns'>Table contained 2 rows at Fri Nov 25 12:03 CET 2016<p/>
 </td></tr></table>
 <div class='indent'>
 <b>Indexes:</b>
@@ -263,7 +263,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 <area shape="rect" id="node3" href="rhnservergroup.html" title="rhnservergroup" alt="" coords="343,237,500,475">
 <area shape="rect" id="node6" href="web_customer.html" title="web_customer" alt="" coords="60,485,199,565">
 <area shape="rect" id="node10" href="rhnservergrouptype.html" title="rhnservergrouptype" alt="" coords="7,593,252,815">
-<area shape="rect" id="node4" href="rhnregtoken.html" title="rhnregtoken" alt="" coords="359,492,484,572">
+<area shape="rect" id="node4" href="rhnregtoken.html" title="rhnregtoken" alt="" coords="355,492,488,572">
 <area shape="rect" id="node7" href="rhnregtokenentitlement.html" title="rhnregtokenentitlement" alt="" coords="608,621,787,723">
 <area shape="rect" id="node11" href="rhnregtokengroups.html" title="rhnregtokengroups" alt="" coords="616,492,779,572">
 <area shape="rect" id="node16" href="rhnservergroupmembers.html" title="rhnservergroupmembers" alt="" coords="603,5,792,85">

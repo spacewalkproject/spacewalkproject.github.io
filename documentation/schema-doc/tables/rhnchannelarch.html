@@ -21,7 +21,7 @@
   <li><a href='../constraints.html' title='Useful for diagnosing error messages that just give constraint name or number'>Constraints</a></li>
   <li><a href='../anomalies.html' title="Things that might not be quite right">Anomalies</a></li>
   <li><a href='../columns.byTable.html' title="All of the columns in the schema">Columns</a></li>
-  <li><a href='http://sourceforge.net/donate/index.php?group_id=137197' title='Please help keep SchemaSpy alive' target='_blank'>Donate</a></li>
+
  </ul>
 </div>
 </td></tr></table>
@@ -101,7 +101,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </tr>
 </thead>
 <tbody valign='top'>
-<tr class='odd'>
+<tr class='even'>
  <td class='primaryKey' title='Primary Key'>id</td>
  <td class='detail'>numeric</td>
  <td class='detail' align='right'>131089</td>
@@ -110,43 +110,43 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'></td>
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative odd' valign='top'>
+   <tr class='relative even' valign='top'>
     <td class='relatedTable detail' title="rhnchannel.channel_arch_id refs rhnchannelarch.id via rhn_channel_caid_fk"><a href='rhnchannel.html'>rhnchannel</a><span class='relatedKey'>.channel_arch_id</span>
     </td>
     <td class='constraint detail'>rhn_channel_caid_fk<span title='Restrict delete:
  Parent cannot be deleted if children exist'>&nbsp;R</span></td>
    </tr>
-   <tr class='relative odd' valign='top'>
+   <tr class='relative even' valign='top'>
     <td class='relatedTable detail' title="rhnchannelpackagearchcompat.channel_arch_id refs rhnchannelarch.id via rhn_cp_ac_caid_fk"><a href='rhnchannelpackagearchcompat.html'>rhnchannelpackagearchcompat</a><span class='relatedKey'>.channel_arch_id</span>
     </td>
     <td class='constraint detail'>rhn_cp_ac_caid_fk<span title='Restrict delete:
  Parent cannot be deleted if children exist'>&nbsp;R</span></td>
    </tr>
-   <tr class='relative odd' valign='top'>
+   <tr class='relative even' valign='top'>
     <td class='relatedTable detail' title="rhnchildchannelarchcompat.child_arch_id refs rhnchannelarch.id via rhn_ccac_caid_fk"><a href='rhnchildchannelarchcompat.html'>rhnchildchannelarchcompat</a><span class='relatedKey'>.child_arch_id</span>
     </td>
     <td class='constraint detail'>rhn_ccac_caid_fk<span title='Restrict delete:
  Parent cannot be deleted if children exist'>&nbsp;R</span></td>
    </tr>
-   <tr class='relative odd' valign='top'>
+   <tr class='relative even' valign='top'>
     <td class='relatedTable detail' title="rhnchildchannelarchcompat.parent_arch_id refs rhnchannelarch.id via rhn_ccac_paid_fk"><a href='rhnchildchannelarchcompat.html'>rhnchildchannelarchcompat</a><span class='relatedKey'>.parent_arch_id</span>
     </td>
     <td class='constraint detail'>rhn_ccac_paid_fk<span title='Restrict delete:
  Parent cannot be deleted if children exist'>&nbsp;R</span></td>
    </tr>
-   <tr class='relative odd' valign='top'>
+   <tr class='relative even' valign='top'>
     <td class='relatedTable detail' title="rhndistchannelmap.channel_arch_id refs rhnchannelarch.id via rhn_dcm_caid_fk"><a href='rhndistchannelmap.html'>rhndistchannelmap</a><span class='relatedKey'>.channel_arch_id</span>
     </td>
     <td class='constraint detail'>rhn_dcm_caid_fk<span title='Restrict delete:
  Parent cannot be deleted if children exist'>&nbsp;R</span></td>
    </tr>
-   <tr class='relative odd' valign='top'>
+   <tr class='relative even' valign='top'>
     <td class='relatedTable detail' title="rhnreleasechannelmap.channel_arch_id refs rhnchannelarch.id via rhn_rcm_caid_fk"><a href='rhnreleasechannelmap.html'>rhnreleasechannelmap</a><span class='relatedKey'>.channel_arch_id</span>
     </td>
     <td class='constraint detail'>rhn_rcm_caid_fk<span title='Restrict delete:
  Parent cannot be deleted if children exist'>&nbsp;R</span></td>
    </tr>
-   <tr class='relative odd' valign='top'>
+   <tr class='relative even' valign='top'>
     <td class='relatedTable detail' title="rhnserverchannelarchcompat.channel_arch_id refs rhnchannelarch.id via rhn_sc_ac_caid_fk"><a href='rhnserverchannelarchcompat.html'>rhnserverchannelarchcompat</a><span class='relatedKey'>.channel_arch_id</span>
     </td>
     <td class='constraint detail'>rhn_sc_ac_caid_fk<span title='Restrict delete:
@@ -157,7 +157,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='indexedColumn' title='Indexed'>label</td>
  <td class='detail'>varchar</td>
  <td class='detail' align='right'>64</td>
@@ -168,7 +168,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='detail'>arch_type_id</td>
  <td class='detail'>numeric</td>
  <td class='detail' align='right'>131089</td>
@@ -178,7 +178,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'></td>
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative odd' valign='top'>
+   <tr class='relative even' valign='top'>
     <td class='relatedTable detail' title="rhnchannelarch.arch_type_id refs rhnarchtype.id via rhn_carch_atid_fk"><a href='rhnarchtype.html'>rhnarchtype</a><span class='relatedKey'>.id</span>
     </td>
     <td class='constraint detail'>rhn_carch_atid_fk<span title='Restrict delete:
@@ -188,7 +188,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='indexedColumn' title='Indexed'>name</td>
  <td class='detail'>varchar</td>
  <td class='detail' align='right'>64</td>
@@ -199,7 +199,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='detail'>created</td>
  <td class='detail'>timestamptz</td>
  <td class='detail' align='right'>35,6</td>
@@ -210,7 +210,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='detail'>modified</td>
  <td class='detail'>timestamptz</td>
  <td class='detail' align='right'>35,6</td>
@@ -222,7 +222,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='comment detail'></td>
 </tr>
 </table>
-<p title='6 columns'>Table contained 23 rows at Tue Aug 29 15:36 EDT 2017<p/>
+<p title='6 columns'>Table contained 23 rows at Fri Nov 25 12:03 CET 2016<p/>
 </td></tr></table>
 <div class='indent'>
 <b>Indexes:</b>
@@ -271,7 +271,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </map>
   <a name='diagram'><img id='oneDegreeImg' src='../diagrams/rhnchannelarch.1degree.png' usemap='#oneDegreeRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>
 <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
-<area shape="rect" id="node1" href="rhnarchtypeactions.html" title="rhnarchtypeactions" alt="" coords="229,153,392,233">
+<area shape="rect" id="node1" href="rhnarchtypeactions.html" title="rhnarchtypeactions" alt="" coords="225,153,396,233">
 <area shape="rect" id="node3" href="rhnarchtype.html" title="rhnarchtype" alt="" coords="5,383,139,553">
 <area shape="rect" id="node4" href="rhnchannel.html" title="rhnchannel" alt="" coords="517,1377,683,2023">
 <area shape="rect" id="node6" href="rhnchannelarch.html" title="rhnchannelarch" alt="" coords="184,250,437,449">
@@ -280,14 +280,14 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 <area shape="rect" id="node12" href="web_customer.html" title="web_customer" alt="" coords="241,2155,380,2235">
 <area shape="rect" id="node14" href="rhnproductname.html" title="rhnproductname" alt="" coords="235,1580,387,1660">
 <area shape="rect" id="node16" href="rhnchannelcloned.html" title="rhnchannelcloned" alt="" coords="800,1473,957,1553">
-<area shape="rect" id="node19" href="rhnchannelcomps.html" title="rhnchannelcomps" alt="" coords="800,1571,957,1651">
+<area shape="rect" id="node19" href="rhnchannelcomps.html" title="rhnchannelcomps" alt="" coords="804,1571,953,1651">
 <area shape="rect" id="node21" href="rhnchannelcontentsource.html" title="rhnchannelcontentsource" alt="" coords="781,1668,976,1748">
 <area shape="rect" id="node23" href="rhnchannelerrata.html" title="rhnchannelerrata" alt="" coords="801,1765,956,1845">
 <area shape="rect" id="node25" href="rhnchannelfamilymembers.html" title="rhnchannelfamilymembers" alt="" coords="777,1863,980,1943">
-<area shape="rect" id="node27" href="rhnchannelnewestpackage.html" title="rhnchannelnewestpackage" alt="" coords="777,403,980,483">
+<area shape="rect" id="node27" href="rhnchannelnewestpackage.html" title="rhnchannelnewestpackage" alt="" coords="768,403,989,483">
 <area shape="rect" id="node30" href="rhnpackagearch.html" title="rhnpackagearch" alt="" coords="232,563,389,643">
 <area shape="rect" id="node31" href="rhnchannelnewestpackageaudit.html" title="rhnchannelnewestpackageaudit" alt="" coords="761,1960,996,2040">
-<area shape="rect" id="node33" href="rhnchannelpackage.html" title="rhnchannelpackage" alt="" coords="796,500,961,580">
+<area shape="rect" id="node33" href="rhnchannelpackage.html" title="rhnchannelpackage" alt="" coords="783,500,975,580">
 <area shape="rect" id="node35" href="rhnchannelpackagearchcompat.html" title="rhnchannelpackagearchcompat" alt="" coords="483,511,717,659">
 <area shape="rect" id="node38" href="rhnchannelpermission.html" title="rhnchannelpermission" alt="" coords="791,597,967,677">
 <area shape="rect" id="node40" href="rhnchanneltrust.html" title="rhnchanneltrust" alt="" coords="805,2349,952,2429">

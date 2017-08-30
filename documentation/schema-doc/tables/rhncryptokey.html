@@ -21,7 +21,7 @@
   <li><a href='../constraints.html' title='Useful for diagnosing error messages that just give constraint name or number'>Constraints</a></li>
   <li><a href='../anomalies.html' title="Things that might not be quite right">Anomalies</a></li>
   <li><a href='../columns.byTable.html' title="All of the columns in the schema">Columns</a></li>
-  <li><a href='http://sourceforge.net/donate/index.php?group_id=137197' title='Please help keep SchemaSpy alive' target='_blank'>Donate</a></li>
+
  </ul>
 </div>
 </td></tr></table>
@@ -111,22 +111,22 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
    <tr class='relative even' valign='top'>
-    <td class='relatedTable detail' title="rhncontentsourcessl.ssl_ca_cert_id refs rhncryptokey.id via rhn_csssl_cacertid_fk"><a href='rhncontentsourcessl.html'>rhncontentsourcessl</a><span class='relatedKey'>.ssl_ca_cert_id</span>
+    <td class='relatedTable detail' title="rhncontentsource.ssl_ca_cert_id refs rhncryptokey.id via rhn_cs_cacertid_fk"><a href='rhncontentsource.html'>rhncontentsource</a><span class='relatedKey'>.ssl_ca_cert_id</span>
     </td>
-    <td class='constraint detail'>rhn_csssl_cacertid_fk<span title='Cascade on delete:
- Deletion of parent deletes child'>&nbsp;C</span></td>
+    <td class='constraint detail'>rhn_cs_cacertid_fk<span title='Null on delete:
+ Foreign key to parent set to NULL when parent deleted'>&nbsp;N</span></td>
    </tr>
    <tr class='relative even' valign='top'>
-    <td class='relatedTable detail' title="rhncontentsourcessl.ssl_client_cert_id refs rhncryptokey.id via rhn_csssl_clcertid_fk"><a href='rhncontentsourcessl.html'>rhncontentsourcessl</a><span class='relatedKey'>.ssl_client_cert_id</span>
+    <td class='relatedTable detail' title="rhncontentsource.ssl_client_cert_id refs rhncryptokey.id via rhn_cs_clcertid_fk"><a href='rhncontentsource.html'>rhncontentsource</a><span class='relatedKey'>.ssl_client_cert_id</span>
     </td>
-    <td class='constraint detail'>rhn_csssl_clcertid_fk<span title='Cascade on delete:
- Deletion of parent deletes child'>&nbsp;C</span></td>
+    <td class='constraint detail'>rhn_cs_clcertid_fk<span title='Null on delete:
+ Foreign key to parent set to NULL when parent deleted'>&nbsp;N</span></td>
    </tr>
    <tr class='relative even' valign='top'>
-    <td class='relatedTable detail' title="rhncontentsourcessl.ssl_client_key_id refs rhncryptokey.id via rhn_csssl_clkeyid_fk"><a href='rhncontentsourcessl.html'>rhncontentsourcessl</a><span class='relatedKey'>.ssl_client_key_id</span>
+    <td class='relatedTable detail' title="rhncontentsource.ssl_client_key_id refs rhncryptokey.id via rhn_cs_clkeyid_fk"><a href='rhncontentsource.html'>rhncontentsource</a><span class='relatedKey'>.ssl_client_key_id</span>
     </td>
-    <td class='constraint detail'>rhn_csssl_clkeyid_fk<span title='Cascade on delete:
- Deletion of parent deletes child'>&nbsp;C</span></td>
+    <td class='constraint detail'>rhn_cs_clkeyid_fk<span title='Null on delete:
+ Foreign key to parent set to NULL when parent deleted'>&nbsp;N</span></td>
    </tr>
    <tr class='relative even' valign='top'>
     <td class='relatedTable detail' title="rhncryptokeykickstart.crypto_key_id refs rhncryptokey.id via rhn_ckey_ks_ckid_fk"><a href='rhncryptokeykickstart.html'>rhncryptokeykickstart</a><span class='relatedKey'>.crypto_key_id</span>
@@ -202,7 +202,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='comment detail'></td>
 </tr>
 </table>
-<p title='5 columns'>Table contained 2 rows at Tue Aug 29 15:36 EDT 2017<p/>
+<p title='5 columns'>Table contained 2 rows at Fri Nov 25 12:03 CET 2016<p/>
 </td></tr></table>
 <div class='indent'>
 <b>Indexes:</b>
@@ -234,60 +234,62 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 <br><form action='get'><b>Close relationships</b><span class='degrees' id='degrees' title='Detail diminishes with increased separation from rhncryptokey'>
 &nbsp;within <label for='oneDegree'><input type='radio' name='degrees' id='oneDegree' checked>one</label>  <label for='twoDegrees'><input type='radio' name='degrees' id='twoDegrees'>two degrees</label> of separation</span><b>:</b></form>
 <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
-<area shape="rect" id="node1" href="rhncontentsourcessl.html" title="rhncontentsourcessl" alt="" coords="543,5,711,198">
-<area shape="rect" id="node3" href="rhncryptokey.html" title="rhncryptokey" alt="" coords="204,60,497,236">
-<area shape="rect" id="node7" href="rhncryptokeytype.html" title="rhncryptokeytype" alt="" coords="5,191,160,361">
-<area shape="rect" id="node9" href="web_customer.html" title="web_customer" alt="" coords="13,26,152,174">
-<area shape="rect" id="node10" href="rhncryptokeykickstart.html" title="rhncryptokeykickstart" alt="" coords="541,214,712,317">
+<area shape="rect" id="node1" href="rhncontentsource.html" title="rhncontentsource" alt="" coords="549,5,704,289">
+<area shape="rect" id="node3" href="web_customer.html" title="web_customer" alt="" coords="13,42,152,190">
+<area shape="rect" id="node5" href="rhncryptokey.html" title="rhncryptokey" alt="" coords="204,140,497,316">
+<area shape="rect" id="node9" href="rhncryptokeytype.html" title="rhncryptokeytype" alt="" coords="5,212,160,383">
+<area shape="rect" id="node11" href="rhncryptokeykickstart.html" title="rhncryptokeykickstart" alt="" coords="541,305,712,407">
 </map>
   <a name='diagram'><img id='oneDegreeImg' src='../diagrams/rhncryptokey.1degree.png' usemap='#oneDegreeRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>
 <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
-<area shape="rect" id="node1" href="rhnaction.html" title="rhnaction" alt="" coords="571,607,712,687">
-<area shape="rect" id="node3" href="web_customer.html" title="web_customer" alt="" coords="13,1594,152,1742">
-<area shape="rect" id="node5" href="web_contact.html" title="web_contact" alt="" coords="283,539,419,619">
-<area shape="rect" id="node6" href="rhnchannel.html" title="rhnchannel" alt="" coords="280,1243,421,1323">
-<area shape="rect" id="node8" href="rhnchannelfamily.html" title="rhnchannelfamily" alt="" coords="277,1705,424,1785">
-<area shape="rect" id="node10" href="rhnchanneltrust.html" title="rhnchanneltrust" alt="" coords="568,1165,715,1245">
-<area shape="rect" id="node13" href="rhnconfigchannel.html" title="rhnconfigchannel" alt="" coords="273,1803,428,1883">
-<area shape="rect" id="node15" href="rhncontentsource.html" title="rhncontentsource" alt="" coords="273,5,428,85">
-<area shape="rect" id="node17" href="rhncontentsourcessl.html" title="rhncontentsourcessl" alt="" coords="557,47,725,241">
-<area shape="rect" id="node20" href="rhncryptokey.html" title="rhncryptokey" alt="" coords="204,103,497,279">
-<area shape="rect" id="node24" href="rhncryptokeytype.html" title="rhncryptokeytype" alt="" coords="5,175,160,345">
-<area shape="rect" id="node26" href="rhncryptokeykickstart.html" title="rhncryptokeykickstart" alt="" coords="556,451,727,554">
-<area shape="rect" id="node29" href="rhnksdata.html" title="rhnksdata" alt="" coords="280,799,421,879">
-<area shape="rect" id="node30" href="rhncustomdatakey.html" title="rhncustomdatakey" alt="" coords="561,319,721,399">
-<area shape="rect" id="node34" href="rhndailysummaryqueue.html" title="rhndailysummaryqueue" alt="" coords="260,1900,441,1980">
-<area shape="rect" id="node36" href="rhndistchannelmap.html" title="rhndistchannelmap" alt="" coords="560,1263,723,1343">
-<area shape="rect" id="node39" href="rhnerrata.html" title="rhnerrata" alt="" coords="280,1376,421,1456">
-<area shape="rect" id="node41" href="rhnerratanotificationqueue.html" title="rhnerratanotificationqueue" alt="" coords="543,1360,740,1440">
-<area shape="rect" id="node45" href="rhnerratatmp.html" title="rhnerratatmp" alt="" coords="283,1997,419,2077">
-<area shape="rect" id="node47" href="rhnfile.html" title="rhnfile" alt="" coords="284,2095,417,2175">
-<area shape="rect" id="node49" href="rhnfilelist.html" title="rhnfilelist" alt="" coords="284,2192,417,2272">
-<area shape="rect" id="node51" href="rhnissmasterorgs.html" title="rhnissmasterorgs" alt="" coords="273,2289,428,2369">
-<area shape="rect" id="node53" href="rhnissslaveorgs.html" title="rhnissslaveorgs" alt="" coords="277,2387,424,2467">
-<area shape="rect" id="node55" href="rhnkickstartabletree.html" title="rhnkickstartabletree" alt="" coords="559,971,724,1051">
-<area shape="rect" id="node58" href="rhnkickstartiprange.html" title="rhnkickstartiprange" alt="" coords="560,873,723,953">
-<area shape="rect" id="node61" href="rhnkickstartsession.html" title="rhnkickstartsession" alt="" coords="789,776,952,856">
-<area shape="rect" id="node64" href="rhnserver.html" title="rhnserver" alt="" coords="575,776,708,856">
-<area shape="rect" id="node72" href="rhnserverprofile.html" title="rhnserverprofile" alt="" coords="567,1068,716,1148">
-<area shape="rect" id="node74" href="rhnorgadminmanagement.html" title="rhnorgadminmanagement" alt="" coords="252,2484,449,2564">
-<area shape="rect" id="node76" href="rhnorgchannelsettings.html" title="rhnorgchannelsettings" alt="" coords="553,1457,729,1537">
-<area shape="rect" id="node79" href="rhnorgconfiguration.html" title="rhnorgconfiguration" alt="" coords="272,2581,429,2661">
-<area shape="rect" id="node81" href="rhnorgerratacachequeue.html" title="rhnorgerratacachequeue" alt="" coords="256,2679,445,2759">
-<area shape="rect" id="node83" href="rhnpackage.html" title="rhnpackage" alt="" coords="280,2776,421,2856">
-<area shape="rect" id="node85" href="rhnpackagesource.html" title="rhnpackagesource" alt="" coords="271,2873,431,2953">
-<area shape="rect" id="node87" href="rhnpackagesyncblacklist.html" title="rhnpackagesyncblacklist" alt="" coords="257,2971,444,3051">
-<area shape="rect" id="node89" href="rhnprivatechannelfamily.html" title="rhnprivatechannelfamily" alt="" coords="551,1697,732,1777">
-<area shape="rect" id="node92" href="rhnregtoken.html" title="rhnregtoken" alt="" coords="808,532,933,612">
-<area shape="rect" id="node96" href="rhnregtokenorgdefault.html" title="rhnregtokenorgdefault" alt="" coords="1000,1033,1176,1113">
-<area shape="rect" id="node101" href="rhnservergroup.html" title="rhnservergroup" alt="" coords="277,3068,424,3148">
-<area shape="rect" id="node105" href="rhnsnapshot.html" title="rhnsnapshot" alt="" coords="804,1172,937,1252">
-<area shape="rect" id="node108" href="rhnsystemmigrations.html" title="rhnsystemmigrations" alt="" coords="785,1615,956,1695">
-<area shape="rect" id="node112" href="rhntag.html" title="rhntag" alt="" coords="284,3165,417,3245">
-<area shape="rect" id="node114" href="rhntaskqueue.html" title="rhntaskqueue" alt="" coords="281,3263,420,3343">
-<area shape="rect" id="node116" href="rhntrustedorgs.html" title="rhntrustedorgs" alt="" coords="279,3360,423,3440">
-<area shape="rect" id="node119" href="rhnuserextgroup.html" title="rhnuserextgroup" alt="" coords="275,3457,427,3537">
-<area shape="rect" id="node121" href="rhnusergroup.html" title="rhnusergroup" alt="" coords="281,1037,420,1117">
+<area shape="rect" id="node1" href="rhnaction.html" title="rhnaction" alt="" coords="571,921,712,1001">
+<area shape="rect" id="node3" href="web_customer.html" title="web_customer" alt="" coords="13,1539,152,1687">
+<area shape="rect" id="node5" href="web_contact.html" title="web_contact" alt="" coords="283,1044,419,1124">
+<area shape="rect" id="node6" href="rhnchannel.html" title="rhnchannel" alt="" coords="280,1455,421,1535">
+<area shape="rect" id="node8" href="rhnchannelcontentsource.html" title="rhnchannelcontentsource" alt="" coords="785,552,980,632">
+<area shape="rect" id="node11" href="rhncontentsource.html" title="rhncontentsource" alt="" coords="564,21,719,305">
+<area shape="rect" id="node21" href="rhncryptokey.html" title="rhncryptokey" alt="" coords="204,159,497,335">
+<area shape="rect" id="node25" href="rhncontentsourcetype.html" title="rhncontentsourcetype" alt="" coords="264,61,437,141">
+<area shape="rect" id="node12" href="rhnchannelfamily.html" title="rhnchannelfamily" alt="" coords="277,1881,424,1961">
+<area shape="rect" id="node14" href="rhnchanneltrust.html" title="rhnchanneltrust" alt="" coords="568,1419,715,1499">
+<area shape="rect" id="node17" href="rhnconfigchannel.html" title="rhnconfigchannel" alt="" coords="273,2015,428,2095">
+<area shape="rect" id="node29" href="rhncryptokeytype.html" title="rhncryptokeytype" alt="" coords="5,231,160,401">
+<area shape="rect" id="node26" href="rhncontentsourcefilter.html" title="rhncontentsourcefilter" alt="" coords="796,20,969,100">
+<area shape="rect" id="node31" href="rhncryptokeykickstart.html" title="rhncryptokeykickstart" alt="" coords="556,398,727,501">
+<area shape="rect" id="node34" href="rhnksdata.html" title="rhnksdata" alt="" coords="280,547,421,627">
+<area shape="rect" id="node35" href="rhncustomdatakey.html" title="rhncustomdatakey" alt="" coords="561,788,721,868">
+<area shape="rect" id="node39" href="rhndailysummaryqueue.html" title="rhndailysummaryqueue" alt="" coords="260,2112,441,2192">
+<area shape="rect" id="node41" href="rhndistchannelmap.html" title="rhndistchannelmap" alt="" coords="560,1516,723,1596">
+<area shape="rect" id="node44" href="rhnerrata.html" title="rhnerrata" alt="" coords="280,1660,421,1740">
+<area shape="rect" id="node46" href="rhnerratanotificationqueue.html" title="rhnerratanotificationqueue" alt="" coords="543,1649,740,1729">
+<area shape="rect" id="node50" href="rhnerratatmp.html" title="rhnerratatmp" alt="" coords="283,2209,419,2289">
+<area shape="rect" id="node52" href="rhnfile.html" title="rhnfile" alt="" coords="284,2307,417,2387">
+<area shape="rect" id="node54" href="rhnfilelist.html" title="rhnfilelist" alt="" coords="284,2404,417,2484">
+<area shape="rect" id="node56" href="rhnissmasterorgs.html" title="rhnissmasterorgs" alt="" coords="273,2501,428,2581">
+<area shape="rect" id="node58" href="rhnissslaveorgs.html" title="rhnissslaveorgs" alt="" coords="277,2599,424,2679">
+<area shape="rect" id="node60" href="rhnkickstartabletree.html" title="rhnkickstartabletree" alt="" coords="559,1188,724,1268">
+<area shape="rect" id="node63" href="rhnkickstartiprange.html" title="rhnkickstartiprange" alt="" coords="560,644,723,724">
+<area shape="rect" id="node66" href="rhnkickstartsession.html" title="rhnkickstartsession" alt="" coords="801,1091,964,1171">
+<area shape="rect" id="node69" href="rhnserver.html" title="rhnserver" alt="" coords="571,1285,712,1365">
+<area shape="rect" id="node77" href="rhnserverprofile.html" title="rhnserverprofile" alt="" coords="567,1091,716,1171">
+<area shape="rect" id="node79" href="rhnorgadminmanagement.html" title="rhnorgadminmanagement" alt="" coords="252,2696,449,2776">
+<area shape="rect" id="node81" href="rhnorgchannelsettings.html" title="rhnorgchannelsettings" alt="" coords="553,1747,729,1827">
+<area shape="rect" id="node84" href="rhnorgconfiguration.html" title="rhnorgconfiguration" alt="" coords="272,2793,429,2873">
+<area shape="rect" id="node86" href="rhnorgerratacachequeue.html" title="rhnorgerratacachequeue" alt="" coords="256,2891,445,2971">
+<area shape="rect" id="node88" href="rhnpackage.html" title="rhnpackage" alt="" coords="267,2988,435,3068">
+<area shape="rect" id="node90" href="rhnpackagesource.html" title="rhnpackagesource" alt="" coords="271,3085,431,3165">
+<area shape="rect" id="node92" href="rhnpackagesyncblacklist.html" title="rhnpackagesyncblacklist" alt="" coords="257,3183,444,3263">
+<area shape="rect" id="node94" href="rhnprivatechannelfamily.html" title="rhnprivatechannelfamily" alt="" coords="551,1940,732,2020">
+<area shape="rect" id="node97" href="rhnregtoken.html" title="rhnregtoken" alt="" coords="816,1319,949,1399">
+<area shape="rect" id="node101" href="rhnregtokenorgdefault.html" title="rhnregtokenorgdefault" alt="" coords="1024,1451,1200,1531">
+<area shape="rect" id="node106" href="rhnservergroup.html" title="rhnservergroup" alt="" coords="277,352,424,432">
+<area shape="rect" id="node110" href="rhnsnapshot.html" title="rhnsnapshot" alt="" coords="816,1704,949,1784">
+<area shape="rect" id="node113" href="rhnsystemmigrations.html" title="rhnsystemmigrations" alt="" coords="797,1856,968,1936">
+<area shape="rect" id="node117" href="rhntag.html" title="rhntag" alt="" coords="284,449,417,529">
+<area shape="rect" id="node119" href="rhntaskqueue.html" title="rhntaskqueue" alt="" coords="281,644,420,724">
+<area shape="rect" id="node121" href="rhntrustedorgs.html" title="rhntrustedorgs" alt="" coords="279,741,423,821">
+<area shape="rect" id="node124" href="rhnuserextgroup.html" title="rhnuserextgroup" alt="" coords="275,839,427,919">
+<area shape="rect" id="node126" href="rhnusergroup.html" title="rhnusergroup" alt="" coords="281,1177,420,1257">
 </map>
 
   <a name='diagram'><img id='twoDegreesImg' src='../diagrams/rhncryptokey.2degrees.png' usemap='#twoDegreesRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>

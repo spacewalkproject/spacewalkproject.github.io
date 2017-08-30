@@ -21,7 +21,7 @@
   <li><a href='../constraints.html' title='Useful for diagnosing error messages that just give constraint name or number'>Constraints</a></li>
   <li><a href='../anomalies.html' title="Things that might not be quite right">Anomalies</a></li>
   <li><a href='../columns.byTable.html' title="All of the columns in the schema">Columns</a></li>
-  <li><a href='http://sourceforge.net/donate/index.php?group_id=137197' title='Please help keep SchemaSpy alive' target='_blank'>Donate</a></li>
+
  </ul>
 </div>
 </td></tr></table>
@@ -101,7 +101,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </tr>
 </thead>
 <tbody valign='top'>
-<tr class='odd'>
+<tr class='even'>
  <td class='indexedColumn' title='Indexed'>user_id</td>
  <td class='detail'>numeric</td>
  <td class='detail' align='right'>131089</td>
@@ -111,7 +111,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'></td>
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative odd' valign='top'>
+   <tr class='relative even' valign='top'>
     <td class='relatedTable detail' title="rhnusergroupmembers.user_id refs web_contact.id via rhn_ugmembers_uid_fk"><a href='web_contact.html'>web_contact</a><span class='relatedKey'>.id</span>
     </td>
     <td class='constraint detail'>rhn_ugmembers_uid_fk<span title='Cascade on delete:
@@ -121,7 +121,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='indexedColumn' title='Indexed'>user_group_id</td>
  <td class='detail'>numeric</td>
  <td class='detail' align='right'>131089</td>
@@ -131,7 +131,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'></td>
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative even' valign='top'>
+   <tr class='relative odd' valign='top'>
     <td class='relatedTable detail' title="rhnusergroupmembers.user_group_id refs rhnusergroup.id via rhn_ugmembers_ugid_fk"><a href='rhnusergroup.html'>rhnusergroup</a><span class='relatedKey'>.id</span>
     </td>
     <td class='constraint detail'>rhn_ugmembers_ugid_fk<span title='Restrict delete:
@@ -141,7 +141,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='indexedColumn' title='Indexed'>temporary</td>
  <td class='detail'>bpchar</td>
  <td class='detail' align='right'>1</td>
@@ -152,7 +152,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='detail'>created</td>
  <td class='detail'>timestamptz</td>
  <td class='detail' align='right'>35,6</td>
@@ -163,7 +163,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='detail'>modified</td>
  <td class='detail'>timestamptz</td>
  <td class='detail' align='right'>35,6</td>
@@ -175,7 +175,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='comment detail'></td>
 </tr>
 </table>
-<p title='5 columns'>Table contained 2 rows at Tue Aug 29 15:36 EDT 2017<p/>
+<p title='5 columns'>Table contained 2 rows at Fri Nov 25 12:03 CET 2016<p/>
 </td></tr></table>
 <div class='indent'>
 <b>Indexes:</b>
@@ -213,7 +213,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </map>
   <a name='diagram'><img id='oneDegreeImg' src='../diagrams/rhnusergroupmembers.1degree.png' usemap='#oneDegreeRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>
 <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
-<area shape="rect" id="node1" href="pxtsessions.html" title="pxtsessions" alt="" coords="472,1153,597,1233">
+<area shape="rect" id="node1" href="pxtsessions.html" title="pxtsessions" alt="" coords="468,1153,601,1233">
 <area shape="rect" id="node3" href="web_contact.html" title="web_contact" alt="" coords="211,1056,360,1340">
 <area shape="rect" id="node6" href="web_customer.html" title="web_customer" alt="" coords="15,250,153,330">
 <area shape="rect" id="node4" href="rhnaction.html" title="rhnaction" alt="" coords="464,45,605,125">
@@ -223,14 +223,14 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 <area shape="rect" id="node14" href="rhncustomdatakey.html" title="rhncustomdatakey" alt="" coords="455,383,615,463">
 <area shape="rect" id="node18" href="rhnfiledownload.html" title="rhnfiledownload" alt="" coords="460,1542,609,1622">
 <area shape="rect" id="node20" href="rhnkickstartsession.html" title="rhnkickstartsession" alt="" coords="725,110,888,190">
-<area shape="rect" id="node23" href="rhnserver.html" title="rhnserver" alt="" coords="468,250,601,330">
-<area shape="rect" id="node28" href="rhnregtoken.html" title="rhnregtoken" alt="" coords="744,207,869,287">
+<area shape="rect" id="node23" href="rhnserver.html" title="rhnserver" alt="" coords="464,250,605,330">
+<area shape="rect" id="node28" href="rhnregtoken.html" title="rhnregtoken" alt="" coords="740,207,873,287">
 <area shape="rect" id="node32" href="rhnresetpassword.html" title="rhnresetpassword" alt="" coords="456,1773,613,1853">
 <area shape="rect" id="node36" href="rhnservercrashnote.html" title="rhnservercrashnote" alt="" coords="452,1870,617,1950">
 <area shape="rect" id="node38" href="rhnservercustomdatavalue.html" title="rhnservercustomdatavalue" alt="" coords="705,433,908,513">
 <area shape="rect" id="node43" href="rhnserverlock.html" title="rhnserverlock" alt="" coords="737,1233,876,1313">
 <area shape="rect" id="node46" href="rhnservernotes.html" title="rhnservernotes" alt="" coords="733,1445,880,1525">
-<area shape="rect" id="node49" href="rhnset.html" title="rhnset" alt="" coords="477,2101,592,2181">
+<area shape="rect" id="node49" href="rhnset.html" title="rhnset" alt="" coords="475,2101,595,2181">
 <area shape="rect" id="node51" href="rhnssmoperation.html" title="rhnssmoperation" alt="" coords="459,2198,611,2278">
 <area shape="rect" id="node53" href="rhnuserdefaultsystemgroups.html" title="rhnuserdefaultsystemgroups" alt="" coords="428,2295,641,2375">
 <area shape="rect" id="node55" href="rhnusergroup.html" title="rhnusergroup" alt="" coords="207,1887,364,2149">
@@ -239,7 +239,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 <area shape="rect" id="node62" href="rhnuserinfo.html" title="rhnuserinfo" alt="" coords="472,533,597,613">
 <area shape="rect" id="node64" href="rhnuserinfopane.html" title="rhnuserinfopane" alt="" coords="459,630,611,710">
 <area shape="rect" id="node66" href="rhnuserservergroupperms.html" title="rhnuserservergroupperms" alt="" coords="436,727,633,807">
-<area shape="rect" id="node68" href="rhnuserserverperms.html" title="rhnuserserverperms" alt="" coords="725,310,888,390">
+<area shape="rect" id="node68" href="rhnuserserverperms.html" title="rhnuserserverperms" alt="" coords="723,310,891,390">
 <area shape="rect" id="node71" href="rhnuserserverprefs.html" title="rhnuserserverprefs" alt="" coords="725,662,888,742">
 <area shape="rect" id="node74" href="rhnwebcontactchangelog.html" title="rhnwebcontactchangelog" alt="" coords="437,1967,632,2047">
 <area shape="rect" id="node77" href="susecredentials.html" title="susecredentials" alt="" coords="461,861,608,941">
