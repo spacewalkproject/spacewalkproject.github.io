@@ -56,15 +56,17 @@
 <h1 class="epydoc">Class RPC_Repository</h1><p class="nomargin-top"><span class="codelink"><a href="config_common.repository-pysrc.html#RPC_Repository">source&nbsp;code</a></span></p>
 <center>
 <center>  <map id="uml_class_diagram_for_config_c_32" name="uml_class_diagram_for_config_c_32">
-<area shape="rect" id="node1_7" href="config_common.repository.RPC_Repository-class.html#__init__" title="config_common.repository.RPC_Repository.__init__" alt="" coords="39,195,265,215"/>
-<area shape="rect" id="node1_8" href="config_common.repository.RPC_Repository-class.html#rpc_call" title="config_common.repository.RPC_Repository.rpc_call" alt="" coords="39,215,265,235"/>
-<area shape="rect" id="node1" href="config_common.repository.RPC_Repository-class.html" title="config_common.repository.RPC_Repository" alt="" coords="27,163,277,241"/>
-<area shape="rect" id="node2_9" href="config_common.repository.Repository-class.html#get_file_delimiters" title="returns the default delimiters for this file" alt="" coords="17,37,287,57"/>
-<area shape="rect" id="node2_10" href="config_common.repository.Repository-class.html#get_default_delimiters" title="returns the default delimiters" alt="" coords="17,57,287,77"/>
-<area shape="rect" id="node2_11" href="config_common.repository.Repository-class.html#get_maximum_file_size" title="returns the maximum file size" alt="" coords="17,77,287,97"/>
-<area shape="rect" id="node2_12" href="config_common.repository.Repository-class.html#make_stat_info" title="config_common.repository.Repository.make_stat_info" alt="" coords="17,97,287,117"/>
-<area shape="rect" id="node2_13" href="config_common.repository.Repository-class.html#login" title="config_common.repository.Repository.login" alt="" coords="17,117,287,137"/>
-<area shape="rect" id="node2" href="config_common.repository.Repository-class.html" title="config_common.repository.Repository" alt="" coords="5,5,299,144"/>
+<area shape="rect" id="node1_7" href="config_common.repository.RPC_Repository-class.html#__init__" title="config_common.repository.RPC_Repository.__init__" alt="" coords="214,195,441,215"/>
+<area shape="rect" id="node1_8" href="config_common.repository.RPC_Repository-class.html#rpc_call" title="config_common.repository.RPC_Repository.rpc_call" alt="" coords="214,215,441,235"/>
+<area shape="rect" id="node1" href="config_common.repository.RPC_Repository-class.html" title="config_common.repository.RPC_Repository" alt="" coords="202,163,453,241"/>
+<area shape="rect" id="node3" href="config_management.rpc_repository.Repository-class.html" title="config_management.rpc_repository.Repository" alt="" coords="5,260,311,299"/>
+<area shape="rect" id="node4" href="config_client.rpc_cli_repository.ClientRepository-class.html" title="config_client.rpc_cli_repository.ClientRepository" alt="" coords="340,260,656,299"/>
+<area shape="rect" id="node2_9" href="config_common.repository.Repository-class.html#get_file_delimiters" title="returns the default delimiters for this file" alt="" coords="193,37,462,57"/>
+<area shape="rect" id="node2_10" href="config_common.repository.Repository-class.html#get_default_delimiters" title="returns the default delimiters" alt="" coords="193,57,462,77"/>
+<area shape="rect" id="node2_11" href="config_common.repository.Repository-class.html#get_maximum_file_size" title="returns the maximum file size" alt="" coords="193,77,462,97"/>
+<area shape="rect" id="node2_12" href="config_common.repository.Repository-class.html#make_stat_info" title="config_common.repository.Repository.make_stat_info" alt="" coords="193,97,462,117"/>
+<area shape="rect" id="node2_13" href="config_common.repository.Repository-class.html#login" title="config_common.repository.Repository.login" alt="" coords="193,117,462,137"/>
+<area shape="rect" id="node2" href="config_common.repository.Repository-class.html" title="config_common.repository.Repository" alt="" coords="181,5,474,144"/>
 </map>
   <img src="uml_class_diagram_for_config_c_32.png" alt='' usemap="#uml_class_diagram_for_config_c_32" ismap="ismap" class="graph-without-title" />
 </center>
@@ -110,9 +112,45 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
+          <td><span class="summary-sig"><a href="config_common.repository.RPC_Repository-class.html#_add_content" class="summary-sig-name" onclick="show_private();">_add_content</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">file_contents</span>,
+        <span class="summary-sig-arg">params</span>)</span><br />
+      Add the file contents to the params hash</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="config_common.repository-pysrc.html#RPC_Repository._add_content">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="config_common.repository.RPC_Repository-class.html#_get_maximum_file_size" class="summary-sig-name" onclick="show_private();">_get_maximum_file_size</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      To be overwritten in subclasses</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="config_common.repository-pysrc.html#RPC_Repository._get_maximum_file_size">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
           <td><span class="summary-sig"><a name="_patch_uris"></a><span class="summary-sig-name">_patch_uris</span>(<span class="summary-sig-arg">self</span>,
         <span class="summary-sig-arg">uris</span>,
-        <span class="summary-sig-arg">handler</span>=<span class="summary-sig-default">&quot;/XMLRPC&quot;</span>)</span></td>
+        <span class="summary-sig-arg">handler</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">/XMLRPC</code><code class="variable-quote">'</code></span>)</span></td>
           <td align="right" valign="top">
             <span class="codelink"><a href="config_common.repository-pysrc.html#RPC_Repository._patch_uris">source&nbsp;code</a></span>
             
@@ -149,42 +187,6 @@
         <span class="summary-sig-arg">*params</span>)</span></td>
           <td align="right" valign="top">
             <span class="codelink"><a href="config_common.repository-pysrc.html#RPC_Repository.rpc_call">source&nbsp;code</a></span>
-            
-          </td>
-        </tr>
-      </table>
-      
-    </td>
-  </tr>
-<tr class="private">
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-      <table width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td><span class="summary-sig"><a href="config_common.repository.RPC_Repository-class.html#_get_maximum_file_size" class="summary-sig-name" onclick="show_private();">_get_maximum_file_size</a>(<span class="summary-sig-arg">self</span>)</span><br />
-      To be overwritten in subclasses</td>
-          <td align="right" valign="top">
-            <span class="codelink"><a href="config_common.repository-pysrc.html#RPC_Repository._get_maximum_file_size">source&nbsp;code</a></span>
-            
-          </td>
-        </tr>
-      </table>
-      
-    </td>
-  </tr>
-<tr class="private">
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-      <table width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td><span class="summary-sig"><a href="config_common.repository.RPC_Repository-class.html#_add_content" class="summary-sig-name" onclick="show_private();">_add_content</a>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">file_contents</span>,
-        <span class="summary-sig-arg">params</span>)</span><br />
-      Add the file contents to the params hash</td>
-          <td align="right" valign="top">
-            <span class="codelink"><a href="config_common.repository-pysrc.html#RPC_Repository._add_content">source&nbsp;code</a></span>
             
           </td>
         </tr>
@@ -229,7 +231,7 @@
     <td colspan="2" class="summary">
     <div class="private">    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="config_common.repository.Repository-class.html">Repository</a></code></b> (private):
       <code><a href="config_common.repository.Repository-class.html#_gid_cache" onclick="show_private();">_gid_cache</a></code>,
-      <code><a href="config_common.repository.Repository-class.html#_local_config" onclick="show_private();">_local_config</a></code>,
+      <code><a href="config_common.local_config-module.html" onclick="show_private();">_local_config</a></code>,
       <code><a href="config_common.repository.Repository-class.html#_uid_cache" onclick="show_private();">_uid_cache</a></code>
       </p></div>
     </td>
@@ -277,29 +279,6 @@
   </dl>
 </td></tr></table>
 </div>
-<a name="_get_maximum_file_size"></a>
-<div class="private">
-<table class="details" border="1" cellpadding="3"
-       cellspacing="0" width="100%" bgcolor="white">
-<tr><td>
-  <table width="100%" cellpadding="0" cellspacing="0" border="0">
-  <tr valign="top"><td>
-  <h3 class="epydoc"><span class="sig"><span class="sig-name">_get_maximum_file_size</span>(<span class="sig-arg">self</span>)</span>
-  </h3>
-  </td><td align="right" valign="top"
-    ><span class="codelink"><a href="config_common.repository-pysrc.html#RPC_Repository._get_maximum_file_size">source&nbsp;code</a></span>&nbsp;
-    </td>
-  </tr></table>
-  
-  <p>To be overwritten in subclasses</p>
-  <dl class="fields">
-    <dt>Overrides:
-        <a href="config_common.repository.Repository-class.html#_get_maximum_file_size" onclick="show_private();">Repository._get_maximum_file_size</a>
-        <dd><em class="note">(inherited documentation)</em></dd>
-    </dt>
-  </dl>
-</td></tr></table>
-</div>
 <a name="_add_content"></a>
 <div class="private">
 <table class="details" border="1" cellpadding="3"
@@ -320,6 +299,29 @@
   <dl class="fields">
     <dt>Overrides:
         <a href="config_common.repository.Repository-class.html#_add_content" onclick="show_private();">Repository._add_content</a>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_get_maximum_file_size"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_get_maximum_file_size</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="config_common.repository-pysrc.html#RPC_Repository._get_maximum_file_size">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>To be overwritten in subclasses</p>
+  <dl class="fields">
+    <dt>Overrides:
+        <a href="config_common.repository.Repository-class.html#_get_maximum_file_size" onclick="show_private();">Repository._get_maximum_file_size</a>
+        <dd><em class="note">(inherited documentation)</em></dd>
     </dt>
   </dl>
 </td></tr></table>
@@ -348,7 +350,7 @@
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Fri Nov 25 11:30:28 2016
+    Generated by Epydoc 3.0.1 on Thu Aug 31 17:16:32 2017
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

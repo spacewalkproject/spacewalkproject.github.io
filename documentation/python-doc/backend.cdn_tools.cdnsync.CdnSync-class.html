@@ -56,16 +56,19 @@
 <!-- ==================== CLASS DESCRIPTION ==================== -->
 <h1 class="epydoc">Class CdnSync</h1><p class="nomargin-top"><span class="codelink"><a href="backend.cdn_tools.cdnsync-pysrc.html#CdnSync">source&nbsp;code</a></span></p>
 <center>
-<center>  <map id="uml_class_diagram_for_backend__2" name="uml_class_diagram_for_backend__2">
-<area shape="rect" id="node1_6" href="backend.cdn_tools.cdnsync.CdnSync-class.html#log_path" title="backend.cdn_tools.cdnsync.CdnSync.log_path" alt="" coords="18,30,886,50"/>
-<area shape="rect" id="node1_7" href="backend.cdn_tools.cdnsync.CdnSync-class.html#__init__" title="x.__init__(...) initializes x; see help(type(x)) for signature" alt="" coords="18,53,886,73"/>
-<area shape="rect" id="node1_8" href="backend.cdn_tools.cdnsync.CdnSync-class.html#sync" title="backend.cdn_tools.cdnsync.CdnSync.sync" alt="" coords="18,73,886,93"/>
-<area shape="rect" id="node1_9" href="backend.cdn_tools.cdnsync.CdnSync-class.html#count_packages" title="backend.cdn_tools.cdnsync.CdnSync.count_packages" alt="" coords="18,93,886,113"/>
-<area shape="rect" id="node1_10" href="backend.cdn_tools.cdnsync.CdnSync-class.html#print_channel_tree" title="backend.cdn_tools.cdnsync.CdnSync.print_channel_tree" alt="" coords="18,113,886,133"/>
-<area shape="rect" id="node1_11" href="backend.cdn_tools.cdnsync.CdnSync-class.html#clear_cache" title="backend.cdn_tools.cdnsync.CdnSync.clear_cache" alt="" coords="18,133,886,153"/>
-<area shape="rect" id="node1" href="backend.cdn_tools.cdnsync.CdnSync-class.html" title="Main class of CDN sync run." alt="" coords="5,5,897,159"/>
+<center>  <map id="uml_class_diagram_for_backend__3" name="uml_class_diagram_for_backend__3">
+<area shape="rect" id="node1_9" href="backend.cdn_tools.cdnsync.CdnSync-class.html#log_path" title="backend.cdn_tools.cdnsync.CdnSync.log_path" alt="" coords="17,29,1396,49"/>
+<area shape="rect" id="node1_10" href="backend.cdn_tools.cdnsync.CdnSync-class.html#__init__" title="x.__init__(...) initializes x; see help(type(x)) for signature" alt="" coords="17,52,1396,72"/>
+<area shape="rect" id="node1_11" href="backend.cdn_tools.cdnsync.CdnSync-class.html#sync" title="backend.cdn_tools.cdnsync.CdnSync.sync" alt="" coords="17,72,1396,92"/>
+<area shape="rect" id="node1_12" href="backend.cdn_tools.cdnsync.CdnSync-class.html#setup_repos_and_sync" title="backend.cdn_tools.cdnsync.CdnSync.setup_repos_and_sync" alt="" coords="17,92,1396,112"/>
+<area shape="rect" id="node1_13" href="backend.cdn_tools.cdnsync.CdnSync-class.html#count_packages" title="backend.cdn_tools.cdnsync.CdnSync.count_packages" alt="" coords="17,112,1396,132"/>
+<area shape="rect" id="node1_14" href="backend.cdn_tools.cdnsync.CdnSync-class.html#print_channel_tree" title="backend.cdn_tools.cdnsync.CdnSync.print_channel_tree" alt="" coords="17,132,1396,152"/>
+<area shape="rect" id="node1_15" href="backend.cdn_tools.cdnsync.CdnSync-class.html#clear_cache" title="backend.cdn_tools.cdnsync.CdnSync.clear_cache" alt="" coords="17,152,1396,172"/>
+<area shape="rect" id="node1_16" href="backend.cdn_tools.cdnsync.CdnSync-class.html#print_cdn_certificates_info" title="backend.cdn_tools.cdnsync.CdnSync.print_cdn_certificates_info" alt="" coords="17,172,1396,192"/>
+<area shape="rect" id="node1_17" href="backend.cdn_tools.cdnsync.CdnSync-class.html#send_email" title="backend.cdn_tools.cdnsync.CdnSync.send_email" alt="" coords="17,192,1396,212"/>
+<area shape="rect" id="node1" href="backend.cdn_tools.cdnsync.CdnSync-class.html" title="Main class of CDN sync run." alt="" coords="5,5,1408,219"/>
 </map>
-  <img src="uml_class_diagram_for_backend__2.png" alt='' usemap="#uml_class_diagram_for_backend__2" ismap="ismap" class="graph-without-title" />
+  <img src="uml_class_diagram_for_backend__3.png" alt='' usemap="#uml_class_diagram_for_backend__3" ismap="ismap" class="graph-without-title" />
 </center>
 </center>
 <hr />
@@ -101,7 +104,11 @@
         <span class="summary-sig-arg">no_kickstarts</span>=<span class="summary-sig-default">False</span>,
         <span class="summary-sig-arg">log_level</span>=<span class="summary-sig-default">None</span>,
         <span class="summary-sig-arg">mount_point</span>=<span class="summary-sig-default">None</span>,
-        <span class="summary-sig-arg">consider_full</span>=<span class="summary-sig-default">False</span>)</span><br />
+        <span class="summary-sig-arg">consider_full</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">force_kickstarts</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">force_all_errata</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">email</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">import_batch_size</span>=<span class="summary-sig-default">None</span>)</span><br />
       x.__init__(...) initializes x; see help(type(x)) for signature</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="backend.cdn_tools.cdnsync-pysrc.html#CdnSync.__init__">source&nbsp;code</a></span>
@@ -118,9 +125,60 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
+          <td><span class="summary-sig"><a name="_tree_available_channels"></a><span class="summary-sig-name">_tree_available_channels</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="backend.cdn_tools.cdnsync-pysrc.html#CdnSync._tree_available_channels">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
           <td><span class="summary-sig"><a name="_list_available_channels"></a><span class="summary-sig-name">_list_available_channels</span>(<span class="summary-sig-arg">self</span>)</span></td>
           <td align="right" valign="top">
             <span class="codelink"><a href="backend.cdn_tools.cdnsync-pysrc.html#CdnSync._list_available_channels">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_can_add_repos"></a><span class="summary-sig-name">_can_add_repos</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">db_channel</span>,
+        <span class="summary-sig-arg">repos</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="backend.cdn_tools.cdnsync-pysrc.html#CdnSync._can_add_repos">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_is_channel_available"></a><span class="summary-sig-name">_is_channel_available</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">label</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="backend.cdn_tools.cdnsync-pysrc.html#CdnSync._is_channel_available">source&nbsp;code</a></span>
             
           </td>
         </tr>
@@ -168,11 +226,10 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a name="_count_packages_in_repo"></a><span class="summary-sig-name">_count_packages_in_repo</span>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">repo_source</span>,
-        <span class="summary-sig-arg">keys</span>)</span></td>
+          <td><span class="summary-sig"><a name="_create_yum_repo"></a><span class="summary-sig-name">_create_yum_repo</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">repo_source</span>)</span></td>
           <td align="right" valign="top">
-            <span class="codelink"><a href="backend.cdn_tools.cdnsync-pysrc.html#CdnSync._count_packages_in_repo">source&nbsp;code</a></span>
+            <span class="codelink"><a href="backend.cdn_tools.cdnsync-pysrc.html#CdnSync._create_yum_repo">source&nbsp;code</a></span>
             
           </td>
         </tr>
@@ -220,9 +277,47 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a name="count_packages"></a><span class="summary-sig-name">count_packages</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td><span class="summary-sig"><a name="setup_repos_and_sync"></a><span class="summary-sig-name">setup_repos_and_sync</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">channels</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">add_repos</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">delete_repos</span>=<span class="summary-sig-default">None</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="backend.cdn_tools.cdnsync-pysrc.html#CdnSync.setup_repos_and_sync">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="count_packages"></a><span class="summary-sig-name">count_packages</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">channels</span>=<span class="summary-sig-default">None</span>)</span></td>
           <td align="right" valign="top">
             <span class="codelink"><a href="backend.cdn_tools.cdnsync-pysrc.html#CdnSync.count_packages">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_channel_line_format"></a><span class="summary-sig-name">_channel_line_format</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">channel</span>,
+        <span class="summary-sig-arg">longest_label</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="backend.cdn_tools.cdnsync-pysrc.html#CdnSync._channel_line_format">source&nbsp;code</a></span>
             
           </td>
         </tr>
@@ -240,6 +335,72 @@
         <span class="summary-sig-arg">repos</span>=<span class="summary-sig-default">False</span>)</span></td>
           <td align="right" valign="top">
             <span class="codelink"><a href="backend.cdn_tools.cdnsync-pysrc.html#CdnSync.print_channel_tree">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="clear_cache"></a><span class="summary-sig-name">clear_cache</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="backend.cdn_tools.cdnsync-pysrc.html#CdnSync.clear_cache">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="print_cdn_certificates_info"></a><span class="summary-sig-name">print_cdn_certificates_info</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">repos</span>=<span class="summary-sig-default">False</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="backend.cdn_tools.cdnsync-pysrc.html#CdnSync.print_cdn_certificates_info">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_msg_array_if_not_activated"></a><span class="summary-sig-name">_msg_array_if_not_activated</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="backend.cdn_tools.cdnsync-pysrc.html#CdnSync._msg_array_if_not_activated">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="send_email"></a><span class="summary-sig-name">send_email</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">additional_messages</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="backend.cdn_tools.cdnsync-pysrc.html#CdnSync.send_email">source&nbsp;code</a></span>
             
           </td>
         </tr>
@@ -283,15 +444,15 @@
     </table>
   </td>
 </tr>
-<tr>
+<tr class="private">
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a name="clear_cache"></a><span class="summary-sig-name">clear_cache</span>()</span></td>
+          <td><span class="summary-sig"><a name="_get_cdn_certificate_keys_and_certs"></a><span class="summary-sig-name">_get_cdn_certificate_keys_and_certs</span>()</span></td>
           <td align="right" valign="top">
-            <span class="codelink"><a href="backend.cdn_tools.cdnsync-pysrc.html#CdnSync.clear_cache">source&nbsp;code</a></span>
+            <span class="codelink"><a href="backend.cdn_tools.cdnsync-pysrc.html#CdnSync._get_cdn_certificate_keys_and_certs">source&nbsp;code</a></span>
             
           </td>
         </tr>
@@ -382,7 +543,11 @@
         <span class="sig-arg">no_kickstarts</span>=<span class="sig-default">False</span>,
         <span class="sig-arg">log_level</span>=<span class="sig-default">None</span>,
         <span class="sig-arg">mount_point</span>=<span class="sig-default">None</span>,
-        <span class="sig-arg">consider_full</span>=<span class="sig-default">False</span>)</span>
+        <span class="sig-arg">consider_full</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">force_kickstarts</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">force_all_errata</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">email</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">import_batch_size</span>=<span class="sig-default">None</span>)</span>
     <br /><em class="fname">(Constructor)</em>
   </h3>
   </td><td align="right" valign="top"
@@ -423,7 +588,7 @@
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Fri Nov 25 11:30:09 2016
+    Generated by Epydoc 3.0.1 on Thu Aug 31 17:16:12 2017
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

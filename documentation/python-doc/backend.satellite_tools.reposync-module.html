@@ -123,6 +123,23 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
+          <td><span class="summary-sig"><a name="send_mail"></a><span class="summary-sig-name">send_mail</span>(<span class="summary-sig-arg">sync_type</span>=<span class="summary-sig-default">&quot;Repo&quot;</span>)</span><br />
+      Send email summary</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="backend.satellite_tools.reposync-pysrc.html#send_mail">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
           <td><span class="summary-sig"><a name="set_filter_opt"></a><span class="summary-sig-name">set_filter_opt</span>(<span class="summary-sig-arg">option</span>,
         <span class="summary-sig-arg">opt_str</span>,
         <span class="summary-sig-arg">value</span>,
@@ -184,6 +201,59 @@
       
     </td>
   </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="write_ssl_set_cache"></a><span class="summary-sig-name">write_ssl_set_cache</span>(<span class="summary-sig-arg">ca_cert</span>,
+        <span class="summary-sig-arg">client_cert</span>,
+        <span class="summary-sig-arg">client_key</span>)</span><br />
+      Write one SSL set into cache directory and return path to files.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="backend.satellite_tools.reposync-pysrc.html#write_ssl_set_cache">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="clear_ssl_cache"></a><span class="summary-sig-name">clear_ssl_cache</span>()</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="backend.satellite_tools.reposync-pysrc.html#clear_ssl_cache">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="get_single_ssl_set"></a><span class="summary-sig-name">get_single_ssl_set</span>(<span class="summary-sig-arg">keys</span>,
+        <span class="summary-sig-arg">check_dates</span>=<span class="summary-sig-default">False</span>)</span><br />
+      Picks one of available SSL sets for given repository.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="backend.satellite_tools.reposync-pysrc.html#get_single_ssl_set">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
 </table>
 <!-- ==================== VARIABLES ==================== -->
 <a name="section-Variables"></a>
@@ -206,6 +276,20 @@
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
+        <a href="backend.satellite_tools.reposync-module.html#translation" class="summary-name">translation</a> = <code title="gettext.translation('spacewalk-backend-server', fallback= True)">gettext.translation('spacewalk-backend-server', <code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_"></a><span class="summary-name">_</span> = <code title="translation.ugettext">translation.ugettext</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
         <a name="default_log_location"></a><span class="summary-name">default_log_location</span> = <code title="'/var/log/rhn/'">'/var/log/rhn/'</code>
     </td>
   </tr>
@@ -216,7 +300,89 @@
         <a name="relative_comps_dir"></a><span class="summary-name">relative_comps_dir</span> = <code title="'rhn/comps'">'rhn/comps'</code>
     </td>
   </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="checksum_cache_filename"></a><span class="summary-name">checksum_cache_filename</span> = <code title="'reposync/checksum_cache'">'reposync/checksum_cache'</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="default_import_batch_size"></a><span class="summary-name">default_import_batch_size</span> = <code title="10">10</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="backend.satellite_tools.reposync-module.html#errata_typemap" class="summary-name">errata_typemap</a> = <code title="{'security': 'Security Advisory', 'recommended': 'Bug Fix Advisory', '\
+bugfix': 'Bug Fix Advisory', 'optional': 'Product Enhancement Advisory\
+', 'feature': 'Product Enhancement Advisory', 'enhancement': 'Product \
+Enhancement Advisory'}">{'security': 'Security Advisory', 'recommende<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
 </table>
+<!-- ==================== VARIABLES DETAILS ==================== -->
+<a name="section-VariablesDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Variables Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-VariablesDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="translation"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">translation</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+gettext.translation('spacewalk-backend-server', fallback= True)
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="errata_typemap"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">errata_typemap</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+{'security': 'Security Advisory', 'recommended': 'Bug Fix Advisory', '<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+bugfix': 'Bug Fix Advisory', 'optional': 'Product Enhancement Advisory<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+', 'feature': 'Product Enhancement Advisory', 'enhancement': 'Product <span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+Enhancement Advisory'}
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
 <!-- ==================== NAVIGATION BAR ==================== -->
 <table class="navbar" border="0" width="100%" cellpadding="0"
        bgcolor="#a0c0ff" cellspacing="0">
@@ -240,7 +406,7 @@
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Fri Nov 25 11:30:08 2016
+    Generated by Epydoc 3.0.1 on Thu Aug 31 17:16:10 2017
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

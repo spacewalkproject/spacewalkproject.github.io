@@ -55,7 +55,7 @@
 <pre class="py-src">
 <a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-comment"># Shared (Spacewalk Proxy/Redirect) handler code called by rhnApache.</tt> </tt>
 <a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
-<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-comment"># Copyright (c) 2008--2015 Red Hat, Inc.</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-comment"># Copyright (c) 2008--2017 Red Hat, Inc.</tt> </tt>
 <a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
 <a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-comment"># This software is licensed to you under the GNU General Public License,</tt> </tt>
 <a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-comment"># version 2 (GPLv2). There is NO WARRANTY for this software, express or</tt> </tt>
@@ -69,20 +69,20 @@
 <a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"><tt class="py-comment"># in this software or its documentation.</tt> </tt>
 <a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
 <a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line"> </tt>
-<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line"><tt class="py-comment">## language imports</tt> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line"><tt class="py-comment"># language imports</tt> </tt>
 <a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">urllib</tt> </tt>
 <a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">socket</tt> </tt>
 <a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">sys</tt> </tt>
 <a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-0" class="py-name" targets="Variable backend.server.rhnSQL.types=backend.server.rhnSQL-module.html#types"><a title="backend.server.rhnSQL.types" class="py-name" href="#" onclick="return doclink('link-0', 'types', 'link-0');">types</a></tt> <tt class="py-keyword">import</tt> <tt class="py-name">ListType</tt><tt class="py-op">,</tt> <tt class="py-name">TupleType</tt> </tt>
 <a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line"> </tt>
-<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line"><tt class="py-comment">## global imports</tt> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line"><tt class="py-comment"># global imports</tt> </tt>
 <a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-1" class="py-name" targets="Package rhn=rhn-module.html"><a title="rhn" class="py-name" href="#" onclick="return doclink('link-1', 'rhn', 'link-1');">rhn</a></tt> <tt class="py-keyword">import</tt> <tt id="link-2" class="py-name" targets="Module rhn.connections=rhn.connections-module.html"><a title="rhn.connections" class="py-name" href="#" onclick="return doclink('link-2', 'connections', 'link-2');">connections</a></tt> </tt>
 <a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-3" class="py-name"><a title="rhn" class="py-name" href="#" onclick="return doclink('link-3', 'rhn', 'link-1');">rhn</a></tt><tt class="py-op">.</tt><tt id="link-4" class="py-name" targets="Module rhn.SSL=rhn.SSL-module.html"><a title="rhn.SSL" class="py-name" href="#" onclick="return doclink('link-4', 'SSL', 'link-4');">SSL</a></tt> <tt class="py-keyword">import</tt> <tt id="link-5" class="py-name" targets="Class rhn.SSL.TimeoutException=rhn.SSL.TimeoutException-class.html"><a title="rhn.SSL.TimeoutException" class="py-name" href="#" onclick="return doclink('link-5', 'TimeoutException', 'link-5');">TimeoutException</a></tt> </tt>
 <a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-6" class="py-name"><a title="rhn" class="py-name" href="#" onclick="return doclink('link-6', 'rhn', 'link-1');">rhn</a></tt><tt class="py-op">.</tt><tt id="link-7" class="py-name" targets="Module rhn.SmartIO=rhn.SmartIO-module.html,Class rhn.SmartIO.SmartIO=rhn.SmartIO.SmartIO-class.html"><a title="rhn.SmartIO
 rhn.SmartIO.SmartIO" class="py-name" href="#" onclick="return doclink('link-7', 'SmartIO', 'link-7');">SmartIO</a></tt> <tt class="py-keyword">import</tt> <tt id="link-8" class="py-name"><a title="rhn.SmartIO
 rhn.SmartIO.SmartIO" class="py-name" href="#" onclick="return doclink('link-8', 'SmartIO', 'link-7');">SmartIO</a></tt> </tt>
 <a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line"> </tt>
-<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line"><tt class="py-comment">## common imports</tt> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line"><tt class="py-comment"># common imports</tt> </tt>
 <a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-9" class="py-name"><a title="rhn" class="py-name" href="#" onclick="return doclink('link-9', 'rhn', 'link-1');">rhn</a></tt><tt class="py-op">.</tt><tt id="link-10" class="py-name" targets="Module rhn.UserDictCase=rhn.UserDictCase-module.html,Class rhn.UserDictCase.UserDictCase=rhn.UserDictCase.UserDictCase-class.html,Class rhnkickstart.lilo.UserDictCase=rhnkickstart.lilo.UserDictCase-class.html"><a title="rhn.UserDictCase
 rhn.UserDictCase.UserDictCase
 rhnkickstart.lilo.UserDictCase" class="py-name" href="#" onclick="return doclink('link-10', 'UserDictCase', 'link-10');">UserDictCase</a></tt> <tt class="py-keyword">import</tt> <tt id="link-11" class="py-name"><a title="rhn.UserDictCase
@@ -120,8 +120,9 @@ rhnkickstart.common" class="py-name" href="#" onclick="return doclink('link-26',
 backend.server.rhnLib" class="py-name" href="#" onclick="return doclink('link-28', 'rhnLib', 'link-28');">rhnLib</a></tt><tt class="py-op">,</tt> <tt id="link-29" class="py-name" targets="Module backend.common.apache=backend.common.apache-module.html"><a title="backend.common.apache" class="py-name" href="#" onclick="return doclink('link-29', 'apache', 'link-29');">apache</a></tt> </tt>
 <a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">spacewalk</tt><tt class="py-op">.</tt><tt id="link-30" class="py-name"><a title="backend.cdn_tools.common
 backend.common
-rhnkickstart.common" class="py-name" href="#" onclick="return doclink('link-30', 'common', 'link-12');">common</a></tt><tt class="py-op">.</tt><tt id="link-31" class="py-name" targets="Module backend.common.rhnTranslate=backend.common.rhnTranslate-module.html"><a title="backend.common.rhnTranslate" class="py-name" href="#" onclick="return doclink('link-31', 'rhnTranslate', 'link-31');">rhnTranslate</a></tt> <tt class="py-keyword">import</tt> <tt id="link-32" class="py-name" targets="Variable backend.common.rhnTranslate._=backend.common.rhnTranslate-module.html#_,Variable backend.satellite_tools.disk_dumper.iss._=backend.satellite_tools.disk_dumper.iss-module.html#_,Variable backend.satellite_tools.satsync._=backend.satellite_tools.satsync-module.html#_,Variable rhn_choose_channel._=rhn_choose_channel-module.html#_,Variable rhn_choose_server_gui._=rhn_choose_server_gui-module.html#_,Variable rhn_create_profile_gui._=rhn_create_profile_gui-module.html#_,Variable rhn_finish_gui._=rhn_finish_gui-module.html#_,Variable rhn_login_gui._=rhn_login_gui-module.html#_,Variable rhn_provide_certificate_gui._=rhn_provide_certificate_gui-module.html#_,Variable rhn_register._=rhn_register-module.html#_,Variable rhn_review_gui._=rhn_review_gui-module.html#_,Variable rhn_start_gui._=rhn_start_gui-module.html#_,Variable rhnreg_ks._=rhnreg_ks-module.html#_,Variable script-rhn_profile_sync_py._=script-rhn_profile_sync_py-module.html#_,Variable script-spacewalk_channel_py._=script-spacewalk_channel_py-module.html#_,Variable up2date_client.debUtils._=up2date_client.debUtils-module.html#_,Variable up2date_client.gui._=up2date_client.gui-module.html#_,Variable up2date_client.hardware._=up2date_client.hardware-module.html#_,Variable up2date_client.rhnreg._=up2date_client.rhnreg-module.html#_,Variable up2date_client.rhnregGui._=up2date_client.rhnregGui-module.html#_,Variable up2date_client.tui._=up2date_client.tui-module.html#_,Variable virtualization.poller._=virtualization.poller-module.html#_,Variable virtualization.support._=virtualization.support-module.html#_"><a title="backend.common.rhnTranslate._
+rhnkickstart.common" class="py-name" href="#" onclick="return doclink('link-30', 'common', 'link-12');">common</a></tt><tt class="py-op">.</tt><tt id="link-31" class="py-name" targets="Module backend.common.rhnTranslate=backend.common.rhnTranslate-module.html"><a title="backend.common.rhnTranslate" class="py-name" href="#" onclick="return doclink('link-31', 'rhnTranslate', 'link-31');">rhnTranslate</a></tt> <tt class="py-keyword">import</tt> <tt id="link-32" class="py-name" targets="Function backend.common.rhnTranslate._()=backend.common.rhnTranslate-module.html#_,Variable backend.satellite_tools.disk_dumper.iss._=backend.satellite_tools.disk_dumper.iss-module.html#_,Variable backend.satellite_tools.reposync._=backend.satellite_tools.reposync-module.html#_,Variable backend.satellite_tools.satsync._=backend.satellite_tools.satsync-module.html#_,Variable rhn_choose_channel._=rhn_choose_channel-module.html#_,Variable rhn_choose_server_gui._=rhn_choose_server_gui-module.html#_,Variable rhn_create_profile_gui._=rhn_create_profile_gui-module.html#_,Variable rhn_finish_gui._=rhn_finish_gui-module.html#_,Variable rhn_login_gui._=rhn_login_gui-module.html#_,Variable rhn_provide_certificate_gui._=rhn_provide_certificate_gui-module.html#_,Variable rhn_register._=rhn_register-module.html#_,Variable rhn_review_gui._=rhn_review_gui-module.html#_,Variable rhn_start_gui._=rhn_start_gui-module.html#_,Variable rhnreg_ks._=rhnreg_ks-module.html#_,Variable script-rhn_profile_sync_py._=script-rhn_profile_sync_py-module.html#_,Variable script-spacewalk_channel_py._=script-spacewalk_channel_py-module.html#_,Variable up2date_client.debUtils._=up2date_client.debUtils-module.html#_,Variable up2date_client.gui._=up2date_client.gui-module.html#_,Variable up2date_client.hardware._=up2date_client.hardware-module.html#_,Variable up2date_client.messageWindow._=up2date_client.messageWindow-module.html#_,Variable up2date_client.rhnreg._=up2date_client.rhnreg-module.html#_,Variable up2date_client.rhnregGui._=up2date_client.rhnregGui-module.html#_"><a title="backend.common.rhnTranslate._
 backend.satellite_tools.disk_dumper.iss._
+backend.satellite_tools.reposync._
 backend.satellite_tools.satsync._
 rhn_choose_channel._
 rhn_choose_server_gui._
@@ -138,13 +139,11 @@ script-spacewalk_channel_py._
 up2date_client.debUtils._
 up2date_client.gui._
 up2date_client.hardware._
+up2date_client.messageWindow._
 up2date_client.rhnreg._
-up2date_client.rhnregGui._
-up2date_client.tui._
-virtualization.poller._
-virtualization.support._" class="py-name" href="#" onclick="return doclink('link-32', '_', 'link-32');">_</a></tt> </tt>
+up2date_client.rhnregGui._" class="py-name" href="#" onclick="return doclink('link-32', '_', 'link-32');">_</a></tt> </tt>
 <a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line"> </tt>
-<a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line"><tt class="py-comment">## local imports</tt> </tt>
+<a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line"><tt class="py-comment"># local imports</tt> </tt>
 <a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt id="link-33" class="py-name" targets="Module proxy.rhnConstants=proxy.rhnConstants-module.html"><a title="proxy.rhnConstants" class="py-name" href="#" onclick="return doclink('link-33', 'rhnConstants', 'link-33');">rhnConstants</a></tt> </tt>
 <a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-34" class="py-name" targets="Module proxy.responseContext=proxy.responseContext-module.html"><a title="proxy.responseContext" class="py-name" href="#" onclick="return doclink('link-34', 'responseContext', 'link-34');">responseContext</a></tt> <tt class="py-keyword">import</tt> <tt id="link-35" class="py-name" targets="Class proxy.responseContext.ResponseContext=proxy.responseContext.ResponseContext-class.html"><a title="proxy.responseContext.ResponseContext" class="py-name" href="#" onclick="return doclink('link-35', 'ResponseContext', 'link-35');">ResponseContext</a></tt> </tt>
 <a name="SharedHandler"></a><div id="SharedHandler-def"><a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line"> </tt>
@@ -229,7 +228,7 @@ up2date_client.config.Config.set" class="py-name" href="#" onclick="return docli
 </div><div id="SharedHandler._prepHandler-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="SharedHandler._prepHandler-expanded"><a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line">        <tt class="py-docstring">""" Handler part 0 """</tt> </tt>
 <a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line"> </tt>
 <a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line">        <tt class="py-comment"># Just to be on the safe side</tt> </tt>
-<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">req</tt><tt class="py-op">.</tt><tt id="link-51" class="py-name" targets="Function actions.hardware.main()=actions.hardware-module.html#main,Function actions.reboot.main()=actions.reboot-module.html#main,Function actions.up2date_config.main()=actions.up2date_config-module.html#main,Method backend.satellite_tools.disk_dumper.iss.ExporterMain.main()=backend.satellite_tools.disk_dumper.iss.ExporterMain-class.html#main,Function backend.satellite_tools.geniso.main()=backend.satellite_tools.geniso-module.html#main,Function backend.satellite_tools.rhn_satellite_activate.main()=backend.satellite_tools.rhn_satellite_activate-module.html#main,Function backend.satellite_tools.rhn_ssl_dbstore.main()=backend.satellite_tools.rhn_ssl_dbstore-module.html#main,Method backend.satellite_tools.satComputePkgHeaders.Runner.main()=backend.satellite_tools.satComputePkgHeaders.Runner-class.html#main,Method backend.satellite_tools.satsync.Runner.main()=backend.satellite_tools.satsync.Runner-class.html#main,Function backend.satellite_tools.updatePackages.main()=backend.satellite_tools.updatePackages-module.html#main,Function config_common.local_config.main()=config_common.local_config-module.html#main,Method config_common.rhn_main.BaseMain.main()=config_common.rhn_main.BaseMain-class.html#main,Function proxy.pm.rhn_package_manager.main()=proxy.pm.rhn_package_manager-module.html#main,Function rhn.rhnLockfile.main()=rhn.rhnLockfile-module.html#main,Function rhn_applet.main()=rhn_applet-module.html#main,Method rhn_check.CheckCli.main()=rhn_check.CheckCli-class.html#main,Function rhnpush.rhnpush_main.main()=rhnpush.rhnpush_main-module.html#main,Function rhnpush.rpm2mpm.main()=rhnpush.rpm2mpm-module.html#main,Function rhnpush.solaris2mpm.main()=rhnpush.solaris2mpm-module.html#main,Method rhnreg_ks.RegisterKsCli.main()=rhnreg_ks.RegisterKsCli-class.html#main,Function script-db_checker_py.main()=script-db_checker_py-module.html#main,Function script-rhn_actions_control_py.main()=script-rhn_actions_control_py-module.html#main,Function script-rhn_custom_info_py.main()=script-rhn_custom_info_py-module.html#main,Method script-rhn_profile_sync_py.ProfileCli.main()=script-rhn_profile_sync_py.ProfileCli-class.html#main,Function script-spacewalk_channel_py.main()=script-spacewalk_channel_py-module.html#main,Method src.jabber_lib.Runner.main()=src.jabber_lib.Runner-class.html#main,Function src.osa_dispatcher.main()=src.osa_dispatcher-module.html#main,Function src.osad.main()=src.osad-module.html#main,Function src.osad_config.main()=src.osad_config-module.html#main,Function up2date_client.gui.main()=up2date_client.gui-module.html#main,Method up2date_client.rhncli.RhnCli.main()=up2date_client.rhncli.RhnCli-class.html#main,Function up2date_client.tui.main()=up2date_client.tui-module.html#main"><a title="actions.hardware.main
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">req</tt><tt class="py-op">.</tt><tt id="link-51" class="py-name" targets="Function actions.hardware.main()=actions.hardware-module.html#main,Function actions.reboot.main()=actions.reboot-module.html#main,Function actions.up2date_config.main()=actions.up2date_config-module.html#main,Method backend.satellite_tools.disk_dumper.iss.ExporterMain.main()=backend.satellite_tools.disk_dumper.iss.ExporterMain-class.html#main,Function backend.satellite_tools.geniso.main()=backend.satellite_tools.geniso-module.html#main,Function backend.satellite_tools.rhn_satellite_activate.main()=backend.satellite_tools.rhn_satellite_activate-module.html#main,Function backend.satellite_tools.rhn_ssl_dbstore.main()=backend.satellite_tools.rhn_ssl_dbstore-module.html#main,Method backend.satellite_tools.satComputePkgHeaders.Runner.main()=backend.satellite_tools.satComputePkgHeaders.Runner-class.html#main,Method backend.satellite_tools.satsync.Runner.main()=backend.satellite_tools.satsync.Runner-class.html#main,Function backend.satellite_tools.updatePackages.main()=backend.satellite_tools.updatePackages-module.html#main,Function config_common.local_config.main()=config_common.local_config-module.html#main,Method config_common.rhn_main.BaseMain.main()=config_common.rhn_main.BaseMain-class.html#main,Function proxy.pm.rhn_package_manager.main()=proxy.pm.rhn_package_manager-module.html#main,Function rhn.rhnLockfile.main()=rhn.rhnLockfile-module.html#main,Method rhn_check.CheckCli.main()=rhn_check.CheckCli-class.html#main,Method rhn_register.RhnRegister.main()=rhn_register.RhnRegister-class.html#main,Function rhnpush.rhnpush_main.main()=rhnpush.rhnpush_main-module.html#main,Function rhnpush.rpm2mpm.main()=rhnpush.rpm2mpm-module.html#main,Method rhnreg_ks.RegisterKsCli.main()=rhnreg_ks.RegisterKsCli-class.html#main,Function script-db_checker_py.main()=script-db_checker_py-module.html#main,Function script-rhn_actions_control_py.main()=script-rhn_actions_control_py-module.html#main,Function script-rhn_custom_info_py.main()=script-rhn_custom_info_py-module.html#main,Method script-rhn_profile_sync_py.ProfileCli.main()=script-rhn_profile_sync_py.ProfileCli-class.html#main,Function script-spacewalk_channel_py.main()=script-spacewalk_channel_py-module.html#main,Method src.jabber_lib.Runner.main()=src.jabber_lib.Runner-class.html#main,Function src.osa_dispatcher.main()=src.osa_dispatcher-module.html#main,Function src.osad.main()=src.osad-module.html#main,Function src.osad_config.main()=src.osad_config-module.html#main,Function up2date_client.gui.main()=up2date_client.gui-module.html#main,Method up2date_client.rhncli.RhnCli.main()=up2date_client.rhncli.RhnCli-class.html#main,Function up2date_client.tui.main()=up2date_client.tui-module.html#main"><a title="actions.hardware.main
 actions.reboot.main
 actions.up2date_config.main
 backend.satellite_tools.disk_dumper.iss.ExporterMain.main
@@ -243,11 +242,10 @@ config_common.local_config.main
 config_common.rhn_main.BaseMain.main
 proxy.pm.rhn_package_manager.main
 rhn.rhnLockfile.main
-rhn_applet.main
 rhn_check.CheckCli.main
+rhn_register.RhnRegister.main
 rhnpush.rhnpush_main.main
 rhnpush.rpm2mpm.main
-rhnpush.solaris2mpm.main
 rhnreg_ks.RegisterKsCli.main
 script-db_checker_py.main
 script-rhn_actions_control_py.main
@@ -290,9 +288,10 @@ backend.server.rhnSQL.sql_row.Row.get
 backend.server.rhnSQL.sql_table.Table.get
 backend.server.rhnServer.get
 config_common.local_config.get
-src.osad_config.get" class="py-name" href="#" onclick="return doclink('link-59', 'get', 'link-59');">get</a></tt><tt class="py-op">(</tt><tt class="py-string">'outputTransportOptions'</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-60" class="py-name" targets="Method backend.satellite_tools.sync_handlers.ContainerHandler.clear()=backend.satellite_tools.sync_handlers.ContainerHandler-class.html#clear,Method backend.satellite_tools.xmlSource.BaseDispatchHandler.clear()=backend.satellite_tools.xmlSource.BaseDispatchHandler-class.html#clear,Method proxy.responseContext.ResponseContext.clear()=proxy.responseContext.ResponseContext-class.html#clear,Method rhn.UserDictCase.UserDictCase.clear()=rhn.UserDictCase.UserDictCase-class.html#clear,Method src.jabber_lib.Roster.clear()=src.jabber_lib.Roster-class.html#clear"><a title="backend.satellite_tools.sync_handlers.ContainerHandler.clear
+src.osad_config.get" class="py-name" href="#" onclick="return doclink('link-59', 'get', 'link-59');">get</a></tt><tt class="py-op">(</tt><tt class="py-string">'outputTransportOptions'</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-60" class="py-name" targets="Method backend.satellite_tools.sync_handlers.ContainerHandler.clear()=backend.satellite_tools.sync_handlers.ContainerHandler-class.html#clear,Method backend.satellite_tools.xmlSource.BaseDispatchHandler.clear()=backend.satellite_tools.xmlSource.BaseDispatchHandler-class.html#clear,Method proxy.responseContext.ResponseContext.clear()=proxy.responseContext.ResponseContext-class.html#clear,Method rhn.UserDictCase.UserDictCase.clear()=rhn.UserDictCase.UserDictCase-class.html#clear,Method rhn.UserDictCase.UserDictCase.clear()=rhn.UserDictCase.UserDictCase-class.html#clear,Method src.jabber_lib.Roster.clear()=src.jabber_lib.Roster-class.html#clear"><a title="backend.satellite_tools.sync_handlers.ContainerHandler.clear
 backend.satellite_tools.xmlSource.BaseDispatchHandler.clear
 proxy.responseContext.ResponseContext.clear
+rhn.UserDictCase.UserDictCase.clear
 rhn.UserDictCase.UserDictCase.clear
 src.jabber_lib.Roster.clear" class="py-name" href="#" onclick="return doclink('link-60', 'clear', 'link-60');">clear</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
 <a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line">        <tt id="link-61" class="py-name"><a title="backend.common.rhnFlags" class="py-name" href="#" onclick="return doclink('link-61', 'rhnFlags', 'link-27');">rhnFlags</a></tt><tt class="py-op">.</tt><tt id="link-62" class="py-name"><a title="actions.up2date_config.get
@@ -310,13 +309,14 @@ backend.server.rhnSQL.sql_row.Row.get
 backend.server.rhnSQL.sql_table.Table.get
 backend.server.rhnServer.get
 config_common.local_config.get
-src.osad_config.get" class="py-name" href="#" onclick="return doclink('link-62', 'get', 'link-59');">get</a></tt><tt class="py-op">(</tt><tt class="py-string">'outputTransportOptions'</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-63" class="py-name" targets="Function actions.up2date_config.update()=actions.up2date_config-module.html#update,Method backend.satellite_tools.progress_bar.ProgressBar.update()=backend.satellite_tools.progress_bar.ProgressBar-class.html#update,Function backend.server.action.errata.update()=backend.server.action.errata-module.html#update,Function backend.server.action.packages.update()=backend.server.action.packages-module.html#update,Function backend.server.action_extra_data.errata.update()=backend.server.action_extra_data.errata-module.html#update,Function backend.server.action_extra_data.packages.update()=backend.server.action_extra_data.packages-module.html#update,Function backend.server.action_extra_data.up2date_config.update()=backend.server.action_extra_data.up2date_config-module.html#update,Method rhn.UserDictCase.UserDictCase.update()=rhn.UserDictCase.UserDictCase-class.html#update,Method up2date_client.config.ConfigFile.update()=up2date_client.config.ConfigFile-class.html#update"><a title="actions.up2date_config.update
+src.osad_config.get" class="py-name" href="#" onclick="return doclink('link-62', 'get', 'link-59');">get</a></tt><tt class="py-op">(</tt><tt class="py-string">'outputTransportOptions'</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-63" class="py-name" targets="Function actions.up2date_config.update()=actions.up2date_config-module.html#update,Method backend.satellite_tools.progress_bar.ProgressBar.update()=backend.satellite_tools.progress_bar.ProgressBar-class.html#update,Function backend.server.action.errata.update()=backend.server.action.errata-module.html#update,Function backend.server.action.packages.update()=backend.server.action.packages-module.html#update,Function backend.server.action_extra_data.errata.update()=backend.server.action_extra_data.errata-module.html#update,Function backend.server.action_extra_data.packages.update()=backend.server.action_extra_data.packages-module.html#update,Function backend.server.action_extra_data.up2date_config.update()=backend.server.action_extra_data.up2date_config-module.html#update,Method rhn.UserDictCase.UserDictCase.update()=rhn.UserDictCase.UserDictCase-class.html#update,Method rhn.UserDictCase.UserDictCase.update()=rhn.UserDictCase.UserDictCase-class.html#update,Method up2date_client.config.ConfigFile.update()=up2date_client.config.ConfigFile-class.html#update"><a title="actions.up2date_config.update
 backend.satellite_tools.progress_bar.ProgressBar.update
 backend.server.action.errata.update
 backend.server.action.packages.update
 backend.server.action_extra_data.errata.update
 backend.server.action_extra_data.packages.update
 backend.server.action_extra_data.up2date_config.update
+rhn.UserDictCase.UserDictCase.update
 rhn.UserDictCase.UserDictCase.update
 up2date_client.config.ConfigFile.update" class="py-name" href="#" onclick="return doclink('link-63', 'update', 'link-63');">update</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-64" class="py-name" targets="Static Method proxy.rhnShared.SharedHandler._getHeaders()=proxy.rhnShared.SharedHandler-class.html#_getHeaders"><a title="proxy.rhnShared.SharedHandler._getHeaders" class="py-name" href="#" onclick="return doclink('link-64', '_getHeaders', 'link-64');">_getHeaders</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">req</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
 <a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line"> </tt>
@@ -396,8 +396,7 @@ rhn.connections.HTTPSProxyConnection.connect
 rhnpush.connection.BaseConnection.connect
 src.jabber_lib.JabberClient.connect
 virtualization.localvdsm.connect" class="py-name" href="#" onclick="return doclink('link-81', 'connect', 'link-81');">connect</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
-<a name="L131"></a><tt class="py-lineno">131</tt>  <tt class="py-line">        <tt class="py-keyword">except</tt> <tt class="py-name">socket</tt><tt class="py-op">.</tt><tt id="link-82" class="py-name" targets="Variable backend.common.rhn_rpm.error=backend.common.rhn_rpm-module.html#error,Method backend.satellite_tools.xmlSource.BaseDispatchHandler.error()=backend.satellite_tools.xmlSource.BaseDispatchHandler-class.html#error"><a title="backend.common.rhn_rpm.error
-backend.satellite_tools.xmlSource.BaseDispatchHandler.error" class="py-name" href="#" onclick="return doclink('link-82', 'error', 'link-82');">error</a></tt><tt class="py-op">,</tt> <tt id="link-83" class="py-name" targets="Variable invocation.e=invocation-module.html#e,Variable virtualization.init_action.e=virtualization.init_action-module.html#e"><a title="invocation.e
+<a name="L131"></a><tt class="py-lineno">131</tt>  <tt class="py-line">        <tt class="py-keyword">except</tt> <tt class="py-name">socket</tt><tt class="py-op">.</tt><tt id="link-82" class="py-name" targets="Method backend.satellite_tools.xmlSource.BaseDispatchHandler.error()=backend.satellite_tools.xmlSource.BaseDispatchHandler-class.html#error"><a title="backend.satellite_tools.xmlSource.BaseDispatchHandler.error" class="py-name" href="#" onclick="return doclink('link-82', 'error', 'link-82');">error</a></tt><tt class="py-op">,</tt> <tt id="link-83" class="py-name" targets="Variable invocation.e=invocation-module.html#e,Variable virtualization.init_action.e=virtualization.init_action-module.html#e"><a title="invocation.e
 virtualization.init_action.e" class="py-name" href="#" onclick="return doclink('link-83', 'e', 'link-83');">e</a></tt><tt class="py-op">:</tt> </tt>
 <a name="L132"></a><tt class="py-lineno">132</tt>  <tt class="py-line">            <tt id="link-84" class="py-name"><a title="backend._apache.log_error
 backend.common.rhnLog.log_error
@@ -411,6 +410,7 @@ virtualization.init_action.e" class="py-name" href="#" onclick="return doclink('
 <a name="L134"></a><tt class="py-lineno">134</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt id="link-87" class="py-name"><a title="backend.common.rhnException.rhnFault" class="py-name" href="#" onclick="return doclink('link-87', 'rhnFault', 'link-20');">rhnFault</a></tt><tt class="py-op">(</tt><tt class="py-number">1000</tt><tt class="py-op">,</tt> </tt>
 <a name="L135"></a><tt class="py-lineno">135</tt>  <tt class="py-line">                           <tt id="link-88" class="py-name"><a title="backend.common.rhnTranslate._
 backend.satellite_tools.disk_dumper.iss._
+backend.satellite_tools.reposync._
 backend.satellite_tools.satsync._
 rhn_choose_channel._
 rhn_choose_server_gui._
@@ -427,11 +427,9 @@ script-spacewalk_channel_py._
 up2date_client.debUtils._
 up2date_client.gui._
 up2date_client.hardware._
+up2date_client.messageWindow._
 up2date_client.rhnreg._
-up2date_client.rhnregGui._
-up2date_client.tui._
-virtualization.poller._
-virtualization.support._" class="py-name" href="#" onclick="return doclink('link-88', '_', 'link-32');">_</a></tt><tt class="py-op">(</tt><tt class="py-string">"Spacewalk Proxy could not successfully connect its RHN parent. "</tt> </tt>
+up2date_client.rhnregGui._" class="py-name" href="#" onclick="return doclink('link-88', '_', 'link-32');">_</a></tt><tt class="py-op">(</tt><tt class="py-string">"Spacewalk Proxy could not successfully connect its RHN parent. "</tt> </tt>
 <a name="L136"></a><tt class="py-lineno">136</tt>  <tt class="py-line">                             <tt class="py-string">"Please contact your system administrator."</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">exc_info</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">[</tt><tt class="py-number">2</tt><tt class="py-op">]</tt> </tt>
 <a name="L137"></a><tt class="py-lineno">137</tt>  <tt class="py-line"> </tt>
 <a name="L138"></a><tt class="py-lineno">138</tt>  <tt class="py-line">        <tt class="py-comment"># At this point the server should be okay</tt> </tt>
@@ -482,7 +480,7 @@ src.osad.Runner._parse_url" class="py-name" href="#" onclick="return doclink('li
 <a name="L157"></a><tt class="py-lineno">157</tt>  <tt class="py-line">            <tt class="py-string">'host'</tt><tt class="py-op">:</tt>   <tt class="py-name">host</tt><tt class="py-op">,</tt> </tt>
 <a name="L158"></a><tt class="py-lineno">158</tt>  <tt class="py-line">            <tt class="py-string">'port'</tt><tt class="py-op">:</tt>   <tt class="py-name">port</tt><tt class="py-op">,</tt> </tt>
 <a name="L159"></a><tt class="py-lineno">159</tt>  <tt class="py-line">        <tt class="py-op">}</tt> </tt>
-<a name="L160"></a><tt class="py-lineno">160</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt id="link-97" class="py-name"><a title="backend.common.rhnConfig.CFG" class="py-name" href="#" onclick="return doclink('link-97', 'CFG', 'link-17');">CFG</a></tt><tt class="py-op">.</tt><tt id="link-98" class="py-name" targets="Static Method backend.common.rhnCache.Cache.has_key()=backend.common.rhnCache.Cache-class.html#has_key,Method backend.common.rhnCache.CompressedCache.has_key()=backend.common.rhnCache.CompressedCache-class.html#has_key,Method backend.common.rhnCache.NullCache.has_key()=backend.common.rhnCache.NullCache-class.html#has_key,Method backend.common.rhnCache.ObjectCache.has_key()=backend.common.rhnCache.ObjectCache-class.html#has_key,Function backend.common.rhnCache.has_key()=backend.common.rhnCache-module.html#has_key,Method backend.common.rhnConfig.RHNOptions.has_key()=backend.common.rhnConfig.RHNOptions-class.html#has_key,Method backend.satellite_tools.xmlDiskSource.ShortPackageDiskSource.has_key()=backend.satellite_tools.xmlDiskSource.ShortPackageDiskSource-class.html#has_key,Method backend.server.rhnSQL.sql_table.Table.has_key()=backend.server.rhnSQL.sql_table.Table-class.html#has_key,Method backend.wsgi.wsgiRequest.WsgiMPtable.has_key()=backend.wsgi.wsgiRequest.WsgiMPtable-class.html#has_key,Method proxy.rhnProxyAuth.AuthLocalBackend.has_key()=proxy.rhnProxyAuth.AuthLocalBackend-class.html#has_key,Method rhn.UserDictCase.UserDictCase.has_key()=rhn.UserDictCase.UserDictCase-class.html#has_key,Method rhnkickstart.lilo.UserDictCase.has_key()=rhnkickstart.lilo.UserDictCase-class.html#has_key,Method src.osad_config.ClientConfigParser.has_key()=src.osad_config.ClientConfigParser-class.html#has_key,Method up2date_client.config.Config.has_key()=up2date_client.config.Config-class.html#has_key,Method up2date_client.config.ConfigFile.has_key()=up2date_client.config.ConfigFile-class.html#has_key"><a title="backend.common.rhnCache.Cache.has_key
+<a name="L160"></a><tt class="py-lineno">160</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt id="link-97" class="py-name"><a title="backend.common.rhnConfig.CFG" class="py-name" href="#" onclick="return doclink('link-97', 'CFG', 'link-17');">CFG</a></tt><tt class="py-op">.</tt><tt id="link-98" class="py-name" targets="Static Method backend.common.rhnCache.Cache.has_key()=backend.common.rhnCache.Cache-class.html#has_key,Method backend.common.rhnCache.CompressedCache.has_key()=backend.common.rhnCache.CompressedCache-class.html#has_key,Method backend.common.rhnCache.NullCache.has_key()=backend.common.rhnCache.NullCache-class.html#has_key,Method backend.common.rhnCache.ObjectCache.has_key()=backend.common.rhnCache.ObjectCache-class.html#has_key,Function backend.common.rhnCache.has_key()=backend.common.rhnCache-module.html#has_key,Method backend.common.rhnConfig.RHNOptions.has_key()=backend.common.rhnConfig.RHNOptions-class.html#has_key,Method backend.satellite_tools.xmlDiskSource.ShortPackageDiskSource.has_key()=backend.satellite_tools.xmlDiskSource.ShortPackageDiskSource-class.html#has_key,Method backend.server.rhnSQL.sql_table.Table.has_key()=backend.server.rhnSQL.sql_table.Table-class.html#has_key,Method backend.wsgi.wsgiRequest.WsgiMPtable.has_key()=backend.wsgi.wsgiRequest.WsgiMPtable-class.html#has_key,Method proxy.rhnProxyAuth.AuthLocalBackend.has_key()=proxy.rhnProxyAuth.AuthLocalBackend-class.html#has_key,Method rhn.UserDictCase.UserDictCase.has_key()=rhn.UserDictCase.UserDictCase-class.html#has_key,Method rhn.UserDictCase.UserDictCase.has_key()=rhn.UserDictCase.UserDictCase-class.html#has_key,Method rhnkickstart.lilo.UserDictCase.has_key()=rhnkickstart.lilo.UserDictCase-class.html#has_key,Method src.osad_config.ClientConfigParser.has_key()=src.osad_config.ClientConfigParser-class.html#has_key,Method up2date_client.config.Config.has_key()=up2date_client.config.Config-class.html#has_key,Method up2date_client.config.ConfigFile.has_key()=up2date_client.config.ConfigFile-class.html#has_key"><a title="backend.common.rhnCache.Cache.has_key
 backend.common.rhnCache.CompressedCache.has_key
 backend.common.rhnCache.NullCache.has_key
 backend.common.rhnCache.ObjectCache.has_key
@@ -492,6 +490,7 @@ backend.satellite_tools.xmlDiskSource.ShortPackageDiskSource.has_key
 backend.server.rhnSQL.sql_table.Table.has_key
 backend.wsgi.wsgiRequest.WsgiMPtable.has_key
 proxy.rhnProxyAuth.AuthLocalBackend.has_key
+rhn.UserDictCase.UserDictCase.has_key
 rhn.UserDictCase.UserDictCase.has_key
 rhnkickstart.lilo.UserDictCase.has_key
 src.osad_config.ClientConfigParser.has_key
@@ -576,6 +575,7 @@ backend.server.importlib.importLib.Import.status" class="py-name" href="#" oncli
 <a name="L217"></a><tt class="py-lineno">217</tt>  <tt class="py-line">            <tt id="link-123" class="py-name"><a title="backend.common.rhnTB.Traceback" class="py-name" href="#" onclick="return doclink('link-123', 'Traceback', 'link-14');">Traceback</a></tt><tt class="py-op">(</tt><tt class="py-string">"SharedHandler._serverCommo"</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">req</tt><tt class="py-op">,</tt> <tt class="py-name">mail</tt><tt class="py-op">=</tt><tt class="py-number">0</tt><tt class="py-op">)</tt> </tt>
 <a name="L218"></a><tt class="py-lineno">218</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt id="link-124" class="py-name"><a title="backend.common.rhnException.rhnFault" class="py-name" href="#" onclick="return doclink('link-124', 'rhnFault', 'link-20');">rhnFault</a></tt><tt class="py-op">(</tt><tt class="py-number">1000</tt><tt class="py-op">,</tt> <tt id="link-125" class="py-name"><a title="backend.common.rhnTranslate._
 backend.satellite_tools.disk_dumper.iss._
+backend.satellite_tools.reposync._
 backend.satellite_tools.satsync._
 rhn_choose_channel._
 rhn_choose_server_gui._
@@ -592,18 +592,16 @@ script-spacewalk_channel_py._
 up2date_client.debUtils._
 up2date_client.gui._
 up2date_client.hardware._
+up2date_client.messageWindow._
 up2date_client.rhnreg._
-up2date_client.rhnregGui._
-up2date_client.tui._
-virtualization.poller._
-virtualization.support._" class="py-name" href="#" onclick="return doclink('link-125', '_', 'link-32');">_</a></tt><tt class="py-op">(</tt> </tt>
+up2date_client.rhnregGui._" class="py-name" href="#" onclick="return doclink('link-125', '_', 'link-32');">_</a></tt><tt class="py-op">(</tt> </tt>
 <a name="L219"></a><tt class="py-lineno">219</tt>  <tt class="py-line">                <tt class="py-string">"Spacewalk Proxy error: connection with the Spacewalk server failed"</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">exc_info</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">[</tt><tt class="py-number">2</tt><tt class="py-op">]</tt> </tt>
-<a name="L220"></a><tt class="py-lineno">220</tt>  <tt class="py-line">        <tt class="py-keyword">except</tt> <tt class="py-name">socket</tt><tt class="py-op">.</tt><tt id="link-126" class="py-name"><a title="backend.common.rhn_rpm.error
-backend.satellite_tools.xmlSource.BaseDispatchHandler.error" class="py-name" href="#" onclick="return doclink('link-126', 'error', 'link-82');">error</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L220"></a><tt class="py-lineno">220</tt>  <tt class="py-line">        <tt class="py-keyword">except</tt> <tt class="py-name">socket</tt><tt class="py-op">.</tt><tt id="link-126" class="py-name"><a title="backend.satellite_tools.xmlSource.BaseDispatchHandler.error" class="py-name" href="#" onclick="return doclink('link-126', 'error', 'link-82');">error</a></tt><tt class="py-op">:</tt> </tt>
 <a name="L221"></a><tt class="py-lineno">221</tt>  <tt class="py-line">            <tt class="py-comment"># maybe self.req.read() failed?</tt> </tt>
 <a name="L222"></a><tt class="py-lineno">222</tt>  <tt class="py-line">            <tt id="link-127" class="py-name"><a title="backend.common.rhnTB.Traceback" class="py-name" href="#" onclick="return doclink('link-127', 'Traceback', 'link-14');">Traceback</a></tt><tt class="py-op">(</tt><tt class="py-string">"SharedHandler._serverCommo"</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">req</tt><tt class="py-op">)</tt> </tt>
 <a name="L223"></a><tt class="py-lineno">223</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt id="link-128" class="py-name"><a title="backend.common.rhnException.rhnFault" class="py-name" href="#" onclick="return doclink('link-128', 'rhnFault', 'link-20');">rhnFault</a></tt><tt class="py-op">(</tt><tt class="py-number">1000</tt><tt class="py-op">,</tt> <tt id="link-129" class="py-name"><a title="backend.common.rhnTranslate._
 backend.satellite_tools.disk_dumper.iss._
+backend.satellite_tools.reposync._
 backend.satellite_tools.satsync._
 rhn_choose_channel._
 rhn_choose_server_gui._
@@ -620,11 +618,9 @@ script-spacewalk_channel_py._
 up2date_client.debUtils._
 up2date_client.gui._
 up2date_client.hardware._
+up2date_client.messageWindow._
 up2date_client.rhnreg._
-up2date_client.rhnregGui._
-up2date_client.tui._
-virtualization.poller._
-virtualization.support._" class="py-name" href="#" onclick="return doclink('link-129', '_', 'link-32');">_</a></tt><tt class="py-op">(</tt> </tt>
+up2date_client.rhnregGui._" class="py-name" href="#" onclick="return doclink('link-129', '_', 'link-32');">_</a></tt><tt class="py-op">(</tt> </tt>
 <a name="L224"></a><tt class="py-lineno">224</tt>  <tt class="py-line">                <tt class="py-string">"Spacewalk Proxy error: connection with the Spacewalk server failed"</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">exc_info</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">[</tt><tt class="py-number">2</tt><tt class="py-op">]</tt> </tt>
 <a name="L225"></a><tt class="py-lineno">225</tt>  <tt class="py-line"> </tt>
 <a name="L226"></a><tt class="py-lineno">226</tt>  <tt class="py-line">        <tt id="link-130" class="py-name"><a title="backend.common.rhnLog.log_debug
@@ -668,11 +664,12 @@ backend.server.importlib.importLib.Import.status" class="py-name" href="#" oncli
 <a name="L243"></a><tt class="py-lineno">243</tt>  <tt class="py-line">            <tt class="py-comment"># Copy the incoming headers to headers_out</tt> </tt>
 <a name="L244"></a><tt class="py-lineno">244</tt>  <tt class="py-line">            <tt class="py-name">headers</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-142" class="py-name"><a title="proxy.responseContext" class="py-name" href="#" onclick="return doclink('link-142', 'responseContext', 'link-34');">responseContext</a></tt><tt class="py-op">.</tt><tt id="link-143" class="py-name" targets="Method proxy.responseContext.ResponseContext.getHeaders()=proxy.responseContext.ResponseContext-class.html#getHeaders"><a title="proxy.responseContext.ResponseContext.getHeaders" class="py-name" href="#" onclick="return doclink('link-143', 'getHeaders', 'link-143');">getHeaders</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
 <a name="L245"></a><tt class="py-lineno">245</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">headers</tt> <tt class="py-keyword">is</tt> <tt class="py-keyword">not</tt> <tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
-<a name="L246"></a><tt class="py-lineno">246</tt>  <tt class="py-line">                <tt class="py-keyword">for</tt> <tt class="py-name">k</tt> <tt class="py-keyword">in</tt> <tt class="py-name">headers</tt><tt class="py-op">.</tt><tt id="link-144" class="py-name" targets="Method backend.common.rhnConfig.RHNOptions.keys()=backend.common.rhnConfig.RHNOptions-class.html#keys,Method backend.server.rhnSQL.sql_table.Table.keys()=backend.server.rhnSQL.sql_table.Table-class.html#keys,Method backend.wsgi.wsgiRequest.WsgiMPtable.keys()=backend.wsgi.wsgiRequest.WsgiMPtable-class.html#keys,Function config_common.local_config.keys()=config_common.local_config-module.html#keys,Method config_common.local_config.rhncfgConfigParser.keys()=config_common.local_config.rhncfgConfigParser-class.html#keys,Method rhn.UserDictCase.UserDictCase.keys()=rhn.UserDictCase.UserDictCase-class.html#keys,Method rhnpush.rhnpush_config.rhnpushConfigParser.keys()=rhnpush.rhnpush_config.rhnpushConfigParser-class.html#keys,Method src.osad_config.ClientConfigParser.keys()=src.osad_config.ClientConfigParser-class.html#keys,Function src.osad_config.keys()=src.osad_config-module.html#keys,Method up2date_client.config.Config.keys()=up2date_client.config.Config-class.html#keys,Method up2date_client.config.ConfigFile.keys()=up2date_client.config.ConfigFile-class.html#keys,Method up2date_client.rhnChannel.rhnChannel.keys()=up2date_client.rhnChannel.rhnChannel-class.html#keys"><a title="backend.common.rhnConfig.RHNOptions.keys
+<a name="L246"></a><tt class="py-lineno">246</tt>  <tt class="py-line">                <tt class="py-keyword">for</tt> <tt class="py-name">k</tt> <tt class="py-keyword">in</tt> <tt class="py-name">headers</tt><tt class="py-op">.</tt><tt id="link-144" class="py-name" targets="Method backend.common.rhnConfig.RHNOptions.keys()=backend.common.rhnConfig.RHNOptions-class.html#keys,Method backend.server.rhnSQL.sql_table.Table.keys()=backend.server.rhnSQL.sql_table.Table-class.html#keys,Method backend.wsgi.wsgiRequest.WsgiMPtable.keys()=backend.wsgi.wsgiRequest.WsgiMPtable-class.html#keys,Function config_common.local_config.keys()=config_common.local_config-module.html#keys,Method config_common.local_config.rhncfgConfigParser.keys()=config_common.local_config.rhncfgConfigParser-class.html#keys,Method rhn.UserDictCase.UserDictCase.keys()=rhn.UserDictCase.UserDictCase-class.html#keys,Method rhn.UserDictCase.UserDictCase.keys()=rhn.UserDictCase.UserDictCase-class.html#keys,Method rhnpush.rhnpush_config.rhnpushConfigParser.keys()=rhnpush.rhnpush_config.rhnpushConfigParser-class.html#keys,Method src.osad_config.ClientConfigParser.keys()=src.osad_config.ClientConfigParser-class.html#keys,Function src.osad_config.keys()=src.osad_config-module.html#keys,Method up2date_client.config.Config.keys()=up2date_client.config.Config-class.html#keys,Method up2date_client.config.ConfigFile.keys()=up2date_client.config.ConfigFile-class.html#keys,Method up2date_client.rhnChannel.rhnChannel.keys()=up2date_client.rhnChannel.rhnChannel-class.html#keys"><a title="backend.common.rhnConfig.RHNOptions.keys
 backend.server.rhnSQL.sql_table.Table.keys
 backend.wsgi.wsgiRequest.WsgiMPtable.keys
 config_common.local_config.keys
 config_common.local_config.rhncfgConfigParser.keys
+rhn.UserDictCase.UserDictCase.keys
 rhn.UserDictCase.UserDictCase.keys
 rhnpush.rhnpush_config.rhnpushConfigParser.keys
 src.osad_config.ClientConfigParser.keys
@@ -696,13 +693,13 @@ src.rhn_log.log_error" class="py-name" href="#" onclick="return doclink('link-14
 backend.satellite_tools.satComputePkgHeaders.status
 backend.server.importlib.importLib.Import.status" class="py-name" href="#" onclick="return doclink('link-149', 'status', 'link-117');">status</a></tt> </tt>
 <a name="L253"></a><tt class="py-lineno">253</tt>  <tt class="py-line"> </tt>
-<a name="L254"></a><tt class="py-lineno">254</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-op">(</tt><tt id="link-150" class="py-name"><a title="backend._apache.status
+<a name="L254"></a><tt class="py-lineno">254</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt id="link-150" class="py-name"><a title="backend._apache.status
 backend.satellite_tools.satComputePkgHeaders.status
-backend.server.importlib.importLib.Import.status" class="py-name" href="#" onclick="return doclink('link-150', 'status', 'link-117');">status</a></tt> <tt class="py-op">==</tt> <tt id="link-151" class="py-name"><a title="backend.common.apache" class="py-name" href="#" onclick="return doclink('link-151', 'apache', 'link-29');">apache</a></tt><tt class="py-op">.</tt><tt id="link-152" class="py-name"><a title="backend.common.apache.HTTP_PARTIAL_CONTENT" class="py-name" href="#" onclick="return doclink('link-152', 'HTTP_PARTIAL_CONTENT', 'link-139');">HTTP_PARTIAL_CONTENT</a></tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+backend.server.importlib.importLib.Import.status" class="py-name" href="#" onclick="return doclink('link-150', 'status', 'link-117');">status</a></tt> <tt class="py-op">==</tt> <tt id="link-151" class="py-name"><a title="backend.common.apache" class="py-name" href="#" onclick="return doclink('link-151', 'apache', 'link-29');">apache</a></tt><tt class="py-op">.</tt><tt id="link-152" class="py-name"><a title="backend.common.apache.HTTP_PARTIAL_CONTENT" class="py-name" href="#" onclick="return doclink('link-152', 'HTTP_PARTIAL_CONTENT', 'link-139');">HTTP_PARTIAL_CONTENT</a></tt><tt class="py-op">:</tt> </tt>
 <a name="L255"></a><tt class="py-lineno">255</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt id="link-153" class="py-name"><a title="backend.common.apache" class="py-name" href="#" onclick="return doclink('link-153', 'apache', 'link-29');">apache</a></tt><tt class="py-op">.</tt><tt id="link-154" class="py-name"><a title="backend.common.apache.HTTP_PARTIAL_CONTENT" class="py-name" href="#" onclick="return doclink('link-154', 'HTTP_PARTIAL_CONTENT', 'link-139');">HTTP_PARTIAL_CONTENT</a></tt> </tt>
-<a name="L256"></a><tt class="py-lineno">256</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
-<a name="L257"></a><tt class="py-lineno">257</tt>  <tt class="py-line">            <tt class="py-comment"># apache.HTTP_OK becomes apache.OK.</tt> </tt>
-<a name="L258"></a><tt class="py-lineno">258</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt id="link-155" class="py-name"><a title="backend.common.apache" class="py-name" href="#" onclick="return doclink('link-155', 'apache', 'link-29');">apache</a></tt><tt class="py-op">.</tt><tt id="link-156" class="py-name"><a title="backend.common.apache.OK
+<a name="L256"></a><tt class="py-lineno">256</tt>  <tt class="py-line"> </tt>
+<a name="L257"></a><tt class="py-lineno">257</tt>  <tt class="py-line">        <tt class="py-comment"># apache.HTTP_OK becomes apache.OK.</tt> </tt>
+<a name="L258"></a><tt class="py-lineno">258</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt id="link-155" class="py-name"><a title="backend.common.apache" class="py-name" href="#" onclick="return doclink('link-155', 'apache', 'link-29');">apache</a></tt><tt class="py-op">.</tt><tt id="link-156" class="py-name"><a title="backend.common.apache.OK
 backend.satellite_tools.satComputePkgHeaders.OK
 up2date_client.rhnreg_constants.OK" class="py-name" href="#" onclick="return doclink('link-156', 'OK', 'link-66');">OK</a></tt> </tt>
 </div><a name="L259"></a><tt class="py-lineno">259</tt>  <tt class="py-line"> </tt>
@@ -756,6 +753,7 @@ up2date_client.up2dateLog.Log.log_debug" class="py-name" href="#" onclick="retur
 backend.satellite_tools.xmlSource.BaseDispatchHandler.clear
 proxy.responseContext.ResponseContext.clear
 rhn.UserDictCase.UserDictCase.clear
+rhn.UserDictCase.UserDictCase.clear
 src.jabber_lib.Roster.clear" class="py-name" href="#" onclick="return doclink('link-175', 'clear', 'link-60');">clear</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
 <a name="L295"></a><tt class="py-lineno">295</tt>  <tt class="py-line"> </tt>
 <a name="L296"></a><tt class="py-lineno">296</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt id="link-176" class="py-name"><a title="backend._apache.status
@@ -776,6 +774,7 @@ backend.server.rhnSQL.sql_table.Table.keys
 backend.wsgi.wsgiRequest.WsgiMPtable.keys
 config_common.local_config.keys
 config_common.local_config.rhncfgConfigParser.keys
+rhn.UserDictCase.UserDictCase.keys
 rhn.UserDictCase.UserDictCase.keys
 rhnpush.rhnpush_config.rhnpushConfigParser.keys
 src.osad_config.ClientConfigParser.keys
@@ -844,8 +843,9 @@ up2date_client.up2dateLog.Log.log_debug" class="py-name" href="#" onclick="retur
 <a name="L339"></a><tt class="py-lineno">339</tt>  <tt class="py-line"> </tt>
 <a name="L340"></a><tt class="py-lineno">340</tt>  <tt class="py-line">        <tt class="py-comment"># Put the headers into the output connection object</tt> </tt>
 <a name="L341"></a><tt class="py-lineno">341</tt>  <tt class="py-line">        <tt class="py-name">http_connection</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-190" class="py-name"><a title="proxy.responseContext" class="py-name" href="#" onclick="return doclink('link-190', 'responseContext', 'link-34');">responseContext</a></tt><tt class="py-op">.</tt><tt id="link-191" class="py-name"><a title="proxy.responseContext.ResponseContext.getConnection" class="py-name" href="#" onclick="return doclink('link-191', 'getConnection', 'link-80');">getConnection</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
-<a name="L342"></a><tt class="py-lineno">342</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-op">(</tt><tt class="py-name">k</tt><tt class="py-op">,</tt> <tt class="py-name">vals</tt><tt class="py-op">)</tt> <tt class="py-keyword">in</tt> <tt class="py-name">hdrs</tt><tt class="py-op">.</tt><tt id="link-192" class="py-name" targets="Method backend.common.rhnConfig.RHNOptions.items()=backend.common.rhnConfig.RHNOptions-class.html#items,Method backend.wsgi.wsgiRequest.WsgiMPtable.items()=backend.wsgi.wsgiRequest.WsgiMPtable-class.html#items,Method rhn.UserDictCase.UserDictCase.items()=rhn.UserDictCase.UserDictCase-class.html#items,Method up2date_client.config.Config.items()=up2date_client.config.Config-class.html#items,Method up2date_client.rhnChannel.rhnChannel.items()=up2date_client.rhnChannel.rhnChannel-class.html#items"><a title="backend.common.rhnConfig.RHNOptions.items
+<a name="L342"></a><tt class="py-lineno">342</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-op">(</tt><tt class="py-name">k</tt><tt class="py-op">,</tt> <tt class="py-name">vals</tt><tt class="py-op">)</tt> <tt class="py-keyword">in</tt> <tt class="py-name">hdrs</tt><tt class="py-op">.</tt><tt id="link-192" class="py-name" targets="Method backend.common.rhnConfig.RHNOptions.items()=backend.common.rhnConfig.RHNOptions-class.html#items,Method backend.wsgi.wsgiRequest.WsgiMPtable.items()=backend.wsgi.wsgiRequest.WsgiMPtable-class.html#items,Method rhn.UserDictCase.UserDictCase.items()=rhn.UserDictCase.UserDictCase-class.html#items,Method rhn.UserDictCase.UserDictCase.items()=rhn.UserDictCase.UserDictCase-class.html#items,Method up2date_client.config.Config.items()=up2date_client.config.Config-class.html#items,Method up2date_client.rhnChannel.rhnChannel.items()=up2date_client.rhnChannel.rhnChannel-class.html#items"><a title="backend.common.rhnConfig.RHNOptions.items
 backend.wsgi.wsgiRequest.WsgiMPtable.items
+rhn.UserDictCase.UserDictCase.items
 rhn.UserDictCase.UserDictCase.items
 up2date_client.config.Config.items
 up2date_client.rhnChannel.rhnChannel.items" class="py-name" href="#" onclick="return doclink('link-192', 'items', 'link-192');">items</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
@@ -954,13 +954,14 @@ backend.server.rhnSQL.sql_table.Table.has_key
 backend.wsgi.wsgiRequest.WsgiMPtable.has_key
 proxy.rhnProxyAuth.AuthLocalBackend.has_key
 rhn.UserDictCase.UserDictCase.has_key
+rhn.UserDictCase.UserDictCase.has_key
 rhnkickstart.lilo.UserDictCase.has_key
 src.osad_config.ClientConfigParser.has_key
 up2date_client.config.Config.has_key
 up2date_client.config.ConfigFile.has_key" class="py-name" href="#" onclick="return doclink('link-213', 'has_key', 'link-98');">has_key</a></tt><tt class="py-op">(</tt><tt id="link-214" class="py-name"><a title="proxy.rhnConstants" class="py-name" href="#" onclick="return doclink('link-214', 'rhnConstants', 'link-33');">rhnConstants</a></tt><tt class="py-op">.</tt><tt id="link-215" class="py-name" targets="Variable proxy.rhnConstants.HEADER_EFFECTIVE_URI=proxy.rhnConstants-module.html#HEADER_EFFECTIVE_URI"><a title="proxy.rhnConstants.HEADER_EFFECTIVE_URI" class="py-name" href="#" onclick="return doclink('link-215', 'HEADER_EFFECTIVE_URI', 'link-215');">HEADER_EFFECTIVE_URI</a></tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
 <a name="L398"></a><tt class="py-lineno">398</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">req</tt><tt class="py-op">.</tt><tt class="py-name">headers_in</tt><tt class="py-op">[</tt><tt id="link-216" class="py-name"><a title="proxy.rhnConstants" class="py-name" href="#" onclick="return doclink('link-216', 'rhnConstants', 'link-33');">rhnConstants</a></tt><tt class="py-op">.</tt><tt id="link-217" class="py-name"><a title="proxy.rhnConstants.HEADER_EFFECTIVE_URI" class="py-name" href="#" onclick="return doclink('link-217', 'HEADER_EFFECTIVE_URI', 'link-215');">HEADER_EFFECTIVE_URI</a></tt><tt class="py-op">]</tt> </tt>
-<a name="L399"></a><tt class="py-lineno">399</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
-<a name="L400"></a><tt class="py-lineno">400</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">req</tt><tt class="py-op">.</tt><tt class="py-name">uri</tt> </tt>
+<a name="L399"></a><tt class="py-lineno">399</tt>  <tt class="py-line"> </tt>
+<a name="L400"></a><tt class="py-lineno">400</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">req</tt><tt class="py-op">.</tt><tt class="py-name">uri</tt> </tt>
 </div><a name="L401"></a><tt class="py-lineno">401</tt>  <tt class="py-line"> </tt>
 <a name="L402"></a><tt class="py-lineno">402</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">staticmethod</tt> </tt>
 <a name="SharedHandler._determineHTTPBodySize"></a><div id="SharedHandler._determineHTTPBodySize-def"><a name="L403"></a><tt class="py-lineno">403</tt> <a class="py-toggle" href="#" id="SharedHandler._determineHTTPBodySize-toggle" onclick="return toggle('SharedHandler._determineHTTPBodySize');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="proxy.rhnShared.SharedHandler-class.html#_determineHTTPBodySize">_determineHTTPBodySize</a><tt class="py-op">(</tt><tt class="py-param">headers</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
@@ -981,6 +982,7 @@ backend.satellite_tools.xmlDiskSource.ShortPackageDiskSource.has_key
 backend.server.rhnSQL.sql_table.Table.has_key
 backend.wsgi.wsgiRequest.WsgiMPtable.has_key
 proxy.rhnProxyAuth.AuthLocalBackend.has_key
+rhn.UserDictCase.UserDictCase.has_key
 rhn.UserDictCase.UserDictCase.has_key
 rhnkickstart.lilo.UserDictCase.has_key
 src.osad_config.ClientConfigParser.has_key
@@ -1013,6 +1015,7 @@ backend.server.rhnSQL.sql_table.Table.keys
 backend.wsgi.wsgiRequest.WsgiMPtable.keys
 config_common.local_config.keys
 config_common.local_config.rhncfgConfigParser.keys
+rhn.UserDictCase.UserDictCase.keys
 rhn.UserDictCase.UserDictCase.keys
 rhnpush.rhnpush_config.rhnpushConfigParser.keys
 src.osad_config.ClientConfigParser.keys
@@ -1144,7 +1147,7 @@ expandto(location.href);
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Fri Nov 25 11:30:43 2016
+    Generated by Epydoc 3.0.1 on Thu Aug 31 17:16:47 2017
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

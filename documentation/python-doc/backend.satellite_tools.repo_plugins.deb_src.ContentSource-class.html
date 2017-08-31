@@ -57,18 +57,17 @@
 <!-- ==================== CLASS DESCRIPTION ==================== -->
 <h1 class="epydoc">Class ContentSource</h1><p class="nomargin-top"><span class="codelink"><a href="backend.satellite_tools.repo_plugins.deb_src-pysrc.html#ContentSource">source&nbsp;code</a></span></p>
 <center>
-<center>  <map id="uml_class_diagram_for_backend__133" name="uml_class_diagram_for_backend__133">
-<area shape="rect" id="node1_8" href="backend.satellite_tools.repo_plugins.deb_src.ContentSource-class.html#__init__" title="x.__init__(...) initializes x; see help(type(x)) for signature" alt="" coords="17,38,329,58"/>
-<area shape="rect" id="node1_9" href="backend.satellite_tools.repo_plugins.deb_src.ContentSource-class.html#list_packages" title="list packages" alt="" coords="17,58,329,78"/>
-<area shape="rect" id="node1_10" href="backend.satellite_tools.repo_plugins.deb_src.ContentSource-class.html#get_package" title="get package" alt="" coords="17,78,329,98"/>
-<area shape="rect" id="node1_11" href="backend.satellite_tools.repo_plugins.deb_src.ContentSource-class.html#get_updates" title="backend.satellite_tools.repo_plugins.deb_src.ContentSource.get_updates" alt="" coords="17,98,329,118"/>
-<area shape="rect" id="node1_12" href="backend.satellite_tools.repo_plugins.deb_src.ContentSource-class.html#get_groups" title="backend.satellite_tools.repo_plugins.deb_src.ContentSource.get_groups" alt="" coords="17,118,329,138"/>
-<area shape="rect" id="node1_13" href="backend.satellite_tools.repo_plugins.deb_src.ContentSource-class.html#set_ssl_options" title="backend.satellite_tools.repo_plugins.deb_src.ContentSource.set_ssl_options" alt="" coords="17,138,329,158"/>
-<area shape="rect" id="node1_14" href="backend.satellite_tools.repo_plugins.deb_src.ContentSource-class.html#clear_ssl_cache" title="backend.satellite_tools.repo_plugins.deb_src.ContentSource.clear_ssl_cache" alt="" coords="17,158,329,178"/>
-<area shape="rect" id="node1_15" href="backend.satellite_tools.repo_plugins.deb_src.ContentSource-class.html#get_file" title="backend.satellite_tools.repo_plugins.deb_src.ContentSource.get_file" alt="" coords="17,178,329,198"/>
-<area shape="rect" id="node1" href="backend.satellite_tools.repo_plugins.deb_src.ContentSource-class.html" title="backend.satellite_tools.repo_plugins.deb_src.ContentSource" alt="" coords="5,5,341,204"/>
+<center>  <map id="uml_class_diagram_for_backend__144" name="uml_class_diagram_for_backend__144">
+<area shape="rect" id="node1_7" href="backend.satellite_tools.repo_plugins.deb_src.ContentSource-class.html#__init__" title="x.__init__(...) initializes x; see help(type(x)) for signature" alt="" coords="17,37,804,57"/>
+<area shape="rect" id="node1_8" href="backend.satellite_tools.repo_plugins.deb_src.ContentSource-class.html#list_packages" title="list packages" alt="" coords="17,57,804,77"/>
+<area shape="rect" id="node1_9" href="backend.satellite_tools.repo_plugins.deb_src.ContentSource-class.html#clear_cache" title="backend.satellite_tools.repo_plugins.deb_src.ContentSource.clear_cache" alt="" coords="17,77,804,97"/>
+<area shape="rect" id="node1_10" href="backend.satellite_tools.repo_plugins.deb_src.ContentSource-class.html#get_updates" title="backend.satellite_tools.repo_plugins.deb_src.ContentSource.get_updates" alt="" coords="17,97,804,117"/>
+<area shape="rect" id="node1_11" href="backend.satellite_tools.repo_plugins.deb_src.ContentSource-class.html#get_groups" title="backend.satellite_tools.repo_plugins.deb_src.ContentSource.get_groups" alt="" coords="17,117,804,137"/>
+<area shape="rect" id="node1_12" href="backend.satellite_tools.repo_plugins.deb_src.ContentSource-class.html#set_download_parameters" title="backend.satellite_tools.repo_plugins.deb_src.ContentSource.set_download_parameters" alt="" coords="17,137,804,157"/>
+<area shape="rect" id="node1_13" href="backend.satellite_tools.repo_plugins.deb_src.ContentSource-class.html#get_file" title="backend.satellite_tools.repo_plugins.deb_src.ContentSource.get_file" alt="" coords="17,157,804,177"/>
+<area shape="rect" id="node1" href="backend.satellite_tools.repo_plugins.deb_src.ContentSource-class.html" title="backend.satellite_tools.repo_plugins.deb_src.ContentSource" alt="" coords="5,5,816,184"/>
 </map>
-  <img src="uml_class_diagram_for_backend__133.png" alt='' usemap="#uml_class_diagram_for_backend__133" ismap="ismap" class="graph-without-title" />
+  <img src="uml_class_diagram_for_backend__144.png" alt='' usemap="#uml_class_diagram_for_backend__144" ismap="ismap" class="graph-without-title" />
 </center>
 </center>
 <hr />
@@ -97,7 +96,12 @@
         <tr>
           <td><span class="summary-sig"><a href="backend.satellite_tools.repo_plugins.deb_src.ContentSource-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
         <span class="summary-sig-arg">url</span>,
-        <span class="summary-sig-arg">name</span>)</span><br />
+        <span class="summary-sig-arg">name</span>,
+        <span class="summary-sig-arg">org</span>=<span class="summary-sig-default">1</span>,
+        <span class="summary-sig-arg">channel_label</span>=<span class="summary-sig-default">&quot;&quot;</span>,
+        <span class="summary-sig-arg">ca_cert_file</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">client_cert_file</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">client_key_file</span>=<span class="summary-sig-default">None</span>)</span><br />
       x.__init__(...) initializes x; see help(type(x)) for signature</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="backend.satellite_tools.repo_plugins.deb_src-pysrc.html#ContentSource.__init__">source&nbsp;code</a></span>
@@ -133,12 +137,10 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a name="get_package"></a><span class="summary-sig-name">get_package</span>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">package</span>,
-        <span class="summary-sig-arg">metadata_only</span>=<span class="summary-sig-default">False</span>)</span><br />
-      get package</td>
+          <td><span class="summary-sig"><a name="clear_cache"></a><span class="summary-sig-name">clear_cache</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">directory</span>=<span class="summary-sig-default">None</span>)</span></td>
           <td align="right" valign="top">
-            <span class="codelink"><a href="backend.satellite_tools.repo_plugins.deb_src-pysrc.html#ContentSource.get_package">source&nbsp;code</a></span>
+            <span class="codelink"><a href="backend.satellite_tools.repo_plugins.deb_src-pysrc.html#ContentSource.clear_cache">source&nbsp;code</a></span>
             
           </td>
         </tr>
@@ -152,28 +154,15 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a name="set_ssl_options"></a><span class="summary-sig-name">set_ssl_options</span>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">ca_cert</span>,
-        <span class="summary-sig-arg">client_cert</span>,
-        <span class="summary-sig-arg">client_key</span>)</span></td>
+          <td><span class="summary-sig"><a name="set_download_parameters"></a><span class="summary-sig-name">set_download_parameters</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">params</span>,
+        <span class="summary-sig-arg">relative_path</span>,
+        <span class="summary-sig-arg">target_file</span>,
+        <span class="summary-sig-arg">checksum_type</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">checksum_value</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">bytes_range</span>=<span class="summary-sig-default">None</span>)</span></td>
           <td align="right" valign="top">
-            <span class="codelink"><a href="backend.satellite_tools.repo_plugins.deb_src-pysrc.html#ContentSource.set_ssl_options">source&nbsp;code</a></span>
-            
-          </td>
-        </tr>
-      </table>
-      
-    </td>
-  </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-      <table width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td><span class="summary-sig"><a name="clear_ssl_cache"></a><span class="summary-sig-name">clear_ssl_cache</span>(<span class="summary-sig-arg">self</span>)</span></td>
-          <td align="right" valign="top">
-            <span class="codelink"><a href="backend.satellite_tools.repo_plugins.deb_src-pysrc.html#ContentSource.clear_ssl_cache">source&nbsp;code</a></span>
+            <span class="codelink"><a href="backend.satellite_tools.repo_plugins.deb_src-pysrc.html#ContentSource.set_download_parameters">source&nbsp;code</a></span>
             
           </td>
         </tr>
@@ -241,9 +230,13 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a name="_clean_cache"></a><span class="summary-sig-name">_clean_cache</span>(<span class="summary-sig-arg">directory</span>)</span></td>
+          <td><span class="summary-sig"><a href="backend.satellite_tools.repo_plugins.deb_src.ContentSource-class.html#_filter_packages" class="summary-sig-name" onclick="show_private();">_filter_packages</a>(<span class="summary-sig-arg">packages</span>,
+        <span class="summary-sig-arg">filters</span>)</span><br />
+      implement include / exclude logic
+filters are: [ ('+', includelist1), ('-', excludelist1),
+               ('+', includelist2), ...</td>
           <td align="right" valign="top">
-            <span class="codelink"><a href="backend.satellite_tools.repo_plugins.deb_src-pysrc.html#ContentSource._clean_cache">source&nbsp;code</a></span>
+            <span class="codelink"><a href="backend.satellite_tools.repo_plugins.deb_src-pysrc.html#ContentSource._filter_packages">source&nbsp;code</a></span>
             
           </td>
         </tr>
@@ -353,7 +346,12 @@
   <tr valign="top"><td>
   <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
         <span class="sig-arg">url</span>,
-        <span class="sig-arg">name</span>)</span>
+        <span class="sig-arg">name</span>,
+        <span class="sig-arg">org</span>=<span class="sig-default">1</span>,
+        <span class="sig-arg">channel_label</span>=<span class="sig-default">&quot;&quot;</span>,
+        <span class="sig-arg">ca_cert_file</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">client_cert_file</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">client_key_file</span>=<span class="sig-default">None</span>)</span>
     <br /><em class="fname">(Constructor)</em>
   </h3>
   </td><td align="right" valign="top"
@@ -367,6 +365,32 @@
         object.__init__
         <dd><em class="note">(inherited documentation)</em></dd>
     </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_filter_packages"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_filter_packages</span>(<span class="sig-arg">packages</span>,
+        <span class="sig-arg">filters</span>)</span>
+    <br /><em class="fname">Static Method</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="backend.satellite_tools.repo_plugins.deb_src-pysrc.html#ContentSource._filter_packages">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+implement include / exclude logic
+filters are: [ ('+', includelist1), ('-', excludelist1),
+               ('+', includelist2), ... ]
+
+</pre>
+  <dl class="fields">
   </dl>
 </td></tr></table>
 </div>
@@ -394,7 +418,7 @@
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Fri Nov 25 11:30:14 2016
+    Generated by Epydoc 3.0.1 on Thu Aug 31 17:16:17 2017
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"
