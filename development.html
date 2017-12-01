@@ -5,56 +5,18 @@ title: Development
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="{{ site.description }}">
-    <meta name="author" content="{{ site.email }}">
-
-    <title>{{ site.title }} - {{page.title }}</title>
-
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="img/spacewalk_favicon.ico"/>
-
-    <!-- Bootstrap .css -->
-    <link href="vendor/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Fonts -->
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-
-    <!-- Plugin .css -->
-    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
-
-    <!-- Theme .css -->
+    {% include head.html %}
     <link href="css/style.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
 <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand page-scroll" href="#page-top"><img src="./img/spacewalk-logo-mini.png"
-                                                                      alt="Spacewalk logo"/></a>
-            <button type="button" class="navbar-toggle collapsed btn-navbar" data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span><i class="fa fa-bars"></i>
-            </button>
-        </div>
-
-        <!-- NAVBAR -->
-        {% include nav.html %}
-    </div>
+    {% include nav.html %}
 </nav>
 
 <!-- HEADER -->
 <header>
-    <div class="header-content">
-        <div class="header-content-inner">
-            <img src="./img/spacewalk-logo.png" alt="Spacewalk logo"/>
-        </div>
-    </div>
+    {% include header.html %}
 </header>
 
 <!-- MAILING LISTS / IRC-->
@@ -94,7 +56,7 @@ title: Development
             </div>
         </div>
     </div>
-    <a href="#" class="scrollToTop"><span class="top"><i class="glyphicon glyphicon-upload"></i></span></a>
+        {% include scroll_to_top.html %}
 </section>
 
 <footer>

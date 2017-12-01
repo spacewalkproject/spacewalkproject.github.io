@@ -4,46 +4,21 @@ title: Introduction
 <!DOCTYPE html>
 <html lang="en">
 
+<!-- HEAD -->
 <head>
-    {% include head.html %}
+    {% include frontpage_head.html %}
 </head>
 
 <body id="page-top">
-<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand page-scroll" href="#page-top"><img src="./img/spacewalk-logo-mini.png"
-                                                                      alt="Spacewalk logo"/></a>
-            <button type="button" class="navbar-toggle collapsed btn-navbar" data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span><i class="fa fa-bars"></i>
-            </button>
-        </div>
 
-        <!-- NAVBAR -->
-        {% include nav.html %}
-    </div>
+<!-- NAVBAR -->
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+    {% include nav.html %}
 </nav>
 
 <!-- HEADER -->
 <header>
-    <div class="header-content">
-        <div class="header-content-inner">
-            <img src="./img/spacewalk.png" class="logo" alt="Spacewalk"/>
-            <p>
-                Free & Open Source Systems Management.
-            </p>
-            <div class="blink">
-                <a class="page-scroll" href="#about"><span></span></a>
-            </div>
-        </div>
-        <div class="header-content-inner-resp">
-            <img src="./img/spacewalk-logo.png" alt="Spacewalk logo"/>
-            <p>
-                Free & Open Source Systems Management.
-            </p>
-        </div>
-    </div>
+    {% include frontpage_header.html %}
 </header>
 
 <!-- ABOUT -->
@@ -159,13 +134,13 @@ title: Introduction
     </div>
 
 </section>
-<a href="#" class="scrollToTop"><span class="top"><i class="glyphicon glyphicon-upload"></i></span></a>
+    {% include scroll_to_top.html %}
 <footer>
     {% include footer.html %}
 </footer>
 
 <!-- jQuery -->
-    {% include jsresource.html %}
+{% include jsresource.html %}
 </body>
 
 </html>

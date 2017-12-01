@@ -11,28 +11,12 @@ title: Related links
 <body id="page-top">
 
 <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand page-scroll" href="#page-top"><img src="./img/spacewalk-logo-mini.png"
-                                                                      alt="Spacewalk logo"/></a>
-            <button type="button" class="navbar-toggle collapsed btn-navbar" data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span><i class="fa fa-bars"></i>
-            </button>
-        </div>
-
-        <!-- NAVBAR -->
-        {% include nav.html %}
-    </div>
+    {% include nav.html %}
 </nav>
 
 <!-- HEADER -->
 <header>
-    <div class="header-content">
-        <div class="header-content-inner">
-            <img src="./img/spacewalk-logo.png" alt="Spacewalk logo"/>
-        </div>
-    </div>
+    {% include header.html %}
 </header>
 
 <!-- MAILING LISTS / IRC-->
@@ -89,7 +73,7 @@ title: Related links
             </div>
         </div>
     </div>
-    <a href="#" class="scrollToTop"><span class="top"><i class="glyphicon glyphicon-upload"></i></span></a>
+        {% include scroll_to_top.html %}
 </section>
 
 <footer>
