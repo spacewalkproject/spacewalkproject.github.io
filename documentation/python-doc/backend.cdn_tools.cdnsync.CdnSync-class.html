@@ -57,16 +57,17 @@
 <h1 class="epydoc">Class CdnSync</h1><p class="nomargin-top"><span class="codelink"><a href="backend.cdn_tools.cdnsync-pysrc.html#CdnSync">source&nbsp;code</a></span></p>
 <center>
 <center>  <map id="uml_class_diagram_for_backend__3" name="uml_class_diagram_for_backend__3">
-<area shape="rect" id="node1_9" href="backend.cdn_tools.cdnsync.CdnSync-class.html#log_path" title="backend.cdn_tools.cdnsync.CdnSync.log_path" alt="" coords="17,29,1396,49"/>
-<area shape="rect" id="node1_10" href="backend.cdn_tools.cdnsync.CdnSync-class.html#__init__" title="x.__init__(...) initializes x; see help(type(x)) for signature" alt="" coords="17,52,1396,72"/>
-<area shape="rect" id="node1_11" href="backend.cdn_tools.cdnsync.CdnSync-class.html#sync" title="backend.cdn_tools.cdnsync.CdnSync.sync" alt="" coords="17,72,1396,92"/>
-<area shape="rect" id="node1_12" href="backend.cdn_tools.cdnsync.CdnSync-class.html#setup_repos_and_sync" title="backend.cdn_tools.cdnsync.CdnSync.setup_repos_and_sync" alt="" coords="17,92,1396,112"/>
-<area shape="rect" id="node1_13" href="backend.cdn_tools.cdnsync.CdnSync-class.html#count_packages" title="backend.cdn_tools.cdnsync.CdnSync.count_packages" alt="" coords="17,112,1396,132"/>
-<area shape="rect" id="node1_14" href="backend.cdn_tools.cdnsync.CdnSync-class.html#print_channel_tree" title="backend.cdn_tools.cdnsync.CdnSync.print_channel_tree" alt="" coords="17,132,1396,152"/>
-<area shape="rect" id="node1_15" href="backend.cdn_tools.cdnsync.CdnSync-class.html#clear_cache" title="backend.cdn_tools.cdnsync.CdnSync.clear_cache" alt="" coords="17,152,1396,172"/>
-<area shape="rect" id="node1_16" href="backend.cdn_tools.cdnsync.CdnSync-class.html#print_cdn_certificates_info" title="backend.cdn_tools.cdnsync.CdnSync.print_cdn_certificates_info" alt="" coords="17,172,1396,192"/>
-<area shape="rect" id="node1_17" href="backend.cdn_tools.cdnsync.CdnSync-class.html#send_email" title="backend.cdn_tools.cdnsync.CdnSync.send_email" alt="" coords="17,192,1396,212"/>
-<area shape="rect" id="node1" href="backend.cdn_tools.cdnsync.CdnSync-class.html" title="Main class of CDN sync run." alt="" coords="5,5,1408,219"/>
+<area shape="rect" id="node1_10" href="backend.cdn_tools.cdnsync.CdnSync-class.html#log_path" title="backend.cdn_tools.cdnsync.CdnSync.log_path" alt="" coords="17,30,1396,50"/>
+<area shape="rect" id="node1_11" href="backend.cdn_tools.cdnsync.CdnSync-class.html#__init__" title="x.__init__(...) initializes x; see help(type(x)) for signature" alt="" coords="17,53,1396,73"/>
+<area shape="rect" id="node1_12" href="backend.cdn_tools.cdnsync.CdnSync-class.html#sync" title="backend.cdn_tools.cdnsync.CdnSync.sync" alt="" coords="17,73,1396,93"/>
+<area shape="rect" id="node1_13" href="backend.cdn_tools.cdnsync.CdnSync-class.html#setup_repos_and_sync" title="backend.cdn_tools.cdnsync.CdnSync.setup_repos_and_sync" alt="" coords="17,93,1396,113"/>
+<area shape="rect" id="node1_14" href="backend.cdn_tools.cdnsync.CdnSync-class.html#count_packages" title="backend.cdn_tools.cdnsync.CdnSync.count_packages" alt="" coords="17,113,1396,133"/>
+<area shape="rect" id="node1_15" href="backend.cdn_tools.cdnsync.CdnSync-class.html#print_channel_tree" title="backend.cdn_tools.cdnsync.CdnSync.print_channel_tree" alt="" coords="17,133,1396,153"/>
+<area shape="rect" id="node1_16" href="backend.cdn_tools.cdnsync.CdnSync-class.html#clear_cache" title="backend.cdn_tools.cdnsync.CdnSync.clear_cache" alt="" coords="17,153,1396,173"/>
+<area shape="rect" id="node1_17" href="backend.cdn_tools.cdnsync.CdnSync-class.html#print_cdn_certificates_info" title="backend.cdn_tools.cdnsync.CdnSync.print_cdn_certificates_info" alt="" coords="17,173,1396,193"/>
+<area shape="rect" id="node1_18" href="backend.cdn_tools.cdnsync.CdnSync-class.html#print_eol_channel_list" title="backend.cdn_tools.cdnsync.CdnSync.print_eol_channel_list" alt="" coords="17,193,1396,213"/>
+<area shape="rect" id="node1_19" href="backend.cdn_tools.cdnsync.CdnSync-class.html#send_email" title="backend.cdn_tools.cdnsync.CdnSync.send_email" alt="" coords="17,213,1396,233"/>
+<area shape="rect" id="node1" href="backend.cdn_tools.cdnsync.CdnSync-class.html" title="Main class of CDN sync run." alt="" coords="5,5,1408,239"/>
 </map>
   <img src="uml_class_diagram_for_backend__3.png" alt='' usemap="#uml_class_diagram_for_backend__3" ismap="ismap" class="graph-without-title" />
 </center>
@@ -325,6 +326,39 @@
       
     </td>
   </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_is_channel_eol"></a><span class="summary-sig-name">_is_channel_eol</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">channel</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="backend.cdn_tools.cdnsync-pysrc.html#CdnSync._is_channel_eol">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_print_unmapped_channels"></a><span class="summary-sig-name">_print_unmapped_channels</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="backend.cdn_tools.cdnsync-pysrc.html#CdnSync._print_unmapped_channels">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
@@ -368,6 +402,22 @@
         <span class="summary-sig-arg">repos</span>=<span class="summary-sig-default">False</span>)</span></td>
           <td align="right" valign="top">
             <span class="codelink"><a href="backend.cdn_tools.cdnsync-pysrc.html#CdnSync.print_cdn_certificates_info">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="print_eol_channel_list"></a><span class="summary-sig-name">print_eol_channel_list</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="backend.cdn_tools.cdnsync-pysrc.html#CdnSync.print_eol_channel_list">source&nbsp;code</a></span>
             
           </td>
         </tr>
@@ -588,7 +638,7 @@
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Thu Aug 31 17:16:12 2017
+    Generated by Epydoc 3.0.1 on Mon Apr  9 17:17:43 2018
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

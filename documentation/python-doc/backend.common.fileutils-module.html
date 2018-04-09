@@ -149,7 +149,7 @@
         <tr>
           <td><span class="summary-sig"><a href="backend.common.fileutils-module.html#rotateFile" class="summary-sig-name">rotateFile</a>(<span class="summary-sig-arg">filepath</span>,
         <span class="summary-sig-arg">depth</span>=<span class="summary-sig-default">5</span>,
-        <span class="summary-sig-arg">suffix</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">.</code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">suffix</span>=<span class="summary-sig-default">'.'</span>,
         <span class="summary-sig-arg">verbosity</span>=<span class="summary-sig-default">0</span>)</span><br />
       backup/rotate a file
 depth (-1==no limit) refers to num.</td>
@@ -189,7 +189,7 @@ depth (-1==no limit) refers to num.</td>
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
           <td><span class="summary-sig"><a name="makedirs"></a><span class="summary-sig-name">makedirs</span>(<span class="summary-sig-arg">path</span>,
-        <span class="summary-sig-arg">mode</span>=<span class="summary-sig-default">493</span>,
+        <span class="summary-sig-arg">mode</span>=<span class="summary-sig-default">int('0755',8)</span>,
         <span class="summary-sig-arg">user</span>=<span class="summary-sig-default">None</span>,
         <span class="summary-sig-arg">group</span>=<span class="summary-sig-default">None</span>)</span><br />
       makedirs function that also changes the owners</td>
@@ -211,7 +211,7 @@ depth (-1==no limit) refers to num.</td>
           <td><span class="summary-sig"><a href="backend.common.fileutils-module.html#createPath" class="summary-sig-name">createPath</a>(<span class="summary-sig-arg">path</span>,
         <span class="summary-sig-arg">user</span>=<span class="summary-sig-default">None</span>,
         <span class="summary-sig-arg">group</span>=<span class="summary-sig-default">None</span>,
-        <span class="summary-sig-arg">chmod</span>=<span class="summary-sig-default">493</span>)</span><br />
+        <span class="summary-sig-arg">chmod</span>=<span class="summary-sig-default">int('0755',8)</span>)</span><br />
       advanced makedirs</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="backend.common.fileutils-pysrc.html#createPath">source&nbsp;code</a></span>
@@ -230,8 +230,8 @@ depth (-1==no limit) refers to num.</td>
         <tr>
           <td><span class="summary-sig"><a name="setPermsPath"></a><span class="summary-sig-name">setPermsPath</span>(<span class="summary-sig-arg">path</span>,
         <span class="summary-sig-arg">user</span>=<span class="summary-sig-default">None</span>,
-        <span class="summary-sig-arg">group</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">root</code><code class="variable-quote">'</code></span>,
-        <span class="summary-sig-arg">chmod</span>=<span class="summary-sig-default">488</span>)</span><br />
+        <span class="summary-sig-arg">group</span>=<span class="summary-sig-default">'root'</span>,
+        <span class="summary-sig-arg">chmod</span>=<span class="summary-sig-default">int('0750',8)</span>)</span><br />
       chown user.group and set permissions to chmod</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="backend.common.fileutils-pysrc.html#setPermsPath">source&nbsp;code</a></span>
@@ -321,7 +321,7 @@ depth (-1==no limit) refers to num.</td>
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
           <td><span class="summary-sig"><a name="decompress_open"></a><span class="summary-sig-name">decompress_open</span>(<span class="summary-sig-arg">filename</span>,
-        <span class="summary-sig-arg">mode</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">r</code><code class="variable-quote">'</code></span>)</span></td>
+        <span class="summary-sig-arg">mode</span>=<span class="summary-sig-default">'r'</span>)</span></td>
           <td align="right" valign="top">
             <span class="codelink"><a href="backend.common.fileutils-pysrc.html#decompress_open">source&nbsp;code</a></span>
             
@@ -353,18 +353,8 @@ depth (-1==no limit) refers to num.</td>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.common.fileutils-module.html#FILETYPE2CHAR" class="summary-name">FILETYPE2CHAR</a> = <code title="{'blockdev': 'b',
- 'chardev': 'c',
- 'directory': 'd',
- 'file': '-',
- 'symlink': 'l'}"><code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">blockdev</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">b</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">chardev</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">c</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">directory</code><code class="variable-quote">'</code><code class="variable-op">:</code><code class="variable-ellipsis">...</code></code>
-    </td>
-  </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-        <a name="__package__"></a><span class="summary-name">__package__</span> = <code title="'backend.common'"><code class="variable-quote">'</code><code class="variable-string">backend.common</code><code class="variable-quote">'</code></code>
+        <a href="backend.common.fileutils-module.html#FILETYPE2CHAR" class="summary-name">FILETYPE2CHAR</a> = <code title="{'file': '-', 'directory': 'd', 'symlink': 'l', 'chardev': 'c', 'block\
+dev': 'b',}">{'file': '-', 'directory': 'd', 'symlink': 'l'<code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 </table>
@@ -448,7 +438,7 @@ NOTE: python 2.2 fixes a number of bugs with this and eliminates
   <tr valign="top"><td>
   <h3 class="epydoc"><span class="sig"><span class="sig-name">rotateFile</span>(<span class="sig-arg">filepath</span>,
         <span class="sig-arg">depth</span>=<span class="sig-default">5</span>,
-        <span class="sig-arg">suffix</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">.</code><code class="variable-quote">'</code></span>,
+        <span class="sig-arg">suffix</span>=<span class="sig-default">'.'</span>,
         <span class="sig-arg">verbosity</span>=<span class="sig-default">0</span>)</span>
   </h3>
   </td><td align="right" valign="top"
@@ -516,7 +506,7 @@ Behavior:
   <h3 class="epydoc"><span class="sig"><span class="sig-name">createPath</span>(<span class="sig-arg">path</span>,
         <span class="sig-arg">user</span>=<span class="sig-default">None</span>,
         <span class="sig-arg">group</span>=<span class="sig-default">None</span>,
-        <span class="sig-arg">chmod</span>=<span class="sig-default">493</span>)</span>
+        <span class="sig-arg">chmod</span>=<span class="sig-default">int('0755',8)</span>)</span>
   </h3>
   </td><td align="right" valign="top"
     ><span class="codelink"><a href="backend.common.fileutils-pysrc.html#createPath">source&nbsp;code</a></span>&nbsp;
@@ -562,11 +552,8 @@ Behavior:
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-<code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">blockdev</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">b</code><code class="variable-quote">'</code><code class="variable-op">,</code>
- <code class="variable-quote">'</code><code class="variable-string">chardev</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">c</code><code class="variable-quote">'</code><code class="variable-op">,</code>
- <code class="variable-quote">'</code><code class="variable-string">directory</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">d</code><code class="variable-quote">'</code><code class="variable-op">,</code>
- <code class="variable-quote">'</code><code class="variable-string">file</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">-</code><code class="variable-quote">'</code><code class="variable-op">,</code>
- <code class="variable-quote">'</code><code class="variable-string">symlink</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">l</code><code class="variable-quote">'</code><code class="variable-group">}</code>
+{'file': '-', 'directory': 'd', 'symlink': 'l', 'chardev': 'c', 'block<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+dev': 'b',}
 </pre></td></tr></table>
 </dd>
   </dl>
@@ -596,7 +583,7 @@ Behavior:
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Thu Aug 31 17:16:10 2017
+    Generated by Epydoc 3.0.1 on Mon Apr  9 17:17:41 2018
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>up2date_client.gtk_compat</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="up2date_client-module.html">Package&nbsp;up2date_client</a> ::
+        Module&nbsp;gtk_compat
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="up2date_client.gtk_compat-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="up2date_client.gtk_compat-module.html">Module up2date_client.gtk_compat</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno"> 1</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L2"></a><tt class="py-lineno"> 2</tt>  <tt class="py-line"><tt class="py-comment"># Gtk 2/3 compat package</tt> </tt>
+<a name="L3"></a><tt class="py-lineno"> 3</tt>  <tt class="py-line"><tt class="py-comment"># Copyright (c) 2017 Red Hat, Inc.  Distributed under GPLv2.</tt> </tt>
+<a name="L4"></a><tt class="py-lineno"> 4</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L5"></a><tt class="py-lineno"> 5</tt>  <tt class="py-line"> </tt>
+<a name="L6"></a><tt class="py-lineno"> 6</tt>  <tt class="py-line"><tt class="py-keyword">try</tt><tt class="py-op">:</tt> <tt class="py-comment"># python2 / gtk2 / pygtk</tt> </tt>
+<a name="L7"></a><tt class="py-lineno"> 7</tt>  <tt class="py-line">    <tt class="py-keyword">import</tt> <tt class="py-name">gtk</tt> </tt>
+<a name="L8"></a><tt class="py-lineno"> 8</tt>  <tt class="py-line">    <tt class="py-keyword">import</tt> <tt class="py-name">gtk</tt><tt class="py-op">.</tt><tt class="py-name">glade</tt> </tt>
+<a name="L9"></a><tt class="py-lineno"> 9</tt>  <tt class="py-line">    <tt class="py-keyword">import</tt> <tt class="py-name">gobject</tt> </tt>
+<a name="L10"></a><tt class="py-lineno">10</tt>  <tt class="py-line"> </tt>
+<a name="L11"></a><tt class="py-lineno">11</tt>  <tt class="py-line">    <tt class="py-name">gtk</tt><tt class="py-op">.</tt><tt class="py-name">glade</tt><tt class="py-op">.</tt><tt class="py-name">bindtextdomain</tt><tt class="py-op">(</tt><tt class="py-string">"rhn-client-tools"</tt><tt class="py-op">,</tt> <tt class="py-string">"/usr/share/locale"</tt><tt class="py-op">)</tt> </tt>
+<a name="L12"></a><tt class="py-lineno">12</tt>  <tt class="py-line">    <tt id="link-0" class="py-name" targets="Variable up2date_client.gtk_compat.GTK3=up2date_client.gtk_compat-module.html#GTK3"><a title="up2date_client.gtk_compat.GTK3" class="py-name" href="#" onclick="return doclink('link-0', 'GTK3', 'link-0');">GTK3</a></tt> <tt class="py-op">=</tt> <tt class="py-name">False</tt> </tt>
+<a name="L13"></a><tt class="py-lineno">13</tt>  <tt class="py-line"><tt class="py-keyword">except</tt> <tt class="py-name">ImportError</tt><tt class="py-op">:</tt> <tt class="py-comment"># python3 /gtk3 / gi</tt> </tt>
+<a name="L14"></a><tt class="py-lineno">14</tt>  <tt class="py-line">    <tt class="py-keyword">import</tt> <tt class="py-name">gi</tt> </tt>
+<a name="L15"></a><tt class="py-lineno">15</tt>  <tt class="py-line">    <tt class="py-name">gi</tt><tt class="py-op">.</tt><tt class="py-name">require_version</tt><tt class="py-op">(</tt><tt class="py-string">"Gtk"</tt><tt class="py-op">,</tt> <tt class="py-string">"3.0"</tt><tt class="py-op">)</tt> </tt>
+<a name="L16"></a><tt class="py-lineno">16</tt>  <tt class="py-line">    <tt class="py-keyword">from</tt> <tt class="py-name">gi</tt><tt class="py-op">.</tt><tt id="link-1" class="py-name" targets="Module backend.cdn_tools.repository=backend.cdn_tools.repository-module.html,Module backend.server.repomd.repository=backend.server.repomd.repository-module.html,Module config_common.repository=config_common.repository-module.html"><a title="backend.cdn_tools.repository
+backend.server.repomd.repository
+config_common.repository" class="py-name" href="#" onclick="return doclink('link-1', 'repository', 'link-1');">repository</a></tt> <tt class="py-keyword">import</tt> <tt class="py-name">Gtk</tt> <tt class="py-keyword">as</tt> <tt class="py-name">gtk</tt> </tt>
+<a name="L17"></a><tt class="py-lineno">17</tt>  <tt class="py-line">    <tt class="py-keyword">from</tt> <tt class="py-name">gi</tt><tt class="py-op">.</tt><tt id="link-2" class="py-name"><a title="backend.cdn_tools.repository
+backend.server.repomd.repository
+config_common.repository" class="py-name" href="#" onclick="return doclink('link-2', 'repository', 'link-1');">repository</a></tt> <tt class="py-keyword">import</tt> <tt class="py-name">Gdk</tt> <tt class="py-keyword">as</tt> <tt class="py-name">gdk</tt> </tt>
+<a name="L18"></a><tt class="py-lineno">18</tt>  <tt class="py-line">    <tt class="py-keyword">from</tt> <tt class="py-name">gi</tt><tt class="py-op">.</tt><tt id="link-3" class="py-name"><a title="backend.cdn_tools.repository
+backend.server.repomd.repository
+config_common.repository" class="py-name" href="#" onclick="return doclink('link-3', 'repository', 'link-1');">repository</a></tt> <tt class="py-keyword">import</tt> <tt class="py-name">GObject</tt> <tt class="py-keyword">as</tt> <tt class="py-name">gobject</tt> </tt>
+<a name="L19"></a><tt class="py-lineno">19</tt>  <tt class="py-line">    <tt id="link-4" class="py-name"><a title="up2date_client.gtk_compat.GTK3" class="py-name" href="#" onclick="return doclink('link-4', 'GTK3', 'link-0');">GTK3</a></tt> <tt class="py-op">=</tt> <tt class="py-name">True</tt> </tt>
+<a name="L20"></a><tt class="py-lineno">20</tt>  <tt class="py-line"> </tt>
+<a name="L21"></a><tt class="py-lineno">21</tt>  <tt class="py-line"> </tt>
+<a name="L22"></a><tt class="py-lineno">22</tt>  <tt class="py-line"><tt class="py-keyword">if</tt> <tt id="link-5" class="py-name"><a title="up2date_client.gtk_compat.GTK3" class="py-name" href="#" onclick="return doclink('link-5', 'GTK3', 'link-0');">GTK3</a></tt><tt class="py-op">:</tt> </tt>
+<a name="GladeBuilder"></a><div id="GladeBuilder-def"><a name="L23"></a><tt class="py-lineno">23</tt> <a class="py-toggle" href="#" id="GladeBuilder-toggle" onclick="return toggle('GladeBuilder');">-</a><tt class="py-line">    <tt class="py-keyword">class</tt> <a class="py-def-name" href="up2date_client.gtk_compat.GladeBuilder-class.html">GladeBuilder</a><tt class="py-op">(</tt><tt class="py-base-class">object</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="GladeBuilder-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="GladeBuilder-expanded"><a name="GladeBuilder.__init__"></a><div id="GladeBuilder.__init__-def"><a name="L24"></a><tt class="py-lineno">24</tt> <a class="py-toggle" href="#" id="GladeBuilder.__init__-toggle" onclick="return toggle('GladeBuilder.__init__');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="up2date_client.gtk_compat.GladeBuilder-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="GladeBuilder.__init__-collapsed" style="display:none;" pad="++" indent="++++++++++++++++"></div><div id="GladeBuilder.__init__-expanded"><a name="L25"></a><tt class="py-lineno">25</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">builder</tt> <tt class="py-op">=</tt> <tt class="py-name">gtk</tt><tt class="py-op">.</tt><tt class="py-name">Builder</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L26"></a><tt class="py-lineno">26</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">builder</tt><tt class="py-op">.</tt><tt class="py-name">get_widget</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">builder</tt><tt class="py-op">.</tt><tt class="py-name">get_object</tt> </tt>
+<a name="L27"></a><tt class="py-lineno">27</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">builder</tt><tt class="py-op">.</tt><tt class="py-name">signal_autoconnect</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">builder</tt><tt class="py-op">.</tt><tt class="py-name">connect_signals</tt> </tt>
+<a name="L28"></a><tt class="py-lineno">28</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">translation_domain</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+</div><a name="L29"></a><tt class="py-lineno">29</tt>  <tt class="py-line"> </tt>
+<a name="GladeBuilder.XML"></a><div id="GladeBuilder.XML-def"><a name="L30"></a><tt class="py-lineno">30</tt> <a class="py-toggle" href="#" id="GladeBuilder.XML-toggle" onclick="return toggle('GladeBuilder.XML');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="up2date_client.gtk_compat.GladeBuilder-class.html#XML">XML</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">gladefile</tt><tt class="py-op">,</tt> <tt class="py-param">widget</tt><tt class="py-op">,</tt> <tt class="py-param">domain</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="GladeBuilder.XML-collapsed" style="display:none;" pad="++" indent="++++++++++++++++"></div><div id="GladeBuilder.XML-expanded"><a name="L31"></a><tt class="py-lineno">31</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">builder</tt><tt class="py-op">.</tt><tt class="py-name">add_objects_from_file</tt><tt class="py-op">(</tt><tt id="link-6" class="py-name" targets="Variable up2date_client.rhnregGui.gladefile=up2date_client.rhnregGui-module.html#gladefile"><a title="up2date_client.rhnregGui.gladefile" class="py-name" href="#" onclick="return doclink('link-6', 'gladefile', 'link-6');">gladefile</a></tt><tt class="py-op">,</tt> <tt class="py-op">(</tt><tt class="py-name">widget</tt><tt class="py-op">,</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L32"></a><tt class="py-lineno">32</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">translation_domain</tt><tt class="py-op">:</tt> </tt>
+<a name="L33"></a><tt class="py-lineno">33</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">builder</tt><tt class="py-op">.</tt><tt class="py-name">set_translation_domain</tt><tt class="py-op">(</tt><tt id="link-7" class="py-name" targets="Module backend.server.repomd.domain=backend.server.repomd.domain-module.html"><a title="backend.server.repomd.domain" class="py-name" href="#" onclick="return doclink('link-7', 'domain', 'link-7');">domain</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L34"></a><tt class="py-lineno">34</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">builder</tt> </tt>
+</div></div><a name="L35"></a><tt class="py-lineno">35</tt>  <tt class="py-line"> </tt>
+<a name="L36"></a><tt class="py-lineno">36</tt>  <tt class="py-line">    <tt class="py-name">gtk</tt><tt class="py-op">.</tt><tt class="py-name">glade</tt> <tt class="py-op">=</tt> <tt id="link-8" class="py-name" targets="Class up2date_client.gtk_compat.GladeBuilder=up2date_client.gtk_compat.GladeBuilder-class.html"><a title="up2date_client.gtk_compat.GladeBuilder" class="py-name" href="#" onclick="return doclink('link-8', 'GladeBuilder', 'link-8');">GladeBuilder</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L37"></a><tt class="py-lineno">37</tt>  <tt class="py-line">    <tt class="py-name">gtk</tt><tt class="py-op">.</tt><tt class="py-name">RESPONSE_NONE</tt> <tt class="py-op">=</tt> <tt class="py-name">gtk</tt><tt class="py-op">.</tt><tt class="py-name">ResponseType</tt><tt class="py-op">.</tt><tt class="py-name">NONE</tt> </tt>
+<a name="L38"></a><tt class="py-lineno">38</tt>  <tt class="py-line">    <tt class="py-name">gtk</tt><tt class="py-op">.</tt><tt class="py-name">RESPONSE_OK</tt> <tt class="py-op">=</tt> <tt class="py-name">gtk</tt><tt class="py-op">.</tt><tt class="py-name">ResponseType</tt><tt class="py-op">.</tt><tt id="link-9" class="py-name" targets="Variable backend.common.apache.OK=backend.common.apache-module.html#OK,Variable backend.satellite_tools.satComputePkgHeaders.OK=backend.satellite_tools.satComputePkgHeaders-module.html#OK,Variable up2date_client.rhnreg_constants.OK=up2date_client.rhnreg_constants-module.html#OK,Variable up2date_client.tui.OK=up2date_client.tui-module.html#OK"><a title="backend.common.apache.OK
+backend.satellite_tools.satComputePkgHeaders.OK
+up2date_client.rhnreg_constants.OK
+up2date_client.tui.OK" class="py-name" href="#" onclick="return doclink('link-9', 'OK', 'link-9');">OK</a></tt> </tt>
+<a name="L39"></a><tt class="py-lineno">39</tt>  <tt class="py-line">    <tt class="py-name">gtk</tt><tt class="py-op">.</tt><tt class="py-name">RESPONSE_YES</tt> <tt class="py-op">=</tt> <tt class="py-name">gtk</tt><tt class="py-op">.</tt><tt class="py-name">ResponseType</tt><tt class="py-op">.</tt><tt class="py-name">YES</tt> </tt>
+<a name="L40"></a><tt class="py-lineno">40</tt>  <tt class="py-line">    <tt class="py-name">gtk</tt><tt class="py-op">.</tt><tt class="py-name">RESPONSE_CANCEL</tt> <tt class="py-op">=</tt> <tt class="py-name">gtk</tt><tt class="py-op">.</tt><tt class="py-name">ResponseType</tt><tt class="py-op">.</tt><tt id="link-10" class="py-name" targets="Variable up2date_client.rhnreg_constants.CANCEL=up2date_client.rhnreg_constants-module.html#CANCEL,Variable up2date_client.tui.CANCEL=up2date_client.tui-module.html#CANCEL"><a title="up2date_client.rhnreg_constants.CANCEL
+up2date_client.tui.CANCEL" class="py-name" href="#" onclick="return doclink('link-10', 'CANCEL', 'link-10');">CANCEL</a></tt> </tt>
+<a name="L41"></a><tt class="py-lineno">41</tt>  <tt class="py-line">    <tt class="py-name">gtk</tt><tt class="py-op">.</tt><tt class="py-name">RESPONSE_NO</tt> <tt class="py-op">=</tt> <tt class="py-name">gtk</tt><tt class="py-op">.</tt><tt class="py-name">ResponseType</tt><tt class="py-op">.</tt><tt class="py-name">NO</tt> </tt>
+<a name="L42"></a><tt class="py-lineno">42</tt>  <tt class="py-line">    <tt class="py-name">gtk</tt><tt class="py-op">.</tt><tt class="py-name">RESPONSE_CLOSE</tt> <tt class="py-op">=</tt> <tt class="py-name">gtk</tt><tt class="py-op">.</tt><tt class="py-name">ResponseType</tt><tt class="py-op">.</tt><tt class="py-name">CLOSE</tt> </tt>
+<a name="L43"></a><tt class="py-lineno">43</tt>  <tt class="py-line">    <tt class="py-name">gtk</tt><tt class="py-op">.</tt><tt class="py-name">BUTTONS_OK</tt> <tt class="py-op">=</tt> <tt class="py-name">gtk</tt><tt class="py-op">.</tt><tt class="py-name">ButtonsType</tt><tt class="py-op">.</tt><tt id="link-11" class="py-name"><a title="backend.common.apache.OK
+backend.satellite_tools.satComputePkgHeaders.OK
+up2date_client.rhnreg_constants.OK
+up2date_client.tui.OK" class="py-name" href="#" onclick="return doclink('link-11', 'OK', 'link-9');">OK</a></tt> </tt>
+<a name="L44"></a><tt class="py-lineno">44</tt>  <tt class="py-line">    <tt class="py-name">gtk</tt><tt class="py-op">.</tt><tt class="py-name">BUTTONS_OK_CANCEL</tt> <tt class="py-op">=</tt> <tt class="py-name">gtk</tt><tt class="py-op">.</tt><tt class="py-name">ButtonsType</tt><tt class="py-op">.</tt><tt class="py-name">OK_CANCEL</tt> </tt>
+<a name="L45"></a><tt class="py-lineno">45</tt>  <tt class="py-line">    <tt class="py-name">gtk</tt><tt class="py-op">.</tt><tt class="py-name">BUTTONS_YES_NO</tt> <tt class="py-op">=</tt> <tt class="py-name">gtk</tt><tt class="py-op">.</tt><tt class="py-name">ButtonsType</tt><tt class="py-op">.</tt><tt class="py-name">YES_NO</tt> </tt>
+<a name="L46"></a><tt class="py-lineno">46</tt>  <tt class="py-line">    <tt class="py-name">gtk</tt><tt class="py-op">.</tt><tt class="py-name">MESSAGE_INFO</tt> <tt class="py-op">=</tt> <tt class="py-name">gtk</tt><tt class="py-op">.</tt><tt class="py-name">MessageType</tt><tt class="py-op">.</tt><tt class="py-name">INFO</tt> </tt>
+<a name="L47"></a><tt class="py-lineno">47</tt>  <tt class="py-line">    <tt class="py-name">gtk</tt><tt class="py-op">.</tt><tt class="py-name">MESSAGE_WARNING</tt> <tt class="py-op">=</tt> <tt class="py-name">gtk</tt><tt class="py-op">.</tt><tt class="py-name">MessageType</tt><tt class="py-op">.</tt><tt id="link-12" class="py-name" targets="Variable up2date_client.rhnreg_constants.WARNING=up2date_client.rhnreg_constants-module.html#WARNING,Variable up2date_client.tui.WARNING=up2date_client.tui-module.html#WARNING"><a title="up2date_client.rhnreg_constants.WARNING
+up2date_client.tui.WARNING" class="py-name" href="#" onclick="return doclink('link-12', 'WARNING', 'link-12');">WARNING</a></tt> </tt>
+<a name="L48"></a><tt class="py-lineno">48</tt>  <tt class="py-line">    <tt class="py-name">gtk</tt><tt class="py-op">.</tt><tt class="py-name">MESSAGE_QUESTION</tt> <tt class="py-op">=</tt> <tt class="py-name">gtk</tt><tt class="py-op">.</tt><tt class="py-name">MessageType</tt><tt class="py-op">.</tt><tt class="py-name">QUESTION</tt> </tt>
+<a name="L49"></a><tt class="py-lineno">49</tt>  <tt class="py-line">    <tt class="py-name">gtk</tt><tt class="py-op">.</tt><tt class="py-name">MESSAGE_ERROR</tt> <tt class="py-op">=</tt> <tt class="py-name">gtk</tt><tt class="py-op">.</tt><tt class="py-name">MessageType</tt><tt class="py-op">.</tt><tt id="link-13" class="py-name" targets="Variable up2date_client.rhnreg_constants.ERROR=up2date_client.rhnreg_constants-module.html#ERROR,Variable up2date_client.tui.ERROR=up2date_client.tui-module.html#ERROR"><a title="up2date_client.rhnreg_constants.ERROR
+up2date_client.tui.ERROR" class="py-name" href="#" onclick="return doclink('link-13', 'ERROR', 'link-13');">ERROR</a></tt> </tt>
+<a name="L50"></a><tt class="py-lineno">50</tt>  <tt class="py-line">    <tt class="py-name">gtk</tt><tt class="py-op">.</tt><tt class="py-name">WIN_POS_CENTER</tt> <tt class="py-op">=</tt> <tt class="py-name">gtk</tt><tt class="py-op">.</tt><tt class="py-name">WindowPosition</tt><tt class="py-op">.</tt><tt class="py-name">CENTER</tt> </tt>
+<a name="L51"></a><tt class="py-lineno">51</tt>  <tt class="py-line">    <tt class="py-name">gtk</tt><tt class="py-op">.</tt><tt class="py-name">SORT_ASCENDING</tt> <tt class="py-op">=</tt> <tt class="py-name">gtk</tt><tt class="py-op">.</tt><tt class="py-name">SortType</tt><tt class="py-op">.</tt><tt class="py-name">ASCENDING</tt> </tt>
+<a name="L52"></a><tt class="py-lineno">52</tt>  <tt class="py-line">    <tt class="py-name">gtk</tt><tt class="py-op">.</tt><tt class="py-name">SHADOW_OUT</tt> <tt class="py-op">=</tt> <tt class="py-name">gtk</tt><tt class="py-op">.</tt><tt class="py-name">ShadowType</tt><tt class="py-op">.</tt><tt class="py-name">OUT</tt> </tt>
+<a name="L53"></a><tt class="py-lineno">53</tt>  <tt class="py-line"> </tt>
+<a name="setCursor"></a><div id="setCursor-def"><a name="L54"></a><tt class="py-lineno">54</tt> <a class="py-toggle" href="#" id="setCursor-toggle" onclick="return toggle('setCursor');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="up2date_client.gtk_compat-module.html#setCursor">setCursor</a><tt class="py-op">(</tt><tt class="py-param">widget</tt><tt class="py-op">,</tt> <tt class="py-param">ctype</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="setCursor-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="setCursor-expanded"><a name="L55"></a><tt class="py-lineno">55</tt>  <tt class="py-line">        <tt id="link-14" class="py-name" targets="Function backend.server.rhnSQL.cursor()=backend.server.rhnSQL-module.html#cursor,Method backend.server.rhnSQL.driver_cx_Oracle.Database.cursor()=backend.server.rhnSQL.driver_cx_Oracle.Database-class.html#cursor,Method backend.server.rhnSQL.driver_postgresql.Database.cursor()=backend.server.rhnSQL.driver_postgresql.Database-class.html#cursor,Method backend.server.rhnSQL.sql_base.Database.cursor()=backend.server.rhnSQL.sql_base.Database-class.html#cursor"><a title="backend.server.rhnSQL.cursor
+backend.server.rhnSQL.driver_cx_Oracle.Database.cursor
+backend.server.rhnSQL.driver_postgresql.Database.cursor
+backend.server.rhnSQL.sql_base.Database.cursor" class="py-name" href="#" onclick="return doclink('link-14', 'cursor', 'link-14');">cursor</a></tt> <tt class="py-op">=</tt> <tt class="py-name">gdk</tt><tt class="py-op">.</tt><tt id="link-15" class="py-name" targets="Class backend.server.rhnSQL.driver_cx_Oracle.Cursor=backend.server.rhnSQL.driver_cx_Oracle.Cursor-class.html,Class backend.server.rhnSQL.driver_postgresql.Cursor=backend.server.rhnSQL.driver_postgresql.Cursor-class.html,Class backend.server.rhnSQL.sql_base.Cursor=backend.server.rhnSQL.sql_base.Cursor-class.html"><a title="backend.server.rhnSQL.driver_cx_Oracle.Cursor
+backend.server.rhnSQL.driver_postgresql.Cursor
+backend.server.rhnSQL.sql_base.Cursor" class="py-name" href="#" onclick="return doclink('link-15', 'Cursor', 'link-15');">Cursor</a></tt><tt class="py-op">(</tt><tt class="py-name">ctype</tt><tt class="py-op">)</tt> </tt>
+<a name="L56"></a><tt class="py-lineno">56</tt>  <tt class="py-line">        <tt class="py-name">widget</tt><tt class="py-op">.</tt><tt class="py-name">get_root_window</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt class="py-name">set_cursor</tt><tt class="py-op">(</tt><tt id="link-16" class="py-name"><a title="backend.server.rhnSQL.cursor
+backend.server.rhnSQL.driver_cx_Oracle.Database.cursor
+backend.server.rhnSQL.driver_postgresql.Database.cursor
+backend.server.rhnSQL.sql_base.Database.cursor" class="py-name" href="#" onclick="return doclink('link-16', 'cursor', 'link-14');">cursor</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L57"></a><tt class="py-lineno">57</tt>  <tt class="py-line">        <tt class="py-keyword">while</tt> <tt class="py-name">gtk</tt><tt class="py-op">.</tt><tt class="py-name">events_pending</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L58"></a><tt class="py-lineno">58</tt>  <tt class="py-line">            <tt class="py-name">gtk</tt><tt class="py-op">.</tt><tt class="py-name">main_iteration_do</tt><tt class="py-op">(</tt><tt class="py-name">False</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L59"></a><tt class="py-lineno">59</tt>  <tt class="py-line">    <tt class="py-name">gtk</tt><tt class="py-op">.</tt><tt class="py-name">CURSOR_WATCH</tt> <tt class="py-op">=</tt> <tt class="py-name">gdk</tt><tt class="py-op">.</tt><tt class="py-name">CursorType</tt><tt class="py-op">.</tt><tt class="py-name">WATCH</tt> </tt>
+<a name="L60"></a><tt class="py-lineno">60</tt>  <tt class="py-line">    <tt class="py-name">gtk</tt><tt class="py-op">.</tt><tt class="py-name">CURSOR_LEFT_PTR</tt> <tt class="py-op">=</tt> <tt class="py-name">gdk</tt><tt class="py-op">.</tt><tt class="py-name">CursorType</tt><tt class="py-op">.</tt><tt class="py-name">LEFT_PTR</tt> </tt>
+<a name="L61"></a><tt class="py-lineno">61</tt>  <tt class="py-line"> </tt>
+<a name="getWidgetName"></a><div id="getWidgetName-def"><a name="L62"></a><tt class="py-lineno">62</tt> <a class="py-toggle" href="#" id="getWidgetName-toggle" onclick="return toggle('getWidgetName');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="up2date_client.gtk_compat-module.html#getWidgetName">getWidgetName</a><tt class="py-op">(</tt><tt class="py-param">widget</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="getWidgetName-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="getWidgetName-expanded"><a name="L63"></a><tt class="py-lineno">63</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">gtk</tt><tt class="py-op">.</tt><tt class="py-name">Buildable</tt><tt class="py-op">.</tt><tt id="link-17" class="py-name" targets="Method actions.Modes.BaseMode.get_name()=actions.Modes.BaseMode-class.html#get_name,Method backend.cdn_tools.manifest.Manifest.get_name()=backend.cdn_tools.manifest.Manifest-class.html#get_name,Method backend.server.action.utils.ChannelPackage.get_name()=backend.server.action.utils.ChannelPackage-class.html#get_name"><a title="actions.Modes.BaseMode.get_name
+backend.cdn_tools.manifest.Manifest.get_name
+backend.server.action.utils.ChannelPackage.get_name" class="py-name" href="#" onclick="return doclink('link-17', 'get_name', 'link-17');">get_name</a></tt><tt class="py-op">(</tt><tt class="py-name">widget</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L64"></a><tt class="py-lineno">64</tt>  <tt class="py-line"> </tt>
+<a name="L65"></a><tt class="py-lineno">65</tt>  <tt class="py-line"><tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="setCursor"></a><div id="setCursor-def"><a name="L66"></a><tt class="py-lineno">66</tt> <a class="py-toggle" href="#" id="setCursor-toggle" onclick="return toggle('setCursor');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="up2date_client.gtk_compat-module.html#setCursor">setCursor</a><tt class="py-op">(</tt><tt class="py-param">widget</tt><tt class="py-op">,</tt> <tt class="py-param">ctype</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="setCursor-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="setCursor-expanded"><a name="L67"></a><tt class="py-lineno">67</tt>  <tt class="py-line">        <tt id="link-18" class="py-name"><a title="backend.server.rhnSQL.cursor
+backend.server.rhnSQL.driver_cx_Oracle.Database.cursor
+backend.server.rhnSQL.driver_postgresql.Database.cursor
+backend.server.rhnSQL.sql_base.Database.cursor" class="py-name" href="#" onclick="return doclink('link-18', 'cursor', 'link-14');">cursor</a></tt> <tt class="py-op">=</tt> <tt class="py-name">gtk</tt><tt class="py-op">.</tt><tt class="py-name">gdk</tt><tt class="py-op">.</tt><tt id="link-19" class="py-name"><a title="backend.server.rhnSQL.driver_cx_Oracle.Cursor
+backend.server.rhnSQL.driver_postgresql.Cursor
+backend.server.rhnSQL.sql_base.Cursor" class="py-name" href="#" onclick="return doclink('link-19', 'Cursor', 'link-15');">Cursor</a></tt><tt class="py-op">(</tt><tt class="py-name">ctype</tt><tt class="py-op">)</tt> </tt>
+<a name="L68"></a><tt class="py-lineno">68</tt>  <tt class="py-line">        <tt class="py-name">widget</tt><tt class="py-op">.</tt><tt class="py-name">window</tt><tt class="py-op">.</tt><tt class="py-name">set_cursor</tt><tt class="py-op">(</tt><tt id="link-20" class="py-name"><a title="backend.server.rhnSQL.cursor
+backend.server.rhnSQL.driver_cx_Oracle.Database.cursor
+backend.server.rhnSQL.driver_postgresql.Database.cursor
+backend.server.rhnSQL.sql_base.Database.cursor" class="py-name" href="#" onclick="return doclink('link-20', 'cursor', 'link-14');">cursor</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L69"></a><tt class="py-lineno">69</tt>  <tt class="py-line">        <tt class="py-keyword">while</tt> <tt class="py-name">gtk</tt><tt class="py-op">.</tt><tt class="py-name">events_pending</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L70"></a><tt class="py-lineno">70</tt>  <tt class="py-line">            <tt class="py-name">gtk</tt><tt class="py-op">.</tt><tt class="py-name">main_iteration_do</tt><tt class="py-op">(</tt><tt class="py-name">False</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L71"></a><tt class="py-lineno">71</tt>  <tt class="py-line"> </tt>
+<a name="L72"></a><tt class="py-lineno">72</tt>  <tt class="py-line">    <tt class="py-name">gtk</tt><tt class="py-op">.</tt><tt class="py-name">CURSOR_WATCH</tt> <tt class="py-op">=</tt> <tt class="py-name">gtk</tt><tt class="py-op">.</tt><tt class="py-name">gdk</tt><tt class="py-op">.</tt><tt class="py-name">WATCH</tt> </tt>
+<a name="L73"></a><tt class="py-lineno">73</tt>  <tt class="py-line">    <tt class="py-name">gtk</tt><tt class="py-op">.</tt><tt class="py-name">CURSOR_LEFT_PTR</tt> <tt class="py-op">=</tt> <tt class="py-name">gtk</tt><tt class="py-op">.</tt><tt class="py-name">gdk</tt><tt class="py-op">.</tt><tt class="py-name">LEFT_PTR</tt> </tt>
+<a name="L74"></a><tt class="py-lineno">74</tt>  <tt class="py-line"> </tt>
+<a name="getWidgetName"></a><div id="getWidgetName-def"><a name="L75"></a><tt class="py-lineno">75</tt> <a class="py-toggle" href="#" id="getWidgetName-toggle" onclick="return toggle('getWidgetName');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="up2date_client.gtk_compat-module.html#getWidgetName">getWidgetName</a><tt class="py-op">(</tt><tt class="py-param">widget</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="getWidgetName-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="getWidgetName-expanded"><a name="L76"></a><tt class="py-lineno">76</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">widget</tt><tt class="py-op">.</tt><tt id="link-21" class="py-name" targets="Variable up2date_client.tui.AlreadyRegisteredSubscriptionManagerWindow.name=up2date_client.tui.AlreadyRegisteredSubscriptionManagerWindow-class.html#name,Variable up2date_client.tui.AlreadyRegisteredWindow.name=up2date_client.tui.AlreadyRegisteredWindow-class.html#name,Variable up2date_client.tui.ConnectWindow.name=up2date_client.tui.ConnectWindow-class.html#name,Variable up2date_client.tui.FinishWindow.name=up2date_client.tui.FinishWindow-class.html#name,Variable up2date_client.tui.HardwareWindow.name=up2date_client.tui.HardwareWindow-class.html#name,Variable up2date_client.tui.InfoWindow.name=up2date_client.tui.InfoWindow-class.html#name,Variable up2date_client.tui.OSReleaseWindow.name=up2date_client.tui.OSReleaseWindow-class.html#name,Variable up2date_client.tui.PackagesWindow.name=up2date_client.tui.PackagesWindow-class.html#name,Variable up2date_client.tui.ReviewWindow.name=up2date_client.tui.ReviewWindow-class.html#name,Variable up2date_client.tui.SatelliteUrlWindow.name=up2date_client.tui.SatelliteUrlWindow-class.html#name,Variable up2date_client.tui.SendWindow.name=up2date_client.tui.SendWindow-class.html#name,Variable up2date_client.tui.SendingWindow.name=up2date_client.tui.SendingWindow-class.html#name,Variable up2date_client.tui.StartWindow.name=up2date_client.tui.StartWindow-class.html#name,Variable up2date_client.tui.Tui.name=up2date_client.tui.Tui-class.html#name,Variable up2date_client.tui.WhyRegisterWindow.name=up2date_client.tui.WhyRegisterWindow-class.html#name"><a title="up2date_client.tui.AlreadyRegisteredSubscriptionManagerWindow.name
+up2date_client.tui.AlreadyRegisteredWindow.name
+up2date_client.tui.ConnectWindow.name
+up2date_client.tui.FinishWindow.name
+up2date_client.tui.HardwareWindow.name
+up2date_client.tui.InfoWindow.name
+up2date_client.tui.OSReleaseWindow.name
+up2date_client.tui.PackagesWindow.name
+up2date_client.tui.ReviewWindow.name
+up2date_client.tui.SatelliteUrlWindow.name
+up2date_client.tui.SendWindow.name
+up2date_client.tui.SendingWindow.name
+up2date_client.tui.StartWindow.name
+up2date_client.tui.Tui.name
+up2date_client.tui.WhyRegisterWindow.name" class="py-name" href="#" onclick="return doclink('link-21', 'name', 'link-21');">name</a></tt> </tt>
+</div><a name="L77"></a><tt class="py-lineno">77</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Mon Apr  9 17:18:11 2018
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>
