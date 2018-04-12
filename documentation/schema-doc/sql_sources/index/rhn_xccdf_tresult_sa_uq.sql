@@ -1,4 +1,4 @@
--- created by Oraschemadoc Wed Aug 30 22:57:35 2017
+-- created by Oraschemadoc Wed Apr 11 12:22:46 2018
 -- visit http://www.yarpen.cz/oraschemadoc/ for more info
 
   CREATE UNIQUE INDEX "SPACEUSER"."RHN_XCCDF_TRESULT_SA_UQ" ON "SPACEUSER"."RHNXCCDFTESTRESULT" ("SERVER_ID", "ACTION_SCAP_ID") 

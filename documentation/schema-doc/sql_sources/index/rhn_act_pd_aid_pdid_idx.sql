@@ -1,4 +1,4 @@
--- created by Oraschemadoc Wed Aug 30 22:57:08 2017
+-- created by Oraschemadoc Wed Apr 11 12:22:25 2018
 -- visit http://www.yarpen.cz/oraschemadoc/ for more info
 
   CREATE UNIQUE INDEX "SPACEUSER"."RHN_ACT_PD_AID_PDID_IDX" ON "SPACEUSER"."RHNACTIONPACKAGEDELTA" ("ACTION_ID", "PACKAGE_DELTA_ID") 

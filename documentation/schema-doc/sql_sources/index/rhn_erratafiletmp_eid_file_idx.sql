@@ -1,4 +1,4 @@
--- created by Oraschemadoc Wed Aug 30 22:57:15 2017
+-- created by Oraschemadoc Wed Apr 11 12:22:31 2018
 -- visit http://www.yarpen.cz/oraschemadoc/ for more info
 
   CREATE INDEX "SPACEUSER"."RHN_ERRATAFILETMP_EID_FILE_IDX" ON "SPACEUSER"."RHNERRATAFILETMP" ("ERRATA_ID", "FILENAME") 

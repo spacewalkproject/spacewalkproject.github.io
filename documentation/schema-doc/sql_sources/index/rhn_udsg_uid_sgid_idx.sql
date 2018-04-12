@@ -1,4 +1,4 @@
--- created by Oraschemadoc Wed Aug 30 22:57:32 2017
+-- created by Oraschemadoc Wed Apr 11 12:22:44 2018
 -- visit http://www.yarpen.cz/oraschemadoc/ for more info
 
   CREATE UNIQUE INDEX "SPACEUSER"."RHN_UDSG_UID_SGID_IDX" ON "SPACEUSER"."RHNUSERDEFAULTSYSTEMGROUPS" ("USER_ID", "SYSTEM_GROUP_ID") 

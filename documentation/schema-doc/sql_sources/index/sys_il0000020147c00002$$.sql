@@ -1,4 +1,4 @@
--- created by Oraschemadoc Wed Aug 30 22:57:36 2017
+-- created by Oraschemadoc Wed Apr 11 12:22:47 2018
 -- visit http://www.yarpen.cz/oraschemadoc/ for more info
 
   CREATE UNIQUE INDEX "SPACEUSER"."SYS_IL0000020147C00002$$" ON "SPACEUSER"."RHNCONFIGCONTENT" (

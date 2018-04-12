@@ -1,4 +1,4 @@
--- created by Oraschemadoc Wed Aug 30 22:57:23 2017
+-- created by Oraschemadoc Wed Apr 11 12:22:37 2018
 -- visit http://www.yarpen.cz/oraschemadoc/ for more info
 
   CREATE UNIQUE INDEX "SPACEUSER"."RHN_PKG_SUPP_PID_CID_S_UQ" ON "SPACEUSER"."RHNPACKAGESUPPLEMENTS" ("PACKAGE_ID", "CAPABILITY_ID", "SENSE") 

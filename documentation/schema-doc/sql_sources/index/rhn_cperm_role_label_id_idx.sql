@@ -1,4 +1,4 @@
--- created by Oraschemadoc Wed Aug 30 22:57:12 2017
+-- created by Oraschemadoc Wed Apr 11 12:22:29 2018
 -- visit http://www.yarpen.cz/oraschemadoc/ for more info
 
   CREATE INDEX "SPACEUSER"."RHN_CPERM_ROLE_LABEL_ID_IDX" ON "SPACEUSER"."RHNCHANNELPERMISSIONROLE" ("LABEL", "ID") 

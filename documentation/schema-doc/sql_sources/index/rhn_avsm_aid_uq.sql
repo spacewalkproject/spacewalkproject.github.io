@@ -1,4 +1,4 @@
--- created by Oraschemadoc Wed Aug 30 22:57:09 2017
+-- created by Oraschemadoc Wed Apr 11 12:22:26 2018
 -- visit http://www.yarpen.cz/oraschemadoc/ for more info
 
   CREATE UNIQUE INDEX "SPACEUSER"."RHN_AVSM_AID_UQ" ON "SPACEUSER"."RHNACTIONVIRTSETMEMORY" ("ACTION_ID") 

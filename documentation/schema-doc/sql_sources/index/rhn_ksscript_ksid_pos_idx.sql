@@ -1,4 +1,4 @@
--- created by Oraschemadoc Wed Aug 30 22:57:18 2017
+-- created by Oraschemadoc Wed Apr 11 12:22:34 2018
 -- visit http://www.yarpen.cz/oraschemadoc/ for more info
 
   CREATE INDEX "SPACEUSER"."RHN_KSSCRIPT_KSID_POS_IDX" ON "SPACEUSER"."RHNKICKSTARTSCRIPT" ("KICKSTART_ID", "POSITION") 

@@ -1,4 +1,4 @@
--- created by Oraschemadoc Wed Aug 30 22:57:25 2017
+-- created by Oraschemadoc Wed Apr 11 12:22:39 2018
 -- visit http://www.yarpen.cz/oraschemadoc/ for more info
 
   CREATE INDEX "SPACEUSER"."RHN_SC_AC_CAID" ON "SPACEUSER"."RHNSERVERCHANNELARCHCOMPAT" ("CHANNEL_ARCH_ID") 

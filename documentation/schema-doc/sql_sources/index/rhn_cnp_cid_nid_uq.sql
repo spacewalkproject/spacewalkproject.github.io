@@ -1,4 +1,4 @@
--- created by Oraschemadoc Wed Aug 30 22:57:11 2017
+-- created by Oraschemadoc Wed Apr 11 12:22:28 2018
 -- visit http://www.yarpen.cz/oraschemadoc/ for more info
 
   CREATE UNIQUE INDEX "SPACEUSER"."RHN_CNP_CID_NID_UQ" ON "SPACEUSER"."RHNCHANNELNEWESTPACKAGE" ("CHANNEL_ID", "NAME_ID", "PACKAGE_ARCH_ID") 

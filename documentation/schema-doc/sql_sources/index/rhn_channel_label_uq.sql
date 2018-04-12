@@ -1,4 +1,4 @@
--- created by Oraschemadoc Wed Aug 30 22:57:11 2017
+-- created by Oraschemadoc Wed Apr 11 12:22:27 2018
 -- visit http://www.yarpen.cz/oraschemadoc/ for more info
 
   CREATE UNIQUE INDEX "SPACEUSER"."RHN_CHANNEL_LABEL_UQ" ON "SPACEUSER"."RHNCHANNEL" ("LABEL") 

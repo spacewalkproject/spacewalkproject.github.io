@@ -1,4 +1,4 @@
--- created by Oraschemadoc Wed Aug 30 22:57:50 2017
+-- created by Oraschemadoc Wed Apr 11 12:22:58 2018
 -- visit http://www.yarpen.cz/oraschemadoc/ for more info
 
   CREATE OR REPLACE PACKAGE "SPACEUSER"."RHN_CHANNEL" 
@@ -101,7 +101,7 @@ IS
 
     PROCEDURE update_needed_cache(channel_id_in in number);
 
-    procedure set_comps(channel_id_in in number, path_in in varchar2, timestamp_in in varchar2);
+    procedure set_comps(channel_id_in in number, path_in in varchar2, comps_type_id_in in number, timestamp_in in varchar2);
 
 END rhn_channel;
 CREATE OR REPLACE PACKAGE BODY "SPACEUSER"."RHN_CHANNEL" 
@@ -878,13 +878,14 @@ IS
       end loop;
    end update_needed_cache;
 
-    procedure set_comps(channel_id_in in number, path_in in varchar2, timestamp_in in varchar2)
+    procedure set_comps(channel_id_in in number, path_in in varchar2, comps_type_id_in in number, timestamp_in in varchar2)
     is
     begin
         for row in (
             select relative_filename, last_modified
             from rhnChannelComps
             where channel_id = channel_id_in
+            and comps_type_id = comps_type_id_in
             ) loop
             if row.relative_filename = path_in
                 and row.last_modified = to_date(timestamp_in, 'YYYYMMDDHH24MISS') then
@@ -892,9 +893,10 @@ IS
             end if;
         end loop;
         delete from rhnChannelComps
-        where channel_id = channel_id_in;
-        insert into rhnChannelComps (id, channel_id, relative_filename, last_modified, created, modified)
-        values (sequence_nextval('rhn_channelcomps_id_seq'), channel_id_in, path_in, to_date(timestamp_in, 'YYYYMMDDHH24MISS'), current_timestamp, current_timestamp);
+        where channel_id = channel_id_in
+        and comps_type_id = comps_type_id_in;
+        insert into rhnChannelComps (id, channel_id, relative_filename, comps_type_id, last_modified, created, modified)
+        values (sequence_nextval('rhn_channelcomps_id_seq'), channel_id_in, path_in, comps_type_id_in, to_date(timestamp_in, 'YYYYMMDDHH24MISS'), current_timestamp, current_timestamp);
     end set_comps;
 
 END rhn_channel;

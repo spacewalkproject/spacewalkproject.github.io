@@ -1,4 +1,4 @@
--- created by Oraschemadoc Wed Aug 30 22:57:41 2017
+-- created by Oraschemadoc Wed Apr 11 12:22:51 2018
 -- visit http://www.yarpen.cz/oraschemadoc/ for more info
 
   CREATE OR REPLACE FORCE VIEW "SPACEUSER"."RHNSERVERGROUPOVERVIEW" ("ORG_ID", "SECURITY_ERRATA", "BUG_ERRATA", "ENHANCEMENT_ERRATA", "GROUP_ID", "GROUP_NAME", "GROUP_ADMINS", "SERVER_COUNT", "MODIFIED") AS 

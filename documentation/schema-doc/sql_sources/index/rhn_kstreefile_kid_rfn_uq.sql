@@ -1,4 +1,4 @@
--- created by Oraschemadoc Wed Aug 30 22:57:18 2017
+-- created by Oraschemadoc Wed Apr 11 12:22:34 2018
 -- visit http://www.yarpen.cz/oraschemadoc/ for more info
 
   CREATE UNIQUE INDEX "SPACEUSER"."RHN_KSTREEFILE_KID_RFN_UQ" ON "SPACEUSER"."RHNKSTREEFILE" ("KSTREE_ID", "RELATIVE_FILENAME") 

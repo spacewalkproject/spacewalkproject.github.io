@@ -1,4 +1,4 @@
--- created by Oraschemadoc Wed Aug 30 22:57:08 2017
+-- created by Oraschemadoc Wed Apr 11 12:22:25 2018
 -- visit http://www.yarpen.cz/oraschemadoc/ for more info
 
   CREATE INDEX "SPACEUSER"."RHN_ACT_EU_EID_IDX" ON "SPACEUSER"."RHNACTIONERRATAUPDATE" ("ERRATA_ID") 

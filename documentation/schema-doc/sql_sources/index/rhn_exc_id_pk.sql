@@ -1,4 +1,4 @@
--- created by Oraschemadoc Wed Aug 30 22:57:16 2017
+-- created by Oraschemadoc Wed Apr 11 12:22:32 2018
 -- visit http://www.yarpen.cz/oraschemadoc/ for more info
 
   CREATE UNIQUE INDEX "SPACEUSER"."RHN_EXC_ID_PK" ON "SPACEUSER"."RHNEXCEPTION" ("ID") 

@@ -1,4 +1,4 @@
--- created by Oraschemadoc Wed Aug 30 22:57:05 2017
+-- created by Oraschemadoc Wed Apr 11 12:22:23 2018
 -- visit http://www.yarpen.cz/oraschemadoc/ for more info
 
   CREATE INDEX "SPACEUSER"."IDX_QRTZ_FT_JOB_REQ_RECOVERY" ON "SPACEUSER"."QRTZ_FIRED_TRIGGERS" ("REQUESTS_RECOVERY") 

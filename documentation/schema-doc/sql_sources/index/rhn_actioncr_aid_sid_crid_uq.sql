@@ -1,4 +1,4 @@
--- created by Oraschemadoc Wed Aug 30 22:57:07 2017
+-- created by Oraschemadoc Wed Apr 11 12:22:24 2018
 -- visit http://www.yarpen.cz/oraschemadoc/ for more info
 
   CREATE UNIQUE INDEX "SPACEUSER"."RHN_ACTIONCR_AID_SID_CRID_UQ" ON "SPACEUSER"."RHNACTIONCONFIGREVISION" ("ACTION_ID", "SERVER_ID", "CONFIG_REVISION_ID") 

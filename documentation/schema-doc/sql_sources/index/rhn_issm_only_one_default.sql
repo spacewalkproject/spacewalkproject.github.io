@@ -1,4 +1,4 @@
--- created by Oraschemadoc Wed Aug 30 22:57:17 2017
+-- created by Oraschemadoc Wed Apr 11 12:22:33 2018
 -- visit http://www.yarpen.cz/oraschemadoc/ for more info
 
   CREATE UNIQUE INDEX "SPACEUSER"."RHN_ISSM_ONLY_ONE_DEFAULT" ON "SPACEUSER"."RHNISSMASTER" (CASE  WHEN "IS_CURRENT_MASTER"='Y' THEN "IS_CURRENT_MASTER" END ) 

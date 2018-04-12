@@ -1,4 +1,4 @@
--- created by Oraschemadoc Wed Aug 30 22:57:12 2017
+-- created by Oraschemadoc Wed Apr 11 12:22:28 2018
 -- visit http://www.yarpen.cz/oraschemadoc/ for more info
 
   CREATE UNIQUE INDEX "SPACEUSER"."RHN_CONFCHAN_OID_LABEL_TYPE_UQ" ON "SPACEUSER"."RHNCONFIGCHANNEL" ("ORG_ID", "LABEL", "CONFCHAN_TYPE_ID") 

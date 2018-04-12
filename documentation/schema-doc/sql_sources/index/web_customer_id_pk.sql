@@ -1,4 +1,4 @@
--- created by Oraschemadoc Wed Aug 30 22:57:37 2017
+-- created by Oraschemadoc Wed Apr 11 12:22:48 2018
 -- visit http://www.yarpen.cz/oraschemadoc/ for more info
 
   CREATE UNIQUE INDEX "SPACEUSER"."WEB_CUSTOMER_ID_PK" ON "SPACEUSER"."WEB_CUSTOMER" ("ID") 

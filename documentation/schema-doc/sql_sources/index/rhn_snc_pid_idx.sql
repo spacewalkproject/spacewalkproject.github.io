@@ -1,4 +1,4 @@
--- created by Oraschemadoc Wed Aug 30 22:57:28 2017
+-- created by Oraschemadoc Wed Apr 11 12:22:42 2018
 -- visit http://www.yarpen.cz/oraschemadoc/ for more info
 
   CREATE INDEX "SPACEUSER"."RHN_SNC_PID_IDX" ON "SPACEUSER"."RHNSERVERNEEDEDCACHE" ("PACKAGE_ID") 

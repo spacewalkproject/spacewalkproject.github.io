@@ -1,4 +1,4 @@
--- created by Oraschemadoc Wed Aug 30 22:57:38 2017
+-- created by Oraschemadoc Wed Apr 11 12:22:49 2018
 -- visit http://www.yarpen.cz/oraschemadoc/ for more info
 
   CREATE UNIQUE INDEX "SPACEUSER"."WUST_TYPE_PK" ON "SPACEUSER"."WEB_USER_SITE_TYPE" ("TYPE") 

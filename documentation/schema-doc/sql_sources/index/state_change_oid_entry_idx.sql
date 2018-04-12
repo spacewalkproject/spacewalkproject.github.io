@@ -1,4 +1,4 @@
--- created by Oraschemadoc Wed Aug 30 22:57:35 2017
+-- created by Oraschemadoc Wed Apr 11 12:22:46 2018
 -- visit http://www.yarpen.cz/oraschemadoc/ for more info
 
   CREATE INDEX "SPACEUSER"."STATE_CHANGE_OID_ENTRY_IDX" ON "SPACEUSER"."STATE_CHANGE" ("O_ID", "ENTRY_TIME") 

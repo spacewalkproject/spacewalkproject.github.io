@@ -1,4 +1,4 @@
--- created by Oraschemadoc Wed Aug 30 22:57:39 2017
+-- created by Oraschemadoc Wed Apr 11 12:22:49 2018
 -- visit http://www.yarpen.cz/oraschemadoc/ for more info
 
   CREATE OR REPLACE FORCE VIEW "SPACEUSER"."RHNCHANNELPERMISSIONS" ("ORG_ID", "CHANNEL_ID") AS 

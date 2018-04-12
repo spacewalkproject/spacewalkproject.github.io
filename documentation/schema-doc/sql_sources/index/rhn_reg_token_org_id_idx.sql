@@ -1,4 +1,4 @@
--- created by Oraschemadoc Wed Aug 30 22:57:24 2017
+-- created by Oraschemadoc Wed Apr 11 12:22:38 2018
 -- visit http://www.yarpen.cz/oraschemadoc/ for more info
 
   CREATE INDEX "SPACEUSER"."RHN_REG_TOKEN_ORG_ID_IDX" ON "SPACEUSER"."RHNREGTOKEN" ("ORG_ID", "ID") 

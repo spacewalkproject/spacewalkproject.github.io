@@ -1,4 +1,4 @@
--- created by Oraschemadoc Wed Aug 30 22:57:32 2017
+-- created by Oraschemadoc Wed Apr 11 12:22:44 2018
 -- visit http://www.yarpen.cz/oraschemadoc/ for more info
 
   CREATE UNIQUE INDEX "SPACEUSER"."RHN_TRUSTED_ORGS_OID_UQ" ON "SPACEUSER"."RHNTRUSTEDORGS" ("ORG_ID", "ORG_TRUST_ID") 

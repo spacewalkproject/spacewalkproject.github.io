@@ -1,4 +1,4 @@
--- created by Oraschemadoc Wed Aug 30 22:57:31 2017
+-- created by Oraschemadoc Wed Apr 11 12:22:43 2018
 -- visit http://www.yarpen.cz/oraschemadoc/ for more info
 
   CREATE INDEX "SPACEUSER"."RHN_TASK_QUEUE_EARLIEST" ON "SPACEUSER"."RHNTASKQUEUE" ("EARLIEST") 

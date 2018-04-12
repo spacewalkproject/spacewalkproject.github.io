@@ -1,4 +1,4 @@
--- created by Oraschemadoc Wed Aug 30 22:57:25 2017
+-- created by Oraschemadoc Wed Apr 11 12:22:39 2018
 -- visit http://www.yarpen.cz/oraschemadoc/ for more info
 
   CREATE UNIQUE INDEX "SPACEUSER"."RHN_SACTIONVM_SANEC_UQ" ON "SPACEUSER"."RHNSERVERACTIONVERIFYMISSING" ("SERVER_ID", "ACTION_ID", "PACKAGE_NAME_ID", "PACKAGE_EVR_ID", "PACKAGE_ARCH_ID", "PACKAGE_CAPABILITY_ID") 

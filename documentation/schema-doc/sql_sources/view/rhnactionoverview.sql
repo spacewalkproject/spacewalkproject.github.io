@@ -1,4 +1,4 @@
--- created by Oraschemadoc Wed Aug 30 22:57:39 2017
+-- created by Oraschemadoc Wed Apr 11 12:22:49 2018
 -- visit http://www.yarpen.cz/oraschemadoc/ for more info
 
   CREATE OR REPLACE FORCE VIEW "SPACEUSER"."RHNACTIONOVERVIEW" ("ORG_ID", "ACTION_ID", "TYPE_ID", "TYPE_NAME", "NAME", "SCHEDULER", "SCHEDULER_LOGIN", "EARLIEST_ACTION", "TOTAL_COUNT", "SUCCESSFUL_COUNT", "FAILED_COUNT", "IN_PROGRESS_COUNT", "ARCHIVED") AS 

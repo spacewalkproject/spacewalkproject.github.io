@@ -1,4 +1,4 @@
--- created by Oraschemadoc Wed Aug 30 22:57:48 2017
+-- created by Oraschemadoc Wed Apr 11 12:22:57 2018
 -- visit http://www.yarpen.cz/oraschemadoc/ for more info
 
   CREATE OR REPLACE PROCEDURE "SPACEUSER"."QUEUE_SERVER" (server_id_in IN NUMBER, immediate_in IN NUMBER := 1)

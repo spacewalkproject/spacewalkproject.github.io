@@ -1,4 +1,4 @@
--- created by Oraschemadoc Wed Aug 30 22:57:33 2017
+-- created by Oraschemadoc Wed Apr 11 12:22:45 2018
 -- visit http://www.yarpen.cz/oraschemadoc/ for more info
 
   CREATE UNIQUE INDEX "SPACEUSER"."RHN_VIS_OBJS_SESS_OBJ_TYPE_IDX" ON "SPACEUSER"."RHNVISIBLEOBJECTS" ("PXT_SESSION_ID", "OBJECT_ID", "OBJECT_TYPE") 

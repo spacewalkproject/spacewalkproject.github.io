@@ -1,4 +1,4 @@
--- created by Oraschemadoc Wed Aug 30 22:56:45 2017
+-- created by Oraschemadoc Wed Apr 11 12:22:06 2018
 -- visit http://www.yarpen.cz/oraschemadoc/ for more info
 
   CREATE TABLE "SPACEUSER"."RHNORGCHANNELSETTINGS" 

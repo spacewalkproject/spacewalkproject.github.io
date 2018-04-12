@@ -1,4 +1,4 @@
--- created by Oraschemadoc Wed Aug 30 22:57:11 2017
+-- created by Oraschemadoc Wed Apr 11 12:22:28 2018
 -- visit http://www.yarpen.cz/oraschemadoc/ for more info
 
   CREATE INDEX "SPACEUSER"."RHN_CHANNEL_TRUST_ORG_TRUST" ON "SPACEUSER"."RHNCHANNELTRUST" ("ORG_TRUST_ID") 

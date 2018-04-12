@@ -1,4 +1,4 @@
--- created by Oraschemadoc Wed Aug 30 22:57:29 2017
+-- created by Oraschemadoc Wed Apr 11 12:22:43 2018
 -- visit http://www.yarpen.cz/oraschemadoc/ for more info
 
   CREATE INDEX "SPACEUSER"."RHN_SRV_NET_ADDR4_IID_ADDR_IDX" ON "SPACEUSER"."RHNSERVERNETADDRESS4" ("INTERFACE_ID", "ADDRESS") 

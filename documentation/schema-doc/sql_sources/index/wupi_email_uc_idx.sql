@@ -1,4 +1,4 @@
--- created by Oraschemadoc Wed Aug 30 22:57:37 2017
+-- created by Oraschemadoc Wed Apr 11 12:22:49 2018
 -- visit http://www.yarpen.cz/oraschemadoc/ for more info
 
   CREATE INDEX "SPACEUSER"."WUPI_EMAIL_UC_IDX" ON "SPACEUSER"."WEB_USER_PERSONAL_INFO" ("EMAIL_UC") 

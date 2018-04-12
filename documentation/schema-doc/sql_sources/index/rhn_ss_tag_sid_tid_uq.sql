@@ -1,4 +1,4 @@
--- created by Oraschemadoc Wed Aug 30 22:57:30 2017
+-- created by Oraschemadoc Wed Apr 11 12:22:43 2018
 -- visit http://www.yarpen.cz/oraschemadoc/ for more info
 
   CREATE UNIQUE INDEX "SPACEUSER"."RHN_SS_TAG_SID_TID_UQ" ON "SPACEUSER"."RHNSNAPSHOTTAG" ("SERVER_ID", "TAG_ID") 

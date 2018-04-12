@@ -1,4 +1,4 @@
--- created by Oraschemadoc Wed Aug 30 22:57:13 2017
+-- created by Oraschemadoc Wed Apr 11 12:22:29 2018
 -- visit http://www.yarpen.cz/oraschemadoc/ for more info
 
   CREATE INDEX "SPACEUSER"."RHN_CPUARCH_ID_L_N_IDX" ON "SPACEUSER"."RHNCPUARCH" ("ID", "LABEL", "NAME") 

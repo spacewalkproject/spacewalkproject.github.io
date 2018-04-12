@@ -1,4 +1,4 @@
--- created by Oraschemadoc Wed Aug 30 22:57:39 2017
+-- created by Oraschemadoc Wed Apr 11 12:22:50 2018
 -- visit http://www.yarpen.cz/oraschemadoc/ for more info
 
   CREATE OR REPLACE FORCE VIEW "SPACEUSER"."RHNCHANNELTREEVIEW" ("ID", "DEPTH", "NAME", "PADDED_NAME", "CHANNEL_ARCH_ID", "LAST_MODIFIED", "LABEL", "PARENT_OR_SELF_LABEL", "PARENT_OR_SELF_ID", "END_OF_LIFE") AS 

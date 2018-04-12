@@ -1,4 +1,4 @@
--- created by Oraschemadoc Wed Aug 30 22:57:28 2017
+-- created by Oraschemadoc Wed Apr 11 12:22:41 2018
 -- visit http://www.yarpen.cz/oraschemadoc/ for more info
 
   CREATE UNIQUE INDEX "SPACEUSER"."RHN_SNAPCHAN_SID_CID_UQ" ON "SPACEUSER"."RHNSNAPSHOTCHANNEL" ("SNAPSHOT_ID", "CHANNEL_ID") 

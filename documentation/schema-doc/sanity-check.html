@@ -37,7 +37,7 @@
 <table>
 <tr><th>Table Name</th><th>Constraint name</th><th>Columns</th></tr><tr><td><a href="table-LOG.html"> LOG </a></td><td><a href="table-LOG.html#cs-LOG_USER_ID_FK">LOG_USER_ID_FK </a>
 </td><td>USER_ID</td></tr>
-<tr><td><a href="table-QRTZ_TRIGGERS.html"> QRTZ_TRIGGERS </a></td><td><a href="table-QRTZ_TRIGGERS.html#cs-SYS_C009283">SYS_C009283 </a>
+<tr><td><a href="table-QRTZ_TRIGGERS.html"> QRTZ_TRIGGERS </a></td><td><a href="table-QRTZ_TRIGGERS.html#cs-SYS_C009289">SYS_C009289 </a>
 </td><td>JOB_NAME, JOB_GROUP</td></tr>
 <tr><td><a href="table-RHNACTION.html"> RHNACTION </a></td><td><a href="table-RHNACTION.html#cs-RHN_ACTION_AT_FK">RHN_ACTION_AT_FK </a>
 </td><td>ACTION_TYPE</td></tr>
@@ -89,6 +89,8 @@
 </td><td>PRODUCT_NAME_ID</td></tr>
 <tr><td><a href="table-RHNCHANNELARCH.html"> RHNCHANNELARCH </a></td><td><a href="table-RHNCHANNELARCH.html#cs-RHN_CARCH_ATID_FK">RHN_CARCH_ATID_FK </a>
 </td><td>ARCH_TYPE_ID</td></tr>
+<tr><td><a href="table-RHNCHANNELCOMPS.html"> RHNCHANNELCOMPS </a></td><td><a href="table-RHNCHANNELCOMPS.html#cs-RHN_CHANNELCOMPS_COMPS_TYPE_FK">RHN_CHANNELCOMPS_COMPS_TYPE_FK </a>
+</td><td>COMPS_TYPE_ID</td></tr>
 <tr><td><a href="table-RHNCHANNELCONTENTSOURCE.html"> RHNCHANNELCONTENTSOURCE </a></td><td><a href="table-RHNCHANNELCONTENTSOURCE.html#cs-RHN_CCS_CID_FK">RHN_CCS_CID_FK </a>
 </td><td>CHANNEL_ID</td></tr>
 <tr><td><a href="table-RHNCHANNELFAMILY.html"> RHNCHANNELFAMILY </a></td><td><a href="table-RHNCHANNELFAMILY.html#cs-RHN_CHANNEL_FAMILY_ORG_FK">RHN_CHANNEL_FAMILY_ORG_FK </a>
@@ -171,6 +173,8 @@
 </td><td>CHANNEL_ID</td></tr>
 <tr><td><a href="table-RHNERRATATMP.html"> RHNERRATATMP </a></td><td><a href="table-RHNERRATATMP.html#cs-RHN_ERRATATMP_OID_FK">RHN_ERRATATMP_OID_FK </a>
 </td><td>ORG_ID</td></tr>
+<tr><td><a href="table-RHNERRATATMP.html"> RHNERRATATMP </a></td><td><a href="table-RHNERRATATMP.html#cs-RHN_ERRATATMP_SEVID_FK">RHN_ERRATATMP_SEVID_FK </a>
+</td><td>SEVERITY_ID</td></tr>
 <tr><td><a href="table-RHNFILE.html"> RHNFILE </a></td><td><a href="table-RHNFILE.html#cs-RHN_FILE_CHSUM_FK">RHN_FILE_CHSUM_FK </a>
 </td><td>CHECKSUM_ID</td></tr>
 <tr><td><a href="table-RHNFILE.html"> RHNFILE </a></td><td><a href="table-RHNFILE.html#cs-RHN_FILE_OID_FK">RHN_FILE_OID_FK </a>
@@ -267,7 +271,7 @@
 </td><td>PACKAGE_UPGRADE_ARCH_ID</td></tr>
 <tr><td><a href="table-RHNPROXYINFO.html"> RHNPROXYINFO </a></td><td><a href="table-RHNPROXYINFO.html#cs-RHN_PROXY_INFO_PEID_FK">RHN_PROXY_INFO_PEID_FK </a>
 </td><td>PROXY_EVR_ID</td></tr>
-<tr><td><a href="table-RHNPUSHCLIENT.html"> RHNPUSHCLIENT </a></td><td><a href="table-RHNPUSHCLIENT.html#cs-SYS_C008483">SYS_C008483 </a>
+<tr><td><a href="table-RHNPUSHCLIENT.html"> RHNPUSHCLIENT </a></td><td><a href="table-RHNPUSHCLIENT.html#cs-SYS_C008489">SYS_C008489 </a>
 </td><td>STATE_ID</td></tr>
 <tr><td><a href="table-RHNREGTOKENCHANNELS.html"> RHNREGTOKENCHANNELS </a></td><td><a href="table-RHNREGTOKENCHANNELS.html#cs-RHN_REG_TOK_CHN_SGS_FK">RHN_REG_TOK_CHN_SGS_FK </a>
 </td><td>CHANNEL_ID</td></tr>
@@ -329,13 +333,13 @@
 </td><td>LAST_MODIFIED_BY</td></tr>
 <tr><td><a href="table-RHNSERVERGROUPTYPEFEATURE.html"> RHNSERVERGROUPTYPEFEATURE </a></td><td><a href="table-RHNSERVERGROUPTYPEFEATURE.html#cs-RHN_SGT_FID_FK">RHN_SGT_FID_FK </a>
 </td><td>FEATURE_ID</td></tr>
-<tr><td><a href="table-RHNSERVERGROUP_LOG.html"> RHNSERVERGROUP_LOG </a></td><td><a href="table-RHNSERVERGROUP_LOG.html#cs-SYS_C009259">SYS_C009259 </a>
+<tr><td><a href="table-RHNSERVERGROUP_LOG.html"> RHNSERVERGROUP_LOG </a></td><td><a href="table-RHNSERVERGROUP_LOG.html#cs-SYS_C009265">SYS_C009265 </a>
 </td><td>LOG_ID</td></tr>
-<tr><td><a href="table-RHNSERVERPACKAGE.html"> RHNSERVERPACKAGE </a></td><td><a href="table-RHNSERVERPACKAGE.html#cs-SYS_C008774">SYS_C008774 </a>
+<tr><td><a href="table-RHNSERVERPACKAGE.html"> RHNSERVERPACKAGE </a></td><td><a href="table-RHNSERVERPACKAGE.html#cs-SYS_C008780">SYS_C008780 </a>
 </td><td>NAME_ID</td></tr>
-<tr><td><a href="table-RHNSERVERPACKAGE.html"> RHNSERVERPACKAGE </a></td><td><a href="table-RHNSERVERPACKAGE.html#cs-SYS_C008775">SYS_C008775 </a>
+<tr><td><a href="table-RHNSERVERPACKAGE.html"> RHNSERVERPACKAGE </a></td><td><a href="table-RHNSERVERPACKAGE.html#cs-SYS_C008781">SYS_C008781 </a>
 </td><td>EVR_ID</td></tr>
-<tr><td><a href="table-RHNSERVERPACKAGE.html"> RHNSERVERPACKAGE </a></td><td><a href="table-RHNSERVERPACKAGE.html#cs-SYS_C008776">SYS_C008776 </a>
+<tr><td><a href="table-RHNSERVERPACKAGE.html"> RHNSERVERPACKAGE </a></td><td><a href="table-RHNSERVERPACKAGE.html#cs-SYS_C008782">SYS_C008782 </a>
 </td><td>PACKAGE_ARCH_ID</td></tr>
 <tr><td><a href="table-RHNSERVERPROFILE.html"> RHNSERVERPROFILE </a></td><td><a href="table-RHNSERVERPROFILE.html#cs-RHN_SERVER_PROFILE_PTYPE_FK">RHN_SERVER_PROFILE_PTYPE_FK </a>
 </td><td>PROFILE_TYPE_ID</td></tr>
@@ -345,7 +349,7 @@
 </td><td>NAME_ID</td></tr>
 <tr><td><a href="table-RHNSERVERPROFILEPACKAGE.html"> RHNSERVERPROFILEPACKAGE </a></td><td><a href="table-RHNSERVERPROFILEPACKAGE.html#cs-RHN_SPROFILE_PACKAGE_FK">RHN_SPROFILE_PACKAGE_FK </a>
 </td><td>PACKAGE_ARCH_ID</td></tr>
-<tr><td><a href="table-RHNSERVER_LOG.html"> RHNSERVER_LOG </a></td><td><a href="table-RHNSERVER_LOG.html#cs-SYS_C009251">SYS_C009251 </a>
+<tr><td><a href="table-RHNSERVER_LOG.html"> RHNSERVER_LOG </a></td><td><a href="table-RHNSERVER_LOG.html#cs-SYS_C009257">SYS_C009257 </a>
 </td><td>LOG_ID</td></tr>
 <tr><td><a href="table-RHNSGTYPEBASEADDONCOMPAT.html"> RHNSGTYPEBASEADDONCOMPAT </a></td><td><a href="table-RHNSGTYPEBASEADDONCOMPAT.html#cs-RHN_SGT_BAC_AID_FK">RHN_SGT_BAC_AID_FK </a>
 </td><td>ADDON_ID</td></tr>
@@ -421,7 +425,7 @@
 </td><td>TYPE_ID</td></tr>
 <tr><td><a href="table-SUSECREDENTIALS.html"> SUSECREDENTIALS </a></td><td><a href="table-SUSECREDENTIALS.html#cs-SUSE_CREDENTIALS_USER_FK">SUSE_CREDENTIALS_USER_FK </a>
 </td><td>USER_ID</td></tr>
-<tr><td><a href="table-WEB_CONTACT_LOG.html"> WEB_CONTACT_LOG </a></td><td><a href="table-WEB_CONTACT_LOG.html#cs-SYS_C009239">SYS_C009239 </a>
+<tr><td><a href="table-WEB_CONTACT_LOG.html"> WEB_CONTACT_LOG </a></td><td><a href="table-WEB_CONTACT_LOG.html#cs-SYS_C009245">SYS_C009245 </a>
 </td><td>LOG_ID</td></tr>
 <tr><td><a href="table-WEB_USER_CONTACT_PERMISSION.html"> WEB_USER_CONTACT_PERMISSION </a></td><td><a href="table-WEB_USER_CONTACT_PERMISSION.html#cs-CONTPERM_WBUSERID_FK">CONTPERM_WBUSERID_FK </a>
 </td><td>WEB_USER_ID</td></tr>
@@ -431,5 +435,5 @@
 </td><td>TYPE</td></tr>
 </table><div class="footer">
         Generated by  <a href="http://www.yarpen.cz/oraschemadoc">OraSchemaDoc</a>,
-        (c) Petr Vanek, 2005; Aram Kananov, 2002, on Wed Aug 30 22:57:58 2017</div>
+        (c) Petr Vanek, 2005; Aram Kananov, 2002, on Wed Apr 11 12:23:02 2018</div>
 </body></html>

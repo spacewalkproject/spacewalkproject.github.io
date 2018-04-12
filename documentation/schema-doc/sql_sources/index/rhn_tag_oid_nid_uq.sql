@@ -1,4 +1,4 @@
--- created by Oraschemadoc Wed Aug 30 22:57:30 2017
+-- created by Oraschemadoc Wed Apr 11 12:22:43 2018
 -- visit http://www.yarpen.cz/oraschemadoc/ for more info
 
   CREATE UNIQUE INDEX "SPACEUSER"."RHN_TAG_OID_NID_UQ" ON "SPACEUSER"."RHNTAG" ("ORG_ID", "NAME_ID") 

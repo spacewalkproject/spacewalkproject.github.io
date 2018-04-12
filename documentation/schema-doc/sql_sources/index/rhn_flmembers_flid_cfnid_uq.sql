@@ -1,4 +1,4 @@
--- created by Oraschemadoc Wed Aug 30 22:57:17 2017
+-- created by Oraschemadoc Wed Apr 11 12:22:33 2018
 -- visit http://www.yarpen.cz/oraschemadoc/ for more info
 
   CREATE UNIQUE INDEX "SPACEUSER"."RHN_FLMEMBERS_FLID_CFNID_UQ" ON "SPACEUSER"."RHNFILELISTMEMBERS" ("FILE_LIST_ID", "CONFIG_FILE_NAME_ID") 

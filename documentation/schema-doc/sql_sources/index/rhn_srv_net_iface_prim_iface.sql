@@ -1,4 +1,4 @@
--- created by Oraschemadoc Wed Aug 30 22:57:29 2017
+-- created by Oraschemadoc Wed Apr 11 12:22:43 2018
 -- visit http://www.yarpen.cz/oraschemadoc/ for more info
 
   CREATE UNIQUE INDEX "SPACEUSER"."RHN_SRV_NET_IFACE_PRIM_IFACE" ON "SPACEUSER"."RHNSERVERNETINTERFACE" (CASE  WHEN "IS_PRIMARY" IS NULL THEN NULL ELSE "SERVER_ID" END ) 

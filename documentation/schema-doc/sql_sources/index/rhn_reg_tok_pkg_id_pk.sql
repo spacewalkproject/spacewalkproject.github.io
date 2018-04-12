@@ -1,4 +1,4 @@
--- created by Oraschemadoc Wed Aug 30 22:57:24 2017
+-- created by Oraschemadoc Wed Apr 11 12:22:39 2018
 -- visit http://www.yarpen.cz/oraschemadoc/ for more info
 
   CREATE UNIQUE INDEX "SPACEUSER"."RHN_REG_TOK_PKG_ID_PK" ON "SPACEUSER"."RHNREGTOKENPACKAGES" ("ID") 

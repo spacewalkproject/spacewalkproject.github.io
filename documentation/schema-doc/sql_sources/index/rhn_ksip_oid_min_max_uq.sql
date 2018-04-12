@@ -1,4 +1,4 @@
--- created by Oraschemadoc Wed Aug 30 22:57:18 2017
+-- created by Oraschemadoc Wed Apr 11 12:22:33 2018
 -- visit http://www.yarpen.cz/oraschemadoc/ for more info
 
   CREATE UNIQUE INDEX "SPACEUSER"."RHN_KSIP_OID_MIN_MAX_UQ" ON "SPACEUSER"."RHNKICKSTARTIPRANGE" ("ORG_ID", "MIN", "MAX") 

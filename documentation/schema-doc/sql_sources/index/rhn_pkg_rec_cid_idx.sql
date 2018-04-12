@@ -1,4 +1,4 @@
--- created by Oraschemadoc Wed Aug 30 22:57:23 2017
+-- created by Oraschemadoc Wed Apr 11 12:22:37 2018
 -- visit http://www.yarpen.cz/oraschemadoc/ for more info
 
   CREATE INDEX "SPACEUSER"."RHN_PKG_REC_CID_IDX" ON "SPACEUSER"."RHNPACKAGERECOMMENDS" ("CAPABILITY_ID") 

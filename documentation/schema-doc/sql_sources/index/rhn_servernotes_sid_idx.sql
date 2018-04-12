@@ -1,4 +1,4 @@
--- created by Oraschemadoc Wed Aug 30 22:57:26 2017
+-- created by Oraschemadoc Wed Apr 11 12:22:40 2018
 -- visit http://www.yarpen.cz/oraschemadoc/ for more info
 
   CREATE INDEX "SPACEUSER"."RHN_SERVERNOTES_SID_IDX" ON "SPACEUSER"."RHNSERVERNOTES" ("SERVER_ID") 

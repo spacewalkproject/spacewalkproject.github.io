@@ -1,4 +1,4 @@
--- created by Oraschemadoc Wed Aug 30 22:57:28 2017
+-- created by Oraschemadoc Wed Apr 11 12:22:42 2018
 -- visit http://www.yarpen.cz/oraschemadoc/ for more info
 
   CREATE UNIQUE INDEX "SPACEUSER"."RHN_SNAPSHOTSG_SID_SGID_UQ" ON "SPACEUSER"."RHNSNAPSHOTSERVERGROUP" ("SNAPSHOT_ID", "SERVER_GROUP_ID") 

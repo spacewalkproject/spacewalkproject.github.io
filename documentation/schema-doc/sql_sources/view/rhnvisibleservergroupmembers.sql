@@ -1,4 +1,4 @@
--- created by Oraschemadoc Wed Aug 30 22:57:43 2017
+-- created by Oraschemadoc Wed Apr 11 12:22:53 2018
 -- visit http://www.yarpen.cz/oraschemadoc/ for more info
 
   CREATE OR REPLACE FORCE VIEW "SPACEUSER"."RHNVISIBLESERVERGROUPMEMBERS" ("SERVER_ID", "SERVER_GROUP_ID", "CREATED", "MODIFIED") AS 

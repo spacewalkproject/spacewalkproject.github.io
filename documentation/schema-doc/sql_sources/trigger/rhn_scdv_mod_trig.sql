@@ -1,4 +1,4 @@
--- created by Oraschemadoc Wed Aug 30 22:57:47 2017
+-- created by Oraschemadoc Wed Apr 11 12:22:55 2018
 -- visit http://www.yarpen.cz/oraschemadoc/ for more info
 
   CREATE OR REPLACE TRIGGER "SPACEUSER"."RHN_SCDV_MOD_TRIG" 

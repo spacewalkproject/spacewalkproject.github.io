@@ -1,4 +1,4 @@
--- created by Oraschemadoc Wed Aug 30 22:57:14 2017
+-- created by Oraschemadoc Wed Apr 11 12:22:30 2018
 -- visit http://www.yarpen.cz/oraschemadoc/ for more info
 
   CREATE INDEX "SPACEUSER"."RHN_ECLONEDTMP_FEID_TEID_IDX" ON "SPACEUSER"."RHNERRATACLONEDTMP" ("ORIGINAL_ID", "ID") 

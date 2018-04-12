@@ -1,4 +1,4 @@
--- created by Oraschemadoc Wed Aug 30 22:57:12 2017
+-- created by Oraschemadoc Wed Apr 11 12:22:29 2018
 -- visit http://www.yarpen.cz/oraschemadoc/ for more info
 
   CREATE UNIQUE INDEX "SPACEUSER"."RHN_CPERM_CID_UID_RID_IDX" ON "SPACEUSER"."RHNCHANNELPERMISSION" ("CHANNEL_ID", "USER_ID", "ROLE_ID") 

@@ -1,4 +1,4 @@
--- created by Oraschemadoc Wed Aug 30 22:57:23 2017
+-- created by Oraschemadoc Wed Apr 11 12:22:38 2018
 -- visit http://www.yarpen.cz/oraschemadoc/ for more info
 
   CREATE UNIQUE INDEX "SPACEUSER"."RHN_PRIVCF_OID_CFID_UQ" ON "SPACEUSER"."RHNPRIVATECHANNELFAMILY" ("ORG_ID", "CHANNEL_FAMILY_ID") 

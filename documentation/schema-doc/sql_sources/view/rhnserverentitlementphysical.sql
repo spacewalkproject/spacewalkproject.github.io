@@ -1,4 +1,4 @@
--- created by Oraschemadoc Wed Aug 30 22:57:41 2017
+-- created by Oraschemadoc Wed Apr 11 12:22:50 2018
 -- visit http://www.yarpen.cz/oraschemadoc/ for more info
 
   CREATE OR REPLACE FORCE VIEW "SPACEUSER"."RHNSERVERENTITLEMENTPHYSICAL" ("SERVER_ID", "SERVER_GROUP_ID", "SERVER_GROUP_TYPE_ID", "LABEL", "PERMANENT", "IS_BASE", "MODIFIED") AS 

@@ -1,4 +1,4 @@
--- created by Oraschemadoc Wed Aug 30 22:57:29 2017
+-- created by Oraschemadoc Wed Apr 11 12:22:42 2018
 -- visit http://www.yarpen.cz/oraschemadoc/ for more info
 
   CREATE UNIQUE INDEX "SPACEUSER"."RHN_SP_SNEP_UQ" ON "SPACEUSER"."RHNSERVERPACKAGE" ("SERVER_ID", "NAME_ID", "EVR_ID", "PACKAGE_ARCH_ID") 

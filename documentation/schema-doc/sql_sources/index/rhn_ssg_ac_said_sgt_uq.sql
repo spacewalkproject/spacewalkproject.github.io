@@ -1,4 +1,4 @@
--- created by Oraschemadoc Wed Aug 30 22:57:30 2017
+-- created by Oraschemadoc Wed Apr 11 12:22:43 2018
 -- visit http://www.yarpen.cz/oraschemadoc/ for more info
 
   CREATE UNIQUE INDEX "SPACEUSER"."RHN_SSG_AC_SAID_SGT_UQ" ON "SPACEUSER"."RHNSERVERSERVERGROUPARCHCOMPAT" ("SERVER_ARCH_ID", "SERVER_GROUP_TYPE") 

@@ -1,4 +1,4 @@
--- created by Oraschemadoc Wed Aug 30 22:57:27 2017
+-- created by Oraschemadoc Wed Apr 11 12:22:41 2018
 -- visit http://www.yarpen.cz/oraschemadoc/ for more info
 
   CREATE UNIQUE INDEX "SPACEUSER"."RHN_SET_USER_LABEL_ELEM_UNQ" ON "SPACEUSER"."RHNSET" ("USER_ID", "LABEL", "ELEMENT", "ELEMENT_TWO", "ELEMENT_THREE") 

@@ -1,4 +1,4 @@
--- created by Oraschemadoc Wed Aug 30 22:57:17 2017
+-- created by Oraschemadoc Wed Apr 11 12:22:32 2018
 -- visit http://www.yarpen.cz/oraschemadoc/ for more info
 
   CREATE INDEX "SPACEUSER"."RHN_FILEDL_UID_FID_IDX" ON "SPACEUSER"."RHNFILEDOWNLOAD" ("USER_ID", "FILE_ID") 

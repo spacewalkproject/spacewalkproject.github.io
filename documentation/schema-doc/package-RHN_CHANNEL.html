@@ -130,7 +130,7 @@ Legend: <span class="comment">comment</span> <span class="string">string</span> 
     98<span class="operator">:</span> 
     99<span class="operator">:</span>     <span class="reserved">PROCEDURE</span> update_needed_cache<span class="operator">(</span>channel_id_in <span class="reserved">in</span> number<span class="operator">)</span>;
    100<span class="operator">:</span> 
-   101<span class="operator">:</span>     <span class="reserved">procedure</span> set_comps<span class="operator">(</span>channel_id_in <span class="reserved">in</span> number<span class="operator">,</span> path_in <span class="reserved">in</span> varchar2<span class="operator">,</span> timestamp_in <span class="reserved">in</span> varchar2<span class="operator">)</span>;
+   101<span class="operator">:</span>     <span class="reserved">procedure</span> set_comps<span class="operator">(</span>channel_id_in <span class="reserved">in</span> number<span class="operator">,</span> path_in <span class="reserved">in</span> varchar2<span class="operator">,</span> comps_type_id_in <span class="reserved">in</span> number<span class="operator">,</span> timestamp_in <span class="reserved">in</span> varchar2<span class="operator">)</span>;
    102<span class="operator">:</span> 
    103<span class="operator">:</span> <span class="reserved">END</span> rhn_channel;
 </pre>
@@ -912,28 +912,30 @@ Legend: <span class="comment">comment</span> <span class="string">string</span> 
    772<span class="operator">:</span>       <span class="reserved">end</span> <span class="keyword">loop</span>;
    773<span class="operator">:</span>    <span class="reserved">end</span> update_needed_cache;
    774<span class="operator">:</span> 
-   775<span class="operator">:</span>     <span class="reserved">procedure</span> set_comps<span class="operator">(</span>channel_id_in <span class="reserved">in</span> number<span class="operator">,</span> path_in <span class="reserved">in</span> varchar2<span class="operator">,</span> timestamp_in <span class="reserved">in</span> varchar2<span class="operator">)</span>
+   775<span class="operator">:</span>     <span class="reserved">procedure</span> set_comps<span class="operator">(</span>channel_id_in <span class="reserved">in</span> number<span class="operator">,</span> path_in <span class="reserved">in</span> varchar2<span class="operator">,</span> comps_type_id_in <span class="reserved">in</span> number<span class="operator">,</span> timestamp_in <span class="reserved">in</span> varchar2<span class="operator">)</span>
    776<span class="operator">:</span>     <span class="reserved">is</span>
    777<span class="operator">:</span>     <span class="reserved">begin</span>
    778<span class="operator">:</span>         <span class="reserved">for</span> <span class="keyword">row</span> <span class="reserved">in</span> <span class="operator">(</span>
    779<span class="operator">:</span>             <span class="reserved">select</span> relative_filename<span class="operator">,</span> last_modified
    780<span class="operator">:</span>             <span class="reserved">from</span> rhnChannelComps
    781<span class="operator">:</span>             <span class="reserved">where</span> channel_id <span class="operator">=</span> channel_id_in
-   782<span class="operator">:</span>             <span class="operator">)</span> <span class="keyword">loop</span>
-   783<span class="operator">:</span>             <span class="reserved">if</span> <span class="keyword">row</span><span class="operator">.</span>relative_filename <span class="operator">=</span> path_in
-   784<span class="operator">:</span>                 <span class="reserved">and</span> <span class="keyword">row</span><span class="operator">.</span>last_modified <span class="operator">=</span> to_date<span class="operator">(</span>timestamp_in<span class="operator">,</span> <span class="string">'YYYYMMDDHH24MISS'</span><span class="operator">)</span> <span class="reserved">then</span>
-   785<span class="operator">:</span>                 <span class="keyword">return</span>;
-   786<span class="operator">:</span>             <span class="reserved">end</span> <span class="reserved">if</span>;
-   787<span class="operator">:</span>         <span class="reserved">end</span> <span class="keyword">loop</span>;
-   788<span class="operator">:</span>         <span class="reserved">delete</span> <span class="reserved">from</span> rhnChannelComps
-   789<span class="operator">:</span>         <span class="reserved">where</span> channel_id <span class="operator">=</span> channel_id_in;
-   790<span class="operator">:</span>         <span class="reserved">insert</span> <span class="reserved">into</span> rhnChannelComps <span class="operator">(</span>id<span class="operator">,</span> channel_id<span class="operator">,</span> relative_filename<span class="operator">,</span> last_modified<span class="operator">,</span> created<span class="operator">,</span> modified<span class="operator">)</span>
-   791<span class="operator">:</span>         <span class="reserved">values</span> <span class="operator">(</span>sequence_nextval<span class="operator">(</span><span class="string">'rhn_channelcomps_id_seq'</span><span class="operator">)</span><span class="operator">,</span> channel_id_in<span class="operator">,</span> path_in<span class="operator">,</span> to_date<span class="operator">(</span>timestamp_in<span class="operator">,</span> <span class="string">'YYYYMMDDHH24MISS'</span><span class="operator">)</span><span class="operator">,</span> current_timestamp<span class="operator">,</span> current_timestamp<span class="operator">)</span>;
-   792<span class="operator">:</span>     <span class="reserved">end</span> set_comps;
-   793<span class="operator">:</span> 
-   794<span class="operator">:</span> <span class="reserved">END</span> rhn_channel;
+   782<span class="operator">:</span>             <span class="reserved">and</span> comps_type_id <span class="operator">=</span> comps_type_id_in
+   783<span class="operator">:</span>             <span class="operator">)</span> <span class="keyword">loop</span>
+   784<span class="operator">:</span>             <span class="reserved">if</span> <span class="keyword">row</span><span class="operator">.</span>relative_filename <span class="operator">=</span> path_in
+   785<span class="operator">:</span>                 <span class="reserved">and</span> <span class="keyword">row</span><span class="operator">.</span>last_modified <span class="operator">=</span> to_date<span class="operator">(</span>timestamp_in<span class="operator">,</span> <span class="string">'YYYYMMDDHH24MISS'</span><span class="operator">)</span> <span class="reserved">then</span>
+   786<span class="operator">:</span>                 <span class="keyword">return</span>;
+   787<span class="operator">:</span>             <span class="reserved">end</span> <span class="reserved">if</span>;
+   788<span class="operator">:</span>         <span class="reserved">end</span> <span class="keyword">loop</span>;
+   789<span class="operator">:</span>         <span class="reserved">delete</span> <span class="reserved">from</span> rhnChannelComps
+   790<span class="operator">:</span>         <span class="reserved">where</span> channel_id <span class="operator">=</span> channel_id_in
+   791<span class="operator">:</span>         <span class="reserved">and</span> comps_type_id <span class="operator">=</span> comps_type_id_in;
+   792<span class="operator">:</span>         <span class="reserved">insert</span> <span class="reserved">into</span> rhnChannelComps <span class="operator">(</span>id<span class="operator">,</span> channel_id<span class="operator">,</span> relative_filename<span class="operator">,</span> comps_type_id<span class="operator">,</span> last_modified<span class="operator">,</span> created<span class="operator">,</span> modified<span class="operator">)</span>
+   793<span class="operator">:</span>         <span class="reserved">values</span> <span class="operator">(</span>sequence_nextval<span class="operator">(</span><span class="string">'rhn_channelcomps_id_seq'</span><span class="operator">)</span><span class="operator">,</span> channel_id_in<span class="operator">,</span> path_in<span class="operator">,</span> comps_type_id_in<span class="operator">,</span> to_date<span class="operator">(</span>timestamp_in<span class="operator">,</span> <span class="string">'YYYYMMDDHH24MISS'</span><span class="operator">)</span><span class="operator">,</span> current_timestamp<span class="operator">,</span> current_timestamp<span class="operator">)</span>;
+   794<span class="operator">:</span>     <span class="reserved">end</span> set_comps;
+   795<span class="operator">:</span> 
+   796<span class="operator">:</span> <span class="reserved">END</span> rhn_channel;
 </pre>
 <div class="footer">
         Generated by  <a href="http://www.yarpen.cz/oraschemadoc">OraSchemaDoc</a>,
-        (c) Petr Vanek, 2005; Aram Kananov, 2002, on Wed Aug 30 22:58:14 2017</div>
+        (c) Petr Vanek, 2005; Aram Kananov, 2002, on Wed Apr 11 12:23:20 2018</div>
 </body></html>

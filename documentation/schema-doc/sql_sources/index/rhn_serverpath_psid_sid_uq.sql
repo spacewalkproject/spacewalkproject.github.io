@@ -1,4 +1,4 @@
--- created by Oraschemadoc Wed Aug 30 22:57:26 2017
+-- created by Oraschemadoc Wed Apr 11 12:22:40 2018
 -- visit http://www.yarpen.cz/oraschemadoc/ for more info
 
   CREATE UNIQUE INDEX "SPACEUSER"."RHN_SERVERPATH_PSID_SID_UQ" ON "SPACEUSER"."RHNSERVERPATH" ("PROXY_SERVER_ID", "SERVER_ID") 

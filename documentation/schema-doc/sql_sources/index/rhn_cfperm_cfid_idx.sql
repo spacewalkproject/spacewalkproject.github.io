@@ -1,4 +1,4 @@
--- created by Oraschemadoc Wed Aug 30 22:57:10 2017
+-- created by Oraschemadoc Wed Apr 11 12:22:27 2018
 -- visit http://www.yarpen.cz/oraschemadoc/ for more info
 
   CREATE INDEX "SPACEUSER"."RHN_CFPERM_CFID_IDX" ON "SPACEUSER"."RHNPRIVATECHANNELFAMILY" ("CHANNEL_FAMILY_ID") 

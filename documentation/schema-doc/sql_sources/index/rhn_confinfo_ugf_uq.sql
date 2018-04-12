@@ -1,4 +1,4 @@
--- created by Oraschemadoc Wed Aug 30 22:57:12 2017
+-- created by Oraschemadoc Wed Apr 11 12:22:29 2018
 -- visit http://www.yarpen.cz/oraschemadoc/ for more info
 
   CREATE UNIQUE INDEX "SPACEUSER"."RHN_CONFINFO_UGF_UQ" ON "SPACEUSER"."RHNCONFIGINFO" ("USERNAME", "GROUPNAME", "FILEMODE", "SELINUX_CTX", "SYMLINK_TARGET_FILENAME_ID") 

@@ -1,2 +1,3 @@
-<area shape="rect" id="node1" href="table-RHNCHANNELCOMPS.html#t-fk" title="RHNCHANNELCOMPS" alt="" coords="172,41,337,71">
-<area shape="rect" id="node2" href="table-RHNCHANNEL.html#t-fk" title="RHNCHANNEL" alt="" coords="5,41,123,71">
+<area shape="rect" id="node1" href="table-RHNCHANNELCOMPS.html#t-fk" title="RHNCHANNELCOMPS" alt="" coords="191,68,356,97">
+<area shape="rect" id="node2" href="table-RHNCOMPSTYPE.html#t-fk" title="RHNCOMPSTYPE" alt="" coords="5,41,141,71">
+<area shape="rect" id="node3" href="table-RHNCHANNEL.html#t-fk" title="RHNCHANNEL" alt="" coords="15,95,132,124">

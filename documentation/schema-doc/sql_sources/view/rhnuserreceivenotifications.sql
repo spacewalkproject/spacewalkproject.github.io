@@ -1,4 +1,4 @@
--- created by Oraschemadoc Wed Aug 30 22:57:43 2017
+-- created by Oraschemadoc Wed Apr 11 12:22:52 2018
 -- visit http://www.yarpen.cz/oraschemadoc/ for more info
 
   CREATE OR REPLACE FORCE VIEW "SPACEUSER"."RHNUSERRECEIVENOTIFICATIONS" ("ORG_ID", "USER_ID", "SERVER_ID") AS 

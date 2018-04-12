@@ -1,4 +1,4 @@
--- created by Oraschemadoc Wed Aug 30 22:57:07 2017
+-- created by Oraschemadoc Wed Apr 11 12:22:24 2018
 -- visit http://www.yarpen.cz/oraschemadoc/ for more info
 
   CREATE UNIQUE INDEX "SPACEUSER"."RHN_ACTIONCFR_ACRID_UQ" ON "SPACEUSER"."RHNACTIONCONFIGREVISIONRESULT" ("ACTION_CONFIG_REVISION_ID") 

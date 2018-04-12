@@ -1,4 +1,4 @@
--- created by Oraschemadoc Wed Aug 30 22:57:16 2017
+-- created by Oraschemadoc Wed Apr 11 12:22:32 2018
 -- visit http://www.yarpen.cz/oraschemadoc/ for more info
 
   CREATE INDEX "SPACEUSER"."RHN_FILEDL_START_IDX" ON "SPACEUSER"."RHNFILEDOWNLOAD" ("START_TIME") 

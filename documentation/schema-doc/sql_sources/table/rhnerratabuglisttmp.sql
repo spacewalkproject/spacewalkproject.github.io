@@ -1,4 +1,4 @@
--- created by Oraschemadoc Wed Aug 30 22:56:39 2017
+-- created by Oraschemadoc Wed Apr 11 12:22:01 2018
 -- visit http://www.yarpen.cz/oraschemadoc/ for more info
 
   CREATE TABLE "SPACEUSER"."RHNERRATABUGLISTTMP" 
