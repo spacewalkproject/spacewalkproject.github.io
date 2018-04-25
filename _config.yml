@@ -27,6 +27,9 @@ theme: minima
 plugins:
   - jekyll-feed
 
+spacewalk_version: 2.8
+spacewalk_version_short: 28
+
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
