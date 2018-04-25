@@ -27,36 +27,50 @@ title: Development
                 <h2 class="section-heading">Development</h2>
                 <hr/>
                 <div class="col-md-12 text-center">
+                    <h3>Source repository</h3>
                     <div>
-                        <p>All development of Spacewalk happens in the community and out in the open. Communication
-                            between developers occurs on <a href="communicate.html">the development mailing list and in
-                                IRC</a>, documentation is stored on <a
-                                    href="https://github.com/spacewalkproject/spacewalk/wiki">our wiki</a>, and our <a
-                                    href="repository.html">source code repository and all changes to it</a> are publicly
-                            available.</p>
-
-                        <h3>Mailing Lists &amp; IRC</h3>
-                        <p>Much of the discussion about how Spacewalk is developed takes place on our <a
-                                href="https://www.redhat.com/mailman/listinfo/spacewalk-devel">spacewalk-devel@redhat.com</a>
-                            development mailing list as well as <a href="communicate.html">our IRC channel</a>. <a
-                                    href="communicate.html">Learn more</a> about our mailing lists and IRC.
-
-                        <h3>Wiki</h3>
-                        <p>The <a href="https://github.com/spacewalkproject/spacewalk/wiki">Spacewalk developer wiki</a>
-                            is our main source of developer documentation, notes, and planning documents. If you'd like
-                            to be able to contribute to our wiki, you'll need a GitHub account. You can submit Pull
-                            request to <a href="https://github.com/spacewalkproject/spacewalk-wiki">spacewalkproject/spacewalk-wiki</a>
-                            repository. More details can be found <a
-                                    href="https://github.com/spacewalkproject/spacewalk/wiki/WikiContribute">here</a>.
+                        <p>Spacewalk's source repository uses the git source control system and is located at <a
+                                href="https://github.com/spacewalkproject/spacewalk">GitHub</a>:&nbsp; <em>(you will
+                            need git installed, yum install git)</em>
+                            <div>
+                        <p class="quote">
+                            git clone git@github.com:spacewalkproject/spacewalk.git
                         </p>
-
                     </div>
 
+                    <p>For information on how to work with our source repository, please visit <a
+                            href="https://github.com/spacewalkproject/spacewalk/wiki/DownloadIt">the wiki download
+                        page</a>.
+
+                    <p>All development of Spacewalk happens in the community and out in the open. Communication
+                        between developers occurs on <a href="communicate.html">the development mailing list and in
+                            IRC</a>, documentation is stored on <a
+                                href="https://github.com/spacewalkproject/spacewalk/wiki">our wiki</a>, and our <a
+                                href="repository.html">source code repository and all changes to it</a> are publicly
+                        available.</p>
+
+                    <h3>Mailing Lists &amp; IRC</h3>
+                    <p>Much of the discussion about how Spacewalk is developed takes place on our <a
+                            href="https://www.redhat.com/mailman/listinfo/spacewalk-devel">spacewalk-devel@redhat.com</a>
+                        development mailing list as well as <a href="communicate.html">our IRC channel</a>. <a
+                                href="communicate.html">Learn more</a> about our mailing lists and IRC.
+
+                    <h3>Wiki</h3>
+                    <p>The <a href="https://github.com/spacewalkproject/spacewalk/wiki">Spacewalk developer wiki</a>
+                        is our main source of developer documentation, notes, and planning documents. If you'd like
+                        to be able to contribute to our wiki, you'll need a GitHub account. You can submit Pull
+                        request to <a href="https://github.com/spacewalkproject/spacewalk-wiki">spacewalkproject/spacewalk-wiki</a>
+                        repository. More details can be found <a
+                                href="https://github.com/spacewalkproject/spacewalk/wiki/WikiContribute">here</a>.
+                    </p>
+
                 </div>
+
             </div>
         </div>
     </div>
-        {% include scroll_to_top.html %}
+    </div>
+    {% include scroll_to_top.html %}
 </section>
 
 <footer>
@@ -64,7 +78,7 @@ title: Development
 </footer>
 
 <!-- jQuery -->
-    {% include jsresource.html %}
+{% include jsresource.html %}
 </body>
 
 </html>

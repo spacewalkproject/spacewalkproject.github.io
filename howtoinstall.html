@@ -1,0 +1,92 @@
+---
+title: Download
+---
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% include head.html %}
+</head>
+
+<body id="page-top">
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+    {% include nav.html %}
+</nav>
+
+<!-- HEADER -->
+<header>
+    {% include header.html %}
+</header>
+
+<!-- DOWNLOAD -->
+<section class="section-download" id="download">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-lg-offset-1 text-center">
+                <h2 class="section-heading">How To Install</h2>
+                <hr/>
+                <div class="col-md-12 text-center">
+                    <div>
+                        <p>Current version is Spacewalk {{ site.spacewalk_version }} and is licensed under the <a
+                                href="http://www.gnu.org/licenses/gpl-2.0.html">General
+                            Public License (GPLv2).</a></p>
+
+                        <h3>Install/Upgrade instructions</h3>
+
+                        <p>Up to date instructions on how to install and upgrade Spacewalk could be found on our Github
+                            Wiki
+                        <blockquote class="large-link">
+                            <a href="https://github.com/spacewalkproject/spacewalk/wiki/HowToInstall">How To Install
+                                Spacewalk {{
+                                site.spacewalk_version }}</a></blockquote>
+                        <blockquote class="large-link">
+                            <a href="https://github.com/spacewalkproject/spacewalk/wiki/HowToUpgrade">How To Upgrade</a>
+                        </blockquote>
+                        </p>
+                        <p>For more information please visit the <a
+                                href="https://github.com/spacewalkproject/spacewalk/wiki/">Spacewalk developer wiki</a>.
+                        </p>
+
+                        <h3>Repositories</h3>
+                        <p>Spacewalk provides RPM repositories in <a
+                                href="https://copr.fedorainfracloud.org/groups/g/spacewalkproject/spacewalk-{{ site.spacewalk_version }}/">COPR</a>.
+                        </p>
+                        <p class="quote" style="margin-left:0">yum copr enable @spacewalkproject/spacewalk-{{
+                            site.spacewalk_version }}</p><br>
+
+                        <p>Repositories could be still added as a standard YUM repository</p>
+                        <h4 style="text-align: left">Manual repository setup</h4>
+                        <p>
+                            Repositories could be set up manually by using .repo files from our build system.
+                        </p>
+                        <blockquote class="large-link">
+                            <a href="https://copr.fedorainfracloud.org/coprs/g/spacewalkproject/spacewalk-{{ site.spacewalk_version }}/">Spacewalk
+                                Build System</a></blockquote>
+
+                        Our RPM packages are GPG signed. Visit
+                        the <a href="https://github.com/spacewalkproject/spacewalk/wiki/DownloadIt">download
+                        area</a> of the project wiki for more information and access to the <a
+                            href="https://copr-be.cloud.fedoraproject.org/results/@spacewalkproject/spacewalk-{{ site.spacewalk_version }}/pubkey.gpg">Spacewalk
+                        {{ site.spacewalk_version }} public
+                        GPG key</a>.
+                        For more information on using this yum repository and installing Spacewalk, please visit the
+                        <a href="https://github.com/spacewalkproject/spacewalk/wiki/HowToInstall">Spacewalk
+                            installation procedures</a> on the developer wiki.</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include scroll_to_top.html %}
+</section>
+
+<footer>
+    {% include footer.html %}
+</footer>
+
+<!-- jQuery -->
+{% include jsresource.html %}
+</body>
+
+</html>
