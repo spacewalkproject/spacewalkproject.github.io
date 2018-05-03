@@ -1,6 +1,8 @@
 body, html {
     height: 100%;
-    width: 100%
+    width: 100%;
+    background-image: url("../img/bg.png");
+    background-repeat: repeat;
 }
 
 body {
@@ -408,6 +410,11 @@ header .header-content-inner-resp {
     padding: 0 0 5%
 }
 
+.release-notes {
+    display: none;
+}
+
+
 @media (min-width: 1024px) {
     header {
         background-image: url(../img/header.png);
@@ -481,6 +488,7 @@ header .header-content-inner-resp {
          }
      }
      .release-notes {
+         display: block;
         padding:5px;
         background-color: rgba(255,255,255,.1);
         box-shadow: rgba(255,255,255,.1) 0 0 20px;
