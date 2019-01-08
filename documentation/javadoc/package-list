@@ -63,7 +63,6 @@ com.redhat.rhn.domain.common
 com.redhat.rhn.domain.common.test
 com.redhat.rhn.domain.config
 com.redhat.rhn.domain.config.test
-com.redhat.rhn.domain.credentials
 com.redhat.rhn.domain.entitlement
 com.redhat.rhn.domain.entitlement.test
 com.redhat.rhn.domain.errata
