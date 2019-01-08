@@ -57,12 +57,28 @@
 <!-- ==================== CLASS DESCRIPTION ==================== -->
 <h1 class="epydoc">Class ContentSource</h1><p class="nomargin-top"><span class="codelink"><a href="backend.satellite_tools.repo_plugins.uln_src-pysrc.html#ContentSource">source&nbsp;code</a></span></p>
 <center>
-<center>  <map id="uml_class_diagram_for_backend__147" name="uml_class_diagram_for_backend__147">
-<area shape="rect" id="node1_2" href="backend.satellite_tools.repo_plugins.uln_src.ContentSource-class.html#__init__" title="backend.satellite_tools.repo_plugins.uln_src.ContentSource.__init__" alt="" coords="18,38,801,58"/>
-<area shape="rect" id="node1_3" href="backend.satellite_tools.repo_plugins.uln_src.ContentSource-class.html#setup_repo" title="backend.satellite_tools.repo_plugins.uln_src.ContentSource.setup_repo" alt="" coords="18,58,801,78"/>
-<area shape="rect" id="node1" href="backend.satellite_tools.repo_plugins.uln_src.ContentSource-class.html" title="backend.satellite_tools.repo_plugins.uln_src.ContentSource" alt="" coords="5,5,812,84"/>
+<center>  <map id="uml_class_diagram_for_backend__155" name="uml_class_diagram_for_backend__155">
+<area shape="rect" id="node1_17" href="backend.satellite_tools.repo_plugins.uln_src.ContentSource-class.html#__init__" title="x.__init__(...) initializes x; see help(type(x)) for signature" alt="" coords="19,395,903,415"/>
+<area shape="rect" id="node1_18" href="backend.satellite_tools.repo_plugins.uln_src.ContentSource-class.html#setup_repo" title="Fetch repository metadata" alt="" coords="19,415,903,435"/>
+<area shape="rect" id="node1" href="backend.satellite_tools.repo_plugins.uln_src.ContentSource-class.html" title="backend.satellite_tools.repo_plugins.uln_src.ContentSource" alt="" coords="7,363,915,441"/>
+<area shape="rect" id="node2_19" href="javascript:void(0);" title="spacewalk.satellite_tools.repo_plugins.yum_src.ContentSource.__del__" alt="" coords="18,37,905,57"/>
+<area shape="rect" id="node2_20" href="javascript:void(0);" title="spacewalk.satellite_tools.repo_plugins.yum_src.ContentSource.interrupt_callback" alt="" coords="18,57,905,77"/>
+<area shape="rect" id="node2_21" href="javascript:void(0);" title="spacewalk.satellite_tools.repo_plugins.yum_src.ContentSource.number_of_packages" alt="" coords="18,77,905,97"/>
+<area shape="rect" id="node2_22" href="javascript:void(0);" title="spacewalk.satellite_tools.repo_plugins.yum_src.ContentSource.raw_list_packages" alt="" coords="18,97,905,117"/>
+<area shape="rect" id="node2_23" href="javascript:void(0);" title="list packages" alt="" coords="18,117,905,137"/>
+<area shape="rect" id="node2_24" href="javascript:void(0);" title="get package" alt="" coords="18,137,905,157"/>
+<area shape="rect" id="node2_25" href="javascript:void(0);" title="spacewalk.satellite_tools.repo_plugins.yum_src.ContentSource.verify_pkg" alt="" coords="18,157,905,177"/>
+<area shape="rect" id="node2_26" href="javascript:void(0);" title="spacewalk.satellite_tools.repo_plugins.yum_src.ContentSource.clear_cache" alt="" coords="18,177,905,197"/>
+<area shape="rect" id="node2_27" href="javascript:void(0);" title="spacewalk.satellite_tools.repo_plugins.yum_src.ContentSource.get_updates" alt="" coords="18,197,905,217"/>
+<area shape="rect" id="node2_28" href="javascript:void(0);" title="spacewalk.satellite_tools.repo_plugins.yum_src.ContentSource.get_groups" alt="" coords="18,217,905,237"/>
+<area shape="rect" id="node2_29" href="javascript:void(0);" title="spacewalk.satellite_tools.repo_plugins.yum_src.ContentSource.get_modules" alt="" coords="18,237,905,257"/>
+<area shape="rect" id="node2_30" href="javascript:void(0);" title="spacewalk.satellite_tools.repo_plugins.yum_src.ContentSource.get_file" alt="" coords="18,257,905,277"/>
+<area shape="rect" id="node2_31" href="javascript:void(0);" title="spacewalk.satellite_tools.repo_plugins.yum_src.ContentSource.repomd_up_to_date" alt="" coords="18,277,905,297"/>
+<area shape="rect" id="node2_32" href="javascript:void(0);" title="spacewalk.satellite_tools.repo_plugins.yum_src.ContentSource.set_download_parameters" alt="" coords="18,297,905,317"/>
+<area shape="rect" id="node2_33" href="javascript:void(0);" title="spacewalk.satellite_tools.repo_plugins.yum_src.ContentSource.get_metadata_paths" alt="" coords="18,317,905,337"/>
+<area shape="rect" id="node2" href="javascript:void(0);" title="spacewalk.satellite_tools.repo_plugins.yum_src.ContentSource" alt="" coords="5,5,916,344"/>
 </map>
-  <img src="uml_class_diagram_for_backend__147.png" alt='' usemap="#uml_class_diagram_for_backend__147" ismap="ismap" class="graph-without-title" />
+  <img src="uml_class_diagram_for_backend__155.png" alt='' usemap="#uml_class_diagram_for_backend__155" ismap="ismap" class="graph-without-title" />
 </center>
 </center>
 <hr />
@@ -89,7 +105,7 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a name="__init__"></a><span class="summary-sig-name">__init__</span>(<span class="summary-sig-arg">self</span>,
+          <td><span class="summary-sig"><a href="backend.satellite_tools.repo_plugins.uln_src.ContentSource-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
         <span class="summary-sig-arg">url</span>,
         <span class="summary-sig-arg">name</span>,
         <span class="summary-sig-arg">org</span>=<span class="summary-sig-default">&quot;1&quot;</span>,
@@ -97,7 +113,8 @@
         <span class="summary-sig-arg">no_mirrors</span>=<span class="summary-sig-default">False</span>,
         <span class="summary-sig-arg">ca_cert_file</span>=<span class="summary-sig-default">None</span>,
         <span class="summary-sig-arg">client_cert_file</span>=<span class="summary-sig-default">None</span>,
-        <span class="summary-sig-arg">client_key_file</span>=<span class="summary-sig-default">None</span>)</span></td>
+        <span class="summary-sig-arg">client_key_file</span>=<span class="summary-sig-default">None</span>)</span><br />
+      x.__init__(...) initializes x; see help(type(x)) for signature</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="backend.satellite_tools.repo_plugins.uln_src-pysrc.html#ContentSource.__init__">source&nbsp;code</a></span>
             
@@ -113,7 +130,7 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a name="_authenticate"></a><span class="summary-sig-name">_authenticate</span>(<span class="summary-sig-arg">self</span>,
+          <td><span class="summary-sig"><a href="backend.satellite_tools.repo_plugins.uln_src.ContentSource-class.html#_authenticate" class="summary-sig-name" onclick="show_private();">_authenticate</a>(<span class="summary-sig-arg">self</span>,
         <span class="summary-sig-arg">url</span>)</span></td>
           <td align="right" valign="top">
             <span class="codelink"><a href="backend.satellite_tools.repo_plugins.uln_src-pysrc.html#ContentSource._authenticate">source&nbsp;code</a></span>
@@ -130,10 +147,11 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a name="setup_repo"></a><span class="summary-sig-name">setup_repo</span>(<span class="summary-sig-arg">self</span>,
+          <td><span class="summary-sig"><a href="backend.satellite_tools.repo_plugins.uln_src.ContentSource-class.html#setup_repo" class="summary-sig-name">setup_repo</a>(<span class="summary-sig-arg">self</span>,
         <span class="summary-sig-arg">repo</span>,
         <span class="summary-sig-arg">*args</span>,
-        <span class="summary-sig-arg">**kwargs</span>)</span></td>
+        <span class="summary-sig-arg">**kwargs</span>)</span><br />
+      Fetch repository metadata</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="backend.satellite_tools.repo_plugins.uln_src-pysrc.html#ContentSource.setup_repo">source&nbsp;code</a></span>
             
@@ -143,7 +161,201 @@
       
     </td>
   </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>spacewalk.satellite_tools.repo_plugins.yum_src.ContentSource</code></b>:
+      <code>__del__</code>,
+      <code>clear_cache</code>,
+      <code>get_file</code>,
+      <code>get_groups</code>,
+      <code>get_metadata_paths</code>,
+      <code>get_modules</code>,
+      <code>get_package</code>,
+      <code>get_updates</code>,
+      <code>list_packages</code>,
+      <code>number_of_packages</code>,
+      <code>raw_list_packages</code>,
+      <code>repomd_up_to_date</code>,
+      <code>set_download_parameters</code>
+      </p>
+    <div class="private">    <p class="indent-wrapped-lines"><b>Inherited from <code>spacewalk.satellite_tools.repo_plugins.yum_src.ContentSource</code></b> (private):
+      <code>_expand_comps_type</code>,
+      <code>_expand_package_groups</code>,
+      <code>_get_package_dependencies</code>
+      </p></div>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="object-class.html">object</a></code></b>:
+      <code><a href="object-class.html#__delattr__">__delattr__</a></code>,
+      <code><a href="object-class.html#__format__">__format__</a></code>,
+      <code><a href="object-class.html#__getattribute__">__getattribute__</a></code>,
+      <code><a href="object-class.html#__hash__">__hash__</a></code>,
+      <code><a href="object-class.html#__new__">__new__</a></code>,
+      <code><a href="object-class.html#__reduce__">__reduce__</a></code>,
+      <code><a href="object-class.html#__reduce_ex__">__reduce_ex__</a></code>,
+      <code><a href="object-class.html#__repr__">__repr__</a></code>,
+      <code><a href="object-class.html#__setattr__">__setattr__</a></code>,
+      <code><a href="object-class.html#__sizeof__">__sizeof__</a></code>,
+      <code><a href="object-class.html#__str__">__str__</a></code>,
+      <code><a href="object-class.html#__subclasshook__">__subclasshook__</a></code>
+      </p>
+    </td>
+  </tr>
 </table>
+<!-- ==================== STATIC METHODS ==================== -->
+<a name="section-StaticMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Static Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-StaticMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>spacewalk.satellite_tools.repo_plugins.yum_src.ContentSource</code></b>:
+      <code>interrupt_callback</code>,
+      <code>verify_pkg</code>
+      </p>
+    <div class="private">    <p class="indent-wrapped-lines"><b>Inherited from <code>spacewalk.satellite_tools.repo_plugins.yum_src.ContentSource</code></b> (private):
+      <code>_filter_packages</code>,
+      <code>_find_comps_type</code>,
+      <code>_sort_packages</code>
+      </p></div>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Properties</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Properties"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="object-class.html">object</a></code></b>:
+      <code><a href="object-class.html#__class__">__class__</a></code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">url</span>,
+        <span class="sig-arg">name</span>,
+        <span class="sig-arg">org</span>=<span class="sig-default">&quot;1&quot;</span>,
+        <span class="sig-arg">channel_label</span>=<span class="sig-default">&quot;&quot;</span>,
+        <span class="sig-arg">no_mirrors</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">ca_cert_file</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">client_cert_file</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">client_key_file</span>=<span class="sig-default">None</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="backend.satellite_tools.repo_plugins.uln_src-pysrc.html#ContentSource.__init__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+
+  <p>x.__init__(...) initializes x; see help(type(x)) for signature</p>
+  <dl class="fields">
+    <dt>Overrides:
+        object.__init__
+        <dd><em class="note">(inherited documentation)</em></dd>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_authenticate"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_authenticate</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">url</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="backend.satellite_tools.repo_plugins.uln_src-pysrc.html#ContentSource._authenticate">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+
+
+  <dl class="fields">
+    <dt>Overrides:
+        spacewalk.satellite_tools.repo_plugins.yum_src.ContentSource._authenticate
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setup_repo"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setup_repo</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">repo</span>,
+        <span class="sig-arg">*args</span>,
+        <span class="sig-arg">**kwargs</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="backend.satellite_tools.repo_plugins.uln_src-pysrc.html#ContentSource.setup_repo">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+
+  <p>Fetch repository metadata</p>
+  <dl class="fields">
+    <dt>Overrides:
+        spacewalk.satellite_tools.repo_plugins.yum_src.ContentSource.setup_repo
+        <dd><em class="note">(inherited documentation)</em></dd>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<br />
 <!-- ==================== NAVIGATION BAR ==================== -->
 <table class="navbar" border="0" width="100%" cellpadding="0"
        bgcolor="#a0c0ff" cellspacing="0">
@@ -167,7 +379,7 @@
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Mon Apr  9 17:17:48 2018
+    Generated by Epydoc 3.0.1 on Tue Jan  8 16:13:47 2019
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

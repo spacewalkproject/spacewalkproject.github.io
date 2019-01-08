@@ -80,7 +80,7 @@
         <tr>
           <td><span class="summary-sig"><a name="upload"></a><span class="summary-sig-name">upload</span>(<span class="summary-sig-arg">server_id</span>,
         <span class="summary-sig-arg">action_id</span>,
-        <span class="summary-sig-arg">data</span>=<span class="summary-sig-default">{}</span>)</span></td>
+        <span class="summary-sig-arg">data</span>=<span class="summary-sig-default"><code class="variable-group">{</code><code class="variable-group">}</code></span>)</span></td>
           <td align="right" valign="top">
             <span class="codelink"><a href="backend.server.action_extra_data.configfiles-pysrc.html#upload">source&nbsp;code</a></span>
             
@@ -98,7 +98,7 @@
         <tr>
           <td><span class="summary-sig"><a name="mtime_upload"></a><span class="summary-sig-name">mtime_upload</span>(<span class="summary-sig-arg">server_id</span>,
         <span class="summary-sig-arg">action_id</span>,
-        <span class="summary-sig-arg">data</span>=<span class="summary-sig-default">{}</span>)</span></td>
+        <span class="summary-sig-arg">data</span>=<span class="summary-sig-default"><code class="variable-group">{</code><code class="variable-group">}</code></span>)</span></td>
           <td align="right" valign="top">
             <span class="codelink"><a href="backend.server.action_extra_data.configfiles-pysrc.html#mtime_upload">source&nbsp;code</a></span>
             
@@ -116,7 +116,7 @@
         <tr>
           <td><span class="summary-sig"><a name="deploy"></a><span class="summary-sig-name">deploy</span>(<span class="summary-sig-arg">server_id</span>,
         <span class="summary-sig-arg">action_id</span>,
-        <span class="summary-sig-arg">data</span>=<span class="summary-sig-default">{}</span>)</span></td>
+        <span class="summary-sig-arg">data</span>=<span class="summary-sig-default"><code class="variable-group">{</code><code class="variable-group">}</code></span>)</span></td>
           <td align="right" valign="top">
             <span class="codelink"><a href="backend.server.action_extra_data.configfiles-pysrc.html#deploy">source&nbsp;code</a></span>
             
@@ -134,7 +134,7 @@
         <tr>
           <td><span class="summary-sig"><a name="diff"></a><span class="summary-sig-name">diff</span>(<span class="summary-sig-arg">server_id</span>,
         <span class="summary-sig-arg">action_id</span>,
-        <span class="summary-sig-arg">data</span>=<span class="summary-sig-default">{}</span>)</span></td>
+        <span class="summary-sig-arg">data</span>=<span class="summary-sig-default"><code class="variable-group">{</code><code class="variable-group">}</code></span>)</span></td>
           <td align="right" valign="top">
             <span class="codelink"><a href="backend.server.action_extra_data.configfiles-pysrc.html#diff">source&nbsp;code</a></span>
             
@@ -152,7 +152,7 @@
         <tr>
           <td><span class="summary-sig"><a name="verify"></a><span class="summary-sig-name">verify</span>(<span class="summary-sig-arg">server_id</span>,
         <span class="summary-sig-arg">action_id</span>,
-        <span class="summary-sig-arg">data</span>=<span class="summary-sig-default">{}</span>)</span></td>
+        <span class="summary-sig-arg">data</span>=<span class="summary-sig-default"><code class="variable-group">{</code><code class="variable-group">}</code></span>)</span></td>
           <td align="right" valign="top">
             <span class="codelink"><a href="backend.server.action_extra_data.configfiles-pysrc.html#diff">source&nbsp;code</a></span>
             
@@ -288,151 +288,168 @@
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.action_extra_data.configfiles-module.html#__rhnexport__" class="summary-name">__rhnexport__</a> = <code title="['upload', 'deploy', 'verify', 'diff', 'mtime_upload']">['upload', 'deploy', 'verify', 'diff', 'mtime_<code class="variable-ellipsis">...</code></code>
+        <a href="backend.server.action_extra_data.configfiles-module.html#__rhnexport__" class="summary-name">__rhnexport__</a> = <code title="['upload', 'deploy', 'verify', 'diff', 'mtime_upload']"><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">upload</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">deploy</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">verify</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">diff</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">mtime_</code><code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 <tr class="private">
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.action_extra_data.configfiles-module.html#_query_reset_upload_files" class="summary-name" onclick="show_private();">_query_reset_upload_files</a> = <code title="rhnSQL.Statement(&quot;&quot;&quot;
+        <a href="backend.server.action_extra_data.configfiles-module.html#_query_reset_upload_files" class="summary-name" onclick="show_private();">_query_reset_upload_files</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765609263\
+2; statement=
     update rhnActionConfigFileName
        set failure_id = NULL
      where server_id = :server_id
        and action_id = :action_id
-&quot;&quot;&quot;)">rhnSQL.Statement(<code class="variable-ellipsis">...</code></code>
+">&lt;spacewalk.server.rhnSQL.sql_base.<code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 <tr class="private">
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.action_extra_data.configfiles-module.html#_query_mark_upload_files" class="summary-name" onclick="show_private();">_query_mark_upload_files</a> = <code title="rhnSQL.Statement(&quot;&quot;&quot;
+        <a href="backend.server.action_extra_data.configfiles-module.html#_query_mark_upload_files" class="summary-name" onclick="show_private();">_query_mark_upload_files</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765609270\
+4; statement=
     update rhnActionConfigFileName
        set failure_id = :failure_id
      where server_id = :server_id
        and action_id = :action_id
        and config_file_name_id = lookup_config_filename(:path)
-&quot;&quot;&quot;)">rhnSQL.Statement(<code class="variable-ellipsis">...</code></code>
+">&lt;spacewalk.server.rhnSQL.sql_base.S<code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 <tr class="private">
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.action_extra_data.configfiles-module.html#_query_any_action_config_filenames" class="summary-name" onclick="show_private();">_query_any_action_config_filenames</a> = <code title="rhnSQL.Statement(&quot;&quot;&quot;
+        <a href="backend.server.action_extra_data.configfiles-module.html#_query_any_action_config_filenames" class="summary-name" onclick="show_private();">_query_any_action_config_filenames</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765609277\
+6; statement=
     select config_file_name_id
       from rhnActionConfigFileName
      where server_id = :server_id
        and action_id = :action_id
-&quot;&quot;&quot;)">rhnSQL.Statement(<code class="variable-ellipsis">...</code></code>
+">&lt;spacewalk.server.rhnSQL.<code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 <tr class="private">
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.action_extra_data.configfiles-module.html#_query_clear_action_config_filenames" class="summary-name" onclick="show_private();">_query_clear_action_config_filenames</a> = <code title="rhnSQL.Statement(&quot;&quot;&quot;
+        <a href="backend.server.action_extra_data.configfiles-module.html#_query_clear_action_config_filenames" class="summary-name" onclick="show_private();">_query_clear_action_config_filenames</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765609284\
+8; statement=
     delete from rhnActionConfigFileName
      where server_id = :server_id
        and action_id = :action_id
-&quot;&quot;&quot;)">rhnSQL.Statement(<code class="variable-ellipsis">...</code></code>
+">&lt;spacewalk.server.rhnSQ<code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 <tr class="private">
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.action_extra_data.configfiles-module.html#_query_create_action_config_filename" class="summary-name" onclick="show_private();">_query_create_action_config_filename</a> = <code title="rhnSQL.Statement(&quot;&quot;&quot;
+        <a href="backend.server.action_extra_data.configfiles-module.html#_query_create_action_config_filename" class="summary-name" onclick="show_private();">_query_create_action_config_filename</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765609292\
+0; statement=
     insert into rhnActionConfigFileName (action_id, config_file_name_i\
 d, server_id)
     values (:action_id, lookup_config_filename(:path), :server_id)
-&quot;&quot;&quot;)">rhnSQL.Statement(<code class="variable-ellipsis">...</code></code>
+">&lt;spacewalk.server.rhnSQ<code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 <tr class="private">
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.action_extra_data.configfiles-module.html#_query_reset_diff_errors" class="summary-name" onclick="show_private();">_query_reset_diff_errors</a> = <code title="rhnSQL.Statement(&quot;&quot;&quot;
+        <a href="backend.server.action_extra_data.configfiles-module.html#_query_reset_diff_errors" class="summary-name" onclick="show_private();">_query_reset_diff_errors</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765609299\
+2; statement=
     update rhnActionConfigRevision
        set failure_id = NULL
      where server_id = :server_id
        and action_id = :action_id
-&quot;&quot;&quot;)">rhnSQL.Statement(<code class="variable-ellipsis">...</code></code>
+">&lt;spacewalk.server.rhnSQL.sql_base.S<code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 <tr class="private">
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.action_extra_data.configfiles-module.html#_query_lookup_diff_files" class="summary-name" onclick="show_private();">_query_lookup_diff_files</a> = <code title="rhnSQL.Statement(&quot;&quot;&quot;
+        <a href="backend.server.action_extra_data.configfiles-module.html#_query_lookup_diff_files" class="summary-name" onclick="show_private();">_query_lookup_diff_files</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765609306\
+4; statement=
     select acr.id, cfn.path
       from rhnConfigFileName cfn,
            rhnConfigFile cf,
            rhnConfigRevision cr,
            rhnActionConfigRevision acr
      where acr.server_id = :server_id
-       and acr.action_id = :action_id
-...">rhnSQL.Statement(<code class="variable-ellipsis">...</code></code>
+...">&lt;spacewalk.server.rhnSQL.sql_base.S<code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 <tr class="private">
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.action_extra_data.configfiles-module.html#_query_mark_failed_diff_files" class="summary-name" onclick="show_private();">_query_mark_failed_diff_files</a> = <code title="rhnSQL.Statement(&quot;&quot;&quot;
+        <a href="backend.server.action_extra_data.configfiles-module.html#_query_mark_failed_diff_files" class="summary-name" onclick="show_private();">_query_mark_failed_diff_files</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765609313\
+6; statement=
     update rhnActionConfigRevision
        set failure_id = :failure_id
      where id = :action_config_revision_id
-&quot;&quot;&quot;)">rhnSQL.Statement(<code class="variable-ellipsis">...</code></code>
+">&lt;spacewalk.server.rhnSQL.sql_b<code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 <tr class="private">
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.action_extra_data.configfiles-module.html#_query_lookup_action_revision_id" class="summary-name" onclick="show_private();">_query_lookup_action_revision_id</a> = <code title="rhnSQL.Statement(&quot;&quot;&quot;
+        <a href="backend.server.action_extra_data.configfiles-module.html#_query_lookup_action_revision_id" class="summary-name" onclick="show_private();">_query_lookup_action_revision_id</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765609320\
+8; statement=
     select acr.id
       from rhnConfigRevision cr, rhnConfigFile cf, rhnActionConfigRevi\
 sion acr
      where acr.action_id = :action_id
        and acr.server_id = :server_id
        and acr.config_revision_id = cr.id
-       and cr.config_file_id = cf.id
-...">rhnSQL.Statement(<code class="variable-ellipsis">...</code></code>
+...">&lt;spacewalk.server.rhnSQL.sq<code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 <tr class="private">
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.action_extra_data.configfiles-module.html#_query_add_result_diff" class="summary-name" onclick="show_private();">_query_add_result_diff</a> = <code title="rhnSQL.Statement(&quot;&quot;&quot;
+        <a href="backend.server.action_extra_data.configfiles-module.html#_query_add_result_diff" class="summary-name" onclick="show_private();">_query_add_result_diff</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765609328\
+0; statement=
     insert into rhnActionConfigRevisionResult
            (action_config_revision_id, result)
     values (:action_config_revision_id, :result)
-&quot;&quot;&quot;)">rhnSQL.Statement(<code class="variable-ellipsis">...</code></code>
+">&lt;spacewalk.server.rhnSQL.sql_base.Sta<code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 <tr class="private">
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.action_extra_data.configfiles-module.html#_query_lookup_old_diffs" class="summary-name" onclick="show_private();">_query_lookup_old_diffs</a> = <code title="rhnSQL.Statement(&quot;&quot;&quot;
+        <a href="backend.server.action_extra_data.configfiles-module.html#_query_lookup_old_diffs" class="summary-name" onclick="show_private();">_query_lookup_old_diffs</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765609335\
+2; statement=
     select acr.id
       from rhnActionConfigRevision acr
      where acr.server_id = :server_id
-&quot;&quot;&quot;)">rhnSQL.Statement(<code class="variable-ellipsis">...</code></code>
+">&lt;spacewalk.server.rhnSQL.sql_base.St<code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 <tr class="private">
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.action_extra_data.configfiles-module.html#_query_delete_old_diffs" class="summary-name" onclick="show_private();">_query_delete_old_diffs</a> = <code title="rhnSQL.Statement(&quot;&quot;&quot;
+        <a href="backend.server.action_extra_data.configfiles-module.html#_query_delete_old_diffs" class="summary-name" onclick="show_private();">_query_delete_old_diffs</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765609342\
+4; statement=
     delete from rhnActionConfigRevisionResult
      where action_config_revision_id = :action_config_revision_id
-&quot;&quot;&quot;)">rhnSQL.Statement(<code class="variable-ellipsis">...</code></code>
+">&lt;spacewalk.server.rhnSQL.sql_base.St<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__package__"></a><span class="summary-name">__package__</span> = <code title="'backend.server.action_extra_data'"><code class="variable-quote">'</code><code class="variable-string">backend.server.action_extra_data</code><code class="variable-quote">'</code></code>
     </td>
   </tr>
 </table>
@@ -466,7 +483,7 @@ sion acr
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-['upload', 'deploy', 'verify', 'diff', 'mtime_upload']
+<code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">upload</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">deploy</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">verify</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">diff</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">mtime_upload</code><code class="variable-quote">'</code><code class="variable-group">]</code>
 </pre></td></tr></table>
 </dd>
   </dl>
@@ -484,12 +501,13 @@ sion acr
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-rhnSQL.Statement(&quot;&quot;&quot;
+&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765609263<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+2; statement=
     update rhnActionConfigFileName
        set failure_id = NULL
      where server_id = :server_id
        and action_id = :action_id
-&quot;&quot;&quot;)
+
 </pre></td></tr></table>
 </dd>
   </dl>
@@ -507,13 +525,14 @@ rhnSQL.Statement(&quot;&quot;&quot;
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-rhnSQL.Statement(&quot;&quot;&quot;
+&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765609270<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+4; statement=
     update rhnActionConfigFileName
        set failure_id = :failure_id
      where server_id = :server_id
        and action_id = :action_id
        and config_file_name_id = lookup_config_filename(:path)
-&quot;&quot;&quot;)
+
 </pre></td></tr></table>
 </dd>
   </dl>
@@ -531,12 +550,13 @@ rhnSQL.Statement(&quot;&quot;&quot;
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-rhnSQL.Statement(&quot;&quot;&quot;
+&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765609277<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+6; statement=
     select config_file_name_id
       from rhnActionConfigFileName
      where server_id = :server_id
        and action_id = :action_id
-&quot;&quot;&quot;)
+
 </pre></td></tr></table>
 </dd>
   </dl>
@@ -554,11 +574,12 @@ rhnSQL.Statement(&quot;&quot;&quot;
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-rhnSQL.Statement(&quot;&quot;&quot;
+&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765609284<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+8; statement=
     delete from rhnActionConfigFileName
      where server_id = :server_id
        and action_id = :action_id
-&quot;&quot;&quot;)
+
 </pre></td></tr></table>
 </dd>
   </dl>
@@ -576,11 +597,12 @@ rhnSQL.Statement(&quot;&quot;&quot;
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-rhnSQL.Statement(&quot;&quot;&quot;
+&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765609292<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+0; statement=
     insert into rhnActionConfigFileName (action_id, config_file_name_i<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
 d, server_id)
     values (:action_id, lookup_config_filename(:path), :server_id)
-&quot;&quot;&quot;)
+
 </pre></td></tr></table>
 </dd>
   </dl>
@@ -598,12 +620,13 @@ d, server_id)
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-rhnSQL.Statement(&quot;&quot;&quot;
+&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765609299<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+2; statement=
     update rhnActionConfigRevision
        set failure_id = NULL
      where server_id = :server_id
        and action_id = :action_id
-&quot;&quot;&quot;)
+
 </pre></td></tr></table>
 </dd>
   </dl>
@@ -621,14 +644,14 @@ rhnSQL.Statement(&quot;&quot;&quot;
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-rhnSQL.Statement(&quot;&quot;&quot;
+&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765609306<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+4; statement=
     select acr.id, cfn.path
       from rhnConfigFileName cfn,
            rhnConfigFile cf,
            rhnConfigRevision cr,
            rhnActionConfigRevision acr
      where acr.server_id = :server_id
-       and acr.action_id = :action_id
 <code class="variable-ellipsis">...</code>
 </pre></td></tr></table>
 </dd>
@@ -647,11 +670,12 @@ rhnSQL.Statement(&quot;&quot;&quot;
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-rhnSQL.Statement(&quot;&quot;&quot;
+&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765609313<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+6; statement=
     update rhnActionConfigRevision
        set failure_id = :failure_id
      where id = :action_config_revision_id
-&quot;&quot;&quot;)
+
 </pre></td></tr></table>
 </dd>
   </dl>
@@ -669,14 +693,14 @@ rhnSQL.Statement(&quot;&quot;&quot;
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-rhnSQL.Statement(&quot;&quot;&quot;
+&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765609320<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+8; statement=
     select acr.id
       from rhnConfigRevision cr, rhnConfigFile cf, rhnActionConfigRevi<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
 sion acr
      where acr.action_id = :action_id
        and acr.server_id = :server_id
        and acr.config_revision_id = cr.id
-       and cr.config_file_id = cf.id
 <code class="variable-ellipsis">...</code>
 </pre></td></tr></table>
 </dd>
@@ -695,11 +719,12 @@ sion acr
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-rhnSQL.Statement(&quot;&quot;&quot;
+&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765609328<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+0; statement=
     insert into rhnActionConfigRevisionResult
            (action_config_revision_id, result)
     values (:action_config_revision_id, :result)
-&quot;&quot;&quot;)
+
 </pre></td></tr></table>
 </dd>
   </dl>
@@ -717,11 +742,12 @@ rhnSQL.Statement(&quot;&quot;&quot;
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-rhnSQL.Statement(&quot;&quot;&quot;
+&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765609335<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+2; statement=
     select acr.id
       from rhnActionConfigRevision acr
      where acr.server_id = :server_id
-&quot;&quot;&quot;)
+
 </pre></td></tr></table>
 </dd>
   </dl>
@@ -739,10 +765,11 @@ rhnSQL.Statement(&quot;&quot;&quot;
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-rhnSQL.Statement(&quot;&quot;&quot;
+&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765609342<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+4; statement=
     delete from rhnActionConfigRevisionResult
      where action_config_revision_id = :action_config_revision_id
-&quot;&quot;&quot;)
+
 </pre></td></tr></table>
 </dd>
   </dl>
@@ -772,7 +799,7 @@ rhnSQL.Statement(&quot;&quot;&quot;
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Mon Apr  9 17:17:42 2018
+    Generated by Epydoc 3.0.1 on Tue Jan  8 16:13:38 2019
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

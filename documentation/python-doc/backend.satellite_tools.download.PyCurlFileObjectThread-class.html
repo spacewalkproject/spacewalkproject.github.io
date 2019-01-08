@@ -56,19 +56,19 @@
 <!-- ==================== CLASS DESCRIPTION ==================== -->
 <h1 class="epydoc">Class PyCurlFileObjectThread</h1><p class="nomargin-top"><span class="codelink"><a href="backend.satellite_tools.download-pysrc.html#PyCurlFileObjectThread">source&nbsp;code</a></span></p>
 <center>
-<center>  <map id="uml_class_diagram_for_backend__86" name="uml_class_diagram_for_backend__86">
-<area shape="rect" id="node1_8" href="backend.satellite_tools.download.PyCurlFileObjectThread-class.html#__init__" title="x.__init__(...) initializes x; see help(type(x)) for signature" alt="" coords="17,229,324,249"/>
-<area shape="rect" id="node1" href="backend.satellite_tools.download.PyCurlFileObjectThread-class.html" title="backend.satellite_tools.download.PyCurlFileObjectThread" alt="" coords="5,197,336,256"/>
-<area shape="rect" id="node2_9" href="javascript:void(0);" title="urlgrabber.grabber.PyCurlFileObject.http_code" alt="" coords="68,29,273,49"/>
-<area shape="rect" id="node2_10" href="javascript:void(0);" title="This effectively allows us to wrap at the instance level." alt="" coords="68,52,273,72"/>
-<area shape="rect" id="node2_11" href="javascript:void(0);" title="urlgrabber.grabber.PyCurlFileObject.hdr" alt="" coords="68,72,273,92"/>
-<area shape="rect" id="node2_12" href="javascript:void(0);" title="urlgrabber.grabber.PyCurlFileObject.read" alt="" coords="68,92,273,112"/>
-<area shape="rect" id="node2_13" href="javascript:void(0);" title="urlgrabber.grabber.PyCurlFileObject.readline" alt="" coords="68,112,273,132"/>
-<area shape="rect" id="node2_14" href="javascript:void(0);" title="urlgrabber.grabber.PyCurlFileObject.close" alt="" coords="68,132,273,152"/>
-<area shape="rect" id="node2_15" href="javascript:void(0);" title="Provide the geturl() method, used to be got from urllib.addinfourl, via." alt="" coords="68,152,273,172"/>
-<area shape="rect" id="node2" href="javascript:void(0);" title="urlgrabber.grabber.PyCurlFileObject" alt="" coords="56,5,285,179"/>
+<center>  <map id="uml_class_diagram_for_backend__89" name="uml_class_diagram_for_backend__89">
+<area shape="rect" id="node1_8" href="backend.satellite_tools.download.PyCurlFileObjectThread-class.html#__init__" title="x.__init__(...) initializes x; see help(type(x)) for signature" alt="" coords="18,229,361,249"/>
+<area shape="rect" id="node1" href="backend.satellite_tools.download.PyCurlFileObjectThread-class.html" title="backend.satellite_tools.download.PyCurlFileObjectThread" alt="" coords="5,197,372,256"/>
+<area shape="rect" id="node2_9" href="javascript:void(0);" title="urlgrabber.grabber.PyCurlFileObject.hdr" alt="" coords="75,29,305,49"/>
+<area shape="rect" id="node2_10" href="javascript:void(0);" title="urlgrabber.grabber.PyCurlFileObject.http_code" alt="" coords="75,49,305,69"/>
+<area shape="rect" id="node2_11" href="javascript:void(0);" title="This effectively allows us to wrap at the instance level." alt="" coords="75,72,305,92"/>
+<area shape="rect" id="node2_12" href="javascript:void(0);" title="urlgrabber.grabber.PyCurlFileObject.read" alt="" coords="75,92,305,112"/>
+<area shape="rect" id="node2_13" href="javascript:void(0);" title="urlgrabber.grabber.PyCurlFileObject.readline" alt="" coords="75,112,305,132"/>
+<area shape="rect" id="node2_14" href="javascript:void(0);" title="urlgrabber.grabber.PyCurlFileObject.close" alt="" coords="75,132,305,152"/>
+<area shape="rect" id="node2_15" href="javascript:void(0);" title="Provide the geturl() method, used to be got from urllib.addinfourl, via." alt="" coords="75,152,305,172"/>
+<area shape="rect" id="node2" href="javascript:void(0);" title="urlgrabber.grabber.PyCurlFileObject" alt="" coords="63,5,317,179"/>
 </map>
-  <img src="uml_class_diagram_for_backend__86.png" alt='' usemap="#uml_class_diagram_for_backend__86" ismap="ismap" class="graph-without-title" />
+  <img src="uml_class_diagram_for_backend__89.png" alt='' usemap="#uml_class_diagram_for_backend__89" ismap="ismap" class="graph-without-title" />
 </center>
 </center>
 <hr />
@@ -166,7 +166,6 @@
       <code>__getattr__</code>,
       <code>close</code>,
       <code>geturl</code>,
-      <code>hdr</code>,
       <code>read</code>,
       <code>readline</code>
       </p>
@@ -199,31 +198,6 @@
     </td>
   </tr>
 </table>
-<!-- ==================== CLASS VARIABLES ==================== -->
-<a name="section-ClassVariables"></a>
-<table class="summary" border="1" cellpadding="3"
-       cellspacing="0" width="100%" bgcolor="white">
-<tr bgcolor="#70b0f0" class="table-header">
-  <td colspan="2" class="table-header">
-    <table border="0" cellpadding="0" cellspacing="0" width="100%">
-      <tr valign="top">
-        <td align="left"><span class="table-header">Class Variables</span></td>
-        <td align="right" valign="top"
-         ><span class="options">[<a href="#section-ClassVariables"
-         class="privatelink" onclick="toggle_private();"
-         >hide private</a>]</span></td>
-      </tr>
-    </table>
-  </td>
-</tr>
-  <tr>
-    <td colspan="2" class="summary">
-    <p class="indent-wrapped-lines"><b>Inherited from <code>urlgrabber.grabber.PyCurlFileObject</code></b>:
-      <code>http_code</code>
-      </p>
-    </td>
-  </tr>
-</table>
 <!-- ==================== PROPERTIES ==================== -->
 <a name="section-Properties"></a>
 <table class="summary" border="1" cellpadding="3"
@@ -243,6 +217,10 @@
 </tr>
   <tr>
     <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>urlgrabber.grabber.PyCurlFileObject</code></b>:
+      <code>hdr</code>,
+      <code>http_code</code>
+      </p>
     <p class="indent-wrapped-lines"><b>Inherited from <code><a href="object-class.html">object</a></code></b>:
       <code><a href="object-class.html#__class__">__class__</a></code>
       </p>
@@ -387,7 +365,7 @@
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Mon Apr  9 17:17:46 2018
+    Generated by Epydoc 3.0.1 on Tue Jan  8 16:13:44 2019
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

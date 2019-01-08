@@ -56,28 +56,53 @@
 <!-- ==================== CLASS DESCRIPTION ==================== -->
 <h1 class="epydoc">Class OrgContainer</h1><p class="nomargin-top"><span class="codelink"><a href="backend.satellite_tools.diskImportLib-pysrc.html#OrgContainer">source&nbsp;code</a></span></p>
 <center>
-<center>  <map id="uml_class_diagram_for_backend__63" name="uml_class_diagram_for_backend__63">
-<area shape="rect" id="node1_13" href="backend.satellite_tools.diskImportLib.OrgContainer-class.html#importer_class" title="backend.satellite_tools.diskImportLib.OrgContainer.importer_class" alt="" coords="18,325,369,345"/>
-<area shape="rect" id="node1_14" href="backend.satellite_tools.diskImportLib.OrgContainer-class.html#__init__" title="backend.satellite_tools.diskImportLib.OrgContainer.__init__" alt="" coords="18,347,369,367"/>
-<area shape="rect" id="node1_15" href="backend.satellite_tools.diskImportLib.OrgContainer-class.html#set_master_and_create_org_args" title="backend.satellite_tools.diskImportLib.OrgContainer.set_master_and_create_org_args" alt="" coords="18,367,369,387"/>
-<area shape="rect" id="node1_16" href="backend.satellite_tools.diskImportLib.OrgContainer-class.html#endContainerCallback" title="backend.satellite_tools.diskImportLib.OrgContainer.endContainerCallback" alt="" coords="18,387,369,407"/>
-<area shape="rect" id="node1" href="backend.satellite_tools.diskImportLib.OrgContainer-class.html" title="backend.satellite_tools.diskImportLib.OrgContainer" alt="" coords="5,300,380,413"/>
-<area shape="rect" id="node2_17" href="backend.satellite_tools.xmlSource.OrgContainer-class.html#container_name" title="hash(x)" alt="" coords="122,247,266,267"/>
-<area shape="rect" id="node2" href="backend.satellite_tools.xmlSource.OrgContainer-class.html" title="backend.satellite_tools.xmlSource.OrgContainer" alt="" coords="110,223,278,281"/>
-<area shape="rect" id="node3_18" href="backend.satellite_tools.xmlSource.ContainerHandler-class.html#reset" title="backend.satellite_tools.xmlSource.ContainerHandler.reset" alt="" coords="95,38,293,58"/>
-<area shape="rect" id="node3_19" href="backend.satellite_tools.xmlSource.ContainerHandler-class.html#startElement" title="backend.satellite_tools.xmlSource.ContainerHandler.startElement" alt="" coords="95,58,293,78"/>
-<area shape="rect" id="node3_20" href="backend.satellite_tools.xmlSource.ContainerHandler-class.html#characters" title="backend.satellite_tools.xmlSource.ContainerHandler.characters" alt="" coords="95,78,293,98"/>
-<area shape="rect" id="node3_21" href="backend.satellite_tools.xmlSource.ContainerHandler-class.html#endElement" title="backend.satellite_tools.xmlSource.ContainerHandler.endElement" alt="" coords="95,98,293,118"/>
-<area shape="rect" id="node3_22" href="backend.satellite_tools.xmlSource.ContainerHandler-class.html#getLastItem" title="backend.satellite_tools.xmlSource.ContainerHandler.getLastItem" alt="" coords="95,118,293,138"/>
-<area shape="rect" id="node3_23" href="backend.satellite_tools.xmlSource.ContainerHandler-class.html#clearLastItem" title="backend.satellite_tools.xmlSource.ContainerHandler.clearLastItem" alt="" coords="95,138,293,158"/>
-<area shape="rect" id="node3_24" href="backend.satellite_tools.xmlSource.ContainerHandler-class.html#endItemCallback" title="backend.satellite_tools.xmlSource.ContainerHandler.endItemCallback" alt="" coords="95,158,293,178"/>
-<area shape="rect" id="node3_25" href="backend.satellite_tools.xmlSource.ContainerHandler-class.html#postprocessItem" title="backend.satellite_tools.xmlSource.ContainerHandler.postprocessItem" alt="" coords="95,178,293,198"/>
-<area shape="rect" id="node3" href="backend.satellite_tools.xmlSource.ContainerHandler-class.html" title="backend.satellite_tools.xmlSource.ContainerHandler" alt="" coords="83,5,305,204"/>
+<center>  <map id="uml_class_diagram_for_backend__64" name="uml_class_diagram_for_backend__64">
+<area shape="rect" id="node1_13" href="spacewalk.server.importlib.orgImport.OrgImport-class.html" title="backend.satellite_tools.diskImportLib.OrgContainer.importer_class" alt="" coords="18,325,411,345"/>
+<area shape="rect" id="node1_14" href="backend.satellite_tools.diskImportLib.OrgContainer-class.html#__init__" title="backend.satellite_tools.diskImportLib.OrgContainer.__init__" alt="" coords="18,347,411,367"/>
+<area shape="rect" id="node1_15" href="backend.satellite_tools.diskImportLib.OrgContainer-class.html#set_master_and_create_org_args" title="backend.satellite_tools.diskImportLib.OrgContainer.set_master_and_create_org_args" alt="" coords="18,367,411,387"/>
+<area shape="rect" id="node1_16" href="backend.satellite_tools.diskImportLib.OrgContainer-class.html#endContainerCallback" title="backend.satellite_tools.diskImportLib.OrgContainer.endContainerCallback" alt="" coords="18,387,411,407"/>
+<area shape="rect" id="node1" href="backend.satellite_tools.diskImportLib.OrgContainer-class.html" title="backend.satellite_tools.diskImportLib.OrgContainer" alt="" coords="5,300,423,413"/>
+<area shape="rect" id="node2_17" href="backend.satellite_tools.xmlSource.OrgContainer-class.html#container_name" title="hash(x)" alt="" coords="135,247,295,267"/>
+<area shape="rect" id="node2" href="backend.satellite_tools.xmlSource.OrgContainer-class.html" title="backend.satellite_tools.xmlSource.OrgContainer" alt="" coords="123,223,307,281"/>
+<area shape="rect" id="node3_18" href="backend.satellite_tools.xmlSource.ContainerHandler-class.html#reset" title="backend.satellite_tools.xmlSource.ContainerHandler.reset" alt="" coords="103,38,327,58"/>
+<area shape="rect" id="node3_19" href="backend.satellite_tools.xmlSource.ContainerHandler-class.html#startElement" title="backend.satellite_tools.xmlSource.ContainerHandler.startElement" alt="" coords="103,58,327,78"/>
+<area shape="rect" id="node3_20" href="backend.satellite_tools.xmlSource.ContainerHandler-class.html#characters" title="backend.satellite_tools.xmlSource.ContainerHandler.characters" alt="" coords="103,78,327,98"/>
+<area shape="rect" id="node3_21" href="backend.satellite_tools.xmlSource.ContainerHandler-class.html#endElement" title="backend.satellite_tools.xmlSource.ContainerHandler.endElement" alt="" coords="103,98,327,118"/>
+<area shape="rect" id="node3_22" href="backend.satellite_tools.xmlSource.ContainerHandler-class.html#getLastItem" title="backend.satellite_tools.xmlSource.ContainerHandler.getLastItem" alt="" coords="103,118,327,138"/>
+<area shape="rect" id="node3_23" href="backend.satellite_tools.xmlSource.ContainerHandler-class.html#clearLastItem" title="backend.satellite_tools.xmlSource.ContainerHandler.clearLastItem" alt="" coords="103,138,327,158"/>
+<area shape="rect" id="node3_24" href="backend.satellite_tools.xmlSource.ContainerHandler-class.html#endItemCallback" title="backend.satellite_tools.xmlSource.ContainerHandler.endItemCallback" alt="" coords="103,158,327,178"/>
+<area shape="rect" id="node3_25" href="backend.satellite_tools.xmlSource.ContainerHandler-class.html#postprocessItem" title="backend.satellite_tools.xmlSource.ContainerHandler.postprocessItem" alt="" coords="103,178,327,198"/>
+<area shape="rect" id="node3" href="backend.satellite_tools.xmlSource.ContainerHandler-class.html" title="backend.satellite_tools.xmlSource.ContainerHandler" alt="" coords="91,5,339,204"/>
 </map>
-  <img src="uml_class_diagram_for_backend__63.png" alt='' usemap="#uml_class_diagram_for_backend__63" ismap="ismap" class="graph-without-title" />
+  <img src="uml_class_diagram_for_backend__64.png" alt='' usemap="#uml_class_diagram_for_backend__64" ismap="ismap" class="graph-without-title" />
 </center>
 </center>
 <hr />
+<!-- ==================== NESTED CLASSES ==================== -->
+<a name="section-NestedClasses"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Nested Classes</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-NestedClasses"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="spacewalk.server.importlib.orgImport.OrgImport-class.html" class="summary-name">importer_class</a>
+    </td>
+  </tr>
+</table>
 <!-- ==================== INSTANCE METHODS ==================== -->
 <a name="section-InstanceMethods"></a>
 <table class="summary" border="1" cellpadding="3"
@@ -177,13 +202,6 @@
     </table>
   </td>
 </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-        <a name="importer_class"></a><span class="summary-name">importer_class</span> = <code title="orgImport.OrgImport">orgImport.OrgImport</code>
-    </td>
-  </tr>
   <tr>
     <td colspan="2" class="summary">
     <p class="indent-wrapped-lines"><b>Inherited from <code><a href="backend.satellite_tools.xmlSource.OrgContainer-class.html">xmlSource.OrgContainer</a></code></b>:
@@ -279,7 +297,7 @@
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Mon Apr  9 17:17:45 2018
+    Generated by Epydoc 3.0.1 on Tue Jan  8 16:13:42 2019
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

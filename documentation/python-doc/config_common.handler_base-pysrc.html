@@ -262,20 +262,18 @@ virtualization.init_action.e" class="py-name" href="#" onclick="return doclink('
 </div><a name="L82"></a><tt class="py-lineno">82</tt>  <tt class="py-line"> </tt>
 <a name="HandlerBase._read_username"></a><div id="HandlerBase._read_username-def"><a name="L83"></a><tt class="py-lineno">83</tt> <a class="py-toggle" href="#" id="HandlerBase._read_username-toggle" onclick="return toggle('HandlerBase._read_username');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="config_common.handler_base.HandlerBase-class.html#_read_username">_read_username</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
 </div><div id="HandlerBase._read_username-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="HandlerBase._read_username-expanded"><a name="L84"></a><tt class="py-lineno">84</tt>  <tt class="py-line">        <tt class="py-name">tty</tt> <tt class="py-op">=</tt> <tt class="py-name">open</tt><tt class="py-op">(</tt><tt class="py-string">"/dev/tty"</tt><tt class="py-op">,</tt> <tt class="py-string">"rb+"</tt><tt class="py-op">,</tt> <tt class="py-name">buffering</tt><tt class="py-op">=</tt><tt class="py-number">0</tt><tt class="py-op">)</tt> </tt>
-<a name="L85"></a><tt class="py-lineno">85</tt>  <tt class="py-line">        <tt class="py-name">tty</tt><tt class="py-op">.</tt><tt id="link-62" class="py-name" targets="Static Method backend.common.fileutils.payload.write()=backend.common.fileutils.payload-class.html#write,Method backend.common.rhn_mpm.MPM_Package.write()=backend.common.rhn_mpm.MPM_Package-class.html#write,Method backend.satellite_tools.disk_dumper.dumper.TeeStream.write()=backend.satellite_tools.disk_dumper.dumper.TeeStream-class.html#write,Method backend.satellite_tools.disk_dumper.string_buffer.StringBuffer.write()=backend.satellite_tools.disk_dumper.string_buffer.StringBuffer-class.html#write,Method backend.satellite_tools.repo_plugins.yum_src.YumWarnings.write()=backend.satellite_tools.repo_plugins.yum_src.YumWarnings-class.html#write,Method backend.wsgi.wsgiRequest.WsgiRequest.write()=backend.wsgi.wsgiRequest.WsgiRequest-class.html#write,Method rhn.SSL.SSLSocket.write()=rhn.SSL.SSLSocket-class.html#write,Method rhn.SSL.SSLSocket.write()=rhn.SSL.SSLSocket-class.html#write,Method rhn.SmartIO.SmartIO.write()=rhn.SmartIO.SmartIO-class.html#write,Method rhn.nonblocking.NonBlockingFile.write()=rhn.nonblocking.NonBlockingFile-class.html#write,Method rhnpush.rhnpush_config.rhnpushConfigParser.write()=rhnpush.rhnpush_config.rhnpushConfigParser-class.html#write"><a title="backend.common.fileutils.payload.write
+<a name="L85"></a><tt class="py-lineno">85</tt>  <tt class="py-line">        <tt class="py-name">tty</tt><tt class="py-op">.</tt><tt id="link-62" class="py-name" targets="Static Method backend.common.fileutils.payload.write()=backend.common.fileutils.payload-class.html#write,Method backend.common.rhn_mpm.MPM_Package.write()=backend.common.rhn_mpm.MPM_Package-class.html#write,Method backend.satellite_tools.disk_dumper.dumper.TeeStream.write()=backend.satellite_tools.disk_dumper.dumper.TeeStream-class.html#write,Method backend.satellite_tools.disk_dumper.string_buffer.StringBuffer.write()=backend.satellite_tools.disk_dumper.string_buffer.StringBuffer-class.html#write,Method backend.satellite_tools.repo_plugins.yum_src.YumWarnings.write()=backend.satellite_tools.repo_plugins.yum_src.YumWarnings-class.html#write,Method backend.wsgi.wsgiRequest.WsgiRequest.write()=backend.wsgi.wsgiRequest.WsgiRequest-class.html#write,Method rhn.SSL.SSLSocket.write()=rhn.SSL.SSLSocket-class.html#write,Method rhn.SmartIO.SmartIO.write()=rhn.SmartIO.SmartIO-class.html#write,Method rhn.nonblocking.NonBlockingFile.write()=rhn.nonblocking.NonBlockingFile-class.html#write,Method rhnpush.rhnpush_config.rhnpushConfigParser.write()=rhnpush.rhnpush_config.rhnpushConfigParser-class.html#write"><a title="backend.common.fileutils.payload.write
 backend.common.rhn_mpm.MPM_Package.write
 backend.satellite_tools.disk_dumper.dumper.TeeStream.write
 backend.satellite_tools.disk_dumper.string_buffer.StringBuffer.write
 backend.satellite_tools.repo_plugins.yum_src.YumWarnings.write
 backend.wsgi.wsgiRequest.WsgiRequest.write
 rhn.SSL.SSLSocket.write
-rhn.SSL.SSLSocket.write
 rhn.SmartIO.SmartIO.write
 rhn.nonblocking.NonBlockingFile.write
 rhnpush.rhnpush_config.rhnpushConfigParser.write" class="py-name" href="#" onclick="return doclink('link-62', 'write', 'link-62');">write</a></tt><tt class="py-op">(</tt><tt id="link-63" class="py-name"><a title="rhn.i18n.bstr" class="py-name" href="#" onclick="return doclink('link-63', 'bstr', 'link-10');">bstr</a></tt><tt class="py-op">(</tt><tt class="py-string">"Username: "</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
 <a name="L86"></a><tt class="py-lineno">86</tt>  <tt class="py-line">        <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
-<a name="L87"></a><tt class="py-lineno">87</tt>  <tt class="py-line">            <tt id="link-64" class="py-name"><a title="up2date_client.rhnregGui.username" class="py-name" href="#" onclick="return doclink('link-64', 'username', 'link-31');">username</a></tt> <tt class="py-op">=</tt> <tt class="py-name">tty</tt><tt class="py-op">.</tt><tt id="link-65" class="py-name" targets="Method rhn.SSL.SSLSocket.readline()=rhn.SSL.SSLSocket-class.html#readline,Method rhn.SSL.SSLSocket.readline()=rhn.SSL.SSLSocket-class.html#readline"><a title="rhn.SSL.SSLSocket.readline
-rhn.SSL.SSLSocket.readline" class="py-name" href="#" onclick="return doclink('link-65', 'readline', 'link-65');">readline</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L87"></a><tt class="py-lineno">87</tt>  <tt class="py-line">            <tt id="link-64" class="py-name"><a title="up2date_client.rhnregGui.username" class="py-name" href="#" onclick="return doclink('link-64', 'username', 'link-31');">username</a></tt> <tt class="py-op">=</tt> <tt class="py-name">tty</tt><tt class="py-op">.</tt><tt id="link-65" class="py-name" targets="Method rhn.SSL.SSLSocket.readline()=rhn.SSL.SSLSocket-class.html#readline"><a title="rhn.SSL.SSLSocket.readline" class="py-name" href="#" onclick="return doclink('link-65', 'readline', 'link-65');">readline</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
 <a name="L88"></a><tt class="py-lineno">88</tt>  <tt class="py-line">        <tt class="py-keyword">except</tt> <tt class="py-name">KeyboardInterrupt</tt><tt class="py-op">:</tt> </tt>
 <a name="L89"></a><tt class="py-lineno">89</tt>  <tt class="py-line">            <tt class="py-name">tty</tt><tt class="py-op">.</tt><tt id="link-66" class="py-name"><a title="backend.common.fileutils.payload.write
 backend.common.rhn_mpm.MPM_Package.write
@@ -283,7 +281,6 @@ backend.satellite_tools.disk_dumper.dumper.TeeStream.write
 backend.satellite_tools.disk_dumper.string_buffer.StringBuffer.write
 backend.satellite_tools.repo_plugins.yum_src.YumWarnings.write
 backend.wsgi.wsgiRequest.WsgiRequest.write
-rhn.SSL.SSLSocket.write
 rhn.SSL.SSLSocket.write
 rhn.SmartIO.SmartIO.write
 rhn.nonblocking.NonBlockingFile.write
@@ -297,7 +294,6 @@ backend.satellite_tools.disk_dumper.dumper.TeeStream.write
 backend.satellite_tools.disk_dumper.string_buffer.StringBuffer.write
 backend.satellite_tools.repo_plugins.yum_src.YumWarnings.write
 backend.wsgi.wsgiRequest.WsgiRequest.write
-rhn.SSL.SSLSocket.write
 rhn.SSL.SSLSocket.write
 rhn.SmartIO.SmartIO.write
 rhn.nonblocking.NonBlockingFile.write
@@ -334,7 +330,7 @@ expandto(location.href);
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Mon Apr  9 17:18:11 2018
+    Generated by Epydoc 3.0.1 on Tue Jan  8 16:14:29 2019
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

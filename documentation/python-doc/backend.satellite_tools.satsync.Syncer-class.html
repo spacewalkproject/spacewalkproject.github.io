@@ -817,9 +817,9 @@
         <span class="summary-sig-arg">batch</span>,
         <span class="summary-sig-arg">size</span>,
         <span class="summary-sig-arg">process_function</span>,
-        <span class="summary-sig-arg">prompt</span>=<span class="summary-sig-default">_('Downloading:')</span>,
+        <span class="summary-sig-arg">prompt</span>=<span class="summary-sig-default"><code class="variable-quote">u'</code><code class="variable-string">Downloading:</code><code class="variable-quote">'</code></span>,
         <span class="summary-sig-arg">nevermorethan</span>=<span class="summary-sig-default">None</span>,
-        <span class="summary-sig-arg">process_function_args</span>=<span class="summary-sig-default">()</span>)</span></td>
+        <span class="summary-sig-arg">process_function_args</span>=<span class="summary-sig-default"><code class="variable-group">(</code><code class="variable-group">)</code></span>)</span></td>
           <td align="right" valign="top">
             <span class="codelink"><a href="backend.satellite_tools.satsync-pysrc.html#Syncer._processWithProgressBar">source&nbsp;code</a></span>
             
@@ -840,8 +840,8 @@
         <span class="summary-sig-arg">batch</span>,
         <span class="summary-sig-arg">log_msg</span>,
         <span class="summary-sig-arg">process_function</span>,
-        <span class="summary-sig-arg">prompt</span>=<span class="summary-sig-default">_('Downloading:')</span>,
-        <span class="summary-sig-arg">process_function_args</span>=<span class="summary-sig-default">()</span>,
+        <span class="summary-sig-arg">prompt</span>=<span class="summary-sig-default"><code class="variable-quote">u'</code><code class="variable-string">Downloading:</code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">process_function_args</span>=<span class="summary-sig-default"><code class="variable-group">(</code><code class="variable-group">)</code></span>,
         <span class="summary-sig-arg">nevermorethan</span>=<span class="summary-sig-default">None</span>,
         <span class="summary-sig-arg">is_slow</span>=<span class="summary-sig-default">False</span>)</span></td>
           <td align="right" valign="top">
@@ -1110,45 +1110,45 @@
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.satellite_tools.satsync.Syncer-class.html#_query_compare_packages" class="summary-name" onclick="show_private();">_query_compare_packages</a> = <code title="&quot;&quot;&quot;
+        <a href="backend.satellite_tools.satsync.Syncer-class.html#_query_compare_packages" class="summary-name" onclick="show_private();">_query_compare_packages</a> = <code title="'''
         select p.id, c.checksum_type, c.checksum, p.path, p.package_si\
 ze,
-               TO_CHAR(p.last_modified, 'YYYYMMDDHH24MISS') last_modif\
-ied
+               TO_CHAR(p.last_modified, \'YYYYMMDDHH24MISS\') last_mod\
+ified
           from rhnPackage p, rhnChecksumView c
          where p.name_id = lookup_package_name(:name)
            and p.evr_id = lookup_evr(:epoch, :version, :release)
-..."><code class="variable-ellipsis">...</code></code>
+..."><code class="variable-quote">'</code><code class="variable-string">\n        select p.id, c.checksum_t</code><code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 <tr class="private">
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.satellite_tools.satsync.Syncer-class.html#_query_compare_source_packages" class="summary-name" onclick="show_private();">_query_compare_source_packages</a> = <code title="&quot;&quot;&quot;
+        <a href="backend.satellite_tools.satsync.Syncer-class.html#_query_compare_source_packages" class="summary-name" onclick="show_private();">_query_compare_source_packages</a> = <code title="'''
         select ps.id, c.checksum_type, c.checksum, ps.path, ps.package\
 _size,
-               TO_CHAR(ps.last_modified, 'YYYYMMDDHH24MISS') last_modi\
-fied
+               TO_CHAR(ps.last_modified, \'YYYYMMDDHH24MISS\') last_mo\
+dified
           from rhnPackageSource ps, rhnChecksumView c
          where ps.source_rpm_id = lookup_source_name(:package_id)
            and (ps.org_id = :org_id or
-..."><code class="variable-ellipsis">...</code></code>
+..."><code class="variable-quote">'</code><code class="variable-string">\n        select ps.id, c.ch</code><code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 <tr class="private">
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.satellite_tools.satsync.Syncer-class.html#_query_get_db_errata" class="summary-name" onclick="show_private();">_query_get_db_errata</a> = <code title="rhnSQL.Statement(&quot;&quot;&quot;
+        <a href="backend.satellite_tools.satsync.Syncer-class.html#_query_get_db_errata" class="summary-name" onclick="show_private();">_query_get_db_errata</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022768767264\
+8; statement=
         select e.id, e.advisory_name,
                TO_CHAR(e.last_modified, 'YYYYMMDDHH24MISS') last_modif\
 ied
           from rhnChannelErrata ce, rhnErrata e, rhnChannel c
          where c.label = :channel
            and ce.channel_id = c.id
-           and ce.errata_id = e.id
-...">rhnSQL.Statement(<code class="variable-ellipsis">...</code></code>
+...">&lt;spacewalk.server.rhnSQL.sql_base.State<code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 </table>
@@ -1371,14 +1371,14 @@ Returns errcode:
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-&quot;&quot;&quot;
-        select p.id, c.checksum_type, c.checksum, p.path, p.package_si<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
-ze,
-               TO_CHAR(p.last_modified, 'YYYYMMDDHH24MISS') last_modif<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
-ied
-          from rhnPackage p, rhnChecksumView c
-         where p.name_id = lookup_package_name(:name)
-           and p.evr_id = lookup_evr(:epoch, :version, :release)
+<code class="variable-quote">'''</code><code class="variable-string"></code>
+<code class="variable-string">        select p.id, c.checksum_type, c.checksum, p.path, p.package_si</code><span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+<code class="variable-string">ze,</code>
+<code class="variable-string">               TO_CHAR(p.last_modified, \'YYYYMMDDHH24MISS\') last_mod</code><span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+<code class="variable-string">ified</code>
+<code class="variable-string">          from rhnPackage p, rhnChecksumView c</code>
+<code class="variable-string">         where p.name_id = lookup_package_name(:name)</code>
+<code class="variable-string">           and p.evr_id = lookup_evr(:epoch, :version, :release)</code>
 <code class="variable-ellipsis">...</code>
 </pre></td></tr></table>
 </dd>
@@ -1397,14 +1397,14 @@ ied
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-&quot;&quot;&quot;
-        select ps.id, c.checksum_type, c.checksum, ps.path, ps.package<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
-_size,
-               TO_CHAR(ps.last_modified, 'YYYYMMDDHH24MISS') last_modi<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
-fied
-          from rhnPackageSource ps, rhnChecksumView c
-         where ps.source_rpm_id = lookup_source_name(:package_id)
-           and (ps.org_id = :org_id or
+<code class="variable-quote">'''</code><code class="variable-string"></code>
+<code class="variable-string">        select ps.id, c.checksum_type, c.checksum, ps.path, ps.package</code><span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+<code class="variable-string">_size,</code>
+<code class="variable-string">               TO_CHAR(ps.last_modified, \'YYYYMMDDHH24MISS\') last_mo</code><span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+<code class="variable-string">dified</code>
+<code class="variable-string">          from rhnPackageSource ps, rhnChecksumView c</code>
+<code class="variable-string">         where ps.source_rpm_id = lookup_source_name(:package_id)</code>
+<code class="variable-string">           and (ps.org_id = :org_id or</code>
 <code class="variable-ellipsis">...</code>
 </pre></td></tr></table>
 </dd>
@@ -1423,14 +1423,14 @@ fied
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-rhnSQL.Statement(&quot;&quot;&quot;
+&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022768767264<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+8; statement=
         select e.id, e.advisory_name,
                TO_CHAR(e.last_modified, 'YYYYMMDDHH24MISS') last_modif<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
 ied
           from rhnChannelErrata ce, rhnErrata e, rhnChannel c
          where c.label = :channel
            and ce.channel_id = c.id
-           and ce.errata_id = e.id
 <code class="variable-ellipsis">...</code>
 </pre></td></tr></table>
 </dd>
@@ -1461,7 +1461,7 @@ ied
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Mon Apr  9 17:17:48 2018
+    Generated by Epydoc 3.0.1 on Tue Jan  8 16:13:47 2019
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

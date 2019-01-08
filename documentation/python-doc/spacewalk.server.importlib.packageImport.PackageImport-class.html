@@ -1,0 +1,530 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>spacewalk.server.importlib.packageImport.PackageImport</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        spacewalk ::
+        server ::
+        importlib ::
+        packageImport ::
+        PackageImport ::
+        Class&nbsp;PackageImport
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="spacewalk.server.importlib.packageImport.PackageImport-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class PackageImport</h1><p class="nomargin-top"></p>
+<center>
+<center>  <map id="uml_class_diagram_for_spacewal_49" name="uml_class_diagram_for_spacewal_49">
+<area shape="rect" id="node1_13" href="spacewalk.server.importlib.packageImport.PackageImport-class.html#__init__" title="spacewalk.server.importlib.packageImport.PackageImport.__init__" alt="" coords="18,395,470,415"/>
+<area shape="rect" id="node1_14" href="spacewalk.server.importlib.packageImport.PackageImport-class.html#fix" title="spacewalk.server.importlib.packageImport.PackageImport.fix" alt="" coords="18,415,470,435"/>
+<area shape="rect" id="node1_15" href="spacewalk.server.importlib.packageImport.PackageImport-class.html#submit" title="spacewalk.server.importlib.packageImport.PackageImport.submit" alt="" coords="18,435,470,455"/>
+<area shape="rect" id="node1_16" href="spacewalk.server.importlib.packageImport.PackageImport-class.html#subscribeToChannels" title="spacewalk.server.importlib.packageImport.PackageImport.subscribeToChannels" alt="" coords="18,455,470,475"/>
+<area shape="rect" id="node1" href="spacewalk.server.importlib.packageImport.PackageImport-class.html" title="The most base type" alt="" coords="5,363,481,481"/>
+<area shape="rect" id="node2_17" href="javascript:void(0);" title="spacewalk.server.importlib.packageImport.ChannelPackageSubscription.compute_affected_channels" alt="" coords="70,298,418,318"/>
+<area shape="rect" id="node2_18" href="javascript:void(0);" title="spacewalk.server.importlib.packageImport.ChannelPackageSubscription.preprocess" alt="" coords="70,318,418,338"/>
+<area shape="rect" id="node2" href="javascript:void(0);" title="spacewalk.server.importlib.packageImport.ChannelPackageSubscription" alt="" coords="57,265,429,344"/>
+<area shape="rect" id="node3" href="javascript:void(0);" title="spacewalk.server.importlib.importLib.GenericPackageImport" alt="" coords="126,203,363,247"/>
+<area shape="rect" id="node4_19" href="javascript:void(0);" title="spacewalk.server.importlib.importLib.Import.cleanup" alt="" coords="141,37,347,57"/>
+<area shape="rect" id="node4_20" href="javascript:void(0);" title="spacewalk.server.importlib.importLib.Import.run" alt="" coords="141,57,347,77"/>
+<area shape="rect" id="node4_21" href="javascript:void(0);" title="spacewalk.server.importlib.importLib.Import.setForceVerify" alt="" coords="141,77,347,97"/>
+<area shape="rect" id="node4_22" href="javascript:void(0);" title="spacewalk.server.importlib.importLib.Import.setIgnoreUploaded" alt="" coords="141,97,347,117"/>
+<area shape="rect" id="node4_23" href="javascript:void(0);" title="spacewalk.server.importlib.importLib.Import.setTransactional" alt="" coords="141,117,347,137"/>
+<area shape="rect" id="node4_24" href="javascript:void(0);" title="spacewalk.server.importlib.importLib.Import.setUploadForce" alt="" coords="141,137,347,157"/>
+<area shape="rect" id="node4_25" href="javascript:void(0);" title="spacewalk.server.importlib.importLib.Import.status" alt="" coords="141,157,347,177"/>
+<area shape="rect" id="node4" href="javascript:void(0);" title="spacewalk.server.importlib.importLib.Import" alt="" coords="128,5,359,184"/>
+</map>
+  <img src="uml_class_diagram_for_spacewal_49.png" alt='' usemap="#uml_class_diagram_for_spacewal_49" ismap="ismap" class="graph-without-title" />
+</center>
+</center>
+<hr />
+<p>The most base type</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="spacewalk.server.importlib.packageImport.PackageImport-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">batch</span>,
+        <span class="summary-sig-arg">backend</span>,
+        <span class="summary-sig-arg">caller</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">update_last_modified</span>=<span class="summary-sig-default">0</span>)</span></td>
+          <td align="right" valign="top">
+
+
+          </td>
+        </tr>
+      </table>
+
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="__postprocess"></a><span class="summary-sig-name">__postprocess</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+
+
+          </td>
+        </tr>
+      </table>
+
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="__postprocessPackage"></a><span class="summary-sig-name">__postprocessPackage</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">package</span>)</span><br />
+      populate the columns foo_id with id numbers from appropriate hashes</td>
+          <td align="right" valign="top">
+
+
+          </td>
+        </tr>
+      </table>
+
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="spacewalk.server.importlib.packageImport.PackageImport-class.html#_cleanup_object" class="summary-sig-name" onclick="show_private();">_cleanup_object</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">object</span>)</span></td>
+          <td align="right" valign="top">
+
+
+          </td>
+        </tr>
+      </table>
+
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="spacewalk.server.importlib.packageImport.PackageImport-class.html#_comparePackages" class="summary-sig-name" onclick="show_private();">_comparePackages</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">package1</span>,
+        <span class="summary-sig-arg">package2</span>)</span></td>
+          <td align="right" valign="top">
+
+
+          </td>
+        </tr>
+      </table>
+
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_fix_encoding"></a><span class="summary-sig-name">_fix_encoding</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">text</span>)</span></td>
+          <td align="right" valign="top">
+
+
+          </td>
+        </tr>
+      </table>
+
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_import_signatures"></a><span class="summary-sig-name">_import_signatures</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+
+
+          </td>
+        </tr>
+      </table>
+
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="spacewalk.server.importlib.packageImport.PackageImport-class.html#_processPackage" class="summary-sig-name" onclick="show_private();">_processPackage</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">package</span>)</span></td>
+          <td align="right" valign="top">
+
+
+          </td>
+        </tr>
+      </table>
+
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_rpm_knows"></a><span class="summary-sig-name">_rpm_knows</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">tag</span>)</span></td>
+          <td align="right" valign="top">
+
+
+          </td>
+        </tr>
+      </table>
+
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="spacewalk.server.importlib.packageImport.PackageImport-class.html#fix" class="summary-sig-name">fix</a>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+
+
+          </td>
+        </tr>
+      </table>
+
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="spacewalk.server.importlib.packageImport.PackageImport-class.html#submit" class="summary-sig-name">submit</a>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+
+
+          </td>
+        </tr>
+      </table>
+
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="subscribeToChannels"></a><span class="summary-sig-name">subscribeToChannels</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+
+
+          </td>
+        </tr>
+      </table>
+
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>ChannelPackageSubscription</code></b>:
+      <code>compute_affected_channels</code>,
+      <code>preprocess</code>
+      </p>
+    <div class="private">    <p class="indent-wrapped-lines"><b>Inherited from <code>importLib.GenericPackageImport</code></b> (private):
+      <code>_postprocessPackageNEVRA</code>
+      </p></div>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>importLib.Import</code></b>:
+      <code>cleanup</code>,
+      <code>run</code>,
+      <code>setForceVerify</code>,
+      <code>setIgnoreUploaded</code>,
+      <code>setTransactional</code>,
+      <code>setUploadForce</code>,
+      <code>status</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">batch</span>,
+        <span class="sig-arg">backend</span>,
+        <span class="sig-arg">caller</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">update_last_modified</span>=<span class="sig-default">0</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+
+
+  <dl class="fields">
+    <dt>Overrides:
+        importLib.Import.__init__
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_cleanup_object"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_cleanup_object</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">object</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+
+
+  <dl class="fields">
+    <dt>Overrides:
+        importLib.Import._cleanup_object
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_comparePackages"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_comparePackages</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">package1</span>,
+        <span class="sig-arg">package2</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+
+
+  <dl class="fields">
+    <dt>Overrides:
+        ChannelPackageSubscription._comparePackages
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_processPackage"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_processPackage</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">package</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+
+
+  <dl class="fields">
+    <dt>Overrides:
+        importLib.Import._processPackage
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="fix"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">fix</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+
+
+  <dl class="fields">
+    <dt>Overrides:
+        importLib.Import.fix
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="submit"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">submit</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+
+
+  <dl class="fields">
+    <dt>Overrides:
+        importLib.Import.submit
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Tue Jan  8 16:14:14 2019
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

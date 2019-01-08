@@ -318,67 +318,77 @@ If yes:
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.satellite_tools.satCerts-module.html#_queryLookupOrgId" class="summary-name" onclick="show_private();">_queryLookupOrgId</a> = <code title="rhnSQL.Statement(&quot;&quot;&quot;
+        <a href="backend.satellite_tools.satCerts-module.html#_queryLookupOrgId" class="summary-name" onclick="show_private();">_queryLookupOrgId</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765978068\
+0; statement=
     SELECT id
       FROM web_customer
-&quot;&quot;&quot;)">rhnSQL.Statement(<code class="variable-ellipsis">...</code></code>
+">&lt;spacewalk.server.rhnSQL.sql_base.Statemen<code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 <tr class="private">
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.satellite_tools.satCerts-module.html#_queryDeleteCryptoCertInfoNullOrg" class="summary-name" onclick="show_private();">_queryDeleteCryptoCertInfoNullOrg</a> = <code title="rhnSQL.Statement(&quot;&quot;&quot;
+        <a href="backend.satellite_tools.satCerts-module.html#_queryDeleteCryptoCertInfoNullOrg" class="summary-name" onclick="show_private();">_queryDeleteCryptoCertInfoNullOrg</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765978082\
+4; statement=
     DELETE FROM rhnCryptoKey ck
     WHERE ck.description LIKE :description_prefix || '%%'
       AND ck.crypto_key_type_id = (SELECT id FROM rhnCryptoKeyType WHE\
 RE label = 'SSL')
       AND ck.org_id is NULL
-&quot;&quot;&quot;)">rhnSQL.Statement(<code class="variable-ellipsis">...</code></code>
+">&lt;spacewalk.server.rhnSQL.s<code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 <tr class="private">
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.satellite_tools.satCerts-module.html#_querySelectCryptoCertInfo" class="summary-name" onclick="show_private();">_querySelectCryptoCertInfo</a> = <code title="rhnSQL.Statement(&quot;&quot;&quot;
+        <a href="backend.satellite_tools.satCerts-module.html#_querySelectCryptoCertInfo" class="summary-name" onclick="show_private();">_querySelectCryptoCertInfo</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765978089\
+6; statement=
     SELECT ck.id, ck.description, ckt.label as type_label, ck.key
       FROM rhnCryptoKeyType ckt,
            rhnCryptoKey ck
      WHERE ckt.label = 'SSL'
        AND ckt.id = ck.crypto_key_type_id
        AND ck.description = :description
-       AND ck.org_id = :org_id
-...">rhnSQL.Statement(<code class="variable-ellipsis">...</code></code>
+...">&lt;spacewalk.server.rhnSQL.sql_base<code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 <tr class="private">
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.satellite_tools.satCerts-module.html#_querySelectCryptoCertInfoNullOrg" class="summary-name" onclick="show_private();">_querySelectCryptoCertInfoNullOrg</a> = <code title="rhnSQL.Statement(&quot;&quot;&quot;
+        <a href="backend.satellite_tools.satCerts-module.html#_querySelectCryptoCertInfoNullOrg" class="summary-name" onclick="show_private();">_querySelectCryptoCertInfoNullOrg</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765978096\
+8; statement=
     SELECT ck.id, ck.description, ckt.label as type_label, ck.key
       FROM rhnCryptoKeyType ckt,
            rhnCryptoKey ck
      WHERE ckt.label = 'SSL'
        AND ckt.id = ck.crypto_key_type_id
        AND ck.description = :description
-       AND ck.org_id is NULL
-...">rhnSQL.Statement(<code class="variable-ellipsis">...</code></code>
+...">&lt;spacewalk.server.rhnSQL.s<code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 <tr class="private">
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.satellite_tools.satCerts-module.html#_queryInsertCryptoCertInfo" class="summary-name" onclick="show_private();">_queryInsertCryptoCertInfo</a> = <code title="rhnSQL.Statement(&quot;&quot;&quot;
+        <a href="backend.satellite_tools.satCerts-module.html#_queryInsertCryptoCertInfo" class="summary-name" onclick="show_private();">_queryInsertCryptoCertInfo</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765978104\
+0; statement=
     INSERT into rhnCryptoKey
            (id, org_id, description, crypto_key_type_id, key)
     SELECT :rhn_cryptokey_id, :org_id, :description, ckt.id, empty_blo\
 b()
       FROM rhnCryptoKeyType ckt
      WHERE ckt.label = 'SSL'
-&quot;&quot;&quot;)">rhnSQL.Statement(<code class="variable-ellipsis">...</code></code>
+...">&lt;spacewalk.server.rhnSQL.sql_base<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__package__"></a><span class="summary-name">__package__</span> = <code title="'backend.satellite_tools'"><code class="variable-quote">'</code><code class="variable-string">backend.satellite_tools</code><code class="variable-quote">'</code></code>
     </td>
   </tr>
 </table>
@@ -544,10 +554,11 @@ uses:
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-rhnSQL.Statement(&quot;&quot;&quot;
+&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765978068<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+0; statement=
     SELECT id
       FROM web_customer
-&quot;&quot;&quot;)
+
 </pre></td></tr></table>
 </dd>
   </dl>
@@ -565,13 +576,14 @@ rhnSQL.Statement(&quot;&quot;&quot;
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-rhnSQL.Statement(&quot;&quot;&quot;
+&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765978082<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+4; statement=
     DELETE FROM rhnCryptoKey ck
     WHERE ck.description LIKE :description_prefix || '%%'
       AND ck.crypto_key_type_id = (SELECT id FROM rhnCryptoKeyType WHE<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
 RE label = 'SSL')
       AND ck.org_id is NULL
-&quot;&quot;&quot;)
+
 </pre></td></tr></table>
 </dd>
   </dl>
@@ -589,14 +601,14 @@ RE label = 'SSL')
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-rhnSQL.Statement(&quot;&quot;&quot;
+&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765978089<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+6; statement=
     SELECT ck.id, ck.description, ckt.label as type_label, ck.key
       FROM rhnCryptoKeyType ckt,
            rhnCryptoKey ck
      WHERE ckt.label = 'SSL'
        AND ckt.id = ck.crypto_key_type_id
        AND ck.description = :description
-       AND ck.org_id = :org_id
 <code class="variable-ellipsis">...</code>
 </pre></td></tr></table>
 </dd>
@@ -615,14 +627,14 @@ rhnSQL.Statement(&quot;&quot;&quot;
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-rhnSQL.Statement(&quot;&quot;&quot;
+&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765978096<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+8; statement=
     SELECT ck.id, ck.description, ckt.label as type_label, ck.key
       FROM rhnCryptoKeyType ckt,
            rhnCryptoKey ck
      WHERE ckt.label = 'SSL'
        AND ckt.id = ck.crypto_key_type_id
        AND ck.description = :description
-       AND ck.org_id is NULL
 <code class="variable-ellipsis">...</code>
 </pre></td></tr></table>
 </dd>
@@ -641,14 +653,15 @@ rhnSQL.Statement(&quot;&quot;&quot;
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-rhnSQL.Statement(&quot;&quot;&quot;
+&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765978104<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+0; statement=
     INSERT into rhnCryptoKey
            (id, org_id, description, crypto_key_type_id, key)
     SELECT :rhn_cryptokey_id, :org_id, :description, ckt.id, empty_blo<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
 b()
       FROM rhnCryptoKeyType ckt
      WHERE ckt.label = 'SSL'
-&quot;&quot;&quot;)
+<code class="variable-ellipsis">...</code>
 </pre></td></tr></table>
 </dd>
   </dl>
@@ -678,7 +691,7 @@ b()
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Mon Apr  9 17:17:41 2018
+    Generated by Epydoc 3.0.1 on Tue Jan  8 16:13:38 2019
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

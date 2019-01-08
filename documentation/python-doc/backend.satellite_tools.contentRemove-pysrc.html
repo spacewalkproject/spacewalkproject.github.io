@@ -54,7 +54,7 @@
 </table>
 <h1 class="epydoc">Source Code for <a href="backend.satellite_tools.contentRemove-module.html">Module backend.satellite_tools.contentRemove</a></h1>
 <pre class="py-src">
-<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-comment"># Copyright (c) 2016 Red Hat, Inc.</tt> </tt>
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-comment"># Copyright (c) 2016--2018 Red Hat, Inc.</tt> </tt>
 <a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
 <a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-comment"># This software is licensed to you under the GNU General Public License,</tt> </tt>
 <a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-comment"># version 2 (GPLv2). There is NO WARRANTY for this software, express or</tt> </tt>
@@ -169,12 +169,11 @@ backend.server.rhnSQL.sql_base.Cursor.fetchall_dict" class="py-name" href="#" on
 <a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
 <a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line">            <tt class="py-name">channel_counts</tt><tt class="py-op">[</tt><tt class="py-name">i</tt><tt class="py-op">[</tt><tt class="py-string">'label'</tt><tt class="py-op">]</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-number">1</tt> </tt>
 <a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line">    <tt class="py-keyword">print</tt><tt class="py-op">(</tt><tt class="py-string">"\nThe following channels will have their systems unsubscribed:"</tt><tt class="py-op">)</tt> </tt>
-<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line">    <tt class="py-name">channel_list</tt> <tt class="py-op">=</tt> <tt class="py-name">channel_counts</tt><tt class="py-op">.</tt><tt id="link-30" class="py-name" targets="Method backend.common.rhnConfig.RHNOptions.keys()=backend.common.rhnConfig.RHNOptions-class.html#keys,Method backend.server.rhnSQL.sql_table.Table.keys()=backend.server.rhnSQL.sql_table.Table-class.html#keys,Method backend.wsgi.wsgiRequest.WsgiMPtable.keys()=backend.wsgi.wsgiRequest.WsgiMPtable-class.html#keys,Function config_common.local_config.keys()=config_common.local_config-module.html#keys,Method config_common.local_config.rhncfgConfigParser.keys()=config_common.local_config.rhncfgConfigParser-class.html#keys,Method rhn.UserDictCase.UserDictCase.keys()=rhn.UserDictCase.UserDictCase-class.html#keys,Method rhn.UserDictCase.UserDictCase.keys()=rhn.UserDictCase.UserDictCase-class.html#keys,Method rhnpush.rhnpush_config.rhnpushConfigParser.keys()=rhnpush.rhnpush_config.rhnpushConfigParser-class.html#keys,Method src.osad_config.ClientConfigParser.keys()=src.osad_config.ClientConfigParser-class.html#keys,Function src.osad_config.keys()=src.osad_config-module.html#keys,Method up2date_client.config.Config.keys()=up2date_client.config.Config-class.html#keys,Method up2date_client.config.ConfigFile.keys()=up2date_client.config.ConfigFile-class.html#keys,Method up2date_client.rhnChannel.rhnChannel.keys()=up2date_client.rhnChannel.rhnChannel-class.html#keys"><a title="backend.common.rhnConfig.RHNOptions.keys
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line">    <tt class="py-name">channel_list</tt> <tt class="py-op">=</tt> <tt class="py-name">channel_counts</tt><tt class="py-op">.</tt><tt id="link-30" class="py-name" targets="Method backend.common.rhnConfig.RHNOptions.keys()=backend.common.rhnConfig.RHNOptions-class.html#keys,Method backend.server.rhnSQL.sql_table.Table.keys()=backend.server.rhnSQL.sql_table.Table-class.html#keys,Method backend.wsgi.wsgiRequest.WsgiMPtable.keys()=backend.wsgi.wsgiRequest.WsgiMPtable-class.html#keys,Function config_common.local_config.keys()=config_common.local_config-module.html#keys,Method config_common.local_config.rhncfgConfigParser.keys()=config_common.local_config.rhncfgConfigParser-class.html#keys,Method rhn.UserDictCase.UserDictCase.keys()=rhn.UserDictCase.UserDictCase-class.html#keys,Method rhnpush.rhnpush_config.rhnpushConfigParser.keys()=rhnpush.rhnpush_config.rhnpushConfigParser-class.html#keys,Method src.osad_config.ClientConfigParser.keys()=src.osad_config.ClientConfigParser-class.html#keys,Function src.osad_config.keys()=src.osad_config-module.html#keys,Method up2date_client.config.Config.keys()=up2date_client.config.Config-class.html#keys,Method up2date_client.config.ConfigFile.keys()=up2date_client.config.ConfigFile-class.html#keys,Method up2date_client.rhnChannel.rhnChannel.keys()=up2date_client.rhnChannel.rhnChannel-class.html#keys"><a title="backend.common.rhnConfig.RHNOptions.keys
 backend.server.rhnSQL.sql_table.Table.keys
 backend.wsgi.wsgiRequest.WsgiMPtable.keys
 config_common.local_config.keys
 config_common.local_config.rhncfgConfigParser.keys
-rhn.UserDictCase.UserDictCase.keys
 rhn.UserDictCase.UserDictCase.keys
 rhnpush.rhnpush_config.rhnpushConfigParser.keys
 src.osad_config.ClientConfigParser.keys
@@ -901,7 +900,6 @@ backend.wsgi.wsgiRequest.WsgiMPtable.keys
 config_common.local_config.keys
 config_common.local_config.rhncfgConfigParser.keys
 rhn.UserDictCase.UserDictCase.keys
-rhn.UserDictCase.UserDictCase.keys
 rhnpush.rhnpush_config.rhnpushConfigParser.keys
 src.osad_config.ClientConfigParser.keys
 src.osad_config.keys
@@ -987,7 +985,7 @@ expandto(location.href);
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Mon Apr  9 17:18:10 2018
+    Generated by Epydoc 3.0.1 on Tue Jan  8 16:14:31 2019
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

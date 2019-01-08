@@ -111,7 +111,7 @@
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
           <td><span class="summary-sig"><a href="backend.server.rhnServer.server_lib-module.html#getServerID" class="summary-sig-name">getServerID</a>(<span class="summary-sig-arg">server</span>,
-        <span class="summary-sig-arg">fields</span>=<span class="summary-sig-default">[]</span>)</span><br />
+        <span class="summary-sig-arg">fields</span>=<span class="summary-sig-default"><code class="variable-group">[</code><code class="variable-group">]</code></span>)</span><br />
       Given a textual digitalid (old style or new style) or simply an ID 
       try to search in the database and return the numeric id (thus doing 
       validation in case you pass a numeric ID already)</td>
@@ -368,53 +368,63 @@
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.rhnServer.server_lib-module.html#_query_update_push_client_registration" class="summary-name" onclick="show_private();">_query_update_push_client_registration</a> = <code title="rhnSQL.Statement(&quot;&quot;&quot;
+        <a href="backend.server.rhnServer.server_lib-module.html#_query_update_push_client_registration" class="summary-name" onclick="show_private();">_query_update_push_client_registration</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765495228\
+8; statement=
     update rhnPushClient
        set name = :name_in,
            shared_key = :shared_key_in,
            state_id = :state_id_in,
            next_action_time = NULL,
            last_ping_time = NULL
-     where server_id = :server_id_in
-...">rhnSQL.Statement(<code class="variable-ellipsis">...</code></code>
+...">&lt;spacewalk.server.rhn<code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 <tr class="private">
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.rhnServer.server_lib-module.html#_query_insert_push_client_registration" class="summary-name" onclick="show_private();">_query_insert_push_client_registration</a> = <code title="rhnSQL.Statement(&quot;&quot;&quot;
+        <a href="backend.server.rhnServer.server_lib-module.html#_query_insert_push_client_registration" class="summary-name" onclick="show_private();">_query_insert_push_client_registration</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765495236\
+0; statement=
         insert into rhnPushClient
            (id, server_id, name, shared_key, state_id)
         values (sequence_nextval('rhn_pclient_id_seq'), :server_id_in,\
  :name_in,
             :shared_key_in, :state_id_in)
-&quot;&quot;&quot;)">rhnSQL.Statement(<code class="variable-ellipsis">...</code></code>
+">&lt;spacewalk.server.rhn<code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 <tr class="private">
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.rhnServer.server_lib-module.html#_query_delete_duplicate_client_jids" class="summary-name" onclick="show_private();">_query_delete_duplicate_client_jids</a> = <code title="rhnSQL.Statement(&quot;&quot;&quot;
+        <a href="backend.server.rhnServer.server_lib-module.html#_query_delete_duplicate_client_jids" class="summary-name" onclick="show_private();">_query_delete_duplicate_client_jids</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765495243\
+2; statement=
     update rhnPushClient
        set jabber_id = null
      where jabber_id = :jid and
            server_id &lt;&gt; :server_id
-&quot;&quot;&quot;)">rhnSQL.Statement(<code class="variable-ellipsis">...</code></code>
+">&lt;spacewalk.server.rhnSQL<code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 <tr class="private">
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.rhnServer.server_lib-module.html#_query_update_push_client_jid" class="summary-name" onclick="show_private();">_query_update_push_client_jid</a> = <code title="rhnSQL.Statement(&quot;&quot;&quot;
+        <a href="backend.server.rhnServer.server_lib-module.html#_query_update_push_client_jid" class="summary-name" onclick="show_private();">_query_update_push_client_jid</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765495250\
+4; statement=
     update rhnPushClient
        set jabber_id = :jid,
            next_action_time = NULL,
            last_ping_time = NULL
      where server_id = :server_id
-&quot;&quot;&quot;)">rhnSQL.Statement(<code class="variable-ellipsis">...</code></code>
+">&lt;spacewalk.server.rhnSQL.sql_b<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__package__"></a><span class="summary-name">__package__</span> = <code title="'backend.server.rhnServer'"><code class="variable-quote">'</code><code class="variable-string">backend.server.rhnServer</code><code class="variable-quote">'</code></code>
     </td>
   </tr>
 </table>
@@ -444,7 +454,7 @@
   <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr valign="top"><td>
   <h3 class="epydoc"><span class="sig"><span class="sig-name">getServerID</span>(<span class="sig-arg">server</span>,
-        <span class="sig-arg">fields</span>=<span class="sig-default">[]</span>)</span>
+        <span class="sig-arg">fields</span>=<span class="sig-default"><code class="variable-group">[</code><code class="variable-group">]</code></span>)</span>
   </h3>
   </td><td align="right" valign="top"
     ><span class="codelink"><a href="backend.server.rhnServer.server_lib-pysrc.html#getServerID">source&nbsp;code</a></span>&nbsp;
@@ -514,14 +524,14 @@
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-rhnSQL.Statement(&quot;&quot;&quot;
+&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765495228<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+8; statement=
     update rhnPushClient
        set name = :name_in,
            shared_key = :shared_key_in,
            state_id = :state_id_in,
            next_action_time = NULL,
            last_ping_time = NULL
-     where server_id = :server_id_in
 <code class="variable-ellipsis">...</code>
 </pre></td></tr></table>
 </dd>
@@ -540,13 +550,14 @@ rhnSQL.Statement(&quot;&quot;&quot;
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-rhnSQL.Statement(&quot;&quot;&quot;
+&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765495236<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+0; statement=
         insert into rhnPushClient
            (id, server_id, name, shared_key, state_id)
         values (sequence_nextval('rhn_pclient_id_seq'), :server_id_in,<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
  :name_in,
             :shared_key_in, :state_id_in)
-&quot;&quot;&quot;)
+
 </pre></td></tr></table>
 </dd>
   </dl>
@@ -564,12 +575,13 @@ rhnSQL.Statement(&quot;&quot;&quot;
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-rhnSQL.Statement(&quot;&quot;&quot;
+&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765495243<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+2; statement=
     update rhnPushClient
        set jabber_id = null
      where jabber_id = :jid and
            server_id &lt;&gt; :server_id
-&quot;&quot;&quot;)
+
 </pre></td></tr></table>
 </dd>
   </dl>
@@ -587,13 +599,14 @@ rhnSQL.Statement(&quot;&quot;&quot;
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-rhnSQL.Statement(&quot;&quot;&quot;
+&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765495250<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+4; statement=
     update rhnPushClient
        set jabber_id = :jid,
            next_action_time = NULL,
            last_ping_time = NULL
      where server_id = :server_id
-&quot;&quot;&quot;)
+
 </pre></td></tr></table>
 </dd>
   </dl>
@@ -623,7 +636,7 @@ rhnSQL.Statement(&quot;&quot;&quot;
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Mon Apr  9 17:17:42 2018
+    Generated by Epydoc 3.0.1 on Tue Jan  8 16:13:38 2019
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

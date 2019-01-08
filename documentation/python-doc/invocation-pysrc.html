@@ -52,9 +52,9 @@
 </table>
 <h1 class="epydoc">Source Code for <a href="invocation-module.html">Module invocation</a></h1>
 <pre class="py-src">
-<a name="L1"></a><tt class="py-lineno"> 1</tt>  <tt class="py-line"><tt class="py-comment">#!/usr/bin/python</tt> </tt>
+<a name="L1"></a><tt class="py-lineno"> 1</tt>  <tt class="py-line"><tt class="py-comment">#!/usr/bin/python2</tt> </tt>
 <a name="L2"></a><tt class="py-lineno"> 2</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
-<a name="L3"></a><tt class="py-lineno"> 3</tt>  <tt class="py-line"><tt class="py-comment"># Copyright (c) 2008--2016 Red Hat, Inc.</tt> </tt>
+<a name="L3"></a><tt class="py-lineno"> 3</tt>  <tt class="py-line"><tt class="py-comment"># Copyright (c) 2008--2018 Red Hat, Inc.</tt> </tt>
 <a name="L4"></a><tt class="py-lineno"> 4</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
 <a name="L5"></a><tt class="py-lineno"> 5</tt>  <tt class="py-line"><tt class="py-comment"># This software is licensed to you under the GNU General Public License,</tt> </tt>
 <a name="L6"></a><tt class="py-lineno"> 6</tt>  <tt class="py-line"><tt class="py-comment"># version 2 (GPLv2). There is NO WARRANTY for this software, express or</tt> </tt>
@@ -82,13 +82,12 @@
 <a name="L28"></a><tt class="py-lineno">28</tt>  <tt class="py-line"><tt class="py-keyword">except</tt> <tt class="py-name">ImportError</tt><tt class="py-op">:</tt> </tt>
 <a name="L29"></a><tt class="py-lineno">29</tt>  <tt class="py-line">    <tt id="link-9" class="py-name" targets="Variable invocation.e=invocation-module.html#e,Variable virtualization.init_action.e=virtualization.init_action-module.html#e"><a title="invocation.e
 virtualization.init_action.e" class="py-name" href="#" onclick="return doclink('link-9', 'e', 'link-9');">e</a></tt> <tt class="py-op">=</tt> <tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">exc_info</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> </tt>
-<a name="L30"></a><tt class="py-lineno">30</tt>  <tt class="py-line">    <tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">stderr</tt><tt class="py-op">.</tt><tt id="link-10" class="py-name" targets="Static Method backend.common.fileutils.payload.write()=backend.common.fileutils.payload-class.html#write,Method backend.common.rhn_mpm.MPM_Package.write()=backend.common.rhn_mpm.MPM_Package-class.html#write,Method backend.satellite_tools.disk_dumper.dumper.TeeStream.write()=backend.satellite_tools.disk_dumper.dumper.TeeStream-class.html#write,Method backend.satellite_tools.disk_dumper.string_buffer.StringBuffer.write()=backend.satellite_tools.disk_dumper.string_buffer.StringBuffer-class.html#write,Method backend.satellite_tools.repo_plugins.yum_src.YumWarnings.write()=backend.satellite_tools.repo_plugins.yum_src.YumWarnings-class.html#write,Method backend.wsgi.wsgiRequest.WsgiRequest.write()=backend.wsgi.wsgiRequest.WsgiRequest-class.html#write,Method rhn.SSL.SSLSocket.write()=rhn.SSL.SSLSocket-class.html#write,Method rhn.SSL.SSLSocket.write()=rhn.SSL.SSLSocket-class.html#write,Method rhn.SmartIO.SmartIO.write()=rhn.SmartIO.SmartIO-class.html#write,Method rhn.nonblocking.NonBlockingFile.write()=rhn.nonblocking.NonBlockingFile-class.html#write,Method rhnpush.rhnpush_config.rhnpushConfigParser.write()=rhnpush.rhnpush_config.rhnpushConfigParser-class.html#write"><a title="backend.common.fileutils.payload.write
+<a name="L30"></a><tt class="py-lineno">30</tt>  <tt class="py-line">    <tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">stderr</tt><tt class="py-op">.</tt><tt id="link-10" class="py-name" targets="Static Method backend.common.fileutils.payload.write()=backend.common.fileutils.payload-class.html#write,Method backend.common.rhn_mpm.MPM_Package.write()=backend.common.rhn_mpm.MPM_Package-class.html#write,Method backend.satellite_tools.disk_dumper.dumper.TeeStream.write()=backend.satellite_tools.disk_dumper.dumper.TeeStream-class.html#write,Method backend.satellite_tools.disk_dumper.string_buffer.StringBuffer.write()=backend.satellite_tools.disk_dumper.string_buffer.StringBuffer-class.html#write,Method backend.satellite_tools.repo_plugins.yum_src.YumWarnings.write()=backend.satellite_tools.repo_plugins.yum_src.YumWarnings-class.html#write,Method backend.wsgi.wsgiRequest.WsgiRequest.write()=backend.wsgi.wsgiRequest.WsgiRequest-class.html#write,Method rhn.SSL.SSLSocket.write()=rhn.SSL.SSLSocket-class.html#write,Method rhn.SmartIO.SmartIO.write()=rhn.SmartIO.SmartIO-class.html#write,Method rhn.nonblocking.NonBlockingFile.write()=rhn.nonblocking.NonBlockingFile-class.html#write,Method rhnpush.rhnpush_config.rhnpushConfigParser.write()=rhnpush.rhnpush_config.rhnpushConfigParser-class.html#write"><a title="backend.common.fileutils.payload.write
 backend.common.rhn_mpm.MPM_Package.write
 backend.satellite_tools.disk_dumper.dumper.TeeStream.write
 backend.satellite_tools.disk_dumper.string_buffer.StringBuffer.write
 backend.satellite_tools.repo_plugins.yum_src.YumWarnings.write
 backend.wsgi.wsgiRequest.WsgiRequest.write
-rhn.SSL.SSLSocket.write
 rhn.SSL.SSLSocket.write
 rhn.SmartIO.SmartIO.write
 rhn.nonblocking.NonBlockingFile.write
@@ -99,7 +98,6 @@ backend.satellite_tools.disk_dumper.dumper.TeeStream.write
 backend.satellite_tools.disk_dumper.string_buffer.StringBuffer.write
 backend.satellite_tools.repo_plugins.yum_src.YumWarnings.write
 backend.wsgi.wsgiRequest.WsgiRequest.write
-rhn.SSL.SSLSocket.write
 rhn.SSL.SSLSocket.write
 rhn.SmartIO.SmartIO.write
 rhn.nonblocking.NonBlockingFile.write
@@ -151,7 +149,6 @@ backend.satellite_tools.disk_dumper.string_buffer.StringBuffer.write
 backend.satellite_tools.repo_plugins.yum_src.YumWarnings.write
 backend.wsgi.wsgiRequest.WsgiRequest.write
 rhn.SSL.SSLSocket.write
-rhn.SSL.SSLSocket.write
 rhn.SmartIO.SmartIO.write
 rhn.nonblocking.NonBlockingFile.write
 rhnpush.rhnpush_config.rhnpushConfigParser.write" class="py-name" href="#" onclick="return doclink('link-21', 'write', 'link-10');">write</a></tt><tt class="py-op">(</tt><tt class="py-string">"\nUser interrupted process.\n"</tt><tt class="py-op">)</tt> </tt>
@@ -170,7 +167,6 @@ backend.satellite_tools.disk_dumper.dumper.TeeStream.write
 backend.satellite_tools.disk_dumper.string_buffer.StringBuffer.write
 backend.satellite_tools.repo_plugins.yum_src.YumWarnings.write
 backend.wsgi.wsgiRequest.WsgiRequest.write
-rhn.SSL.SSLSocket.write
 rhn.SSL.SSLSocket.write
 rhn.SmartIO.SmartIO.write
 rhn.nonblocking.NonBlockingFile.write
@@ -207,7 +203,7 @@ expandto(location.href);
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Mon Apr  9 17:18:14 2018
+    Generated by Epydoc 3.0.1 on Tue Jan  8 16:14:31 2019
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

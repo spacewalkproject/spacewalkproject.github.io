@@ -1009,22 +1009,22 @@
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.rhnChannel-module.html#_query_get_source_packages_from_ids" class="summary-name" onclick="show_private();">_query_get_source_packages_from_ids</a> = <code title="rhnSQL.Statement(&quot;&quot;&quot;
+        <a href="backend.server.rhnChannel-module.html#_query_get_source_packages_from_ids" class="summary-name" onclick="show_private();">_query_get_source_packages_from_ids</a> = <code title="&lt;backend.server.rhnSQL.sql_base.Statement instance at 140227478754728;\
+ statement=
     select srpm.name
       from rhnChannelPackage cp,
            rhnPackage p,
            rhnSourceRPM srpm
      where cp.channel_id = :channel_id
        and cp.package_id = p.id
-       and p.source_rpm_id = srpm.id
-...">rhnSQL.Statement(<code class="variable-ellipsis">...</code></code>
+...">&lt;backend.server.rhnSQL.s<code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 <tr class="private">
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.rhnChannel-module.html#_query_all_packages_from_channel_checksum" class="summary-name" onclick="show_private();">_query_all_packages_from_channel_checksum</a> = <code title="&quot;&quot;&quot;
+        <a href="backend.server.rhnChannel-module.html#_query_all_packages_from_channel_checksum" class="summary-name" onclick="show_private();">_query_all_packages_from_channel_checksum</a> = <code title="'''
     select
         p.id,
         pn.name,
@@ -1032,14 +1032,14 @@
         pevr.release,
         pevr.epoch,
         pa.label arch,
-..."><code class="variable-ellipsis">...</code></code>
+..."><code class="variable-quote">'</code><code class="variable-string">\n    select\n   </code><code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 <tr class="private">
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.rhnChannel-module.html#_query_latest_packages_from_channel" class="summary-name" onclick="show_private();">_query_latest_packages_from_channel</a> = <code title="&quot;&quot;&quot;
+        <a href="backend.server.rhnChannel-module.html#_query_latest_packages_from_channel" class="summary-name" onclick="show_private();">_query_latest_packages_from_channel</a> = <code title="'''
     select
         p.id,
         pn.name,
@@ -1047,57 +1047,61 @@
         pevr.release,
         pevr.epoch,
         pa.label arch,
-..."><code class="variable-ellipsis">...</code></code>
+..."><code class="variable-quote">'</code><code class="variable-string">\n    select\n        p</code><code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 <tr class="private">
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.rhnChannel-module.html#_query_channel_details" class="summary-name" onclick="show_private();">_query_channel_details</a> = <code title="rhnSQL.Statement(&quot;&quot;&quot;
+        <a href="backend.server.rhnChannel-module.html#_query_channel_details" class="summary-name" onclick="show_private();">_query_channel_details</a> = <code title="&lt;backend.server.rhnSQL.sql_base.Statement instance at 140227478754800;\
+ statement=
 select c.id, c.label, c.parent_channel
   from rhnChannel c
  where c.label = :channel
-&quot;&quot;&quot;)">rhnSQL.Statement(<code class="variable-ellipsis">...</code></code>
+">&lt;backend.server.rhnSQL.sql_base.State<code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 <tr class="private">
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.rhnChannel-module.html#_query_server_parent_channel" class="summary-name" onclick="show_private();">_query_server_parent_channel</a> = <code title="rhnSQL.Statement(&quot;&quot;&quot;
+        <a href="backend.server.rhnChannel-module.html#_query_server_parent_channel" class="summary-name" onclick="show_private();">_query_server_parent_channel</a> = <code title="&lt;backend.server.rhnSQL.sql_base.Statement instance at 140227478754872;\
+ statement=
 select pc.id, pc.label
   from rhnChannel c
   join rhnServerChannel sc on c.parent_channel = sc.channel_id
   join rhnChannel pc on c.parent_channel = pc.id
+ where sc.server_id = :sid
  group by pc.id, pc.label
-&quot;&quot;&quot;)">rhnSQL.Statement(<code class="variable-ellipsis">...</code></code>
+...">&lt;backend.server.rhnSQL.sql_base<code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 <tr class="private">
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.rhnChannel-module.html#_query_can_subscribe" class="summary-name" onclick="show_private();">_query_can_subscribe</a> = <code title="rhnSQL.Statement(&quot;&quot;&quot;
+        <a href="backend.server.rhnChannel-module.html#_query_can_subscribe" class="summary-name" onclick="show_private();">_query_can_subscribe</a> = <code title="&lt;backend.server.rhnSQL.sql_base.Statement instance at 140227478754944;\
+ statement=
 select rhn_channel.user_role_check(:cid, wc.id, 'subscribe') as can_su\
 bscribe
   from web_contact wc
  where wc.login_uc = upper(:username)
-&quot;&quot;&quot;)">rhnSQL.Statement(<code class="variable-ellipsis">...</code></code>
+">&lt;backend.server.rhnSQL.sql_base.Stateme<code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="h_invalid_channel_title"></a><span class="summary-name">h_invalid_channel_title</span> = <code title="_(&quot;System Registered but Inactive&quot;)">_(&quot;System Registered but Inactive&quot;)</code>
+        <a name="h_invalid_channel_title"></a><span class="summary-name">h_invalid_channel_title</span> = <code title="'System Registered but Inactive'"><code class="variable-quote">'</code><code class="variable-string">System Registered but Inactive</code><code class="variable-quote">'</code></code>
     </td>
   </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.rhnChannel-module.html#h_invalid_channel_message" class="summary-name">h_invalid_channel_message</a> = <code title="_(&quot;&quot;&quot;
+        <a href="backend.server.rhnChannel-module.html#h_invalid_channel_message" class="summary-name">h_invalid_channel_message</a> = <code title="'''
 Invalid Architecture and OS release combination (%s, %s).
 Your system has been registered, but will not receive updates
 because it is not subscribed to a channel. If you have not yet
@@ -1105,61 +1109,68 @@ activated your product for service, please visit our website at:
 
      http://www.redhat.com/apps/activate/
 
-...">_(<code class="variable-ellipsis">...</code></code>
+..."><code class="variable-quote">'</code><code class="variable-string">\nInvalid Architecture and OS rel</code><code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="s_invalid_channel_title"></a><span class="summary-name">s_invalid_channel_title</span> = <code title="_(&quot;System Registered but Inactive&quot;)">_(&quot;System Registered but Inactive&quot;)</code>
+        <a name="s_invalid_channel_title"></a><span class="summary-name">s_invalid_channel_title</span> = <code title="'System Registered but Inactive'"><code class="variable-quote">'</code><code class="variable-string">System Registered but Inactive</code><code class="variable-quote">'</code></code>
     </td>
   </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.rhnChannel-module.html#s_invalid_channel_message" class="summary-name">s_invalid_channel_message</a> = <code title="_(&quot;&quot;&quot;
+        <a href="backend.server.rhnChannel-module.html#s_invalid_channel_message" class="summary-name">s_invalid_channel_message</a> = <code title="'''
 Invalid Architecture and OS release combination (%s, %s).
 Your system has been registered, but will not receive updates
 because it could not be subscribed to a base channel.
 Please contact your organization administrator for assistance.
-&quot;&quot;&quot;)">_(<code class="variable-ellipsis">...</code></code>
+'''"><code class="variable-quote">'</code><code class="variable-string">\nInvalid Architecture and OS rel</code><code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.rhnChannel-module.html#no_autoentitlement_message" class="summary-name">no_autoentitlement_message</a> = <code title="_(&quot;&quot;&quot;
+        <a href="backend.server.rhnChannel-module.html#no_autoentitlement_message" class="summary-name">no_autoentitlement_message</a> = <code title="'''
   This system has been successfully registered, but is not yet entitle\
 d
   to service.  To entitle this system to service, login to the web sit\
 e at:
 
   %(entitlement_url)s
-&quot;&quot;&quot;)">_(<code class="variable-ellipsis">...</code></code>
+'''"><code class="variable-quote">'</code><code class="variable-string">\n  This system has been success</code><code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="no_entitlement_title"></a><span class="summary-name">no_entitlement_title</span> = <code title="_(&quot;System Registered but Inactive&quot;)">_(&quot;System Registered but Inactive&quot;)</code>
+        <a name="no_entitlement_title"></a><span class="summary-name">no_entitlement_title</span> = <code title="'System Registered but Inactive'"><code class="variable-quote">'</code><code class="variable-string">System Registered but Inactive</code><code class="variable-quote">'</code></code>
     </td>
   </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.rhnChannel-module.html#no_entitlement_message" class="summary-name">no_entitlement_message</a> = <code title="_(&quot;&quot;&quot;
+        <a href="backend.server.rhnChannel-module.html#no_entitlement_message" class="summary-name">no_entitlement_message</a> = <code title="'''
   This system has been successfully registered, but no service entitle\
 ments
   were available.  To entitle this system to service, login to the web\
  site at:
 
   %(entitlement_url)s
-&quot;&quot;&quot;)">_(<code class="variable-ellipsis">...</code></code>
+'''"><code class="variable-quote">'</code><code class="variable-string">\n  This system has been successfull</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__package__"></a><span class="summary-name">__package__</span> = <code title="'backend.server'"><code class="variable-quote">'</code><code class="variable-string">backend.server</code><code class="variable-quote">'</code></code>
     </td>
   </tr>
 </table>
@@ -1260,14 +1271,14 @@ Returns:    True if this is a custom channel
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-rhnSQL.Statement(&quot;&quot;&quot;
+&lt;backend.server.rhnSQL.sql_base.Statement instance at 140227478754728;<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+ statement=
     select srpm.name
       from rhnChannelPackage cp,
            rhnPackage p,
            rhnSourceRPM srpm
      where cp.channel_id = :channel_id
        and cp.package_id = p.id
-       and p.source_rpm_id = srpm.id
 <code class="variable-ellipsis">...</code>
 </pre></td></tr></table>
 </dd>
@@ -1286,14 +1297,14 @@ rhnSQL.Statement(&quot;&quot;&quot;
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-&quot;&quot;&quot;
-    select
-        p.id,
-        pn.name,
-        pevr.version,
-        pevr.release,
-        pevr.epoch,
-        pa.label arch,
+<code class="variable-quote">'''</code><code class="variable-string"></code>
+<code class="variable-string">    select</code>
+<code class="variable-string">        p.id,</code>
+<code class="variable-string">        pn.name,</code>
+<code class="variable-string">        pevr.version,</code>
+<code class="variable-string">        pevr.release,</code>
+<code class="variable-string">        pevr.epoch,</code>
+<code class="variable-string">        pa.label arch,</code>
 <code class="variable-ellipsis">...</code>
 </pre></td></tr></table>
 </dd>
@@ -1312,14 +1323,14 @@ rhnSQL.Statement(&quot;&quot;&quot;
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-&quot;&quot;&quot;
-    select
-        p.id,
-        pn.name,
-        pevr.version,
-        pevr.release,
-        pevr.epoch,
-        pa.label arch,
+<code class="variable-quote">'''</code><code class="variable-string"></code>
+<code class="variable-string">    select</code>
+<code class="variable-string">        p.id,</code>
+<code class="variable-string">        pn.name,</code>
+<code class="variable-string">        pevr.version,</code>
+<code class="variable-string">        pevr.release,</code>
+<code class="variable-string">        pevr.epoch,</code>
+<code class="variable-string">        pa.label arch,</code>
 <code class="variable-ellipsis">...</code>
 </pre></td></tr></table>
 </dd>
@@ -1338,11 +1349,12 @@ rhnSQL.Statement(&quot;&quot;&quot;
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-rhnSQL.Statement(&quot;&quot;&quot;
+&lt;backend.server.rhnSQL.sql_base.Statement instance at 140227478754800;<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+ statement=
 select c.id, c.label, c.parent_channel
   from rhnChannel c
  where c.label = :channel
-&quot;&quot;&quot;)
+
 </pre></td></tr></table>
 </dd>
   </dl>
@@ -1360,13 +1372,15 @@ select c.id, c.label, c.parent_channel
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-rhnSQL.Statement(&quot;&quot;&quot;
+&lt;backend.server.rhnSQL.sql_base.Statement instance at 140227478754872;<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+ statement=
 select pc.id, pc.label
   from rhnChannel c
   join rhnServerChannel sc on c.parent_channel = sc.channel_id
   join rhnChannel pc on c.parent_channel = pc.id
+ where sc.server_id = :sid
  group by pc.id, pc.label
-&quot;&quot;&quot;)
+<code class="variable-ellipsis">...</code>
 </pre></td></tr></table>
 </dd>
   </dl>
@@ -1384,12 +1398,13 @@ select pc.id, pc.label
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-rhnSQL.Statement(&quot;&quot;&quot;
+&lt;backend.server.rhnSQL.sql_base.Statement instance at 140227478754944;<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+ statement=
 select rhn_channel.user_role_check(:cid, wc.id, 'subscribe') as can_su<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
 bscribe
   from web_contact wc
  where wc.login_uc = upper(:username)
-&quot;&quot;&quot;)
+
 </pre></td></tr></table>
 </dd>
   </dl>
@@ -1407,14 +1422,14 @@ bscribe
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-_(&quot;&quot;&quot;
-Invalid Architecture and OS release combination (%s, %s).
-Your system has been registered, but will not receive updates
-because it is not subscribed to a channel. If you have not yet
-activated your product for service, please visit our website at:
-
-     http://www.redhat.com/apps/activate/
-
+<code class="variable-quote">'''</code><code class="variable-string"></code>
+<code class="variable-string">Invalid Architecture and OS release combination (%s, %s).</code>
+<code class="variable-string">Your system has been registered, but will not receive updates</code>
+<code class="variable-string">because it is not subscribed to a channel. If you have not yet</code>
+<code class="variable-string">activated your product for service, please visit our website at:</code>
+<code class="variable-string"></code>
+<code class="variable-string">     http://www.redhat.com/apps/activate/</code>
+<code class="variable-string"></code>
 <code class="variable-ellipsis">...</code>
 </pre></td></tr></table>
 </dd>
@@ -1433,12 +1448,12 @@ activated your product for service, please visit our website at:
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-_(&quot;&quot;&quot;
-Invalid Architecture and OS release combination (%s, %s).
-Your system has been registered, but will not receive updates
-because it could not be subscribed to a base channel.
-Please contact your organization administrator for assistance.
-&quot;&quot;&quot;)
+<code class="variable-quote">'''</code><code class="variable-string"></code>
+<code class="variable-string">Invalid Architecture and OS release combination (%s, %s).</code>
+<code class="variable-string">Your system has been registered, but will not receive updates</code>
+<code class="variable-string">because it could not be subscribed to a base channel.</code>
+<code class="variable-string">Please contact your organization administrator for assistance.</code>
+<code class="variable-string"></code><code class="variable-quote">'''</code>
 </pre></td></tr></table>
 </dd>
   </dl>
@@ -1456,14 +1471,14 @@ Please contact your organization administrator for assistance.
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-_(&quot;&quot;&quot;
-  This system has been successfully registered, but is not yet entitle<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
-d
-  to service.  To entitle this system to service, login to the web sit<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
-e at:
-
-  %(entitlement_url)s
-&quot;&quot;&quot;)
+<code class="variable-quote">'''</code><code class="variable-string"></code>
+<code class="variable-string">  This system has been successfully registered, but is not yet entitle</code><span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+<code class="variable-string">d</code>
+<code class="variable-string">  to service.  To entitle this system to service, login to the web sit</code><span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+<code class="variable-string">e at:</code>
+<code class="variable-string"></code>
+<code class="variable-string">  %(entitlement_url)s</code>
+<code class="variable-string"></code><code class="variable-quote">'''</code>
 </pre></td></tr></table>
 </dd>
   </dl>
@@ -1481,14 +1496,14 @@ e at:
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-_(&quot;&quot;&quot;
-  This system has been successfully registered, but no service entitle<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
-ments
-  were available.  To entitle this system to service, login to the web<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
- site at:
-
-  %(entitlement_url)s
-&quot;&quot;&quot;)
+<code class="variable-quote">'''</code><code class="variable-string"></code>
+<code class="variable-string">  This system has been successfully registered, but no service entitle</code><span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+<code class="variable-string">ments</code>
+<code class="variable-string">  were available.  To entitle this system to service, login to the web</code><span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+<code class="variable-string"> site at:</code>
+<code class="variable-string"></code>
+<code class="variable-string">  %(entitlement_url)s</code>
+<code class="variable-string"></code><code class="variable-quote">'''</code>
 </pre></td></tr></table>
 </dd>
   </dl>
@@ -1518,7 +1533,7 @@ ments
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Mon Apr  9 17:17:42 2018
+    Generated by Epydoc 3.0.1 on Tue Jan  8 16:13:38 2019
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

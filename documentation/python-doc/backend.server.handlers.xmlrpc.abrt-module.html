@@ -102,125 +102,135 @@
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.handlers.xmlrpc.abrt-module.html#_query_get_crash" class="summary-name" onclick="show_private();">_query_get_crash</a> = <code title="rhnSQL.Statement(&quot;&quot;&quot;
+        <a href="backend.server.handlers.xmlrpc.abrt-module.html#_query_get_crash" class="summary-name" onclick="show_private();">_query_get_crash</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765253579\
+2; statement=
 select id
   from rhnServerCrash
  where server_id = :server_id and
        crash = :crash
-&quot;&quot;&quot;)">rhnSQL.Statement(<code class="variable-ellipsis">...</code></code>
+">&lt;spacewalk.server.rhnSQL.sql_base.Statement<code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 <tr class="private">
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.handlers.xmlrpc.abrt-module.html#_query_create_crash" class="summary-name" onclick="show_private();">_query_create_crash</a> = <code title="rhnSQL.Statement(&quot;&quot;&quot;
+        <a href="backend.server.handlers.xmlrpc.abrt-module.html#_query_create_crash" class="summary-name" onclick="show_private();">_query_create_crash</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765253586\
+4; statement=
 insert into rhnServerCrash (
        id,
        server_id,
        crash,
        path,
        count,
-       storage_path)
-...">rhnSQL.Statement(<code class="variable-ellipsis">...</code></code>
+...">&lt;spacewalk.server.rhnSQL.sql_base.Statem<code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 <tr class="private">
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.handlers.xmlrpc.abrt-module.html#_query_update_pkg_data1" class="summary-name" onclick="show_private();">_query_update_pkg_data1</a> = <code title="rhnSQL.Statement(&quot;&quot;&quot;
+        <a href="backend.server.handlers.xmlrpc.abrt-module.html#_query_update_pkg_data1" class="summary-name" onclick="show_private();">_query_update_pkg_data1</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765253593\
+6; statement=
 update rhnServerCrash
    set package_name_id = lookup_package_name(:pkg_name),
        package_evr_id = lookup_evr(:pkg_epoch, :pkg_version, :pkg_rele\
 ase)
  where id = :crash_id
-&quot;&quot;&quot;)">rhnSQL.Statement(<code class="variable-ellipsis">...</code></code>
+">&lt;spacewalk.server.rhnSQL.sql_base.St<code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 <tr class="private">
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.handlers.xmlrpc.abrt-module.html#_query_update_pkg_data2" class="summary-name" onclick="show_private();">_query_update_pkg_data2</a> = <code title="rhnSQL.Statement(&quot;&quot;&quot;
+        <a href="backend.server.handlers.xmlrpc.abrt-module.html#_query_update_pkg_data2" class="summary-name" onclick="show_private();">_query_update_pkg_data2</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765253600\
+8; statement=
 update rhnServerCrash
    set package_name_id = lookup_package_name(:pkg_name),
        package_evr_id = lookup_evr(:pkg_epoch, :pkg_version, :pkg_rele\
 ase),
        package_arch_id = lookup_package_arch(:pkg_arch)
  where id = :crash_id
-&quot;&quot;&quot;)">rhnSQL.Statement(<code class="variable-ellipsis">...</code></code>
+...">&lt;spacewalk.server.rhnSQL.sql_base.St<code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 <tr class="private">
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.handlers.xmlrpc.abrt-module.html#_query_update_watched_items" class="summary-name" onclick="show_private();">_query_update_watched_items</a> = <code title="&quot;&quot;&quot;
+        <a href="backend.server.handlers.xmlrpc.abrt-module.html#_query_update_watched_items" class="summary-name" onclick="show_private();">_query_update_watched_items</a> = <code title="'''
 update rhnServerCrash
    set %s = :filecontent
  where id = :crash_id
-&quot;&quot;&quot;"><code class="variable-ellipsis">...</code></code>
+'''"><code class="variable-quote">'</code><code class="variable-string">\nupdate rhnServerCrash\n   set</code><code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 <tr class="private">
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.handlers.xmlrpc.abrt-module.html#_query_update_crash_count" class="summary-name" onclick="show_private();">_query_update_crash_count</a> = <code title="&quot;&quot;&quot;
+        <a href="backend.server.handlers.xmlrpc.abrt-module.html#_query_update_crash_count" class="summary-name" onclick="show_private();">_query_update_crash_count</a> = <code title="'''
 update rhnServerCrash
    set count = :crash_count
  where server_id = :server_id and
        crash = :crash
-&quot;&quot;&quot;"><code class="variable-ellipsis">...</code></code>
+'''"><code class="variable-quote">'</code><code class="variable-string">\nupdate rhnServerCrash\n   set c</code><code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 <tr class="private">
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.handlers.xmlrpc.abrt-module.html#_query_get_crashfile_sizelimit" class="summary-name" onclick="show_private();">_query_get_crashfile_sizelimit</a> = <code title="&quot;&quot;&quot;
+        <a href="backend.server.handlers.xmlrpc.abrt-module.html#_query_get_crashfile_sizelimit" class="summary-name" onclick="show_private();">_query_get_crashfile_sizelimit</a> = <code title="'''
 select crash_file_sizelimit
   from rhnOrgConfiguration
  where org_id = :org_id
-&quot;&quot;&quot;"><code class="variable-ellipsis">...</code></code>
+'''"><code class="variable-quote">'</code><code class="variable-string">\nselect crash_file_sizelimi</code><code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 <tr class="private">
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.handlers.xmlrpc.abrt-module.html#_query_set_crashfile_upload_flag" class="summary-name" onclick="show_private();">_query_set_crashfile_upload_flag</a> = <code title="&quot;&quot;&quot;
+        <a href="backend.server.handlers.xmlrpc.abrt-module.html#_query_set_crashfile_upload_flag" class="summary-name" onclick="show_private();">_query_set_crashfile_upload_flag</a> = <code title="'''
 update rhnServerCrashFile
-   set is_uploaded = 'Y'
+   set is_uploaded = \'Y\'
  where id = (
        select scf.id as id
          from rhnServerCrashFile scf,
               rhnServerCrash sc
         where scf.crash_id = sc.id and
-..."><code class="variable-ellipsis">...</code></code>
+..."><code class="variable-quote">'</code><code class="variable-string">\nupdate rhnServerCrashFil</code><code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 <tr class="private">
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.handlers.xmlrpc.abrt-module.html#_query_get_crash_reporting_settings" class="summary-name" onclick="show_private();">_query_get_crash_reporting_settings</a> = <code title="&quot;&quot;&quot;
+        <a href="backend.server.handlers.xmlrpc.abrt-module.html#_query_get_crash_reporting_settings" class="summary-name" onclick="show_private();">_query_get_crash_reporting_settings</a> = <code title="'''
 select crash_reporting_enabled
   from rhnOrgConfiguration
  where org_id = :org_id
-&quot;&quot;&quot;"><code class="variable-ellipsis">...</code></code>
+'''"><code class="variable-quote">'</code><code class="variable-string">\nselect crash_reportin</code><code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 <tr class="private">
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.handlers.xmlrpc.abrt-module.html#_query_get_crashfile_upload_settings" class="summary-name" onclick="show_private();">_query_get_crashfile_upload_settings</a> = <code title="&quot;&quot;&quot;
+        <a href="backend.server.handlers.xmlrpc.abrt-module.html#_query_get_crashfile_upload_settings" class="summary-name" onclick="show_private();">_query_get_crashfile_upload_settings</a> = <code title="'''
 select crashfile_upload_enabled
   from rhnOrgConfiguration
  where org_id = :org_id
-&quot;&quot;&quot;"><code class="variable-ellipsis">...</code></code>
+'''"><code class="variable-quote">'</code><code class="variable-string">\nselect crashfile_upl</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__package__"></a><span class="summary-name">__package__</span> = <code title="'backend.server.handlers.xmlrpc'"><code class="variable-quote">'</code><code class="variable-string">backend.server.handlers.xmlrpc</code><code class="variable-quote">'</code></code>
     </td>
   </tr>
 </table>
@@ -254,12 +264,13 @@ select crashfile_upload_enabled
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-rhnSQL.Statement(&quot;&quot;&quot;
+&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765253579<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+2; statement=
 select id
   from rhnServerCrash
  where server_id = :server_id and
        crash = :crash
-&quot;&quot;&quot;)
+
 </pre></td></tr></table>
 </dd>
   </dl>
@@ -277,14 +288,14 @@ select id
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-rhnSQL.Statement(&quot;&quot;&quot;
+&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765253586<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+4; statement=
 insert into rhnServerCrash (
        id,
        server_id,
        crash,
        path,
        count,
-       storage_path)
 <code class="variable-ellipsis">...</code>
 </pre></td></tr></table>
 </dd>
@@ -303,13 +314,14 @@ insert into rhnServerCrash (
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-rhnSQL.Statement(&quot;&quot;&quot;
+&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765253593<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+6; statement=
 update rhnServerCrash
    set package_name_id = lookup_package_name(:pkg_name),
        package_evr_id = lookup_evr(:pkg_epoch, :pkg_version, :pkg_rele<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
 ase)
  where id = :crash_id
-&quot;&quot;&quot;)
+
 </pre></td></tr></table>
 </dd>
   </dl>
@@ -327,14 +339,15 @@ ase)
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-rhnSQL.Statement(&quot;&quot;&quot;
+&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765253600<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+8; statement=
 update rhnServerCrash
    set package_name_id = lookup_package_name(:pkg_name),
        package_evr_id = lookup_evr(:pkg_epoch, :pkg_version, :pkg_rele<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
 ase),
        package_arch_id = lookup_package_arch(:pkg_arch)
  where id = :crash_id
-&quot;&quot;&quot;)
+<code class="variable-ellipsis">...</code>
 </pre></td></tr></table>
 </dd>
   </dl>
@@ -352,11 +365,11 @@ ase),
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-&quot;&quot;&quot;
-update rhnServerCrash
-   set %s = :filecontent
- where id = :crash_id
-&quot;&quot;&quot;
+<code class="variable-quote">'''</code><code class="variable-string"></code>
+<code class="variable-string">update rhnServerCrash</code>
+<code class="variable-string">   set %s = :filecontent</code>
+<code class="variable-string"> where id = :crash_id</code>
+<code class="variable-string"></code><code class="variable-quote">'''</code>
 </pre></td></tr></table>
 </dd>
   </dl>
@@ -374,12 +387,12 @@ update rhnServerCrash
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-&quot;&quot;&quot;
-update rhnServerCrash
-   set count = :crash_count
- where server_id = :server_id and
-       crash = :crash
-&quot;&quot;&quot;
+<code class="variable-quote">'''</code><code class="variable-string"></code>
+<code class="variable-string">update rhnServerCrash</code>
+<code class="variable-string">   set count = :crash_count</code>
+<code class="variable-string"> where server_id = :server_id and</code>
+<code class="variable-string">       crash = :crash</code>
+<code class="variable-string"></code><code class="variable-quote">'''</code>
 </pre></td></tr></table>
 </dd>
   </dl>
@@ -397,11 +410,11 @@ update rhnServerCrash
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-&quot;&quot;&quot;
-select crash_file_sizelimit
-  from rhnOrgConfiguration
- where org_id = :org_id
-&quot;&quot;&quot;
+<code class="variable-quote">'''</code><code class="variable-string"></code>
+<code class="variable-string">select crash_file_sizelimit</code>
+<code class="variable-string">  from rhnOrgConfiguration</code>
+<code class="variable-string"> where org_id = :org_id</code>
+<code class="variable-string"></code><code class="variable-quote">'''</code>
 </pre></td></tr></table>
 </dd>
   </dl>
@@ -419,14 +432,14 @@ select crash_file_sizelimit
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-&quot;&quot;&quot;
-update rhnServerCrashFile
-   set is_uploaded = 'Y'
- where id = (
-       select scf.id as id
-         from rhnServerCrashFile scf,
-              rhnServerCrash sc
-        where scf.crash_id = sc.id and
+<code class="variable-quote">'''</code><code class="variable-string"></code>
+<code class="variable-string">update rhnServerCrashFile</code>
+<code class="variable-string">   set is_uploaded = \'Y\'</code>
+<code class="variable-string"> where id = (</code>
+<code class="variable-string">       select scf.id as id</code>
+<code class="variable-string">         from rhnServerCrashFile scf,</code>
+<code class="variable-string">              rhnServerCrash sc</code>
+<code class="variable-string">        where scf.crash_id = sc.id and</code>
 <code class="variable-ellipsis">...</code>
 </pre></td></tr></table>
 </dd>
@@ -445,11 +458,11 @@ update rhnServerCrashFile
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-&quot;&quot;&quot;
-select crash_reporting_enabled
-  from rhnOrgConfiguration
- where org_id = :org_id
-&quot;&quot;&quot;
+<code class="variable-quote">'''</code><code class="variable-string"></code>
+<code class="variable-string">select crash_reporting_enabled</code>
+<code class="variable-string">  from rhnOrgConfiguration</code>
+<code class="variable-string"> where org_id = :org_id</code>
+<code class="variable-string"></code><code class="variable-quote">'''</code>
 </pre></td></tr></table>
 </dd>
   </dl>
@@ -467,11 +480,11 @@ select crash_reporting_enabled
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-&quot;&quot;&quot;
-select crashfile_upload_enabled
-  from rhnOrgConfiguration
- where org_id = :org_id
-&quot;&quot;&quot;
+<code class="variable-quote">'''</code><code class="variable-string"></code>
+<code class="variable-string">select crashfile_upload_enabled</code>
+<code class="variable-string">  from rhnOrgConfiguration</code>
+<code class="variable-string"> where org_id = :org_id</code>
+<code class="variable-string"></code><code class="variable-quote">'''</code>
 </pre></td></tr></table>
 </dd>
   </dl>
@@ -501,7 +514,7 @@ select crashfile_upload_enabled
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Mon Apr  9 17:17:42 2018
+    Generated by Epydoc 3.0.1 on Tue Jan  8 16:13:38 2019
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

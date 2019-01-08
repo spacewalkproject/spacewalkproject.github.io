@@ -34,12 +34,11 @@
   <tr valign="top">
     <td width="100%">
       <span class="breadcrumbs">
-        backend ::
-        server ::
-        handlers ::
-        xmlrpc ::
-        get_handler ::
-        GetHandler ::
+        <a href="backend-module.html">Package&nbsp;backend</a> ::
+        <a href="backend.server-module.html">Package&nbsp;server</a> ::
+        <a href="backend.server.handlers-module.html">Package&nbsp;handlers</a> ::
+        <a href="backend.server.handlers.xmlrpc-module.html">Package&nbsp;xmlrpc</a> ::
+        <a href="backend.server.handlers.xmlrpc.get_handler-module.html" onclick="show_private();">Module&nbsp;get_handler</a> ::
         Class&nbsp;GetHandler
       </span>
     </td>
@@ -59,16 +58,68 @@
 <!-- ==================== CLASS DESCRIPTION ==================== -->
 <h1 class="epydoc">Class GetHandler</h1><p class="nomargin-top"><span class="codelink"><a href="backend.server.handlers.xmlrpc.get_handler-pysrc.html#GetHandler">source&nbsp;code</a></span></p>
 <center>
-<center>  <map id="uml_class_diagram_for_backend__305" name="uml_class_diagram_for_backend__305">
-<area shape="rect" id="node1" href="backend.server.handlers.xmlrpc.get_handler.GetHandler-class.html" title="handles the GET requests Inherit the behaviour from the parent class" alt="" coords="5,5,96,49"/>
+<center>  <map id="uml_class_diagram_for_backend__329" name="uml_class_diagram_for_backend__329">
+<area shape="rect" id="node1" href="backend.server.handlers.xmlrpc.get_handler.GetHandler-class.html" title="handles the GET requests Inherit the behaviour from the parent class" alt="" coords="128,320,227,364"/>
+<area shape="rect" id="node2_10" href="javascript:void(0);" title="spacewalk.server.apacheRequest.GetHandler.__init__" alt="" coords="29,195,324,215"/>
+<area shape="rect" id="node2_11" href="javascript:void(0);" title="spacewalk.server.apacheRequest.GetHandler.method_ref" alt="" coords="29,215,324,235"/>
+<area shape="rect" id="node2_12" href="javascript:void(0);" title="spacewalk.server.apacheRequest.GetHandler.process" alt="" coords="29,235,324,255"/>
+<area shape="rect" id="node2_13" href="javascript:void(0);" title="spacewalk.server.apacheRequest.GetHandler.response" alt="" coords="29,255,324,275"/>
+<area shape="rect" id="node2_14" href="javascript:void(0);" title="spacewalk.server.apacheRequest.GetHandler.redirect" alt="" coords="29,275,324,295"/>
+<area shape="rect" id="node2" href="javascript:void(0);" title="spacewalk.server.apacheRequest.GetHandler" alt="" coords="17,163,335,301"/>
+<area shape="rect" id="node3_15" href="javascript:void(0);" title="spacewalk.server.apacheRequest.apacheRequest.call_function" alt="" coords="17,37,337,57"/>
+<area shape="rect" id="node3_16" href="javascript:void(0);" title="spacewalk.server.apacheRequest.apacheRequest.normalize" alt="" coords="17,57,337,77"/>
+<area shape="rect" id="node3_17" href="javascript:void(0);" title="spacewalk.server.apacheRequest.apacheRequest.response_file" alt="" coords="17,77,337,97"/>
+<area shape="rect" id="node3_18" href="javascript:void(0);" title="spacewalk.server.apacheRequest.apacheRequest.auth_client" alt="" coords="17,97,337,117"/>
+<area shape="rect" id="node3_19" href="javascript:void(0);" title="spacewalk.server.apacheRequest.apacheRequest.auth_proxy" alt="" coords="17,117,337,137"/>
+<area shape="rect" id="node3" href="javascript:void(0);" title="spacewalk.server.apacheRequest.apacheRequest" alt="" coords="5,5,349,144"/>
 </map>
-  <img src="uml_class_diagram_for_backend__305.png" alt='' usemap="#uml_class_diagram_for_backend__305" ismap="ismap" class="graph-without-title" />
+  <img src="uml_class_diagram_for_backend__329.png" alt='' usemap="#uml_class_diagram_for_backend__329" ismap="ismap" class="graph-without-title" />
 </center>
 </center>
 <hr />
 <p>handles the GET requests Inherit the behaviour from the parent 
   class</p>
 
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>spacewalk.server.apacheRequest.GetHandler</code></b>:
+      <code>__init__</code>,
+      <code>method_ref</code>,
+      <code>process</code>,
+      <code>redirect</code>,
+      <code>response</code>
+      </p>
+    <div class="private">    <p class="indent-wrapped-lines"><b>Inherited from <code>spacewalk.server.apacheRequest.GetHandler</code></b> (private):
+      <code>_get_method_params</code>,
+      <code>_setup_servers</code>
+      </p></div>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>spacewalk.server.apacheRequest.apacheRequest</code></b>:
+      <code>auth_client</code>,
+      <code>auth_proxy</code>,
+      <code>call_function</code>,
+      <code>normalize</code>,
+      <code>response_file</code>
+      </p>
+    </td>
+  </tr>
+</table>
 <!-- ==================== NAVIGATION BAR ==================== -->
 <table class="navbar" border="0" width="100%" cellpadding="0"
        bgcolor="#a0c0ff" cellspacing="0">
@@ -92,7 +143,7 @@
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Mon Apr  9 17:17:53 2018
+    Generated by Epydoc 3.0.1 on Tue Jan  8 16:13:54 2019
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

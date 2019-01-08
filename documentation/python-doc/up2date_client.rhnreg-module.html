@@ -74,6 +74,72 @@
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
+        <a href="list-class.html" class="summary-name">ListType</a><br />
+      list() -&gt; new empty list list(iterable) -&gt; new list
+        initialized from iterable's items
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="tuple-class.html" class="summary-name">TupleType</a><br />
+      tuple() -&gt; empty tuple tuple(iterable) -&gt; tuple initialized
+        from iterable's items
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="str-class.html" class="summary-name">StringType</a><br />
+      str(object='') -&gt; string
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="str-class.html" class="summary-name">UnicodeType</a><br />
+      str(object='') -&gt; string
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="dict-class.html" class="summary-name">DictType</a><br />
+      dict() -&gt; new empty dictionary
+dict(mapping) -&gt; new dictionary initialized from a mapping object's
+    (key, value) pairs
+dict(iterable) -&gt; new dictionary initialized as if via:
+    d = {}
+    for k, v in iterable:
+        d[k] = v
+dict(**kwargs) -&gt; new dictionary initialized with the name=value pairs
+    in the keyword argument list.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="dict-class.html" class="summary-name">DictionaryType</a><br />
+      dict() -&gt; new empty dictionary
+dict(mapping) -&gt; new dictionary initialized from a mapping object's
+    (key, value) pairs
+dict(iterable) -&gt; new dictionary initialized as if via:
+    d = {}
+    for k, v in iterable:
+        d[k] = v
+dict(**kwargs) -&gt; new dictionary initialized with the name=value pairs
+    in the keyword argument list.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
         <a href="int-class.html" class="summary-name">long</a><br />
       int(x=0) -&gt; int or long int(x, base=10) -&gt; int or long
     </td>
@@ -442,7 +508,7 @@
         <span class="summary-sig-arg">profileName</span>=<span class="summary-sig-default">None</span>,
         <span class="summary-sig-arg">packages</span>=<span class="summary-sig-default">None</span>,
         <span class="summary-sig-arg">activationKey</span>=<span class="summary-sig-default">None</span>,
-        <span class="summary-sig-arg">other</span>=<span class="summary-sig-default"><code class="variable-group">{</code><code class="variable-group">}</code></span>)</span><br />
+        <span class="summary-sig-arg">other</span>=<span class="summary-sig-default">{}</span>)</span><br />
       Uses the new xmlrpcs to register a system.</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="up2date_client.rhnreg-pysrc.html#registerSystem2">source&nbsp;code</a></span>
@@ -679,28 +745,35 @@ read from the bios.</td>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="SYSID_DIR"></a><span class="summary-name">SYSID_DIR</span> = <code title="'/etc/sysconfig/rhn'"><code class="variable-quote">'</code><code class="variable-string">/etc/sysconfig/rhn</code><code class="variable-quote">'</code></code>
+        <a name="_"></a><span class="summary-name">_</span> = <code title="t.ugettext">t.ugettext</code>
     </td>
   </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="REMIND_FILE"></a><span class="summary-name">REMIND_FILE</span> = <code title="'/etc/sysconfig/rhn/rhn_register_remind'"><code class="variable-quote">'</code><code class="variable-string">/etc/sysconfig/rhn/rhn_register_remind</code><code class="variable-quote">'</code></code>
+        <a name="SYSID_DIR"></a><span class="summary-name">SYSID_DIR</span> = <code title="&quot;/etc/sysconfig/rhn&quot;">&quot;/etc/sysconfig/rhn&quot;</code>
     </td>
   </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="HW_CODE_FILE"></a><span class="summary-name">HW_CODE_FILE</span> = <code title="'/etc/sysconfig/rhn/hw-activation-code'"><code class="variable-quote">'</code><code class="variable-string">/etc/sysconfig/rhn/hw-activation-code</code><code class="variable-quote">'</code></code>
+        <a name="REMIND_FILE"></a><span class="summary-name">REMIND_FILE</span> = <code title="&quot;%s/rhn_register_remind&quot; % SYSID_DIR">&quot;%s/rhn_register_remind&quot; % SYSID_DIR</code>
     </td>
   </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="RHSM_FILE"></a><span class="summary-name">RHSM_FILE</span> = <code title="'/etc/pki/consumer/cert.pem'"><code class="variable-quote">'</code><code class="variable-string">/etc/pki/consumer/cert.pem</code><code class="variable-quote">'</code></code>
+        <a name="HW_CODE_FILE"></a><span class="summary-name">HW_CODE_FILE</span> = <code title="&quot;%s/hw-activation-code&quot; % SYSID_DIR">&quot;%s/hw-activation-code&quot; % SYSID_DIR</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="RHSM_FILE"></a><span class="summary-name">RHSM_FILE</span> = <code title="&quot;/etc/pki/consumer/cert.pem&quot;">&quot;/etc/pki/consumer/cert.pem&quot;</code>
     </td>
   </tr>
 <tr>
@@ -715,13 +788,6 @@ read from the bios.</td>
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
         <a name="log"></a><span class="summary-name">log</span> = <code title="up2dateLog.initLog()">up2dateLog.initLog()</code>
-    </td>
-  </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-        <a name="__package__"></a><span class="summary-name">__package__</span> = <code title="'up2date_client'"><code class="variable-quote">'</code><code class="variable-string">up2date_client</code><code class="variable-quote">'</code></code>
     </td>
   </tr>
 </table>
@@ -858,7 +924,7 @@ read from the bios.</td>
         <span class="sig-arg">profileName</span>=<span class="sig-default">None</span>,
         <span class="sig-arg">packages</span>=<span class="sig-default">None</span>,
         <span class="sig-arg">activationKey</span>=<span class="sig-default">None</span>,
-        <span class="sig-arg">other</span>=<span class="sig-default"><code class="variable-group">{</code><code class="variable-group">}</code></span>)</span>
+        <span class="sig-arg">other</span>=<span class="sig-default">{}</span>)</span>
   </h3>
   </td><td align="right" valign="top"
     ><span class="codelink"><a href="up2date_client.rhnreg-pysrc.html#registerSystem2">source&nbsp;code</a></span>&nbsp;
@@ -953,7 +1019,7 @@ Can raise:
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Mon Apr  9 17:17:42 2018
+    Generated by Epydoc 3.0.1 on Tue Jan  8 16:13:39 2019
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

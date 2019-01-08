@@ -56,6 +56,22 @@
 </table>
 <!-- ==================== CLASS DESCRIPTION ==================== -->
 <h1 class="epydoc">Class Hardware</h1><p class="nomargin-top"><span class="codelink"><a href="backend.server.rhnServer.server_hardware-pysrc.html#Hardware">source&nbsp;code</a></span></p>
+<center>
+<center>  <map id="uml_class_diagram_for_backend__521" name="uml_class_diagram_for_backend__521">
+<area shape="rect" id="node1_6" href="backend.server.rhnServer.server_hardware.Hardware-class.html#__init__" title="backend.server.rhnServer.server_hardware.Hardware.__init__" alt="" coords="18,38,273,58"/>
+<area shape="rect" id="node1_7" href="backend.server.rhnServer.server_hardware.Hardware-class.html#add_hardware" title="add new hardware" alt="" coords="18,58,273,78"/>
+<area shape="rect" id="node1_8" href="backend.server.rhnServer.server_hardware.Hardware-class.html#delete_hardware" title="This function deletes all hardware." alt="" coords="18,78,273,98"/>
+<area shape="rect" id="node1_9" href="backend.server.rhnServer.server_hardware.Hardware-class.html#hardware_by_class" title="backend.server.rhnServer.server_hardware.Hardware.hardware_by_class" alt="" coords="18,98,273,118"/>
+<area shape="rect" id="node1_10" href="backend.server.rhnServer.server_hardware.Hardware-class.html#reload_hardware_byid" title="load all hardware devices for a server" alt="" coords="18,118,273,138"/>
+<area shape="rect" id="node1_11" href="backend.server.rhnServer.server_hardware.Hardware-class.html#save_hardware_byid" title="Save the hardware list" alt="" coords="18,138,273,158"/>
+<area shape="rect" id="node1" href="backend.server.rhnServer.server_hardware.Hardware-class.html" title="Support for the hardware items" alt="" coords="5,5,284,164"/>
+<area shape="rect" id="node2" href="backend.server.rhnServer.server_wrapper.ServerWrapper-class.html" title="This is a middle class that ties all the subclasses together, plus it provides a cleaner way to keep all the wrapper functions in one place." alt="" coords="28,183,264,221"/>
+<area shape="rect" id="node3" href="backend.server.rhnServer.server_class.Server-class.html" title="Main Server class" alt="" coords="65,240,227,279"/>
+</map>
+  <img src="uml_class_diagram_for_backend__521.png" alt='' usemap="#uml_class_diagram_for_backend__521" ismap="ismap" class="graph-without-title" />
+</center>
+</center>
+<hr />
 <p>Support for the hardware items</p>
 
 <!-- ==================== INSTANCE METHODS ==================== -->
@@ -91,16 +107,18 @@
       
     </td>
   </tr>
-<tr>
+<tr class="private">
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a name="hardware_by_class"></a><span class="summary-sig-name">hardware_by_class</span>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">device_class</span>)</span></td>
+          <td><span class="summary-sig"><a name="__load_from_db"></a><span class="summary-sig-name">__load_from_db</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">DevClass</span>,
+        <span class="summary-sig-arg">sysid</span>)</span><br />
+      Load a certain hardware class from the database</td>
           <td align="right" valign="top">
-            <span class="codelink"><a href="backend.server.rhnServer.server_hardware-pysrc.html#Hardware.hardware_by_class">source&nbsp;code</a></span>
+            <span class="codelink"><a href="backend.server.rhnServer.server_hardware-pysrc.html#Hardware.__load_from_db">source&nbsp;code</a></span>
             
           </td>
         </tr>
@@ -150,30 +168,10 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a name="save_hardware_byid"></a><span class="summary-sig-name">save_hardware_byid</span>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">sysid</span>)</span><br />
-      Save the hardware list</td>
+          <td><span class="summary-sig"><a name="hardware_by_class"></a><span class="summary-sig-name">hardware_by_class</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">device_class</span>)</span></td>
           <td align="right" valign="top">
-            <span class="codelink"><a href="backend.server.rhnServer.server_hardware-pysrc.html#Hardware.save_hardware_byid">source&nbsp;code</a></span>
-            
-          </td>
-        </tr>
-      </table>
-      
-    </td>
-  </tr>
-<tr class="private">
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-      <table width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td><span class="summary-sig"><a name="__load_from_db"></a><span class="summary-sig-name">__load_from_db</span>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">DevClass</span>,
-        <span class="summary-sig-arg">sysid</span>)</span><br />
-      Load a certain hardware class from the database</td>
-          <td align="right" valign="top">
-            <span class="codelink"><a href="backend.server.rhnServer.server_hardware-pysrc.html#Hardware.__load_from_db">source&nbsp;code</a></span>
+            <span class="codelink"><a href="backend.server.rhnServer.server_hardware-pysrc.html#Hardware.hardware_by_class">source&nbsp;code</a></span>
             
           </td>
         </tr>
@@ -192,6 +190,24 @@
       load all hardware devices for a server</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="backend.server.rhnServer.server_hardware-pysrc.html#Hardware.reload_hardware_byid">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="save_hardware_byid"></a><span class="summary-sig-name">save_hardware_byid</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">sysid</span>)</span><br />
+      Save the hardware list</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="backend.server.rhnServer.server_hardware-pysrc.html#Hardware.save_hardware_byid">source&nbsp;code</a></span>
             
           </td>
         </tr>
@@ -223,7 +239,7 @@
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Mon Apr  9 17:17:59 2018
+    Generated by Epydoc 3.0.1 on Tue Jan  8 16:14:03 2019
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

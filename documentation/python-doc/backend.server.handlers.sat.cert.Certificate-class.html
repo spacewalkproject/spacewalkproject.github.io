@@ -34,12 +34,11 @@
   <tr valign="top">
     <td width="100%">
       <span class="breadcrumbs">
-        backend ::
-        server ::
-        handlers ::
-        sat ::
-        cert ::
-        Certificate ::
+        <a href="backend-module.html">Package&nbsp;backend</a> ::
+        <a href="backend.server-module.html">Package&nbsp;server</a> ::
+        <a href="backend.server.handlers-module.html">Package&nbsp;handlers</a> ::
+        <a href="backend.server.handlers.sat-module.html">Package&nbsp;sat</a> ::
+        <a href="backend.server.handlers.sat.cert-module.html" onclick="show_private();">Module&nbsp;cert</a> ::
         Class&nbsp;Certificate
       </span>
     </td>
@@ -59,16 +58,19 @@
 <!-- ==================== CLASS DESCRIPTION ==================== -->
 <h1 class="epydoc">Class Certificate</h1><p class="nomargin-top"><span class="codelink"><a href="backend.server.handlers.sat.cert-pysrc.html#Certificate">source&nbsp;code</a></span></p>
 <center>
-<center>  <map id="uml_class_diagram_for_backend__301" name="uml_class_diagram_for_backend__301">
-<area shape="rect" id="node1_5" href="backend.server.handlers.sat.cert.Certificate-class.html#__init__" title="backend.server.handlers.sat.cert.Certificate.__init__" alt="" coords="46,155,205,175"/>
-<area shape="rect" id="node1_6" href="backend.server.handlers.sat.cert.Certificate-class.html#download" title="backend.server.handlers.sat.cert.Certificate.download" alt="" coords="46,175,205,195"/>
-<area shape="rect" id="node1" href="backend.server.handlers.sat.cert.Certificate-class.html" title="Downloads the satellite cert" alt="" coords="33,123,216,201"/>
-<area shape="rect" id="node2_7" href="backend.server.handlers.sat.auth.Authentication-class.html#auth_system" title="backend.server.handlers.sat.auth.Authentication.auth_system" alt="" coords="18,37,233,57"/>
-<area shape="rect" id="node2_8" href="backend.server.handlers.sat.auth.Authentication-class.html#check" title="xmlrpc authentication." alt="" coords="18,57,233,77"/>
-<area shape="rect" id="node2_9" href="backend.server.handlers.sat.auth.Authentication-class.html#login" title="Return a dictionary of session token/channel information." alt="" coords="18,77,233,97"/>
-<area shape="rect" id="node2" href="backend.server.handlers.sat.auth.Authentication-class.html" title="Simple authentication based on hostname and configured slaves" alt="" coords="5,5,244,104"/>
+<center>  <map id="uml_class_diagram_for_backend__325" name="uml_class_diagram_for_backend__325">
+<area shape="rect" id="node1_6" href="backend.server.handlers.sat.cert.Certificate-class.html#__init__" title="backend.server.handlers.sat.cert.Certificate.__init__" alt="" coords="63,295,241,315"/>
+<area shape="rect" id="node1_7" href="backend.server.handlers.sat.cert.Certificate-class.html#download" title="backend.server.handlers.sat.cert.Certificate.download" alt="" coords="63,315,241,335"/>
+<area shape="rect" id="node1" href="backend.server.handlers.sat.cert.Certificate-class.html" title="Downloads the satellite cert" alt="" coords="51,263,253,341"/>
+<area shape="rect" id="node2_8" href="backend.server.handlers.sat.auth.Authentication-class.html#auth_system" title="backend.server.handlers.sat.auth.Authentication.auth_system" alt="" coords="25,177,277,197"/>
+<area shape="rect" id="node2_9" href="backend.server.handlers.sat.auth.Authentication-class.html#check" title="xmlrpc authentication." alt="" coords="25,197,277,217"/>
+<area shape="rect" id="node2_10" href="backend.server.handlers.sat.auth.Authentication-class.html#login" title="Return a dictionary of session token/channel information." alt="" coords="25,217,277,237"/>
+<area shape="rect" id="node2" href="backend.server.handlers.sat.auth.Authentication-class.html" title="Simple authentication based on hostname and configured slaves" alt="" coords="13,145,289,244"/>
+<area shape="rect" id="node3" href="javascript:void(0);" title="spacewalk.server.rhnHandler.rhnHandler" alt="" coords="6,83,295,127"/>
+<area shape="rect" id="node4_11" href="javascript:void(0);" title="spacewalk.common.RPC_Base.RPC_Base.get_function" alt="" coords="17,37,287,57"/>
+<area shape="rect" id="node4" href="javascript:void(0);" title="spacewalk.common.RPC_Base.RPC_Base" alt="" coords="5,5,299,64"/>
 </map>
-  <img src="uml_class_diagram_for_backend__301.png" alt='' usemap="#uml_class_diagram_for_backend__301" ismap="ismap" class="graph-without-title" />
+  <img src="uml_class_diagram_for_backend__325.png" alt='' usemap="#uml_class_diagram_for_backend__325" ismap="ismap" class="graph-without-title" />
 </center>
 </center>
 <hr />
@@ -131,6 +133,9 @@
       <code><a href="backend.server.handlers.sat.auth.Authentication-class.html#check">check</a></code>,
       <code><a href="backend.server.handlers.sat.auth.Authentication-class.html#login">login</a></code>
       </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>spacewalk.common.RPC_Base.RPC_Base</code></b>:
+      <code>get_function</code>
+      </p>
     </td>
   </tr>
 </table>
@@ -170,7 +175,7 @@
   
   <dl class="fields">
     <dt>Overrides:
-        <a href="backend.server.handlers.sat.auth.Authentication-class.html#__init__">auth.Authentication.__init__</a>
+        spacewalk.common.RPC_Base.RPC_Base.__init__
     </dt>
   </dl>
 </td></tr></table>
@@ -199,7 +204,7 @@
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Mon Apr  9 17:17:53 2018
+    Generated by Epydoc 3.0.1 on Tue Jan  8 16:13:54 2019
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

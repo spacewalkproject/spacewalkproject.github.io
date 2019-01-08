@@ -56,6 +56,31 @@
 </table>
 <!-- ==================== CLASS DESCRIPTION ==================== -->
 <h1 class="epydoc">Class GenericDevice</h1><p class="nomargin-top"><span class="codelink"><a href="backend.server.rhnServer.server_hardware-pysrc.html#GenericDevice">source&nbsp;code</a></span></p>
+<center>
+<center>  <map id="uml_class_diagram_for_backend__520" name="uml_class_diagram_for_backend__520">
+<area shape="rect" id="node1" href="backend.server.rhnServer.server_hardware.CPUDevice-class.html" title="A class for handling CPU &#45; mirrors the rhnCPU structure" alt="" coords="5,235,113,273"/>
+<area shape="rect" id="node2" href="backend.server.rhnServer.server_hardware.Device-class.html" title="This is the base Device class that supports instantiation from a dictionarry." alt="" coords="634,177,714,216"/>
+<area shape="rect" id="node4" href="backend.server.rhnServer.server_hardware.HardwareDevice-class.html" title="A more specific device based on the Device class" alt="" coords="143,235,287,273"/>
+<area shape="rect" id="node6" href="backend.server.rhnServer.server_hardware.InstallInformation-class.html" title="Install information" alt="" coords="317,235,469,273"/>
+<area shape="rect" id="node8" href="backend.server.rhnServer.server_hardware.NetIfaceInformation-class.html" title="backend.server.rhnServer.server_hardware.NetIfaceInformation" alt="" coords="499,235,665,273"/>
+<area shape="rect" id="node9" href="backend.server.rhnServer.server_hardware.NetIfaceAddress-class.html" title="backend.server.rhnServer.server_hardware.NetIfaceAddress" alt="" coords="695,235,837,273"/>
+<area shape="rect" id="node10" href="backend.server.rhnServer.server_hardware.NetworkInformation-class.html" title="This is a wrapper class for the Network Information (rhnServerNetwork)" alt="" coords="867,235,1033,273"/>
+<area shape="rect" id="node11" href="backend.server.rhnServer.server_hardware.DMIInformation-class.html" title="DMI information" alt="" coords="1063,235,1199,273"/>
+<area shape="rect" id="node12" href="backend.server.rhnServer.server_hardware.MemoryInformation-class.html" title="Memory information" alt="" coords="1229,235,1393,273"/>
+<area shape="rect" id="node3" href="backend.server.rhnServer.server_hardware.NetIfaceAddress4-class.html" title="IPv4 Network interface" alt="" coords="601,292,752,331"/>
+<area shape="rect" id="node5" href="backend.server.rhnServer.server_hardware.NetIfaceAddress6-class.html" title="IPv6 Network interface" alt="" coords="781,292,932,331"/>
+<area shape="rect" id="node7_6" href="backend.server.rhnServer.server_hardware.GenericDevice-class.html#table" title="backend.server.rhnServer.server_hardware.GenericDevice.table" alt="" coords="611,30,737,50"/>
+<area shape="rect" id="node7_7" href="backend.server.rhnServer.server_hardware.GenericDevice-class.html#__init__" title="backend.server.rhnServer.server_hardware.GenericDevice.__init__" alt="" coords="611,53,737,73"/>
+<area shape="rect" id="node7_8" href="backend.server.rhnServer.server_hardware.GenericDevice-class.html#getid" title="backend.server.rhnServer.server_hardware.GenericDevice.getid" alt="" coords="611,73,737,93"/>
+<area shape="rect" id="node7_9" href="backend.server.rhnServer.server_hardware.GenericDevice-class.html#must_save" title="backend.server.rhnServer.server_hardware.GenericDevice.must_save" alt="" coords="611,93,737,113"/>
+<area shape="rect" id="node7_10" href="backend.server.rhnServer.server_hardware.GenericDevice-class.html#save" title="save data in the rhnDevice table" alt="" coords="611,113,737,133"/>
+<area shape="rect" id="node7_11" href="backend.server.rhnServer.server_hardware.GenericDevice-class.html#reload" title="reload from rhnDevice table based on devid" alt="" coords="611,133,737,153"/>
+<area shape="rect" id="node7" href="backend.server.rhnServer.server_hardware.GenericDevice-class.html" title="A generic device class" alt="" coords="599,5,749,159"/>
+</map>
+  <img src="uml_class_diagram_for_backend__520.png" alt='' usemap="#uml_class_diagram_for_backend__520" ismap="ismap" class="graph-without-title" />
+</center>
+</center>
+<hr />
 <p>A generic device class</p>
 
 <!-- ==================== INSTANCE METHODS ==================== -->
@@ -167,7 +192,7 @@
         <tr>
           <td><span class="summary-sig"><a href="backend.server.rhnServer.server_hardware.GenericDevice-class.html#_null_columns" class="summary-sig-name" onclick="show_private();">_null_columns</a>(<span class="summary-sig-arg">self</span>,
         <span class="summary-sig-arg">params</span>,
-        <span class="summary-sig-arg">names</span>=<span class="summary-sig-default">()</span>)</span><br />
+        <span class="summary-sig-arg">names</span>=<span class="summary-sig-default"><code class="variable-group">(</code><code class="variable-group">)</code></span>)</span><br />
       Method searches for empty string in params dict with names defined in
       names list and replaces them with None value which is translated to 
       NULL in SQL.</td>
@@ -202,7 +227,7 @@
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="table"></a><span class="summary-name">table</span> = <code title="&quot;override-GenericDevice&quot;">&quot;override-GenericDevice&quot;</code>
+        <a name="table"></a><span class="summary-name">table</span> = <code title="'override-GenericDevice'"><code class="variable-quote">'</code><code class="variable-string">override-GenericDevice</code><code class="variable-quote">'</code></code>
     </td>
   </tr>
 </table>
@@ -233,7 +258,7 @@
   <tr valign="top"><td>
   <h3 class="epydoc"><span class="sig"><span class="sig-name">_null_columns</span>(<span class="sig-arg">self</span>,
         <span class="sig-arg">params</span>,
-        <span class="sig-arg">names</span>=<span class="sig-default">()</span>)</span>
+        <span class="sig-arg">names</span>=<span class="sig-default"><code class="variable-group">(</code><code class="variable-group">)</code></span>)</span>
   </h3>
   </td><td align="right" valign="top"
     ><span class="codelink"><a href="backend.server.rhnServer.server_hardware-pysrc.html#GenericDevice._null_columns">source&nbsp;code</a></span>&nbsp;
@@ -273,7 +298,7 @@
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Mon Apr  9 17:17:59 2018
+    Generated by Epydoc 3.0.1 on Tue Jan  8 16:14:03 2019
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

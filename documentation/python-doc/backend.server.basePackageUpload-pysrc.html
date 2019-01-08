@@ -173,10 +173,9 @@ up2date_client.up2dateLog.Log.log_debug" class="py-name" href="#" onclick="retur
 <a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">file_checksum</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">field_data</tt><tt class="py-op">[</tt><tt class="py-string">"File-Checksum"</tt><tt class="py-op">]</tt> </tt>
 <a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line">        <tt class="py-comment"># 4/18/05 wregglej. if 1051 is in the header's keys, then it's a nosrc package.</tt> </tt>
 <a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">is_source</tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">package_arch</tt> <tt class="py-op">==</tt> <tt class="py-string">'src'</tt> <tt class="py-keyword">or</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">package_arch</tt> <tt class="py-op">==</tt> <tt class="py-string">'nosrc'</tt><tt class="py-op">)</tt> </tt>
-<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt id="link-23" class="py-name"><a title="backend.common.apache" class="py-name" href="#" onclick="return doclink('link-23', 'apache', 'link-4');">apache</a></tt><tt class="py-op">.</tt><tt id="link-24" class="py-name" targets="Variable backend.common.apache.OK=backend.common.apache-module.html#OK,Variable backend.satellite_tools.satComputePkgHeaders.OK=backend.satellite_tools.satComputePkgHeaders-module.html#OK,Variable up2date_client.rhnreg_constants.OK=up2date_client.rhnreg_constants-module.html#OK,Variable up2date_client.tui.OK=up2date_client.tui-module.html#OK"><a title="backend.common.apache.OK
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt id="link-23" class="py-name"><a title="backend.common.apache" class="py-name" href="#" onclick="return doclink('link-23', 'apache', 'link-4');">apache</a></tt><tt class="py-op">.</tt><tt id="link-24" class="py-name" targets="Variable backend.common.apache.OK=backend.common.apache-module.html#OK,Variable backend.satellite_tools.satComputePkgHeaders.OK=backend.satellite_tools.satComputePkgHeaders-module.html#OK,Variable up2date_client.rhnreg_constants.OK=up2date_client.rhnreg_constants-module.html#OK"><a title="backend.common.apache.OK
 backend.satellite_tools.satComputePkgHeaders.OK
-up2date_client.rhnreg_constants.OK
-up2date_client.tui.OK" class="py-name" href="#" onclick="return doclink('link-24', 'OK', 'link-24');">OK</a></tt> </tt>
+up2date_client.rhnreg_constants.OK" class="py-name" href="#" onclick="return doclink('link-24', 'OK', 'link-24');">OK</a></tt> </tt>
 </div><a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line"> </tt>
 <a name="BasePackageUpload.handler"></a><div id="BasePackageUpload.handler-def"><a name="L94"></a><tt class="py-lineno"> 94</tt> <a class="py-toggle" href="#" id="BasePackageUpload.handler-toggle" onclick="return toggle('BasePackageUpload.handler');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="backend.server.basePackageUpload.BasePackageUpload-class.html#handler">handler</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">req</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
 </div><div id="BasePackageUpload.handler-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="BasePackageUpload.handler-expanded"><a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line">        <tt id="link-25" class="py-name"><a title="backend.common.rhnLog.log_debug
@@ -187,20 +186,17 @@ src.rhn_log.log_debug
 up2date_client.up2dateLog.Log.log_debug" class="py-name" href="#" onclick="return doclink('link-25', 'log_debug', 'link-7');">log_debug</a></tt><tt class="py-op">(</tt><tt class="py-number">3</tt><tt class="py-op">,</tt> <tt class="py-string">"Method"</tt><tt class="py-op">,</tt> <tt class="py-name">req</tt><tt class="py-op">.</tt><tt class="py-name">method</tt><tt class="py-op">)</tt> </tt>
 <a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt id="link-26" class="py-name"><a title="backend.common.apache" class="py-name" href="#" onclick="return doclink('link-26', 'apache', 'link-4');">apache</a></tt><tt class="py-op">.</tt><tt id="link-27" class="py-name"><a title="backend.common.apache.OK
 backend.satellite_tools.satComputePkgHeaders.OK
-up2date_client.rhnreg_constants.OK
-up2date_client.tui.OK" class="py-name" href="#" onclick="return doclink('link-27', 'OK', 'link-24');">OK</a></tt> </tt>
+up2date_client.rhnreg_constants.OK" class="py-name" href="#" onclick="return doclink('link-27', 'OK', 'link-24');">OK</a></tt> </tt>
 </div><a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line"> </tt>
 <a name="BasePackageUpload.cleanupHandler"></a><div id="BasePackageUpload.cleanupHandler-def"><a name="L98"></a><tt class="py-lineno"> 98</tt> <a class="py-toggle" href="#" id="BasePackageUpload.cleanupHandler-toggle" onclick="return toggle('BasePackageUpload.cleanupHandler');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="backend.server.basePackageUpload.BasePackageUpload-class.html#cleanupHandler">cleanupHandler</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">req</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
 </div><div id="BasePackageUpload.cleanupHandler-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="BasePackageUpload.cleanupHandler-expanded"><a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt id="link-28" class="py-name"><a title="backend.common.apache" class="py-name" href="#" onclick="return doclink('link-28', 'apache', 'link-4');">apache</a></tt><tt class="py-op">.</tt><tt id="link-29" class="py-name"><a title="backend.common.apache.OK
 backend.satellite_tools.satComputePkgHeaders.OK
-up2date_client.rhnreg_constants.OK
-up2date_client.tui.OK" class="py-name" href="#" onclick="return doclink('link-29', 'OK', 'link-24');">OK</a></tt> </tt>
+up2date_client.rhnreg_constants.OK" class="py-name" href="#" onclick="return doclink('link-29', 'OK', 'link-24');">OK</a></tt> </tt>
 </div><a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line"> </tt>
 <a name="BasePackageUpload.logHandler"></a><div id="BasePackageUpload.logHandler-def"><a name="L101"></a><tt class="py-lineno">101</tt> <a class="py-toggle" href="#" id="BasePackageUpload.logHandler-toggle" onclick="return toggle('BasePackageUpload.logHandler');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="backend.server.basePackageUpload.BasePackageUpload-class.html#logHandler">logHandler</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">req</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
 </div><div id="BasePackageUpload.logHandler-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="BasePackageUpload.logHandler-expanded"><a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt id="link-30" class="py-name"><a title="backend.common.apache" class="py-name" href="#" onclick="return doclink('link-30', 'apache', 'link-4');">apache</a></tt><tt class="py-op">.</tt><tt id="link-31" class="py-name"><a title="backend.common.apache.OK
 backend.satellite_tools.satComputePkgHeaders.OK
-up2date_client.rhnreg_constants.OK
-up2date_client.tui.OK" class="py-name" href="#" onclick="return doclink('link-31', 'OK', 'link-24');">OK</a></tt> </tt>
+up2date_client.rhnreg_constants.OK" class="py-name" href="#" onclick="return doclink('link-31', 'OK', 'link-24');">OK</a></tt> </tt>
 </div></div><a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line"> </tt><script type="text/javascript">
 <!--
 expandto(location.href);
@@ -231,7 +227,7 @@ expandto(location.href);
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Mon Apr  9 17:18:11 2018
+    Generated by Epydoc 3.0.1 on Tue Jan  8 16:14:26 2019
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

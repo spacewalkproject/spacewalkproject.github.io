@@ -105,7 +105,7 @@
         <tr>
           <td><span class="summary-sig"><a name="xccdf_eval"></a><span class="summary-sig-name">xccdf_eval</span>(<span class="summary-sig-arg">server_id</span>,
         <span class="summary-sig-arg">action_id</span>,
-        <span class="summary-sig-arg">data</span>=<span class="summary-sig-default">{}</span>)</span></td>
+        <span class="summary-sig-arg">data</span>=<span class="summary-sig-default"><code class="variable-group">{</code><code class="variable-group">}</code></span>)</span></td>
           <td align="right" valign="top">
             <span class="codelink"><a href="backend.server.action_extra_data.scap-pysrc.html#xccdf_eval">source&nbsp;code</a></span>
             
@@ -241,7 +241,7 @@
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="__rhnexport__"></a><span class="summary-name">__rhnexport__</span> = <code title="['xccdf_eval']">['xccdf_eval']</code>
+        <a name="__rhnexport__"></a><span class="summary-name">__rhnexport__</span> = <code title="['xccdf_eval']"><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">xccdf_eval</code><code class="variable-quote">'</code><code class="variable-group">]</code></code>
     </td>
   </tr>
 <tr>
@@ -255,50 +255,51 @@
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.action_extra_data.scap-module.html#_query_clear_tresult" class="summary-name" onclick="show_private();">_query_clear_tresult</a> = <code title="rhnSQL.Statement(&quot;&quot;&quot;
+        <a href="backend.server.action_extra_data.scap-module.html#_query_clear_tresult" class="summary-name" onclick="show_private();">_query_clear_tresult</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765545954\
+4; statement=
 delete from rhnXccdfTestresult
  where server_id = :server_id
    and action_scap_id = (
     select id from rhnActionScap
      where action_id = :action_id)
-&quot;&quot;&quot;)">rhnSQL.Statement(<code class="variable-ellipsis">...</code></code>
+">&lt;spacewalk.server.rhnSQL.sql_base.State<code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 <tr class="private">
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.action_extra_data.scap-module.html#_query_insert_tresult" class="summary-name" onclick="show_private();">_query_insert_tresult</a> = <code title="rhnSQL.Statement(&quot;&quot;&quot;
+        <a href="backend.server.action_extra_data.scap-module.html#_query_insert_tresult" class="summary-name" onclick="show_private();">_query_insert_tresult</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765545961\
+6; statement=
 insert into rhnXccdfTestresult(
     id,
     server_id,
     action_scap_id,
     benchmark_id,
     profile_id,
-    identifier,
-...">rhnSQL.Statement(<code class="variable-ellipsis">...</code></code>
+...">&lt;spacewalk.server.rhnSQL.sql_base.Stat<code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 <tr class="private">
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.action_extra_data.scap-module.html#_query_get_tresult" class="summary-name" onclick="show_private();">_query_get_tresult</a> = <code title="rhnSQL.Statement(&quot;&quot;&quot;
+        <a href="backend.server.action_extra_data.scap-module.html#_query_get_tresult" class="summary-name" onclick="show_private();">_query_get_tresult</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765545968\
+8; statement=
 select id from rhnXccdfTestresult
     where server_id = :server_id
     and action_scap_id = (
         select ras.id
             from rhnActionScap ras
              where ras.action_id = :action_id
-    )
-...">rhnSQL.Statement(<code class="variable-ellipsis">...</code></code>
+...">&lt;spacewalk.server.rhnSQL.sql_base.Stateme<code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 <tr class="private">
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.action_extra_data.scap-module.html#_query_insert_rresult" class="summary-name" onclick="show_private();">_query_insert_rresult</a> = <code title="&quot;&quot;&quot;
+        <a href="backend.server.action_extra_data.scap-module.html#_query_insert_rresult" class="summary-name" onclick="show_private();">_query_insert_rresult</a> = <code title="'''
 insert into rhnXccdfRuleresult (id, testresult_id, result_id)
 values (
     :rr_id,
@@ -306,31 +307,40 @@ values (
     (select rt.id
         from rhnXccdfRuleresultType rt
         where rt.label = :result_label)
-..."><code class="variable-ellipsis">...</code></code>
+..."><code class="variable-quote">'</code><code class="variable-string">\ninsert into rhnXccdfRuleresult (id,</code><code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 <tr class="private">
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.action_extra_data.scap-module.html#_query_insert_identmap" class="summary-name" onclick="show_private();">_query_insert_identmap</a> = <code title="rhnSQL.Statement(&quot;&quot;&quot;
+        <a href="backend.server.action_extra_data.scap-module.html#_query_insert_identmap" class="summary-name" onclick="show_private();">_query_insert_identmap</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765545976\
+0; statement=
 insert into rhnXccdfRuleIdentMap (rresult_id, ident_id)
 values (
     :rr_id,
     lookup_xccdf_ident(:system, :ident)
     )
-&quot;&quot;&quot;)">rhnSQL.Statement(<code class="variable-ellipsis">...</code></code>
+">&lt;spacewalk.server.rhnSQL.sql_base.Sta<code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 <tr class="private">
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.action_extra_data.scap-module.html#_query_update_errors" class="summary-name" onclick="show_private();">_query_update_errors</a> = <code title="rhnSQL.Statement(&quot;&quot;&quot;
+        <a href="backend.server.action_extra_data.scap-module.html#_query_update_errors" class="summary-name" onclick="show_private();">_query_update_errors</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765545983\
+2; statement=
 update rhnXccdfTestresult
 set errors = :errors
 where id = :testresult_id
-&quot;&quot;&quot;)">rhnSQL.Statement(<code class="variable-ellipsis">...</code></code>
+">&lt;spacewalk.server.rhnSQL.sql_base.State<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__package__"></a><span class="summary-name">__package__</span> = <code title="'backend.server.action_extra_data'"><code class="variable-quote">'</code><code class="variable-string">backend.server.action_extra_data</code><code class="variable-quote">'</code></code>
     </td>
   </tr>
 </table>
@@ -364,13 +374,14 @@ where id = :testresult_id
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-rhnSQL.Statement(&quot;&quot;&quot;
+&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765545954<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+4; statement=
 delete from rhnXccdfTestresult
  where server_id = :server_id
    and action_scap_id = (
     select id from rhnActionScap
      where action_id = :action_id)
-&quot;&quot;&quot;)
+
 </pre></td></tr></table>
 </dd>
   </dl>
@@ -388,14 +399,14 @@ delete from rhnXccdfTestresult
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-rhnSQL.Statement(&quot;&quot;&quot;
+&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765545961<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+6; statement=
 insert into rhnXccdfTestresult(
     id,
     server_id,
     action_scap_id,
     benchmark_id,
     profile_id,
-    identifier,
 <code class="variable-ellipsis">...</code>
 </pre></td></tr></table>
 </dd>
@@ -414,14 +425,14 @@ insert into rhnXccdfTestresult(
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-rhnSQL.Statement(&quot;&quot;&quot;
+&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765545968<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+8; statement=
 select id from rhnXccdfTestresult
     where server_id = :server_id
     and action_scap_id = (
         select ras.id
             from rhnActionScap ras
              where ras.action_id = :action_id
-    )
 <code class="variable-ellipsis">...</code>
 </pre></td></tr></table>
 </dd>
@@ -440,14 +451,14 @@ select id from rhnXccdfTestresult
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-&quot;&quot;&quot;
-insert into rhnXccdfRuleresult (id, testresult_id, result_id)
-values (
-    :rr_id,
-    :testresult_id,
-    (select rt.id
-        from rhnXccdfRuleresultType rt
-        where rt.label = :result_label)
+<code class="variable-quote">'''</code><code class="variable-string"></code>
+<code class="variable-string">insert into rhnXccdfRuleresult (id, testresult_id, result_id)</code>
+<code class="variable-string">values (</code>
+<code class="variable-string">    :rr_id,</code>
+<code class="variable-string">    :testresult_id,</code>
+<code class="variable-string">    (select rt.id</code>
+<code class="variable-string">        from rhnXccdfRuleresultType rt</code>
+<code class="variable-string">        where rt.label = :result_label)</code>
 <code class="variable-ellipsis">...</code>
 </pre></td></tr></table>
 </dd>
@@ -466,13 +477,14 @@ values (
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-rhnSQL.Statement(&quot;&quot;&quot;
+&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765545976<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+0; statement=
 insert into rhnXccdfRuleIdentMap (rresult_id, ident_id)
 values (
     :rr_id,
     lookup_xccdf_ident(:system, :ident)
     )
-&quot;&quot;&quot;)
+
 </pre></td></tr></table>
 </dd>
   </dl>
@@ -490,11 +502,12 @@ values (
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-rhnSQL.Statement(&quot;&quot;&quot;
+&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765545983<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+2; statement=
 update rhnXccdfTestresult
 set errors = :errors
 where id = :testresult_id
-&quot;&quot;&quot;)
+
 </pre></td></tr></table>
 </dd>
   </dl>
@@ -524,7 +537,7 @@ where id = :testresult_id
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Mon Apr  9 17:17:42 2018
+    Generated by Epydoc 3.0.1 on Tue Jan  8 16:13:38 2019
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

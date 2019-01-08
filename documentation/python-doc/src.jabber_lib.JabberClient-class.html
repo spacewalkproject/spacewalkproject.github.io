@@ -56,23 +56,65 @@
 <h1 class="epydoc">Class JabberClient</h1><p class="nomargin-top"><span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient">source&nbsp;code</a></span></p>
 <center>
 <center>  <map id="uml_class_diagram_for_src_jabb_2" name="uml_class_diagram_for_src_jabb_2">
-<area shape="rect" id="node1_15" href="src.jabber_lib.JabberClient-class.html#BLOCK_SIZE" title="src.jabber_lib.JabberClient.BLOCK_SIZE" alt="" coords="18,93,393,113"/>
-<area shape="rect" id="node1_16" href="src.jabber_lib.JabberClient-class.html#__init__" title="x.__init__(...) initializes x; see help(type(x)) for signature" alt="" coords="18,115,393,135"/>
-<area shape="rect" id="node1_17" href="src.jabber_lib.JabberClient-class.html#add_trusted_cert" title="src.jabber_lib.JabberClient.add_trusted_cert" alt="" coords="18,135,393,155"/>
-<area shape="rect" id="node1_18" href="src.jabber_lib.JabberClient-class.html#connect" title="src.jabber_lib.JabberClient.connect" alt="" coords="18,155,393,175"/>
-<area shape="rect" id="node1_19" href="src.jabber_lib.JabberClient-class.html#disconnect" title="src.jabber_lib.JabberClient.disconnect" alt="" coords="18,175,393,195"/>
-<area shape="rect" id="node1_20" href="src.jabber_lib.JabberClient-class.html#ssl_verify_callback" title="src.jabber_lib.JabberClient.ssl_verify_callback" alt="" coords="18,195,393,215"/>
-<area shape="rect" id="node1_21" href="src.jabber_lib.JabberClient-class.html#verify_peer" title="src.jabber_lib.JabberClient.verify_peer" alt="" coords="18,215,393,235"/>
-<area shape="rect" id="node1_22" href="src.jabber_lib.JabberClient-class.html#retrieve_roster" title="Request the roster." alt="" coords="18,235,393,255"/>
-<area shape="rect" id="node1_23" href="src.jabber_lib.JabberClient-class.html#cancel_subscription" title="src.jabber_lib.JabberClient.cancel_subscription" alt="" coords="18,255,393,275"/>
-<area shape="rect" id="node1_24" href="src.jabber_lib.JabberClient-class.html#get_one_stanza" title="Returns one stanza (or None if timeout is set)" alt="" coords="18,275,393,295"/>
-<area shape="rect" id="node1_25" href="src.jabber_lib.JabberClient-class.html#auth" title="Try to authenticate the username with the specified password If the &#160;authentication fails, try to register the user." alt="" coords="18,295,393,315"/>
-<area shape="rect" id="node1_26" href="src.jabber_lib.JabberClient-class.html#send" title="src.jabber_lib.JabberClient.send" alt="" coords="18,315,393,335"/>
-<area shape="rect" id="node1_27" href="src.jabber_lib.JabberClient-class.html#subscribe_to_presence" title="Subscribe to these nodes&#39; presence The subscription in jabber works like this:" alt="" coords="18,335,393,355"/>
-<area shape="rect" id="node1_28" href="src.jabber_lib.JabberClient-class.html#send_presence" title="src.jabber_lib.JabberClient.send_presence" alt="" coords="18,355,393,375"/>
-<area shape="rect" id="node1_29" href="src.jabber_lib.JabberClient-class.html#match_stanza_tags" title="Get the matching (child) tags of this stanza, possibly with the specified &#160;namespace" alt="" coords="18,395,393,415"/>
-<area shape="rect" id="node1" href="src.jabber_lib.JabberClient-class.html" title="src.jabber_lib.JabberClient" alt="" coords="5,68,404,421"/>
-<area shape="rect" id="node2" href="javascript:void(0);" title="jabber.Client" alt="" coords="156,5,253,49"/>
+<area shape="rect" id="node1_51" href="javascript:void(0);" title="Sends a protocol element object and blocks until a response with the same &#160;ID is received." alt="" coords="17,449,676,469"/>
+<area shape="rect" id="node1_52" href="javascript:void(0);" title="Called internally when a &#39;protocol element&#39; is received." alt="" coords="17,469,676,489"/>
+<area shape="rect" id="node1_53" href="javascript:void(0);" title="Returns a unique ID" alt="" coords="17,489,676,509"/>
+<area shape="rect" id="node1_54" href="javascript:void(0);" title="Sets the callback func for processing incoming stanzas." alt="" coords="17,509,676,529"/>
+<area shape="rect" id="node1_55" href="javascript:void(0);" title="Registers a protocol in protocol processing chain." alt="" coords="17,529,676,549"/>
+<area shape="rect" id="node1_56" href="javascript:void(0);" title="Set the callback for a disconnect." alt="" coords="17,549,676,569"/>
+<area shape="rect" id="node1_57" href="javascript:void(0);" title="Back compartibility method" alt="" coords="17,569,676,589"/>
+<area shape="rect" id="node1_58" href="javascript:void(0);" title="Back compartibility method" alt="" coords="17,589,676,609"/>
+<area shape="rect" id="node1_59" href="javascript:void(0);" title="Back compartibility method" alt="" coords="17,609,676,629"/>
+<area shape="rect" id="node1" href="javascript:void(0);" title="Forms the base for both Client and Component Classes" alt="" coords="5,417,688,636"/>
+<area shape="rect" id="node7_60" href="javascript:void(0);" title="Send off a request to subscribe to the given jid." alt="" coords="89,687,603,707"/>
+<area shape="rect" id="node7_61" href="javascript:void(0);" title="Send off a request to deregister with the server or with the given agent." alt="" coords="89,707,603,727"/>
+<area shape="rect" id="node7_62" href="javascript:void(0);" title="According to JEP&#45;0030: For identity: category, name is mandatory, type is &#160;optional." alt="" coords="89,727,603,747"/>
+<area shape="rect" id="node7_63" href="javascript:void(0);" title="According to JEP&#45;0030: jid is mandatory, name, node, action is optional." alt="" coords="89,747,603,767"/>
+<area shape="rect" id="node7_64" href="javascript:void(0);" title="Returns a dictionary of fields requested by the server for a registration &#160;attempt." alt="" coords="89,767,603,787"/>
+<area shape="rect" id="node7_65" href="javascript:void(0);" title="Returns the current Roster() class instance." alt="" coords="89,787,603,807"/>
+<area shape="rect" id="node7_66" href="javascript:void(0);" title="Removes an item with Jabber ID jid from both the server&#39;s roster and the &#160;local internal Roster() instance" alt="" coords="89,807,603,827"/>
+<area shape="rect" id="node7_67" href="javascript:void(0);" title="Requests a list of available agents." alt="" coords="89,827,603,847"/>
+<area shape="rect" id="node7_68" href="javascript:void(0);" title="Requests registration info from the server." alt="" coords="89,847,603,867"/>
+<area shape="rect" id="node7_69" href="javascript:void(0);" title="Requests the roster from the server and returns a Roster() class instance." alt="" coords="89,867,603,887"/>
+<area shape="rect" id="node7_70" href="javascript:void(0);" title="Sends a presence protocol element to the server." alt="" coords="89,887,603,907"/>
+<area shape="rect" id="node7_71" href="javascript:void(0);" title="Sends a presence protocol element to the server." alt="" coords="89,907,603,927"/>
+<area shape="rect" id="node7_72" href="javascript:void(0);" title="Sends the populated registration dictionary back to the server" alt="" coords="89,927,603,947"/>
+<area shape="rect" id="node7_73" href="javascript:void(0);" title="Sets a name/value attribute." alt="" coords="89,947,603,967"/>
+<area shape="rect" id="node7_74" href="javascript:void(0);" title="Update the information stored in the roster about a roster item." alt="" coords="89,967,603,987"/>
+<area shape="rect" id="node7" href="javascript:void(0);" title="Class for managing a client connection to a jabber server." alt="" coords="77,655,614,993"/>
+<area shape="rect" id="node2" href="src.osad_client.Client-class.html" title="hash(x)" alt="" coords="171,1384,323,1423"/>
+<area shape="rect" id="node3_75" href="javascript:void(0);" title="jabber.xmlstream.NodeBuilder.DEBUG" alt="" coords="235,37,459,57"/>
+<area shape="rect" id="node3_76" href="javascript:void(0);" title="jabber.xmlstream.NodeBuilder.getDom" alt="" coords="235,57,459,77"/>
+<area shape="rect" id="node3_77" href="javascript:void(0);" title="XML Parser callback" alt="" coords="235,77,459,97"/>
+<area shape="rect" id="node3_78" href="javascript:void(0);" title="XML Parser callback" alt="" coords="235,97,459,117"/>
+<area shape="rect" id="node3_79" href="javascript:void(0);" title="XML Parser callback" alt="" coords="235,117,459,137"/>
+<area shape="rect" id="node3" href="javascript:void(0);" title="builds a &#39;minidom&#39; from data parsed to it." alt="" coords="223,5,471,144"/>
+<area shape="rect" id="node6_80" href="javascript:void(0);" title="Called when a Network Error or disconnection occurs." alt="" coords="240,195,453,215"/>
+<area shape="rect" id="node6_81" href="javascript:void(0);" title="Returns the streams ID" alt="" coords="240,215,453,235"/>
+<area shape="rect" id="node6_82" href="javascript:void(0);" title="Returns the streams ID" alt="" coords="240,235,453,255"/>
+<area shape="rect" id="node6_83" href="javascript:void(0);" title="Logs data to the specified filehandle." alt="" coords="240,255,453,275"/>
+<area shape="rect" id="node6_84" href="javascript:void(0);" title="Enable or disable the showing of a timestamp in the log." alt="" coords="240,275,453,295"/>
+<area shape="rect" id="node6_85" href="javascript:void(0);" title="Writes raw outgoing data." alt="" coords="240,295,453,315"/>
+<area shape="rect" id="node6" href="javascript:void(0);" title="Extention of NodeBuilder class." alt="" coords="228,163,465,321"/>
+<area shape="rect" id="node4_86" href="javascript:void(0);" title="jabber.xmlstream.Client.getSocket" alt="" coords="268,372,425,392"/>
+<area shape="rect" id="node4" href="javascript:void(0);" title="jabber.xmlstream.Client" alt="" coords="256,340,437,399"/>
+<area shape="rect" id="node5_87" href="src.jabber_lib.JabberClient-class.html#BLOCK_SIZE" title="src.jabber_lib.JabberClient.BLOCK_SIZE" alt="" coords="137,1037,556,1057"/>
+<area shape="rect" id="node5_88" href="src.jabber_lib.JabberClient-class.html#__init__" title="x.__init__(...) initializes x; see help(type(x)) for signature" alt="" coords="137,1059,556,1079"/>
+<area shape="rect" id="node5_89" href="src.jabber_lib.JabberClient-class.html#add_trusted_cert" title="src.jabber_lib.JabberClient.add_trusted_cert" alt="" coords="137,1079,556,1099"/>
+<area shape="rect" id="node5_90" href="src.jabber_lib.JabberClient-class.html#auth" title="Try to authenticate the username with the specified password If the &#160;authentication fails, try to register the user." alt="" coords="137,1099,556,1119"/>
+<area shape="rect" id="node5_91" href="src.jabber_lib.JabberClient-class.html#cancel_subscription" title="src.jabber_lib.JabberClient.cancel_subscription" alt="" coords="137,1119,556,1139"/>
+<area shape="rect" id="node5_92" href="src.jabber_lib.JabberClient-class.html#connect" title="Attempt to connect to specified host" alt="" coords="137,1139,556,1159"/>
+<area shape="rect" id="node5_93" href="src.jabber_lib.JabberClient-class.html#disconnect" title="Safely disconnects from the connected server" alt="" coords="137,1159,556,1179"/>
+<area shape="rect" id="node5_94" href="src.jabber_lib.JabberClient-class.html#disconnectHandler" title="Called when a Network Error or disconnection occurs." alt="" coords="137,1179,556,1199"/>
+<area shape="rect" id="node5_95" href="src.jabber_lib.JabberClient-class.html#fileno" title="src.jabber_lib.JabberClient.fileno" alt="" coords="137,1199,556,1219"/>
+<area shape="rect" id="node5_96" href="src.jabber_lib.JabberClient-class.html#get_one_stanza" title="Returns one stanza (or None if timeout is set)" alt="" coords="137,1219,556,1239"/>
+<area shape="rect" id="node5_97" href="src.jabber_lib.JabberClient-class.html#get_unique_id" title="src.jabber_lib.JabberClient.get_unique_id" alt="" coords="137,1239,556,1259"/>
+<area shape="rect" id="node5_98" href="src.jabber_lib.JabberClient-class.html#header" title="src.jabber_lib.JabberClient.header" alt="" coords="137,1259,556,1279"/>
+<area shape="rect" id="node5_99" href="src.jabber_lib.JabberClient-class.html#jid_available" title="src.jabber_lib.JabberClient.jid_available" alt="" coords="137,1279,556,1299"/>
+<area shape="rect" id="node5_100" href="src.jabber_lib.JabberClient-class.html#match_stanza_tags" title="Get the matching (child) tags of this stanza, possibly with the specified &#160;namespace" alt="" coords="137,1299,556,1319"/>
+<area shape="rect" id="node5_101" href="src.jabber_lib.JabberClient-class.html#waitForResponse" title="Blocks untils a protocol element with the given id is received." alt="" coords="137,1339,556,1359"/>
+<area shape="rect" id="node5" href="src.jabber_lib.JabberClient-class.html" title="src.jabber_lib.JabberClient" alt="" coords="125,1012,568,1365"/>
+<area shape="rect" id="node8" href="src.dispatcher_client.Client-class.html" title="hash(x)" alt="" coords="353,1384,541,1423"/>
 </map>
   <img src="uml_class_diagram_for_src_jabb_2.png" alt='' usemap="#uml_class_diagram_for_src_jabb_2" ismap="ismap" class="graph-without-title" />
 </center>
@@ -114,215 +156,6 @@
       
     </td>
   </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-      <table width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td><span class="summary-sig"><a name="add_trusted_cert"></a><span class="summary-sig-name">add_trusted_cert</span>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">trusted_cert</span>)</span></td>
-          <td align="right" valign="top">
-            <span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient.add_trusted_cert">source&nbsp;code</a></span>
-            
-          </td>
-        </tr>
-      </table>
-      
-    </td>
-  </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-      <table width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td><span class="summary-sig"><a name="connect"></a><span class="summary-sig-name">connect</span>(<span class="summary-sig-arg">self</span>)</span></td>
-          <td align="right" valign="top">
-            <span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient.connect">source&nbsp;code</a></span>
-            
-          </td>
-        </tr>
-      </table>
-      
-    </td>
-  </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-      <table width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td><span class="summary-sig"><a name="disconnect"></a><span class="summary-sig-name">disconnect</span>(<span class="summary-sig-arg">self</span>)</span></td>
-          <td align="right" valign="top">
-            <span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient.disconnect">source&nbsp;code</a></span>
-            
-          </td>
-        </tr>
-      </table>
-      
-    </td>
-  </tr>
-<tr class="private">
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-      <table width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td><span class="summary-sig"><a name="_setupComms"></a><span class="summary-sig-name">_setupComms</span>(<span class="summary-sig-arg">self</span>)</span></td>
-          <td align="right" valign="top">
-            <span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient._setupComms">source&nbsp;code</a></span>
-            
-          </td>
-        </tr>
-      </table>
-      
-    </td>
-  </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-      <table width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td><span class="summary-sig"><a name="ssl_verify_callback"></a><span class="summary-sig-name">ssl_verify_callback</span>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">conn</span>,
-        <span class="summary-sig-arg">cert</span>,
-        <span class="summary-sig-arg">errnum</span>,
-        <span class="summary-sig-arg">depth</span>,
-        <span class="summary-sig-arg">ok</span>)</span></td>
-          <td align="right" valign="top">
-            <span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient.ssl_verify_callback">source&nbsp;code</a></span>
-            
-          </td>
-        </tr>
-      </table>
-      
-    </td>
-  </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-      <table width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td><span class="summary-sig"><a name="verify_peer"></a><span class="summary-sig-name">verify_peer</span>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">ssl</span>)</span></td>
-          <td align="right" valign="top">
-            <span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient.verify_peer">source&nbsp;code</a></span>
-            
-          </td>
-        </tr>
-      </table>
-      
-    </td>
-  </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-      <table width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td><span class="summary-sig"><a href="src.jabber_lib.JabberClient-class.html#retrieve_roster" class="summary-sig-name">retrieve_roster</a>(<span class="summary-sig-arg">self</span>)</span><br />
-      Request the roster.</td>
-          <td align="right" valign="top">
-            <span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient.retrieve_roster">source&nbsp;code</a></span>
-            
-          </td>
-        </tr>
-      </table>
-      
-    </td>
-  </tr>
-<tr class="private">
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-      <table width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td><span class="summary-sig"><a name="_roster_callback"></a><span class="summary-sig-name">_roster_callback</span>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">client</span>,
-        <span class="summary-sig-arg">stanza</span>)</span></td>
-          <td align="right" valign="top">
-            <span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient._roster_callback">source&nbsp;code</a></span>
-            
-          </td>
-        </tr>
-      </table>
-      
-    </td>
-  </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-      <table width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td><span class="summary-sig"><a name="cancel_subscription"></a><span class="summary-sig-name">cancel_subscription</span>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">jids</span>)</span></td>
-          <td align="right" valign="top">
-            <span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient.cancel_subscription">source&nbsp;code</a></span>
-            
-          </td>
-        </tr>
-      </table>
-      
-    </td>
-  </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-      <table width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td><span class="summary-sig"><a name="get_one_stanza"></a><span class="summary-sig-name">get_one_stanza</span>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">timeout</span>=<span class="summary-sig-default">None</span>)</span><br />
-      Returns one stanza (or None if timeout is set)</td>
-          <td align="right" valign="top">
-            <span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient.get_one_stanza">source&nbsp;code</a></span>
-            
-          </td>
-        </tr>
-      </table>
-      
-    </td>
-  </tr>
-<tr class="private">
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-      <table width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td><span class="summary-sig"><a name="_build_stanza"></a><span class="summary-sig-name">_build_stanza</span>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">stanza</span>)</span><br />
-      Builds one stanza according to the handlers we have registered via 
-      registerHandler or registerProtocol</td>
-          <td align="right" valign="top">
-            <span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient._build_stanza">source&nbsp;code</a></span>
-            
-          </td>
-        </tr>
-      </table>
-      
-    </td>
-  </tr>
-<tr class="private">
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-      <table width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td><span class="summary-sig"><a name="_orig_dispatch"></a><span class="summary-sig-name">_orig_dispatch</span>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">stanza</span>)</span></td>
-          <td align="right" valign="top">
-            <span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient._orig_dispatch">source&nbsp;code</a></span>
-            
-          </td>
-        </tr>
-      </table>
-      
-    </td>
-  </tr>
 <tr class="private">
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
@@ -340,298 +173,18 @@
       
     </td>
   </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-      <table width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td><span class="summary-sig"><a href="src.jabber_lib.JabberClient-class.html#auth" class="summary-sig-name">auth</a>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">username</span>,
-        <span class="summary-sig-arg">password</span>,
-        <span class="summary-sig-arg">resource</span>,
-        <span class="summary-sig-arg">register</span>=<span class="summary-sig-default">1</span>)</span><br />
-      Try to authenticate the username with the specified password If the 
-      authentication fails, try to register the user.</td>
-          <td align="right" valign="top">
-            <span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient.auth">source&nbsp;code</a></span>
-            
-          </td>
-        </tr>
-      </table>
-      
-    </td>
-  </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-      <table width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td><span class="summary-sig"><a name="send"></a><span class="summary-sig-name">send</span>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">stanza</span>)</span></td>
-          <td align="right" valign="top">
-            <span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient.send">source&nbsp;code</a></span>
-            
-          </td>
-        </tr>
-      </table>
-      
-    </td>
-  </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-      <table width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td><span class="summary-sig"><a href="src.jabber_lib.JabberClient-class.html#subscribe_to_presence" class="summary-sig-name">subscribe_to_presence</a>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">jids</span>)</span><br />
-      Subscribe to these nodes' presence
-The subscription in jabber works like this:</td>
-          <td align="right" valign="top">
-            <span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient.subscribe_to_presence">source&nbsp;code</a></span>
-            
-          </td>
-        </tr>
-      </table>
-      
-    </td>
-  </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-      <table width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td><span class="summary-sig"><a name="send_presence"></a><span class="summary-sig-name">send_presence</span>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">jid</span>=<span class="summary-sig-default">None</span>,
-        <span class="summary-sig-arg">type</span>=<span class="summary-sig-default">None</span>,
-        <span class="summary-sig-arg">xid</span>=<span class="summary-sig-default">None</span>)</span></td>
-          <td align="right" valign="top">
-            <span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient.send_presence">source&nbsp;code</a></span>
-            
-          </td>
-        </tr>
-      </table>
-      
-    </td>
-  </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-      <table width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td><span class="summary-sig"><a name="fileno"></a><span class="summary-sig-name">fileno</span>(<span class="summary-sig-arg">self</span>)</span></td>
-          <td align="right" valign="top">
-            <span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient.fileno">source&nbsp;code</a></span>
-            
-          </td>
-        </tr>
-      </table>
-      
-    </td>
-  </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-      <table width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td><span class="summary-sig"><a name="read"></a><span class="summary-sig-name">read</span>(<span class="summary-sig-arg">self</span>)</span></td>
-          <td align="right" valign="top">
-            <span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient.read">source&nbsp;code</a></span>
-            
-          </td>
-        </tr>
-      </table>
-      
-    </td>
-  </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-      <table width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td><span class="summary-sig"><a name="process_loop_hook"></a><span class="summary-sig-name">process_loop_hook</span>(<span class="summary-sig-arg">self</span>)</span></td>
-          <td align="right" valign="top">
-            <span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient.process_loop_hook">source&nbsp;code</a></span>
-            
-          </td>
-        </tr>
-      </table>
-      
-    </td>
-  </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-      <table width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td><span class="summary-sig"><a name="process"></a><span class="summary-sig-name">process</span>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">timeout</span>=<span class="summary-sig-default">None</span>)</span></td>
-          <td align="right" valign="top">
-            <span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient.process">source&nbsp;code</a></span>
-            
-          </td>
-        </tr>
-      </table>
-      
-    </td>
-  </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-      <table width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td><span class="summary-sig"><a name="register"></a><span class="summary-sig-name">register</span>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">username</span>,
-        <span class="summary-sig-arg">password</span>)</span></td>
-          <td align="right" valign="top">
-            <span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient.register">source&nbsp;code</a></span>
-            
-          </td>
-        </tr>
-      </table>
-      
-    </td>
-  </tr>
 <tr class="private">
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a name="_waitForResponse"></a><span class="summary-sig-name">_waitForResponse</span>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">ID</span>,
-        <span class="summary-sig-arg">timeout</span>=<span class="summary-sig-default">jabber.timeout</span>)</span></td>
-          <td align="right" valign="top">
-            <span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient._waitForResponse">source&nbsp;code</a></span>
-            
-          </td>
-        </tr>
-      </table>
-      
-    </td>
-  </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-      <table width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td><span class="summary-sig"><a name="waitForResponse"></a><span class="summary-sig-name">waitForResponse</span>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">ID</span>,
-        <span class="summary-sig-arg">timeout</span>=<span class="summary-sig-default">jabber.timeout</span>)</span></td>
-          <td align="right" valign="top">
-            <span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient.waitForResponse">source&nbsp;code</a></span>
-            
-          </td>
-        </tr>
-      </table>
-      
-    </td>
-  </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-      <table width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td><span class="summary-sig"><a name="get_unique_id"></a><span class="summary-sig-name">get_unique_id</span>(<span class="summary-sig-arg">self</span>)</span></td>
-          <td align="right" valign="top">
-            <span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient.get_unique_id">source&nbsp;code</a></span>
-            
-          </td>
-        </tr>
-      </table>
-      
-    </td>
-  </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-      <table width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td><span class="summary-sig"><a name="disconnectHandler"></a><span class="summary-sig-name">disconnectHandler</span>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">conn</span>)</span></td>
-          <td align="right" valign="top">
-            <span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient.disconnectHandler">source&nbsp;code</a></span>
-            
-          </td>
-        </tr>
-      </table>
-      
-    </td>
-  </tr>
-<tr class="private">
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-      <table width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td><span class="summary-sig"><a name="_header_string"></a><span class="summary-sig-name">_header_string</span>(<span class="summary-sig-arg">self</span>)</span></td>
-          <td align="right" valign="top">
-            <span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient._header_string">source&nbsp;code</a></span>
-            
-          </td>
-        </tr>
-      </table>
-      
-    </td>
-  </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-      <table width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td><span class="summary-sig"><a name="header"></a><span class="summary-sig-name">header</span>(<span class="summary-sig-arg">self</span>)</span></td>
-          <td align="right" valign="top">
-            <span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient.header">source&nbsp;code</a></span>
-            
-          </td>
-        </tr>
-      </table>
-      
-    </td>
-  </tr>
-<tr class="private">
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-      <table width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td><span class="summary-sig"><a name="_fix_jid"></a><span class="summary-sig-name">_fix_jid</span>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">jid</span>)</span></td>
-          <td align="right" valign="top">
-            <span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient._fix_jid">source&nbsp;code</a></span>
-            
-          </td>
-        </tr>
-      </table>
-      
-    </td>
-  </tr>
-<tr class="private">
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-      <table width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td><span class="summary-sig"><a name="_presence_callback"></a><span class="summary-sig-name">_presence_callback</span>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">client</span>,
+          <td><span class="summary-sig"><a name="_build_stanza"></a><span class="summary-sig-name">_build_stanza</span>(<span class="summary-sig-arg">self</span>,
         <span class="summary-sig-arg">stanza</span>)</span><br />
-      If the roster is enabled, presence stanzas with 
-      type=&quot;subscribed&quot; should never be received - the server 
-      will initiate a roster push instead</td>
+      Builds one stanza according to the handlers we have registered via
+      registerHandler or registerProtocol</td>
           <td align="right" valign="top">
-            <span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient._presence_callback">source&nbsp;code</a></span>
+            <span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient._build_stanza">source&nbsp;code</a></span>
             
           </td>
         </tr>
@@ -663,10 +216,11 @@ The subscription in jabber works like this:</td>
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a name="_strip_resource"></a><span class="summary-sig-name">_strip_resource</span>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">jid</span>)</span></td>
+          <td><span class="summary-sig"><a name="_check_signature_from_message"></a><span class="summary-sig-name">_check_signature_from_message</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">stanza</span>,
+        <span class="summary-sig-arg">actions</span>)</span></td>
           <td align="right" valign="top">
-            <span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient._strip_resource">source&nbsp;code</a></span>
+            <span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient._check_signature_from_message">source&nbsp;code</a></span>
             
           </td>
         </tr>
@@ -685,6 +239,462 @@ The subscription in jabber works like this:</td>
         <span class="summary-sig-arg">action</span>)</span></td>
           <td align="right" valign="top">
             <span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient._create_signature">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_fix_jid"></a><span class="summary-sig-name">_fix_jid</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">jid</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient._fix_jid">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_header_string"></a><span class="summary-sig-name">_header_string</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient._header_string">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_orig_dispatch"></a><span class="summary-sig-name">_orig_dispatch</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">stanza</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient._orig_dispatch">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_presence_callback"></a><span class="summary-sig-name">_presence_callback</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">client</span>,
+        <span class="summary-sig-arg">stanza</span>)</span><br />
+      If the roster is enabled, presence stanzas with
+      type=&quot;subscribed&quot; should never be received - the server
+      will initiate a roster push instead</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient._presence_callback">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_roster_callback"></a><span class="summary-sig-name">_roster_callback</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">client</span>,
+        <span class="summary-sig-arg">stanza</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient._roster_callback">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="src.jabber_lib.JabberClient-class.html#_setupComms" class="summary-sig-name" onclick="show_private();">_setupComms</a>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient._setupComms">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_strip_resource"></a><span class="summary-sig-name">_strip_resource</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">jid</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient._strip_resource">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_waitForResponse"></a><span class="summary-sig-name">_waitForResponse</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">ID</span>,
+        <span class="summary-sig-arg">timeout</span>=<span class="summary-sig-default">300</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient._waitForResponse">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="add_trusted_cert"></a><span class="summary-sig-name">add_trusted_cert</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">trusted_cert</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient.add_trusted_cert">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="src.jabber_lib.JabberClient-class.html#auth" class="summary-sig-name">auth</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">username</span>,
+        <span class="summary-sig-arg">password</span>,
+        <span class="summary-sig-arg">resource</span>,
+        <span class="summary-sig-arg">register</span>=<span class="summary-sig-default">1</span>)</span><br />
+      Try to authenticate the username with the specified password If the
+      authentication fails, try to register the user.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient.auth">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="cancel_subscription"></a><span class="summary-sig-name">cancel_subscription</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">jids</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient.cancel_subscription">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="src.jabber_lib.JabberClient-class.html#connect" class="summary-sig-name">connect</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Attempt to connect to specified host</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient.connect">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="src.jabber_lib.JabberClient-class.html#disconnect" class="summary-sig-name">disconnect</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Safely disconnects from the connected server</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient.disconnect">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="src.jabber_lib.JabberClient-class.html#disconnectHandler" class="summary-sig-name">disconnectHandler</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">conn</span>)</span><br />
+      Called when a Network Error or disconnection occurs.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient.disconnectHandler">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="fileno"></a><span class="summary-sig-name">fileno</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient.fileno">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="get_one_stanza"></a><span class="summary-sig-name">get_one_stanza</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">timeout</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Returns one stanza (or None if timeout is set)</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient.get_one_stanza">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="get_unique_id"></a><span class="summary-sig-name">get_unique_id</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient.get_unique_id">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="src.jabber_lib.JabberClient-class.html#header" class="summary-sig-name">header</a>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient.header">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="jid_available"></a><span class="summary-sig-name">jid_available</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">jid</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient.jid_available">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="match_stanza_tags"></a><span class="summary-sig-name">match_stanza_tags</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">stanza</span>,
+        <span class="summary-sig-arg">tag_name</span>,
+        <span class="summary-sig-arg">namespace</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Get the matching (child) tags of this stanza, possibly with the
+      specified namespace</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient.match_stanza_tags">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="src.jabber_lib.JabberClient-class.html#process" class="summary-sig-name">process</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">timeout</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Receives incoming data (if any) and processes it.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient.process">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="process_loop_hook"></a><span class="summary-sig-name">process_loop_hook</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient.process_loop_hook">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="src.jabber_lib.JabberClient-class.html#read" class="summary-sig-name">read</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Reads incoming data.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient.read">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="register"></a><span class="summary-sig-name">register</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">username</span>,
+        <span class="summary-sig-arg">password</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient.register">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="src.jabber_lib.JabberClient-class.html#retrieve_roster" class="summary-sig-name">retrieve_roster</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Request the roster.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient.retrieve_roster">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="src.jabber_lib.JabberClient-class.html#send" class="summary-sig-name">send</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">stanza</span>)</span><br />
+      Sends a jabber protocol element (Node) to the server</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient.send">source&nbsp;code</a></span>
             
           </td>
         </tr>
@@ -716,10 +726,12 @@ The subscription in jabber works like this:</td>
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a name="jid_available"></a><span class="summary-sig-name">jid_available</span>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">jid</span>)</span></td>
+          <td><span class="summary-sig"><a name="send_presence"></a><span class="summary-sig-name">send_presence</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">jid</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">type</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">xid</span>=<span class="summary-sig-default">None</span>)</span></td>
           <td align="right" valign="top">
-            <span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient.jid_available">source&nbsp;code</a></span>
+            <span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient.send_presence">source&nbsp;code</a></span>
             
           </td>
         </tr>
@@ -767,14 +779,14 @@ The subscription in jabber works like this:</td>
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a name="match_stanza_tags"></a><span class="summary-sig-name">match_stanza_tags</span>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">stanza</span>,
-        <span class="summary-sig-arg">tag_name</span>,
-        <span class="summary-sig-arg">namespace</span>=<span class="summary-sig-default">None</span>)</span><br />
-      Get the matching (child) tags of this stanza, possibly with the 
-      specified namespace</td>
+          <td><span class="summary-sig"><a name="ssl_verify_callback"></a><span class="summary-sig-name">ssl_verify_callback</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">conn</span>,
+        <span class="summary-sig-arg">cert</span>,
+        <span class="summary-sig-arg">errnum</span>,
+        <span class="summary-sig-arg">depth</span>,
+        <span class="summary-sig-arg">ok</span>)</span></td>
           <td align="right" valign="top">
-            <span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient.match_stanza_tags">source&nbsp;code</a></span>
+            <span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient.ssl_verify_callback">source&nbsp;code</a></span>
             
           </td>
         </tr>
@@ -782,17 +794,54 @@ The subscription in jabber works like this:</td>
       
     </td>
   </tr>
-<tr class="private">
+<tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a name="_check_signature_from_message"></a><span class="summary-sig-name">_check_signature_from_message</span>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">stanza</span>,
-        <span class="summary-sig-arg">actions</span>)</span></td>
+          <td><span class="summary-sig"><a href="src.jabber_lib.JabberClient-class.html#subscribe_to_presence" class="summary-sig-name">subscribe_to_presence</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">jids</span>)</span><br />
+      Subscribe to these nodes' presence
+The subscription in jabber works like this:</td>
           <td align="right" valign="top">
-            <span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient._check_signature_from_message">source&nbsp;code</a></span>
+            <span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient.subscribe_to_presence">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="verify_peer"></a><span class="summary-sig-name">verify_peer</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">ssl</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient.verify_peer">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="src.jabber_lib.JabberClient-class.html#waitForResponse" class="summary-sig-name">waitForResponse</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">ID</span>,
+        <span class="summary-sig-arg">timeout</span>=<span class="summary-sig-default">300</span>)</span><br />
+      Blocks untils a protocol element with the given id is received.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient.waitForResponse">source&nbsp;code</a></span>
             
           </td>
         </tr>
@@ -802,6 +851,62 @@ The subscription in jabber works like this:</td>
   </tr>
   <tr>
     <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>jabber.jabber.Client</code></b>:
+      <code>addRosterItem</code>,
+      <code>deregister</code>,
+      <code>discoverInfo</code>,
+      <code>discoverItems</code>,
+      <code>getRegInfo</code>,
+      <code>getRoster</code>,
+      <code>removeRosterItem</code>,
+      <code>requestAgents</code>,
+      <code>requestRegInfo</code>,
+      <code>requestRoster</code>,
+      <code>sendInitPresence</code>,
+      <code>sendPresence</code>,
+      <code>sendRegInfo</code>,
+      <code>setRegInfo</code>,
+      <code>updateRosterItem</code>
+      </p>
+    <div class="private">    <p class="indent-wrapped-lines"><b>Inherited from <code>jabber.jabber.Client</code></b> (private):
+      <code>_IqAgentsResult</code>,
+      <code>_IqRegisterResult</code>,
+      <code>_IqRosterManage</code>,
+      <code>_discover</code>,
+      <code>_presenceHandler</code>
+      </p></div>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>jabber.jabber.Connection</code></b>:
+      <code>SendAndWaitForResponse</code>,
+      <code>dispatch</code>,
+      <code>getAnID</code>,
+      <code>registerHandler</code>,
+      <code>registerProtocol</code>,
+      <code>setDisconnectHandler</code>,
+      <code>setIqHandler</code>,
+      <code>setMessageHandler</code>,
+      <code>setPresenceHandler</code>
+      </p>
+    <div class="private">    <p class="indent-wrapped-lines"><b>Inherited from <code>jabber.jabber.Connection</code></b> (private):
+      <code>_expectedIqHandler</code>
+      </p></div>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>jabber.xmlstream.Client</code></b>:
+      <code>getSocket</code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>jabber.xmlstream.Stream</code></b>:
+      <code>disconnected</code>,
+      <code>getIncomingID</code>,
+      <code>getOutgoingID</code>,
+      <code>log</code>,
+      <code>timestampLog</code>,
+      <code>write</code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>jabber.xmlstream.NodeBuilder</code></b>:
+      <code>DEBUG</code>,
+      <code>getDom</code>,
+      <code>handle_data</code>,
+      <code>unknown_endtag</code>,
+      <code>unknown_starttag</code>
+      </p>
     <p class="indent-wrapped-lines"><b>Inherited from <code><a href="object-class.html">object</a></code></b>:
       <code><a href="object-class.html#__delattr__">__delattr__</a></code>,
       <code><a href="object-class.html#__format__">__format__</a></code>,
@@ -836,18 +941,18 @@ The subscription in jabber works like this:</td>
     </table>
   </td>
 </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="BLOCK_SIZE"></a><span class="summary-name">BLOCK_SIZE</span> = <code title="1024">1024</code>
+    </td>
+  </tr>
 <tr class="private">
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
         <a name="_seq"></a><span class="summary-name">_seq</span> = <code title="0">0</code>
-    </td>
-  </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-        <a name="BLOCK_SIZE"></a><span class="summary-name">BLOCK_SIZE</span> = <code title="jabber.xmlstream.BLOCK_SIZE">jabber.xmlstream.BLOCK_SIZE</code>
     </td>
   </tr>
 </table>
@@ -920,23 +1025,25 @@ The subscription in jabber works like this:</td>
   </dl>
 </td></tr></table>
 </div>
-<a name="retrieve_roster"></a>
-<div>
+<a name="_setupComms"></a>
+<div class="private">
 <table class="details" border="1" cellpadding="3"
        cellspacing="0" width="100%" bgcolor="white">
 <tr><td>
   <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr valign="top"><td>
-  <h3 class="epydoc"><span class="sig"><span class="sig-name">retrieve_roster</span>(<span class="sig-arg">self</span>)</span>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_setupComms</span>(<span class="sig-arg">self</span>)</span>
   </h3>
   </td><td align="right" valign="top"
-    ><span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient.retrieve_roster">source&nbsp;code</a></span>&nbsp;
+    ><span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient._setupComms">source&nbsp;code</a></span>&nbsp;
     </td>
   </tr></table>
   
-  <p>Request the roster. Will register the roster callback, but the call 
-  will wait for the roster to be properly populated</p>
+
   <dl class="fields">
+    <dt>Overrides:
+        jabber.xmlstream.Client._setupComms
+    </dt>
   </dl>
 </td></tr></table>
 </div>
@@ -962,6 +1069,194 @@ The subscription in jabber works like this:</td>
   authentication fails, try to register the user. If that fails as well, 
   then JabberQualifiedError is raised</p>
   <dl class="fields">
+    <dt>Overrides:
+        jabber.jabber.Client.auth
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="connect"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">connect</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient.connect">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+
+  <p>Attempt to connect to specified host</p>
+  <dl class="fields">
+    <dt>Overrides:
+        jabber.xmlstream.Stream.connect
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="disconnect"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">disconnect</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient.disconnect">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+
+  <p>Safely disconnects from the connected server</p>
+  <dl class="fields">
+    <dt>Overrides:
+        jabber.xmlstream.Stream.disconnect
+        <dd><em class="note">(inherited documentation)</em></dd>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="disconnectHandler"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">disconnectHandler</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">conn</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient.disconnectHandler">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+
+  <p>Called when a Network Error or disconnection occurs. Designed to be
+  overidden</p>
+  <dl class="fields">
+    <dt>Overrides:
+        jabber.xmlstream.Stream.disconnectHandler
+        <dd><em class="note">(inherited documentation)</em></dd>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="header"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">header</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient.header">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+
+
+  <dl class="fields">
+    <dt>Overrides:
+        jabber.jabber.Connection.header
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="process"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">process</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">timeout</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient.process">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+
+  <p>Receives incoming data (if any) and processes it. Waits for data no
+  more than timeout seconds.</p>
+  <dl class="fields">
+    <dt>Overrides:
+        jabber.xmlstream.Stream.process
+        <dd><em class="note">(inherited documentation)</em></dd>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="read"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">read</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient.read">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+
+  <p>Reads incoming data. Blocks until done. Calls self.disconnected(self)
+  if appropriate.</p>
+  <dl class="fields">
+    <dt>Overrides:
+        jabber.xmlstream.Stream.read
+        <dd><em class="note">(inherited documentation)</em></dd>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="retrieve_roster"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">retrieve_roster</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient.retrieve_roster">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+
+  <p>Request the roster. Will register the roster callback, but the call
+  will wait for the roster to be properly populated</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="send"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">send</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">stanza</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient.send">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+
+  <p>Sends a jabber protocol element (Node) to the server</p>
+  <dl class="fields">
+    <dt>Overrides:
+        jabber.jabber.Connection.send
+        <dd><em class="note">(inherited documentation)</em></dd>
+    </dt>
   </dl>
 </td></tr></table>
 </div>
@@ -1002,6 +1297,37 @@ place.
   </dl>
 </td></tr></table>
 </div>
+<a name="waitForResponse"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">waitForResponse</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">ID</span>,
+        <span class="sig-arg">timeout</span>=<span class="sig-default">300</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="src.jabber_lib-pysrc.html#JabberClient.waitForResponse">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+
+  <p>Blocks untils a protocol element with the given id is received. If an
+  error is received, waitForResponse returns None and self.lastErr and
+  self.lastErrCode is set to the received error.  If the operation times
+  out (which only happens if a timeout value is given), waitForResponse
+  will return None and self.lastErr will be set to &quot;Timeout&quot;.
+  Changed default from timeout=0 to timeout=300 to avoid hangs in scripts
+  and such. If you _really_ want no timeout, just set it to 0</p>
+  <dl class="fields">
+    <dt>Overrides:
+        jabber.jabber.Connection.waitForResponse
+        <dd><em class="note">(inherited documentation)</em></dd>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
 <br />
 <!-- ==================== NAVIGATION BAR ==================== -->
 <table class="navbar" border="0" width="100%" cellpadding="0"
@@ -1026,7 +1352,7 @@ place.
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Mon Apr  9 17:18:06 2018
+    Generated by Epydoc 3.0.1 on Tue Jan  8 16:14:14 2019
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

@@ -57,31 +57,56 @@
 <!-- ==================== CLASS DESCRIPTION ==================== -->
 <h1 class="epydoc">Class Cursor</h1><p class="nomargin-top"><span class="codelink"><a href="backend.server.rhnSQL.driver_cx_Oracle-pysrc.html#Cursor">source&nbsp;code</a></span></p>
 <center>
-<center>  <map id="uml_class_diagram_for_backend__454" name="uml_class_diagram_for_backend__454">
-<area shape="rect" id="node1_14" href="backend.server.rhnSQL.driver_cx_Oracle.Cursor-class.html#OracleError" title="backend.server.rhnSQL.driver_cx_Oracle.Cursor.OracleError" alt="" coords="17,247,468,267"/>
-<area shape="rect" id="node1_15" href="backend.server.rhnSQL.driver_cx_Oracle.Cursor-class.html#__init__" title="backend.server.rhnSQL.driver_cx_Oracle.Cursor.__init__" alt="" coords="17,270,468,290"/>
-<area shape="rect" id="node1_16" href="backend.server.rhnSQL.driver_cx_Oracle.Cursor-class.html#_execute_" title="Oracle specific execution of the query." alt="" coords="17,290,468,310"/>
-<area shape="rect" id="node1_17" href="backend.server.rhnSQL.driver_cx_Oracle.Cursor-class.html#__getattr__" title="backend.server.rhnSQL.driver_cx_Oracle.Cursor.__getattr__" alt="" coords="17,310,468,330"/>
-<area shape="rect" id="node1_18" href="backend.server.rhnSQL.driver_cx_Oracle.Cursor-class.html#__del__" title="backend.server.rhnSQL.driver_cx_Oracle.Cursor.__del__" alt="" coords="17,330,468,350"/>
-<area shape="rect" id="node1_19" href="backend.server.rhnSQL.driver_cx_Oracle.Cursor-class.html#update_blob" title="Abstraction for the update of a blob column which can vary wildly between &#160;different database implementations." alt="" coords="17,350,468,370"/>
-<area shape="rect" id="node1" href="backend.server.rhnSQL.driver_cx_Oracle.Cursor-class.html" title="Wrapper that should just transform Oracle specific exceptions into something generic from sql_base." alt="" coords="5,223,480,376"/>
-<area shape="rect" id="node2_20" href="backend.server.rhnSQL.sql_base.Cursor-class.html#prepare" title="Prepares the current statement." alt="" coords="120,38,364,58"/>
-<area shape="rect" id="node2_21" href="backend.server.rhnSQL.sql_base.Cursor-class.html#execute" title="Execute a single query." alt="" coords="120,58,364,78"/>
-<area shape="rect" id="node2_22" href="backend.server.rhnSQL.sql_base.Cursor-class.html#executemany" title="Execute a query multiple times with different data sets." alt="" coords="120,78,364,98"/>
-<area shape="rect" id="node2_23" href="backend.server.rhnSQL.sql_base.Cursor-class.html#execute_bulk" title="Uses executemany but chops the incoming dict into chunks for each call." alt="" coords="120,98,364,118"/>
-<area shape="rect" id="node2_24" href="backend.server.rhnSQL.sql_base.Cursor-class.html#fetchone" title="backend.server.rhnSQL.sql_base.Cursor.fetchone" alt="" coords="120,118,364,138"/>
-<area shape="rect" id="node2_25" href="backend.server.rhnSQL.sql_base.Cursor-class.html#fetchall" title="backend.server.rhnSQL.sql_base.Cursor.fetchall" alt="" coords="120,138,364,158"/>
-<area shape="rect" id="node2_26" href="backend.server.rhnSQL.sql_base.Cursor-class.html#fetchone_dict" title="Return a dictionary for the row returned mapping column name to it&#39;s value." alt="" coords="120,158,364,178"/>
-<area shape="rect" id="node2_27" href="backend.server.rhnSQL.sql_base.Cursor-class.html#fetchall_dict" title="Fetch all rows as a list of dictionaries." alt="" coords="120,178,364,198"/>
-<area shape="rect" id="node2" href="backend.server.rhnSQL.sql_base.Cursor-class.html" title="A class to implement generic SQL Cursor operations." alt="" coords="107,5,375,204"/>
+<center>  <map id="uml_class_diagram_for_backend__484" name="uml_class_diagram_for_backend__484">
+<area shape="rect" id="node1_14" href="cx_Oracle.DatabaseError-class.html" title="backend.server.rhnSQL.driver_cx_Oracle.Cursor.OracleError" alt="" coords="18,247,526,267"/>
+<area shape="rect" id="node1_15" href="backend.server.rhnSQL.driver_cx_Oracle.Cursor-class.html#__init__" title="backend.server.rhnSQL.driver_cx_Oracle.Cursor.__init__" alt="" coords="18,270,526,290"/>
+<area shape="rect" id="node1_16" href="backend.server.rhnSQL.driver_cx_Oracle.Cursor-class.html#_execute_" title="Oracle specific execution of the query." alt="" coords="18,290,526,310"/>
+<area shape="rect" id="node1_17" href="backend.server.rhnSQL.driver_cx_Oracle.Cursor-class.html#__getattr__" title="backend.server.rhnSQL.driver_cx_Oracle.Cursor.__getattr__" alt="" coords="18,310,526,330"/>
+<area shape="rect" id="node1_18" href="backend.server.rhnSQL.driver_cx_Oracle.Cursor-class.html#__del__" title="backend.server.rhnSQL.driver_cx_Oracle.Cursor.__del__" alt="" coords="18,330,526,350"/>
+<area shape="rect" id="node1_19" href="backend.server.rhnSQL.driver_cx_Oracle.Cursor-class.html#update_blob" title="Abstraction for the update of a blob column which can vary wildly between &#160;different database implementations." alt="" coords="18,350,526,370"/>
+<area shape="rect" id="node1" href="backend.server.rhnSQL.driver_cx_Oracle.Cursor-class.html" title="Wrapper that should just transform Oracle specific exceptions into something generic from sql_base." alt="" coords="5,223,537,376"/>
+<area shape="rect" id="node2_20" href="backend.server.rhnSQL.sql_base.Cursor-class.html#prepare" title="Prepares the current statement." alt="" coords="135,38,410,58"/>
+<area shape="rect" id="node2_21" href="backend.server.rhnSQL.sql_base.Cursor-class.html#execute" title="Execute a single query." alt="" coords="135,58,410,78"/>
+<area shape="rect" id="node2_22" href="backend.server.rhnSQL.sql_base.Cursor-class.html#executemany" title="Execute a query multiple times with different data sets." alt="" coords="135,78,410,98"/>
+<area shape="rect" id="node2_23" href="backend.server.rhnSQL.sql_base.Cursor-class.html#execute_bulk" title="Uses executemany but chops the incoming dict into chunks for each call." alt="" coords="135,98,410,118"/>
+<area shape="rect" id="node2_24" href="backend.server.rhnSQL.sql_base.Cursor-class.html#fetchone" title="backend.server.rhnSQL.sql_base.Cursor.fetchone" alt="" coords="135,118,410,138"/>
+<area shape="rect" id="node2_25" href="backend.server.rhnSQL.sql_base.Cursor-class.html#fetchall" title="backend.server.rhnSQL.sql_base.Cursor.fetchall" alt="" coords="135,138,410,158"/>
+<area shape="rect" id="node2_26" href="backend.server.rhnSQL.sql_base.Cursor-class.html#fetchone_dict" title="Return a dictionary for the row returned mapping column name to it&#39;s value." alt="" coords="135,158,410,178"/>
+<area shape="rect" id="node2_27" href="backend.server.rhnSQL.sql_base.Cursor-class.html#fetchall_dict" title="Fetch all rows as a list of dictionaries." alt="" coords="135,178,410,198"/>
+<area shape="rect" id="node2" href="backend.server.rhnSQL.sql_base.Cursor-class.html" title="A class to implement generic SQL Cursor operations." alt="" coords="123,5,422,204"/>
 </map>
-  <img src="uml_class_diagram_for_backend__454.png" alt='' usemap="#uml_class_diagram_for_backend__454" ismap="ismap" class="graph-without-title" />
+  <img src="uml_class_diagram_for_backend__484.png" alt='' usemap="#uml_class_diagram_for_backend__484" ismap="ismap" class="graph-without-title" />
 </center>
 </center>
 <hr />
 <p>Wrapper that should just transform Oracle specific exceptions into 
   something generic from sql_base.</p>
 
+<!-- ==================== NESTED CLASSES ==================== -->
+<a name="section-NestedClasses"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Nested Classes</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-NestedClasses"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="cx_Oracle.DatabaseError-class.html" class="summary-name">OracleError</a>
+    </td>
+  </tr>
+</table>
 <!-- ==================== INSTANCE METHODS ==================== -->
 <a name="section-InstanceMethods"></a>
 <table class="summary" border="1" cellpadding="3"
@@ -387,13 +412,6 @@
     </table>
   </td>
 </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-        <a name="OracleError"></a><span class="summary-name">OracleError</span> = <code title="cx_Oracle.DatabaseError">cx_Oracle.DatabaseError</code>
-    </td>
-  </tr>
   <tr>
     <td colspan="2" class="summary">
     <div class="private">    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="backend.server.rhnSQL.sql_base.Cursor-class.html">sql_base.Cursor</a></code></b> (private):
@@ -621,7 +639,7 @@
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Mon Apr  9 17:17:58 2018
+    Generated by Epydoc 3.0.1 on Tue Jan  8 16:14:02 2019
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

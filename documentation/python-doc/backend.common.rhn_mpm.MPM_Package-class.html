@@ -57,12 +57,14 @@
 <h1 class="epydoc">Class MPM_Package</h1><p class="nomargin-top"><span class="codelink"><a href="backend.common.rhn_mpm-pysrc.html#MPM_Package">source&nbsp;code</a></span></p>
 <center>
 <center>  <map id="uml_class_diagram_for_backend__41" name="uml_class_diagram_for_backend__41">
-<area shape="rect" id="node1_5" href="backend.common.rhn_mpm.MPM_Package-class.html#__init__" title="backend.common.rhn_mpm.MPM_Package.__init__" alt="" coords="18,37,225,57"/>
-<area shape="rect" id="node1_6" href="backend.common.rhn_mpm.MPM_Package-class.html#read_header" title="backend.common.rhn_mpm.MPM_Package.read_header" alt="" coords="18,57,225,77"/>
-<area shape="rect" id="node1_7" href="backend.common.rhn_mpm.MPM_Package-class.html#load" title="backend.common.rhn_mpm.MPM_Package.load" alt="" coords="18,77,225,97"/>
-<area shape="rect" id="node1_8" href="backend.common.rhn_mpm.MPM_Package-class.html#write" title="backend.common.rhn_mpm.MPM_Package.write" alt="" coords="18,97,225,117"/>
-<area shape="rect" id="node1_9" href="backend.common.rhn_mpm.MPM_Package-class.html#save_payload" title="backend.common.rhn_mpm.MPM_Package.save_payload" alt="" coords="18,117,225,137"/>
-<area shape="rect" id="node1" href="backend.common.rhn_mpm.MPM_Package-class.html" title="backend.common.rhn_mpm.MPM_Package" alt="" coords="5,5,236,144"/>
+<area shape="rect" id="node1_6" href="backend.common.rhn_mpm.MPM_Package-class.html#__init__" title="backend.common.rhn_mpm.MPM_Package.__init__" alt="" coords="31,115,264,135"/>
+<area shape="rect" id="node1_7" href="backend.common.rhn_mpm.MPM_Package-class.html#read_header" title="reads header from self.input_file" alt="" coords="31,135,264,155"/>
+<area shape="rect" id="node1_8" href="backend.common.rhn_mpm.MPM_Package-class.html#load" title="backend.common.rhn_mpm.MPM_Package.load" alt="" coords="31,155,264,175"/>
+<area shape="rect" id="node1_9" href="backend.common.rhn_mpm.MPM_Package-class.html#write" title="backend.common.rhn_mpm.MPM_Package.write" alt="" coords="31,175,264,195"/>
+<area shape="rect" id="node1_10" href="backend.common.rhn_mpm.MPM_Package-class.html#save_payload" title="saves payload to output_stream" alt="" coords="31,195,264,215"/>
+<area shape="rect" id="node1" href="backend.common.rhn_mpm.MPM_Package-class.html" title="backend.common.rhn_mpm.MPM_Package" alt="" coords="18,83,275,221"/>
+<area shape="rect" id="node2_11" href="javascript:void(0);" title="spacewalk.common.rhn_pkg.A_Package.payload_checksum" alt="" coords="17,37,279,57"/>
+<area shape="rect" id="node2" href="javascript:void(0);" title="virtual class that implements shared methods for RPM/MPM/DEB package object" alt="" coords="5,5,291,64"/>
 </map>
   <img src="uml_class_diagram_for_backend__41.png" alt='' usemap="#uml_class_diagram_for_backend__41" ismap="ismap" class="graph-without-title" />
 </center>
@@ -91,7 +93,7 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a name="__init__"></a><span class="summary-sig-name">__init__</span>(<span class="summary-sig-arg">self</span>,
+          <td><span class="summary-sig"><a href="backend.common.rhn_mpm.MPM_Package-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
         <span class="summary-sig-arg">input_stream</span>=<span class="summary-sig-default">None</span>)</span></td>
           <td align="right" valign="top">
             <span class="codelink"><a href="backend.common.rhn_mpm-pysrc.html#MPM_Package.__init__">source&nbsp;code</a></span>
@@ -108,7 +110,8 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a name="read_header"></a><span class="summary-sig-name">read_header</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td><span class="summary-sig"><a href="backend.common.rhn_mpm.MPM_Package-class.html#read_header" class="summary-sig-name">read_header</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      reads header from self.input_file</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="backend.common.rhn_mpm-pysrc.html#MPM_Package.read_header">source&nbsp;code</a></span>
             
@@ -246,8 +249,9 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a name="save_payload"></a><span class="summary-sig-name">save_payload</span>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">output_stream</span>)</span></td>
+          <td><span class="summary-sig"><a href="backend.common.rhn_mpm.MPM_Package-class.html#save_payload" class="summary-sig-name">save_payload</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">output_stream</span>)</span><br />
+      saves payload to output_stream</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="backend.common.rhn_mpm-pysrc.html#MPM_Package.save_payload">source&nbsp;code</a></span>
             
@@ -255,6 +259,39 @@
         </tr>
       </table>
       
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>spacewalk.common.rhn_pkg.A_Package</code></b>:
+      <code>payload_checksum</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== STATIC METHODS ==================== -->
+<a name="section-StaticMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Static Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-StaticMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <div class="private">    <p class="indent-wrapped-lines"><b>Inherited from <code>spacewalk.common.rhn_pkg.A_Package</code></b> (private):
+      <code>_read_bytes</code>,
+      <code>_stream_copy</code>
+      </p></div>
     </td>
   </tr>
 </table>
@@ -279,17 +316,107 @@
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="_lead_format"></a><span class="summary-name">_lead_format</span> = <code title="'!16sB3s4L92s'">'!16sB3s4L92s'</code>
+        <a name="_lead_format"></a><span class="summary-name">_lead_format</span> = <code title="'!16sB3s4L92s'"><code class="variable-quote">'</code><code class="variable-string">!16sB3s4L92s</code><code class="variable-quote">'</code></code>
     </td>
   </tr>
 <tr class="private">
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="_magic"></a><span class="summary-name">_magic</span> = <code title="'mpmpackage012345'">'mpmpackage012345'</code>
+        <a name="_magic"></a><span class="summary-name">_magic</span> = <code title="'mpmpackage012345'"><code class="variable-quote">'</code><code class="variable-string">mpmpackage012345</code><code class="variable-quote">'</code></code>
     </td>
   </tr>
 </table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">input_stream</span>=<span class="sig-default">None</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="backend.common.rhn_mpm-pysrc.html#MPM_Package.__init__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+
+
+  <dl class="fields">
+    <dt>Overrides:
+        spacewalk.common.rhn_pkg.A_Package.__init__
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="read_header"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">read_header</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="backend.common.rhn_mpm-pysrc.html#MPM_Package.read_header">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+
+  <p>reads header from self.input_file</p>
+  <dl class="fields">
+    <dt>Overrides:
+        spacewalk.common.rhn_pkg.A_Package.read_header
+        <dd><em class="note">(inherited documentation)</em></dd>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="save_payload"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">save_payload</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">output_stream</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="backend.common.rhn_mpm-pysrc.html#MPM_Package.save_payload">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+
+  <p>saves payload to output_stream</p>
+  <dl class="fields">
+    <dt>Overrides:
+        spacewalk.common.rhn_pkg.A_Package.save_payload
+        <dd><em class="note">(inherited documentation)</em></dd>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<br />
 <!-- ==================== NAVIGATION BAR ==================== -->
 <table class="navbar" border="0" width="100%" cellpadding="0"
        bgcolor="#a0c0ff" cellspacing="0">
@@ -313,7 +440,7 @@
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Mon Apr  9 17:17:44 2018
+    Generated by Epydoc 3.0.1 on Tue Jan  8 16:13:41 2019
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

@@ -57,12 +57,14 @@
 <h1 class="epydoc">Class LockedFile</h1><p class="nomargin-top"><span class="codelink"><a href="backend.common.rhnCache-pysrc.html#LockedFile">source&nbsp;code</a></span></p>
 <center>
 <center>  <map id="uml_class_diagram_for_backend__28" name="uml_class_diagram_for_backend__28">
-<area shape="rect" id="node1_5" href="backend.common.rhnCache.LockedFile-class.html#__init__" title="x.__init__(...) initializes x; see help(type(x)) for signature" alt="" coords="18,37,494,57"/>
-<area shape="rect" id="node1_6" href="backend.common.rhnCache.LockedFile-class.html#close" title="backend.common.rhnCache.LockedFile.close" alt="" coords="18,57,494,77"/>
-<area shape="rect" id="node1_7" href="backend.common.rhnCache.LockedFile-class.html#get_fd" title="backend.common.rhnCache.LockedFile.get_fd" alt="" coords="18,77,494,97"/>
-<area shape="rect" id="node1_8" href="backend.common.rhnCache.LockedFile-class.html#close_fd" title="backend.common.rhnCache.LockedFile.close_fd" alt="" coords="18,97,494,117"/>
-<area shape="rect" id="node1_9" href="backend.common.rhnCache.LockedFile-class.html#__getattr__" title="backend.common.rhnCache.LockedFile.__getattr__" alt="" coords="18,117,494,137"/>
-<area shape="rect" id="node1" href="backend.common.rhnCache.LockedFile-class.html" title="backend.common.rhnCache.LockedFile" alt="" coords="5,5,505,144"/>
+<area shape="rect" id="node1_5" href="backend.common.rhnCache.LockedFile-class.html#__init__" title="x.__init__(...) initializes x; see help(type(x)) for signature" alt="" coords="18,37,513,57"/>
+<area shape="rect" id="node1_6" href="backend.common.rhnCache.LockedFile-class.html#close" title="backend.common.rhnCache.LockedFile.close" alt="" coords="18,57,513,77"/>
+<area shape="rect" id="node1_7" href="backend.common.rhnCache.LockedFile-class.html#get_fd" title="backend.common.rhnCache.LockedFile.get_fd" alt="" coords="18,77,513,97"/>
+<area shape="rect" id="node1_8" href="backend.common.rhnCache.LockedFile-class.html#close_fd" title="backend.common.rhnCache.LockedFile.close_fd" alt="" coords="18,97,513,117"/>
+<area shape="rect" id="node1_9" href="backend.common.rhnCache.LockedFile-class.html#__getattr__" title="backend.common.rhnCache.LockedFile.__getattr__" alt="" coords="18,117,513,137"/>
+<area shape="rect" id="node1" href="backend.common.rhnCache.LockedFile-class.html" title="backend.common.rhnCache.LockedFile" alt="" coords="5,5,524,144"/>
+<area shape="rect" id="node2" href="backend.common.rhnCache.ReadLockedFile-class.html" title="backend.common.rhnCache.ReadLockedFile" alt="" coords="115,163,251,201"/>
+<area shape="rect" id="node3" href="backend.common.rhnCache.WriteLockedFile-class.html" title="backend.common.rhnCache.WriteLockedFile" alt="" coords="281,163,419,201"/>
 </map>
   <img src="uml_class_diagram_for_backend__28.png" alt='' usemap="#uml_class_diagram_for_backend__28" ismap="ismap" class="graph-without-title" />
 </center>
@@ -94,9 +96,9 @@
           <td><span class="summary-sig"><a href="backend.common.rhnCache.LockedFile-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
         <span class="summary-sig-arg">name</span>,
         <span class="summary-sig-arg">modified</span>=<span class="summary-sig-default">None</span>,
-        <span class="summary-sig-arg">user</span>=<span class="summary-sig-default">'root'</span>,
-        <span class="summary-sig-arg">group</span>=<span class="summary-sig-default">'root'</span>,
-        <span class="summary-sig-arg">mode</span>=<span class="summary-sig-default">int('0755',8)</span>)</span><br />
+        <span class="summary-sig-arg">user</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">root</code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">group</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">root</code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">mode</span>=<span class="summary-sig-default">493</span>)</span><br />
       x.__init__(...) initializes x; see help(type(x)) for signature</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="backend.common.rhnCache-pysrc.html#LockedFile.__init__">source&nbsp;code</a></span>
@@ -248,9 +250,9 @@
   <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
         <span class="sig-arg">name</span>,
         <span class="sig-arg">modified</span>=<span class="sig-default">None</span>,
-        <span class="sig-arg">user</span>=<span class="sig-default">'root'</span>,
-        <span class="sig-arg">group</span>=<span class="sig-default">'root'</span>,
-        <span class="sig-arg">mode</span>=<span class="sig-default">int('0755',8)</span>)</span>
+        <span class="sig-arg">user</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">root</code><code class="variable-quote">'</code></span>,
+        <span class="sig-arg">group</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">root</code><code class="variable-quote">'</code></span>,
+        <span class="sig-arg">mode</span>=<span class="sig-default">493</span>)</span>
     <br /><em class="fname">(Constructor)</em>
   </h3>
   </td><td align="right" valign="top"
@@ -291,7 +293,7 @@
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Mon Apr  9 17:17:43 2018
+    Generated by Epydoc 3.0.1 on Tue Jan  8 16:13:41 2019
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

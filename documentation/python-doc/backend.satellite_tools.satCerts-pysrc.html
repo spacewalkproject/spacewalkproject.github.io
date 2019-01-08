@@ -59,7 +59,7 @@
 <a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-comment">#   - RHN certificate</tt> </tt>
 <a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-comment">#   - SSL CA certificate</tt> </tt>
 <a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
-<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-comment"># Copyright (c) 2008--2017 Red Hat, Inc.</tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-comment"># Copyright (c) 2008--2018 Red Hat, Inc.</tt> </tt>
 <a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
 <a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt class="py-comment"># This software is licensed to you under the GNU General Public License,</tt> </tt>
 <a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"><tt class="py-comment"># version 2 (GPLv2). There is NO WARRANTY for this software, express or</tt> </tt>
@@ -106,42 +106,46 @@ backend.common" class="py-name" href="#" onclick="return doclink('link-7', 'comm
 </div><a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line"> </tt>
 <a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line"> </tt>
 <a name="verify_certificate_dates"></a><div id="verify_certificate_dates-def"><a name="L47"></a><tt class="py-lineno"> 47</tt> <a class="py-toggle" href="#" id="verify_certificate_dates-toggle" onclick="return toggle('verify_certificate_dates');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="backend.satellite_tools.satCerts-module.html#verify_certificate_dates">verify_certificate_dates</a><tt class="py-op">(</tt><tt class="py-param">cert_str</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
-</div><div id="verify_certificate_dates-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="verify_certificate_dates-expanded"><a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line">    <tt id="link-15" class="py-name" targets="Variable backend.common.rhnTranslate._=backend.common.rhnTranslate-module.html#_,Variable backend.satellite_tools.disk_dumper.iss._=backend.satellite_tools.disk_dumper.iss-module.html#_,Variable backend.satellite_tools.reposync._=backend.satellite_tools.reposync-module.html#_,Variable backend.satellite_tools.satsync._=backend.satellite_tools.satsync-module.html#_,Variable rhn_choose_channel._=rhn_choose_channel-module.html#_,Variable rhn_choose_server_gui._=rhn_choose_server_gui-module.html#_,Variable rhn_create_profile_gui._=rhn_create_profile_gui-module.html#_,Variable rhn_finish_gui._=rhn_finish_gui-module.html#_,Variable rhn_login_gui._=rhn_login_gui-module.html#_,Variable rhn_provide_certificate_gui._=rhn_provide_certificate_gui-module.html#_,Variable rhn_review_gui._=rhn_review_gui-module.html#_,Variable rhn_start_gui._=rhn_start_gui-module.html#_,Variable script-spacewalk_channel_py._=script-spacewalk_channel_py-module.html#_,Variable up2date_client.debUtils._=up2date_client.debUtils-module.html#_,Variable up2date_client.gui._=up2date_client.gui-module.html#_,Variable up2date_client.messageWindow._=up2date_client.messageWindow-module.html#_,Variable up2date_client.rhnregGui._=up2date_client.rhnregGui-module.html#_,Variable virtualization.poller._=virtualization.poller-module.html#_,Variable virtualization.support._=virtualization.support-module.html#_"><a title="backend.common.rhnTranslate._
-backend.satellite_tools.disk_dumper.iss._
-backend.satellite_tools.reposync._
-backend.satellite_tools.satsync._
+</div><div id="verify_certificate_dates-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="verify_certificate_dates-expanded"><a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line">    <tt id="link-15" class="py-name" targets="Function backend.common.rhnTranslate._()=backend.common.rhnTranslate-module.html#_,Variable rhn_check._=rhn_check-module.html#_,Variable rhn_choose_channel._=rhn_choose_channel-module.html#_,Variable rhn_choose_server_gui._=rhn_choose_server_gui-module.html#_,Variable rhn_create_profile_gui._=rhn_create_profile_gui-module.html#_,Variable rhn_finish_gui._=rhn_finish_gui-module.html#_,Variable rhn_login_gui._=rhn_login_gui-module.html#_,Variable rhn_provide_certificate_gui._=rhn_provide_certificate_gui-module.html#_,Variable rhn_register._=rhn_register-module.html#_,Variable rhn_review_gui._=rhn_review_gui-module.html#_,Variable rhn_start_gui._=rhn_start_gui-module.html#_,Variable rhnreg_ks._=rhnreg_ks-module.html#_,Variable script-spacewalk_channel_py._=script-spacewalk_channel_py-module.html#_,Variable up2date_client.debUtils._=up2date_client.debUtils-module.html#_,Variable up2date_client.gui._=up2date_client.gui-module.html#_,Variable up2date_client.messageWindow._=up2date_client.messageWindow-module.html#_,Variable up2date_client.rhnreg._=up2date_client.rhnreg-module.html#_,Variable up2date_client.rhnregGui._=up2date_client.rhnregGui-module.html#_,Variable up2date_client.rhnreg_constants._=up2date_client.rhnreg_constants-module.html#_,Variable up2date_client.tui._=up2date_client.tui-module.html#_,Variable virtualization.support._=virtualization.support-module.html#_"><a title="backend.common.rhnTranslate._
+rhn_check._
 rhn_choose_channel._
 rhn_choose_server_gui._
 rhn_create_profile_gui._
 rhn_finish_gui._
 rhn_login_gui._
 rhn_provide_certificate_gui._
+rhn_register._
 rhn_review_gui._
 rhn_start_gui._
+rhnreg_ks._
 script-spacewalk_channel_py._
 up2date_client.debUtils._
 up2date_client.gui._
 up2date_client.messageWindow._
+up2date_client.rhnreg._
 up2date_client.rhnregGui._
-virtualization.poller._
+up2date_client.rhnreg_constants._
+up2date_client.tui._
 virtualization.support._" class="py-name" href="#" onclick="return doclink('link-15', '_', 'link-15');">_</a></tt><tt class="py-op">,</tt> <tt id="link-16" class="py-name"><a title="backend.common.rhnTranslate._
-backend.satellite_tools.disk_dumper.iss._
-backend.satellite_tools.reposync._
-backend.satellite_tools.satsync._
+rhn_check._
 rhn_choose_channel._
 rhn_choose_server_gui._
 rhn_create_profile_gui._
 rhn_finish_gui._
 rhn_login_gui._
 rhn_provide_certificate_gui._
+rhn_register._
 rhn_review_gui._
 rhn_start_gui._
+rhnreg_ks._
 script-spacewalk_channel_py._
 up2date_client.debUtils._
 up2date_client.gui._
 up2date_client.messageWindow._
+up2date_client.rhnreg._
 up2date_client.rhnregGui._
-virtualization.poller._
+up2date_client.rhnreg_constants._
+up2date_client.tui._
 virtualization.support._" class="py-name" href="#" onclick="return doclink('link-16', '_', 'link-15');">_</a></tt><tt class="py-op">,</tt> <tt class="py-name">not_before</tt><tt class="py-op">,</tt> <tt class="py-name">not_after</tt> <tt class="py-op">=</tt> <tt id="link-17" class="py-name" targets="Function backend.satellite_tools.satCerts.get_certificate_info()=backend.satellite_tools.satCerts-module.html#get_certificate_info"><a title="backend.satellite_tools.satCerts.get_certificate_info" class="py-name" href="#" onclick="return doclink('link-17', 'get_certificate_info', 'link-17');">get_certificate_info</a></tt><tt class="py-op">(</tt><tt class="py-name">cert_str</tt><tt class="py-op">)</tt> </tt>
 <a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line">    <tt class="py-name">now</tt> <tt class="py-op">=</tt> <tt class="py-name">datetime</tt><tt class="py-op">.</tt><tt class="py-name">now</tt><tt class="py-op">(</tt><tt id="link-18" class="py-name"><a title="backend.common.rhnLib.utc" class="py-name" href="#" onclick="return doclink('link-18', 'utc', 'link-2');">utc</a></tt><tt class="py-op">)</tt> </tt>
 <a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">not_before</tt> <tt class="py-op">&lt;</tt> <tt class="py-name">now</tt> <tt class="py-op">&lt;</tt> <tt class="py-name">not_after</tt> </tt>
@@ -239,7 +243,7 @@ backend.server.rhnSQL.sql_base.Cursor.fetchone_dict" class="py-name" href="#" on
 <a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line">            <tt class="py-comment"># match found, nothing to do</tt> </tt>
 <a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">verbosity</tt><tt class="py-op">:</tt> </tt>
 <a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line">                <tt class="py-keyword">print</tt><tt class="py-op">(</tt><tt class="py-string">"Nothing to do: certificate to be pushed matches certificate in database."</tt><tt class="py-op">)</tt> </tt>
-<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-name">None</tt> </tt>
 <a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line">        <tt class="py-comment"># there can only be one (bugzilla: 120297)</tt> </tt>
 <a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line">        <tt class="py-name">rhn_cryptokey_id</tt> <tt class="py-op">=</tt> <tt id="link-45" class="py-name" targets="Class int=int-class.html"><a title="int" class="py-name" href="#" onclick="return doclink('link-45', 'int', 'link-45');">int</a></tt><tt class="py-op">(</tt><tt class="py-name">row</tt><tt class="py-op">[</tt><tt class="py-string">'id'</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
 <a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line">        <tt class="py-comment"># print 'found existing certificate - id:', rhn_cryptokey_id</tt> </tt>
@@ -320,8 +324,7 @@ backend.satellite_tools.satCerts.CaCertInsertionError" class="py-name" href="#" 
 <a name="L164"></a><tt class="py-lineno">164</tt>  <tt class="py-line">    <tt class="py-name">org_ids</tt><tt class="py-op">.</tt><tt id="link-65" class="py-name" targets="Method backend.server.importlib.importLib.Collection.append()=backend.server.importlib.importLib.Collection-class.html#append"><a title="backend.server.importlib.importLib.Collection.append" class="py-name" href="#" onclick="return doclink('link-65', 'append', 'link-65');">append</a></tt><tt class="py-op">(</tt><tt class="py-op">{</tt><tt class="py-string">'id'</tt><tt class="py-op">:</tt> <tt class="py-name">None</tt><tt class="py-op">}</tt><tt class="py-op">)</tt> </tt>
 <a name="L165"></a><tt class="py-lineno">165</tt>  <tt class="py-line">    <tt class="py-name">f</tt> <tt class="py-op">=</tt> <tt class="py-name">open</tt><tt class="py-op">(</tt><tt class="py-name">caCert</tt><tt class="py-op">,</tt> <tt class="py-string">'rb'</tt><tt class="py-op">)</tt> </tt>
 <a name="L166"></a><tt class="py-lineno">166</tt>  <tt class="py-line">    <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
-<a name="L167"></a><tt class="py-lineno">167</tt>  <tt class="py-line">        <tt id="link-66" class="py-name"><a title="backend.server.handlers.sat.cert" class="py-name" href="#" onclick="return doclink('link-66', 'cert', 'link-10');">cert</a></tt> <tt class="py-op">=</tt> <tt class="py-name">f</tt><tt class="py-op">.</tt><tt id="link-67" class="py-name" targets="Method backend.wsgi.wsgiRequest.WsgiRequest.read()=backend.wsgi.wsgiRequest.WsgiRequest-class.html#read,Method rhn.SSL.SSLSocket.read()=rhn.SSL.SSLSocket-class.html#read,Method rhn.SSL.SSLSocket.read()=rhn.SSL.SSLSocket-class.html#read,Method rhn.nonblocking.NonBlockingFile.read()=rhn.nonblocking.NonBlockingFile-class.html#read,Method rhn.transports.File.read()=rhn.transports.File-class.html#read,Method rhn.transports.Input.read()=rhn.transports.Input-class.html#read,Method rhnpush.archive.ArchiveParser.read()=rhnpush.archive.ArchiveParser-class.html#read,Method src.jabber_lib.JabberClient.read()=src.jabber_lib.JabberClient-class.html#read"><a title="backend.wsgi.wsgiRequest.WsgiRequest.read
-rhn.SSL.SSLSocket.read
+<a name="L167"></a><tt class="py-lineno">167</tt>  <tt class="py-line">        <tt id="link-66" class="py-name"><a title="backend.server.handlers.sat.cert" class="py-name" href="#" onclick="return doclink('link-66', 'cert', 'link-10');">cert</a></tt> <tt class="py-op">=</tt> <tt class="py-name">f</tt><tt class="py-op">.</tt><tt id="link-67" class="py-name" targets="Method backend.wsgi.wsgiRequest.WsgiRequest.read()=backend.wsgi.wsgiRequest.WsgiRequest-class.html#read,Method rhn.SSL.SSLSocket.read()=rhn.SSL.SSLSocket-class.html#read,Method rhn.nonblocking.NonBlockingFile.read()=rhn.nonblocking.NonBlockingFile-class.html#read,Method rhn.transports.File.read()=rhn.transports.File-class.html#read,Method rhn.transports.Input.read()=rhn.transports.Input-class.html#read,Method rhnpush.archive.ArchiveParser.read()=rhnpush.archive.ArchiveParser-class.html#read,Method src.jabber_lib.JabberClient.read()=src.jabber_lib.JabberClient-class.html#read"><a title="backend.wsgi.wsgiRequest.WsgiRequest.read
 rhn.SSL.SSLSocket.read
 rhn.nonblocking.NonBlockingFile.read
 rhn.transports.File.read
@@ -330,7 +333,7 @@ rhnpush.archive.ArchiveParser.read
 src.jabber_lib.JabberClient.read" class="py-name" href="#" onclick="return doclink('link-67', 'read', 'link-67');">read</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-68" class="py-name" targets="Method backend.server.config_common.base_templated_document.TemplatedDocument.strip()=backend.server.config_common.base_templated_document.TemplatedDocument-class.html#strip"><a title="backend.server.config_common.base_templated_document.TemplatedDocument.strip" class="py-name" href="#" onclick="return doclink('link-68', 'strip', 'link-68');">strip</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
 <a name="L168"></a><tt class="py-lineno">168</tt>  <tt class="py-line">    <tt class="py-keyword">finally</tt><tt class="py-op">:</tt> </tt>
 <a name="L169"></a><tt class="py-lineno">169</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">f</tt> <tt class="py-keyword">is</tt> <tt class="py-keyword">not</tt> <tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
-<a name="L170"></a><tt class="py-lineno">170</tt>  <tt class="py-line">            <tt class="py-name">f</tt><tt class="py-op">.</tt><tt id="link-69" class="py-name" targets="Method backend.common.rhnCache.ClosingZipFile.close()=backend.common.rhnCache.ClosingZipFile-class.html#close,Method backend.common.rhnCache.LockedFile.close()=backend.common.rhnCache.LockedFile-class.html#close,Method backend.satellite_exporter.handlers.non_auth_dumper.NonAuthenticatedDumper.close()=backend.satellite_exporter.handlers.non_auth_dumper.NonAuthenticatedDumper-class.html#close,Method backend.satellite_tools.connection.CompressedStream.close()=backend.satellite_tools.connection.CompressedStream-class.html#close,Method backend.satellite_tools.disk_dumper.dumper.CachedQueryIterator.close()=backend.satellite_tools.disk_dumper.dumper.CachedQueryIterator-class.html#close,Method backend.satellite_tools.disk_dumper.dumper.XML_Dumper.close()=backend.satellite_tools.disk_dumper.dumper.XML_Dumper-class.html#close,Method backend.satellite_tools.disk_dumper.iss.Dumper.close()=backend.satellite_tools.disk_dumper.iss.Dumper-class.html#close,Method backend.satellite_tools.disk_dumper.string_buffer.StringBuffer.close()=backend.satellite_tools.disk_dumper.string_buffer.StringBuffer-class.html#close,Method backend.satellite_tools.satsync.StreamProducer.close()=backend.satellite_tools.satsync.StreamProducer-class.html#close,Method backend.satellite_tools.sync_handlers.ContainerHandler.close()=backend.satellite_tools.sync_handlers.ContainerHandler-class.html#close,Method backend.satellite_tools.xmlSource.BaseDispatchHandler.close()=backend.satellite_tools.xmlSource.BaseDispatchHandler-class.html#close,Method backend.server.rhnSQL.driver_cx_Oracle.Database.close()=backend.server.rhnSQL.driver_cx_Oracle.Database-class.html#close,Method backend.server.rhnSQL.driver_postgresql.Cursor.close()=backend.server.rhnSQL.driver_postgresql.Cursor-class.html#close,Method backend.server.rhnSQL.sql_base.Database.close()=backend.server.rhnSQL.sql_base.Database-class.html#close,Method proxy.responseContext.ResponseContext.close()=proxy.responseContext.ResponseContext-class.html#close,Method rhn.SSL.SSLSocket.close()=rhn.SSL.SSLSocket-class.html#close,Method rhn.SSL.SSLSocket.close()=rhn.SSL.SSLSocket-class.html#close,Method rhn.rpclib.Server.close()=rhn.rpclib.Server-class.html#close,Method rhn.transports.BaseOutput.close()=rhn.transports.BaseOutput-class.html#close,Method up2date_client.rhnregGui.NetworkConfigDialog.close()=up2date_client.rhnregGui.NetworkConfigDialog-class.html#close"><a title="backend.common.rhnCache.ClosingZipFile.close
+<a name="L170"></a><tt class="py-lineno">170</tt>  <tt class="py-line">            <tt class="py-name">f</tt><tt class="py-op">.</tt><tt id="link-69" class="py-name" targets="Method backend.common.rhnCache.ClosingZipFile.close()=backend.common.rhnCache.ClosingZipFile-class.html#close,Method backend.common.rhnCache.LockedFile.close()=backend.common.rhnCache.LockedFile-class.html#close,Method backend.satellite_exporter.handlers.non_auth_dumper.NonAuthenticatedDumper.close()=backend.satellite_exporter.handlers.non_auth_dumper.NonAuthenticatedDumper-class.html#close,Method backend.satellite_tools.connection.CompressedStream.close()=backend.satellite_tools.connection.CompressedStream-class.html#close,Method backend.satellite_tools.disk_dumper.dumper.CachedQueryIterator.close()=backend.satellite_tools.disk_dumper.dumper.CachedQueryIterator-class.html#close,Method backend.satellite_tools.disk_dumper.dumper.XML_Dumper.close()=backend.satellite_tools.disk_dumper.dumper.XML_Dumper-class.html#close,Method backend.satellite_tools.disk_dumper.iss.Dumper.close()=backend.satellite_tools.disk_dumper.iss.Dumper-class.html#close,Method backend.satellite_tools.disk_dumper.string_buffer.StringBuffer.close()=backend.satellite_tools.disk_dumper.string_buffer.StringBuffer-class.html#close,Method backend.satellite_tools.satsync.StreamProducer.close()=backend.satellite_tools.satsync.StreamProducer-class.html#close,Method backend.satellite_tools.sync_handlers.ContainerHandler.close()=backend.satellite_tools.sync_handlers.ContainerHandler-class.html#close,Method backend.satellite_tools.xmlSource.BaseDispatchHandler.close()=backend.satellite_tools.xmlSource.BaseDispatchHandler-class.html#close,Method backend.server.rhnSQL.driver_cx_Oracle.Database.close()=backend.server.rhnSQL.driver_cx_Oracle.Database-class.html#close,Method backend.server.rhnSQL.driver_postgresql.Cursor.close()=backend.server.rhnSQL.driver_postgresql.Cursor-class.html#close,Method backend.server.rhnSQL.sql_base.Database.close()=backend.server.rhnSQL.sql_base.Database-class.html#close,Method proxy.responseContext.ResponseContext.close()=proxy.responseContext.ResponseContext-class.html#close,Method rhn.SSL.SSLSocket.close()=rhn.SSL.SSLSocket-class.html#close,Method rhn.rpclib.Server.close()=rhn.rpclib.Server-class.html#close,Method rhn.transports.BaseOutput.close()=rhn.transports.BaseOutput-class.html#close,Method up2date_client.rhnregGui.NetworkConfigDialog.close()=up2date_client.rhnregGui.NetworkConfigDialog-class.html#close"><a title="backend.common.rhnCache.ClosingZipFile.close
 backend.common.rhnCache.LockedFile.close
 backend.satellite_exporter.handlers.non_auth_dumper.NonAuthenticatedDumper.close
 backend.satellite_tools.connection.CompressedStream.close
@@ -345,7 +348,6 @@ backend.server.rhnSQL.driver_cx_Oracle.Database.close
 backend.server.rhnSQL.driver_postgresql.Cursor.close
 backend.server.rhnSQL.sql_base.Database.close
 proxy.responseContext.ResponseContext.close
-rhn.SSL.SSLSocket.close
 rhn.SSL.SSLSocket.close
 rhn.rpclib.Server.close
 rhn.transports.BaseOutput.close
@@ -482,7 +484,7 @@ expandto(location.href);
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Mon Apr  9 17:18:17 2018
+    Generated by Epydoc 3.0.1 on Tue Jan  8 16:14:27 2019
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

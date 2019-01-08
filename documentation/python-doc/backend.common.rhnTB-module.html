@@ -104,7 +104,7 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a name="print_env"></a><span class="summary-sig-name">print_env</span>(<span class="summary-sig-arg">fd</span>=<span class="summary-sig-default">sys.stderr</span>)</span><br />
+          <td><span class="summary-sig"><a name="print_env"></a><span class="summary-sig-name">print_env</span>(<span class="summary-sig-arg">fd</span>=<span class="summary-sig-default">sys.stdin</span>)</span><br />
       Dump the environment.</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="backend.common.rhnTB-pysrc.html#print_env">source&nbsp;code</a></span>
@@ -121,7 +121,7 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a name="print_locals"></a><span class="summary-sig-name">print_locals</span>(<span class="summary-sig-arg">fd</span>=<span class="summary-sig-default">sys.stderr</span>,
+          <td><span class="summary-sig"><a name="print_locals"></a><span class="summary-sig-name">print_locals</span>(<span class="summary-sig-arg">fd</span>=<span class="summary-sig-default">sys.stdin</span>,
         <span class="summary-sig-arg">tb</span>=<span class="summary-sig-default">None</span>)</span><br />
       Dump a listing of all local variables and their value for better 
       debugging chance.</td>
@@ -141,7 +141,7 @@
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
           <td><span class="summary-sig"><a name="print_req"></a><span class="summary-sig-name">print_req</span>(<span class="summary-sig-arg">req</span>,
-        <span class="summary-sig-arg">fd</span>=<span class="summary-sig-default">sys.stderr</span>)</span><br />
+        <span class="summary-sig-arg">fd</span>=<span class="summary-sig-default">sys.stdin</span>)</span><br />
       get some debugging information about the current exception for 
       sending out when we raise an exception</td>
           <td align="right" valign="top">
@@ -162,9 +162,9 @@
           <td><span class="summary-sig"><a href="backend.common.rhnTB-module.html#Traceback" class="summary-sig-name">Traceback</a>(<span class="summary-sig-arg">method</span>=<span class="summary-sig-default">None</span>,
         <span class="summary-sig-arg">req</span>=<span class="summary-sig-default">None</span>,
         <span class="summary-sig-arg">mail</span>=<span class="summary-sig-default">1</span>,
-        <span class="summary-sig-arg">ostream</span>=<span class="summary-sig-default">sys.stderr</span>,
+        <span class="summary-sig-arg">ostream</span>=<span class="summary-sig-default">sys.stdin</span>,
         <span class="summary-sig-arg">extra</span>=<span class="summary-sig-default">None</span>,
-        <span class="summary-sig-arg">severity</span>=<span class="summary-sig-default">&quot;notification&quot;</span>,
+        <span class="summary-sig-arg">severity</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">notification</code><code class="variable-quote">'</code></span>,
         <span class="summary-sig-arg">with_locals</span>=<span class="summary-sig-default">0</span>)</span><br />
       Reports an traceback error and optionally sends mail about it.</td>
           <td align="right" valign="top">
@@ -288,7 +288,7 @@
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="hostname"></a><span class="summary-name">hostname</span> = <code title="socket.gethostname()">socket.gethostname()</code>
+        <a name="hostname"></a><span class="summary-name">hostname</span> = <code title="'swm-lab01-vm03.lab.eng.brq.redhat.com'"><code class="variable-quote">'</code><code class="variable-string">swm-lab01-vm03.lab.eng.brq.redhat.com</code><code class="variable-quote">'</code></code>
     </td>
   </tr>
 <tr>
@@ -297,6 +297,13 @@
     </td><td class="summary">
         <a name="QUIET_MAIL"></a><span class="summary-name">QUIET_MAIL</span> = <code title="None">None</code><br />
       hash(x)
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__package__"></a><span class="summary-name">__package__</span> = <code title="'backend.common'"><code class="variable-quote">'</code><code class="variable-string">backend.common</code><code class="variable-quote">'</code></code>
     </td>
   </tr>
 </table>
@@ -328,9 +335,9 @@
   <h3 class="epydoc"><span class="sig"><span class="sig-name">Traceback</span>(<span class="sig-arg">method</span>=<span class="sig-default">None</span>,
         <span class="sig-arg">req</span>=<span class="sig-default">None</span>,
         <span class="sig-arg">mail</span>=<span class="sig-default">1</span>,
-        <span class="sig-arg">ostream</span>=<span class="sig-default">sys.stderr</span>,
+        <span class="sig-arg">ostream</span>=<span class="sig-default">sys.stdin</span>,
         <span class="sig-arg">extra</span>=<span class="sig-default">None</span>,
-        <span class="sig-arg">severity</span>=<span class="sig-default">&quot;notification&quot;</span>,
+        <span class="sig-arg">severity</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">notification</code><code class="variable-quote">'</code></span>,
         <span class="sig-arg">with_locals</span>=<span class="sig-default">0</span>)</span>
   </h3>
   </td><td align="right" valign="top"
@@ -368,7 +375,7 @@
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Mon Apr  9 17:17:41 2018
+    Generated by Epydoc 3.0.1 on Tue Jan  8 16:13:38 2019
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

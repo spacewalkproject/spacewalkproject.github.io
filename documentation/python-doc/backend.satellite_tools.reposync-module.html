@@ -82,6 +82,20 @@
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
+        <a href="backend.satellite_tools.reposync.KSDirHtmlParser-class.html" class="summary-name">KSDirHtmlParser</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="backend.satellite_tools.reposync.KSDirLocalParser-class.html" class="summary-name">KSDirLocalParser</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
         <a href="backend.satellite_tools.reposync.TreeInfoError-class.html" class="summary-name">TreeInfoError</a>
     </td>
   </tr>
@@ -123,7 +137,7 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a name="send_mail"></a><span class="summary-sig-name">send_mail</span>(<span class="summary-sig-arg">sync_type</span>=<span class="summary-sig-default">&quot;Repo&quot;</span>)</span><br />
+          <td><span class="summary-sig"><a name="send_mail"></a><span class="summary-sig-name">send_mail</span>(<span class="summary-sig-arg">sync_type</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">Repo</code><code class="variable-quote">'</code></span>)</span><br />
       Send email summary</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="backend.satellite_tools.reposync-pysrc.html#send_mail">source&nbsp;code</a></span>
@@ -283,35 +297,28 @@
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="_"></a><span class="summary-name">_</span> = <code title="translation.ugettext">translation.ugettext</code>
+        <a name="default_log_location"></a><span class="summary-name">default_log_location</span> = <code title="'/var/log/rhn/'"><code class="variable-quote">'</code><code class="variable-string">/var/log/rhn/</code><code class="variable-quote">'</code></code>
     </td>
   </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="default_log_location"></a><span class="summary-name">default_log_location</span> = <code title="'/var/log/rhn/'">'/var/log/rhn/'</code>
+        <a name="relative_comps_dir"></a><span class="summary-name">relative_comps_dir</span> = <code title="'rhn/comps'"><code class="variable-quote">'</code><code class="variable-string">rhn/comps</code><code class="variable-quote">'</code></code>
     </td>
   </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="relative_comps_dir"></a><span class="summary-name">relative_comps_dir</span> = <code title="'rhn/comps'">'rhn/comps'</code>
+        <a name="relative_modules_dir"></a><span class="summary-name">relative_modules_dir</span> = <code title="'rhn/modules'"><code class="variable-quote">'</code><code class="variable-string">rhn/modules</code><code class="variable-quote">'</code></code>
     </td>
   </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="relative_modules_dir"></a><span class="summary-name">relative_modules_dir</span> = <code title="'rhn/modules'">'rhn/modules'</code>
-    </td>
-  </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-        <a name="checksum_cache_filename"></a><span class="summary-name">checksum_cache_filename</span> = <code title="'reposync/checksum_cache'">'reposync/checksum_cache'</code>
+        <a name="checksum_cache_filename"></a><span class="summary-name">checksum_cache_filename</span> = <code title="'reposync/checksum_cache'"><code class="variable-quote">'</code><code class="variable-string">reposync/checksum_cache</code><code class="variable-quote">'</code></code>
     </td>
   </tr>
 <tr>
@@ -325,10 +332,19 @@
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.satellite_tools.reposync-module.html#errata_typemap" class="summary-name">errata_typemap</a> = <code title="{'security': 'Security Advisory', 'recommended': 'Bug Fix Advisory', '\
-bugfix': 'Bug Fix Advisory', 'optional': 'Product Enhancement Advisory\
-', 'feature': 'Product Enhancement Advisory', 'enhancement': 'Product \
-Enhancement Advisory'}">{'security': 'Security Advisory', 'recommende<code class="variable-ellipsis">...</code></code>
+        <a href="backend.satellite_tools.reposync-module.html#errata_typemap" class="summary-name">errata_typemap</a> = <code title="{'bugfix': 'Bug Fix Advisory',
+ 'enhancement': 'Product Enhancement Advisory',
+ 'feature': 'Product Enhancement Advisory',
+ 'optional': 'Product Enhancement Advisory',
+ 'recommended': 'Bug Fix Advisory',
+ 'security': 'Security Advisory'}"><code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">bugfix</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">Bug Fix Advisory</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">enhancement</code><code class="variable-quote">'</code><code class="variable-op">:</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__package__"></a><span class="summary-name">__package__</span> = <code title="'backend.satellite_tools'"><code class="variable-quote">'</code><code class="variable-string">backend.satellite_tools</code><code class="variable-quote">'</code></code>
     </td>
   </tr>
 </table>
@@ -380,10 +396,12 @@ gettext.translation('spacewalk-backend-server', fallback= True)
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-{'security': 'Security Advisory', 'recommended': 'Bug Fix Advisory', '<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
-bugfix': 'Bug Fix Advisory', 'optional': 'Product Enhancement Advisory<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
-', 'feature': 'Product Enhancement Advisory', 'enhancement': 'Product <span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
-Enhancement Advisory'}
+<code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">bugfix</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">Bug Fix Advisory</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">enhancement</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">Product Enhancement Advisory</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">feature</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">Product Enhancement Advisory</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">optional</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">Product Enhancement Advisory</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">recommended</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">Bug Fix Advisory</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">security</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">Security Advisory</code><code class="variable-quote">'</code><code class="variable-group">}</code>
 </pre></td></tr></table>
 </dd>
   </dl>
@@ -413,7 +431,7 @@ Enhancement Advisory'}
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Mon Apr  9 17:17:41 2018
+    Generated by Epydoc 3.0.1 on Tue Jan  8 16:13:38 2019
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

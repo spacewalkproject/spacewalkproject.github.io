@@ -563,245 +563,263 @@
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.rhnServer.server_kickstart-module.html#_query_update_ks_session_table" class="summary-name" onclick="show_private();">_query_update_ks_session_table</a> = <code title="rhnSQL.Statement(&quot;&quot;&quot;
+        <a href="backend.server.rhnServer.server_kickstart-module.html#_query_update_ks_session_table" class="summary-name" onclick="show_private();">_query_update_ks_session_table</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765488380\
+8; statement=
     update rhnKickstartSession
        set action_id = :action_id,
            state_id = :ks_status_id,
            new_server_id = :server_id
      where id = :ks_session_id
-&quot;&quot;&quot;)">rhnSQL.Statement(<code class="variable-ellipsis">...</code></code>
+">&lt;spacewalk.server.rhnSQL.sql_<code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 <tr class="private">
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.rhnServer.server_kickstart-module.html#_query_lookup_guests_for_host" class="summary-name" onclick="show_private();">_query_lookup_guests_for_host</a> = <code title="rhnSQL.Statement(&quot;&quot;&quot;
+        <a href="backend.server.rhnServer.server_kickstart-module.html#_query_lookup_guests_for_host" class="summary-name" onclick="show_private();">_query_lookup_guests_for_host</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765488395\
+2; statement=
     select virtual_system_id from rhnVirtualInstance
         where host_system_id = :server_id
-&quot;&quot;&quot;)">rhnSQL.Statement(<code class="variable-ellipsis">...</code></code>
+">&lt;spacewalk.server.rhnSQL.sql_b<code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 <tr class="private">
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.rhnServer.server_kickstart-module.html#_query_delete_virtual_instances" class="summary-name" onclick="show_private();">_query_delete_virtual_instances</a> = <code title="rhnSQL.Statement(&quot;&quot;&quot;
+        <a href="backend.server.rhnServer.server_kickstart-module.html#_query_delete_virtual_instances" class="summary-name" onclick="show_private();">_query_delete_virtual_instances</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765488402\
+4; statement=
     delete from rhnVirtualInstance where host_system_id = :server_id
-&quot;&quot;&quot;)">rhnSQL.Statement(<code class="variable-ellipsis">...</code></code>
+">&lt;spacewalk.server.rhnSQL.sql<code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 <tr class="private">
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.rhnServer.server_kickstart-module.html#_query_get_next_action_id" class="summary-name" onclick="show_private();">_query_get_next_action_id</a> = <code title="rhnSQL.Statement(&quot;&quot;&quot;
+        <a href="backend.server.rhnServer.server_kickstart-module.html#_query_get_next_action_id" class="summary-name" onclick="show_private();">_query_get_next_action_id</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765488409\
+6; statement=
     select a.id
       from rhnAction a, rhnActionType at
      where a.prerequisite = :action_id
        and a.action_type = at.id
        and at.label = :next_action_type
-&quot;&quot;&quot;)">rhnSQL.Statement(<code class="variable-ellipsis">...</code></code>
+">&lt;spacewalk.server.rhnSQL.sql_base.<code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 <tr class="private">
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.rhnServer.server_kickstart-module.html#_query_lookup_kickstart_session_id" class="summary-name" onclick="show_private();">_query_lookup_kickstart_session_id</a> = <code title="rhnSQL.Statement(&quot;&quot;&quot;
+        <a href="backend.server.rhnServer.server_kickstart-module.html#_query_lookup_kickstart_session_id" class="summary-name" onclick="show_private();">_query_lookup_kickstart_session_id</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765488416\
+8; statement=
     select ks.id
       from rhnKickstartSession ks
      where (
              (ks.old_server_id = :server_id and ks.new_server_id is NU\
 LL)
              or ks.new_server_id = :server_id
-             or ks.host_server_id = :server_id
-...">rhnSQL.Statement(<code class="variable-ellipsis">...</code></code>
+...">&lt;spacewalk.server.rhnSQL.<code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 <tr class="private">
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.rhnServer.server_kickstart-module.html#_query_insert_package_delta" class="summary-name" onclick="show_private();">_query_insert_package_delta</a> = <code title="rhnSQL.Statement(&quot;&quot;&quot;
+        <a href="backend.server.rhnServer.server_kickstart-module.html#_query_insert_package_delta" class="summary-name" onclick="show_private();">_query_insert_package_delta</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765488424\
+0; statement=
     insert into rhnPackageDelta (id, label)
     values (:package_delta_id, 'ks-delta-' || :package_delta_id)
-&quot;&quot;&quot;)">rhnSQL.Statement(<code class="variable-ellipsis">...</code></code>
+">&lt;spacewalk.server.rhnSQL.sql_bas<code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 <tr class="private">
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.rhnServer.server_kickstart-module.html#_query_insert_action_package_delta" class="summary-name" onclick="show_private();">_query_insert_action_package_delta</a> = <code title="rhnSQL.Statement(&quot;&quot;&quot;
+        <a href="backend.server.rhnServer.server_kickstart-module.html#_query_insert_action_package_delta" class="summary-name" onclick="show_private();">_query_insert_action_package_delta</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765488431\
+2; statement=
     insert into rhnActionPackageDelta (action_id, package_delta_id)
     values (:action_id, :package_delta_id)
-&quot;&quot;&quot;)">rhnSQL.Statement(<code class="variable-ellipsis">...</code></code>
+">&lt;spacewalk.server.rhnSQL.<code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 <tr class="private">
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.rhnServer.server_kickstart-module.html#_query_insert_package_delta_element" class="summary-name" onclick="show_private();">_query_insert_package_delta_element</a> = <code title="rhnSQL.Statement(&quot;&quot;&quot;
+        <a href="backend.server.rhnServer.server_kickstart-module.html#_query_insert_package_delta_element" class="summary-name" onclick="show_private();">_query_insert_package_delta_element</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765488438\
+4; statement=
     insert into rhnPackageDeltaElement
            (package_delta_id, transaction_package_id)
     values
            (:package_delta_id,
             lookup_transaction_package(:operation, :n, :e, :v, :r, :a)\
 )
-&quot;&quot;&quot;)">rhnSQL.Statement(<code class="variable-ellipsis">...</code></code>
+...">&lt;spacewalk.server.rhnSQL<code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 <tr class="private">
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.rhnServer.server_kickstart-module.html#_query_ak_deploy_config" class="summary-name" onclick="show_private();">_query_ak_deploy_config</a> = <code title="rhnSQL.Statement(&quot;&quot;&quot;
+        <a href="backend.server.rhnServer.server_kickstart-module.html#_query_ak_deploy_config" class="summary-name" onclick="show_private();">_query_ak_deploy_config</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765488445\
+6; statement=
 select rt.deploy_configs
   from rhnKickstartSession ks,
        rhnKickstartDefaultRegToken kdrt,
        rhnRegToken rt
  where ks.kickstart_id = kdrt.kickstart_id
    and kdrt.regtoken_id = rt.id
-   and ks.id = :session_id
-...">rhnSQL.Statement(<code class="variable-ellipsis">...</code></code>
+...">&lt;spacewalk.server.rhnSQL.sql_base.St<code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 <tr class="private">
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.rhnServer.server_kickstart-module.html#_query_schedule_config_files" class="summary-name" onclick="show_private();">_query_schedule_config_files</a> = <code title="rhnSQL.Statement(&quot;&quot;&quot;
+        <a href="backend.server.rhnServer.server_kickstart-module.html#_query_schedule_config_files" class="summary-name" onclick="show_private();">_query_schedule_config_files</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765488452\
+8; statement=
     insert into rhnActionConfigRevision
            (id, action_id, server_id, config_revision_id)
     select sequence_nextval('rhn_actioncr_id_seq'), :action_id,
            server_id, config_revision_id
       from (
             select distinct scc.server_id,
-                   cf.latest_config_revision_id config_revision_id
-...">rhnSQL.Statement(<code class="variable-ellipsis">...</code></code>
+...">&lt;spacewalk.server.rhnSQL.sql_ba<code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 <tr class="private">
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.rhnServer.server_kickstart-module.html#_query_lookup_subscribed_server_channels" class="summary-name" onclick="show_private();">_query_lookup_subscribed_server_channels</a> = <code title="rhnSQL.Statement(&quot;&quot;&quot;
+        <a href="backend.server.rhnServer.server_kickstart-module.html#_query_lookup_subscribed_server_channels" class="summary-name" onclick="show_private();">_query_lookup_subscribed_server_channels</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765488467\
+2; statement=
     select sc.channel_id,
            case when c.parent_channel is not null then 0 else 1 end is\
 _base_channel
       from rhnServerChannel sc, rhnChannel c
      where sc.server_id = :server_id
        and sc.channel_id = c.id
-&quot;&quot;&quot;)">rhnSQL.Statement(<code class="variable-ellipsis">...</code></code>
+...">&lt;spacewalk.server.r<code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 <tr class="private">
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.rhnServer.server_kickstart-module.html#_query_lookup_unsubscribed_server_channels" class="summary-name" onclick="show_private();">_query_lookup_unsubscribed_server_channels</a> = <code title="rhnSQL.Statement(&quot;&quot;&quot;
+        <a href="backend.server.rhnServer.server_kickstart-module.html#_query_lookup_unsubscribed_server_channels" class="summary-name" onclick="show_private();">_query_lookup_unsubscribed_server_channels</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765488474\
+4; statement=
 select c.id
   from
       -- Get all the channels available to this org
       ( select cfm.channel_id
           from rhnChannelFamilyMembers cfm,
                rhnPrivateChannelFamily pcf
-         where pcf.org_id = :org_id
-...">rhnSQL.Statement(<code class="variable-ellipsis">...</code></code>
+...">&lt;spacewalk.server<code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 <tr class="private">
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.rhnServer.server_kickstart-module.html#_query_channel_provides_capability" class="summary-name" onclick="show_private();">_query_channel_provides_capability</a> = <code title="rhnSQL.Statement(&quot;&quot;&quot;
+        <a href="backend.server.rhnServer.server_kickstart-module.html#_query_channel_provides_capability" class="summary-name" onclick="show_private();">_query_channel_provides_capability</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765488481\
+6; statement=
     select distinct pp.package_id, pn.name, pe.version, pe.release, pe\
 .epoch
       from rhnChannelNewestPackage cnp,
            rhnPackageProvides pp,
            rhnPackageCapability pc,
            rhnPackageName pn,
-           rhnPackageEVR pe
-...">rhnSQL.Statement(<code class="variable-ellipsis">...</code></code>
+...">&lt;spacewalk.server.rhnSQL.<code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 <tr class="private">
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.rhnServer.server_kickstart-module.html#_query_insert_action_packages" class="summary-name" onclick="show_private();">_query_insert_action_packages</a> = <code title="rhnSQL.Statement(&quot;&quot;&quot;
+        <a href="backend.server.rhnServer.server_kickstart-module.html#_query_insert_action_packages" class="summary-name" onclick="show_private();">_query_insert_action_packages</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765488488\
+8; statement=
     insert into rhnActionPackage
            (id, action_id, name_id, evr_id, package_arch_id, parameter\
 )
     select sequence_nextval('rhn_act_p_id_seq'), :action_id, name_id, \
 evr_id,
            package_arch_id, 'upgrade'
-      from rhnPackage
-...">rhnSQL.Statement(<code class="variable-ellipsis">...</code></code>
+...">&lt;spacewalk.server.rhnSQL.sql_b<code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 <tr class="private">
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.rhnServer.server_kickstart-module.html#_query_lookup_pending_kickstart_sessions" class="summary-name" onclick="show_private();">_query_lookup_pending_kickstart_sessions</a> = <code title="rhnSQL.Statement(&quot;&quot;&quot;
+        <a href="backend.server.rhnServer.server_kickstart-module.html#_query_lookup_pending_kickstart_sessions" class="summary-name" onclick="show_private();">_query_lookup_pending_kickstart_sessions</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765488496\
+0; statement=
     select ks.id, ks.action_id, NULL other_server_id
       from rhnKickstartSessionState kss,
            rhnKickstartSession ks
      where (
              (ks.old_server_id = :server_id and ks.new_server_id is nu\
 ll)
-             or ks.new_server_id = :server_id
-...">rhnSQL.Statement(<code class="variable-ellipsis">...</code></code>
+...">&lt;spacewalk.server.r<code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 <tr class="private">
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.rhnServer.server_kickstart-module.html#_query_terminate_pending_kickstart_sessions" class="summary-name" onclick="show_private();">_query_terminate_pending_kickstart_sessions</a> = <code title="rhnSQL.Statement(&quot;&quot;&quot;
+        <a href="backend.server.rhnServer.server_kickstart-module.html#_query_terminate_pending_kickstart_sessions" class="summary-name" onclick="show_private();">_query_terminate_pending_kickstart_sessions</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765488503\
+2; statement=
     update rhnKickstartSession
        set action_id = NULL,
            state_id = :state_id
      where id = :kickstart_session_id
-&quot;&quot;&quot;)">rhnSQL.Statement<code class="variable-ellipsis">...</code></code>
+">&lt;spacewalk.serve<code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 <tr class="private">
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.rhnServer.server_kickstart-module.html#_query_get_kickstart_session_info" class="summary-name" onclick="show_private();">_query_get_kickstart_session_info</a> = <code title="rhnSQL.Statement(&quot;&quot;&quot;
+        <a href="backend.server.rhnServer.server_kickstart-module.html#_query_get_kickstart_session_info" class="summary-name" onclick="show_private();">_query_get_kickstart_session_info</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765488510\
+4; statement=
     select org_id, scheduler, deploy_configs, virtualization_type
       from rhnKickstartSession
      where id = :kickstart_session_id
-&quot;&quot;&quot;)">rhnSQL.Statement(<code class="variable-ellipsis">...</code></code>
+">&lt;spacewalk.server.rhnSQL.s<code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 <tr class="private">
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.rhnServer.server_kickstart-module.html#_query_lookup_ks_server_profile" class="summary-name" onclick="show_private();">_query_lookup_ks_server_profile</a> = <code title="rhnSQL.Statement(&quot;&quot;&quot;
+        <a href="backend.server.rhnServer.server_kickstart-module.html#_query_lookup_ks_server_profile" class="summary-name" onclick="show_private();">_query_lookup_ks_server_profile</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765488517\
+6; statement=
     select kss.server_profile_id
       from rhnServerProfileType spt,
            rhnServerProfile sp,
            rhnKickstartSession kss
      where kss.id = :ks_session_id
        and kss.server_profile_id = sp.id
-       and sp.profile_type_id = spt.id
-...">rhnSQL.Statement(<code class="variable-ellipsis">...</code></code>
+...">&lt;spacewalk.server.rhnSQL.sql<code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 <tr class="private">
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.rhnServer.server_kickstart-module.html#_query_delete_server_profile" class="summary-name" onclick="show_private();">_query_delete_server_profile</a> = <code title="rhnSQL.Statement(&quot;&quot;&quot;
+        <a href="backend.server.rhnServer.server_kickstart-module.html#_query_delete_server_profile" class="summary-name" onclick="show_private();">_query_delete_server_profile</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765488524\
+8; statement=
     delete from rhnServerProfile where id = :server_profile_id
-&quot;&quot;&quot;)">rhnSQL.Statement(<code class="variable-ellipsis">...</code></code>
+">&lt;spacewalk.server.rhnSQL.sql_ba<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__package__"></a><span class="summary-name">__package__</span> = <code title="'backend.server.rhnServer'"><code class="variable-quote">'</code><code class="variable-string">backend.server.rhnServer</code><code class="variable-quote">'</code></code>
     </td>
   </tr>
 </table>
@@ -835,13 +853,14 @@ ll)
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-rhnSQL.Statement(&quot;&quot;&quot;
+&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765488380<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+8; statement=
     update rhnKickstartSession
        set action_id = :action_id,
            state_id = :ks_status_id,
            new_server_id = :server_id
      where id = :ks_session_id
-&quot;&quot;&quot;)
+
 </pre></td></tr></table>
 </dd>
   </dl>
@@ -859,10 +878,11 @@ rhnSQL.Statement(&quot;&quot;&quot;
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-rhnSQL.Statement(&quot;&quot;&quot;
+&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765488395<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+2; statement=
     select virtual_system_id from rhnVirtualInstance
         where host_system_id = :server_id
-&quot;&quot;&quot;)
+
 </pre></td></tr></table>
 </dd>
   </dl>
@@ -880,9 +900,10 @@ rhnSQL.Statement(&quot;&quot;&quot;
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-rhnSQL.Statement(&quot;&quot;&quot;
+&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765488402<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+4; statement=
     delete from rhnVirtualInstance where host_system_id = :server_id
-&quot;&quot;&quot;)
+
 </pre></td></tr></table>
 </dd>
   </dl>
@@ -900,13 +921,14 @@ rhnSQL.Statement(&quot;&quot;&quot;
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-rhnSQL.Statement(&quot;&quot;&quot;
+&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765488409<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+6; statement=
     select a.id
       from rhnAction a, rhnActionType at
      where a.prerequisite = :action_id
        and a.action_type = at.id
        and at.label = :next_action_type
-&quot;&quot;&quot;)
+
 </pre></td></tr></table>
 </dd>
   </dl>
@@ -924,14 +946,14 @@ rhnSQL.Statement(&quot;&quot;&quot;
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-rhnSQL.Statement(&quot;&quot;&quot;
+&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765488416<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+8; statement=
     select ks.id
       from rhnKickstartSession ks
      where (
              (ks.old_server_id = :server_id and ks.new_server_id is NU<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
 LL)
              or ks.new_server_id = :server_id
-             or ks.host_server_id = :server_id
 <code class="variable-ellipsis">...</code>
 </pre></td></tr></table>
 </dd>
@@ -950,10 +972,11 @@ LL)
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-rhnSQL.Statement(&quot;&quot;&quot;
+&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765488424<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+0; statement=
     insert into rhnPackageDelta (id, label)
     values (:package_delta_id, 'ks-delta-' || :package_delta_id)
-&quot;&quot;&quot;)
+
 </pre></td></tr></table>
 </dd>
   </dl>
@@ -971,10 +994,11 @@ rhnSQL.Statement(&quot;&quot;&quot;
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-rhnSQL.Statement(&quot;&quot;&quot;
+&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765488431<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+2; statement=
     insert into rhnActionPackageDelta (action_id, package_delta_id)
     values (:action_id, :package_delta_id)
-&quot;&quot;&quot;)
+
 </pre></td></tr></table>
 </dd>
   </dl>
@@ -992,14 +1016,15 @@ rhnSQL.Statement(&quot;&quot;&quot;
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-rhnSQL.Statement(&quot;&quot;&quot;
+&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765488438<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+4; statement=
     insert into rhnPackageDeltaElement
            (package_delta_id, transaction_package_id)
     values
            (:package_delta_id,
             lookup_transaction_package(:operation, :n, :e, :v, :r, :a)<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
 )
-&quot;&quot;&quot;)
+<code class="variable-ellipsis">...</code>
 </pre></td></tr></table>
 </dd>
   </dl>
@@ -1017,14 +1042,14 @@ rhnSQL.Statement(&quot;&quot;&quot;
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-rhnSQL.Statement(&quot;&quot;&quot;
+&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765488445<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+6; statement=
 select rt.deploy_configs
   from rhnKickstartSession ks,
        rhnKickstartDefaultRegToken kdrt,
        rhnRegToken rt
  where ks.kickstart_id = kdrt.kickstart_id
    and kdrt.regtoken_id = rt.id
-   and ks.id = :session_id
 <code class="variable-ellipsis">...</code>
 </pre></td></tr></table>
 </dd>
@@ -1043,14 +1068,14 @@ select rt.deploy_configs
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-rhnSQL.Statement(&quot;&quot;&quot;
+&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765488452<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+8; statement=
     insert into rhnActionConfigRevision
            (id, action_id, server_id, config_revision_id)
     select sequence_nextval('rhn_actioncr_id_seq'), :action_id,
            server_id, config_revision_id
       from (
             select distinct scc.server_id,
-                   cf.latest_config_revision_id config_revision_id
 <code class="variable-ellipsis">...</code>
 </pre></td></tr></table>
 </dd>
@@ -1069,14 +1094,15 @@ rhnSQL.Statement(&quot;&quot;&quot;
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-rhnSQL.Statement(&quot;&quot;&quot;
+&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765488467<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+2; statement=
     select sc.channel_id,
            case when c.parent_channel is not null then 0 else 1 end is<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
 _base_channel
       from rhnServerChannel sc, rhnChannel c
      where sc.server_id = :server_id
        and sc.channel_id = c.id
-&quot;&quot;&quot;)
+<code class="variable-ellipsis">...</code>
 </pre></td></tr></table>
 </dd>
   </dl>
@@ -1094,14 +1120,14 @@ _base_channel
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-rhnSQL.Statement(&quot;&quot;&quot;
+&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765488474<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+4; statement=
 select c.id
   from
       -- Get all the channels available to this org
       ( select cfm.channel_id
           from rhnChannelFamilyMembers cfm,
                rhnPrivateChannelFamily pcf
-         where pcf.org_id = :org_id
 <code class="variable-ellipsis">...</code>
 </pre></td></tr></table>
 </dd>
@@ -1120,14 +1146,14 @@ select c.id
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-rhnSQL.Statement(&quot;&quot;&quot;
+&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765488481<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+6; statement=
     select distinct pp.package_id, pn.name, pe.version, pe.release, pe<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
 .epoch
       from rhnChannelNewestPackage cnp,
            rhnPackageProvides pp,
            rhnPackageCapability pc,
            rhnPackageName pn,
-           rhnPackageEVR pe
 <code class="variable-ellipsis">...</code>
 </pre></td></tr></table>
 </dd>
@@ -1146,14 +1172,14 @@ rhnSQL.Statement(&quot;&quot;&quot;
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-rhnSQL.Statement(&quot;&quot;&quot;
+&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765488488<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+8; statement=
     insert into rhnActionPackage
            (id, action_id, name_id, evr_id, package_arch_id, parameter<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
 )
     select sequence_nextval('rhn_act_p_id_seq'), :action_id, name_id, <span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
 evr_id,
            package_arch_id, 'upgrade'
-      from rhnPackage
 <code class="variable-ellipsis">...</code>
 </pre></td></tr></table>
 </dd>
@@ -1172,14 +1198,14 @@ evr_id,
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-rhnSQL.Statement(&quot;&quot;&quot;
+&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765488496<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+0; statement=
     select ks.id, ks.action_id, NULL other_server_id
       from rhnKickstartSessionState kss,
            rhnKickstartSession ks
      where (
              (ks.old_server_id = :server_id and ks.new_server_id is nu<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
 ll)
-             or ks.new_server_id = :server_id
 <code class="variable-ellipsis">...</code>
 </pre></td></tr></table>
 </dd>
@@ -1198,12 +1224,13 @@ ll)
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-rhnSQL.Statement(&quot;&quot;&quot;
+&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765488503<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+2; statement=
     update rhnKickstartSession
        set action_id = NULL,
            state_id = :state_id
      where id = :kickstart_session_id
-&quot;&quot;&quot;)
+
 </pre></td></tr></table>
 </dd>
   </dl>
@@ -1221,11 +1248,12 @@ rhnSQL.Statement(&quot;&quot;&quot;
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-rhnSQL.Statement(&quot;&quot;&quot;
+&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765488510<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+4; statement=
     select org_id, scheduler, deploy_configs, virtualization_type
       from rhnKickstartSession
      where id = :kickstart_session_id
-&quot;&quot;&quot;)
+
 </pre></td></tr></table>
 </dd>
   </dl>
@@ -1243,14 +1271,14 @@ rhnSQL.Statement(&quot;&quot;&quot;
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-rhnSQL.Statement(&quot;&quot;&quot;
+&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765488517<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+6; statement=
     select kss.server_profile_id
       from rhnServerProfileType spt,
            rhnServerProfile sp,
            rhnKickstartSession kss
      where kss.id = :ks_session_id
        and kss.server_profile_id = sp.id
-       and sp.profile_type_id = spt.id
 <code class="variable-ellipsis">...</code>
 </pre></td></tr></table>
 </dd>
@@ -1269,9 +1297,10 @@ rhnSQL.Statement(&quot;&quot;&quot;
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-rhnSQL.Statement(&quot;&quot;&quot;
+&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765488524<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+8; statement=
     delete from rhnServerProfile where id = :server_profile_id
-&quot;&quot;&quot;)
+
 </pre></td></tr></table>
 </dd>
   </dl>
@@ -1301,7 +1330,7 @@ rhnSQL.Statement(&quot;&quot;&quot;
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Mon Apr  9 17:17:42 2018
+    Generated by Epydoc 3.0.1 on Tue Jan  8 16:13:38 2019
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"
