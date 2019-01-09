@@ -1,0 +1,6 @@
+<area shape="rect" id="node1" href="table-RHNSERVERCHANNELARCHCOMPAT.html#t-fk" title="RHNSERVERCHANNELARCHCOMPAT" alt="" coords="373,36,625,63">
+<area shape="rect" id="node2" href="table-RHNSERVERARCH.html#t-fk" title="RHNSERVERARCH" alt="" coords="172,112,308,139">
+<area shape="rect" id="node3" href="table-RHNSERVER.html#t-fk" title="RHNSERVER" alt="" coords="449,87,550,113">
+<area shape="rect" id="node5" href="table-RHNSERVERPACKAGEARCHCOMPAT.html#t-fk" title="RHNSERVERPACKAGEARCHCOMPAT" alt="" coords="374,137,625,164">
+<area shape="rect" id="node6" href="table-RHNSERVERSERVERGROUPARCHCOMPAT.html#t-fk" title="RHNSERVERSERVERGROUPARCHCOMPAT" alt="" coords="356,188,643,215">
+<area shape="rect" id="node4" href="table-RHNARCHTYPE.html#t-fk" title="RHNARCHTYPE" alt="" coords="5,112,124,139">

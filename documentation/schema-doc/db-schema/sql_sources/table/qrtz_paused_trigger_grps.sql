@@ -1,0 +1,7 @@
+-- created by Oraschemadoc Wed Jan  9 15:06:52 2019
+-- visit http://www.yarpen.cz/oraschemadoc/ for more info
+
+  CREATE TABLE "SPACEUSER"."QRTZ_PAUSED_TRIGGER_GRPS"
+   (	"TRIGGER_GROUP" VARCHAR2(200) NOT NULL ENABLE
+   ) ;
+  ALTER TABLE "SPACEUSER"."QRTZ_PAUSED_TRIGGER_GRPS" ADD PRIMARY KEY ("TRIGGER_GROUP") ENABLE;

@@ -1,0 +1,6 @@
+<area shape="rect" id="node1" href="table-RHNACTIONKICKSTARTFILELIST.html#t-fk" title="RHNACTIONKICKSTARTFILELIST" alt="" coords="345,36,571,63">
+<area shape="rect" id="node2" href="table-WEB_CUSTOMER.html#t-fk" title="WEB_CUSTOMER" alt="" coords="5,112,137,139">
+<area shape="rect" id="node5" href="table-RHNFILELIST.html#t-fk" title="RHNFILELIST" alt="" coords="185,112,289,139">
+<area shape="rect" id="node3" href="table-RHNKICKSTARTPRESERVEFILELIST.html#t-fk" title="RHNKICKSTARTPRESERVEFILELIST" alt="" coords="337,87,579,113">
+<area shape="rect" id="node4" href="table-RHNFILELISTMEMBERS.html#t-fk" title="RHNFILELISTMEMBERS" alt="" coords="374,137,542,164">
+<area shape="rect" id="node6" href="table-RHNSERVERPRESERVEFILELIST.html#t-fk" title="RHNSERVERPRESERVEFILELIST" alt="" coords="348,188,568,215">

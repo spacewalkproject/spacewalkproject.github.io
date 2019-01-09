@@ -1,0 +1,5 @@
+<area shape="rect" id="node1" href="table-RHNSERVERACTION.html#t-fk" title="RHNSERVERACTION" alt="" coords="12,36,163,63">
+<area shape="rect" id="node4" href="table-RHNACTIONCONFIGCHANNEL.html#t-fk" title="RHNACTIONCONFIGCHANNEL" alt="" coords="217,112,432,139">
+<area shape="rect" id="node2" href="table-RHNACTION.html#t-fk" title="RHNACTION" alt="" coords="37,87,138,113">
+<area shape="rect" id="node3" href="table-RHNSERVER.html#t-fk" title="RHNSERVER" alt="" coords="37,137,138,164">
+<area shape="rect" id="node5" href="table-RHNCONFIGCHANNEL.html#t-fk" title="RHNCONFIGCHANNEL" alt="" coords="5,188,169,215">

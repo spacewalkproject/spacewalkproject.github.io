@@ -1,8 +1,0 @@
--- created by Oraschemadoc Wed Apr 11 12:22:52 2018
--- visit http://www.yarpen.cz/oraschemadoc/ for more info
-
-  CREATE OR REPLACE FORCE VIEW "SPACEUSER"."RHNVISIBLESERVERGROUP" ("ID", "NAME", "DESCRIPTION", "CURRENT_MEMBERS", "GROUP_TYPE", "ORG_ID", "CREATED", "MODIFIED") AS 
-  SELECT "ID","NAME","DESCRIPTION","CURRENT_MEMBERS","GROUP_TYPE","ORG_ID","CREATED","MODIFIED"
-    FROM rhnServerGroup SG
-   WHERE SG.group_type IS NULL
-/

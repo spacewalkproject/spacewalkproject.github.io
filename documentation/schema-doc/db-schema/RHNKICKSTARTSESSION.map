@@ -1,0 +1,14 @@
+<area shape="rect" id="node1" href="table-RHNKICKSTARTSESSIONHISTORY.html#t-fk" title="RHNKICKSTARTSESSIONHISTORY" alt="" coords="551,112,785,139">
+<area shape="rect" id="node2" href="table-RHNKICKSTARTSESSION.html#t-fk" title="RHNKICKSTARTSESSION" alt="" coords="316,188,495,215">
+<area shape="rect" id="node3" href="table-RHNACTIVATIONKEY.html#t-fk" title="RHNACTIVATIONKEY" alt="" coords="591,163,745,189">
+<area shape="rect" id="node13" href="table-RHNVIRTUALINSTANCEINSTALLLOG.html#t-fk" title="RHNVIRTUALINSTANCEINSTALLLOG" alt="" coords="543,213,793,240">
+<area shape="rect" id="node14" href="table-RHNACTIONKICKSTARTGUEST.html#t-fk" title="RHNACTIONKICKSTARTGUEST" alt="" coords="560,264,776,291">
+<area shape="rect" id="node4" href="table-WEB_CUSTOMER.html#t-fk" title="WEB_CUSTOMER" alt="" coords="71,36,203,63">
+<area shape="rect" id="node5" href="table-RHNKICKSTARTABLETREE.html#t-fk" title="RHNKICKSTARTABLETREE" alt="" coords="43,87,230,113">
+<area shape="rect" id="node6" href="table-RHNSERVER.html#t-fk" title="RHNSERVER" alt="" coords="86,137,187,164">
+<area shape="rect" id="node7" href="table-RHNKSDATA.html#t-fk" title="RHNKSDATA" alt="" coords="85,188,188,215">
+<area shape="rect" id="node8" href="table-RHNSERVERPROFILE.html#t-fk" title="RHNSERVERPROFILE" alt="" coords="59,239,214,265">
+<area shape="rect" id="node9" href="table-RHNKICKSTARTSESSIONSTATE.html#t-fk" title="RHNKICKSTARTSESSIONSTATE" alt="" coords="28,289,245,316">
+<area shape="rect" id="node10" href="table-RHNKICKSTARTVIRTUALIZATIONTYPE.html#t-fk" title="RHNKICKSTARTVIRTUALIZATIONTYPE" alt="" coords="5,340,268,367">
+<area shape="rect" id="node11" href="table-RHNACTION.html#t-fk" title="RHNACTION" alt="" coords="86,391,187,417">
+<area shape="rect" id="node12" href="table-WEB_CONTACT.html#t-fk" title="WEB_CONTACT" alt="" coords="76,441,197,468">

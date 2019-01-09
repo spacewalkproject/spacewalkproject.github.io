@@ -1,0 +1,8 @@
+-- created by Oraschemadoc Wed Jan  9 15:06:59 2019
+-- visit http://www.yarpen.cz/oraschemadoc/ for more info
+
+  CREATE TABLE "SPACEUSER"."RHNINDEXERWORK"
+   (	"OBJECT_TYPE" VARCHAR2(40) NOT NULL ENABLE,
+	"LAST_ID" NUMBER NOT NULL ENABLE,
+	"LAST_MODIFIED" TIMESTAMP (6) WITH LOCAL TIME ZONE DEFAULT (current_timestamp) NOT NULL ENABLE
+   ) ENABLE ROW MOVEMENT ;

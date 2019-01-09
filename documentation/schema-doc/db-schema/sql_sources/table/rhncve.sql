@@ -1,0 +1,8 @@
+-- created by Oraschemadoc Wed Jan  9 15:06:57 2019
+-- visit http://www.yarpen.cz/oraschemadoc/ for more info
+
+  CREATE TABLE "SPACEUSER"."RHNCVE"
+   (	"ID" NUMBER NOT NULL ENABLE,
+	"NAME" VARCHAR2(20) NOT NULL ENABLE
+   ) ENABLE ROW MOVEMENT ;
+  ALTER TABLE "SPACEUSER"."RHNCVE" ADD CONSTRAINT "RHN_CVE_ID_PK" PRIMARY KEY ("ID") ENABLE;

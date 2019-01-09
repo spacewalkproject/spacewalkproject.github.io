@@ -1,0 +1,13 @@
+<area shape="rect" id="node1" href="table-RHNREGTOKENGROUPS.html#t-fk" title="RHNREGTOKENGROUPS" alt="" coords="392,36,571,63">
+<area shape="rect" id="node2" href="table-RHNREGTOKEN.html#t-fk" title="RHNREGTOKEN" alt="" coords="185,239,308,265">
+<area shape="rect" id="node3" href="table-RHNREGTOKENORGDEFAULT.html#t-fk" title="RHNREGTOKENORGDEFAULT" alt="" coords="377,87,585,113">
+<area shape="rect" id="node6" href="table-RHNREGTOKENCHANNELS.html#t-fk" title="RHNREGTOKENCHANNELS" alt="" coords="384,137,579,164">
+<area shape="rect" id="node7" href="table-RHNACTIVATIONKEY.html#t-fk" title="RHNACTIVATIONKEY" alt="" coords="404,188,559,215">
+<area shape="rect" id="node9" href="table-RHNSERVERTOKENREGS.html#t-fk" title="RHNSERVERTOKENREGS" alt="" coords="391,239,571,265">
+<area shape="rect" id="node10" href="table-RHNREGTOKENENTITLEMENT.html#t-fk" title="RHNREGTOKENENTITLEMENT" alt="" coords="375,289,588,316">
+<area shape="rect" id="node11" href="table-RHNREGTOKENPACKAGES.html#t-fk" title="RHNREGTOKENPACKAGES" alt="" coords="385,340,577,367">
+<area shape="rect" id="node12" href="table-RHNREGTOKENCONFIGCHANNELS.html#t-fk" title="RHNREGTOKENCONFIGCHANNELS" alt="" coords="359,391,603,417">
+<area shape="rect" id="node13" href="table-RHNKICKSTARTDEFAULTREGTOKEN.html#t-fk" title="RHNKICKSTARTDEFAULTREGTOKEN" alt="" coords="356,441,607,468">
+<area shape="rect" id="node4" href="table-WEB_CUSTOMER.html#t-fk" title="WEB_CUSTOMER" alt="" coords="5,188,137,215">
+<area shape="rect" id="node5" href="table-RHNSERVER.html#t-fk" title="RHNSERVER" alt="" coords="21,239,122,265">
+<area shape="rect" id="node8" href="table-WEB_CONTACT.html#t-fk" title="WEB_CONTACT" alt="" coords="11,289,132,316">

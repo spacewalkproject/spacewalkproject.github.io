@@ -1,0 +1,9 @@
+-- created by Oraschemadoc Wed Jan  9 15:07:09 2019
+-- visit http://www.yarpen.cz/oraschemadoc/ for more info
+
+  CREATE TABLE "SPACEUSER"."WEB_CONTACT_ALL"
+   (	"ID" NUMBER,
+	"ORG_ID" NUMBER,
+	"LOGIN" VARCHAR2(64) NOT NULL ENABLE
+   ) ENABLE ROW MOVEMENT ;
+  ALTER TABLE "SPACEUSER"."WEB_CONTACT_ALL" ADD CONSTRAINT "WEB_CONTACT_ALL_PK" PRIMARY KEY ("ID") ENABLE;

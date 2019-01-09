@@ -1,0 +1,5 @@
+<area shape="rect" id="node1" href="table-RHNFILEDOWNLOAD.html#t-fk" title="RHNFILEDOWNLOAD" alt="" coords="311,36,467,63">
+<area shape="rect" id="node2" href="table-WEB_CUSTOMER.html#t-fk" title="WEB_CUSTOMER" alt="" coords="5,36,137,63">
+<area shape="rect" id="node5" href="table-RHNFILE.html#t-fk" title="RHNFILE" alt="" coords="185,61,263,88">
+<area shape="rect" id="node3" href="table-RHNFILELOCATION.html#t-fk" title="RHNFILELOCATION" alt="" coords="317,87,460,113">
+<area shape="rect" id="node4" href="table-RHNCHECKSUM.html#t-fk" title="RHNCHECKSUM" alt="" coords="9,87,134,113">

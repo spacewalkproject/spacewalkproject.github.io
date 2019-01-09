@@ -1,0 +1,8 @@
+<area shape="rect" id="node1" href="table-RHNKICKSTARTSESSION.html#t-fk" title="RHNKICKSTARTSESSION" alt="" coords="443,61,621,88">
+<area shape="rect" id="node2" href="table-WEB_CUSTOMER.html#t-fk" title="WEB_CUSTOMER" alt="" coords="15,36,147,63">
+<area shape="rect" id="node3" href="table-RHNKICKSTARTABLETREE.html#t-fk" title="RHNKICKSTARTABLETREE" alt="" coords="204,112,391,139">
+<area shape="rect" id="node5" href="table-RHNKSTREEFILE.html#t-fk" title="RHNKSTREEFILE" alt="" coords="469,112,595,139">
+<area shape="rect" id="node7" href="table-RHNKICKSTARTDEFAULTS.html#t-fk" title="RHNKICKSTARTDEFAULTS" alt="" coords="439,163,625,189">
+<area shape="rect" id="node4" href="table-RHNKSINSTALLTYPE.html#t-fk" title="RHNKSINSTALLTYPE" alt="" coords="5,87,156,113">
+<area shape="rect" id="node6" href="table-RHNKSTREETYPE.html#t-fk" title="RHNKSTREETYPE" alt="" coords="14,137,147,164">
+<area shape="rect" id="node8" href="table-RHNCHANNEL.html#t-fk" title="RHNCHANNEL" alt="" coords="23,188,138,215">

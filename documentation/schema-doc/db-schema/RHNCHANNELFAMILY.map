@@ -1,0 +1,5 @@
+<area shape="rect" id="node1" href="table-WEB_CUSTOMER.html#t-fk" title="WEB_CUSTOMER" alt="" coords="5,87,137,113">
+<area shape="rect" id="node4" href="table-RHNCHANNELFAMILY.html#t-fk" title="RHNCHANNELFAMILY" alt="" coords="185,87,343,113">
+<area shape="rect" id="node2" href="table-RHNPRIVATECHANNELFAMILY.html#t-fk" title="RHNPRIVATECHANNELFAMILY" alt="" coords="396,36,607,63">
+<area shape="rect" id="node3" href="table-RHNPUBLICCHANNELFAMILY.html#t-fk" title="RHNPUBLICCHANNELFAMILY" alt="" coords="399,87,603,113">
+<area shape="rect" id="node5" href="table-RHNCHANNELFAMILYMEMBERS.html#t-fk" title="RHNCHANNELFAMILYMEMBERS" alt="" coords="391,137,612,164">

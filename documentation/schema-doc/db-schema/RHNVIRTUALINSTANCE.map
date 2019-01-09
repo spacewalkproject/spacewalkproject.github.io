@@ -1,0 +1,4 @@
+<area shape="rect" id="node1" href="table-RHNVIRTUALINSTANCEEVENTLOG.html#t-fk" title="RHNVIRTUALINSTANCEEVENTLOG" alt="" coords="373,36,615,63">
+<area shape="rect" id="node2" href="table-RHNSERVER.html#t-fk" title="RHNSERVER" alt="" coords="5,61,107,88">
+<area shape="rect" id="node4" href="table-RHNVIRTUALINSTANCE.html#t-fk" title="RHNVIRTUALINSTANCE" alt="" coords="155,61,325,88">
+<area shape="rect" id="node3" href="table-RHNVIRTUALINSTANCEINFO.html#t-fk" title="RHNVIRTUALINSTANCEINFO" alt="" coords="393,87,595,113">

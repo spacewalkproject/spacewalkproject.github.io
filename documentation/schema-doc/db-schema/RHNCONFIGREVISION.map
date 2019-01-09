@@ -1,0 +1,9 @@
+<area shape="rect" id="node1" href="table-RHNCONFIGREVISION.html#t-fk" title="RHNCONFIGREVISION" alt="" coords="217,112,380,139">
+<area shape="rect" id="node2" href="table-RHNACTIONCONFIGREVISION.html#t-fk" title="RHNACTIONCONFIGREVISION" alt="" coords="438,61,651,88">
+<area shape="rect" id="node3" href="table-RHNCONFIGFILE.html#t-fk" title="RHNCONFIGFILE" alt="" coords="481,112,608,139">
+<area shape="rect" id="node4" href="table-RHNSNAPSHOTCONFIGREVISION.html#t-fk" title="RHNSNAPSHOTCONFIGREVISION" alt="" coords="428,163,661,189">
+<area shape="rect" id="node7" href="table-RHNACTIONCONFIGFILENAME.html#t-fk" title="RHNACTIONCONFIGFILENAME" alt="" coords="437,213,652,240">
+<area shape="rect" id="node5" href="table-RHNCONFIGCONTENT.html#t-fk" title="RHNCONFIGCONTENT" alt="" coords="5,36,169,63">
+<area shape="rect" id="node6" href="table-WEB_CONTACT.html#t-fk" title="WEB_CONTACT" alt="" coords="27,87,148,113">
+<area shape="rect" id="node8" href="table-RHNCONFIGINFO.html#t-fk" title="RHNCONFIGINFO" alt="" coords="21,137,153,164">
+<area shape="rect" id="node9" href="table-RHNCONFIGFILETYPE.html#t-fk" title="RHNCONFIGFILETYPE" alt="" coords="8,188,167,215">

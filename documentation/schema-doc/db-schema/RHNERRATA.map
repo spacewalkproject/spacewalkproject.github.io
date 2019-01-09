@@ -1,0 +1,15 @@
+<area shape="rect" id="node1" href="table-RHNERRATAPACKAGE.html#t-fk" title="RHNERRATAPACKAGE" alt="" coords="403,36,564,63">
+<area shape="rect" id="node2" href="table-RHNERRATANOTIFICATIONQUEUE.html#t-fk" title="RHNERRATANOTIFICATIONQUEUE" alt="" coords="364,87,603,113">
+<area shape="rect" id="node3" href="table-RHNERRATA.html#t-fk" title="RHNERRATA" alt="" coords="216,340,316,367">
+<area shape="rect" id="node5" href="table-RHNACTIONERRATAUPDATE.html#t-fk" title="RHNACTIONERRATAUPDATE" alt="" coords="382,137,585,164">
+<area shape="rect" id="node6" href="table-RHNSERVERNEEDEDCACHE.html#t-fk" title="RHNSERVERNEEDEDCACHE" alt="" coords="383,188,583,215">
+<area shape="rect" id="node7" href="table-RHNERRATACVE.html#t-fk" title="RHNERRATACVE" alt="" coords="420,239,547,265">
+<area shape="rect" id="node8" href="table-RHNERRATAQUEUE.html#t-fk" title="RHNERRATAQUEUE" alt="" coords="410,289,557,316">
+<area shape="rect" id="node9" href="table-RHNERRATAKEYWORD.html#t-fk" title="RHNERRATAKEYWORD" alt="" coords="400,340,567,367">
+<area shape="rect" id="node10" href="table-RHNERRATACLONED.html#t-fk" title="RHNERRATACLONED" alt="" coords="406,391,561,417">
+<area shape="rect" id="node11" href="table-RHNERRATABUGLIST.html#t-fk" title="RHNERRATABUGLIST" alt="" coords="405,441,561,468">
+<area shape="rect" id="node12" href="table-RHNCHANNELERRATA.html#t-fk" title="RHNCHANNELERRATA" alt="" coords="402,492,565,519">
+<area shape="rect" id="node13" href="table-RHNERRATACLONEDTMP.html#t-fk" title="RHNERRATACLONEDTMP" alt="" coords="393,543,574,569">
+<area shape="rect" id="node14" href="table-RHNERRATAFILE.html#t-fk" title="RHNERRATAFILE" alt="" coords="420,593,547,620">
+<area shape="rect" id="node4" href="table-WEB_CUSTOMER.html#t-fk" title="WEB_CUSTOMER" alt="" coords="21,315,153,341">
+<area shape="rect" id="node15" href="table-RHNERRATASEVERITY.html#t-fk" title="RHNERRATASEVERITY" alt="" coords="5,365,168,392">

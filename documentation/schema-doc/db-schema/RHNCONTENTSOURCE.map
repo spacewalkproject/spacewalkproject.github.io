@@ -1,0 +1,6 @@
+<area shape="rect" id="node1" href="table-RHNCONTENTSOURCETYPE.html#t-fk" title="RHNCONTENTSOURCETYPE" alt="" coords="5,61,204,88">
+<area shape="rect" id="node3" href="table-RHNCONTENTSOURCE.html#t-fk" title="RHNCONTENTSOURCE" alt="" coords="252,87,419,113">
+<area shape="rect" id="node2" href="table-WEB_CUSTOMER.html#t-fk" title="WEB_CUSTOMER" alt="" coords="39,112,171,139">
+<area shape="rect" id="node4" href="table-RHNCONTENTSOURCESSL.html#t-fk" title="RHNCONTENTSOURCESSL" alt="" coords="487,36,677,63">
+<area shape="rect" id="node5" href="table-RHNCONTENTSOURCEFILTER.html#t-fk" title="RHNCONTENTSOURCEFILTER" alt="" coords="478,87,686,113">
+<area shape="rect" id="node6" href="table-RHNCHANNELCONTENTSOURCE.html#t-fk" title="RHNCHANNELCONTENTSOURCE" alt="" coords="467,137,697,164">

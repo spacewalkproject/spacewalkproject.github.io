@@ -1,0 +1,7 @@
+-- created by Oraschemadoc Wed Jan  9 15:07:10 2019
+-- visit http://www.yarpen.cz/oraschemadoc/ for more info
+
+  CREATE TABLE "SPACEUSER"."WEB_USER_PREFIX"
+   (	"TEXT" VARCHAR2(12) NOT NULL ENABLE
+   ) ENABLE ROW MOVEMENT ;
+  ALTER TABLE "SPACEUSER"."WEB_USER_PREFIX" ADD CONSTRAINT "WUP_TEXT_PK" PRIMARY KEY ("TEXT") ENABLE;

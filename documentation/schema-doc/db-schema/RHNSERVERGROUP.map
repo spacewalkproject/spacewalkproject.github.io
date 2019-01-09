@@ -1,0 +1,9 @@
+<area shape="rect" id="node1" href="table-RHNSERVERGROUPTYPE.html#t-fk" title="RHNSERVERGROUPTYPE" alt="" coords="5,137,185,164">
+<area shape="rect" id="node6" href="table-RHNSERVERGROUP.html#t-fk" title="RHNSERVERGROUP" alt="" coords="233,163,381,189">
+<area shape="rect" id="node2" href="table-RHNREGTOKENGROUPS.html#t-fk" title="RHNREGTOKENGROUPS" alt="" coords="464,36,643,63">
+<area shape="rect" id="node3" href="table-RHNSERVERGROUPMEMBERS.html#t-fk" title="RHNSERVERGROUPMEMBERS" alt="" coords="447,87,659,113">
+<area shape="rect" id="node4" href="table-RHNSNAPSHOTSERVERGROUP.html#t-fk" title="RHNSNAPSHOTSERVERGROUP" alt="" coords="444,137,663,164">
+<area shape="rect" id="node5" href="table-WEB_CUSTOMER.html#t-fk" title="WEB_CUSTOMER" alt="" coords="29,188,161,215">
+<area shape="rect" id="node7" href="table-RHNORGEXTGROUPMAPPING.html#t-fk" title="RHNORGEXTGROUPMAPPING" alt="" coords="447,188,659,215">
+<area shape="rect" id="node8" href="table-RHNUSERSERVERGROUPPERMS.html#t-fk" title="RHNUSERSERVERGROUPPERMS" alt="" coords="440,239,667,265">
+<area shape="rect" id="node9" href="table-RHNUSERDEFAULTSYSTEMGROUPS.html#t-fk" title="RHNUSERDEFAULTSYSTEMGROUPS" alt="" coords="429,289,677,316">

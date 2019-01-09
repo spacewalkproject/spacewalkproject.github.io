@@ -1,0 +1,6 @@
+<area shape="rect" id="node1" href="table-RHNXCCDFPROFILE.html#t-fk" title="RHNXCCDFPROFILE" alt="" coords="21,36,168,63">
+<area shape="rect" id="node5" href="table-RHNXCCDFTESTRESULT.html#t-fk" title="RHNXCCDFTESTRESULT" alt="" coords="232,112,407,139">
+<area shape="rect" id="node2" href="table-RHNACTIONSCAP.html#t-fk" title="RHNACTIONSCAP" alt="" coords="27,87,162,113">
+<area shape="rect" id="node3" href="table-RHNSERVER.html#t-fk" title="RHNSERVER" alt="" coords="44,137,145,164">
+<area shape="rect" id="node4" href="table-RHNXCCDFBENCHMARK.html#t-fk" title="RHNXCCDFBENCHMARK" alt="" coords="5,188,184,215">
+<area shape="rect" id="node6" href="table-RHNXCCDFRULERESULT.html#t-fk" title="RHNXCCDFRULERESULT" alt="" coords="455,112,631,139">

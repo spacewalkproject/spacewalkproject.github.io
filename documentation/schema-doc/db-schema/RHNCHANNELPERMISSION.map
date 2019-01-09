@@ -1,0 +1,4 @@
+<area shape="rect" id="node1" href="table-RHNCHANNELPERMISSIONROLE.html#t-fk" title="RHNCHANNELPERMISSIONROLE" alt="" coords="5,36,233,63">
+<area shape="rect" id="node2" href="table-RHNCHANNELPERMISSION.html#t-fk" title="RHNCHANNELPERMISSION" alt="" coords="281,87,476,113">
+<area shape="rect" id="node3" href="table-WEB_CONTACT.html#t-fk" title="WEB_CONTACT" alt="" coords="59,87,180,113">
+<area shape="rect" id="node4" href="table-RHNCHANNEL.html#t-fk" title="RHNCHANNEL" alt="" coords="62,137,177,164">

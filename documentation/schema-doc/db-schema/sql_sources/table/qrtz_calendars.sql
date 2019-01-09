@@ -1,0 +1,8 @@
+-- created by Oraschemadoc Wed Jan  9 15:06:52 2019
+-- visit http://www.yarpen.cz/oraschemadoc/ for more info
+
+  CREATE TABLE "SPACEUSER"."QRTZ_CALENDARS"
+   (	"CALENDAR_NAME" VARCHAR2(200) NOT NULL ENABLE,
+	"CALENDAR" BLOB NOT NULL ENABLE
+   ) ;
+  ALTER TABLE "SPACEUSER"."QRTZ_CALENDARS" ADD PRIMARY KEY ("CALENDAR_NAME") ENABLE;

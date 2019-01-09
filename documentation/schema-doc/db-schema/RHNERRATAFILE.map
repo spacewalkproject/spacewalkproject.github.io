@@ -1,0 +1,7 @@
+<area shape="rect" id="node1" href="table-RHNERRATAFILECHANNEL.html#t-fk" title="RHNERRATAFILECHANNEL" alt="" coords="412,36,601,63">
+<area shape="rect" id="node2" href="table-RHNERRATAFILE.html#t-fk" title="RHNERRATAFILE" alt="" coords="212,87,339,113">
+<area shape="rect" id="node4" href="table-RHNERRATAFILEPACKAGE.html#t-fk" title="RHNERRATAFILEPACKAGE" alt="" coords="413,87,600,113">
+<area shape="rect" id="node7" href="table-RHNERRATAFILEPACKAGESOURCE.html#t-fk" title="RHNERRATAFILEPACKAGESOURCE" alt="" coords="387,137,627,164">
+<area shape="rect" id="node3" href="table-RHNCHECKSUM.html#t-fk" title="RHNCHECKSUM" alt="" coords="22,36,147,63">
+<area shape="rect" id="node5" href="table-RHNERRATAFILETYPE.html#t-fk" title="RHNERRATAFILETYPE" alt="" coords="5,87,164,113">
+<area shape="rect" id="node6" href="table-RHNERRATA.html#t-fk" title="RHNERRATA" alt="" coords="35,137,135,164">

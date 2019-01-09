@@ -1,0 +1,10 @@
+<area shape="rect" id="node1" href="table-RHNSNAPSHOTCONFIGCHANNEL.html#t-fk" title="RHNSNAPSHOTCONFIGCHANNEL" alt="" coords="452,36,687,63">
+<area shape="rect" id="node2" href="table-RHNSNAPSHOTCHANNEL.html#t-fk" title="RHNSNAPSHOTCHANNEL" alt="" coords="477,87,661,113">
+<area shape="rect" id="node3" href="table-RHNSNAPSHOTTAG.html#t-fk" title="RHNSNAPSHOTTAG" alt="" coords="495,137,643,164">
+<area shape="rect" id="node4" href="table-RHNSNAPSHOTSERVERGROUP.html#t-fk" title="RHNSNAPSHOTSERVERGROUP" alt="" coords="460,188,679,215">
+<area shape="rect" id="node5" href="table-WEB_CUSTOMER.html#t-fk" title="WEB_CUSTOMER" alt="" coords="53,112,185,139">
+<area shape="rect" id="node7" href="table-RHNSNAPSHOT.html#t-fk" title="RHNSNAPSHOT" alt="" coords="281,163,404,189">
+<area shape="rect" id="node6" href="table-RHNSERVER.html#t-fk" title="RHNSERVER" alt="" coords="69,163,170,189">
+<area shape="rect" id="node9" href="table-RHNSNAPSHOTPACKAGE.html#t-fk" title="RHNSNAPSHOTPACKAGE" alt="" coords="478,239,661,265">
+<area shape="rect" id="node10" href="table-RHNSNAPSHOTCONFIGREVISION.html#t-fk" title="RHNSNAPSHOTCONFIGREVISION" alt="" coords="453,289,686,316">
+<area shape="rect" id="node8" href="table-RHNSNAPSHOTINVALIDREASON.html#t-fk" title="RHNSNAPSHOTINVALIDREASON" alt="" coords="5,213,233,240">

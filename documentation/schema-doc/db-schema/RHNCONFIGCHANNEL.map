@@ -1,0 +1,8 @@
+<area shape="rect" id="node1" href="table-RHNSERVERCONFIGCHANNEL.html#t-fk" title="RHNSERVERCONFIGCHANNEL" alt="" coords="475,36,689,63">
+<area shape="rect" id="node2" href="table-RHNSNAPSHOTCONFIGCHANNEL.html#t-fk" title="RHNSNAPSHOTCONFIGCHANNEL" alt="" coords="465,87,699,113">
+<area shape="rect" id="node3" href="table-RHNACTIONCONFIGCHANNEL.html#t-fk" title="RHNACTIONCONFIGCHANNEL" alt="" coords="475,137,689,164">
+<area shape="rect" id="node4" href="table-RHNCONFIGFILE.html#t-fk" title="RHNCONFIGFILE" alt="" coords="519,188,645,215">
+<area shape="rect" id="node5" href="table-RHNCONFIGCHANNEL.html#t-fk" title="RHNCONFIGCHANNEL" alt="" coords="248,137,412,164">
+<area shape="rect" id="node8" href="table-RHNREGTOKENCONFIGCHANNELS.html#t-fk" title="RHNREGTOKENCONFIGCHANNELS" alt="" coords="460,239,704,265">
+<area shape="rect" id="node6" href="table-RHNCONFIGCHANNELTYPE.html#t-fk" title="RHNCONFIGCHANNELTYPE" alt="" coords="5,112,200,139">
+<area shape="rect" id="node7" href="table-WEB_CUSTOMER.html#t-fk" title="WEB_CUSTOMER" alt="" coords="37,163,169,189">

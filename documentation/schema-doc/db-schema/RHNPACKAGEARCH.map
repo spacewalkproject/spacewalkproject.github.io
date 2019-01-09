@@ -1,0 +1,16 @@
+<area shape="rect" id="node1" href="table-RHNTRANSACTIONPACKAGE.html#t-fk" title="RHNTRANSACTIONPACKAGE" alt="" coords="397,36,603,63">
+<area shape="rect" id="node2" href="table-RHNCHANNELPACKAGEARCHCOMPAT.html#t-fk" title="RHNCHANNELPACKAGEARCHCOMPAT" alt="" coords="368,87,632,113">
+<area shape="rect" id="node3" href="table-RHNSERVERACTIONVERIFYRESULT.html#t-fk" title="RHNSERVERACTIONVERIFYRESULT" alt="" coords="379,137,621,164">
+<area shape="rect" id="node4" href="table-RHNPACKAGE.html#t-fk" title="RHNPACKAGE" alt="" coords="444,188,556,215">
+<area shape="rect" id="node5" href="table-RHNSERVERPACKAGE.html#t-fk" title="RHNSERVERPACKAGE" alt="" coords="419,239,581,265">
+<area shape="rect" id="node6" href="table-RHNSERVERCRASH.html#t-fk" title="RHNSERVERCRASH" alt="" coords="428,289,572,316">
+<area shape="rect" id="node7" href="table-RHNSERVERPACKAGEARCHCOMPAT.html#t-fk" title="RHNSERVERPACKAGEARCHCOMPAT" alt="" coords="375,340,625,367">
+<area shape="rect" id="node8" href="table-RHNARCHTYPE.html#t-fk" title="RHNARCHTYPE" alt="" coords="5,391,124,417">
+<area shape="rect" id="node16" href="table-RHNPACKAGEARCH.html#t-fk" title="RHNPACKAGEARCH" alt="" coords="172,391,320,417">
+<area shape="rect" id="node9" href="table-RHNSERVERACTIONVERIFYMISSING.html#t-fk" title="RHNSERVERACTIONVERIFYMISSING" alt="" coords="375,391,625,417">
+<area shape="rect" id="node10" href="table-RHNACTIONPACKAGE.html#t-fk" title="RHNACTIONPACKAGE" alt="" coords="419,441,581,468">
+<area shape="rect" id="node11" href="table-RHNSERVERPROFILEPACKAGE.html#t-fk" title="RHNSERVERPROFILEPACKAGE" alt="" coords="393,492,607,519">
+<area shape="rect" id="node12" href="table-RHNREGTOKENPACKAGES.html#t-fk" title="RHNREGTOKENPACKAGES" alt="" coords="404,543,596,569">
+<area shape="rect" id="node13" href="table-RHNCHANNELNEWESTPACKAGE.html#t-fk" title="RHNCHANNELNEWESTPACKAGE" alt="" coords="385,593,615,620">
+<area shape="rect" id="node14" href="table-RHNPACKAGENEVRA.html#t-fk" title="RHNPACKAGENEVRA" alt="" coords="422,644,578,671">
+<area shape="rect" id="node15" href="table-RHNPACKAGEUPGRADEARCHCOMPAT.html#t-fk" title="RHNPACKAGEUPGRADEARCHCOMPAT" alt="" coords="368,695,632,721">

@@ -1,0 +1,8 @@
+<area shape="rect" id="node1" href="table-RHNCHANNELPACKAGEARCHCOMPAT.html#t-fk" title="RHNCHANNELPACKAGEARCHCOMPAT" alt="" coords="371,36,635,63">
+<area shape="rect" id="node2" href="table-RHNSERVERCHANNELARCHCOMPAT.html#t-fk" title="RHNSERVERCHANNELARCHCOMPAT" alt="" coords="377,87,629,113">
+<area shape="rect" id="node3" href="table-RHNRELEASECHANNELMAP.html#t-fk" title="RHNRELEASECHANNELMAP" alt="" coords="403,137,602,164">
+<area shape="rect" id="node4" href="table-RHNARCHTYPE.html#t-fk" title="RHNARCHTYPE" alt="" coords="5,188,124,215">
+<area shape="rect" id="node6" href="table-RHNCHANNELARCH.html#t-fk" title="RHNCHANNELARCH" alt="" coords="172,188,323,215">
+<area shape="rect" id="node5" href="table-RHNDISTCHANNELMAP.html#t-fk" title="RHNDISTCHANNELMAP" alt="" coords="417,188,588,215">
+<area shape="rect" id="node7" href="table-RHNCHILDCHANNELARCHCOMPAT.html#t-fk" title="RHNCHILDCHANNELARCHCOMPAT" alt="" coords="381,239,624,265">
+<area shape="rect" id="node8" href="table-RHNCHANNEL.html#t-fk" title="RHNCHANNEL" alt="" coords="445,289,560,316">

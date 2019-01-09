@@ -1,0 +1,5 @@
+-- created by Oraschemadoc Wed Jan  9 15:07:16 2019
+-- visit http://www.yarpen.cz/oraschemadoc/ for more info
+
+  CREATE UNIQUE INDEX "SPACEUSER"."RHN_PDELEMENT_PDID_TPID_UQ" ON "SPACEUSER"."RHNPACKAGEDELTAELEMENT" ("PACKAGE_DELTA_ID", "TRANSACTION_PACKAGE_ID")
+  ;

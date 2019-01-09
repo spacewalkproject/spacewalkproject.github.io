@@ -1,0 +1,6 @@
+<area shape="rect" id="node1" href="table-RHNACTIONCONFIGCHANNEL.html#t-fk" title="RHNACTIONCONFIGCHANNEL" alt="" coords="403,61,617,88">
+<area shape="rect" id="node2" href="table-RHNSERVERACTION.html#t-fk" title="RHNSERVERACTION" alt="" coords="204,87,355,113">
+<area shape="rect" id="node6" href="table-RHNACTIONCONFIGFILENAME.html#t-fk" title="RHNACTIONCONFIGFILENAME" alt="" coords="403,112,617,139">
+<area shape="rect" id="node3" href="table-RHNSERVER.html#t-fk" title="RHNSERVER" alt="" coords="30,36,131,63">
+<area shape="rect" id="node4" href="table-RHNACTIONSTATUS.html#t-fk" title="RHNACTIONSTATUS" alt="" coords="5,87,156,113">
+<area shape="rect" id="node5" href="table-RHNACTION.html#t-fk" title="RHNACTION" alt="" coords="30,137,131,164">

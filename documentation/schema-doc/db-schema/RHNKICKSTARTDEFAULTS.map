@@ -1,0 +1,5 @@
+<area shape="rect" id="node1" href="table-RHNSERVERPROFILE.html#t-fk" title="RHNSERVERPROFILE" alt="" coords="59,36,214,63">
+<area shape="rect" id="node2" href="table-RHNKICKSTARTDEFAULTS.html#t-fk" title="RHNKICKSTARTDEFAULTS" alt="" coords="316,112,503,139">
+<area shape="rect" id="node3" href="table-RHNKICKSTARTABLETREE.html#t-fk" title="RHNKICKSTARTABLETREE" alt="" coords="43,87,230,113">
+<area shape="rect" id="node4" href="table-RHNKICKSTARTVIRTUALIZATIONTYPE.html#t-fk" title="RHNKICKSTARTVIRTUALIZATIONTYPE" alt="" coords="5,137,268,164">
+<area shape="rect" id="node5" href="table-RHNKSDATA.html#t-fk" title="RHNKSDATA" alt="" coords="85,188,188,215">
