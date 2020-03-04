@@ -56,19 +56,19 @@
 <h1 class="epydoc">Class apacheHandler</h1><p class="nomargin-top"><span class="codelink"><a href="proxy.apacheHandler-pysrc.html#apacheHandler">source&nbsp;code</a></span></p>
 <center>
 <center>  <map id="uml_class_diagram_for_proxy_ap" name="uml_class_diagram_for_proxy_ap">
-<area shape="rect" id="node1_11" href="proxy.apacheHandler.apacheHandler-class.html#__init__" title="proxy.apacheHandler.apacheHandler.__init__" alt="" coords="45,155,267,175"/>
-<area shape="rect" id="node1_12" href="proxy.apacheHandler.apacheHandler-class.html#set_component" title="proxy.apacheHandler.apacheHandler.set_component" alt="" coords="45,175,267,195"/>
-<area shape="rect" id="node1_13" href="proxy.apacheHandler.apacheHandler-class.html#headerParserHandler" title="Name&#45;munging if request came from anaconda in response to a kickstart." alt="" coords="45,195,267,215"/>
-<area shape="rect" id="node1_14" href="proxy.apacheHandler.apacheHandler-class.html#handler" title="Main handler to handle all requests pumped through this server." alt="" coords="45,215,267,235"/>
-<area shape="rect" id="node1_15" href="proxy.apacheHandler.apacheHandler-class.html#normalize" title="convert a response to the right type for passing back to &#160;rpclib.xmlrpclib.dumps" alt="" coords="45,235,267,255"/>
-<area shape="rect" id="node1_16" href="proxy.apacheHandler.apacheHandler-class.html#response_file" title="send a file out" alt="" coords="45,255,267,275"/>
-<area shape="rect" id="node1_17" href="proxy.apacheHandler.apacheHandler-class.html#response" title="send the response (common code)" alt="" coords="45,275,267,295"/>
-<area shape="rect" id="node1_18" href="proxy.apacheHandler.apacheHandler-class.html#cleanupHandler" title="Clean up stuff before we close down the session when we are called from &#160;apacheServer.Cleanup()" alt="" coords="45,295,267,315"/>
-<area shape="rect" id="node1" href="proxy.apacheHandler.apacheHandler-class.html" title="Main apache entry point for the proxy." alt="" coords="33,123,279,321"/>
-<area shape="rect" id="node2_19" href="javascript:void(0);" title="A dummy log function" alt="" coords="17,37,295,57"/>
-<area shape="rect" id="node2_20" href="javascript:void(0);" title="An entry point for setting the language for the current sesstion" alt="" coords="17,57,295,77"/>
-<area shape="rect" id="node2_21" href="javascript:void(0);" title="And another lang function to produce the list of languages we&#39;re handling" alt="" coords="17,77,295,97"/>
-<area shape="rect" id="node2" href="javascript:void(0);" title="Shared rhnApache class: rhnApache classes in proxy and server inherit this class." alt="" coords="5,5,307,104"/>
+<area shape="rect" id="node1_11" href="proxy.apacheHandler.apacheHandler-class.html#__init__" title="proxy.apacheHandler.apacheHandler.__init__" alt="" coords="45,153,268,172"/>
+<area shape="rect" id="node1_12" href="proxy.apacheHandler.apacheHandler-class.html#set_component" title="proxy.apacheHandler.apacheHandler.set_component" alt="" coords="45,172,268,191"/>
+<area shape="rect" id="node1_13" href="proxy.apacheHandler.apacheHandler-class.html#headerParserHandler" title="Name&#45;munging if request came from anaconda in response to a kickstart." alt="" coords="45,191,268,209"/>
+<area shape="rect" id="node1_14" href="proxy.apacheHandler.apacheHandler-class.html#handler" title="Main handler to handle all requests pumped through this server." alt="" coords="45,209,268,228"/>
+<area shape="rect" id="node1_15" href="proxy.apacheHandler.apacheHandler-class.html#normalize" title="convert a response to the right type for passing back to &#160;rpclib.xmlrpclib.dumps" alt="" coords="45,228,268,247"/>
+<area shape="rect" id="node1_16" href="proxy.apacheHandler.apacheHandler-class.html#response_file" title="send a file out" alt="" coords="45,247,268,265"/>
+<area shape="rect" id="node1_17" href="proxy.apacheHandler.apacheHandler-class.html#response" title="send the response (common code)" alt="" coords="45,265,268,284"/>
+<area shape="rect" id="node1_18" href="proxy.apacheHandler.apacheHandler-class.html#cleanupHandler" title="Clean up stuff before we close down the session when we are called from &#160;apacheServer.Cleanup()" alt="" coords="45,284,268,303"/>
+<area shape="rect" id="node1" href="proxy.apacheHandler.apacheHandler-class.html" title="Main apache entry point for the proxy." alt="" coords="33,121,279,309"/>
+<area shape="rect" id="node2_19" href="javascript:void(0);" title="A dummy log function" alt="" coords="17,39,296,57"/>
+<area shape="rect" id="node2_20" href="javascript:void(0);" title="An entry point for setting the language for the current sesstion" alt="" coords="17,57,296,76"/>
+<area shape="rect" id="node2_21" href="javascript:void(0);" title="And another lang function to produce the list of languages we&#39;re handling" alt="" coords="17,76,296,95"/>
+<area shape="rect" id="node2" href="javascript:void(0);" title="Shared rhnApache class: rhnApache classes in proxy and server inherit this class." alt="" coords="5,6,307,101"/>
 </map>
   <img src="uml_class_diagram_for_proxy_ap.png" alt='' usemap="#uml_class_diagram_for_proxy_ap" ismap="ismap" class="graph-without-title" />
 </center>
@@ -481,8 +481,8 @@ checksum.</td>
     ><span class="codelink"><a href="proxy.apacheHandler-pysrc.html#apacheHandler.__init__">source&nbsp;code</a></span>&nbsp;
     </td>
   </tr></table>
-
-
+  
+  
   <dl class="fields">
     <dt>Overrides:
         spacewalk.common.rhnApache.rhnApache.__init__
@@ -504,8 +504,8 @@ checksum.</td>
     ><span class="codelink"><a href="proxy.apacheHandler-pysrc.html#apacheHandler._setSessionToken">source&nbsp;code</a></span>&nbsp;
     </td>
   </tr></table>
-
-  <p>Pushes token into rhnFlags. If doesn't exist, returns None. Pull
+  
+  <p>Pushes token into rhnFlags. If doesn't exist, returns None. Pull 
   session token out of the headers and into rhnFlags.</p>
   <dl class="fields">
     <dt>Overrides:
@@ -529,8 +529,8 @@ checksum.</td>
     ><span class="codelink"><a href="proxy.apacheHandler-pysrc.html#apacheHandler.headerParserHandler">source&nbsp;code</a></span>&nbsp;
     </td>
   </tr></table>
-
-  <p>Name-munging if request came from anaconda in response to a
+  
+  <p>Name-munging if request came from anaconda in response to a 
   kickstart.</p>
   <dl class="fields">
     <dt>Overrides:
@@ -638,7 +638,7 @@ If for some reason the new URI could not be generated, return None.
     ><span class="codelink"><a href="proxy.apacheHandler-pysrc.html#apacheHandler.handler">source&nbsp;code</a></span>&nbsp;
     </td>
   </tr></table>
-
+  
   <p>Main handler to handle all requests pumped through this server.</p>
   <dl class="fields">
     <dt>Overrides:
@@ -661,8 +661,8 @@ If for some reason the new URI could not be generated, return None.
     ><span class="codelink"><a href="proxy.apacheHandler-pysrc.html#apacheHandler.cleanupHandler">source&nbsp;code</a></span>&nbsp;
     </td>
   </tr></table>
-
-  <p>Clean up stuff before we close down the session when we are called
+  
+  <p>Clean up stuff before we close down the session when we are called 
   from apacheServer.Cleanup()</p>
   <dl class="fields">
     <dt>Overrides:
@@ -695,7 +695,7 @@ If for some reason the new URI could not be generated, return None.
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Tue Jan  8 16:14:08 2019
+    Generated by Epydoc 3.0.1 on Wed Mar  4 07:37:34 2020
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

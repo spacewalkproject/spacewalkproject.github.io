@@ -94,7 +94,7 @@
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
         <a href="backend.server.rhnServer.server_token.ReRegistrationActivationToken-class.html" class="summary-name">ReRegistrationActivationToken</a><br />
-      Subclass for re-registration keys and activation keys used
+      Subclass for re-registration keys and activation keys used 
         together.
     </td>
   </tr>
@@ -482,8 +482,8 @@
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.rhnServer.server_token-module.html#_query_token_server_groups" class="summary-name" onclick="show_private();">_query_token_server_groups</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765495459\
-2; statement=
+        <a href="backend.server.rhnServer.server_token-module.html#_query_token_server_groups" class="summary-name" onclick="show_private();">_query_token_server_groups</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 13998081289278\
+4; statement=
     select rtg.server_group_id, sg.name
       from rhnRegTokenGroups rtg, rhnServerGroup sg
      where rtg.token_id = :token_id
@@ -495,8 +495,8 @@
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.rhnServer.server_token-module.html#_query_token_packages" class="summary-name" onclick="show_private();">_query_token_packages</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765495473\
-6; statement=
+        <a href="backend.server.rhnServer.server_token-module.html#_query_token_packages" class="summary-name" onclick="show_private();">_query_token_packages</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 13998081289292\
+8; statement=
     select pn.id as name_id, pa.id as arch_id, pn.name
     from rhnPackageName pn, rhnRegTokenPackages rtp
         left outer join rhnPackageArch pa on rtp.arch_id = pa.id
@@ -510,8 +510,8 @@
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.rhnServer.server_token-module.html#_query_token_packages_insert" class="summary-name" onclick="show_private();">_query_token_packages_insert</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765495480\
-8; statement=
+        <a href="backend.server.rhnServer.server_token-module.html#_query_token_packages_insert" class="summary-name" onclick="show_private();">_query_token_packages_insert</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 13998081289300\
+0; statement=
     insert into rhnActionPackage (id, action_id, name_id, parameter)
     values (sequence_nextval('rhn_act_p_id_seq'), :action_id, :name_id\
 , 'upgrade')
@@ -522,8 +522,8 @@
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.rhnServer.server_token-module.html#_query_token_latest_revisions" class="summary-name" onclick="show_private();">_query_token_latest_revisions</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765495488\
-0; statement=
+        <a href="backend.server.rhnServer.server_token-module.html#_query_token_latest_revisions" class="summary-name" onclick="show_private();">_query_token_latest_revisions</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 13998081289307\
+2; statement=
     select cf.latest_config_revision_id revision_id,
            cfn.path
       from rhnConfigFileName cfn,
@@ -537,8 +537,8 @@
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.rhnServer.server_token-module.html#_query_add_revision_to_action" class="summary-name" onclick="show_private();">_query_add_revision_to_action</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765495495\
-2; statement=
+        <a href="backend.server.rhnServer.server_token-module.html#_query_add_revision_to_action" class="summary-name" onclick="show_private();">_query_add_revision_to_action</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 13998081289314\
+4; statement=
     insert into rhnActionConfigRevision (id, action_id, server_id, con\
 fig_revision_id)
     values (sequence_nextval('rhn_actioncr_id_seq'), :action_id, :serv\
@@ -550,8 +550,8 @@ er_id, :config_revision_id)
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.rhnServer.server_token-module.html#_query_token_config_channels" class="summary-name" onclick="show_private();">_query_token_config_channels</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765500424\
-0; statement=
+        <a href="backend.server.rhnServer.server_token-module.html#_query_token_config_channels" class="summary-name" onclick="show_private();">_query_token_config_channels</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 13998081289321\
+6; statement=
     select rtcc.config_channel_id,
            rtcc.position, cc.name
       from rhnConfigChannel cc,
@@ -565,8 +565,8 @@ er_id, :config_revision_id)
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.rhnServer.server_token-module.html#_query_set_server_config_channels" class="summary-name" onclick="show_private();">_query_set_server_config_channels</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765500431\
-2; statement=
+        <a href="backend.server.rhnServer.server_token-module.html#_query_set_server_config_channels" class="summary-name" onclick="show_private();">_query_set_server_config_channels</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 13998081289328\
+8; statement=
     insert into rhnServerConfigChannel (server_id, config_channel_id, \
 position)
     values (:server_id, :config_channel_id, :position)
@@ -577,8 +577,8 @@ position)
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.rhnServer.server_token-module.html#_query_current_config_channels" class="summary-name" onclick="show_private();">_query_current_config_channels</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765500438\
-4; statement=
+        <a href="backend.server.rhnServer.server_token-module.html#_query_current_config_channels" class="summary-name" onclick="show_private();">_query_current_config_channels</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 13998081289336\
+0; statement=
     select config_channel_id
       from rhnServerConfigChannel
        where server_id = :server_id
@@ -590,8 +590,8 @@ position)
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.rhnServer.server_token-module.html#_query_server_token_used" class="summary-name" onclick="show_private();">_query_server_token_used</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765500445\
-6; statement=
+        <a href="backend.server.rhnServer.server_token-module.html#_query_server_token_used" class="summary-name" onclick="show_private();">_query_server_token_used</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 13998081289343\
+2; statement=
     insert into rhnServerTokenRegs (server_id, token_id)
     values (:server_id, :token_id)
 ">&lt;spacewalk.server.rhnSQL.sql_base.S<code class="variable-ellipsis">...</code></code>
@@ -601,8 +601,8 @@ position)
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.rhnServer.server_token-module.html#_query_check_server_uses_token" class="summary-name" onclick="show_private();">_query_check_server_uses_token</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765500452\
-8; statement=
+        <a href="backend.server.rhnServer.server_token-module.html#_query_check_server_uses_token" class="summary-name" onclick="show_private();">_query_check_server_uses_token</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 13998081289350\
+4; statement=
     select 1 from rhnServerTokenRegs
     where server_id = :server_id
     and token_id = :token_id
@@ -613,8 +613,8 @@ position)
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.rhnServer.server_token-module.html#_query_check_token_limits" class="summary-name" onclick="show_private();">_query_check_token_limits</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765500460\
-0; statement=
+        <a href="backend.server.rhnServer.server_token-module.html#_query_check_token_limits" class="summary-name" onclick="show_private();">_query_check_token_limits</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 13998081289357\
+6; statement=
     select
        rt.usage_limit max_nr,
        ( select count(server_id) from rhnServerTokenRegs
@@ -628,8 +628,8 @@ position)
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.rhnServer.server_token-module.html#_query_token" class="summary-name" onclick="show_private();">_query_token</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765500467\
-2; statement=
+        <a href="backend.server.rhnServer.server_token-module.html#_query_token" class="summary-name" onclick="show_private();">_query_token</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 13998081289364\
+8; statement=
     select rt.id as token_id,
            sgt.label as token_type,
            sgt.name as token_desc,
@@ -643,8 +643,8 @@ position)
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.rhnServer.server_token-module.html#_query_org_default_token" class="summary-name" onclick="show_private();">_query_org_default_token</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765500474\
-4; statement=
+        <a href="backend.server.rhnServer.server_token-module.html#_query_org_default_token" class="summary-name" onclick="show_private();">_query_org_default_token</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 13998081289372\
+0; statement=
     select rt.id as token_id,
            sgt.label as token_type,
            sgt.name as token_desc,
@@ -658,8 +658,8 @@ position)
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.server.rhnServer.server_token-module.html#_query_disable_token" class="summary-name" onclick="show_private();">_query_disable_token</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765500481\
-6; statement=
+        <a href="backend.server.rhnServer.server_token-module.html#_query_disable_token" class="summary-name" onclick="show_private();">_query_disable_token</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 13998081289379\
+2; statement=
     update rhnRegToken
        set disabled = 1
      where id = :token_id
@@ -752,8 +752,8 @@ position)
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765495459<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
-2; statement=
+&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 13998081289278<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+4; statement=
     select rtg.server_group_id, sg.name
       from rhnRegTokenGroups rtg, rhnServerGroup sg
      where rtg.token_id = :token_id
@@ -776,8 +776,8 @@ position)
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765495473<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
-6; statement=
+&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 13998081289292<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+8; statement=
     select pn.id as name_id, pa.id as arch_id, pn.name
     from rhnPackageName pn, rhnRegTokenPackages rtp
         left outer join rhnPackageArch pa on rtp.arch_id = pa.id
@@ -802,8 +802,8 @@ position)
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765495480<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
-8; statement=
+&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 13998081289300<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+0; statement=
     insert into rhnActionPackage (id, action_id, name_id, parameter)
     values (sequence_nextval('rhn_act_p_id_seq'), :action_id, :name_id<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
 , 'upgrade')
@@ -825,8 +825,8 @@ position)
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765495488<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
-0; statement=
+&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 13998081289307<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+2; statement=
     select cf.latest_config_revision_id revision_id,
            cfn.path
       from rhnConfigFileName cfn,
@@ -851,8 +851,8 @@ position)
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765495495<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
-2; statement=
+&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 13998081289314<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+4; statement=
     insert into rhnActionConfigRevision (id, action_id, server_id, con<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
 fig_revision_id)
     values (sequence_nextval('rhn_actioncr_id_seq'), :action_id, :serv<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
@@ -875,8 +875,8 @@ er_id, :config_revision_id)
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765500424<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
-0; statement=
+&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 13998081289321<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+6; statement=
     select rtcc.config_channel_id,
            rtcc.position, cc.name
       from rhnConfigChannel cc,
@@ -901,8 +901,8 @@ er_id, :config_revision_id)
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765500431<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
-2; statement=
+&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 13998081289328<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+8; statement=
     insert into rhnServerConfigChannel (server_id, config_channel_id, <span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
 position)
     values (:server_id, :config_channel_id, :position)
@@ -924,8 +924,8 @@ position)
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765500438<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
-4; statement=
+&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 13998081289336<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+0; statement=
     select config_channel_id
       from rhnServerConfigChannel
        where server_id = :server_id
@@ -948,8 +948,8 @@ position)
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765500445<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
-6; statement=
+&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 13998081289343<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+2; statement=
     insert into rhnServerTokenRegs (server_id, token_id)
     values (:server_id, :token_id)
 
@@ -970,8 +970,8 @@ position)
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765500452<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
-8; statement=
+&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 13998081289350<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+4; statement=
     select 1 from rhnServerTokenRegs
     where server_id = :server_id
     and token_id = :token_id
@@ -993,8 +993,8 @@ position)
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765500460<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
-0; statement=
+&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 13998081289357<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+6; statement=
     select
        rt.usage_limit max_nr,
        ( select count(server_id) from rhnServerTokenRegs
@@ -1019,8 +1019,8 @@ position)
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765500467<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
-2; statement=
+&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 13998081289364<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+8; statement=
     select rt.id as token_id,
            sgt.label as token_type,
            sgt.name as token_desc,
@@ -1045,8 +1045,8 @@ position)
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765500474<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
-4; statement=
+&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 13998081289372<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+0; statement=
     select rt.id as token_id,
            sgt.label as token_type,
            sgt.name as token_desc,
@@ -1071,8 +1071,8 @@ position)
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765500481<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
-6; statement=
+&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 13998081289379<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+2; statement=
     update rhnRegToken
        set disabled = 1
      where id = :token_id
@@ -1106,7 +1106,7 @@ position)
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Tue Jan  8 16:13:38 2019
+    Generated by Epydoc 3.0.1 on Wed Mar  4 07:37:11 2020
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

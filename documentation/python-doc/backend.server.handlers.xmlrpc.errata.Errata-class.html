@@ -59,16 +59,16 @@
 <h1 class="epydoc">Class Errata</h1><p class="nomargin-top"><span class="codelink"><a href="backend.server.handlers.xmlrpc.errata-pysrc.html#Errata">source&nbsp;code</a></span></p>
 <center>
 <center>  <map id="uml_class_diagram_for_backend__327" name="uml_class_diagram_for_backend__327">
-<area shape="rect" id="node1_7" href="backend.server.handlers.xmlrpc.errata.Errata-class.html#__init__" title="backend.server.handlers.xmlrpc.errata.Errata.__init__" alt="" coords="17,192,340,212"/>
-<area shape="rect" id="node1_8" href="backend.server.handlers.xmlrpc.errata.Errata-class.html#GetByPackage" title="Clients v1&#45; Get errata for a package given &quot;n&#45;v&#45;r&quot; format IN: &#160;pkg: &#160;&#160;&quot;n&#45;v&#45;r&quot; (old client call) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;or [n,v,r] &#160;&#160;&#160;&#160;&#160;osRel: OS release RET: a hash by errata that applies to this package &#160;&#160;&#160;&#160;&#160;(ie, newer packages are available)." alt="" coords="17,212,340,232"/>
-<area shape="rect" id="node1_9" href="backend.server.handlers.xmlrpc.errata.Errata-class.html#getPackageErratum" title="Clients v2+ &#45; Get errata for a package given [n,v,r,e,a,...] format" alt="" coords="17,232,340,252"/>
-<area shape="rect" id="node1_10" href="backend.server.handlers.xmlrpc.errata.Errata-class.html#getErrataInfo" title="backend.server.handlers.xmlrpc.errata.Errata.getErrataInfo" alt="" coords="17,252,340,272"/>
-<area shape="rect" id="node1_11" href="backend.server.handlers.xmlrpc.errata.Errata-class.html#getErrataNamesById" title="Return a list of RhnErrata tuples of (id, advisory_name)" alt="" coords="17,272,340,292"/>
-<area shape="rect" id="node1" href="backend.server.handlers.xmlrpc.errata.Errata-class.html" title="Errata class &#45;&#45;&#45; retrieve (via xmlrpc) package errata." alt="" coords="5,160,352,299"/>
-<area shape="rect" id="node2_12" href="javascript:void(0);" title="spacewalk.server.rhnHandler.rhnHandler.auth_system" alt="" coords="45,115,311,135"/>
-<area shape="rect" id="node2" href="javascript:void(0);" title="spacewalk.server.rhnHandler.rhnHandler" alt="" coords="33,83,322,141"/>
-<area shape="rect" id="node3_13" href="javascript:void(0);" title="spacewalk.common.RPC_Base.RPC_Base.get_function" alt="" coords="44,37,313,57"/>
-<area shape="rect" id="node3" href="javascript:void(0);" title="spacewalk.common.RPC_Base.RPC_Base" alt="" coords="32,5,325,64"/>
+<area shape="rect" id="node1_7" href="backend.server.handlers.xmlrpc.errata.Errata-class.html#__init__" title="backend.server.handlers.xmlrpc.errata.Errata.__init__" alt="" coords="17,193,341,212"/>
+<area shape="rect" id="node1_8" href="backend.server.handlers.xmlrpc.errata.Errata-class.html#GetByPackage" title="Clients v1&#45; Get errata for a package given &quot;n&#45;v&#45;r&quot; format IN: &#160;pkg: &#160;&#160;&quot;n&#45;v&#45;r&quot; (old client call) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;or [n,v,r] &#160;&#160;&#160;&#160;&#160;osRel: OS release RET: a hash by errata that applies to this package &#160;&#160;&#160;&#160;&#160;(ie, newer packages are available)." alt="" coords="17,212,341,231"/>
+<area shape="rect" id="node1_9" href="backend.server.handlers.xmlrpc.errata.Errata-class.html#getPackageErratum" title="Clients v2+ &#45; Get errata for a package given [n,v,r,e,a,...] format" alt="" coords="17,231,341,249"/>
+<area shape="rect" id="node1_10" href="backend.server.handlers.xmlrpc.errata.Errata-class.html#getErrataInfo" title="backend.server.handlers.xmlrpc.errata.Errata.getErrataInfo" alt="" coords="17,249,341,268"/>
+<area shape="rect" id="node1_11" href="backend.server.handlers.xmlrpc.errata.Errata-class.html#getErrataNamesById" title="Return a list of RhnErrata tuples of (id, advisory_name)" alt="" coords="17,268,341,287"/>
+<area shape="rect" id="node1" href="backend.server.handlers.xmlrpc.errata.Errata-class.html" title="Errata class &#45;&#45;&#45; retrieve (via xmlrpc) package errata." alt="" coords="5,161,353,293"/>
+<area shape="rect" id="node2_12" href="javascript:void(0);" title="spacewalk.server.rhnHandler.rhnHandler.auth_system" alt="" coords="47,116,313,135"/>
+<area shape="rect" id="node2" href="javascript:void(0);" title="spacewalk.server.rhnHandler.rhnHandler" alt="" coords="35,83,325,141"/>
+<area shape="rect" id="node3_13" href="javascript:void(0);" title="spacewalk.common.RPC_Base.RPC_Base.get_function" alt="" coords="44,39,315,57"/>
+<area shape="rect" id="node3" href="javascript:void(0);" title="spacewalk.common.RPC_Base.RPC_Base" alt="" coords="31,6,326,63"/>
 </map>
   <img src="uml_class_diagram_for_backend__327.png" alt='' usemap="#uml_class_diagram_for_backend__327" ismap="ismap" class="graph-without-title" />
 </center>
@@ -249,8 +249,8 @@ RET: a hash by errata that applies to this package
     ><span class="codelink"><a href="backend.server.handlers.xmlrpc.errata-pysrc.html#Errata.__init__">source&nbsp;code</a></span>&nbsp;
     </td>
   </tr></table>
-
-
+  
+  
   <dl class="fields">
     <dt>Overrides:
         spacewalk.common.RPC_Base.RPC_Base.__init__
@@ -369,7 +369,7 @@ criterion, then an empty list is returned.
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Tue Jan  8 16:13:54 2019
+    Generated by Epydoc 3.0.1 on Wed Mar  4 07:37:23 2020
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

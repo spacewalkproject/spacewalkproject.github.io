@@ -210,8 +210,8 @@
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.satellite_tools.satComputePkgHeaders.Runner-class.html#_query_get_channel_packages" class="summary-name" onclick="show_private();">_query_get_channel_packages</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765933644\
-8; statement=
+        <a href="backend.satellite_tools.satComputePkgHeaders.Runner-class.html#_query_get_channel_packages" class="summary-name" onclick="show_private();">_query_get_channel_packages</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 13998081728362\
+4; statement=
         select c.id, c.label
           from rhnChannel c,
                rhnChannelPackage cp
@@ -224,8 +224,8 @@
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.satellite_tools.satComputePkgHeaders.Runner-class.html#_query_get_channels" class="summary-name" onclick="show_private();">_query_get_channels</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765933652\
-0; statement=
+        <a href="backend.satellite_tools.satComputePkgHeaders.Runner-class.html#_query_get_channels" class="summary-name" onclick="show_private();">_query_get_channels</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 13998081728369\
+6; statement=
         select id, label from rhnChannel
     ">&lt;spacewalk.server.rhnSQL.sql_base.Statem<code class="variable-ellipsis">...</code></code>
     </td>
@@ -234,8 +234,8 @@
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.satellite_tools.satComputePkgHeaders.Runner-class.html#_query_get_packages" class="summary-name" onclick="show_private();">_query_get_packages</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765933659\
-2; statement=
+        <a href="backend.satellite_tools.satComputePkgHeaders.Runner-class.html#_query_get_packages" class="summary-name" onclick="show_private();">_query_get_packages</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 13998081728376\
+8; statement=
         select cp.package_id, p.path, p.header_start, p.header_end
           from rhnChannelPackage cp,
                rhnPackage p
@@ -249,8 +249,8 @@
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="backend.satellite_tools.satComputePkgHeaders.Runner-class.html#_query_add_package_header_values" class="summary-name" onclick="show_private();">_query_add_package_header_values</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765933666\
-4; statement=
+        <a href="backend.satellite_tools.satComputePkgHeaders.Runner-class.html#_query_add_package_header_values" class="summary-name" onclick="show_private();">_query_add_package_header_values</a> = <code title="&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 13998081728384\
+0; statement=
         update rhnPackage
            set header_start = :header_start,
                header_end = :header_end
@@ -289,14 +289,14 @@
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765933644<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
-8; statement=
+&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 13998081728362<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+4; statement=
         select c.id, c.label
           from rhnChannel c,
                rhnChannelPackage cp
          where cp.package_id = :package_id
            and cp.channel_id = c.id
-
+    
 </pre></td></tr></table>
 </dd>
   </dl>
@@ -314,10 +314,10 @@
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765933652<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
-0; statement=
+&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 13998081728369<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+6; statement=
         select id, label from rhnChannel
-
+    
 </pre></td></tr></table>
 </dd>
   </dl>
@@ -335,8 +335,8 @@
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765933659<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
-2; statement=
+&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 13998081728376<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+8; statement=
         select cp.package_id, p.path, p.header_start, p.header_end
           from rhnChannelPackage cp,
                rhnPackage p
@@ -361,13 +361,13 @@
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 14022765933666<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
-4; statement=
+&lt;spacewalk.server.rhnSQL.sql_base.Statement instance at 13998081728384<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+0; statement=
         update rhnPackage
            set header_start = :header_start,
                header_end = :header_end
          where id = :package_id
-
+    
 </pre></td></tr></table>
 </dd>
   </dl>
@@ -397,7 +397,7 @@
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Tue Jan  8 16:13:47 2019
+    Generated by Epydoc 3.0.1 on Wed Mar  4 07:37:18 2020
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

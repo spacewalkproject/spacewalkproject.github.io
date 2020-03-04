@@ -55,7 +55,7 @@
 <pre class="py-src">
 <a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-comment"># Spacewalk Proxy Server authentication manager.</tt> </tt>
 <a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
-<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-comment"># Copyright (c) 2008--2018 Red Hat, Inc.</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-comment"># Copyright (c) 2008--2020 Red Hat, Inc.</tt> </tt>
 <a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
 <a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-comment"># This software is licensed to you under the GNU General Public License,</tt> </tt>
 <a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-comment"># version 2 (GPLv2). There is NO WARRANTY for this software, express or</tt> </tt>
@@ -107,26 +107,20 @@ backend.common.rhnException.rhnException" class="py-name" href="#" onclick="retu
 <a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">spacewalk</tt><tt class="py-op">.</tt><tt id="link-16" class="py-name"><a title="backend.cdn_tools.common
 backend.common" class="py-name" href="#" onclick="return doclink('link-16', 'common', 'link-0');">common</a></tt> <tt class="py-keyword">import</tt> <tt id="link-17" class="py-name" targets="Module backend.common.rhnCache=backend.common.rhnCache-module.html"><a title="backend.common.rhnCache" class="py-name" href="#" onclick="return doclink('link-17', 'rhnCache', 'link-17');">rhnCache</a></tt> </tt>
 <a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">spacewalk</tt><tt class="py-op">.</tt><tt id="link-18" class="py-name"><a title="backend.cdn_tools.common
-backend.common" class="py-name" href="#" onclick="return doclink('link-18', 'common', 'link-0');">common</a></tt><tt class="py-op">.</tt><tt id="link-19" class="py-name" targets="Module backend.common.rhnTranslate=backend.common.rhnTranslate-module.html"><a title="backend.common.rhnTranslate" class="py-name" href="#" onclick="return doclink('link-19', 'rhnTranslate', 'link-19');">rhnTranslate</a></tt> <tt class="py-keyword">import</tt> <tt id="link-20" class="py-name" targets="Function backend.common.rhnTranslate._()=backend.common.rhnTranslate-module.html#_,Variable rhn_check._=rhn_check-module.html#_,Variable rhn_choose_channel._=rhn_choose_channel-module.html#_,Variable rhn_choose_server_gui._=rhn_choose_server_gui-module.html#_,Variable rhn_create_profile_gui._=rhn_create_profile_gui-module.html#_,Variable rhn_finish_gui._=rhn_finish_gui-module.html#_,Variable rhn_login_gui._=rhn_login_gui-module.html#_,Variable rhn_provide_certificate_gui._=rhn_provide_certificate_gui-module.html#_,Variable rhn_register._=rhn_register-module.html#_,Variable rhn_review_gui._=rhn_review_gui-module.html#_,Variable rhn_start_gui._=rhn_start_gui-module.html#_,Variable rhnreg_ks._=rhnreg_ks-module.html#_,Variable script-spacewalk_channel_py._=script-spacewalk_channel_py-module.html#_,Variable up2date_client.debUtils._=up2date_client.debUtils-module.html#_,Variable up2date_client.gui._=up2date_client.gui-module.html#_,Variable up2date_client.messageWindow._=up2date_client.messageWindow-module.html#_,Variable up2date_client.rhnreg._=up2date_client.rhnreg-module.html#_,Variable up2date_client.rhnregGui._=up2date_client.rhnregGui-module.html#_,Variable up2date_client.rhnreg_constants._=up2date_client.rhnreg_constants-module.html#_,Variable up2date_client.tui._=up2date_client.tui-module.html#_,Variable virtualization.support._=virtualization.support-module.html#_"><a title="backend.common.rhnTranslate._
-rhn_check._
+backend.common" class="py-name" href="#" onclick="return doclink('link-18', 'common', 'link-0');">common</a></tt><tt class="py-op">.</tt><tt id="link-19" class="py-name" targets="Module backend.common.rhnTranslate=backend.common.rhnTranslate-module.html"><a title="backend.common.rhnTranslate" class="py-name" href="#" onclick="return doclink('link-19', 'rhnTranslate', 'link-19');">rhnTranslate</a></tt> <tt class="py-keyword">import</tt> <tt id="link-20" class="py-name" targets="Function backend.common.rhnTranslate._()=backend.common.rhnTranslate-module.html#_,Variable rhn_choose_channel._=rhn_choose_channel-module.html#_,Variable rhn_choose_server_gui._=rhn_choose_server_gui-module.html#_,Variable rhn_create_profile_gui._=rhn_create_profile_gui-module.html#_,Variable rhn_finish_gui._=rhn_finish_gui-module.html#_,Variable rhn_login_gui._=rhn_login_gui-module.html#_,Variable rhn_provide_certificate_gui._=rhn_provide_certificate_gui-module.html#_,Variable rhn_review_gui._=rhn_review_gui-module.html#_,Variable rhn_start_gui._=rhn_start_gui-module.html#_,Variable script-spacewalk_channel_py._=script-spacewalk_channel_py-module.html#_,Variable up2date_client.debUtils._=up2date_client.debUtils-module.html#_,Variable up2date_client.gui._=up2date_client.gui-module.html#_,Variable up2date_client.messageWindow._=up2date_client.messageWindow-module.html#_,Variable up2date_client.rhnregGui._=up2date_client.rhnregGui-module.html#_,Variable virtualization.support._=virtualization.support-module.html#_"><a title="backend.common.rhnTranslate._
 rhn_choose_channel._
 rhn_choose_server_gui._
 rhn_create_profile_gui._
 rhn_finish_gui._
 rhn_login_gui._
 rhn_provide_certificate_gui._
-rhn_register._
 rhn_review_gui._
 rhn_start_gui._
-rhnreg_ks._
 script-spacewalk_channel_py._
 up2date_client.debUtils._
 up2date_client.gui._
 up2date_client.messageWindow._
-up2date_client.rhnreg._
 up2date_client.rhnregGui._
-up2date_client.rhnreg_constants._
-up2date_client.tui._
 virtualization.support._" class="py-name" href="#" onclick="return doclink('link-20', '_', 'link-20');">_</a></tt> </tt>
 <a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line"> </tt>
 <a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line"><tt class="py-comment"># local imports</tt> </tt>
@@ -211,25 +205,19 @@ src.rhn_log.Logger.log_error
 src.rhn_log.log_error" class="py-name" href="#" onclick="return doclink('link-59', 'log_error', 'link-9');">log_error</a></tt><tt class="py-op">(</tt><tt class="py-string">"unable to access %s"</tt> <tt class="py-op">%</tt> <tt id="link-60" class="py-name"><a title="proxy.rhnProxyAuth.ProxyAuth" class="py-name" href="#" onclick="return doclink('link-60', 'ProxyAuth', 'link-36');">ProxyAuth</a></tt><tt class="py-op">.</tt><tt id="link-61" class="py-name"><a title="proxy.rhnProxyAuth.ProxyAuth.__systemid_filename" class="py-name" href="#" onclick="return doclink('link-61', '__systemid_filename', 'link-48');">__systemid_filename</a></tt><tt class="py-op">)</tt> </tt>
 <a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt id="link-62" class="py-name"><a title="backend.common.rhnException.rhnFault" class="py-name" href="#" onclick="return doclink('link-62', 'rhnFault', 'link-15');">rhnFault</a></tt><tt class="py-op">(</tt><tt class="py-number">1000</tt><tt class="py-op">,</tt> </tt>
 <a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line">                           <tt id="link-63" class="py-name"><a title="backend.common.rhnTranslate._
-rhn_check._
 rhn_choose_channel._
 rhn_choose_server_gui._
 rhn_create_profile_gui._
 rhn_finish_gui._
 rhn_login_gui._
 rhn_provide_certificate_gui._
-rhn_register._
 rhn_review_gui._
 rhn_start_gui._
-rhnreg_ks._
 script-spacewalk_channel_py._
 up2date_client.debUtils._
 up2date_client.gui._
 up2date_client.messageWindow._
-up2date_client.rhnreg._
 up2date_client.rhnregGui._
-up2date_client.rhnreg_constants._
-up2date_client.tui._
 virtualization.support._" class="py-name" href="#" onclick="return doclink('link-63', '_', 'link-20');">_</a></tt><tt class="py-op">(</tt><tt class="py-string">"Spacewalk Proxy error (Spacewalk Proxy systemid has wrong permissions?). "</tt> </tt>
 <a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line">                             <tt class="py-string">"Please contact your system administrator."</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
 <a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line"> </tt>
@@ -248,25 +236,19 @@ src.rhn_log.log_error" class="py-name" href="#" onclick="return doclink('link-68
 virtualization.init_action.e" class="py-name" href="#" onclick="return doclink('link-71', 'e', 'link-67');">e</a></tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
 <a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt id="link-72" class="py-name"><a title="backend.common.rhnException.rhnFault" class="py-name" href="#" onclick="return doclink('link-72', 'rhnFault', 'link-15');">rhnFault</a></tt><tt class="py-op">(</tt><tt class="py-number">1000</tt><tt class="py-op">,</tt> </tt>
 <a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line">                           <tt id="link-73" class="py-name"><a title="backend.common.rhnTranslate._
-rhn_check._
 rhn_choose_channel._
 rhn_choose_server_gui._
 rhn_create_profile_gui._
 rhn_finish_gui._
 rhn_login_gui._
 rhn_provide_certificate_gui._
-rhn_register._
 rhn_review_gui._
 rhn_start_gui._
-rhnreg_ks._
 script-spacewalk_channel_py._
 up2date_client.debUtils._
 up2date_client.gui._
 up2date_client.messageWindow._
-up2date_client.rhnreg._
 up2date_client.rhnregGui._
-up2date_client.rhnreg_constants._
-up2date_client.tui._
 virtualization.support._" class="py-name" href="#" onclick="return doclink('link-73', '_', 'link-20');">_</a></tt><tt class="py-op">(</tt><tt class="py-string">"Spacewalk Proxy error (Spacewalk Proxy systemid has wrong permissions?). "</tt> </tt>
 <a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line">                             <tt class="py-string">"Please contact your system administrator."</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">exc_info</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">[</tt><tt class="py-number">2</tt><tt class="py-op">]</tt> </tt>
 <a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line"> </tt>
@@ -298,25 +280,19 @@ src.rhn_log.Logger.log_error
 src.rhn_log.log_error" class="py-name" href="#" onclick="return doclink('link-86', 'log_error', 'link-9');">log_error</a></tt><tt class="py-op">(</tt><tt class="py-string">"unable to read %s"</tt> <tt class="py-op">%</tt> <tt id="link-87" class="py-name"><a title="proxy.rhnProxyAuth.ProxyAuth" class="py-name" href="#" onclick="return doclink('link-87', 'ProxyAuth', 'link-36');">ProxyAuth</a></tt><tt class="py-op">.</tt><tt id="link-88" class="py-name"><a title="proxy.rhnProxyAuth.ProxyAuth.__systemid_filename" class="py-name" href="#" onclick="return doclink('link-88', '__systemid_filename', 'link-48');">__systemid_filename</a></tt><tt class="py-op">)</tt> </tt>
 <a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt id="link-89" class="py-name"><a title="backend.common.rhnException.rhnFault" class="py-name" href="#" onclick="return doclink('link-89', 'rhnFault', 'link-15');">rhnFault</a></tt><tt class="py-op">(</tt><tt class="py-number">1000</tt><tt class="py-op">,</tt> </tt>
 <a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line">                           <tt id="link-90" class="py-name"><a title="backend.common.rhnTranslate._
-rhn_check._
 rhn_choose_channel._
 rhn_choose_server_gui._
 rhn_create_profile_gui._
 rhn_finish_gui._
 rhn_login_gui._
 rhn_provide_certificate_gui._
-rhn_register._
 rhn_review_gui._
 rhn_start_gui._
-rhnreg_ks._
 script-spacewalk_channel_py._
 up2date_client.debUtils._
 up2date_client.gui._
 up2date_client.messageWindow._
-up2date_client.rhnreg._
 up2date_client.rhnregGui._
-up2date_client.rhnreg_constants._
-up2date_client.tui._
 virtualization.support._" class="py-name" href="#" onclick="return doclink('link-90', '_', 'link-20');">_</a></tt><tt class="py-op">(</tt><tt class="py-string">"Spacewalk Proxy error (Spacewalk Proxy systemid has wrong permissions?). "</tt> </tt>
 <a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line">                             <tt class="py-string">"Please contact your system administrator."</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">exc_info</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">[</tt><tt class="py-number">2</tt><tt class="py-op">]</tt> </tt>
 <a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line"> </tt>
@@ -418,25 +394,19 @@ up2date_client.up2dateLog.Log.log_debug" class="py-name" href="#" onclick="retur
 <a name="L159"></a><tt class="py-lineno">159</tt>  <tt class="py-line">            <tt class="py-name">shelf</tt><tt class="py-op">[</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-116" class="py-name"><a title="proxy.rhnProxyAuth.ProxyAuth.__cache_proxy_key" class="py-name" href="#" onclick="return doclink('link-116', '__cache_proxy_key', 'link-112');">__cache_proxy_key</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">token</tt> </tt>
 <a name="L160"></a><tt class="py-lineno">160</tt>  <tt class="py-line">        <tt class="py-keyword">except</tt><tt class="py-op">:</tt> </tt>
 <a name="L161"></a><tt class="py-lineno">161</tt>  <tt class="py-line">            <tt class="py-name">text</tt> <tt class="py-op">=</tt> <tt id="link-117" class="py-name"><a title="backend.common.rhnTranslate._
-rhn_check._
 rhn_choose_channel._
 rhn_choose_server_gui._
 rhn_create_profile_gui._
 rhn_finish_gui._
 rhn_login_gui._
 rhn_provide_certificate_gui._
-rhn_register._
 rhn_review_gui._
 rhn_start_gui._
-rhnreg_ks._
 script-spacewalk_channel_py._
 up2date_client.debUtils._
 up2date_client.gui._
 up2date_client.messageWindow._
-up2date_client.rhnreg._
 up2date_client.rhnregGui._
-up2date_client.rhnreg_constants._
-up2date_client.tui._
 virtualization.support._" class="py-name" href="#" onclick="return doclink('link-117', '_', 'link-20');">_</a></tt><tt class="py-op">(</tt><tt class="py-string">"""\</tt> </tt>
 <a name="L162"></a><tt class="py-lineno">162</tt>  <tt class="py-line"><tt class="py-string">Caching of authentication token for proxy id %s failed!</tt> </tt>
 <a name="L163"></a><tt class="py-lineno">163</tt>  <tt class="py-line"><tt class="py-string">Either the authentication caching daemon is experiencing</tt> </tt>
@@ -445,25 +415,19 @@ virtualization.support._" class="py-name" href="#" onclick="return doclink('link
 <a name="L166"></a><tt class="py-lineno">166</tt>  <tt class="py-line">            <tt id="link-119" class="py-name"><a title="backend.common.rhnTB.Traceback" class="py-name" href="#" onclick="return doclink('link-119', 'Traceback', 'link-5');">Traceback</a></tt><tt class="py-op">(</tt><tt class="py-string">"ProxyAuth.set_cached_token"</tt><tt class="py-op">,</tt> <tt class="py-name">extra</tt><tt class="py-op">=</tt><tt class="py-name">text</tt><tt class="py-op">)</tt> </tt>
 <a name="L167"></a><tt class="py-lineno">167</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt id="link-120" class="py-name"><a title="backend.common.rhnException.rhnFault" class="py-name" href="#" onclick="return doclink('link-120', 'rhnFault', 'link-15');">rhnFault</a></tt><tt class="py-op">(</tt><tt class="py-number">1000</tt><tt class="py-op">,</tt> </tt>
 <a name="L168"></a><tt class="py-lineno">168</tt>  <tt class="py-line">                           <tt id="link-121" class="py-name"><a title="backend.common.rhnTranslate._
-rhn_check._
 rhn_choose_channel._
 rhn_choose_server_gui._
 rhn_create_profile_gui._
 rhn_finish_gui._
 rhn_login_gui._
 rhn_provide_certificate_gui._
-rhn_register._
 rhn_review_gui._
 rhn_start_gui._
-rhnreg_ks._
 script-spacewalk_channel_py._
 up2date_client.debUtils._
 up2date_client.gui._
 up2date_client.messageWindow._
-up2date_client.rhnreg._
 up2date_client.rhnregGui._
-up2date_client.rhnreg_constants._
-up2date_client.tui._
 virtualization.support._" class="py-name" href="#" onclick="return doclink('link-121', '_', 'link-20');">_</a></tt><tt class="py-op">(</tt><tt class="py-string">"Spacewalk Proxy error (auth caching issue). "</tt> </tt>
 <a name="L169"></a><tt class="py-lineno">169</tt>  <tt class="py-line">                             <tt class="py-string">"Please contact your system administrator."</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">exc_info</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">[</tt><tt class="py-number">2</tt><tt class="py-op">]</tt> </tt>
 <a name="L170"></a><tt class="py-lineno">170</tt>  <tt class="py-line">        <tt id="link-122" class="py-name"><a title="backend.common.rhnLog.log_debug
@@ -703,25 +667,19 @@ virtualization.init_action.e" class="py-name" href="#" onclick="return doclink('
 <a name="L308"></a><tt class="py-lineno">308</tt>  <tt class="py-line">                <tt class="py-comment"># clear</tt> </tt>
 <a name="L309"></a><tt class="py-lineno">309</tt>  <tt class="py-line">                <tt class="py-keyword">raise</tt> <tt id="link-189" class="py-name"><a title="backend.common.rhnException.rhnFault" class="py-name" href="#" onclick="return doclink('link-189', 'rhnFault', 'link-15');">rhnFault</a></tt><tt class="py-op">(</tt><tt class="py-number">1000</tt><tt class="py-op">,</tt> </tt>
 <a name="L310"></a><tt class="py-lineno">310</tt>  <tt class="py-line">                               <tt id="link-190" class="py-name"><a title="backend.common.rhnTranslate._
-rhn_check._
 rhn_choose_channel._
 rhn_choose_server_gui._
 rhn_create_profile_gui._
 rhn_finish_gui._
 rhn_login_gui._
 rhn_provide_certificate_gui._
-rhn_register._
 rhn_review_gui._
 rhn_start_gui._
-rhnreg_ks._
 script-spacewalk_channel_py._
 up2date_client.debUtils._
 up2date_client.gui._
 up2date_client.messageWindow._
-up2date_client.rhnreg._
 up2date_client.rhnregGui._
-up2date_client.rhnreg_constants._
-up2date_client.tui._
 virtualization.support._" class="py-name" href="#" onclick="return doclink('link-190', '_', 'link-20');">_</a></tt><tt class="py-op">(</tt><tt class="py-string">"Spacewalk Proxy error (during proxy login). "</tt> </tt>
 <a name="L311"></a><tt class="py-lineno">311</tt>  <tt class="py-line">                                 <tt class="py-string">"Please contact your system administrator."</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">exc_info</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">[</tt><tt class="py-number">2</tt><tt class="py-op">]</tt> </tt>
 <a name="L312"></a><tt class="py-lineno">312</tt>  <tt class="py-line">            <tt class="py-keyword">except</tt> <tt class="py-name">Exception</tt><tt class="py-op">,</tt> <tt id="link-191" class="py-name"><a title="invocation.e
@@ -746,49 +704,37 @@ virtualization.init_action.e" class="py-name" href="#" onclick="return doclink('
 <a name="L323"></a><tt class="py-lineno">323</tt>  <tt class="py-line">                <tt class="py-keyword">if</tt> <tt id="link-196" class="py-name"><a title="backend.satellite_tools.xmlSource.BaseDispatchHandler.error" class="py-name" href="#" onclick="return doclink('link-196', 'error', 'link-129');">error</a></tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> <tt class="py-keyword">in</tt> <tt class="py-op">(</tt><tt class="py-string">'xmlrpclib.ProtocolError'</tt><tt class="py-op">,</tt> <tt class="py-string">'socket.error'</tt><tt class="py-op">,</tt> <tt class="py-string">'socket'</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
 <a name="L324"></a><tt class="py-lineno">324</tt>  <tt class="py-line">                    <tt class="py-keyword">raise</tt> <tt id="link-197" class="py-name"><a title="backend.common.rhnException.rhnFault" class="py-name" href="#" onclick="return doclink('link-197', 'rhnFault', 'link-15');">rhnFault</a></tt><tt class="py-op">(</tt><tt class="py-number">1000</tt><tt class="py-op">,</tt> </tt>
 <a name="L325"></a><tt class="py-lineno">325</tt>  <tt class="py-line">                                   <tt id="link-198" class="py-name"><a title="backend.common.rhnTranslate._
-rhn_check._
 rhn_choose_channel._
 rhn_choose_server_gui._
 rhn_create_profile_gui._
 rhn_finish_gui._
 rhn_login_gui._
 rhn_provide_certificate_gui._
-rhn_register._
 rhn_review_gui._
 rhn_start_gui._
-rhnreg_ks._
 script-spacewalk_channel_py._
 up2date_client.debUtils._
 up2date_client.gui._
 up2date_client.messageWindow._
-up2date_client.rhnreg._
 up2date_client.rhnregGui._
-up2date_client.rhnreg_constants._
-up2date_client.tui._
 virtualization.support._" class="py-name" href="#" onclick="return doclink('link-198', '_', 'link-20');">_</a></tt><tt class="py-op">(</tt><tt class="py-string">"Spacewalk Proxy error (error: %s). "</tt> </tt>
 <a name="L326"></a><tt class="py-lineno">326</tt>  <tt class="py-line">                                     <tt class="py-string">"Please contact your system administrator."</tt><tt class="py-op">)</tt> <tt class="py-op">%</tt> <tt id="link-199" class="py-name"><a title="backend.satellite_tools.xmlSource.BaseDispatchHandler.error" class="py-name" href="#" onclick="return doclink('link-199', 'error', 'link-129');">error</a></tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
 <a name="L327"></a><tt class="py-lineno">327</tt>  <tt class="py-line">                <tt class="py-keyword">if</tt> <tt id="link-200" class="py-name"><a title="backend.satellite_tools.xmlSource.BaseDispatchHandler.error" class="py-name" href="#" onclick="return doclink('link-200', 'error', 'link-129');">error</a></tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> <tt class="py-keyword">in</tt> <tt class="py-op">(</tt><tt class="py-string">'rhn.SSL.SSL.Error'</tt><tt class="py-op">,</tt> <tt class="py-string">'socket.sslerror'</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
 <a name="L328"></a><tt class="py-lineno">328</tt>  <tt class="py-line">                    <tt class="py-keyword">raise</tt> <tt id="link-201" class="py-name"><a title="backend.common.rhnException.rhnFault" class="py-name" href="#" onclick="return doclink('link-201', 'rhnFault', 'link-15');">rhnFault</a></tt><tt class="py-op">(</tt><tt class="py-number">1000</tt><tt class="py-op">,</tt> </tt>
 <a name="L329"></a><tt class="py-lineno">329</tt>  <tt class="py-line">                                   <tt id="link-202" class="py-name"><a title="backend.common.rhnTranslate._
-rhn_check._
 rhn_choose_channel._
 rhn_choose_server_gui._
 rhn_create_profile_gui._
 rhn_finish_gui._
 rhn_login_gui._
 rhn_provide_certificate_gui._
-rhn_register._
 rhn_review_gui._
 rhn_start_gui._
-rhnreg_ks._
 script-spacewalk_channel_py._
 up2date_client.debUtils._
 up2date_client.gui._
 up2date_client.messageWindow._
-up2date_client.rhnreg._
 up2date_client.rhnregGui._
-up2date_client.rhnreg_constants._
-up2date_client.tui._
 virtualization.support._" class="py-name" href="#" onclick="return doclink('link-202', '_', 'link-20');">_</a></tt><tt class="py-op">(</tt><tt class="py-string">"Spacewalk Proxy error (SSL issues? Error: %s). "</tt> </tt>
 <a name="L330"></a><tt class="py-lineno">330</tt>  <tt class="py-line">                                     <tt class="py-string">"Please contact your system administrator."</tt><tt class="py-op">)</tt> <tt class="py-op">%</tt> <tt id="link-203" class="py-name"><a title="backend.satellite_tools.xmlSource.BaseDispatchHandler.error" class="py-name" href="#" onclick="return doclink('link-203', 'error', 'link-129');">error</a></tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
 <a name="L331"></a><tt class="py-lineno">331</tt>  <tt class="py-line">                <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
@@ -934,25 +880,19 @@ src.rhn_log.Logger.log_error
 src.rhn_log.log_error" class="py-name" href="#" onclick="return doclink('link-250', 'log_error', 'link-9');">log_error</a></tt><tt class="py-op">(</tt><tt class="py-string">'ERROR: missing or cannot access (for ca_chain): %s'</tt> <tt class="py-op">%</tt> <tt id="link-251" class="py-name"><a title="backend.common.rhnConfig.CFG" class="py-name" href="#" onclick="return doclink('link-251', 'CFG', 'link-12');">CFG</a></tt><tt class="py-op">.</tt><tt class="py-name">CA_CHAIN</tt><tt class="py-op">)</tt> </tt>
 <a name="L414"></a><tt class="py-lineno">414</tt>  <tt class="py-line">                <tt class="py-keyword">raise</tt> <tt id="link-252" class="py-name"><a title="backend.common.rhnException.rhnFault" class="py-name" href="#" onclick="return doclink('link-252', 'rhnFault', 'link-15');">rhnFault</a></tt><tt class="py-op">(</tt><tt class="py-number">1000</tt><tt class="py-op">,</tt> </tt>
 <a name="L415"></a><tt class="py-lineno">415</tt>  <tt class="py-line">                               <tt id="link-253" class="py-name"><a title="backend.common.rhnTranslate._
-rhn_check._
 rhn_choose_channel._
 rhn_choose_server_gui._
 rhn_create_profile_gui._
 rhn_finish_gui._
 rhn_login_gui._
 rhn_provide_certificate_gui._
-rhn_register._
 rhn_review_gui._
 rhn_start_gui._
-rhnreg_ks._
 script-spacewalk_channel_py._
 up2date_client.debUtils._
 up2date_client.gui._
 up2date_client.messageWindow._
-up2date_client.rhnreg._
 up2date_client.rhnregGui._
-up2date_client.rhnreg_constants._
-up2date_client.tui._
 virtualization.support._" class="py-name" href="#" onclick="return doclink('link-253', '_', 'link-20');">_</a></tt><tt class="py-op">(</tt><tt class="py-string">"Spacewalk Proxy error (file access issues). "</tt> </tt>
 <a name="L416"></a><tt class="py-lineno">416</tt>  <tt class="py-line">                                 <tt class="py-string">"Please contact your system administrator. "</tt> </tt>
 <a name="L417"></a><tt class="py-lineno">417</tt>  <tt class="py-line">                                 <tt class="py-string">"Please refer to Spacewalk Proxy logs."</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
@@ -1052,7 +992,7 @@ backend.common.rhnCache.delete
 backend.server.rhnServer.server_packages.dbPackage.delete" class="py-name" href="#" onclick="return doclink('link-284', 'delete', 'link-284');">delete</a></tt><tt class="py-op">(</tt><tt class="py-name">rkey</tt><tt class="py-op">)</tt> </tt>
 </div><a name="L461"></a><tt class="py-lineno">461</tt>  <tt class="py-line"> </tt>
 <a name="AuthLocalBackend._compute_key"></a><div id="AuthLocalBackend._compute_key-def"><a name="L462"></a><tt class="py-lineno">462</tt> <a class="py-toggle" href="#" id="AuthLocalBackend._compute_key-toggle" onclick="return toggle('AuthLocalBackend._compute_key');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="proxy.rhnProxyAuth.AuthLocalBackend-class.html#_compute_key">_compute_key</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">key</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
-</div><div id="AuthLocalBackend._compute_key-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="AuthLocalBackend._compute_key-expanded"><a name="L463"></a><tt class="py-lineno">463</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">join</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-285" class="py-name"><a title="proxy.rhnProxyAuth.AuthLocalBackend._cache_prefix" class="py-name" href="#" onclick="return doclink('link-285', '_cache_prefix', 'link-272');">_cache_prefix</a></tt><tt class="py-op">,</tt> <tt id="link-286" class="py-name"><a title="str" class="py-name" href="#" onclick="return doclink('link-286', 'str', 'link-158');">str</a></tt><tt class="py-op">(</tt><tt class="py-name">key</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div><div id="AuthLocalBackend._compute_key-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="AuthLocalBackend._compute_key-expanded"><a name="L463"></a><tt class="py-lineno">463</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">join</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-285" class="py-name"><a title="proxy.rhnProxyAuth.AuthLocalBackend._cache_prefix" class="py-name" href="#" onclick="return doclink('link-285', '_cache_prefix', 'link-272');">_cache_prefix</a></tt><tt class="py-op">,</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">basename</tt><tt class="py-op">(</tt><tt id="link-286" class="py-name"><a title="str" class="py-name" href="#" onclick="return doclink('link-286', 'str', 'link-158');">str</a></tt><tt class="py-op">(</tt><tt class="py-name">key</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
 </div><a name="L464"></a><tt class="py-lineno">464</tt>  <tt class="py-line"> </tt>
 <a name="AuthLocalBackend.__len__"></a><div id="AuthLocalBackend.__len__-def"><a name="L465"></a><tt class="py-lineno">465</tt> <a class="py-toggle" href="#" id="AuthLocalBackend.__len__-toggle" onclick="return toggle('AuthLocalBackend.__len__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="proxy.rhnProxyAuth.AuthLocalBackend-class.html#__len__">__len__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
 </div><div id="AuthLocalBackend.__len__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="AuthLocalBackend.__len__-expanded"><a name="L466"></a><tt class="py-lineno">466</tt>  <tt class="py-line">        <tt class="py-keyword">pass</tt> </tt>
@@ -1088,7 +1028,7 @@ expandto(location.href);
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Tue Jan  8 16:14:27 2019
+    Generated by Epydoc 3.0.1 on Wed Mar  4 07:37:45 2020
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"
