@@ -1,0 +1,6 @@
+<area shape="rect" id="node1" href="table-RHNPRODUCTNAME.html#t-fk" title="RHNPRODUCTNAME" alt="" coords="18,36,171,63">
+<area shape="rect" id="node6" href="table-RHNCHANNEL.html#t-fk" title="RHNCHANNEL" alt="" coords="232,137,347,164">
+<area shape="rect" id="node2" href="table-WEB_CUSTOMER.html#t-fk" title="WEB_CUSTOMER" alt="" coords="29,87,161,113">
+<area shape="rect" id="node3" href="table-RHNCHECKSUMTYPE.html#t-fk" title="RHNCHECKSUMTYPE" alt="" coords="16,137,173,164">
+<area shape="rect" id="node4" href="table-RHNCHANNELARCH.html#t-fk" title="RHNCHANNELARCH" alt="" coords="19,188,170,215">
+<area shape="rect" id="node5" href="table-RHNCHANNELPRODUCT.html#t-fk" title="RHNCHANNELPRODUCT" alt="" coords="5,239,184,265">

@@ -1,0 +1,8 @@
+<area shape="rect" id="node1" href="table-RHNPACKAGEEVR.html#t-fk" title="RHNPACKAGEEVR" alt="" coords="16,36,155,63">
+<area shape="rect" id="node3" href="table-RHNPACKAGE.html#t-fk" title="RHNPACKAGE" alt="" coords="213,188,325,215">
+<area shape="rect" id="node2" href="table-RHNSOURCERPM.html#t-fk" title="RHNSOURCERPM" alt="" coords="19,87,151,113">
+<area shape="rect" id="node4" href="table-WEB_CUSTOMER.html#t-fk" title="WEB_CUSTOMER" alt="" coords="19,137,151,164">
+<area shape="rect" id="node5" href="table-RHNPACKAGEGROUP.html#t-fk" title="RHNPACKAGEGROUP" alt="" coords="6,188,165,215">
+<area shape="rect" id="node6" href="table-RHNCHECKSUM.html#t-fk" title="RHNCHECKSUM" alt="" coords="23,239,148,265">
+<area shape="rect" id="node7" href="table-RHNPACKAGEARCH.html#t-fk" title="RHNPACKAGEARCH" alt="" coords="11,289,159,316">
+<area shape="rect" id="node8" href="table-RHNPACKAGENAME.html#t-fk" title="RHNPACKAGENAME" alt="" coords="10,340,161,367">

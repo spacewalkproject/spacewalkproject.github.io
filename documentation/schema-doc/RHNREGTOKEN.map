@@ -1,0 +1,4 @@
+<area shape="rect" id="node1" href="table-WEB_CUSTOMER.html#t-fk" title="WEB_CUSTOMER" alt="" coords="6,36,138,63">
+<area shape="rect" id="node4" href="table-RHNREGTOKEN.html#t-fk" title="RHNREGTOKEN" alt="" coords="187,87,309,113">
+<area shape="rect" id="node2" href="table-WEB_CONTACT.html#t-fk" title="WEB_CONTACT" alt="" coords="11,87,133,113">
+<area shape="rect" id="node3" href="table-RHNSERVER.html#t-fk" title="RHNSERVER" alt="" coords="21,137,123,164">

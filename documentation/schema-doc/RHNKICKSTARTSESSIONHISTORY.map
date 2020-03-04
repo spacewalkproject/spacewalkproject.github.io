@@ -1,0 +1,4 @@
+<area shape="rect" id="node1" href="table-RHNKICKSTARTSESSIONHISTORY.html#t-fk" title="RHNKICKSTARTSESSIONHISTORY" alt="" coords="272,87,507,113">
+<area shape="rect" id="node2" href="table-RHNKICKSTARTSESSION.html#t-fk" title="RHNKICKSTARTSESSION" alt="" coords="25,36,204,63">
+<area shape="rect" id="node3" href="table-RHNACTION.html#t-fk" title="RHNACTION" alt="" coords="64,87,165,113">
+<area shape="rect" id="node4" href="table-RHNKICKSTARTSESSIONSTATE.html#t-fk" title="RHNKICKSTARTSESSIONSTATE" alt="" coords="6,137,223,164">

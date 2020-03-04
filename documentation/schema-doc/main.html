@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+        <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+        <head><title> Spacewalk DB Schema - name </title>
+        <link rel="stylesheet" type="text/css" href="oraschemadoc.css" />
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+        <meta name="author" content="Petr Vanek, petr@scribus.info" />
+        <meta name="generator" content="oraschemadoc" />
+        </head>
+        <body>
+            <div class="contextbar">
+            <a href="main.html">Main</a>
+            <a href="tables-list.html">Tables</a>
+            <a href="views-list.html">Views</a>
+            <a href="mviews-list.html">Materialized&nbsp;Views</a>
+            <a href="indexes-list.html">Indexes</a>
+            <a href="constraints-list.html">Constraints</a>
+            <a href="triggers-list.html">Triggers</a>
+            <a href="procedures-list.html">Procedures</a>
+            <a href="functions-list.html">Functions</a>
+            <a href="packages-list.html">Packages</a>
+            <a href="sequences.html">Sequences</a>
+            <a href="java-sources-list.html">Java&nbsp;Sources</a>
+            <a href="jobs.html">Jobs</a>
+            <a href="sanity-check.html">Sanity&nbsp;Check</a>
+            <a href="symbol-index.html">Index</a>
+            <a href="sql_sources/" target="Main">DDL&nbsp;scrips</a>
+            </div><h1>Spacewalk DB Schema</h1>
+<p><b>Description:</b> </p><map name="mainmap"><area shape="rect" id="node1" href="table-RHNCONFIGREVISION.html#t-fk" title="RHNCONFIGREVISION" alt="" coords="1249,4191,1412,4217">
+<area shape="rect" id="node8" href="table-RHNCONFIGFILE.html#t-fk" title="RHNCONFIGFILE" alt="" coords="1583,4292,1710,4319">
+<area shape="rect" id="node104" href="table-RHNSNAPSHOTCONFIGREVISION.html#t-fk" title="RHNSNAPSHOTCONFIGREVISION" alt="" coords="1530,4520,1763,4547">
+<area shape="rect" id="node116" href="table-RHNACTIONCONFIGFILENAME.html#t-fk" title="RHNACTIONCONFIGFILENAME" alt="" coords="1539,3937,1754,3964">
+<area shape="rect" id="node263" href="table-RHNACTIONCONFIGREVISION.html#t-fk" title="RHNACTIONCONFIGREVISION" alt="" coords="1540,3507,1753,3533">
+<area shape="rect" id="node2" href="table-RHNERRATAPACKAGE.html#t-fk" title="RHNERRATAPACKAGE" alt="" coords="1250,7103,1411,7129">
+<area shape="rect" id="node3" href="table-RHNCHANNELPACKAGEARCHCOMPAT.html#t-fk" title="RHNCHANNELPACKAGEARCHCOMPAT" alt="" coords="876,7559,1140,7585">
+<area shape="rect" id="node4" href="table-RHNPACKAGEOBSOLETES.html#t-fk" title="RHNPACKAGEOBSOLETES" alt="" coords="1237,7964,1425,7991">
+<area shape="rect" id="node5" href="table-RHNCLIENTCAPABILITY.html#t-fk" title="RHNCLIENTCAPABILITY" alt="" coords="1245,4905,1416,4932">
+<area shape="rect" id="node6" href="table-RHNINDEXERWORK.html#t-fk" title="RHNINDEXERWORK" alt="" coords="48,1671,197,1697">
+<area shape="rect" id="node7" href="table-RHNKICKSTARTSESSION.html#t-fk" title="RHNKICKSTARTSESSION" alt="" coords="1241,3988,1420,4015">
+<area shape="rect" id="node186" href="table-RHNVIRTUALINSTANCEINSTALLLOG.html#t-fk" title="RHNVIRTUALINSTANCEINSTALLLOG" alt="" coords="1521,3836,1772,3863">
+<area shape="rect" id="node57" href="table-RHNKICKSTARTSESSIONHISTORY.html#t-fk" title="RHNKICKSTARTSESSIONHISTORY" alt="" coords="1529,2519,1764,2545">
+<area shape="rect" id="node86" href="table-RHNACTIVATIONKEY.html#t-fk" title="RHNACTIVATIONKEY" alt="" coords="1569,3988,1724,4015">
+<area shape="rect" id="node187" href="table-RHNACTIONKICKSTARTGUEST.html#t-fk" title="RHNACTIONKICKSTARTGUEST" alt="" coords="1539,2975,1755,3001">
+<area shape="rect" id="node9" href="table-RHNPACKAGEKEY.html#t-fk" title="RHNPACKAGEKEY" alt="" coords="939,9407,1077,9433">
+<area shape="rect" id="node92" href="table-RHNPACKAGEKEYASSOCIATION.html#t-fk" title="RHNPACKAGEKEYASSOCIATION" alt="" coords="1219,8572,1443,8599">
+<area shape="rect" id="node10" href="table-RHNTASKOSCHEDULE.html#t-fk" title="RHNTASKOSCHEDULE" alt="" coords="307,1125,469,1152">
+<area shape="rect" id="node111" href="table-RHNTASKORUN.html#t-fk" title="RHNTASKORUN" alt="" coords="619,1151,741,1177">
+<area shape="rect" id="node11" href="table-QRTZ_JOB_DETAILS.html#t-fk" title="QRTZ_JOB_DETAILS" alt="" coords="49,999,196,1025">
+<area shape="rect" id="node18" href="table-QRTZ_JOB_LISTENERS.html#t-fk" title="QRTZ_JOB_LISTENERS" alt="" coords="306,973,470,1000">
+<area shape="rect" id="node85" href="table-QRTZ_TRIGGERS.html#t-fk" title="QRTZ_TRIGGERS" alt="" coords="323,1024,453,1051">
+<area shape="rect" id="node12" href="table-RHNCHANNELFAMILYMEMBERS.html#t-fk" title="RHNCHANNELFAMILYMEMBERS" alt="" coords="897,5127,1119,5153">
+<area shape="rect" id="node13" href="table-RHNORGERRATACACHEQUEUE.html#t-fk" title="RHNORGERRATACACHEQUEUE" alt="" coords="570,5076,790,5103">
+<area shape="rect" id="node14" href="table-RHNUSERGROUP.html#t-fk" title="RHNUSERGROUP" alt="" coords="613,2292,747,2319">
+<area shape="rect" id="node271" href="table-RHNUSERGROUPMEMBERS.html#t-fk" title="RHNUSERGROUPMEMBERS" alt="" coords="909,2241,1107,2268">
+<area shape="rect" id="node15" href="table-RHNERRATAFILEPACKAGETMP.html#t-fk" title="RHNERRATAFILEPACKAGETMP" alt="" coords="1223,7305,1438,7332">
+<area shape="rect" id="node16" href="table-RHNSERVERCHANNEL.html#t-fk" title="RHNSERVERCHANNEL" alt="" coords="1249,5132,1412,5159">
+<area shape="rect" id="node17" href="table-RHNPACKAGEUPGRADEARCHCOMPAT.html#t-fk" title="RHNPACKAGEUPGRADEARCHCOMPAT" alt="" coords="876,7761,1140,7788">
+<area shape="rect" id="node19" href="table-RHNERRATAFILETMP.html#t-fk" title="RHNERRATAFILETMP" alt="" coords="931,7255,1085,7281">
+<area shape="rect" id="node48" href="table-RHNERRATAFILECHANNELTMP.html#t-fk" title="RHNERRATAFILECHANNELTMP" alt="" coords="1223,6937,1438,6964">
+<area shape="rect" id="node20" href="table-RHNCHANNELCOMPS.html#t-fk" title="RHNCHANNELCOMPS" alt="" coords="928,7052,1088,7079">
+<area shape="rect" id="node21" href="table-RHNSOURCERPM.html#t-fk" title="RHNSOURCERPM" alt="" coords="614,7419,746,7445">
+<area shape="rect" id="node76" href="table-RHNPACKAGE.html#t-fk" title="RHNPACKAGE" alt="" coords="952,7711,1064,7737">
+<area shape="rect" id="node219" href="table-RHNPACKAGESOURCE.html#t-fk" title="RHNPACKAGESOURCE" alt="" coords="925,7407,1091,7433">
+<area shape="rect" id="node22" href="table-RHNACTIONVIRTDESTROY.html#t-fk" title="RHNACTIONVIRTDESTROY" alt="" coords="1235,1809,1426,1836">
+<area shape="rect" id="node23" href="table-RHNERRATAKEYWORD.html#t-fk" title="RHNERRATAKEYWORD" alt="" coords="925,5887,1091,5913">
+<area shape="rect" id="node24" href="table-RHNTASKOBUNCH.html#t-fk" title="RHNTASKOBUNCH" alt="" coords="52,1125,193,1152">
+<area shape="rect" id="node321" href="table-RHNTASKOTEMPLATE.html#t-fk" title="RHNTASKOTEMPLATE" alt="" coords="309,1176,467,1203">
+<area shape="rect" id="node25" href="table-RHNCONFIGCONTENT.html#t-fk" title="RHNCONFIGCONTENT" alt="" coords="926,7153,1090,7180">
+<area shape="rect" id="node26" href="table-RHNPACKAGEREPODATA.html#t-fk" title="RHNPACKAGEREPODATA" alt="" coords="1240,7407,1421,7433">
+<area shape="rect" id="node27" href="table-RHNDEVICE.html#t-fk" title="RHNDEVICE" alt="" coords="1281,3785,1380,3812">
+<area shape="rect" id="node28" href="table-RHNACTIONVIRTSHUTDOWN.html#t-fk" title="RHNACTIONVIRTSHUTDOWN" alt="" coords="1226,1860,1435,1887">
+<area shape="rect" id="node29" href="table-RHNISSMASTER.html#t-fk" title="RHNISSMASTER" alt="" coords="326,6089,450,6116">
+<area shape="rect" id="node318" href="table-RHNISSMASTERORGS.html#t-fk" title="RHNISSMASTERORGS" alt="" coords="599,6089,761,6116">
+<area shape="rect" id="node30" href="table-RHNTIMEZONE.html#t-fk" title="RHNTIMEZONE" alt="" coords="621,3431,739,3457">
+<area shape="rect" id="node273" href="table-RHNUSERINFO.html#t-fk" title="RHNUSERINFO" alt="" coords="949,3481,1067,3508">
+<area shape="rect" id="node31" href="table-RHNERRATAFILETYPE.html#t-fk" title="RHNERRATAFILETYPE" alt="" coords="601,7001,759,7028">
+<area shape="rect" id="node75" href="table-RHNERRATAFILE.html#t-fk" title="RHNERRATAFILE" alt="" coords="945,7204,1071,7231">
+<area shape="rect" id="node32" href="table-RHNERRATACLONED.html#t-fk" title="RHNERRATACLONED" alt="" coords="931,5988,1085,6015">
+<area shape="rect" id="node33" href="table-RHNCHANNELCONTENTSOURCE.html#t-fk" title="RHNCHANNELCONTENTSOURCE" alt="" coords="893,5836,1123,5863">
+<area shape="rect" id="node34" href="table-RHNKICKSTARTVIRTUALIZATIONTYPE.html#t-fk" title="RHNKICKSTARTVIRTUALIZATIONTYPE" alt="" coords="877,4367,1139,4393">
+<area shape="rect" id="node314" href="table-RHNKICKSTARTDEFAULTS.html#t-fk" title="RHNKICKSTARTDEFAULTS" alt="" coords="1237,5320,1424,5347">
+<area shape="rect" id="node35" href="table-RHNACTIONCHAINENTRY.html#t-fk" title="RHNACTIONCHAINENTRY" alt="" coords="1238,2468,1423,2495">
+<area shape="rect" id="node36" href="table-RHNRESETPASSWORD.html#t-fk" title="RHNRESETPASSWORD" alt="" coords="925,2799,1091,2825">
+<area shape="rect" id="node37" href="table-RHNTRUSTEDORGS.html#t-fk" title="RHNTRUSTEDORGS" alt="" coords="605,5127,755,5153">
+<area shape="rect" id="node38" href="table-RHNERRATANOTIFICATIONQUEUE.html#t-fk" title="RHNERRATANOTIFICATIONQUEUE" alt="" coords="889,5785,1127,5812">
+<area shape="rect" id="node39" href="table-RHNUSEREXTGROUP.html#t-fk" title="RHNUSEREXTGROUP" alt="" coords="601,4645,759,4672">
+<area shape="rect" id="node142" href="table-RHNUSEREXTGROUPMAPPING.html#t-fk" title="RHNUSEREXTGROUPMAPPING" alt="" coords="899,4316,1117,4343">
+<area shape="rect" id="node250" href="table-RHNORGEXTGROUPMAPPING.html#t-fk" title="RHNORGEXTGROUPMAPPING" alt="" coords="902,3988,1114,4015">
+<area shape="rect" id="node40" href="table-RHNTASKOTASK.html#t-fk" title="RHNTASKOTASK" alt="" coords="59,1176,186,1203">
+<area shape="rect" id="node41" href="table-RHNACTIONPACKAGE.html#t-fk" title="RHNACTIONPACKAGE" alt="" coords="1249,8420,1412,8447">
+<area shape="rect" id="node71" href="table-RHNACTIONPACKAGEANSWERFILE.html#t-fk" title="RHNACTIONPACKAGEANSWERFILE" alt="" coords="1524,8420,1769,8447">
+<area shape="rect" id="node79" href="table-RHNSERVERACTIONPACKAGERESULT.html#t-fk" title="RHNSERVERACTIONPACKAGERESULT" alt="" coords="1517,7913,1776,7940">
+<area shape="rect" id="node42" href="table-RHNERRATAKEYWORDTMP.html#t-fk" title="RHNERRATAKEYWORDTMP" alt="" coords="911,5431,1105,5457">
+<area shape="rect" id="node43" href="table-RHNPACKAGEBREAKS.html#t-fk" title="RHNPACKAGEBREAKS" alt="" coords="1249,8065,1413,8092">
+<area shape="rect" id="node44" href="table-RHNACTIONDAEMONCONFIG.html#t-fk" title="RHNACTIONDAEMONCONFIG" alt="" coords="1226,1657,1435,1684">
+<area shape="rect" id="node45" href="table-RHNACTIONVIRTSCHEDULEPOLLER.html#t-fk" title="RHNACTIONVIRTSCHEDULEPOLLER" alt="" coords="1206,1911,1455,1937">
+<area shape="rect" id="node46" href="table-RHNERRATAFILEPACKAGE.html#t-fk" title="RHNERRATAFILEPACKAGE" alt="" coords="1237,7255,1424,7281">
+<area shape="rect" id="node47" href="table-WEB_CUSTOMER.html#t-fk" title="WEB_CUSTOMER" alt="" coords="322,4620,454,4647">
+<area shape="rect" id="node158" href="table-RHNSERVERGROUP.html#t-fk" title="RHNSERVERGROUP" alt="" coords="606,1595,754,1621">
+<area shape="rect" id="node110" href="table-RHNFILELIST.html#t-fk" title="RHNFILELIST" alt="" coords="628,4392,732,4419">
+<area shape="rect" id="node115" href="table-RHNCRYPTOKEY.html#t-fk" title="RHNCRYPTOKEY" alt="" coords="617,3912,743,3939">
+<area shape="rect" id="node73" href="table-RHNREGTOKEN.html#t-fk" title="RHNREGTOKEN" alt="" coords="1269,4089,1392,4116">
+<area shape="rect" id="node84" href="table-RHNKSDATA.html#t-fk" title="RHNKSDATA" alt="" coords="629,4823,731,4849">
+<area shape="rect" id="node87" href="table-RHNACTION.html#t-fk" title="RHNACTION" alt="" coords="957,2191,1059,2217">
+<area shape="rect" id="node88" href="table-WEB_CONTACT.html#t-fk" title="WEB_CONTACT" alt="" coords="619,2824,741,2851">
+<area shape="rect" id="node96" href="table-RHNCHANNELTRUST.html#t-fk" title="RHNCHANNELTRUST" alt="" coords="931,5228,1085,5255">
+<area shape="rect" id="node229" href="table-RHNPACKAGESYNCBLACKLIST.html#t-fk" title="RHNPACKAGESYNCBLACKLIST" alt="" coords="899,6191,1117,6217">
+<area shape="rect" id="node141" href="table-RHNCONFIGCHANNEL.html#t-fk" title="RHNCONFIGCHANNEL" alt="" coords="1249,4697,1413,4724">
+<area shape="rect" id="node156" href="table-RHNTAG.html#t-fk" title="RHNTAG" alt="" coords="641,2241,719,2268">
+<area shape="rect" id="node175" href="table-RHNCHANNEL.html#t-fk" title="RHNCHANNEL" alt="" coords="623,6596,737,6623">
+<area shape="rect" id="node178" href="table-RHNSNAPSHOT.html#t-fk" title="RHNSNAPSHOT" alt="" coords="1269,4748,1392,4775">
+<area shape="rect" id="node188" href="table-RHNORGCONFIGURATION.html#t-fk" title="RHNORGCONFIGURATION" alt="" coords="586,3963,774,3989">
+<area shape="rect" id="node193" href="table-RHNCHANNELFAMILY.html#t-fk" title="RHNCHANNELFAMILY" alt="" coords="601,4064,759,4091">
+<area shape="rect" id="node197" href="table-RHNORGADMINMANAGEMENT.html#t-fk" title="RHNORGADMINMANAGEMENT" alt="" coords="571,4443,789,4469">
+<area shape="rect" id="node203" href="table-RHNSYSTEMMIGRATIONS.html#t-fk" title="RHNSYSTEMMIGRATIONS" alt="" coords="1239,4545,1422,4572">
+<area shape="rect" id="node216" href="table-RHNTASKQUEUE.html#t-fk" title="RHNTASKQUEUE" alt="" coords="615,4493,745,4520">
+<area shape="rect" id="node301" href="table-RHNSERVERPROFILE.html#t-fk" title="RHNSERVERPROFILE" alt="" coords="931,5329,1085,5356">
+<area shape="rect" id="node53" href="table-RHNDAILYSUMMARYQUEUE.html#t-fk" title="RHNDAILYSUMMARYQUEUE" alt="" coords="581,4595,779,4621">
+<area shape="rect" id="node226" href="table-RHNDISTCHANNELMAP.html#t-fk" title="RHNDISTCHANNELMAP" alt="" coords="923,6393,1093,6420">
+<area shape="rect" id="node243" href="table-RHNCONTENTSOURCE.html#t-fk" title="RHNCONTENTSOURCE" alt="" coords="597,5380,763,5407">
+<area shape="rect" id="node270" href="table-RHNORGCHANNELSETTINGS.html#t-fk" title="RHNORGCHANNELSETTINGS" alt="" coords="905,5279,1111,5305">
+<area shape="rect" id="node267" href="table-RHNSERVER.html#t-fk" title="RHNSERVER" alt="" coords="957,3532,1059,3559">
+<area shape="rect" id="node215" href="table-RHNISSSLAVEORGS.html#t-fk" title="RHNISSSLAVEORGS" alt="" coords="606,6191,754,6217">
+<area shape="rect" id="node257" href="table-RHNERRATATMP.html#t-fk" title="RHNERRATATMP" alt="" coords="617,5532,743,5559">
+<area shape="rect" id="node164" href="table-RHNPRIVATECHANNELFAMILY.html#t-fk" title="RHNPRIVATECHANNELFAMILY" alt="" coords="903,3887,1113,3913">
+<area shape="rect" id="node82" href="table-RHNCUSTOMDATAKEY.html#t-fk" title="RHNCUSTOMDATAKEY" alt="" coords="925,2393,1091,2420">
+<area shape="rect" id="node287" href="table-RHNFILE.html#t-fk" title="RHNFILE" alt="" coords="969,6495,1047,6521">
+<area shape="rect" id="node100" href="table-RHNKICKSTARTABLETREE.html#t-fk" title="RHNKICKSTARTABLETREE" alt="" coords="915,6748,1101,6775">
+<area shape="rect" id="node297" href="table-RHNERRATA.html#t-fk" title="RHNERRATA" alt="" coords="630,5785,730,5812">
+<area shape="rect" id="node308" href="table-RHNREGTOKENORGDEFAULT.html#t-fk" title="RHNREGTOKENORGDEFAULT" alt="" coords="1543,4140,1751,4167">
+<area shape="rect" id="node262" href="table-RHNKICKSTARTIPRANGE.html#t-fk" title="RHNKICKSTARTIPRANGE" alt="" coords="919,4721,1097,4748">
+<area shape="rect" id="node49" href="table-STATE_CHANGE.html#t-fk" title="STATE_CHANGE" alt="" coords="61,923,185,949">
+<area shape="rect" id="node50" href="table-RHNUSERINFOPANE.html#t-fk" title="RHNUSERINFOPANE" alt="" coords="933,2292,1083,2319">
+<area shape="rect" id="node51" href="table-RHNCHANNELPERMISSION.html#t-fk" title="RHNCHANNELPERMISSION" alt="" coords="911,5076,1105,5103">
+<area shape="rect" id="node52" href="table-RHNERRATAFILEPACKAGESOURCE.html#t-fk" title="RHNERRATAFILEPACKAGESOURCE" alt="" coords="1211,7052,1451,7079">
+<area shape="rect" id="node54" href="table-RHNSSMOPERATION.html#t-fk" title="RHNSSMOPERATION" alt="" coords="932,2647,1084,2673">
+<area shape="rect" id="node220" href="table-RHNSSMOPERATIONSERVER.html#t-fk" title="RHNSSMOPERATIONSERVER" alt="" coords="1229,2823,1432,2849">
+<area shape="rect" id="node55" href="table-RHNPACKAGECHANGELOGREC.html#t-fk" title="RHNPACKAGECHANGELOGREC" alt="" coords="1220,8471,1441,8497">
+<area shape="rect" id="node56" href="table-RHNKICKSTARTCOMMANDNAME.html#t-fk" title="RHNKICKSTARTCOMMANDNAME" alt="" coords="565,4772,795,4799">
+<area shape="rect" id="node269" href="table-RHNKICKSTARTCOMMAND.html#t-fk" title="RHNKICKSTARTCOMMAND" alt="" coords="913,4772,1103,4799">
+<area shape="rect" id="node58" href="table-RHNUSERSERVERPREFS.html#t-fk" title="RHNUSERSERVERPREFS" alt="" coords="1243,2873,1419,2900">
+<area shape="rect" id="node59" href="table-RHNUSERGROUPTYPE.html#t-fk" title="RHNUSERGROUPTYPE" alt="" coords="305,3089,471,3116">
+<area shape="rect" id="node60" href="table-RHNSERVERNEEDEDCACHE.html#t-fk" title="RHNSERVERNEEDEDCACHE" alt="" coords="1231,6127,1431,6153">
+<area shape="rect" id="node61" href="table-RHNSERVERGROUPMEMBERS.html#t-fk" title="RHNSERVERGROUPMEMBERS" alt="" coords="1225,2113,1437,2140">
+<area shape="rect" id="node62" href="table-RHNSERVERPACKAGE.html#t-fk" title="RHNSERVERPACKAGE" alt="" coords="1249,8876,1412,8903">
+<area shape="rect" id="node63" href="table-RHNSERVERACTION.html#t-fk" title="RHNSERVERACTION" alt="" coords="1255,2620,1406,2647">
+<area shape="rect" id="node77" href="table-RHNACTIONCONFIGCHANNEL.html#t-fk" title="RHNACTIONCONFIGCHANNEL" alt="" coords="1539,3228,1754,3255">
+<area shape="rect" id="node64" href="table-RHNFILELOCATION.html#t-fk" title="RHNFILELOCATION" alt="" coords="1259,6495,1402,6521">
+<area shape="rect" id="node65" href="table-RHNCONFIGCHANNELTYPE.html#t-fk" title="RHNCONFIGCHANNELTYPE" alt="" coords="911,4417,1105,4444">
+<area shape="rect" id="node66" href="table-RHNCPU.html#t-fk" title="RHNCPU" alt="" coords="1291,5044,1370,5071">
+<area shape="rect" id="node67" href="table-RHNPACKAGECHANGELOGDATA.html#t-fk" title="RHNPACKAGECHANGELOGDATA" alt="" coords="893,9255,1123,9281">
+<area shape="rect" id="node68" href="table-RHNVIRTUALINSTANCEEVENTLOG.html#t-fk" title="RHNVIRTUALINSTANCEEVENTLOG" alt="" coords="1526,8319,1767,8345">
+<area shape="rect" id="node69" href="table-RHNSERVERPRESERVEFILELIST.html#t-fk" title="RHNSERVERPRESERVEFILELIST" alt="" coords="1221,4596,1441,4623">
+<area shape="rect" id="node70" href="table-RHNCRYPTOKEYKICKSTART.html#t-fk" title="RHNCRYPTOKEYKICKSTART" alt="" coords="909,4215,1107,4241">
+<area shape="rect" id="node72" href="table-RHNCONTENTSOURCETYPE.html#t-fk" title="RHNCONTENTSOURCETYPE" alt="" coords="289,5380,487,5407">
+<area shape="rect" id="node211" href="table-RHNREGTOKENENTITLEMENT.html#t-fk" title="RHNREGTOKENENTITLEMENT" alt="" coords="1540,1581,1753,1608">
+<area shape="rect" id="node212" href="table-RHNREGTOKENCHANNELS.html#t-fk" title="RHNREGTOKENCHANNELS" alt="" coords="1549,5647,1744,5673">
+<area shape="rect" id="node230" href="table-RHNREGTOKENCONFIGCHANNELS.html#t-fk" title="RHNREGTOKENCONFIGCHANNELS" alt="" coords="1525,4191,1769,4217">
+<area shape="rect" id="node319" href="table-RHNREGTOKENGROUPS.html#t-fk" title="RHNREGTOKENGROUPS" alt="" coords="1557,1911,1736,1937">
+<area shape="rect" id="node242" href="table-RHNSERVERTOKENREGS.html#t-fk" title="RHNSERVERTOKENREGS" alt="" coords="1557,3887,1737,3913">
+<area shape="rect" id="node260" href="table-RHNKICKSTARTDEFAULTREGTOKEN.html#t-fk" title="RHNKICKSTARTDEFAULTREGTOKEN" alt="" coords="1521,4241,1772,4268">
+<area shape="rect" id="node320" href="table-RHNREGTOKENPACKAGES.html#t-fk" title="RHNREGTOKENPACKAGES" alt="" coords="1551,7153,1743,7180">
+<area shape="rect" id="node74" href="table-RHNSNAPSHOTCHANNEL.html#t-fk" title="RHNSNAPSHOTCHANNEL" alt="" coords="1555,6147,1739,6173">
+<area shape="rect" id="node204" href="table-RHNERRATAFILECHANNEL.html#t-fk" title="RHNERRATAFILECHANNEL" alt="" coords="1236,6861,1425,6888">
+<area shape="rect" id="node120" href="table-RHNPACKAGEREQUIRES.html#t-fk" title="RHNPACKAGEREQUIRES" alt="" coords="1241,8116,1420,8143">
+<area shape="rect" id="node122" href="table-RHNPACKAGEPREDEPENDS.html#t-fk" title="RHNPACKAGEPREDEPENDS" alt="" coords="1231,7660,1430,7687">
+<area shape="rect" id="node129" href="table-RHNCHANNELNEWESTPACKAGE.html#t-fk" title="RHNCHANNELNEWESTPACKAGE" alt="" coords="1215,7609,1446,7636">
+<area shape="rect" id="node136" href="table-RHNPACKAGEPROVIDES.html#t-fk" title="RHNPACKAGEPROVIDES" alt="" coords="1241,7711,1420,7737">
+<area shape="rect" id="node284" href="table-RHNPACKAGESUPPLEMENTS.html#t-fk" title="RHNPACKAGESUPPLEMENTS" alt="" coords="1227,7761,1434,7788">
+<area shape="rect" id="node160" href="table-RHNPACKAGECONFLICTS.html#t-fk" title="RHNPACKAGECONFLICTS" alt="" coords="1239,7812,1423,7839">
+<area shape="rect" id="node161" href="table-RHNPACKAGESUGGESTS.html#t-fk" title="RHNPACKAGESUGGESTS" alt="" coords="1239,7863,1422,7889">
+<area shape="rect" id="node184" href="table-RHNERRATAPACKAGETMP.html#t-fk" title="RHNERRATAPACKAGETMP" alt="" coords="1237,6355,1425,6381">
+<area shape="rect" id="node189" href="table-RHNCHANNELPACKAGE.html#t-fk" title="RHNCHANNELPACKAGE" alt="" coords="1243,7204,1418,7231">
+<area shape="rect" id="node272" href="table-RHNPACKAGEFILE.html#t-fk" title="RHNPACKAGEFILE" alt="" coords="1261,7356,1400,7383">
+<area shape="rect" id="node278" href="table-RHNPACKAGEENHANCES.html#t-fk" title="RHNPACKAGEENHANCES" alt="" coords="1239,7913,1423,7940">
+<area shape="rect" id="node298" href="table-RHNPACKAGERECOMMENDS.html#t-fk" title="RHNPACKAGERECOMMENDS" alt="" coords="1227,8015,1434,8041">
+<area shape="rect" id="node78" href="table-RHNCHANNELCLONED.html#t-fk" title="RHNCHANNELCLONED" alt="" coords="924,6647,1092,6673">
+<area shape="rect" id="node80" href="table-RHNISSSLAVE.html#t-fk" title="RHNISSSLAVE" alt="" coords="333,6191,443,6217">
+<area shape="rect" id="node81" href="table-RHNPROXYINFO.html#t-fk" title="RHNPROXYINFO" alt="" coords="1268,7508,1393,7535">
+<area shape="rect" id="node168" href="table-RHNSERVERCUSTOMDATAVALUE.html#t-fk" title="RHNSERVERCUSTOMDATAVALUE" alt="" coords="1215,2671,1446,2697">
+<area shape="rect" id="node83" href="table-RHNACTIONKICKSTART.html#t-fk" title="RHNACTIONKICKSTART" alt="" coords="1245,2063,1417,2089">
+<area shape="rect" id="node282" href="table-RHNACTIONKICKSTARTFILELIST.html#t-fk" title="RHNACTIONKICKSTARTFILELIST" alt="" coords="1534,3025,1759,3052">
+<area shape="rect" id="node152" href="table-RHNKICKSTARTCHILDCHANNEL.html#t-fk" title="RHNKICKSTARTCHILDCHANNEL" alt="" coords="896,5177,1120,5204">
+<area shape="rect" id="node162" href="table-RHNKICKSTARTPRESERVEFILELIST.html#t-fk" title="RHNKICKSTARTPRESERVEFILELIST" alt="" coords="887,4620,1129,4647">
+<area shape="rect" id="node173" href="table-RHNKICKSTARTPACKAGE.html#t-fk" title="RHNKICKSTARTPACKAGE" alt="" coords="917,5937,1099,5964">
+<area shape="rect" id="node246" href="table-RHNKICKSTARTSCRIPT.html#t-fk" title="RHNKICKSTARTSCRIPT" alt="" coords="924,4924,1092,4951">
+<area shape="rect" id="node131" href="table-QRTZ_TRIGGER_LISTENERS.html#t-fk" title="QRTZ_TRIGGER_LISTENERS" alt="" coords="581,948,779,975">
+<area shape="rect" id="node169" href="table-QRTZ_CRON_TRIGGERS.html#t-fk" title="QRTZ_CRON_TRIGGERS" alt="" coords="593,999,767,1025">
+<area shape="rect" id="node190" href="table-QRTZ_SIMPLE_TRIGGERS.html#t-fk" title="QRTZ_SIMPLE_TRIGGERS" alt="" coords="589,1049,771,1076">
+<area shape="rect" id="node233" href="table-QRTZ_BLOB_TRIGGERS.html#t-fk" title="QRTZ_BLOB_TRIGGERS" alt="" coords="594,1100,766,1127">
+<area shape="rect" id="node90" href="table-RHNACTIONERRATAUPDATE.html#t-fk" title="RHNACTIONERRATAUPDATE" alt="" coords="1229,4292,1432,4319">
+<area shape="rect" id="node95" href="table-RHNACTIONVIRTRESUME.html#t-fk" title="RHNACTIONVIRTRESUME" alt="" coords="1239,2164,1423,2191">
+<area shape="rect" id="node99" href="table-RHNACTIONVIRTSUSPEND.html#t-fk" title="RHNACTIONVIRTSUSPEND" alt="" coords="1235,2215,1427,2241">
+<area shape="rect" id="node183" href="table-RHNACTIONCONFIGDATEFILE.html#t-fk" title="RHNACTIONCONFIGDATEFILE" alt="" coords="1225,2265,1436,2292">
+<area shape="rect" id="node196" href="table-RHNACTIONVIRTSETMEMORY.html#t-fk" title="RHNACTIONVIRTSETMEMORY" alt="" coords="1225,1455,1436,1481">
+<area shape="rect" id="node205" href="table-RHNACTIONVIRTVCPU.html#t-fk" title="RHNACTIONVIRTVCPU" alt="" coords="1247,1505,1414,1532">
+<area shape="rect" id="node237" href="table-RHNSERVERACTIONVERIFYRESULT.html#t-fk" title="RHNSERVERACTIONVERIFYRESULT" alt="" coords="1209,8167,1452,8193">
+<area shape="rect" id="node106" href="table-RHNACTIONSCRIPT.html#t-fk" title="RHNACTIONSCRIPT" alt="" coords="1257,1252,1404,1279">
+<area shape="rect" id="node253" href="table-RHNACTIONPACKAGEREMOVALFAILURE.html#t-fk" title="RHNACTIONPACKAGEREMOVALFAILURE" alt="" coords="1193,8369,1469,8396">
+<area shape="rect" id="node255" href="table-RHNACTIONIMAGEDEPLOY.html#t-fk" title="RHNACTIONIMAGEDEPLOY" alt="" coords="1234,1556,1427,1583">
+<area shape="rect" id="node265" href="table-RHNACTIONSCAP.html#t-fk" title="RHNACTIONSCAP" alt="" coords="1263,2417,1398,2444">
+<area shape="rect" id="node304" href="table-RHNACTIONVIRTREBOOT.html#t-fk" title="RHNACTIONVIRTREBOOT" alt="" coords="1239,1607,1423,1633">
+<area shape="rect" id="node124" href="table-RHNACTIONPACKAGEDELTA.html#t-fk" title="RHNACTIONPACKAGEDELTA" alt="" coords="1230,4817,1431,4844">
+<area shape="rect" id="node315" href="table-RHNSERVERACTIONVERIFYMISSING.html#t-fk" title="RHNSERVERACTIONVERIFYMISSING" alt="" coords="1205,8319,1456,8345">
+<area shape="rect" id="node307" href="table-RHNACTIONCONFIGDATE.html#t-fk" title="RHNACTIONCONFIGDATE" alt="" coords="1238,1708,1423,1735">
+<area shape="rect" id="node166" href="table-RHNACTIONVIRTREFRESH.html#t-fk" title="RHNACTIONVIRTREFRESH" alt="" coords="1236,1759,1425,1785">
+<area shape="rect" id="node137" href="table-RHNUSERDEFAULTSYSTEMGROUPS.html#t-fk" title="RHNUSERDEFAULTSYSTEMGROUPS" alt="" coords="884,1595,1132,1621">
+<area shape="rect" id="node283" href="table-RHNWEBCONTACTCHANGELOG.html#t-fk" title="RHNWEBCONTACTCHANGELOG" alt="" coords="895,2343,1121,2369">
+<area shape="rect" id="node89" href="table-RHNSERVERLOCK.html#t-fk" title="RHNSERVERLOCK" alt="" coords="1263,2924,1399,2951">
+<area shape="rect" id="node281" href="table-WEB_USER_SITE_INFO.html#t-fk" title="WEB_USER_SITE_INFO" alt="" coords="925,3380,1091,3407">
+<area shape="rect" id="node118" href="table-RHNACTIONCHAIN.html#t-fk" title="RHNACTIONCHAIN" alt="" coords="937,2596,1079,2623">
+<area shape="rect" id="node177" href="table-WEB_USER_CONTACT_PERMISSION.html#t-fk" title="WEB_USER_CONTACT_PERMISSION" alt="" coords="883,2545,1133,2572">
+<area shape="rect" id="node123" href="table-WEB_USER_PERSONAL_INFO.html#t-fk" title="WEB_USER_PERSONAL_INFO" alt="" coords="904,3431,1112,3457">
+<area shape="rect" id="node155" href="table-PXTSESSIONS.html#t-fk" title="PXTSESSIONS" alt="" coords="953,2849,1063,2876">
+<area shape="rect" id="node165" href="table-RHNUSERSERVERPERMS.html#t-fk" title="RHNUSERSERVERPERMS" alt="" coords="1241,2721,1421,2748">
+<area shape="rect" id="node251" href="table-RHNSERVERCRASHNOTE.html#t-fk" title="RHNSERVERCRASHNOTE" alt="" coords="1557,4089,1737,4116">
+<area shape="rect" id="node244" href="table-RHNSERVERNOTES.html#t-fk" title="RHNSERVERNOTES" alt="" coords="1258,2772,1403,2799">
+<area shape="rect" id="node225" href="table-RHNFILEDOWNLOAD.html#t-fk" title="RHNFILEDOWNLOAD" alt="" coords="1253,5259,1409,5285">
+<area shape="rect" id="node125" href="table-RHNUSERSERVERGROUPPERMS.html#t-fk" title="RHNUSERSERVERGROUPPERMS" alt="" coords="895,1836,1121,1863">
+<area shape="rect" id="node322" href="table-RHNSET.html#t-fk" title="RHNSET" alt="" coords="971,2697,1045,2724">
+<area shape="rect" id="node91" href="table-RHNCONFIGFILESTATE.html#t-fk" title="RHNCONFIGFILESTATE" alt="" coords="1247,4241,1414,4268">
+<area shape="rect" id="node93" href="table-RHNSERVERGROUP_LOG.html#t-fk" title="RHNSERVERGROUP_LOG" alt="" coords="589,796,771,823">
+<area shape="rect" id="node94" href="table-RHNCONFIGFILENAME.html#t-fk" title="RHNCONFIGFILENAME" alt="" coords="597,3811,763,3837">
+<area shape="rect" id="node135" href="table-RHNFILELISTMEMBERS.html#t-fk" title="RHNFILELISTMEMBERS" alt="" coords="924,4039,1092,4065">
+<area shape="rect" id="node302" href="table-RHNCONFIGINFO.html#t-fk" title="RHNCONFIGINFO" alt="" coords="942,3785,1074,3812">
+<area shape="rect" id="node97" href="table-RHNPUSHCLIENT.html#t-fk" title="RHNPUSHCLIENT" alt="" coords="321,796,455,823">
+<area shape="rect" id="node98" href="table-RHNPACKAGEARCH.html#t-fk" title="RHNPACKAGEARCH" alt="" coords="606,7837,754,7864">
+<area shape="rect" id="node147" href="table-RHNPACKAGENEVRA.html#t-fk" title="RHNPACKAGENEVRA" alt="" coords="930,8369,1086,8396">
+<area shape="rect" id="node154" href="table-RHNTRANSACTIONPACKAGE.html#t-fk" title="RHNTRANSACTIONPACKAGE" alt="" coords="905,8596,1111,8623">
+<area shape="rect" id="node157" href="table-RHNSERVERPROFILEPACKAGE.html#t-fk" title="RHNSERVERPROFILEPACKAGE" alt="" coords="1223,8775,1438,8801">
+<area shape="rect" id="node241" href="table-RHNSERVERCRASH.html#t-fk" title="RHNSERVERCRASH" alt="" coords="1259,7559,1403,7585">
+<area shape="rect" id="node295" href="table-RHNSERVERPACKAGEARCHCOMPAT.html#t-fk" title="RHNSERVERPACKAGEARCHCOMPAT" alt="" coords="883,7508,1133,7535">
+<area shape="rect" id="node144" href="table-RHNKSTREEFILE.html#t-fk" title="RHNKSTREEFILE" alt="" coords="1267,6995,1394,7021">
+<area shape="rect" id="node101" href="table-RHNINFOPANE.html#t-fk" title="RHNINFOPANE" alt="" coords="622,2393,738,2420">
+<area shape="rect" id="node102" href="table-RHNCHECKSUMTYPE.html#t-fk" title="RHNCHECKSUMTYPE" alt="" coords="309,6888,467,6915">
+<area shape="rect" id="node167" href="table-RHNCHECKSUM.html#t-fk" title="RHNCHECKSUM" alt="" coords="617,7319,743,7345">
+<area shape="rect" id="node103" href="table-RHNSGTYPEBASEADDONCOMPAT.html#t-fk" title="RHNSGTYPEBASEADDONCOMPAT" alt="" coords="561,1493,799,1520">
+<area shape="rect" id="node105" href="table-RHNSERVERCRASHFILE.html#t-fk" title="RHNSERVERCRASHFILE" alt="" coords="1561,7559,1732,7585">
+<area shape="rect" id="node280" href="table-RHNSERVERACTIONSCRIPTRESULT.html#t-fk" title="RHNSERVERACTIONSCRIPTRESULT" alt="" coords="1525,1392,1769,1419">
+<area shape="rect" id="node107" href="table-RHNERRATABUGLIST.html#t-fk" title="RHNERRATABUGLIST" alt="" coords="930,5735,1086,5761">
+<area shape="rect" id="node108" href="table-RHNCHANNELERRATA.html#t-fk" title="RHNCHANNELERRATA" alt="" coords="927,6241,1089,6268">
+<area shape="rect" id="node109" href="table-RHNPACKAGEDELTAELEMENT.html#t-fk" title="RHNPACKAGEDELTAELEMENT" alt="" coords="1225,8521,1436,8548">
+<area shape="rect" id="node112" href="table-RHNARCHTYPEACTIONS.html#t-fk" title="RHNARCHTYPEACTIONS" alt="" coords="299,5937,477,5964">
+<area shape="rect" id="node113" href="table-RHNCONFIGFILETYPE.html#t-fk" title="RHNCONFIGFILETYPE" alt="" coords="929,3735,1087,3761">
+<area shape="rect" id="node114" href="table-RHNSERVER_LOG.html#t-fk" title="RHNSERVER_LOG" alt="" coords="613,847,747,873">
+<area shape="rect" id="node290" href="table-RHNCONTENTSOURCESSL.html#t-fk" title="RHNCONTENTSOURCESSL" alt="" coords="913,4468,1103,4495">
+<area shape="rect" id="node117" href="table-QRTZ_PAUSED_TRIGGER_GRPS.html#t-fk" title="QRTZ_PAUSED_TRIGGER_GRPS" alt="" coords="11,745,234,772">
+<area shape="rect" id="node119" href="table-WEB_CONTACT_ALL.html#t-fk" title="WEB_CONTACT_ALL" alt="" coords="47,847,198,873">
+<area shape="rect" id="node238" href="table-LOG.html#t-fk" title="LOG" alt="" coords="363,847,413,873">
+<area shape="rect" id="node121" href="table-RHNCHANNELARCH.html#t-fk" title="RHNCHANNELARCH" alt="" coords="313,7015,463,7041">
+<area shape="rect" id="node306" href="table-RHNSERVERCHANNELARCHCOMPAT.html#t-fk" title="RHNSERVERCHANNELARCHCOMPAT" alt="" coords="554,6900,806,6927">
+<area shape="rect" id="node291" href="table-RHNRELEASECHANNELMAP.html#t-fk" title="RHNRELEASECHANNELMAP" alt="" coords="909,7103,1107,7129">
+<area shape="rect" id="node279" href="table-RHNCHILDCHANNELARCHCOMPAT.html#t-fk" title="RHNCHILDCHANNELARCHCOMPAT" alt="" coords="559,7052,801,7079">
+<area shape="rect" id="node126" href="table-RHNPUSHDISPATCHER.html#t-fk" title="RHNPUSHDISPATCHER" alt="" coords="39,695,206,721">
+<area shape="rect" id="node127" href="table-RHNPACKAGEDELTA.html#t-fk" title="RHNPACKAGEDELTA" alt="" coords="933,7812,1083,7839">
+<area shape="rect" id="node128" href="table-RHNSERVERARCH.html#t-fk" title="RHNSERVERARCH" alt="" coords="320,6748,456,6775">
+<area shape="rect" id="node170" href="table-RHNSERVERSERVERGROUPARCHCOMPAT.html#t-fk" title="RHNSERVERSERVERGROUPARCHCOMPAT" alt="" coords="537,6140,823,6167">
+<area shape="rect" id="node130" href="table-WEB_USER_SITE_TYPE.html#t-fk" title="WEB_USER_SITE_TYPE" alt="" coords="596,3329,764,3356">
+<area shape="rect" id="node132" href="table-RHNXCCDFRULERESULTTYPE.html#t-fk" title="RHNXCCDFRULERESULTTYPE" alt="" coords="1543,8369,1751,8396">
+<area shape="rect" id="node209" href="table-RHNXCCDFRULERESULT.html#t-fk" title="RHNXCCDFRULERESULT" alt="" coords="1867,8369,2043,8396">
+<area shape="rect" id="node133" href="table-RHNCPUARCH.html#t-fk" title="RHNCPUARCH" alt="" coords="951,6343,1065,6369">
+<area shape="rect" id="node134" href="table-WEB_CONTACT_LOG.html#t-fk" title="WEB_CONTACT_LOG" alt="" coords="603,897,757,924">
+<area shape="rect" id="node138" href="table-RHNPUSHCLIENTSTATE.html#t-fk" title="RHNPUSHCLIENTSTATE" alt="" coords="37,796,209,823">
+<area shape="rect" id="node139" href="table-RHNREPOREGENQUEUE.html#t-fk" title="RHNREPOREGENQUEUE" alt="" coords="34,644,211,671">
+<area shape="rect" id="node140" href="table-RHNERRATACVE.html#t-fk" title="RHNERRATACVE" alt="" coords="945,5633,1071,5660">
+<area shape="rect" id="node235" href="table-RHNSERVERCONFIGCHANNEL.html#t-fk" title="RHNSERVERCONFIGCHANNEL" alt="" coords="1540,4039,1753,4065">
+<area shape="rect" id="node236" href="table-RHNSNAPSHOTCONFIGCHANNEL.html#t-fk" title="RHNSNAPSHOTCONFIGCHANNEL" alt="" coords="1529,4723,1764,4749">
+<area shape="rect" id="node143" href="table-RHNSERVEREVENT.html#t-fk" title="RHNSERVEREVENT" alt="" coords="1259,3937,1403,3964">
+<area shape="rect" id="node145" href="table-RHNACTIONTYPE.html#t-fk" title="RHNACTIONTYPE" alt="" coords="56,4064,189,4091">
+<area shape="rect" id="node146" href="table-RHNPACKAGEFILEDELETEQUEUE.html#t-fk" title="RHNPACKAGEFILEDELETEQUEUE" alt="" coords="6,593,239,620">
+<area shape="rect" id="node174" href="table-RHNSNAPSHOTPACKAGE.html#t-fk" title="RHNSNAPSHOTPACKAGE" alt="" coords="1555,6425,1738,6452">
+<area shape="rect" id="node148" href="table-RHNPUBLICCHANNELFAMILY.html#t-fk" title="RHNPUBLICCHANNELFAMILY" alt="" coords="906,3937,1110,3964">
+<area shape="rect" id="node149" href="table-RHNPACKAGEEVR.html#t-fk" title="RHNPACKAGEEVR" alt="" coords="611,8976,749,9003">
+<area shape="rect" id="node201" href="table-RHNSATELLITEINFO.html#t-fk" title="RHNSATELLITEINFO" alt="" coords="1257,7457,1405,7484">
+<area shape="rect" id="node232" href="table-RHNVERSIONINFO.html#t-fk" title="RHNVERSIONINFO" alt="" coords="938,8799,1078,8825">
+<area shape="rect" id="node150" href="table-QRTZ_FIRED_TRIGGERS.html#t-fk" title="QRTZ_FIRED_TRIGGERS" alt="" coords="35,543,210,569">
+<area shape="rect" id="node151" href="table-RHNPROVISIONSTATE.html#t-fk" title="RHNPROVISIONSTATE" alt="" coords="599,3481,761,3508">
+<area shape="rect" id="node153" href="table-RHNCONFIGFILEFAILURE.html#t-fk" title="RHNCONFIGFILEFAILURE" alt="" coords="1241,3684,1420,3711">
+<area shape="rect" id="node224" href="table-RHNVISIBLEOBJECTS.html#t-fk" title="RHNVISIBLEOBJECTS" alt="" coords="1253,2569,1409,2596">
+<area shape="rect" id="node285" href="table-RHNSNAPSHOTTAG.html#t-fk" title="RHNSNAPSHOTTAG" alt="" coords="1573,2924,1721,2951">
+<area shape="rect" id="node202" href="table-RHNSNAPSHOTSERVERGROUP.html#t-fk" title="RHNSNAPSHOTSERVERGROUP" alt="" coords="1537,2721,1756,2748">
+<area shape="rect" id="node159" href="table-RHNSERVERNETWORK.html#t-fk" title="RHNSERVERNETWORK" alt="" coords="1247,3836,1415,3863">
+<area shape="rect" id="node163" href="table-RHNXCCDFTESTRESULT.html#t-fk" title="RHNXCCDFTESTRESULT" alt="" coords="1559,8268,1734,8295">
+<area shape="rect" id="node171" href="table-RHNPACKAGENAME.html#t-fk" title="RHNPACKAGENAME" alt="" coords="605,8451,755,8477">
+<area shape="rect" id="node172" href="table-RHNCOMPSTYPE.html#t-fk" title="RHNCOMPSTYPE" alt="" coords="615,6799,745,6825">
+<area shape="rect" id="node221" href="table-RHNCHANNELNEWESTPACKAGEAUDIT.html#t-fk" title="RHNCHANNELNEWESTPACKAGEAUDIT" alt="" coords="873,6697,1143,6724">
+<area shape="rect" id="node249" href="table-RHNERRATAQUEUE.html#t-fk" title="RHNERRATAQUEUE" alt="" coords="935,6140,1081,6167">
+<area shape="rect" id="node176" href="table-RHNPACKAGEGROUP.html#t-fk" title="RHNPACKAGEGROUP" alt="" coords="601,7495,759,7521">
+<area shape="rect" id="node179" href="table-RHNXCCDFPROFILE.html#t-fk" title="RHNXCCDFPROFILE" alt="" coords="1257,8825,1404,8852">
+<area shape="rect" id="node180" href="table-RHNSERVERPATH.html#t-fk" title="RHNSERVERPATH" alt="" coords="1263,3887,1398,3913">
+<area shape="rect" id="node181" href="table-RHNSERVERGROUPTYPEFEATURE.html#t-fk" title="RHNSERVERGROUPTYPEFEATURE" alt="" coords="561,1544,799,1571">
+<area shape="rect" id="node182" href="table-RHNCHANNELPERMISSIONROLE.html#t-fk" title="RHNCHANNELPERMISSIONROLE" alt="" coords="566,4873,794,4900">
+<area shape="rect" id="node185" href="table-RHNACTIONCONFIGREVISIONRESULT.html#t-fk" title="RHNACTIONCONFIGREVISIONRESULT" alt="" coords="1824,3507,2085,3533">
+<area shape="rect" id="node191" href="table-RHNPACKAGEPROVIDER.html#t-fk" title="RHNPACKAGEPROVIDER" alt="" coords="591,9381,769,9408">
+<area shape="rect" id="node192" href="table-RHNVIRTUALINSTANCESTATE.html#t-fk" title="RHNVIRTUALINSTANCESTATE" alt="" coords="1225,8724,1436,8751">
+<area shape="rect" id="node199" href="table-RHNVIRTUALINSTANCEINFO.html#t-fk" title="RHNVIRTUALINSTANCEINFO" alt="" coords="1545,8724,1748,8751">
+<area shape="rect" id="node194" href="table-RHNFEATURE.html#t-fk" title="RHNFEATURE" alt="" coords="333,1544,443,1571">
+<area shape="rect" id="node195" href="table-RHNSERVERGROUPTYPE.html#t-fk" title="RHNSERVERGROUPTYPE" alt="" coords="298,1493,478,1520">
+<area shape="rect" id="node198" href="table-RHNSERVERHISTORY.html#t-fk" title="RHNSERVERHISTORY" alt="" coords="1252,3177,1409,3204">
+<area shape="rect" id="node200" href="table-RHNXCCDFIDENTSYSTEM.html#t-fk" title="RHNXCCDFIDENTSYSTEM" alt="" coords="1554,8471,1739,8497">
+<area shape="rect" id="node266" href="table-RHNXCCDFIDENT.html#t-fk" title="RHNXCCDFIDENT" alt="" coords="1887,8445,2022,8472">
+<area shape="rect" id="node206" href="table-RHNACTIONSTATUS.html#t-fk" title="RHNACTIONSTATUS" alt="" coords="933,2900,1083,2927">
+<area shape="rect" id="node207" href="table-RHNKICKSTARTTIMEZONE.html#t-fk" title="RHNKICKSTARTTIMEZONE" alt="" coords="913,7305,1103,7332">
+<area shape="rect" id="node208" href="table-RHNCONFIGURATION.html#t-fk" title="RHNCONFIGURATION" alt="" coords="43,492,202,519">
+<area shape="rect" id="node277" href="table-RHNXCCDFRULEIDENTMAP.html#t-fk" title="RHNXCCDFRULEIDENTMAP" alt="" coords="2134,8408,2330,8435">
+<area shape="rect" id="node210" href="table-RHNCLIENTCAPABILITYNAME.html#t-fk" title="RHNCLIENTCAPABILITYNAME" alt="" coords="904,6292,1112,6319">
+<area shape="rect" id="node213" href="table-VALID_COUNTRIES.html#t-fk" title="VALID_COUNTRIES" alt="" coords="51,441,194,468">
+<area shape="rect" id="node214" href="table-RHNPRODUCTNAME.html#t-fk" title="RHNPRODUCTNAME" alt="" coords="311,6596,465,6623">
+<area shape="rect" id="node217" href="table-RHNSERVERUUID.html#t-fk" title="RHNSERVERUUID" alt="" coords="1263,3633,1398,3660">
+<area shape="rect" id="node218" href="table-RHNPACKAGECAPABILITY.html#t-fk" title="RHNPACKAGECAPABILITY" alt="" coords="915,8015,1101,8041">
+<area shape="rect" id="node222" href="table-RHNKICKSTARTSESSIONSTATE.html#t-fk" title="RHNKICKSTARTSESSIONSTATE" alt="" coords="899,2748,1117,2775">
+<area shape="rect" id="node223" href="table-QRTZ_LOCKS.html#t-fk" title="QRTZ_LOCKS" alt="" coords="69,391,176,417">
+<area shape="rect" id="node227" href="table-RHNKSINSTALLTYPE.html#t-fk" title="RHNKSINSTALLTYPE" alt="" coords="605,7229,755,7256">
+<area shape="rect" id="node228" href="table-RHNKSTREETYPE.html#t-fk" title="RHNKSTREETYPE" alt="" coords="613,6748,747,6775">
+<area shape="rect" id="node231" href="table-RHNTEMPLATECATEGORY.html#t-fk" title="RHNTEMPLATECATEGORY" alt="" coords="29,340,216,367">
+<area shape="rect" id="node303" href="table-RHNTEMPLATESTRING.html#t-fk" title="RHNTEMPLATESTRING" alt="" coords="305,340,471,367">
+<area shape="rect" id="node234" href="table-RHNWEBCONTACTCHANGESTATE.html#t-fk" title="RHNWEBCONTACTCHANGESTATE" alt="" coords="561,2444,799,2471">
+<area shape="rect" id="node239" href="table-RHNSERVERNETINTERFACE.html#t-fk" title="RHNSERVERNETINTERFACE" alt="" coords="1231,3076,1430,3103">
+<area shape="rect" id="node288" href="table-RHNSERVERNETADDRESS4.html#t-fk" title="RHNSERVERNETADDRESS4" alt="" coords="1549,3127,1745,3153">
+<area shape="rect" id="node286" href="table-RHNSERVERNETADDRESS6.html#t-fk" title="RHNSERVERNETADDRESS6" alt="" coords="1549,3076,1745,3103">
+<area shape="rect" id="node240" href="table-QRTZ_SCHEDULER_STATE.html#t-fk" title="QRTZ_SCHEDULER_STATE" alt="" coords="28,289,217,316">
+<area shape="rect" id="node275" href="table-RHNCONTENTSOURCEFILTER.html#t-fk" title="RHNCONTENTSOURCEFILTER" alt="" coords="904,5380,1112,5407">
+<area shape="rect" id="node245" href="table-RHNERRATACLONEDTMP.html#t-fk" title="RHNERRATACLONEDTMP" alt="" coords="917,5583,1099,5609">
+<area shape="rect" id="node247" href="table-RHNPACKAGEKEYTYPE.html#t-fk" title="RHNPACKAGEKEYTYPE" alt="" coords="595,9432,765,9459">
+<area shape="rect" id="node248" href="table-QRTZ_CALENDARS.html#t-fk" title="QRTZ_CALENDARS" alt="" coords="51,239,194,265">
+<area shape="rect" id="node252" href="table-RHNSERVERLOCATION.html#t-fk" title="RHNSERVERLOCATION" alt="" coords="1247,3481,1414,3508">
+<area shape="rect" id="node254" href="table-RHNCHANNELPRODUCT.html#t-fk" title="RHNCHANNELPRODUCT" alt="" coords="299,6799,477,6825">
+<area shape="rect" id="node256" href="table-RHNVIRTUALINSTANCETYPE.html#t-fk" title="RHNVIRTUALINSTANCETYPE" alt="" coords="1229,8927,1432,8953">
+<area shape="rect" id="node268" href="table-RHNERRATABUGLISTTMP.html#t-fk" title="RHNERRATABUGLISTTMP" alt="" coords="917,5481,1099,5508">
+<area shape="rect" id="node258" href="table-RHNTAGNAME.html#t-fk" title="RHNTAGNAME" alt="" coords="331,2241,445,2268">
+<area shape="rect" id="node259" href="table-RHNSERVERDMI.html#t-fk" title="RHNSERVERDMI" alt="" coords="1267,3532,1394,3559">
+<area shape="rect" id="node261" href="table-RHNSERVERINSTALLINFO.html#t-fk" title="RHNSERVERINSTALLINFO" alt="" coords="1239,3583,1423,3609">
+<area shape="rect" id="node264" href="table-WEB_USER_PREFIX.html#t-fk" title="WEB_USER_PREFIX" alt="" coords="607,3380,753,3407">
+<area shape="rect" id="node296" href="table-RHNSERVERINFO.html#t-fk" title="RHNSERVERINFO" alt="" coords="1265,3735,1397,3761">
+<area shape="rect" id="node300" href="table-RHNRAM.html#t-fk" title="RHNRAM" alt="" coords="1291,3228,1370,3255">
+<area shape="rect" id="node317" href="table-RHNVIRTUALINSTANCE.html#t-fk" title="RHNVIRTUALINSTANCE" alt="" coords="1245,4495,1416,4521">
+<area shape="rect" id="node274" href="table-RHNEXCEPTION.html#t-fk" title="RHNEXCEPTION" alt="" coords="61,188,185,215">
+<area shape="rect" id="node276" href="table-RHNSNAPSHOTINVALIDREASON.html#t-fk" title="RHNSNAPSHOTINVALIDREASON" alt="" coords="894,4873,1122,4900">
+<area shape="rect" id="node289" href="table-RHNVIRTUALINSTANCEEVENTTYPE.html#t-fk" title="RHNVIRTUALINSTANCEEVENTTYPE" alt="" coords="1207,8268,1454,8295">
+<area shape="rect" id="node292" href="table-RHNARCHTYPE.html#t-fk" title="RHNARCHTYPE" alt="" coords="63,6913,182,6940">
+<area shape="rect" id="node293" href="table-RHNXCCDFBENCHMARK.html#t-fk" title="RHNXCCDFBENCHMARK" alt="" coords="1241,8673,1420,8700">
+<area shape="rect" id="node294" href="table-RHNCRYPTOKEYTYPE.html#t-fk" title="RHNCRYPTOKEYTYPE" alt="" coords="309,3912,467,3939">
+<area shape="rect" id="node299" href="table-RHNTRANSACTIONOPERATION.html#t-fk" title="RHNTRANSACTIONOPERATION" alt="" coords="571,8596,789,8623">
+<area shape="rect" id="node305" href="table-RHNERRATASEVERITY.html#t-fk" title="RHNERRATASEVERITY" alt="" coords="307,5659,469,5685">
+<area shape="rect" id="node309" href="table-RHNACTIONVIRTSTART.html#t-fk" title="RHNACTIONVIRTSTART" alt="" coords="37,137,208,164">
+<area shape="rect" id="node310" href="table-RHNORGCHANNELSETTINGSTYPE.html#t-fk" title="RHNORGCHANNELSETTINGSTYPE" alt="" coords="561,5228,799,5255">
+<area shape="rect" id="node311" href="table-RHNTINYURL.html#t-fk" title="RHNTINYURL" alt="" coords="69,87,176,113">
+<area shape="rect" id="node312" href="table-RHNSERVERPROFILETYPE.html#t-fk" title="RHNSERVERPROFILETYPE" alt="" coords="587,5329,773,5356">
+<area shape="rect" id="node313" href="table-RHNUSERRESERVED.html#t-fk" title="RHNUSERRESERVED" alt="" coords="45,36,200,63">
+<area shape="rect" id="node316" href="table-RHNCVE.html#t-fk" title="RHNCVE" alt="" coords="641,5633,719,5660">
+</map><img class="erd" usemap="#mainmap" src="main.png"/><p><b>Using syntax highlighting:</b> Yes</p><p><b>Character set:</b> utf-8</p><p><b>Constraints:</b> NOT NULL constraints are skipped.
+                                This information is kept in colums list. You can enable
+                                its listing by <code>--nn</code> option.</p><p><b>DDL Scripts:</b> Obtaining the DDL script depends on
+                              the DBMS_METADATA package.
+                              So it's limited only for Oracle version 9 and greater and for users
+                              with EXECUTE privilege on this package.</p><div class="footer">
+        Generated by  <a href="http://www.yarpen.cz/oraschemadoc">OraSchemaDoc</a>,
+        (c) Petr Vanek, 2005; Aram Kananov, 2002, on Wed Mar  4 07:58:24 2020</div>
+</body></html>

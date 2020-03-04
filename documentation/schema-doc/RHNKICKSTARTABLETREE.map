@@ -1,0 +1,5 @@
+<area shape="rect" id="node1" href="table-WEB_CUSTOMER.html#t-fk" title="WEB_CUSTOMER" alt="" coords="15,36,147,63">
+<area shape="rect" id="node2" href="table-RHNKICKSTARTABLETREE.html#t-fk" title="RHNKICKSTARTABLETREE" alt="" coords="205,112,392,139">
+<area shape="rect" id="node3" href="table-RHNKSINSTALLTYPE.html#t-fk" title="RHNKSINSTALLTYPE" alt="" coords="6,87,157,113">
+<area shape="rect" id="node4" href="table-RHNKSTREETYPE.html#t-fk" title="RHNKSTREETYPE" alt="" coords="15,137,148,164">
+<area shape="rect" id="node5" href="table-RHNCHANNEL.html#t-fk" title="RHNCHANNEL" alt="" coords="24,188,139,215">

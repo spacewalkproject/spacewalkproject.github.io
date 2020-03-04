@@ -1,0 +1,4 @@
+<area shape="rect" id="node1" href="table-WEB_CUSTOMER.html#t-fk" title="WEB_CUSTOMER" alt="" coords="59,36,191,63">
+<area shape="rect" id="node3" href="table-RHNORGCHANNELSETTINGS.html#t-fk" title="RHNORGCHANNELSETTINGS" alt="" coords="294,87,501,113">
+<area shape="rect" id="node2" href="table-RHNORGCHANNELSETTINGSTYPE.html#t-fk" title="RHNORGCHANNELSETTINGSTYPE" alt="" coords="6,87,245,113">
+<area shape="rect" id="node4" href="table-RHNCHANNEL.html#t-fk" title="RHNCHANNEL" alt="" coords="68,137,183,164">
